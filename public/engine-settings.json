@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "dialogue": {
+    "theme": "world",
+    "placement": "speaker",
+    "width": 470,
+    "fontSize": 17,
+    "offsetX": 0,
+    "offsetY": 0,
+    "portraits": true
+  },
+  "decisions": []
+}

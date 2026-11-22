@@ -1,0 +1,84 @@
+{
+  "format": "sofia-world",
+  "version": 1,
+  "role": "home",
+  "id": "earth",
+  "title": "Tierra",
+  "summary": "El hogar de Sofía y el punto de partida de sus viajes. Desde aquí embarca para explorar los mundos de las ideas y puede regresar cuando quiera.",
+  "artStatus": "final",
+  "philosopher": {
+    "id": "sofia",
+    "name": "Sofía",
+    "portrait": "assets/av_sofia.png"
+  },
+  "galaxy": "home",
+  "systems": [],
+  "themes": [],
+  "assets": {
+    "terrain": {
+      "src": "assets/planet-earth-v1.png",
+      "width": 1012,
+      "height": 1012,
+      "kind": "rock",
+      "label": "La Tierra ilustrada"
+    },
+    "ship": {
+      "src": "assets/polis-ship.png",
+      "width": 130,
+      "height": 150,
+      "kind": "ship"
+    }
+  },
+  "terrain": "terrain",
+  "intro": "home-welcome",
+  "surface": {
+    "spawnAngle": -8,
+    "terrainScale": 1.0956,
+    "objects": [
+      {
+        "id": "ship",
+        "kind": "ship",
+        "label": "La nave de Sofía",
+        "angleDeg": -26,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "ship",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "ship"
+      }
+    ],
+    "introduction": {
+      "holdMs": 1100,
+      "zoomMs": 2600
+    }
+  },
+  "interiors": {},
+  "interactions": {},
+  "dialogues": {
+    "home-welcome": {
+      "style": "parchment",
+      "start": "home",
+      "nodes": {
+        "home": {
+          "speaker": "Sofía",
+          "text": "Este es mi hogar. Puedo subir a mi nave, elegir un mundo y volver a la Tierra cuando quiera. Mis descubrimientos me acompañarán en cada viaje.",
+          "choices": [
+            {
+              "id": "leave",
+              "text": "Comenzar el viaje"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "activities": {},
+  "concepts": {},
+  "memories": {},
+  "missions": []
+}

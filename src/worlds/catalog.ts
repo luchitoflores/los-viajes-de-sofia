@@ -1,0 +1,19 @@
+import type {WorldDefinition} from './schema';
+import {validId,validAssetSource} from './schema.ts';
+export interface Catalog {format:'sofia-universe';version:1;galaxies:{id:string;name:string}[];systems:{id:string;name:string;galaxy:string}[];themes:{id:string;name:string}[];planets:{kind?:'home';id:string;philosopherId:string;name:string;galaxy:string;systems:string[];themes:string[];source:string;portrait:string;thumbnail?:string;legacy?:'polis';status:'prototype'|'ready'}[]}
+export function parseCatalog(value:unknown):Catalog {
+ const c=value as Catalog;if(!c||c.format!=='sofia-universe'||c.version!==1||![c.galaxies,c.systems,c.themes,c.planets].every(Array.isArray))throw Error('Atlas inválido.');
+ const unique=(values:{id:string;name:string}[])=>{const ids=new Set<string>();for(const v of values){if(!v||!validId(v.id)||ids.has(v.id)||typeof v.name!=='string'||!v.name||v.name.length>160)throw Error('ID de atlas repetido o inválido.');ids.add(v.id)}return ids};
+ const galaxies=unique(c.galaxies);if(galaxies.size!==4||!['ancient','medieval','modern','contemporary'].every(id=>galaxies.has(id)))throw Error('Las galaxias deben ser las cuatro épocas históricas.');const systems=unique(c.systems),themes=unique(c.themes);unique(c.planets);const authors=new Set<string>();if(c.planets.filter(p=>p.kind==='home').length>1)throw Error('Solo puede haber un planeta de origen.');
+ for(const s of c.systems)if(!galaxies.has(s.galaxy))throw Error('Corriente sin galaxia.');
+ for(const p of c.planets){if((p.kind!==undefined&&p.kind!=='home')||(p.kind==='home'&&(p.galaxy!=='home'||p.systems.length!==0))||(p.thumbnail!==undefined&&(!validAssetSource(p.thumbnail)||!p.thumbnail.startsWith('assets/')))||(p.legacy!==undefined&&p.legacy!=='polis')||!validId(p.philosopherId)||authors.has(p.philosopherId)||(p.kind!=='home'&&!galaxies.has(p.galaxy))||!Array.isArray(p.systems)||!p.systems.every(id=>systems.has(id)&&c.systems.find(s=>s.id===id)?.galaxy===p.galaxy)||!Array.isArray(p.themes)||!p.themes.every(id=>themes.has(id))||!/^worlds\/[a-z0-9-]+\.json$/.test(p.source)||!validAssetSource(p.portrait)||!['prototype','ready'].includes(p.status))throw Error('Planeta duplicado, ruta o recurso inválido.');authors.add(p.philosopherId)}return structuredClone(c);
+}
+export function planetsOnRoute(c:Catalog,route:{galaxy?:string;system?:string;theme?:string}){return c.planets.filter(p=>(!route.galaxy||p.galaxy===route.galaxy)&&(!route.system||p.systems.includes(route.system))&&(!route.theme||p.themes.includes(route.theme)))}
+
+export function registerWorld(catalog:Catalog,w:WorldDefinition,source:string):Catalog {
+ const c=structuredClone(catalog);if(w.role!=='home'&&!c.galaxies.some(g=>g.id===w.galaxy))throw Error('La galaxia debe ser una época del atlas.');
+ if(c.planets.some(p=>(p.philosopherId===w.philosopher.id&&p.id!==w.id)||(p.id===w.id&&p.philosopherId!==w.philosopher.id)))throw Error('Cada filósofo conserva un único planeta e identidad.');
+ for(const id of w.systems){const existing=c.systems.find(s=>s.id===id);if(existing&&existing.galaxy!==w.galaxy)throw Error('La corriente pertenece a otra galaxia.');if(!existing)c.systems.push({id,name:id.replaceAll('-',' '),galaxy:w.galaxy})}
+ for(const id of w.themes)if(!c.themes.some(t=>t.id===id))c.themes.push({id,name:id.replaceAll('-',' ')});
+ const entry={...(w.role==='home'?{kind:'home' as const}:{}),id:w.id,philosopherId:w.philosopher.id,name:w.role==='home'?w.title:w.philosopher.name,galaxy:w.galaxy,systems:w.systems,themes:w.themes,source,portrait:w.philosopher.portrait,thumbnail:c.planets.find(p=>p.id===w.id)?.thumbnail,status:w.artStatus==='final'?'ready' as const:'prototype' as const};const index=c.planets.findIndex(p=>p.id===w.id);if(index<0)c.planets.push(entry);else c.planets[index]=entry;return parseCatalog(c);
+}

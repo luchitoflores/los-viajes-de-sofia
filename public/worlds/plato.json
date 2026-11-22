@@ -1,0 +1,2371 @@
+{
+  "format": "sofia-world",
+  "version": 1,
+  "id": "plato",
+  "title": "Platón · Más allá de las sombras",
+  "summary": "Aventura en tres actos: investigar las sombras, acompañar el primer ascenso y regresar para decidir cómo compartir lo aprendido. El desenlace es una adaptación narrativa, no una transcripción de la alegoría.",
+  "artStatus": "provisional",
+  "philosopher": {
+    "id": "plat",
+    "name": "Platón",
+    "portrait": "assets/portrait-plat.png"
+  },
+  "galaxy": "ancient",
+  "systems": [
+    "filosofia-clasica"
+  ],
+  "themes": [],
+  "assets": {
+    "terrain": {
+      "src": "assets/planet-plato-stone.png",
+      "kind": "rock",
+      "width": 1012,
+      "height": 1012,
+      "label": "Planeta de dos mundos pétreos — ilustración del autor"
+    },
+    "mentor": {
+      "src": "assets/cast-plat.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Recurso provisional"
+    },
+    "portrait": {
+      "src": "assets/portrait-plat.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Recurso provisional"
+    },
+    "ship": {
+      "src": "assets/polis-ship.png",
+      "width": 130,
+      "height": 150,
+      "kind": "ship"
+    },
+    "temple": {
+      "src": "assets/polis-temple.png",
+      "width": 200,
+      "height": 210,
+      "kind": "temple"
+    },
+    "tree": {
+      "src": "assets/polis-tree.png",
+      "width": 180,
+      "height": 205,
+      "kind": "tree"
+    },
+    "cave": {
+      "src": "assets/polis-cave.png",
+      "width": 180,
+      "height": 170,
+      "kind": "cave"
+    },
+    "door": {
+      "src": "assets/polis-door.png",
+      "width": 70,
+      "height": 100,
+      "kind": "door"
+    },
+    "house": {
+      "src": "assets/polis-house.png",
+      "width": 160,
+      "height": 190,
+      "kind": "house"
+    },
+    "vase": {
+      "src": "assets/polis-vase.png",
+      "width": 34,
+      "height": 44,
+      "kind": "vase"
+    },
+    "scroll": {
+      "src": "assets/polis-scroll.png",
+      "width": 48,
+      "height": 32,
+      "kind": "scroll"
+    },
+    "rock": {
+      "src": "assets/polis-rock.png",
+      "width": 85,
+      "height": 65,
+      "kind": "rock"
+    },
+    "prisoner": {
+      "src": "assets/companion-idle.png",
+      "width": 110,
+      "height": 157,
+      "kind": "philosopher",
+      "label": "Prisionero principal"
+    },
+    "prisoner-face": {
+      "src": "assets/portrait-prisoner.png",
+      "width": 160,
+      "height": 160,
+      "kind": "rock"
+    },
+    "warden": {
+      "src": "assets/cave-warden.png",
+      "width": 100,
+      "height": 157,
+      "kind": "philosopher",
+      "label": "Otro prisionero"
+    },
+    "warden-face": {
+      "src": "assets/portrait-warden.png",
+      "width": 160,
+      "height": 160,
+      "kind": "rock"
+    },
+    "torch": {
+      "src": "assets/cave-lamp.png",
+      "width": 42,
+      "height": 65,
+      "kind": "rock",
+      "label": "Lámpara de pared"
+    },
+    "bridge": {
+      "src": "assets/polis-rock.png",
+      "width": 112,
+      "height": 24,
+      "kind": "rock",
+      "label": "Paso de piedra del ascenso"
+    },
+    "room-entrada": {
+      "src": "assets/plato-01_entrada.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "A · Entrada de la caverna"
+    },
+    "room-prisioneros": {
+      "src": "assets/plato-02_prisioneros_sin_npc.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "B · Sala de los prisioneros"
+    },
+    "room-fuego": {
+      "src": "assets/plato-03_fuego_y_sombras.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "C · Fuego y sombras"
+    },
+    "room-ascenso": {
+      "src": "assets/plato-04_camino_del_ascenso.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "D · Camino del ascenso"
+    },
+    "room-salida": {
+      "src": "assets/plato-05_salida_luminosa.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "E · Salida luminosa"
+    },
+    "agora-bg": {
+      "src": "assets/polis-library-v2.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Interior del templo y ágora"
+    }
+  },
+  "terrain": "terrain",
+  "intro": "arrival",
+  "surface": {
+    "spawnAngle": -8,
+    "objects": [
+      {
+        "id": "ship",
+        "kind": "ship",
+        "label": "ship",
+        "angleDeg": -26,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "ship",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "ship"
+      },
+      {
+        "id": "philosopher",
+        "kind": "philosopher",
+        "label": "Platón",
+        "angleDeg": 0,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "talk",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "mentor",
+        "characterId": "plat",
+        "behavior": "mentor"
+      },
+      {
+        "id": "temple",
+        "kind": "temple",
+        "label": "Entrar al templo del ágora",
+        "angleDeg": 35,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "door",
+        "to": "library",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "temple",
+        "behavior": "entrar-agora",
+        "tooltip": "Entra al ágora para leer y conversar con Platón. No necesitas terminar la caverna.",
+        "hitWidth": 180,
+        "hitHeight": 220
+      },
+      {
+        "id": "olive-east",
+        "kind": "tree",
+        "label": "tree",
+        "angleDeg": 70,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "none",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "tree"
+      },
+      {
+        "id": "scroll",
+        "kind": "scroll",
+        "label": "scroll",
+        "angleDeg": 85,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "collect",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "scroll",
+        "behavior": "recoger-pergamino"
+      },
+      {
+        "id": "rocks-garden",
+        "kind": "rock",
+        "label": "rock",
+        "angleDeg": 110,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "none",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "rock"
+      },
+      {
+        "id": "house",
+        "kind": "house",
+        "label": "house",
+        "angleDeg": 132,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "none",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "house"
+      },
+      {
+        "id": "door",
+        "kind": "door",
+        "label": "door",
+        "angleDeg": 132,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "none",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "door",
+        "behavior": "observar-polis"
+      },
+      {
+        "id": "olive-cave",
+        "kind": "tree",
+        "label": "tree",
+        "angleDeg": 155,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "none",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "tree"
+      },
+      {
+        "id": "cave",
+        "kind": "cave",
+        "label": "Entrada a la caverna",
+        "angleDeg": 190,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "door",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "cave",
+        "behavior": "entrada-caverna"
+      },
+      {
+        "id": "vase",
+        "kind": "vase",
+        "label": "vase",
+        "angleDeg": 234,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "collect",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "vase",
+        "behavior": "recoger-anfora"
+      },
+      {
+        "id": "olive-west",
+        "kind": "tree",
+        "label": "tree",
+        "angleDeg": 265,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "none",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "tree"
+      },
+      {
+        "id": "rocks-west",
+        "kind": "rock",
+        "label": "rock",
+        "angleDeg": 290,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "none",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "rock"
+      },
+      {
+        "id": "scroll-return",
+        "kind": "scroll",
+        "label": "scroll",
+        "angleDeg": 312,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "collect",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "scroll",
+        "behavior": "recoger-pergamino"
+      },
+      {
+        "id": "olive-landing",
+        "kind": "tree",
+        "label": "tree",
+        "angleDeg": -67,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "none",
+        "to": "entrance",
+        "collision": false,
+        "collisionWidth": 50,
+        "collisionHeight": 50,
+        "asset": "tree"
+      }
+    ]
+  },
+  "interiors": {
+    "entrada": {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "template": "room",
+      "name": "A · Entrada de la caverna",
+      "subtitle": "Aventura de la caverna · adaptación narrativa",
+      "background": "room-entrada",
+      "backgroundGround": 430,
+      "width": 1280,
+      "floor": 560,
+      "spawn": {
+        "x": 160,
+        "y": 560
+      },
+      "items": [
+        {
+          "id": "entrada-planeta",
+          "type": "door",
+          "x": 55,
+          "y": 560,
+          "label": "Regresar al planeta",
+          "integrated": true,
+          "behavior": "entrada-planeta"
+        },
+        {
+          "id": "entrada-prisioneros",
+          "type": "door",
+          "x": 1160,
+          "y": 560,
+          "label": "Seguir las voces hacia los prisioneros",
+          "integrated": true,
+          "behavior": "entrada-prisioneros"
+        },
+        {
+          "id": "lampara-sofia",
+          "type": "lamp",
+          "x": 230,
+          "y": 560,
+          "label": "Encender la lámpara de Sofía",
+          "integrated": true,
+          "behavior": "encender-lampara",
+          "hotspot": {
+            "x": 230,
+            "y": 535,
+            "w": 190,
+            "h": 180
+          }
+        },
+        {
+          "id": "antorcha-entrada",
+          "type": "torch",
+          "x": 1000,
+          "y": 560,
+          "label": "Encender la antorcha",
+          "integrated": false,
+          "behavior": "encender-antorcha",
+          "asset": "torch"
+        }
+      ],
+      "regions": [
+        {
+          "id": "floor",
+          "type": "floor",
+          "x": 0,
+          "y": 560,
+          "w": 1280,
+          "h": 35
+        }
+      ],
+      "lighting": {
+        "darkness": 0.5,
+        "lampFlag": "lampara_encendida",
+        "lights": [
+          {
+            "x": 1000,
+            "y": 470,
+            "radius": 280,
+            "flag": "antorcha_entrada"
+          }
+        ]
+      },
+      "events": [
+        {
+          "id": "primer-pensamiento",
+          "from": 80,
+          "to": 320,
+          "behavior": "evento-entrada"
+        }
+      ]
+    },
+    "prisioneros": {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "template": "room",
+      "name": "B · Sala de los prisioneros",
+      "subtitle": "Aventura de la caverna · adaptación narrativa",
+      "background": "room-prisioneros",
+      "backgroundGround": 435,
+      "width": 1280,
+      "floor": 560,
+      "spawn": {
+        "x": 160,
+        "y": 560
+      },
+      "items": [
+        {
+          "id": "prisioneros-entrada",
+          "type": "door",
+          "x": 55,
+          "y": 560,
+          "label": "Volver a la entrada",
+          "integrated": true,
+          "behavior": "prisioneros-entrada"
+        },
+        {
+          "id": "prisioneros-fuego",
+          "type": "door",
+          "x": 1200,
+          "y": 560,
+          "label": "Investigar la sala del fuego",
+          "integrated": true,
+          "behavior": "prisioneros-fuego"
+        },
+        {
+          "id": "prisioneros-ascenso",
+          "type": "door",
+          "x": 700,
+          "y": 560,
+          "label": "Camino del ascenso",
+          "integrated": true,
+          "behavior": "prisioneros-ascenso"
+        },
+        {
+          "id": "prisionero-encadenado",
+          "type": "prisoner",
+          "x": 350,
+          "y": 560,
+          "label": "El prisionero",
+          "integrated": false,
+          "behavior": "hablar-prisionero",
+          "characterId": "prisionero",
+          "instanceId": "prisionero-encadenado",
+          "visibleWhen": {
+            "excludes": [
+              "prisionero_liberado"
+            ]
+          }
+        },
+        {
+          "id": "prisionero-se-queda",
+          "type": "prisoner",
+          "x": 350,
+          "y": 560,
+          "label": "Conversar de nuevo con el prisionero",
+          "integrated": false,
+          "behavior": "hablar-prisionero",
+          "characterId": "prisionero",
+          "instanceId": "prisionero-se-queda",
+          "visibleWhen": {
+            "requires": [
+              "prisionero_se_queda"
+            ]
+          }
+        },
+        {
+          "id": "otros-encadenados",
+          "type": "warden",
+          "x": 530,
+          "y": 560,
+          "label": "Los otros prisioneros",
+          "integrated": false,
+          "behavior": "hablar-otros",
+          "characterId": "otro-prisionero",
+          "instanceId": "otros-encadenados"
+        },
+        {
+          "id": "cadenas-prisionero",
+          "type": "chains",
+          "x": 315,
+          "y": 560,
+          "label": "Abrir las cadenas",
+          "integrated": true,
+          "behavior": "liberar-cadenas",
+          "visibleWhen": {
+            "excludes": [
+              "prisionero_liberado"
+            ]
+          },
+          "hotspot": {
+            "x": 285,
+            "y": 530,
+            "w": 56,
+            "h": 90
+          }
+        },
+        {
+          "id": "pared-proyecciones",
+          "type": "shadows",
+          "x": 1020,
+          "y": 560,
+          "label": "Examinar la pared de sombras",
+          "integrated": true,
+          "behavior": "mirar-pared",
+          "hotspot": {
+            "x": 1020,
+            "y": 460,
+            "w": 360,
+            "h": 300
+          }
+        }
+      ],
+      "regions": [
+        {
+          "id": "floor",
+          "type": "floor",
+          "x": 0,
+          "y": 560,
+          "w": 1280,
+          "h": 35
+        }
+      ],
+      "lighting": {
+        "darkness": 0.96,
+        "lampFlag": "lampara_encendida"
+      },
+      "events": [
+        {
+          "id": "recuperar-lampara",
+          "from": 0,
+          "to": 1280,
+          "behavior": "encender-lampara",
+          "excludes": [
+            "lampara_encendida"
+          ]
+        },
+        {
+          "id": "regreso-conflicto",
+          "from": 80,
+          "to": 1250,
+          "behavior": "regreso-dialogo",
+          "requires": [
+            "primer_ascenso_completado"
+          ],
+          "excludes": [
+            "regreso_caverna_completado"
+          ]
+        }
+      ]
+    },
+    "fuego": {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "template": "room",
+      "name": "C · Fuego y sombras",
+      "subtitle": "Aventura de la caverna · adaptación narrativa",
+      "background": "room-fuego",
+      "backgroundGround": 415,
+      "width": 1280,
+      "floor": 560,
+      "spawn": {
+        "x": 160,
+        "y": 560
+      },
+      "items": [
+        {
+          "id": "fuego-prisioneros",
+          "type": "door",
+          "x": 55,
+          "y": 560,
+          "label": "Regresar con los prisioneros",
+          "integrated": true,
+          "behavior": "fuego-prisioneros"
+        },
+        {
+          "id": "objeto-fuego",
+          "type": "vase",
+          "x": 310,
+          "y": 560,
+          "label": "Examinar la fuente de fuego",
+          "integrated": true,
+          "behavior": "examinar-fuego",
+          "hotspot": {
+            "x": 310,
+            "y": 495,
+            "w": 180,
+            "h": 300
+          }
+        },
+        {
+          "id": "objeto-caballo",
+          "type": "vase",
+          "x": 735,
+          "y": 560,
+          "label": "Examinar la figura de caballo",
+          "integrated": true,
+          "behavior": "examinar-caballo",
+          "hotspot": {
+            "x": 735,
+            "y": 350,
+            "w": 190,
+            "h": 190
+          }
+        },
+        {
+          "id": "objeto-vasija",
+          "type": "vase",
+          "x": 160,
+          "y": 560,
+          "label": "Examinar la vasija",
+          "integrated": true,
+          "behavior": "examinar-vasija",
+          "hotspot": {
+            "x": 160,
+            "y": 540,
+            "w": 105,
+            "h": 190
+          }
+        },
+        {
+          "id": "objeto-figura",
+          "type": "vase",
+          "x": 875,
+          "y": 560,
+          "label": "Examinar la figura humana",
+          "integrated": true,
+          "behavior": "examinar-figura",
+          "hotspot": {
+            "x": 875,
+            "y": 350,
+            "w": 120,
+            "h": 210
+          }
+        },
+        {
+          "id": "muro-proyeccion",
+          "type": "shadows",
+          "x": 1050,
+          "y": 560,
+          "label": "Relacionar luz, objetos y proyección",
+          "integrated": true,
+          "behavior": "comprender-sombras",
+          "hotspot": {
+            "x": 1050,
+            "y": 520,
+            "w": 180,
+            "h": 300
+          }
+        },
+        {
+          "id": "fuego-ascenso",
+          "type": "door",
+          "x": 1130,
+          "y": 560,
+          "label": "Arco hacia el ascenso",
+          "integrated": true,
+          "behavior": "fuego-ascenso",
+          "hotspot": {
+            "x": 1130,
+            "y": 430,
+            "w": 160,
+            "h": 250
+          },
+          "tooltip": "Este arco conduce al camino del ascenso. Puedes cruzarlo cuando el prisionero esté liberado."
+        }
+      ],
+      "regions": [
+        {
+          "id": "floor",
+          "type": "floor",
+          "x": 0,
+          "y": 560,
+          "w": 1280,
+          "h": 35
+        }
+      ],
+      "lighting": {
+        "darkness": 0.5,
+        "lampFlag": "lampara_encendida",
+        "lights": [
+          {
+            "x": 310,
+            "y": 330,
+            "radius": 450
+          }
+        ]
+      },
+      "events": []
+    },
+    "ascenso": {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "template": "stairs",
+      "name": "D · Camino del ascenso",
+      "subtitle": "Aventura de la caverna · adaptación narrativa",
+      "background": "room-ascenso",
+      "backgroundGround": 420,
+      "width": 1280,
+      "floor": 560,
+      "spawn": {
+        "x": 100,
+        "y": 560
+      },
+      "items": [
+        {
+          "id": "ascenso-prisioneros",
+          "type": "door",
+          "x": 55,
+          "y": 560,
+          "label": "Regresar a la sala de los prisioneros",
+          "integrated": true,
+          "behavior": "ascenso-prisioneros"
+        },
+        {
+          "id": "ascenso-salida",
+          "type": "door",
+          "x": 930,
+          "y": 215,
+          "label": "Alcanzar la salida luminosa",
+          "integrated": true,
+          "behavior": "ascenso-salida",
+          "hotspot": {
+            "x": 930,
+            "y": 215,
+            "w": 160,
+            "h": 180
+          }
+        },
+        {
+          "id": "paso-piedra-visible",
+          "type": "vase",
+          "x": 807,
+          "y": 269,
+          "label": "Paso de piedra del ascenso",
+          "integrated": false,
+          "asset": "bridge",
+          "rotation": -55
+        }
+      ],
+      "regions": [
+        {
+          "id": "bajo",
+          "type": "floor",
+          "x": 0,
+          "y": 560,
+          "w": 165,
+          "h": 30
+        },
+        {
+          "id": "escalera-pintada",
+          "type": "stairs",
+          "x": 165,
+          "y": 310,
+          "w": 305,
+          "h": 250
+        },
+        {
+          "id": "descanso",
+          "type": "floor",
+          "x": 470,
+          "y": 310,
+          "w": 295,
+          "h": 30
+        },
+        {
+          "id": "paso-piedra",
+          "type": "stairs",
+          "x": 765,
+          "y": 215,
+          "w": 65,
+          "h": 345,
+          "bottom": 310
+        },
+        {
+          "id": "alto",
+          "type": "floor",
+          "x": 830,
+          "y": 215,
+          "w": 150,
+          "h": 30
+        },
+        {
+          "id": "limite-roca",
+          "type": "solid",
+          "x": 980,
+          "y": 0,
+          "w": 300,
+          "h": 720
+        }
+      ],
+      "lighting": {
+        "darkness": 0.48,
+        "lampFlag": "lampara_encendida",
+        "fadeTo": {
+          "x": 1200,
+          "darkness": 0.08
+        }
+      },
+      "events": [
+        {
+          "id": "adaptacion",
+          "from": 480,
+          "to": 740,
+          "behavior": "encuentro-ascenso",
+          "requires": [
+            "prisionero_liberado"
+          ],
+          "excludes": [
+            "primer_ascenso_completado"
+          ]
+        }
+      ]
+    },
+    "salida": {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "template": "room",
+      "name": "E · Salida luminosa",
+      "subtitle": "Aventura de la caverna · adaptación narrativa",
+      "background": "room-salida",
+      "backgroundGround": 440,
+      "width": 1280,
+      "floor": 560,
+      "spawn": {
+        "x": 160,
+        "y": 560
+      },
+      "items": [
+        {
+          "id": "salida-ascenso",
+          "type": "door",
+          "x": 55,
+          "y": 560,
+          "label": "Volver por el ascenso",
+          "integrated": true,
+          "behavior": "salida-ascenso"
+        },
+        {
+          "id": "salida-planeta",
+          "type": "door",
+          "x": 1190,
+          "y": 560,
+          "label": "Salir de la caverna al planeta",
+          "integrated": true,
+          "behavior": "salida-planeta"
+        },
+        {
+          "id": "platon-salida",
+          "type": "plato",
+          "x": 1030,
+          "y": 560,
+          "label": "Platón a la salida",
+          "integrated": false,
+          "behavior": "mentor",
+          "characterId": "plat",
+          "instanceId": "platon-salida",
+          "visibleWhen": {
+            "requires": [
+              "decision_final_prisionero"
+            ]
+          }
+        },
+        {
+          "id": "prisionero-libre-salida",
+          "type": "prisoner",
+          "x": 920,
+          "y": 560,
+          "label": "El prisionero en libertad",
+          "characterId": "prisionero",
+          "instanceId": "prisionero-libre-salida",
+          "behavior": "hablar-prisionero",
+          "integrated": false,
+          "visibleWhen": {
+            "requires": [
+              "prisionero_sale",
+              "aventura_platon_completada"
+            ]
+          }
+        }
+      ],
+      "regions": [
+        {
+          "id": "floor",
+          "type": "floor",
+          "x": 0,
+          "y": 560,
+          "w": 1280,
+          "h": 35
+        }
+      ],
+      "lighting": {
+        "darkness": 0.04,
+        "lampFlag": "lampara_encendida"
+      },
+      "events": [
+        {
+          "id": "primer-ascenso",
+          "from": 250,
+          "to": 1250,
+          "behavior": "primer-exterior",
+          "requires": [
+            "prisionero_liberado"
+          ],
+          "excludes": [
+            "primer_ascenso_completado"
+          ]
+        },
+        {
+          "id": "segundo-ascenso",
+          "from": 850,
+          "to": 1250,
+          "behavior": "segundo-exterior",
+          "requires": [
+            "decision_final_prisionero"
+          ],
+          "excludes": [
+            "aventura_platon_completada"
+          ]
+        }
+      ]
+    },
+    "agora": {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "template": "room",
+      "backgroundGround": 470,
+      "name": "Ágora · Templo de la Polis",
+      "subtitle": "Un lugar para leer y conversar",
+      "background": "agora-bg",
+      "width": 1280,
+      "floor": 560,
+      "spawn": {
+        "x": 160,
+        "y": 560
+      },
+      "regions": [
+        {
+          "id": "floor",
+          "type": "floor",
+          "x": 0,
+          "y": 560,
+          "w": 1280,
+          "h": 160
+        }
+      ],
+      "items": [
+        {
+          "id": "agora-entrada",
+          "type": "door",
+          "x": 55,
+          "y": 560,
+          "label": "Salir del templo",
+          "integrated": true,
+          "behavior": "agora-regresar",
+          "tooltip": "Regresa por esta entrada a la superficie, junto al templo."
+        },
+        {
+          "id": "agora-platon",
+          "type": "philosopher",
+          "x": 700,
+          "y": 560,
+          "label": "Conversar con Platón",
+          "asset": "mentor",
+          "characterId": "plat",
+          "instanceId": "agora-platon",
+          "behavior": "agora-conversar"
+        },
+        {
+          "id": "agora-papiros",
+          "type": "scroll",
+          "x": 330,
+          "y": 560,
+          "label": "Mesa de lectura",
+          "integrated": true,
+          "behavior": "agora-leer",
+          "hotspot": {
+            "x": 330,
+            "y": 460,
+            "w": 220,
+            "h": 210
+          },
+          "tooltip": "Observa la mesa de lectura del ágora."
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "mentor": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "arrival"
+        }
+      ]
+    },
+    "evento-entrada": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "entrada-observacion"
+        }
+      ]
+    },
+    "hablar-prisionero": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "prisionero"
+        }
+      ]
+    },
+    "mirar-pared": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "pared-sombras"
+        }
+      ]
+    },
+    "examinar-fuego": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "observar-fuego"
+        }
+      ]
+    },
+    "examinar-caballo": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "observar-caballo"
+        }
+      ]
+    },
+    "examinar-vasija": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "observar-vasija"
+        }
+      ]
+    },
+    "examinar-figura": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "observar-figura"
+        }
+      ]
+    },
+    "comprender-sombras": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "origen-sombras"
+        }
+      ],
+      "requires": [
+        "fuego_observado",
+        "caballo_observado",
+        "figura_observada"
+      ],
+      "blockedText": "Aún necesito observar el fuego, la figura de caballo y la figura humana antes de explicar las proyecciones."
+    },
+    "liberar-cadenas": {
+      "actions": [
+        {
+          "type": "activate",
+          "text": "Las cadenas se abren. El mismo prisionero se incorpora, da sus primeros pasos y se coloca junto a Sofía.",
+          "reward": {
+            "flags": [
+              "prisionero_liberado"
+            ]
+          }
+        }
+      ],
+      "requires": [
+        "prisionero_acepta"
+      ],
+      "blockedText": "Primero conversa con el prisionero y escucha si acepta salir contigo."
+    },
+    "encuentro-ascenso": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "duda-ascenso"
+        }
+      ]
+    },
+    "primer-exterior": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "primera-salida"
+        }
+      ]
+    },
+    "regreso-dialogo": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "regreso-conflicto"
+        }
+      ]
+    },
+    "hablar-companero": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "companero"
+        }
+      ]
+    },
+    "segundo-exterior": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "cierre"
+        }
+      ]
+    },
+    "entrada-caverna": {
+      "actions": [
+        {
+          "type": "enter",
+          "target": "entrada"
+        }
+      ]
+    },
+    "entrada-planeta": {
+      "actions": [
+        {
+          "type": "return"
+        }
+      ],
+      "blockedText": "Este paso necesita que avances en la conversación y en lo que has descubierto. Consulta tus objetivos."
+    },
+    "entrada-prisioneros": {
+      "actions": [
+        {
+          "type": "enter",
+          "target": "prisioneros"
+        }
+      ],
+      "blockedText": "Sofía necesita encender su lámpara antes de seguir las voces.",
+      "requires": [
+        "lampara_encendida"
+      ]
+    },
+    "encender-lampara": {
+      "actions": [
+        {
+          "type": "activate",
+          "text": "La lámpara de Sofía está encendida. Su luz revela solo la zona que la rodea.",
+          "reward": {
+            "flags": [
+              "lampara_encendida"
+            ]
+          }
+        }
+      ]
+    },
+    "encender-antorcha": {
+      "actions": [
+        {
+          "type": "activate",
+          "text": "La antorcha queda encendida y su luz permanece aunque cambie de habitación.",
+          "reward": {
+            "flags": [
+              "antorcha_entrada"
+            ]
+          }
+        }
+      ]
+    },
+    "prisioneros-entrada": {
+      "actions": [
+        {
+          "type": "return"
+        }
+      ],
+      "blockedText": "Este paso necesita que avances en la conversación y en lo que has descubierto. Consulta tus objetivos."
+    },
+    "prisioneros-fuego": {
+      "actions": [
+        {
+          "type": "enter",
+          "target": "fuego"
+        }
+      ],
+      "requires": [
+        "lampara_encendida"
+      ],
+      "blockedText": "Este paso necesita que avances en la conversación y en lo que has descubierto. Consulta tus objetivos."
+    },
+    "prisioneros-ascenso": {
+      "actions": [
+        {
+          "type": "enter",
+          "target": "ascenso"
+        }
+      ],
+      "requires": [
+        "prisionero_liberado"
+      ],
+      "blockedText": "Este paso necesita que avances en la conversación y en lo que has descubierto. Consulta tus objetivos."
+    },
+    "hablar-otros": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "otros-prisioneros"
+        }
+      ]
+    },
+    "fuego-prisioneros": {
+      "actions": [
+        {
+          "type": "return"
+        }
+      ],
+      "blockedText": "Este paso necesita que avances en la conversación y en lo que has descubierto. Consulta tus objetivos."
+    },
+    "ascenso-prisioneros": {
+      "actions": [
+        {
+          "type": "return"
+        }
+      ],
+      "blockedText": "Este paso necesita que avances en la conversación y en lo que has descubierto. Consulta tus objetivos."
+    },
+    "ascenso-salida": {
+      "actions": [
+        {
+          "type": "enter",
+          "target": "salida"
+        }
+      ],
+      "blockedText": "Este paso necesita que avances en la conversación y en lo que has descubierto. Consulta tus objetivos."
+    },
+    "salida-ascenso": {
+      "actions": [
+        {
+          "type": "return"
+        }
+      ],
+      "blockedText": "Este paso necesita que avances en la conversación y en lo que has descubierto. Consulta tus objetivos."
+    },
+    "salida-planeta": {
+      "actions": [
+        {
+          "type": "surface"
+        }
+      ],
+      "requires": [
+        "aventura_platon_completada"
+      ],
+      "blockedText": "Este paso necesita que avances en la conversación y en lo que has descubierto. Consulta tus objetivos."
+    },
+    "recoger-pergamino": {
+      "actions": [
+        {
+          "type": "collect",
+          "text": "Este pergamino recuerda una pregunta: ¿qué razones sostienen lo que damos por evidente?",
+          "reward": {
+            "flags": [
+              "pergamino_encontrado"
+            ]
+          }
+        }
+      ]
+    },
+    "recoger-anfora": {
+      "actions": [
+        {
+          "type": "collect",
+          "text": "Sofía conserva el recuerdo de esta ánfora: un objeto puede mostrarse de muchas maneras sin reducirse a una sola imagen."
+        }
+      ]
+    },
+    "observar-polis": {
+      "actions": [
+        {
+          "type": "examine",
+          "text": "La Polis conserva sus lugares de encuentro. La entrada a la caverna está en la parte oscura del planeta. Los escenarios del prototipo anterior permanecen conservados."
+        }
+      ]
+    },
+    "fuego-ascenso": {
+      "requires": [
+        "prisionero_liberado"
+      ],
+      "blockedText": "Antes de subir, regresa a la sala de los prisioneros y libera a quien aceptó acompañarte. Luego podéis cruzar este arco.",
+      "actions": [
+        {
+          "type": "enter",
+          "target": "ascenso"
+        }
+      ]
+    },
+    "entrar-agora": {
+      "actions": [
+        {
+          "type": "enter",
+          "target": "agora"
+        }
+      ]
+    },
+    "agora-regresar": {
+      "actions": [
+        {
+          "type": "return"
+        }
+      ]
+    },
+    "agora-conversar": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "arrival"
+        }
+      ]
+    },
+    "agora-leer": {
+      "actions": [
+        {
+          "type": "examine",
+          "text": "Un espacio para leer y conversar. Puedes volver a la nave cuando quieras; tus descubrimientos y el avance de la caverna quedan guardados."
+        }
+      ]
+    }
+  },
+  "dialogues": {
+    "arrival": {
+      "style": "parchment",
+      "start": "bienvenida",
+      "nodes": {
+        "bienvenida": {
+          "speaker": "Platón",
+          "text": "Bienvenida, Sofía. En la caverna encontrarás personas que toman sombras por toda la realidad. Investiga con ellas antes de juzgarlas. Aprender también exige volver y escuchar.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "plat"
+        }
+      }
+    },
+    "entrada-observacion": {
+      "style": "parchment",
+      "start": "oscuro",
+      "nodes": {
+        "oscuro": {
+          "speaker": "Sofía",
+          "text": "Aquí casi no se ve nada... ¿Quiénes vivirán en un lugar tan oscuro? Enciendo mi lámpara para investigar esas voces.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        }
+      },
+      "reward": {
+        "flags": [
+          "lampara_encendida"
+        ]
+      }
+    },
+    "prisionero": {
+      "style": "parchment",
+      "start": "pregunta",
+      "nodes": {
+        "pregunta": {
+          "speaker": "Sofía",
+          "text": "¿Por qué permaneces mirando esa pared?",
+          "choices": [
+            {
+              "id": "escuchar",
+              "text": "Continuar",
+              "next": "pared"
+            }
+          ]
+        },
+        "pared": {
+          "speaker": "El prisionero",
+          "text": "Porque allí está todo lo que conocemos. No necesitamos buscar otra realidad.",
+          "choices": [
+            {
+              "id": "detras",
+              "text": "¿Nunca has pensado que podría existir algo detrás de las sombras?",
+              "next": "duda"
+            },
+            {
+              "id": "certeza",
+              "text": "¿Cómo sabes que las sombras son todo lo que existe?",
+              "next": "certeza"
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "duda": {
+          "speaker": "El prisionero",
+          "text": "¿Detrás? ¿Qué podría existir más allá de la realidad? Tengo miedo de abandonar lo conocido.",
+          "choices": [
+            {
+              "id": "investigar",
+              "text": "Investigaré qué produce esas figuras."
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "certeza": {
+          "speaker": "El prisionero",
+          "text": "Siempre las hemos visto y todos les damos los mismos nombres. Nunca había pensado en pedir una explicación distinta.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "evidencias": {
+          "speaker": "Sofía",
+          "text": "Encontré un fuego y objetos que interrumpen su luz. La pared muestra proyecciones, no los objetos mismos.",
+          "choices": [
+            {
+              "id": "mostrar",
+              "text": "Puedo mostrarte cómo cambian las sombras.",
+              "next": "aceptar"
+            },
+            {
+              "id": "escuchar-miedo",
+              "text": "¿Qué te asusta de comprobarlo?",
+              "next": "miedo"
+            }
+          ]
+        },
+        "miedo": {
+          "speaker": "El prisionero",
+          "text": "Si tienes razón, tendría que revisar todo lo que creía. Y la luz me duele.",
+          "choices": [
+            {
+              "id": "acompanar",
+              "text": "No hace falta comprenderlo todo de una vez. Iré contigo.",
+              "next": "aceptar"
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "aceptar": {
+          "speaker": "El prisionero",
+          "text": "Quiero intentarlo. Abre mis cadenas y caminemos despacio.",
+          "choices": [
+            {
+              "id": "consentir",
+              "text": "Continuar",
+              "reward": {
+                "flags": [
+                  "prisionero_acepta"
+                ]
+              }
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "espera": {
+          "speaker": "El prisionero",
+          "text": "Estoy dispuesto. Puedes abrir las cadenas junto a mí. No quiero que me arrastres: iremos juntos.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "se-queda": {
+          "speaker": "El prisionero",
+          "text": "He decidido quedarme para seguir conversando con ellos. No puedo obligarlos a creerme, pero puedo acompañar sus preguntas.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "libre": {
+          "speaker": "El prisionero",
+          "text": "Ya no confundo la pared con todo lo real. Lo aprendido todavía me plantea preguntas.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "prisionero"
+        }
+      },
+      "entries": [
+        {
+          "requires": [
+            "prisionero_se_queda"
+          ],
+          "node": "se-queda"
+        },
+        {
+          "requires": [
+            "prisionero_liberado"
+          ],
+          "node": "libre"
+        },
+        {
+          "requires": [
+            "prisionero_acepta"
+          ],
+          "node": "espera"
+        },
+        {
+          "requires": [
+            "sombras_comprendidas"
+          ],
+          "node": "evidencias"
+        }
+      ]
+    },
+    "pared-sombras": {
+      "style": "parchment",
+      "start": "mirar",
+      "nodes": {
+        "mirar": {
+          "speaker": "Sofía",
+          "text": "Esas figuras cambian cuando algo se mueve detrás de la pared. Seguiré el recorrido de la luz para comprender por qué.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        }
+      }
+    },
+    "observar-fuego": {
+      "style": "parchment",
+      "start": "observar",
+      "nodes": {
+        "observar": {
+          "speaker": "Sofía",
+          "text": "Esta fuente de luz permite que aparezcan las sombras. Sin conocerla, la pared parece explicar todo por sí sola.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        }
+      },
+      "reward": {
+        "flags": [
+          "fuego_observado"
+        ]
+      }
+    },
+    "observar-caballo": {
+      "style": "parchment",
+      "start": "observar",
+      "nodes": {
+        "observar": {
+          "speaker": "Sofía",
+          "text": "La figura de caballo tiene contorno y volumen. Su sombra depende de la posición del objeto y de la luz.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        }
+      },
+      "reward": {
+        "flags": [
+          "caballo_observado"
+        ]
+      }
+    },
+    "observar-vasija": {
+      "style": "parchment",
+      "start": "observar",
+      "nodes": {
+        "observar": {
+          "speaker": "Sofía",
+          "text": "Esta vasija no es la mancha oscura de la pared. Puedo rodearla y observar aspectos que su proyección no muestra.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        }
+      },
+      "reward": {
+        "flags": [
+          "vasija_observada"
+        ]
+      }
+    },
+    "observar-figura": {
+      "style": "parchment",
+      "start": "observar",
+      "nodes": {
+        "observar": {
+          "speaker": "Sofía",
+          "text": "La figura humana se interpone entre el fuego y el muro. Puedo seguir la relación entre objeto, luz y proyección.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        }
+      },
+      "reward": {
+        "flags": [
+          "figura_observada"
+        ]
+      }
+    },
+    "origen-sombras": {
+      "style": "ink",
+      "start": "hallazgo",
+      "nodes": {
+        "hallazgo": {
+          "speaker": "Sofía",
+          "text": "¡Ahora entiendo! Lo que ellos ven son sombras de estos objetos. Comprender su origen exige relacionar la luz, las figuras y la pared.",
+          "choices": [
+            {
+              "id": "pensar",
+              "text": "Continuar",
+              "next": "persuadir"
+            }
+          ]
+        },
+        "persuadir": {
+          "speaker": "Sofía",
+          "text": "Si alguien solo ha visto sombras durante toda su vida, ¿cómo podría invitarlo a investigar?",
+          "choices": [
+            {
+              "id": "imponer",
+              "text": "Decirle que siempre estuvo equivocado.",
+              "next": "imponer"
+            },
+            {
+              "id": "demostrar",
+              "text": "Mostrarle cómo se produce una sombra.",
+              "next": "demostrar"
+            },
+            {
+              "id": "escuchar",
+              "text": "Escuchar su miedo y explorar juntos.",
+              "next": "escuchar"
+            }
+          ]
+        },
+        "imponer": {
+          "speaker": "Sofía",
+          "text": "Una afirmación tajante puede provocar rechazo. Necesitaré ofrecer razones y darle tiempo para examinar lo que digo.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        },
+        "demostrar": {
+          "speaker": "Sofía",
+          "text": "Una experiencia compartida puede abrir preguntas. Ver algo distinto tampoco sustituye el esfuerzo de comprenderlo.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        },
+        "escuchar": {
+          "speaker": "Sofía",
+          "text": "Escuchar no elimina las diferencias, pero permite buscar juntos las razones de nuestras creencias.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        }
+      },
+      "reward": {
+        "flags": [
+          "sombras_comprendidas"
+        ]
+      }
+    },
+    "duda-ascenso": {
+      "style": "parchment",
+      "start": "duele",
+      "nodes": {
+        "duele": {
+          "speaker": "El prisionero",
+          "text": "La luz me lastima. Quiero regresar.",
+          "choices": [
+            {
+              "id": "responder",
+              "text": "Continuar",
+              "next": "respuesta"
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "respuesta": {
+          "speaker": "Sofía",
+          "text": "Es normal que algo desconocido resulte difícil. ¿Quieres continuar?",
+          "choices": [
+            {
+              "id": "paso",
+              "text": "Podemos detenernos y seguir paso a paso.",
+              "next": "paso"
+            },
+            {
+              "id": "razones",
+              "text": "Recordemos lo que pudimos comprobar juntos.",
+              "next": "razones"
+            }
+          ]
+        },
+        "paso": {
+          "speaker": "El prisionero",
+          "text": "Sí. No necesito acostumbrarme de inmediato. Quiero dar el siguiente paso contigo.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "razones": {
+          "speaker": "El prisionero",
+          "text": "Las sombras dependían de cosas que antes no conocía. Seguiré, aunque todavía tenga dudas.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "prisionero"
+        }
+      }
+    },
+    "primera-salida": {
+      "style": "parchment",
+      "start": "deslumbrado",
+      "nodes": {
+        "deslumbrado": {
+          "speaker": "El prisionero",
+          "text": "La claridad me deslumbra. Primero puedo distinguir sombras y reflejos; después, poco a poco, los objetos.",
+          "choices": [
+            {
+              "id": "adaptarse",
+              "text": "Continuar",
+              "next": "pregunta"
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "pregunta": {
+          "speaker": "Sofía",
+          "text": "¿Y ahora qué piensas de las sombras que observabas?",
+          "choices": [
+            {
+              "id": "escuchar",
+              "text": "Continuar",
+              "next": "respuesta"
+            }
+          ]
+        },
+        "respuesta": {
+          "speaker": "El prisionero",
+          "text": "Creía que eran toda la realidad. Nunca imaginé que existiera algo así.",
+          "choices": [
+            {
+              "id": "comprender",
+              "text": "Continuar",
+              "next": "educacion"
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "educacion": {
+          "speaker": "Sofía",
+          "text": "El ascenso representa también un cambio en nuestra manera de pensar y justificar lo que creemos. Conocer no consiste simplemente en contemplar un paisaje bonito.",
+          "choices": [
+            {
+              "id": "volver",
+              "text": "Continuar",
+              "next": "regreso"
+            }
+          ]
+        },
+        "regreso": {
+          "speaker": "El prisionero",
+          "text": "Quiero volver con mis compañeros y compartir lo que he aprendido. ¿Recorremos de nuevo el camino?",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "prisionero"
+        }
+      },
+      "reward": {
+        "flags": [
+          "primer_ascenso_completado"
+        ]
+      }
+    },
+    "regreso-conflicto": {
+      "style": "ink",
+      "start": "contar",
+      "nodes": {
+        "contar": {
+          "speaker": "El prisionero",
+          "text": "He visto un mundo fuera de esta caverna. Lo que observamos aquí son sombras.",
+          "choices": [
+            {
+              "id": "escuchar",
+              "text": "Continuar",
+              "next": "rechazo"
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "rechazo": {
+          "speaker": "Otro prisionero",
+          "text": "¡Imposible! Todo cuanto existe está frente a nosotros. La luz te ha confundido; ya ni siquiera reconoces nuestras sombras.",
+          "choices": [
+            {
+              "id": "explicar",
+              "text": "Sofía: podemos mostrarles el fuego y las figuras.",
+              "next": "explicar"
+            },
+            {
+              "id": "preguntar",
+              "text": "Sofía: ¿qué observación les haría revisar su creencia?",
+              "next": "preguntar"
+            },
+            {
+              "id": "respetar",
+              "text": "Sofía: no vamos a obligarlos a acompañarnos.",
+              "next": "respetar"
+            }
+          ],
+          "characterId": "otro-prisionero"
+        },
+        "explicar": {
+          "speaker": "Otro prisionero",
+          "text": "No quiero abandonar lo que conozco. Tus explicaciones no me convencen.",
+          "choices": [
+            {
+              "id": "reflexionar",
+              "text": "Continuar",
+              "next": "privado"
+            }
+          ],
+          "characterId": "otro-prisionero"
+        },
+        "preguntar": {
+          "speaker": "Otro prisionero",
+          "text": "No necesito esa prueba. Los nombres que damos a las sombras nos han bastado siempre.",
+          "choices": [
+            {
+              "id": "reflexionar",
+              "text": "Continuar",
+              "next": "privado"
+            }
+          ],
+          "characterId": "otro-prisionero"
+        },
+        "respetar": {
+          "speaker": "Otro prisionero",
+          "text": "Entonces déjennos mirar nuestra pared.",
+          "choices": [
+            {
+              "id": "reflexionar",
+              "text": "Continuar",
+              "next": "privado"
+            }
+          ],
+          "characterId": "otro-prisionero"
+        },
+        "privado": {
+          "speaker": "Sofía",
+          "text": "Compartir una experiencia no garantiza que los demás la acepten. Podemos ofrecer razones y escuchar sus objeciones, pero no decidir por ellos. Hablemos en privado sobre lo que deseas hacer.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        }
+      },
+      "reward": {
+        "flags": [
+          "regreso_caverna_completado"
+        ]
+      }
+    },
+    "companero": {
+      "style": "parchment",
+      "start": "caminar",
+      "nodes": {
+        "caminar": {
+          "speaker": "El prisionero",
+          "text": "Iré a tu lado. Podemos conversar cuando quieras y avanzar sin apresurarnos.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "volver": {
+          "speaker": "El prisionero",
+          "text": "Debemos regresar por el ascenso hasta la sala de mis compañeros. Aún no hemos terminado.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "decidir": {
+          "speaker": "Sofía",
+          "text": "Ahora conoces la luz, pero tus compañeros no quieren escucharte. ¿Qué deseas hacer?",
+          "choices": [
+            {
+              "id": "quedarse",
+              "text": "Permanecer en la caverna e intentar ayudarlos.",
+              "next": "quedarse"
+            },
+            {
+              "id": "exterior",
+              "text": "Regresar al exterior con Sofía.",
+              "next": "exterior"
+            }
+          ]
+        },
+        "quedarse": {
+          "speaker": "El prisionero",
+          "text": "Me quedaré. No puedo forzar su decisión, pero quiero estar aquí si comienzan a preguntar.",
+          "choices": [
+            {
+              "id": "respetar",
+              "text": "Continuar",
+              "next": "despedida",
+              "reward": {
+                "flags": [
+                  "decision_final_prisionero",
+                  "prisionero_se_queda"
+                ]
+              }
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "despedida": {
+          "speaker": "Sofía",
+          "text": "Respeto tu decisión. Subiré de nuevo para continuar mi viaje. Esta elección es nuestra adaptación narrativa; no es un desenlace que Platón describiera literalmente.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        },
+        "exterior": {
+          "speaker": "El prisionero",
+          "text": "Volveré al exterior contigo. Podemos seguir aprendiendo sin dejar de preguntarnos cómo ayudar a los demás.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "juntos",
+              "reward": {
+                "flags": [
+                  "decision_final_prisionero",
+                  "prisionero_sale"
+                ]
+              }
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "juntos": {
+          "speaker": "Sofía",
+          "text": "Hagamos el segundo ascenso. Esta elección es una adaptación de nuestra aventura, no un final literal del relato de Platón.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        },
+        "segunda-vez": {
+          "speaker": "El prisionero",
+          "text": "He decidido subir de nuevo contigo. Esta vez conozco el camino, aunque aprender no haya terminado.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "prisionero"
+        }
+      },
+      "entries": [
+        {
+          "requires": [
+            "decision_final_prisionero"
+          ],
+          "node": "segunda-vez"
+        },
+        {
+          "requires": [
+            "regreso_caverna_completado"
+          ],
+          "node": "decidir"
+        },
+        {
+          "requires": [
+            "primer_ascenso_completado"
+          ],
+          "node": "volver"
+        }
+      ]
+    },
+    "cierre": {
+      "style": "parchment",
+      "start": "sola",
+      "nodes": {
+        "sola": {
+          "speaker": "Sofía",
+          "text": "He recorrido por segunda vez el ascenso. Mi compañero eligió quedarse para ayudar; yo continúo con lo aprendido.",
+          "choices": [
+            {
+              "id": "pensar",
+              "text": "Continuar",
+              "next": "platon"
+            }
+          ]
+        },
+        "juntos": {
+          "speaker": "El prisionero",
+          "text": "Hemos subido de nuevo. Ahora sé que revisar lo que creemos requiere esfuerzo, y que explicarlo a otros también puede ser difícil.",
+          "choices": [
+            {
+              "id": "pensar",
+              "text": "Continuar",
+              "next": "platon"
+            }
+          ],
+          "characterId": "prisionero"
+        },
+        "platon": {
+          "speaker": "Platón",
+          "text": "La educación no es poner visión en unos ojos ciegos: exige orientar la mirada y examinar las razones. El regreso plantea además qué responsabilidad tenemos ante los otros.",
+          "choices": [
+            {
+              "id": "final",
+              "text": "Continuar",
+              "next": "final"
+            }
+          ],
+          "characterId": "plat"
+        },
+        "final": {
+          "speaker": "Sofía",
+          "text": "Investigué las sombras, acompañé el aprendizaje, regresé para escuchar el rechazo y respeté una decisión. Ahora puedo salir de la caverna y continuar el viaje.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        }
+      },
+      "entries": [
+        {
+          "requires": [
+            "prisionero_sale"
+          ],
+          "node": "juntos"
+        }
+      ],
+      "reward": {
+        "flags": [
+          "segundo_ascenso_completado",
+          "aventura_platon_completada"
+        ]
+      }
+    },
+    "otros-prisioneros": {
+      "style": "parchment",
+      "start": "pared",
+      "nodes": {
+        "pared": {
+          "speaker": "Otro prisionero",
+          "text": "Todo cuanto necesitamos está en esa pared. No queremos abandonar nuestras sombras.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "otro-prisionero"
+        }
+      }
+    }
+  },
+  "activities": {},
+  "concepts": {},
+  "memories": {},
+  "missions": [
+    {
+      "flag": "lampara_encendida",
+      "title": "Una luz propia",
+      "goal": "Enciende la lámpara en la entrada. La antorcha es opcional."
+    },
+    {
+      "flag": "sombras_comprendidas",
+      "title": "Investigar antes de juzgar",
+      "goal": "Habla con el prisionero y examina el fuego, las figuras y la proyección en la sala C."
+    },
+    {
+      "flag": "prisionero_liberado",
+      "title": "Salir por decisión propia",
+      "goal": "Regresa a B, conversa con el prisionero y abre las cadenas cuando acepte."
+    },
+    {
+      "flag": "primer_ascenso_completado",
+      "title": "El primer ascenso",
+      "goal": "Acompaña al prisionero por D hasta la salida E."
+    },
+    {
+      "flag": "regreso_caverna_completado",
+      "title": "Volver y escuchar",
+      "goal": "Regresa físicamente por D hasta B y escucha el rechazo de los otros."
+    },
+    {
+      "flag": "decision_final_prisionero",
+      "title": "Respetar una decisión",
+      "goal": "Toca al compañero para conversar en privado: quedarse o volver al exterior."
+    },
+    {
+      "flag": "segundo_ascenso_completado",
+      "title": "El segundo ascenso",
+      "goal": "Recorre de nuevo D hasta E, con el prisionero o a solas."
+    },
+    {
+      "flag": "aventura_platon_completada",
+      "title": "Continuar el viaje",
+      "goal": "Finaliza la conversación de cierre y sal por el extremo derecho de E. Se completará la aventura y se abrirá la siguiente etapa de Historia."
+    }
+  ],
+  "characters": {
+    "plat": {
+      "name": "Platón",
+      "personality": "Anfitrión y guía en encuentros clave.",
+      "spriteId": "mentor",
+      "portraitId": "portrait"
+    },
+    "prisionero": {
+      "name": "El prisionero",
+      "personality": "Teme dejar las sombras y aprende a compartir lo que descubre.",
+      "spriteId": "prisoner",
+      "portraitId": "prisoner-face"
+    },
+    "otro-prisionero": {
+      "name": "Otro prisionero",
+      "personality": "Defiende lo que siempre ha creído.",
+      "spriteId": "warden",
+      "portraitId": "warden-face"
+    }
+  },
+  "journey": {
+    "completionFlag": "aventura_platon_completada",
+    "blockedText": "Regresa a la superficie para subir a tu nave. Puedes volver a la Tierra sin terminar las misiones.",
+    "legacyCompletionFlags": [
+      "caveCompleted",
+      "plato"
+    ],
+    "companion": {
+      "characterId": "prisionero",
+      "behavior": "hablar-companero",
+      "scenes": [
+        "prisioneros",
+        "fuego",
+        "ascenso",
+        "salida"
+      ],
+      "requires": [
+        "prisionero_liberado"
+      ],
+      "excludes": [
+        "prisionero_se_queda",
+        "aventura_platon_completada"
+      ]
+    },
+    "physicalDoors": true
+  }
+}

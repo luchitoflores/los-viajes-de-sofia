@@ -1,0 +1,510 @@
+{
+  "format": "sofia-world",
+  "version": 1,
+  "id": "hegel",
+  "title": "Hegel · La transformación",
+  "summary": "Prueba jugable generada con plantillas y recursos reutilizados. No representa el arte definitivo.",
+  "artStatus": "provisional",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "philosopher": {
+    "id": "hegel",
+    "name": "Georg W. F. Hegel",
+    "portrait": "assets/portrait-socr.png"
+  },
+  "galaxy": "modern",
+  "systems": [
+    "idealismo-aleman"
+  ],
+  "themes": [],
+  "assets": {
+    "terrain": {
+      "src": "assets/planet-terrain.png",
+      "kind": "rock",
+      "width": 1012,
+      "height": 1012,
+      "label": "Recurso provisional"
+    },
+    "door": {
+      "src": "assets/polis-door.png",
+      "kind": "door",
+      "width": 70,
+      "height": 100,
+      "label": "Recurso provisional"
+    },
+    "rock": {
+      "src": "assets/polis-rock.png",
+      "kind": "rock",
+      "width": 85,
+      "height": 65,
+      "label": "Recurso provisional"
+    },
+    "notebook": {
+      "src": "assets/polis-scroll.png",
+      "kind": "scroll",
+      "width": 48,
+      "height": 32,
+      "label": "Recurso provisional"
+    },
+    "cabin": {
+      "src": "assets/polis-house.png",
+      "kind": "house",
+      "width": 160,
+      "height": 190,
+      "label": "Recurso provisional"
+    },
+    "platform": {
+      "src": "assets/polis-rock.png",
+      "kind": "rock",
+      "width": 130,
+      "height": 28,
+      "label": "Recurso provisional"
+    },
+    "sprite-camus": {
+      "src": "assets/cast-camus.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Apariencia provisional: Albert Camus"
+    },
+    "portrait-camus": {
+      "src": "assets/portrait-camus.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato provisional: Albert Camus"
+    },
+    "sprite-hegel": {
+      "src": "assets/cast-socr.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Apariencia provisional: Georg W. F. Hegel"
+    },
+    "portrait-hegel": {
+      "src": "assets/portrait-socr.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato provisional: Georg W. F. Hegel"
+    },
+    "sprite-ana": {
+      "src": "assets/cast-beau.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Apariencia provisional: Ana"
+    },
+    "portrait-ana": {
+      "src": "assets/portrait-beau.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato provisional: Ana"
+    },
+    "sprite-kant": {
+      "src": "assets/cast-kant.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Apariencia provisional: Immanuel Kant"
+    },
+    "portrait-kant": {
+      "src": "assets/portrait-kant.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato provisional: Immanuel Kant"
+    },
+    "sprite-elena": {
+      "src": "assets/cast-desc.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Apariencia provisional: Elena"
+    },
+    "portrait-elena": {
+      "src": "assets/portrait-desc.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato provisional: Elena"
+    },
+    "sprite-heidegger": {
+      "src": "assets/cast-aris.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Apariencia provisional: Martin Heidegger"
+    },
+    "portrait-heidegger": {
+      "src": "assets/portrait-aris.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato provisional: Martin Heidegger"
+    },
+    "sprite-clara": {
+      "src": "assets/cast-beau.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Apariencia provisional: Clara"
+    },
+    "portrait-clara": {
+      "src": "assets/portrait-beau.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato provisional: Clara"
+    },
+    "npc-worker": {
+      "src": "assets/companion-idle.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "NPC genérico: trabajador"
+    },
+    "portrait-worker": {
+      "src": "assets/portrait-prisoner.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato genérico: trabajador"
+    },
+    "background-two-level": {
+      "src": "assets/polis-ascent-v2.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Fondo genérico: two-level"
+    }
+  },
+  "characters": {
+    "camus": {
+      "name": "Albert Camus",
+      "personality": "Interlocutor atento al absurdo y a la lucidez.",
+      "spriteId": "sprite-camus",
+      "portraitId": "portrait-camus"
+    },
+    "sisyphus": {
+      "name": "Sísifo",
+      "personality": "Personaje del mito; reflexiona sobre su esfuerzo repetido.",
+      "spriteId": "npc-worker",
+      "portraitId": "portrait-worker"
+    },
+    "hegel": {
+      "name": "Georg W. F. Hegel",
+      "personality": "Busca comprender las mediaciones del cambio; apariencia genérica provisional.",
+      "spriteId": "sprite-hegel",
+      "portraitId": "portrait-hegel"
+    },
+    "marco": {
+      "name": "Marco",
+      "personality": "Habitante que examina un conflicto en su comunidad.",
+      "spriteId": "npc-worker",
+      "portraitId": "portrait-worker"
+    },
+    "ana": {
+      "name": "Ana",
+      "personality": "Interlocutora que pregunta qué se conserva al cambiar.",
+      "spriteId": "sprite-ana",
+      "portraitId": "portrait-ana"
+    },
+    "kant": {
+      "name": "Immanuel Kant",
+      "personality": "Pregunta por las condiciones del conocimiento y la autonomía moral.",
+      "spriteId": "sprite-kant",
+      "portraitId": "portrait-kant"
+    },
+    "elena": {
+      "name": "Elena",
+      "personality": "Observadora que contrasta lo experimentado con los modos de conocer.",
+      "spriteId": "sprite-elena",
+      "portraitId": "portrait-elena"
+    },
+    "heidegger": {
+      "name": "Martin Heidegger",
+      "personality": "Interlocutor sobre ser-en-el-mundo y temporalidad; apariencia genérica provisional.",
+      "spriteId": "sprite-heidegger",
+      "portraitId": "portrait-heidegger"
+    },
+    "clara": {
+      "name": "Clara",
+      "personality": "Habitante que reflexiona sobre ocupaciones y posibilidades cotidianas.",
+      "spriteId": "sprite-clara",
+      "portraitId": "portrait-clara"
+    }
+  },
+  "terrain": "terrain",
+  "intro": "arrival",
+  "surface": {
+    "spawnAngle": -8,
+    "objects": [
+      {
+        "id": "host",
+        "kind": "philosopher",
+        "label": "Georg W. F. Hegel",
+        "angleDeg": 0,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "talk",
+        "to": "library",
+        "collision": false,
+        "collisionWidth": 48,
+        "collisionHeight": 59,
+        "asset": "sprite-hegel",
+        "characterId": "hegel",
+        "instanceId": "host",
+        "behavior": "host-talk"
+      },
+      {
+        "id": "door-transformation",
+        "kind": "door",
+        "label": "Entrar: Sala de la transformación",
+        "angleDeg": 40,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "door",
+        "to": "library",
+        "collision": false,
+        "collisionWidth": 42,
+        "collisionHeight": 50,
+        "asset": "door",
+        "behavior": "door-transformation"
+      },
+      {
+        "id": "portal-kant",
+        "kind": "door",
+        "label": "Portal a kant",
+        "angleDeg": 160,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "door",
+        "to": "library",
+        "collision": false,
+        "collisionWidth": 42,
+        "collisionHeight": 50,
+        "asset": "door",
+        "behavior": "portal-kant"
+      }
+    ]
+  },
+  "interiors": {
+    "transformation": {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "template": "two-level",
+      "backgroundGround": 470,
+      "name": "Sala de la transformación",
+      "subtitle": "Plantilla genérica · recursos provisionales",
+      "background": "background-two-level",
+      "width": 1280,
+      "floor": 560,
+      "spawn": {
+        "x": 160,
+        "y": 560
+      },
+      "items": [
+        {
+          "id": "return-door-transformation",
+          "type": "door",
+          "x": 55,
+          "y": 560,
+          "label": "Regresar por la entrada",
+          "asset": "door",
+          "behavior": "return-door-transformation"
+        },
+        {
+          "id": "transformation-marco",
+          "instanceId": "transformation-marco",
+          "characterId": "marco",
+          "type": "philosopher",
+          "x": 220,
+          "y": 560,
+          "asset": "npc-worker",
+          "label": "Marco",
+          "behavior": "transformation-marco"
+        },
+        {
+          "id": "transformation-ana",
+          "instanceId": "transformation-ana",
+          "characterId": "ana",
+          "type": "philosopher",
+          "x": 1080,
+          "y": 326.468085106383,
+          "asset": "sprite-ana",
+          "label": "Ana",
+          "behavior": "transformation-ana"
+        }
+      ],
+      "regions": [
+        {
+          "id": "lower",
+          "type": "floor",
+          "x": 0,
+          "y": 560,
+          "w": 306.67,
+          "h": 160
+        },
+        {
+          "id": "stairs",
+          "type": "stairs",
+          "x": 306.67,
+          "y": 326.468085106383,
+          "w": 560,
+          "h": 233.531914893617
+        },
+        {
+          "id": "upper",
+          "type": "floor",
+          "x": 866.67,
+          "y": 326.468085106383,
+          "w": 413.33,
+          "h": 393.531914893617
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "host-talk": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "arrival"
+        }
+      ]
+    },
+    "door-transformation": {
+      "actions": [
+        {
+          "type": "enter",
+          "target": "transformation"
+        }
+      ]
+    },
+    "return-door-transformation": {
+      "actions": [
+        {
+          "type": "return"
+        }
+      ]
+    },
+    "transformation-marco": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "conflict"
+        }
+      ]
+    },
+    "transformation-ana": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "development"
+        }
+      ]
+    },
+    "portal-kant": {
+      "actions": [
+        {
+          "type": "portal",
+          "target": "kant"
+        }
+      ]
+    }
+  },
+  "dialogues": {
+    "arrival": {
+      "start": "question",
+      "nodes": {
+        "question": {
+          "characterId": "hegel",
+          "speaker": "Georg W. F. Hegel",
+          "text": "Comprender una forma de vida requiere atender a su desarrollo y a las tensiones que la atraviesan. Una contradicción no es simplemente una pelea: puede mostrar límites internos de lo que tomábamos por estable.",
+          "choices": [
+            {
+              "id": "continue",
+              "text": "Continuar explorando"
+            }
+          ]
+        }
+      }
+    },
+    "conflict": {
+      "start": "question",
+      "nodes": {
+        "question": {
+          "characterId": "marco",
+          "speaker": "Marco",
+          "text": "Nuestra comunidad proclama libertad para todos, pero sus reglas impiden a algunos participar. ¿Basta con repetir la declaración de libertad?",
+          "choices": [
+            {
+              "id": "examine",
+              "text": "Hay que examinar cómo las reglas contradicen esa pretensión.",
+              "feedback": "La tensión obliga a revisar la forma concreta de realizar la libertad. No se resuelve siguiendo una receta de tres pasos.",
+              "reward": {
+                "flags": [
+                  "hegel-conflict"
+                ]
+              }
+            },
+            {
+              "id": "silence",
+              "text": "Es mejor ocultar el conflicto para conservar el orden.",
+              "feedback": "Ocultarlo no explica por qué la comunidad produce aquello que niega su propia pretensión."
+            }
+          ]
+        }
+      }
+    },
+    "development": {
+      "start": "question",
+      "nodes": {
+        "question": {
+          "characterId": "ana",
+          "speaker": "Ana",
+          "text": "Subir no significa que toda historia mejore automáticamente. En una transformación se cuestionan formas anteriores y también se conservan determinaciones. ¿Qué tendría que cambiar para realizar mejor aquella libertad?",
+          "choices": [
+            {
+              "id": "mediate",
+              "text": "Revisar las instituciones y lo que permiten hacer a cada persona.",
+              "feedback": "Pensar el desarrollo exige reconstruir sus mediaciones y sus límites; no basta sumar opiniones enfrentadas.",
+              "reward": {
+                "flags": [
+                  "hegel-development"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "activities": {},
+  "concepts": {},
+  "memories": {},
+  "missions": [],
+  "spawns": {
+    "surface": {
+      "scene": "surface",
+      "angle": -8
+    },
+    "transformation": {
+      "scene": "transformation",
+      "x": 160,
+      "y": 560
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "sofia-mundos-ideas-phaser",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "check": "tsc --noEmit",
+    "compile:standalone": "npm run build",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "test:browser": "python tests/browser_planet.py",
+    "test:story": "python tests/browser_story.py",
+    "test:taps": "python tests/browser_taps.py",
+    "test:universe": "python tests/browser_universe.py",
+    "test:universe-mobile": "python tests/browser_universe_mobile.py",
+    "test:authoring": "python tests/browser_authoring.py",
+    "test:resources": "python tests/browser_resource_transfer.py",
+    "generate:worlds": "node --experimental-strip-types scripts/generate-worlds.ts",
+    "connect": "node --experimental-strip-types scripts/generate-worlds.ts",
+    "validate:worlds": "node --experimental-strip-types scripts/generate-worlds.ts --check",
+    "test:templates": "python tests/browser_templates.py",
+    "test:npc-editor": "python tests/browser_npc_editor.py",
+    "test:batch-mobile": "python tests/browser_batch_mobile.py",
+    "test:spaceflight": "python tests/browser_spaceflight.py",
+    "test:play-modes": "python tests/browser_play_modes.py",
+    "test:restart": "python tests/browser_restart.py",
+    "test:story-map": "python tests/browser_story_map.py",
+    "test:dialogue-enter": "python tests/browser_dialogue_enter.py",
+    "test:dialogue-stage": "python tests/browser_dialogue_stage.py",
+    "test:plato-adventure": "python tests/browser_plato_adventure.py",
+    "apply:project": "node --experimental-strip-types scripts/apply-project.ts",
+    "test:core": "python tests/browser_core_workbench.py",
+    "test:activity-invitation": "python tests/browser_activity_invitation.py",
+    "test:start-menu": "python tests/browser_start_menu.py",
+    "test:earth": "python tests/browser_earth_and_return.py",
+    "test:introduction": "python tests/browser_planet_introduction.py"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "phaser": "3.90.0"
+  }
+}

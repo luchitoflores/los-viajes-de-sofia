@@ -1,0 +1,54 @@
+{
+  "format": "sofia-story",
+  "version": 1,
+  "stages": [
+    {
+      "world": "plato",
+      "flags": [
+        "aventura_platon_completada"
+      ],
+      "goal": "Investiga las sombras, regresa con el prisionero, respeta su decisión y completa el segundo ascenso."
+    },
+    {
+      "world": "kant",
+      "flags": [
+        "intro-complete",
+        "kant-duty"
+      ],
+      "goal": "Conoce a Kant y examina el deber en la Sala de las máximas."
+    },
+    {
+      "world": "hegel",
+      "flags": [
+        "intro-complete",
+        "hegel-development"
+      ],
+      "goal": "Conoce a Hegel, conversa con Marco y sube para dialogar con Ana."
+    },
+    {
+      "world": "heidegger",
+      "flags": [
+        "intro-complete",
+        "heidegger-time"
+      ],
+      "goal": "Conoce a Heidegger y conversa con Clara sobre la temporalidad."
+    },
+    {
+      "world": "sartre",
+      "flags": [
+        "intro-complete",
+        "cafe-complete",
+        "choice-complete"
+      ],
+      "goal": "Conoce a Sartre y completa el Café de las Máscaras y la Sala de los Dos Caminos."
+    },
+    {
+      "world": "camus",
+      "flags": [
+        "intro-complete",
+        "sisyphus-reflected"
+      ],
+      "goal": "Conoce a Camus y conversa con Sísifo sobre la repetición y la rebelión."
+    }
+  ]
+}

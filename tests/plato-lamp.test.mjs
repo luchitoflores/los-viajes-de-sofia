@@ -1,0 +1,13 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
+import {parseWorld} from '../src/worlds/schema.ts';import {restorePlatoContinuity} from '../src/worlds/plato-compatibility.ts';import {freshProgress,chooseDialogue,gate} from '../src/engine/progression.ts';
+const world=()=>parseWorld(JSON.parse(readFileSync('public/worlds/plato.json','utf8')));
+test('Completing the entrance observation lights the lamp before the dark room',()=>{
+ const w=world(),p=freshProgress(w);p.introComplete=true;assert.equal(gate(w,p,'entrada-prisioneros').allowed,false);const d=w.dialogues['entrada-observacion'],n=d.nodes[d.start];chooseDialogue(w,p,'entrada-observacion',d.start,n.choices[0].id);assert.ok(p.flags.includes('lampara_encendida'));assert.equal(gate(w,p,'entrada-prisioneros').allowed,true);
+});
+test('Existing cave drafts recover lamp continuity without replacing authored text or rewards',()=>{
+ const w=world();w.dialogues['entrada-observacion'].nodes.oscuro.text='Texto del autor';w.dialogues['entrada-observacion'].reward={flags:['custom']};delete w.interactions['entrada-prisioneros'].requires;w.interiors.prisioneros.events=w.interiors.prisioneros.events.filter(e=>e.id!=='recuperar-lampara');const corrected=restorePlatoContinuity(w);assert.equal(corrected.dialogues['entrada-observacion'].nodes.oscuro.text,'Texto del autor');assert.ok(corrected.dialogues['entrada-observacion'].reward.flags.includes('custom'));assert.ok(corrected.dialogues['entrada-observacion'].reward.flags.includes('lampara_encendida'));assert.equal(corrected.interiors.prisioneros.events.filter(e=>e.id==='recuperar-lampara').length,1);restorePlatoContinuity(corrected);assert.equal(corrected.interiors.prisioneros.events.filter(e=>e.id==='recuperar-lampara').length,1);parseWorld(corrected);
+});
+
+test('The painted arch in the fire room leads to the ascent after liberation, including old drafts',()=>{
+ const w=world(),p=freshProgress(w);p.introComplete=true;assert.equal(gate(w,p,'fuego-ascenso').allowed,false);p.flags.push('prisionero_liberado');assert.equal(gate(w,p,'fuego-ascenso').allowed,true);assert.equal(w.interactions['fuego-ascenso'].actions[0].target,'ascenso');w.interiors.fuego.items=w.interiors.fuego.items.filter(o=>o.id!=='fuego-ascenso');delete w.interactions['fuego-ascenso'];restorePlatoContinuity(w);restorePlatoContinuity(w);assert.equal(w.interiors.fuego.items.filter(o=>o.id==='fuego-ascenso').length,1);parseWorld(w);const door=w.interiors.fuego.items.find(o=>o.id==='fuego-ascenso');door.tooltip='Texto personalizado';restorePlatoContinuity(w);assert.equal(door.tooltip,'Texto personalizado');
+});

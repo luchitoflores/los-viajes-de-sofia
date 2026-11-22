@@ -1,0 +1,767 @@
+{
+  "format": "sofia-world",
+  "version": 1,
+  "id": "sartre",
+  "title": "Sartre · Existir y hacerse",
+  "summary": "Caso funcional del motor común. El arte reutilizado es provisional; la geografía definitiva está planificada en el documento de diseño.",
+  "artStatus": "provisional",
+  "philosopher": {
+    "id": "sartre",
+    "name": "Jean-Paul Sartre",
+    "portrait": "assets/portrait-sartre.png"
+  },
+  "galaxy": "contemporary",
+  "systems": [
+    "existentialism",
+    "phenomenology"
+  ],
+  "themes": [],
+  "terrain": "terrain",
+  "intro": "first-meeting",
+  "assets": {
+    "terrain": {
+      "src": "assets/planet-terrain.png",
+      "width": 1012,
+      "height": 1012,
+      "kind": "rock"
+    },
+    "sartre": {
+      "src": "assets/cast-sartre.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher"
+    },
+    "ship": {
+      "src": "assets/polis-ship.png",
+      "width": 130,
+      "height": 150,
+      "kind": "ship"
+    },
+    "cafe-door": {
+      "src": "assets/polis-door.png",
+      "width": 70,
+      "height": 110,
+      "kind": "door"
+    },
+    "choice-door": {
+      "src": "assets/polis-door.png",
+      "width": 70,
+      "height": 110,
+      "kind": "door"
+    },
+    "notebook": {
+      "src": "assets/polis-scroll.png",
+      "width": 55,
+      "height": 38,
+      "kind": "scroll"
+    },
+    "cafe-bg": {
+      "src": "assets/cmid.webp",
+      "width": 1600,
+      "height": 540,
+      "kind": "house"
+    },
+    "choice-bg": {
+      "src": "assets/cmid.webp",
+      "width": 1600,
+      "height": 540,
+      "kind": "house"
+    }
+  },
+  "surface": {
+    "spawnAngle": -7,
+    "objects": [
+      {
+        "id": "sartre-mentor",
+        "kind": "philosopher",
+        "label": "Jean-Paul Sartre",
+        "angleDeg": 0,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "talk",
+        "to": "library",
+        "collision": false,
+        "collisionWidth": 40,
+        "collisionHeight": 50,
+        "asset": "sartre",
+        "behavior": "mentor"
+      },
+      {
+        "id": "sartre-ship",
+        "kind": "ship",
+        "label": "La nave de Sofía",
+        "angleDeg": -35,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "none",
+        "to": "library",
+        "collision": false,
+        "collisionWidth": 40,
+        "collisionHeight": 50,
+        "asset": "ship",
+        "behavior": "ship"
+      },
+      {
+        "id": "sartre-cafe-door",
+        "kind": "door",
+        "label": "Café de las Máscaras",
+        "angleDeg": 65,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "door",
+        "to": "library",
+        "collision": false,
+        "collisionWidth": 40,
+        "collisionHeight": 50,
+        "asset": "cafe-door",
+        "behavior": "cafe-entry"
+      },
+      {
+        "id": "sartre-choice-door",
+        "kind": "door",
+        "label": "Sala de los Dos Caminos",
+        "angleDeg": 155,
+        "height": 0,
+        "scale": 1,
+        "rotation": 0,
+        "flip": false,
+        "interaction": "door",
+        "to": "library",
+        "collision": false,
+        "collisionWidth": 40,
+        "collisionHeight": 50,
+        "asset": "choice-door",
+        "behavior": "choice-entry"
+      }
+    ]
+  },
+  "interiors": {
+    "cafe": {
+      "name": "Café de las Máscaras",
+      "subtitle": "Caso de validación · recursos visuales provisionales",
+      "background": "cafe-bg",
+      "width": 1600,
+      "floor": 470,
+      "spawn": {
+        "x": 160,
+        "y": 470
+      },
+      "items": [
+        {
+          "id": "cafe-exit",
+          "label": "Volver al planeta",
+          "x": 60,
+          "y": 470,
+          "type": "door",
+          "asset": "cafe-door",
+          "behavior": "return-surface"
+        },
+        {
+          "id": "cafe-mentor",
+          "label": "Conversar con Sartre",
+          "x": 350,
+          "y": 470,
+          "type": "philosopher",
+          "asset": "sartre",
+          "behavior": "cafe-mentor-talk"
+        },
+        {
+          "id": "cafe-notebook",
+          "label": "Investigar el cuaderno",
+          "x": 650,
+          "y": 470,
+          "type": "scroll",
+          "asset": "notebook",
+          "behavior": "cafe-evidence"
+        },
+        {
+          "id": "cafe-pairs-table",
+          "label": "Relacionar conceptos",
+          "x": 950,
+          "y": 470,
+          "type": "scroll",
+          "asset": "notebook",
+          "behavior": "pairs"
+        },
+        {
+          "id": "cafe-evidence-table",
+          "label": "Clasificar evidencias",
+          "x": 1250,
+          "y": 470,
+          "type": "scroll",
+          "asset": "notebook",
+          "behavior": "classification"
+        }
+      ],
+      "regions": [
+        {
+          "id": "cafe-floor",
+          "type": "floor",
+          "x": 0,
+          "y": 470,
+          "w": 1600,
+          "h": 70
+        }
+      ]
+    },
+    "choice-room": {
+      "name": "Sala de los Dos Caminos",
+      "subtitle": "Caso de validación · recursos visuales provisionales",
+      "background": "choice-bg",
+      "width": 1600,
+      "floor": 470,
+      "spawn": {
+        "x": 160,
+        "y": 470
+      },
+      "items": [
+        {
+          "id": "choice-room-exit",
+          "label": "Volver al planeta",
+          "x": 60,
+          "y": 470,
+          "type": "door",
+          "asset": "cafe-door",
+          "behavior": "return-surface"
+        },
+        {
+          "id": "choice-mentor",
+          "label": "Examinar el caso con Sartre",
+          "x": 500,
+          "y": 470,
+          "type": "philosopher",
+          "asset": "sartre",
+          "behavior": "young-person"
+        },
+        {
+          "id": "choice-notebook",
+          "label": "Decidir y argumentar",
+          "x": 1050,
+          "y": 470,
+          "type": "scroll",
+          "asset": "notebook",
+          "behavior": "decision"
+        }
+      ],
+      "regions": [
+        {
+          "id": "choice-room-floor",
+          "type": "floor",
+          "x": 0,
+          "y": 470,
+          "w": 1600,
+          "h": 70
+        }
+      ]
+    }
+  },
+  "interactions": {
+    "mentor": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "mentor-talk"
+        }
+      ]
+    },
+    "ship": {
+      "actions": [
+        {
+          "type": "examine",
+          "text": "La nave te permite volver al atlas mediante el botón Mundos. Tu progreso permanece en este planeta."
+        }
+      ]
+    },
+    "cafe-entry": {
+      "actions": [
+        {
+          "type": "enter",
+          "target": "cafe"
+        }
+      ]
+    },
+    "choice-entry": {
+      "actions": [
+        {
+          "type": "enter",
+          "target": "choice-room"
+        }
+      ]
+    },
+    "return-surface": {
+      "actions": [
+        {
+          "type": "return"
+        }
+      ]
+    },
+    "cafe-mentor-talk": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "cafe-talk"
+        }
+      ]
+    },
+    "cafe-evidence": {
+      "actions": [
+        {
+          "type": "activate",
+          "text": "El cuaderno registra tareas, cansancio y proyectos fuera del trabajo. No demuestra que una profesión determine toda una identidad.",
+          "reward": {
+            "flags": [
+              "cafe-evidence"
+            ]
+          }
+        }
+      ]
+    },
+    "pairs": {
+      "actions": [
+        {
+          "type": "activity",
+          "target": "roles-pairs"
+        }
+      ],
+      "requires": [
+        "cafe-heard"
+      ],
+      "blockedText": "Conversa primero sobre el ejemplo del camarero."
+    },
+    "classification": {
+      "actions": [
+        {
+          "type": "activity",
+          "target": "cafe-classification"
+        }
+      ],
+      "requires": [
+        "cafe-heard",
+        "cafe-evidence",
+        "cafe-pairs"
+      ],
+      "blockedText": "Escucha al filósofo, examina el cuaderno y relaciona los conceptos antes de clasificar."
+    },
+    "young-person": {
+      "actions": [
+        {
+          "type": "talk",
+          "target": "young-person-talk"
+        }
+      ]
+    },
+    "decision": {
+      "actions": [
+        {
+          "type": "activity",
+          "target": "young-person-choice"
+        }
+      ],
+      "requires": [
+        "decision-ready"
+      ],
+      "blockedText": "Escucha primero la situación del joven."
+    }
+  },
+  "dialogues": {
+    "first-meeting": {
+      "start": "start",
+      "nodes": {
+        "start": {
+          "speaker": "Jean-Paul Sartre",
+          "text": "Soy Jean-Paul Sartre. Pensemos en un cortapapeles: alguien concibió para qué serviría antes de fabricarlo. ¿Qué vino primero en este objeto?",
+          "choices": [
+            {
+              "id": "purpose",
+              "text": "La finalidad y el diseño.",
+              "next": "purpose"
+            },
+            {
+              "id": "discover",
+              "text": "Se fabricó y después eligió su finalidad.",
+              "next": "object"
+            }
+          ]
+        },
+        "object": {
+          "speaker": "Jean-Paul Sartre",
+          "text": "Este objeto fue fabricado conforme a un proyecto previo. No puede decidir su finalidad como una persona. Probemos de nuevo.",
+          "choices": [
+            {
+              "id": "back",
+              "text": "Volver a observar.",
+              "next": "start"
+            }
+          ]
+        },
+        "purpose": {
+          "speaker": "Jean-Paul Sartre",
+          "text": "Eso introduce la esencia del objeto antes de su fabricación. En mi filosofía, una persona no llega con una definición cerrada de lo que debe ser. ¿Eso significa poder hacer cualquier cosa?",
+          "choices": [
+            {
+              "id": "limits",
+              "text": "No: también hay una situación y límites.",
+              "next": "situated"
+            },
+            {
+              "id": "unlimited",
+              "text": "Sí, ninguna circunstancia importa.",
+              "next": "limits"
+            }
+          ]
+        },
+        "limits": {
+          "speaker": "Jean-Paul Sartre",
+          "text": "Nuestro cuerpo, historia y entorno importan. Ser libre no equivale a tener todos los medios ni a controlar los resultados.",
+          "choices": [
+            {
+              "id": "understand",
+              "text": "Entiendo: elijo dentro de una situación.",
+              "next": "situated"
+            }
+          ]
+        },
+        "situated": {
+          "speaker": "Jean-Paul Sartre",
+          "text": "Podemos examinar los papeles que asumimos y cómo respondemos al elegir. Encontrarás el Café de las Máscaras y la Sala de los Dos Caminos. Volveré a conversar contigo cuando quieras.",
+          "choices": [
+            {
+              "id": "explore",
+              "text": "Quiero explorar y seguir preguntando."
+            }
+          ]
+        }
+      },
+      "reward": {
+        "concepts": [
+          "existence-essence",
+          "situated-freedom"
+        ]
+      }
+    },
+    "mentor-talk": {
+      "start": "start",
+      "nodes": {
+        "start": {
+          "speaker": "Jean-Paul Sartre",
+          "text": "¿Qué quieres examinar?",
+          "choices": [
+            {
+              "id": "essence",
+              "text": "Existencia y esencia.",
+              "next": "essence"
+            },
+            {
+              "id": "roles",
+              "text": "Mis papeles sociales.",
+              "next": "roles"
+            },
+            {
+              "id": "choice",
+              "text": "La responsabilidad al elegir.",
+              "next": "choice"
+            }
+          ]
+        },
+        "essence": {
+          "speaker": "Jean-Paul Sartre",
+          "text": "El ejemplo del cortapapeles contrasta un objeto concebido para una función con una existencia que se hace mediante proyectos.",
+          "choices": [
+            {
+              "id": "done",
+              "text": "Seguir explorando."
+            }
+          ]
+        },
+        "roles": {
+          "speaker": "Jean-Paul Sartre",
+          "text": "Puedes ser camarera, estudiante o astronauta sin quedar reducida para siempre a ese papel. El problema es tratarte como una cosa fija o negar tu situación.",
+          "choices": [
+            {
+              "id": "done",
+              "text": "Visitar el café."
+            }
+          ]
+        },
+        "choice": {
+          "speaker": "Jean-Paul Sartre",
+          "text": "En la sala no buscamos adivinar una respuesta moral impuesta por mí. Examina la situación, las posibilidades y las razones que puedes asumir.",
+          "choices": [
+            {
+              "id": "done",
+              "text": "Examinar mis razones."
+            }
+          ]
+        }
+      }
+    },
+    "cafe-talk": {
+      "start": "start",
+      "nodes": {
+        "start": {
+          "speaker": "Jean-Paul Sartre",
+          "text": "Observa el oficio y las expresiones del café. El ejemplo del camarero en El ser y la nada cuestiona identificarse con un papel como si fuera una naturaleza fija. No condena trabajar ni desempeñar bien una tarea.",
+          "choices": [
+            {
+              "id": "ask",
+              "text": "¿Puedo asumir un papel sin reducirme a él?",
+              "next": "roles"
+            }
+          ]
+        },
+        "roles": {
+          "speaker": "Jean-Paul Sartre",
+          "text": "Sí. Investiga el cuaderno, relaciona los conceptos y clasifica las evidencias. Distingue negar tus posibilidades de negar tus circunstancias.",
+          "choices": [
+            {
+              "id": "investigate",
+              "text": "Voy a investigar."
+            }
+          ]
+        }
+      },
+      "reward": {
+        "flags": [
+          "cafe-heard"
+        ]
+      }
+    },
+    "young-person-talk": {
+      "start": "start",
+      "nodes": {
+        "start": {
+          "speaker": "Jean-Paul Sartre",
+          "text": "Un joven me consultó si debía quedarse cuidando a su madre o partir para unirse a las fuerzas de la Francia Libre. Lo atraían obligaciones diferentes. ¿Puede una fórmula decidir por él?",
+          "choices": [
+            {
+              "id": "formula",
+              "text": "Busco una regla que me quite toda responsabilidad.",
+              "next": "formula"
+            },
+            {
+              "id": "reason",
+              "text": "Quiero examinar su situación y las razones.",
+              "next": "reason"
+            }
+          ]
+        },
+        "formula": {
+          "speaker": "Jean-Paul Sartre",
+          "text": "Puede consultar principios y personas. Pero también debe decidir cómo interpretarlos y a quién escuchar: la consulta no borra su responsabilidad.",
+          "choices": [
+            {
+              "id": "continue",
+              "text": "Examinar las alternativas.",
+              "next": "reason"
+            }
+          ]
+        },
+        "reason": {
+          "speaker": "Jean-Paul Sartre",
+          "text": "Entra en el cuaderno de decisiones. Ninguna de las dos opciones se marca como respuesta moral correcta. Lo que examinaremos es la argumentación y la responsabilidad asumida.",
+          "choices": [
+            {
+              "id": "ready",
+              "text": "Estoy preparada."
+            }
+          ]
+        }
+      },
+      "reward": {
+        "flags": [
+          "decision-ready"
+        ]
+      }
+    }
+  },
+  "activities": {
+    "roles-pairs": {
+      "type": "pairs",
+      "title": "Conceptos en relación",
+      "prompt": "Relaciona cada concepto con su descripción. Puedes tocar ambos lados; también funciona con teclado.",
+      "pairs": [
+        {
+          "id": "facticity",
+          "left": "Facticidad",
+          "right": "Circunstancias y condiciones dadas.",
+          "feedback": "El pasado, el cuerpo y el contexto no son una materia que podamos ignorar."
+        },
+        {
+          "id": "project",
+          "left": "Proyecto",
+          "right": "Posibilidades hacia las que me oriento.",
+          "feedback": "Un proyecto da sentido a lo que hago sin ser una esencia fija."
+        },
+        {
+          "id": "bad-faith-pair",
+          "left": "Mala fe",
+          "right": "Negar aspectos de mi condición para eludirla.",
+          "feedback": "No equivale simplemente a mentir a otra persona."
+        }
+      ],
+      "reward": {
+        "flags": [
+          "cafe-pairs"
+        ]
+      }
+    },
+    "cafe-classification": {
+      "type": "classify",
+      "title": "Café de las Máscaras",
+      "prompt": "Arrastra cada evidencia a una categoría, o tócala y elige la categoría. Tener un oficio no basta para ser de mala fe.",
+      "categories": [
+        {
+          "id": "fixed-role",
+          "label": "Me reduzco a un papel fijo"
+        },
+        {
+          "id": "denied-situation",
+          "label": "Niego mi situación"
+        },
+        {
+          "id": "situated",
+          "label": "Reconozco situación y posibilidades"
+        }
+      ],
+      "items": [
+        {
+          "id": "job",
+          "text": "Mi oficio determina para siempre todo lo que puedo llegar a ser.",
+          "category": "fixed-role",
+          "feedback": "Convierte un papel social en una definición cerrada de sí mismo."
+        },
+        {
+          "id": "anything",
+          "text": "Mi historia, mi cuerpo y mis recursos no limitan ninguna posibilidad.",
+          "category": "denied-situation",
+          "feedback": "Ignora la facticidad: libertad no significa omnipotencia."
+        },
+        {
+          "id": "work",
+          "text": "Cumplo mi tarea y reconozco que no me agoto en este papel.",
+          "category": "situated",
+          "feedback": "Asumir una tarea no elimina otras posibilidades."
+        },
+        {
+          "id": "conditions",
+          "text": "No elegí todas mis circunstancias; examinaré qué puedo hacer en ellas.",
+          "category": "situated",
+          "feedback": "No niega ni las condiciones ni la posibilidad de proyectarse."
+        }
+      ],
+      "reward": {
+        "flags": [
+          "cafe-complete"
+        ],
+        "concepts": [
+          "bad-faith"
+        ]
+      }
+    },
+    "young-person-choice": {
+      "type": "decisions",
+      "title": "Sala de los Dos Caminos",
+      "prompt": "El joven considera cuidar a su madre o partir para incorporarse a la Francia Libre. Elige una alternativa y argumenta. Las consecuencias siguientes son simulaciones didácticas, no predicciones de Sartre.",
+      "options": [
+        {
+          "id": "care",
+          "text": "Quedarme para cuidar a mi madre.",
+          "consequence": "Puedes ofrecerle presencia y cuidados directos. Renuncias por ahora a partir; tendrás que asumir esa pérdida y revisar cómo sostener tu decisión.",
+          "reward": {
+            "flags": [
+              "choice-care"
+            ]
+          }
+        },
+        {
+          "id": "resist",
+          "text": "Partir para incorporarme a la Francia Libre.",
+          "consequence": "Asumes un compromiso político incierto y peligroso. Tu madre pierde tu presencia cercana; deberás responder por esa ausencia sin garantía de éxito.",
+          "reward": {
+            "flags": [
+              "choice-resist"
+            ]
+          }
+        }
+      ],
+      "reasons": [
+        {
+          "id": "assume",
+          "text": "Reconozco las obligaciones en conflicto, los límites y lo que sacrifico; asumo esta elección.",
+          "feedback": "La razón no borra la angustia ni garantiza el resultado. Hace explícita una responsabilidad situada.",
+          "adequate": true
+        },
+        {
+          "id": "delegate",
+          "text": "Una autoridad decidió por mí; ya no tengo responsabilidad.",
+          "feedback": "Elegir a quién obedecer e interpretar una indicación también implica decidir.",
+          "adequate": false
+        },
+        {
+          "id": "omnipotence",
+          "text": "Mi libertad garantiza que no habrá pérdidas ni límites.",
+          "feedback": "La libertad no elimina los límites, los riesgos ni la situación del joven.",
+          "adequate": false
+        }
+      ],
+      "reward": {
+        "flags": [
+          "choice-complete"
+        ],
+        "concepts": [
+          "responsibility"
+        ],
+        "memories": [
+          "young-person"
+        ]
+      }
+    }
+  },
+  "concepts": {
+    "existence-essence": {
+      "name": "Existencia y esencia",
+      "text": "En el planteamiento de Sartre, no nacemos con una definición humana prefijada como la finalidad de un objeto fabricado."
+    },
+    "bad-faith": {
+      "name": "Mala fe",
+      "text": "Engañarse acerca de la propia condición: reducirse a un papel fijo o negar la situación que limita las posibilidades. Tener un oficio no basta para estar de mala fe."
+    },
+    "situated-freedom": {
+      "name": "Libertad situada",
+      "text": "Decidimos en circunstancias corporales, históricas y sociales que no elegimos por completo. Libertad no significa omnipotencia."
+    },
+    "responsibility": {
+      "name": "Responsabilidad",
+      "text": "Elegir implica asumir un proyecto y responder por él; una regla externa no elimina por sí sola esa responsabilidad."
+    }
+  },
+  "memories": {
+    "young-person": {
+      "name": "Una elección sin garantía",
+      "text": "El caso del joven y su madre se inspira en El existencialismo es un humanismo. Las consecuencias mostradas son una simulación didáctica; Sartre no prescribe aquí una de las dos opciones como respuesta correcta."
+    }
+  },
+  "missions": [
+    {
+      "flag": "intro-complete",
+      "title": "Conocer a Sartre",
+      "goal": "Observar el cortapapeles y distinguir existencia y esencia."
+    },
+    {
+      "flag": "cafe-complete",
+      "title": "Café de las Máscaras",
+      "goal": "Conversar, investigar, relacionar conceptos y clasificar las evidencias."
+    },
+    {
+      "flag": "choice-complete",
+      "title": "Sala de los Dos Caminos",
+      "goal": "Examinar el caso del joven, elegir y argumentar sin delegar la responsabilidad."
+    }
+  ]
+}

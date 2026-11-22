@@ -1,0 +1,670 @@
+{
+  "format": "sofia-blueprints",
+  "version": 1,
+  "assets": {
+    "terrain": {
+      "src": "assets/planet-terrain.png",
+      "kind": "rock",
+      "width": 1012,
+      "height": 1012,
+      "label": "Recurso provisional"
+    },
+    "door": {
+      "src": "assets/polis-door.png",
+      "kind": "door",
+      "width": 70,
+      "height": 100,
+      "label": "Recurso provisional"
+    },
+    "rock": {
+      "src": "assets/polis-rock.png",
+      "kind": "rock",
+      "width": 85,
+      "height": 65,
+      "label": "Recurso provisional"
+    },
+    "notebook": {
+      "src": "assets/polis-scroll.png",
+      "kind": "scroll",
+      "width": 48,
+      "height": 32,
+      "label": "Recurso provisional"
+    },
+    "cabin": {
+      "src": "assets/polis-house.png",
+      "kind": "house",
+      "width": 160,
+      "height": 190,
+      "label": "Recurso provisional"
+    },
+    "platform": {
+      "src": "assets/polis-rock.png",
+      "kind": "rock",
+      "width": 130,
+      "height": 28,
+      "label": "Recurso provisional"
+    },
+    "sprite-camus": {
+      "src": "assets/cast-camus.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Apariencia provisional: Albert Camus"
+    },
+    "portrait-camus": {
+      "src": "assets/portrait-camus.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato provisional: Albert Camus"
+    },
+    "sprite-hegel": {
+      "src": "assets/cast-socr.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Apariencia provisional: Georg W. F. Hegel"
+    },
+    "portrait-hegel": {
+      "src": "assets/portrait-socr.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato provisional: Georg W. F. Hegel"
+    },
+    "sprite-ana": {
+      "src": "assets/cast-beau.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Apariencia provisional: Ana"
+    },
+    "portrait-ana": {
+      "src": "assets/portrait-beau.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato provisional: Ana"
+    },
+    "sprite-kant": {
+      "src": "assets/cast-kant.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Apariencia provisional: Immanuel Kant"
+    },
+    "portrait-kant": {
+      "src": "assets/portrait-kant.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato provisional: Immanuel Kant"
+    },
+    "sprite-elena": {
+      "src": "assets/cast-desc.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Apariencia provisional: Elena"
+    },
+    "portrait-elena": {
+      "src": "assets/portrait-desc.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato provisional: Elena"
+    },
+    "sprite-heidegger": {
+      "src": "assets/cast-aris.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Apariencia provisional: Martin Heidegger"
+    },
+    "portrait-heidegger": {
+      "src": "assets/portrait-aris.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato provisional: Martin Heidegger"
+    },
+    "sprite-clara": {
+      "src": "assets/cast-beau.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Apariencia provisional: Clara"
+    },
+    "portrait-clara": {
+      "src": "assets/portrait-beau.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato provisional: Clara"
+    },
+    "npc-worker": {
+      "src": "assets/companion-idle.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "NPC genérico: trabajador"
+    },
+    "portrait-worker": {
+      "src": "assets/portrait-prisoner.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Retrato genérico: trabajador"
+    }
+  },
+  "characters": {
+    "camus": {
+      "name": "Albert Camus",
+      "personality": "Interlocutor atento al absurdo y a la lucidez.",
+      "spriteId": "sprite-camus",
+      "portraitId": "portrait-camus"
+    },
+    "sisyphus": {
+      "name": "Sísifo",
+      "personality": "Personaje del mito; reflexiona sobre su esfuerzo repetido.",
+      "spriteId": "npc-worker",
+      "portraitId": "portrait-worker"
+    },
+    "hegel": {
+      "name": "Georg W. F. Hegel",
+      "personality": "Busca comprender las mediaciones del cambio; apariencia genérica provisional.",
+      "spriteId": "sprite-hegel",
+      "portraitId": "portrait-hegel"
+    },
+    "marco": {
+      "name": "Marco",
+      "personality": "Habitante que examina un conflicto en su comunidad.",
+      "spriteId": "npc-worker",
+      "portraitId": "portrait-worker"
+    },
+    "ana": {
+      "name": "Ana",
+      "personality": "Interlocutora que pregunta qué se conserva al cambiar.",
+      "spriteId": "sprite-ana",
+      "portraitId": "portrait-ana"
+    },
+    "kant": {
+      "name": "Immanuel Kant",
+      "personality": "Pregunta por las condiciones del conocimiento y la autonomía moral.",
+      "spriteId": "sprite-kant",
+      "portraitId": "portrait-kant"
+    },
+    "elena": {
+      "name": "Elena",
+      "personality": "Observadora que contrasta lo experimentado con los modos de conocer.",
+      "spriteId": "sprite-elena",
+      "portraitId": "portrait-elena"
+    },
+    "heidegger": {
+      "name": "Martin Heidegger",
+      "personality": "Interlocutor sobre ser-en-el-mundo y temporalidad; apariencia genérica provisional.",
+      "spriteId": "sprite-heidegger",
+      "portraitId": "portrait-heidegger"
+    },
+    "clara": {
+      "name": "Clara",
+      "personality": "Habitante que reflexiona sobre ocupaciones y posibilidades cotidianas.",
+      "spriteId": "sprite-clara",
+      "portraitId": "portrait-clara"
+    }
+  },
+  "worlds": [
+    {
+      "id": "camus",
+      "title": "Camus · El absurdo",
+      "author": "camus",
+      "galaxy": "contemporary",
+      "systems": [
+        "absurdismo"
+      ],
+      "intro": "arrival",
+      "dialogues": {
+        "arrival": {
+          "start": "question",
+          "nodes": {
+            "question": {
+              "characterId": "camus",
+              "speaker": "Albert Camus",
+              "text": "Buscamos claridad y razones, pero el mundo no responde necesariamente a esa exigencia. El absurdo nace de esa confrontación. Visita a Sísifo: ¿cómo continuar sin ocultarnos lo que sabemos?",
+              "choices": [
+                {
+                  "id": "explore",
+                  "text": "Quiero escuchar a Sísifo.",
+                  "feedback": "Examina su esfuerzo y después vuelve a preguntar."
+                }
+              ]
+            }
+          }
+        },
+        "sisyphus-talk": {
+          "start": "question",
+          "nodes": {
+            "question": {
+              "characterId": "sisyphus",
+              "speaker": "Sísifo",
+              "text": "La roca vuelve a caer y tengo que empezar otra vez. Ser consciente de esa repetición cambia mi relación con ella. ¿La falta de un desenlace definitivo obliga a renunciar?",
+              "choices": [
+                {
+                  "id": "lucidity",
+                  "text": "Podrías continuar sin inventar una garantía final.",
+                  "feedback": "La lucidez no borra el esfuerzo. En la lectura de Camus, la rebelión sostiene la confrontación con el absurdo.",
+                  "reward": {
+                    "flags": [
+                      "sisyphus-reflected"
+                    ]
+                  }
+                },
+                {
+                  "id": "reward",
+                  "text": "Solo tendría sentido si al final recibieras un premio.",
+                  "feedback": "Esa respuesta vuelve a exigir una justificación definitiva. ¿Podríamos examinar nuestra vida sin esa promesa?"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "scenes": [
+        {
+          "id": "mountain",
+          "name": "Montaña",
+          "template": "horizontal",
+          "from": null,
+          "npcs": [
+            {
+              "id": "sisyphus",
+              "character": "sisyphus",
+              "dialogue": "sisyphus-talk",
+              "x": 650
+            }
+          ],
+          "objects": [
+            {
+              "id": "stone",
+              "asset": "rock",
+              "label": "La roca del esfuerzo",
+              "text": "La roca representa el esfuerzo que vuelve a comenzar. Habla con Sísifo sobre su relación con esa repetición.",
+              "x": 900
+            }
+          ]
+        }
+      ],
+      "portals": [
+        {
+          "id": "portal-sartre",
+          "target": "sartre",
+          "angle": 155
+        }
+      ]
+    },
+    {
+      "id": "hegel",
+      "title": "Hegel · La transformación",
+      "author": "hegel",
+      "galaxy": "modern",
+      "systems": [
+        "idealismo-aleman"
+      ],
+      "intro": "arrival",
+      "dialogues": {
+        "arrival": {
+          "start": "question",
+          "nodes": {
+            "question": {
+              "characterId": "hegel",
+              "speaker": "Georg W. F. Hegel",
+              "text": "Comprender una forma de vida requiere atender a su desarrollo y a las tensiones que la atraviesan. Una contradicción no es simplemente una pelea: puede mostrar límites internos de lo que tomábamos por estable.",
+              "choices": [
+                {
+                  "id": "continue",
+                  "text": "Continuar explorando"
+                }
+              ]
+            }
+          }
+        },
+        "conflict": {
+          "start": "question",
+          "nodes": {
+            "question": {
+              "characterId": "marco",
+              "speaker": "Marco",
+              "text": "Nuestra comunidad proclama libertad para todos, pero sus reglas impiden a algunos participar. ¿Basta con repetir la declaración de libertad?",
+              "choices": [
+                {
+                  "id": "examine",
+                  "text": "Hay que examinar cómo las reglas contradicen esa pretensión.",
+                  "feedback": "La tensión obliga a revisar la forma concreta de realizar la libertad. No se resuelve siguiendo una receta de tres pasos.",
+                  "reward": {
+                    "flags": [
+                      "hegel-conflict"
+                    ]
+                  }
+                },
+                {
+                  "id": "silence",
+                  "text": "Es mejor ocultar el conflicto para conservar el orden.",
+                  "feedback": "Ocultarlo no explica por qué la comunidad produce aquello que niega su propia pretensión."
+                }
+              ]
+            }
+          }
+        },
+        "development": {
+          "start": "question",
+          "nodes": {
+            "question": {
+              "characterId": "ana",
+              "speaker": "Ana",
+              "text": "Subir no significa que toda historia mejore automáticamente. En una transformación se cuestionan formas anteriores y también se conservan determinaciones. ¿Qué tendría que cambiar para realizar mejor aquella libertad?",
+              "choices": [
+                {
+                  "id": "mediate",
+                  "text": "Revisar las instituciones y lo que permiten hacer a cada persona.",
+                  "feedback": "Pensar el desarrollo exige reconstruir sus mediaciones y sus límites; no basta sumar opiniones enfrentadas.",
+                  "reward": {
+                    "flags": [
+                      "hegel-development"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "scenes": [
+        {
+          "id": "transformation",
+          "name": "Sala de la transformación",
+          "template": "two-level",
+          "from": null,
+          "npcs": [
+            {
+              "id": "marco",
+              "character": "marco",
+              "dialogue": "conflict",
+              "x": 220
+            },
+            {
+              "id": "ana",
+              "character": "ana",
+              "dialogue": "development",
+              "x": 1080
+            }
+          ]
+        }
+      ],
+      "portals": [
+        {
+          "id": "portal-kant",
+          "target": "kant",
+          "angle": 160
+        }
+      ]
+    },
+    {
+      "id": "kant",
+      "title": "Kant · Conocimiento y moral",
+      "author": "kant",
+      "galaxy": "modern",
+      "systems": [
+        "criticismo"
+      ],
+      "intro": "arrival",
+      "dialogues": {
+        "arrival": {
+          "start": "question",
+          "nodes": {
+            "question": {
+              "characterId": "kant",
+              "speaker": "Immanuel Kant",
+              "text": "Conocer requiere experiencia, pero también las formas y reglas con las que la organizamos. Y actuar moralmente exige examinar la máxima de nuestra acción, no solo calcular lo que nos conviene.",
+              "choices": [
+                {
+                  "id": "continue",
+                  "text": "Continuar explorando"
+                }
+              ]
+            }
+          }
+        },
+        "knowledge": {
+          "start": "question",
+          "nodes": {
+            "question": {
+              "characterId": "elena",
+              "speaker": "Elena",
+              "text": "Observo una piedra y anoto sus cambios. ¿Conocer consiste únicamente en acumular sensaciones?",
+              "choices": [
+                {
+                  "id": "forms",
+                  "text": "También importa cómo ordenamos lo que recibimos.",
+                  "feedback": "La experiencia proporciona materia; nuestra sensibilidad y entendimiento hacen posible una experiencia organizada. Eso no equivale a inventar a voluntad lo real.",
+                  "reward": {
+                    "flags": [
+                      "kant-knowledge"
+                    ]
+                  }
+                },
+                {
+                  "id": "copy",
+                  "text": "La mente sería una copia pasiva de todo lo que llega.",
+                  "feedback": "Prueba a distinguir la sensación de los marcos y conceptos con que reconocemos objetos."
+                }
+              ]
+            }
+          }
+        },
+        "morality": {
+          "start": "question",
+          "nodes": {
+            "question": {
+              "characterId": "kant",
+              "speaker": "Immanuel Kant",
+              "text": "Alguien pide un préstamo prometiendo devolverlo, aunque sabe que no piensa cumplirlo. ¿Qué máxima guía esa acción?",
+              "choices": [
+                {
+                  "id": "universal",
+                  "text": "Prometer falsamente cuando me convenga: ¿podría quererlo como ley universal?",
+                  "feedback": "Si esa máxima se universalizara, socavaría la confianza que la propia promesa presupone. El examen moral considera la máxima y el deber, no el balance de beneficios.",
+                  "reward": {
+                    "flags": [
+                      "kant-duty"
+                    ]
+                  }
+                },
+                {
+                  "id": "benefits",
+                  "text": "Sería correcta siempre que obtuviera más beneficios.",
+                  "feedback": "Para Kant, el resultado ventajoso no basta para justificar la máxima. Considera también a las personas como fines, y no meramente como instrumentos."
+                }
+              ]
+            }
+          }
+        }
+      },
+      "scenes": [
+        {
+          "id": "study",
+          "name": "Estudio",
+          "template": "room",
+          "from": null,
+          "npcs": [
+            {
+              "id": "elena",
+              "character": "elena",
+              "dialogue": "knowledge",
+              "x": 480
+            }
+          ],
+          "objects": [
+            {
+              "id": "notes",
+              "asset": "notebook",
+              "label": "Cuaderno de observación",
+              "text": "El cuaderno reúne observaciones de un objeto. Pregunta a Elena qué condiciones hacen posible reconocerlo como un objeto de experiencia.",
+              "x": 730
+            },
+            {
+              "id": "stone",
+              "asset": "rock",
+              "label": "Piedra observada",
+              "text": "Puedes observar la piedra desde diferentes perspectivas. Distingue esas impresiones del objeto que reconoces a través de ellas.",
+              "x": 900
+            }
+          ]
+        },
+        {
+          "id": "morality-room",
+          "name": "Sala de las máximas",
+          "template": "room",
+          "from": "study",
+          "npcs": [
+            {
+              "id": "kant",
+              "character": "kant",
+              "dialogue": "morality",
+              "x": 650
+            }
+          ]
+        }
+      ],
+      "portals": [
+        {
+          "id": "portal-hegel",
+          "target": "hegel",
+          "angle": 165
+        }
+      ]
+    },
+    {
+      "id": "heidegger",
+      "title": "Heidegger · Ser y existencia",
+      "author": "heidegger",
+      "galaxy": "contemporary",
+      "systems": [
+        "phenomenology"
+      ],
+      "intro": "arrival",
+      "dialogues": {
+        "arrival": {
+          "start": "question",
+          "nodes": {
+            "question": {
+              "characterId": "heidegger",
+              "speaker": "Martin Heidegger",
+              "text": "La existencia humana ya está implicada en un mundo de relaciones, tareas y posibilidades. Preguntemos cómo se nos abre ese mundo, antes de tratarlo como una colección de cosas aisladas.",
+              "choices": [
+                {
+                  "id": "continue",
+                  "text": "Continuar explorando"
+                }
+              ]
+            }
+          }
+        },
+        "everyday": {
+          "start": "question",
+          "nodes": {
+            "question": {
+              "characterId": "clara",
+              "speaker": "Clara",
+              "text": "Arreglo esta cabaña, uso herramientas y organizo mis tareas. Las cosas aparecen ligadas a lo que estoy haciendo. ¿Soy primero una mente separada que después se conecta al mundo?",
+              "choices": [
+                {
+                  "id": "world",
+                  "text": "Ya estás implicada en un contexto de actividades y relaciones.",
+                  "feedback": "Ser-en-el-mundo nombra esa estructura. El cuidado no significa solo preocupación afectiva: reúne nuestra situación, nuestras posibilidades y nuestra ocupación cotidiana.",
+                  "reward": {
+                    "flags": [
+                      "heidegger-care"
+                    ]
+                  }
+                },
+                {
+                  "id": "alone",
+                  "text": "Solo habría decisiones individuales sin situación previa.",
+                  "feedback": "Aquí no partimos de una elección que se inventa desde cero. Ya estamos situados en relaciones y significados."
+                }
+              ]
+            }
+          }
+        },
+        "temporality": {
+          "start": "question",
+          "nodes": {
+            "question": {
+              "characterId": "clara",
+              "speaker": "Clara",
+              "text": "Mis proyectos se abren desde una situación que no elegí por completo y orientan lo que hago ahora. ¿El tiempo de la existencia es solamente una fila de instantes?",
+              "choices": [
+                {
+                  "id": "possibilities",
+                  "text": "Pasado, posibilidades y presente se articulan en esa existencia.",
+                  "feedback": "La temporalidad ayuda a comprender la unidad del cuidado. No es simplemente contar minutos ni trasladar sin más la libertad de Sartre a Heidegger.",
+                  "reward": {
+                    "flags": [
+                      "heidegger-time"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "scenes": [
+        {
+          "id": "path",
+          "name": "Sendero",
+          "template": "horizontal",
+          "from": null,
+          "npcs": [
+            {
+              "id": "clara",
+              "character": "clara",
+              "dialogue": "everyday",
+              "x": 500
+            }
+          ],
+          "objects": [
+            {
+              "id": "cabin",
+              "asset": "cabin",
+              "label": "Cabaña",
+              "text": "La cabaña permite pensar nuestras ocupaciones. La puerta contigua conduce a otra conversación con Clara.",
+              "x": 1000
+            }
+          ]
+        },
+        {
+          "id": "time-room",
+          "name": "Habitación del tiempo",
+          "template": "room",
+          "from": "path",
+          "npcs": [
+            {
+              "id": "clara",
+              "character": "clara",
+              "dialogue": "temporality",
+              "x": 650
+            }
+          ]
+        }
+      ],
+      "portals": [
+        {
+          "id": "portal-camus",
+          "target": "camus",
+          "angle": 160
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "format": "sofia-world",
+  "version": 1,
+  "id": "plato",
+  "title": "Platón · Polis y caverna",
+  "summary": "Prototipo conservado de la Polis y el mito de la caverna.",
+  "artStatus": "provisional",
+  "philosopher": {
+    "id": "plat",
+    "name": "Platón",
+    "portrait": "assets/portrait-plat.png"
+  },
+  "galaxy": "ancient",
+  "systems": [
+    "filosofia-clasica"
+  ],
+  "themes": [],
+  "assets": {
+    "terrain": {
+      "src": "assets/planet-plato-stone.png",
+      "kind": "rock",
+      "width": 1012,
+      "height": 1012,
+      "label": "Planeta de dos mundos pétreos — ilustración del autor"
+    },
+    "mentor": {
+      "src": "assets/cast-plat.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Recurso provisional"
+    },
+    "portrait": {
+      "src": "assets/portrait-plat.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Recurso provisional"
+    }
+  },
+  "terrain": "terrain",
+  "intro": "arrival",
+  "surface": {
+    "spawnAngle": -8,
+    "objects": []
+  },
+  "interiors": {},
+  "interactions": {},
+  "dialogues": {
+    "arrival": {
+      "start": "welcome",
+      "nodes": {
+        "welcome": {
+          "speaker": "Platón",
+          "portrait": "portrait",
+          "text": "Antes de entrar en la caverna, pregúntate si ver algo basta para conocerlo. Escucha al prisionero y examina cómo se producen las sombras. Volveremos a conversar al salir.",
+          "choices": [
+            {
+              "id": "explore",
+              "text": "Explorar la Polis y la caverna"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "activities": {},
+  "concepts": {},
+  "memories": {},
+  "missions": [],
+  "characters": {
+    "plat": {
+      "name": "Platón",
+      "personality": "Interlocutor de la Polis y la caverna conservadas.",
+      "spriteId": "mentor",
+      "portraitId": "portrait"
+    }
+  }
+}

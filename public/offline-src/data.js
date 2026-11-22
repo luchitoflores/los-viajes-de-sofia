@@ -1,0 +1,67 @@
+export const PHILOSOPHERS={
+ diog:{"name": "Diógenes", "life": "c. 412–323 a. C.", "school": "Cinismo", "portrait": "av_npc.webp", "sprite": "npc.webp", "works": "No se conservan escritos propios; lo conocemos por anécdotas (Diógenes Laercio).", "description": "Filósofo cínico originario de Sinope. Defendía vivir según la naturaleza, con lo mínimo, y se burlaba de las convenciones sociales. La tradición cuenta que dormía en un gran tonel y que caminaba con una lámpara en pleno día buscando a un ser humano honesto."},
+ beau:{"name": "Simone de Beauvoir", "life": "1908–1986", "school": "Existencialismo y feminismo", "portrait": "av_beau.webp", "sprite": "beau.webp", "works": "El segundo sexo, Los mandarines, La ética de la ambigüedad.", "description": "Filósofa, escritora y feminista francesa. Con El segundo sexo (1949) mostró que gran parte de lo que se considera «femenino» es una construcción social e histórica. Defendió que la libertad de las mujeres exige cambiar las condiciones que las limitan."},
+ camus:{"name": "Camus", "life": "1913–1960", "school": "El absurdo y la rebeldía", "portrait": "av_camus.webp", "sprite": "camus.webp", "works": "El extranjero, El mito de Sísifo, La peste, El hombre rebelde.", "description": "Escritor y filósofo franco-argelino, criado en Argelia. Pensó el absurdo: el choque entre nuestro deseo de sentido y el silencio del mundo. Rechazó tanto la resignación como el «salto de fe» y propuso la rebeldía lúcida y la solidaridad."},
+ aver:{"name": "Averroes", "life": "1126–1198", "school": "Razón y fe", "portrait": "av_aver.webp", "sprite": "aver.webp", "works": "Comentarios a Aristóteles, Discurso decisivo (Fasl al-maqal), Incoherencia de la incoherencia.", "description": "Ibn Rushd nació en Córdoba (al-Ándalus). Fue juez y médico, y comentó casi toda la obra de Aristóteles, por lo que en Europa lo llamaron «el Comentador». Defendió que la filosofía y la religión no se contradicen: cada una llega a la verdad por su camino."},
+ ockh:{"name": "Guillermo de Ockham", "life": "c. 1287–1347", "school": "Nominalismo y economía de ideas", "portrait": "av_ockh.webp", "sprite": "ockh.webp", "works": "Suma de lógica, Comentario a las Sentencias, Breviloquio.", "description": "Nació en Ockham (Inglaterra) y fue fraile franciscano. Sostuvo que solo existen cosas individuales y que los universales son nombres (nominalismo). Su principio de economía se conoce como la navaja de Ockham. Chocó con el papa Juan XXII y murió exiliado."},
+ rous:{"name": "Rousseau", "life": "1712–1778", "school": "Contrato social", "portrait": "av_rous.webp", "sprite": "rous.webp", "works": "Discurso sobre la desigualdad, El contrato social, Emilio.", "description": "Nació en Ginebra. Sostuvo que el ser humano nace libre y con una bondad natural (compasión, amor de sí) que la desigualdad y las instituciones sociales tienden a corromper. Propuso un contrato social basado en la voluntad general y una educación respetuosa de la infancia. Su pensamiento inspiró la Revolución Francesa."},
+ plat:{name:'Platón',life:'427–347 a. C.',school:'Filosofía antigua · Atenas',portrait:'av_plat.webp',sprite:'plat.webp',works:'La República, Fedón, Banquete, Timeo',description:'Exploró la relación entre apariencia, conocimiento, justicia y el mundo de las Formas. Su alegoría de la caverna reflexiona sobre la educación y el difícil tránsito hacia un conocimiento más riguroso.'},
+ socr:{name:'Sócrates',life:'c. 469–399 a. C.',school:'Filosofía antigua',portrait:'av_socr.webp',sprite:'socr.webp',works:'No dejó obras escritas; lo conocemos a través de Platón, Jenofonte y otras fuentes.',description:'Sus diálogos ponen a prueba definiciones, supuestos y modos de vivir.'},
+ aris:{name:'Aristóteles',life:'384–322 a. C.',school:'Filosofía antigua',portrait:'av_aris.webp',sprite:'aris.webp',works:'Metafísica, Ética a Nicómaco, Física, Órganon',description:'Reflexionó sobre conocimiento, causas, ética y formas de vida en comunidad.'},
+ agus:{name:'Agustín de Hipona',life:'354–430',school:'Patrística',portrait:'av_agus.webp',sprite:'agus.webp',works:'Confesiones, La ciudad de Dios',description:'Investigó la interioridad, la memoria, el tiempo y la relación entre fe y razón.'},
+ toma:{name:'Tomás de Aquino',life:'1225–1274',school:'Escolástica',portrait:'av_toma.webp',sprite:'toma.webp',works:'Suma teológica, Suma contra gentiles',description:'Desarrolló argumentos filosóficos sobre Dios y la relación entre filosofía y teología.'},
+ desc:{name:'René Descartes',life:'1596–1650',school:'Racionalismo',portrait:'av_desc.webp',sprite:'desc.webp',works:'Discurso del método, Meditaciones metafísicas',description:'Con su duda metódica buscó un punto de certeza desde el que fundamentar el conocimiento.'},
+ hume:{name:'David Hume',life:'1711–1776',school:'Empirismo',portrait:'av_hume.webp',sprite:'hume.webp',works:'Investigación sobre el entendimiento humano',description:'Analizó la experiencia, las impresiones y los límites de nuestras inferencias.'},
+ kant:{name:'Immanuel Kant',life:'1724–1804',school:'Criticismo',portrait:'av_kant.webp',sprite:'kant.webp',works:'Crítica de la razón pura, Fundamentación de la metafísica de las costumbres',description:'Investigó las condiciones que hacen posible nuestra experiencia del conocimiento.'},
+ nietz:{name:'Friedrich Nietzsche',life:'1844–1900',school:'Vitalismo',portrait:'av_nietz.webp',sprite:'nietz.webp',works:'Así habló Zaratustra, La genealogía de la moral',description:'Examinó la crisis de los valores tradicionales y la posibilidad de nuevas formas de afirmación de la vida.'},
+ sartre:{name:'Jean-Paul Sartre',life:'1905–1980',school:'Existencialismo',portrait:'av_sartre.webp',sprite:'sartre.webp',works:'El ser y la nada, El existencialismo es un humanismo',description:'Pensó la libertad humana, la situación y nuestra responsabilidad al elegir.'},
+ fouc:{name:'Michel Foucault',life:'1926–1984',school:'Filosofía contemporánea',portrait:'av_fouc.webp',sprite:'fouc.webp',works:'Vigilar y castigar, Historia de la sexualidad',description:'Investigó históricamente la relación entre saber, poder, vigilancia y formación de sujetos.'}
+};
+export const CONCEPTS={
+ shadows:{name:'Apariencia y realidad',who:'Platón',origin:'cave_shadows',desc:'Lo que percibimos puede no revelar toda la estructura de lo real. En la caverna, las sombras no agotan aquello que las produce.',example:'Creer que una silueta en una pared es el objeto mismo.'},
+ cave:{name:'Alegoría de la caverna',who:'Platón',origin:'cave_exit',desc:'Relato en La República que vincula educación, conocimiento, resistencia al cambio y responsabilidad de regresar a dialogar.',example:'Cuestionar las creencias que parecían evidentes y examinar sus fundamentos.'},
+ memory:{name:'La memoria y el tiempo',who:'Agustín de Hipona',origin:'medieval',desc:'La interioridad permite explorar la relación entre memoria del pasado, atención al presente y expectativa del futuro.',example:'Recordar una conversación y anticipar lo que puede suceder.'},
+ doubt:{name:'Duda metódica',who:'René Descartes',origin:'modern',desc:'Someter provisionalmente las creencias a duda para buscar fundamentos que resistan un examen riguroso.',example:'Preguntarse qué puede conocerse con certeza cuando los sentidos engañan.'},
+ vigilance:{name:'Vigilancia y disciplina',who:'Michel Foucault',origin:'contemporary',desc:'La posibilidad de estar observado puede modificar cómo actuamos, incluso cuando no vemos a quien observa.',example:'Cambiar la conducta ante la posibilidad de vigilancia.'}
+};
+export const WORLDS=[
+ {id:'polis',name:'La Polis de las Ideas',tag:'Antigüedad · Platón',image:'gmid.webp',scene:'cave_entrance',enabled:true,desc:'Sombras, conocimiento y el camino hacia la luz.',pos:[.35,.42]},
+ {id:'medieval',name:'Fe y Razón',tag:'Edad Media',image:'mmid.webp',scene:'medieval',enabled:true,desc:'Una visita breve para conversar con Agustín y Tomás.',pos:[.65,.25]},
+ {id:'modern',name:'El laberinto de la duda',tag:'Filosofía moderna',image:'dmid.webp',scene:'modern',enabled:true,desc:'Una ciudad y una pregunta: ¿qué podemos conocer?',pos:[.70,.65]},
+ {id:'contemporary',name:'La ciudad de los ojos',tag:'Pensamiento contemporáneo',image:'cmid.webp',scene:'contemporary',enabled:true,desc:'Descubre cómo influye la mirada de los demás.',pos:[.22,.75]},
+ {id:'nietzsche',name:'Las montañas de Zaratustra',tag:'En diseño',image:'mont.webp',scene:null,enabled:false,desc:'Un mundo para examinar los valores.',pos:[.48,.8]},
+ {id:'marx',name:'La ciudad de las fábricas',tag:'En diseño',image:'cfront.webp',scene:null,enabled:false,desc:'Trabajo, producción y alienación.',pos:[.82,.45]}
+];
+const floor=(w,y=450)=>({id:'suelo',type:'floor',x:0,y,w,h:100,editorOnly:true});
+export const SCENES={
+ cave_entrance:{name:'I · La caverna',world:'polis',background:'cave_entrance.webp',width:2380,spawn:{x:110,y:450},zones:[floor(2380),{id:'roca-1',type:'solid',x:915,y:388,w:93,h:62}],objects:[
+ {id:'lamp',type:'lamp',name:'Lámpara de Sofía',x:345,y:450,action:'lamp',hint:'Encender la lámpara'},
+ {id:'mural',type:'mural',name:'Inscripciones antiguas',x:690,y:450,action:'mural',hint:'Examinar inscripción'},
+ {id:'vase1',type:'vase',name:'Cántaro griego',x:1210,y:450,action:'vase',hint:'Examinar cántaro'},
+ {id:'gate1',type:'door',name:'Pasaje de las sombras',x:2090,y:450,target:'cave_shadows',targetX:110,hint:'Entrar en la cámara de sombras'}],note:'Busca el camino que conduce hacia las sombras.'},
+ cave_shadows:{name:'II · El mundo de las sombras',world:'polis',background:'cave_shadows.webp',width:2350,spawn:{x:110,y:450},zones:[floor(2350),{id:'shadow-solid',type:'solid',x:1500,y:400,w:65,h:50}],objects:[
+ {id:'prisoner',type:'prisoner',name:'Un prisionero',x:495,y:450,action:'prisoner',hint:'Conversar con el prisionero'},
+ {id:'shadows',type:'shadows',name:'La pared de las sombras',x:1050,y:450,action:'shadows',hint:'Investigar las sombras'},
+ {id:'chains',type:'chains',name:'Cadenas del prisionero',x:1720,y:450,action:'chains',hint:'Liberar al prisionero'},
+ {id:'gate2',type:'door',name:'Sendero del ascenso',x:2180,y:450,target:'cave_ascent',targetX:120,requires:'freed',hint:'Avanzar hacia la salida'}],note:'Comprende lo que las sombras ocultan.'},
+ cave_ascent:{name:'III · El ascenso',world:'polis',background:'cave_ascent.webp',width:2100,spawn:{x:110,y:450},zones:[{id:'floor-low',type:'floor',x:0,y:450,w:590,h:100},{id:'floor-upper',type:'floor',x:1010,y:282,w:1090,h:80},{id:'steps',type:'stairs',x:490,y:265,w:610,h:187,startX:485,startY:450,endX:1080,endY:282}],objects:[
+ {id:'torch2',type:'torch',name:'Antorcha',x:325,y:450,action:'torch',hint:'Observar la antorcha'},
+ {id:'exitgate',type:'door',name:'Salida a la luz',x:1840,y:282,target:'cave_exit',targetX:120,hint:'Salir de la caverna'}],note:'Sigue el camino de la luz; sube los escalones.'},
+ cave_exit:{name:'IV · Más allá de la caverna',world:'polis',background:'exterior.webp',width:2300,spawn:{x:110,y:450},zones:[floor(2300)],objects:[
+ {id:'plant',type:'vase',name:'Vasija del jardín',x:365,y:450,action:'plant',hint:'Observar la vasija'},
+ {id:'plato',type:'philosopher',name:'Platón',x:1220,y:450,who:'plat',action:'plato',hint:'Conversar con Platón'},
+ {id:'ship',type:'ship',name:'Nave estelar',x:2050,y:450,action:'ship',hint:'Despegar hacia la galaxia'}],note:'Encuentra al filósofo que puede ayudarte a comprender tu viaje.'},
+ medieval:{name:'Fe y Razón · Monasterio',world:'medieval',background:'msky.webp',far:'mfar.webp',mid:'mmid.webp',front:'mfront.webp',width:1800,spawn:{x:100,y:450},zones:[floor(1800)],objects:[
+ {id:'med-scroll',type:'scroll',name:'Manuscrito',x:440,y:450,action:'medscroll',hint:'Leer un manuscrito'},
+ {id:'augustine',type:'philosopher',name:'Agustín',x:900,y:450,who:'agus',action:'augustine',hint:'Conversar con Agustín'},
+ {id:'medship',type:'ship',name:'Regreso a la nave',x:1620,y:450,action:'ship',hint:'Regresar a la galaxia'}],note:'Una visita de exploración: el capítulo completo está por diseñar.'},
+ modern:{name:'La duda · Ciudad de los espejos',world:'modern',background:'dsky.webp',far:'dfar.webp',mid:'dmid.webp',front:'dfront.webp',width:1800,spawn:{x:100,y:450},zones:[floor(1800)],objects:[
+ {id:'mod-scroll',type:'scroll',name:'Meditaciones',x:460,y:450,action:'modernscroll',hint:'Examinar libro'},
+ {id:'descartes',type:'philosopher',name:'Descartes',x:910,y:450,who:'desc',action:'descartes',hint:'Conversar con Descartes'},
+ {id:'modship',type:'ship',name:'Nave',x:1640,y:450,action:'ship',hint:'Regresar a la galaxia'}],note:'Una visita de exploración: el capítulo completo está por diseñar.'},
+ contemporary:{name:'La ciudad de los ojos',world:'contemporary',background:'csky.webp',far:'cfar.webp',mid:'cmid.webp',front:'cfront.webp',width:1800,spawn:{x:100,y:450},zones:[floor(1800)],objects:[
+ {id:'cam',type:'mural',name:'Torre de observación',x:480,y:450,action:'camera',hint:'Examinar la vigilancia'},
+ {id:'foucault',type:'philosopher',name:'Foucault',x:930,y:450,who:'fouc',action:'foucault',hint:'Conversar con Foucault'},
+ {id:'coship',type:'ship',name:'Nave',x:1650,y:450,action:'ship',hint:'Regresar a la galaxia'}],note:'Una visita de exploración: el capítulo completo está por diseñar.'}
+};
+export const INITIAL={scene:'cave_entrance',x:110,y:450,flags:{},unlockedPhilosophers:[],unlockedConcepts:[],memories:[],visited:['cave_entrance'],discoveredWorlds:['polis'],editorScenes:{}};

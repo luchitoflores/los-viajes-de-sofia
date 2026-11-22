@@ -1,0 +1,23 @@
+from playwright.sync_api import sync_playwright
+from pathlib import Path
+import os,json
+URL=os.environ.get('SOFIA_URL','http://127.0.0.1:4173');OUT=Path('captures');P="window.__sofiaGame.scene.getScene('Planet')";W="window.__sofiaGame.scene.getScene('World')";KEY='sofia-universe-progress-v1';errors=[];report={}
+fixture={'version':1,'last':'sartre','worlds':{'sartre':{'introComplete':True,'flags':['intro-complete','keep-sartre'],'answers':{'old-game':['old-answer']},'completed':['old-game'],'planet':{'angle':0,'collected':['kept'],'discovered':['kept'],'returnAnchor':None}}}}
+with sync_playwright() as pw:
+ b=pw.chromium.launch(executable_path='C:/Program Files/Google/Chrome/Application/chrome.exe',headless=True,args=['--no-sandbox']);ctx=b.new_context(viewport={'width':932,'height':430},is_mobile=True,has_touch=True);ctx.add_init_script('localStorage.setItem('+json.dumps(KEY)+','+json.dumps(json.dumps(fixture))+');');page=ctx.new_page();page.on('pageerror',lambda e:errors.append(str(e)));page.goto(URL,wait_until='domcontentloaded');page.wait_for_function("window.__sofiaGame?.scene.getScene('Planet')?.currentContext?.id==='sartre'&&window.__sofiaGame.scene.getScene('Planet').player?.active",timeout=120000)
+ before=page.evaluate("JSON.parse(localStorage.getItem('sofia-universe-progress-v1')).worlds.sartre");page.locator('[data-tab="editor"]').click()
+ def drafts():return page.evaluate("()=>new Promise((resolve,reject)=>{const r=indexedDB.open('sofia-world-editor');r.onsuccess=()=>{const db=r.result,tx=db.transaction('worlds'),q=tx.objectStore('worlds').getAllKeys();q.onsuccess=()=>{resolve(q.result);db.close()};q.onerror=reject};r.onerror=reject})")
+ initial=drafts();blueprint=json.loads(Path('public/worlds/blueprints.json').read_text(encoding='utf-8'));invalid=json.loads(json.dumps(blueprint));invalid['worlds'].append(invalid['worlds'][0]);page.locator('#import-input').set_input_files({'name':'bad-batch.json','mimeType':'application/json','buffer':json.dumps(invalid).encode()});page.wait_for_function("document.querySelector('#toast').textContent.includes('No se pudo importar')");assert drafts()==initial;report['invalid_batch_leaves_no_partial_worlds']=True
+ page.locator('#import-input').set_input_files('public/worlds/blueprints.json');page.wait_for_function("document.querySelector('#toast').textContent.includes('Lote guardado')",timeout=60000);assert sorted(drafts())==['camus','hegel','heidegger','kant'];after=page.evaluate("JSON.parse(localStorage.getItem('sofia-universe-progress-v1')).worlds.sartre");assert before['flags']==after['flags'] and before['answers']==after['answers'] and before['completed']==after['completed'];report['four_worlds_one_editor_operation_preserves_sartre']=True;page.screenshot(path=str(OUT/'editor-lote-movil.png'))
+ page.locator('[data-e="close"]').click();page.locator('[data-tab="galaxy"]').click();page.locator('[data-planet="camus"]').click();page.wait_for_function(P+".currentContext?.id==='camus'&&"+P+'.objects==='+P+'.currentContext.state.objects',timeout=60000)
+ def finish():
+  while page.locator('#veil.visible').count():
+   if page.locator('[data-run="choice-0"]').count():page.locator('[data-run="choice-0"]').click()
+   elif page.locator('[data-run="continue"]').count():page.locator('[data-run="continue"]').click()
+   else:raise AssertionError(page.locator('#panel').inner_text())
+ finish();page.evaluate(P+'.bodyState.angle=35*Math.PI/180');page.wait_for_timeout(800)
+ def touch(scene,x,y):
+  q=page.evaluate(f"()=>{{const s={scene},c=s.cameras.main,r=s.game.canvas.getBoundingClientRect(),p=c.matrix.transformPoint(({x})-c.scrollX,({y})-c.scrollY);return{{x:r.left+p.x*r.width/s.scale.width,y:r.top+p.y*r.height/s.scale.height}}}}")
+  page.touchscreen.tap(q['x'],q['y'])
+ q=page.evaluate(P+".hotspots.get('door-mountain').getCenter()");touch(P,q['x'],q['y']);page.wait_for_function(W+".sys.isActive()&&"+W+".objects.some(o=>o.id==='mountain-sisyphus')",timeout=30000);q=page.evaluate(W+".propViews.find(v=>v.id==='mountain-sisyphus'&&v.obj.type==='Zone').obj.getCenter()");touch(W,q['x'],q['y']);page.wait_for_selector('[data-run="choice-0"]',timeout=20000);assert not page.locator('#hud').is_visible();page.screenshot(path=str(OUT/'camus-dialogo-movil.png'));finish();assert page.evaluate(W+'.scale.width')==1280 and page.evaluate(W+'.scale.height')==720;assert abs(page.evaluate(W+'.player.y')-560)<.01;report['mobile_touch_door_npc_and_floor_560']=True;report['physical_phone_tested']=False
+ assert not errors,errors;report['browser_errors']=errors;(OUT/'batch-mobile-validation.json').write_text(json.dumps(report,indent=2),encoding='utf-8');print(json.dumps(report),flush=True);b.close()

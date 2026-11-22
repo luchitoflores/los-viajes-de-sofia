@@ -1,0 +1,155 @@
+{
+  "format": "sofia-universe",
+  "version": 1,
+  "galaxies": [
+    {
+      "id": "ancient",
+      "name": "Antigua"
+    },
+    {
+      "id": "medieval",
+      "name": "Medieval"
+    },
+    {
+      "id": "modern",
+      "name": "Moderna"
+    },
+    {
+      "id": "contemporary",
+      "name": "Contemporánea"
+    }
+  ],
+  "systems": [
+    {
+      "id": "existentialism",
+      "name": "Existencialismo",
+      "galaxy": "contemporary"
+    },
+    {
+      "id": "phenomenology",
+      "name": "Fenomenología",
+      "galaxy": "contemporary"
+    },
+    {
+      "id": "filosofia-clasica",
+      "name": "Filosofía clásica",
+      "galaxy": "ancient"
+    },
+    {
+      "id": "absurdismo",
+      "name": "Absurdo",
+      "galaxy": "contemporary"
+    },
+    {
+      "id": "idealismo-aleman",
+      "name": "Idealismo alemán",
+      "galaxy": "modern"
+    },
+    {
+      "id": "criticismo",
+      "name": "Criticismo",
+      "galaxy": "modern"
+    }
+  ],
+  "themes": [
+    {
+      "id": "latin-america",
+      "name": "Filosofía latinoamericana"
+    }
+  ],
+  "planets": [
+    {
+      "kind": "home",
+      "id": "earth",
+      "philosopherId": "sofia",
+      "name": "Tierra",
+      "galaxy": "home",
+      "systems": [],
+      "themes": [],
+      "source": "worlds/earth.json",
+      "portrait": "assets/av_sofia.png",
+      "thumbnail": "assets/planet-earth-v1.png",
+      "status": "ready"
+    },
+    {
+      "id": "plato",
+      "philosopherId": "plat",
+      "name": "Platón",
+      "galaxy": "ancient",
+      "systems": [
+        "filosofia-clasica"
+      ],
+      "themes": [],
+      "source": "worlds/plato.json",
+      "portrait": "assets/portrait-plat.png",
+      "status": "prototype",
+      "thumbnail": "assets/planet-plato-stone.png"
+    },
+    {
+      "id": "sartre",
+      "philosopherId": "sartre",
+      "name": "Jean-Paul Sartre",
+      "galaxy": "contemporary",
+      "systems": [
+        "existentialism",
+        "phenomenology"
+      ],
+      "themes": [],
+      "source": "worlds/sartre.json",
+      "portrait": "assets/portrait-sartre.png",
+      "status": "prototype"
+    },
+    {
+      "id": "camus",
+      "philosopherId": "camus",
+      "name": "Albert Camus",
+      "galaxy": "contemporary",
+      "systems": [
+        "absurdismo"
+      ],
+      "themes": [],
+      "source": "worlds/camus.json",
+      "portrait": "assets/portrait-camus.png",
+      "status": "prototype"
+    },
+    {
+      "id": "hegel",
+      "philosopherId": "hegel",
+      "name": "Georg W. F. Hegel",
+      "galaxy": "modern",
+      "systems": [
+        "idealismo-aleman"
+      ],
+      "themes": [],
+      "source": "worlds/hegel.json",
+      "portrait": "assets/portrait-socr.png",
+      "status": "prototype"
+    },
+    {
+      "id": "kant",
+      "philosopherId": "kant",
+      "name": "Immanuel Kant",
+      "galaxy": "modern",
+      "systems": [
+        "criticismo"
+      ],
+      "themes": [],
+      "source": "worlds/kant.json",
+      "portrait": "assets/portrait-kant.png",
+      "status": "prototype"
+    },
+    {
+      "id": "heidegger",
+      "philosopherId": "heidegger",
+      "name": "Martin Heidegger",
+      "galaxy": "contemporary",
+      "systems": [
+        "phenomenology"
+      ],
+      "themes": [],
+      "source": "worlds/heidegger.json",
+      "portrait": "assets/portrait-aris.png",
+      "status": "prototype"
+    }
+  ]
+}

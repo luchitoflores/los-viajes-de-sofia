@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#10152c"><title>Sofía y los mundos de las ideas</title><link rel="stylesheet" href="offline-src/style.css"></head>
+<body>
+<div id="shell">
+  <div id="gameframe">
+    <canvas id="world" width="960" height="540" aria-label="Videojuego de Sofía"></canvas>
+    <div class="ornament stars" aria-hidden="true"></div>
+    <header id="hud"><div class="hud-brand"><img src="assets/av_sofia.png" alt=""/><div><b>SOFÍA</b><small id="location">La caverna</small></div></div><div class="quest" id="quest">Comienza tu expedición</div><div class="hud-buttons"><button id="galaxyButton" title="Galaxia de las ideas">◌ Galaxia</button><button id="collectionButton" title="Álbumes">✧ Álbumes</button><button id="editorButton" title="Editar mundos">⚒ Editor</button><button id="soundButton" title="Activar sonido">♪</button></div></header>
+    <div id="hint" hidden>Acércate y pulsa Interactuar</div>
+    <div id="toast" hidden></div>
+    <div id="controls"><div class="movement"><button data-control="left" aria-label="Caminar a la izquierda">◀</button><button data-control="right" aria-label="Caminar a la derecha">▶</button></div><div class="actions"><button data-control="jump" id="jumpBtn">↑</button><button data-control="act" id="actionBtn">✦<small>Acción</small></button></div></div>
+    <section id="overlay" class="overlay visible"><div class="dialog splash" id="overlay-content"></div></section>
+    <section id="editor" hidden><div class="editor-top"><b>✦ Editor de mundos</b><div><button data-edit="undo">↶</button><button data-edit="save">Guardar</button><button data-edit="export">Exportar</button><button data-edit="import">Importar</button><button data-edit="close" class="primary">Probar mundo ▶</button></div></div><div class="editor-sidebar"><b>Herramientas</b><select id="editor-tool"><option value="select">↖ Seleccionar / mover</option><option value="object">✦ Colocar objeto</option><option value="zone">▱ Pintar zona</option></select><label>Objeto<select id="object-type"><option value="vase">Cántaro</option><option value="scroll">Pergamino</option><option value="torch">Antorcha</option><option value="door">Puerta</option><option value="philosopher">Filósofo</option></select></label><label>Zona<select id="zone-type"><option value="floor">Suelo</option><option value="surface">Superficie para objetos</option><option value="solid">Obstáculo sólido</option><option value="door">Puerta / transición</option><option value="stairs">Escalera / recorrido</option><option value="water">Agua / piscina</option><option value="dialogue">Conversación</option><option value="event">Evento / minijuego</option></select></label><p id="editor-help">Toca un elemento para seleccionarlo. Mueve con el dedo; en Zonas, arrastra para pintar un rectángulo.</p><div id="properties"><small>Selecciona un objeto o dibuja una zona.</small></div><button data-edit="delete" class="danger">Eliminar selección</button><small>Las modificaciones se guardan en este dispositivo. Exporta JSON para trasladarlas a tu proyecto.</small></div><div class="editor-bottom">Edición visual · desplazamiento con dos dedos o controles de cámara · las zonas no serán visibles al jugar.</div></section>
+  </div>
+  <div class="below"><span>Explora mundos · descubre ideas · guarda recuerdos</span><span class="version">Edición de prueba • 2026</span></div>
+</div>
+<input type="file" id="import-file" accept="application/json" hidden>
+<script type="module" src="offline-src/main.js"></script>
+</body></html>

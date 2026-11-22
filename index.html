@@ -1,0 +1,33 @@
+<!doctype html><html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#111326"><meta name="description" content="Sofía explora los planetas de las ideas. Una aventura filosófica 2D ilustrada.">
+<title>Sofía · Los mundos de las ideas</title><link rel="stylesheet" href="/src/style.css">
+</head><body>
+<div id="shell"><main id="stage" aria-label="Sofía y los mundos de las ideas">
+  <div id="game-canvas"></div>
+  <div id="vignette" aria-hidden="true"></div>
+  <header id="hud">
+    <div id="identity"><img src="./assets/av_sofia.png" alt="Retrato de Sofía"><div class="identity-inner"><strong>SOFÍA</strong><small>✦ Exploradora de ideas</small><div class="xpbar"><i id="xp-bar"></i></div></div></div>
+    <nav id="tabs" aria-label="Secciones"><button data-tab="philosophers" aria-label="Filósofos" title="Filósofos"><b>▤</b><span>Filósofos</span></button><button data-tab="concepts" aria-label="Conceptos" title="Conceptos"><b>✧</b><span>Conceptos</span></button><button data-tab="galaxy" aria-label="Mundos" title="Mundos"><b>◎</b><span>Mundos</span></button><button data-tab="memories" aria-label="Recuerdos" title="Recuerdos"><b>▣</b><span>Recuerdos</span></button><button data-tab="editor" aria-label="Editor de planetas" title="Editor de planetas"><b>⚒</b><span>Editor</span></button></nav>
+    <div id="objective"><b id="chapter">LA CAVERNA DE PLATÓN</b><small id="quest">Busca la lámpara de Sofía</small></div>
+    <button id="missions" aria-label="Objetivos de la caverna" title="Misiones y objetivos">Objetivos</button><button id="planet-exit" hidden title="Salir al mismo punto del planeta">Salir a la Polis</button><button id="planet-view" hidden aria-pressed="false" title="Alternar cámara cercana y planeta completo">Vista</button><button id="pause" title="Pausa">Ⅱ</button>
+  </header>
+  <div id="chapter-progress"><b id="progress-title">La caverna</b><div id="milestones"><i class="active"></i><i></i><i></i><i></i></div><small id="subchapter">El comienzo</small></div>
+  <div id="near-hint" hidden></div>
+  <div id="toast" hidden></div>
+  <div id="controls"><div id="joystick" role="slider" tabindex="0" aria-label="Desplazamiento manual de Sofía" aria-valuemin="-100" aria-valuemax="100" aria-valuenow="0" aria-orientation="horizontal"><span aria-hidden="true"></span></div></div>
+  <div id="veil" class="visible" role="dialog" aria-modal="true"><section id="panel"></section></div>
+  <div id="editor" hidden>
+   <div class="editor-bar"><div><b>⚒ Editor de mundos</b><span>Objetos y zonas funcionales</span></div><div class="editor-bar-actions"><button data-e="undo">↶</button><button data-e="save">Guardar</button><button data-e="export">Exportar JSON</button><button data-e="import">Importar</button><button class="green" data-e="close">▶ Probar mundo</button></div></div>
+   <aside id="editor-tools"><div class="editor-tabs"><button data-tool="select" class="chosen">Seleccionar</button><button data-tool="object">Objetos</button><button data-tool="zone">Zonas</button></div>
+   <label>Nombre del objeto nuevo<input id="object-name" maxlength="140" placeholder="Nombre que verá el jugador"></label><label>Biblioteca de objetos<select id="object-kind"><option value="vase">Cántaro</option><option value="scroll">Pergamino</option><option value="torch">Antorcha</option><option value="door">Puerta</option><option value="philosopher">Filósofo</option></select></label>
+   <label>Tipo de zona<select id="zone-kind"><option value="floor">🟢 Suelo</option><option value="solid">🔴 Obstáculo</option><option value="stairs">🟣 Escalera</option><option value="door">🔵 Puerta</option><option value="water">💧 Agua</option><option value="dialogue">🟠 Diálogo</option><option value="event">🟡 Evento</option></select></label>
+   <div id="edit-help">Elige una herramienta. Toca para colocar objetos o arrastra para marcar zonas sobre la ilustración.</div><div id="properties"><small>Selecciona un elemento para modificar sus propiedades.</small></div><button id="delete-selection">Eliminar selección</button><small>Los cambios se guardan en este dispositivo y se pueden exportar a JSON. Las áreas se ocultan al jugar.</small>
+   </aside><div class="edit-footer">Modo edición · coordenadas del mundo · prueba las puertas y escaleras al salir del editor</div>
+  </div>
+ </main><footer><span>Sofía y los mundos de las ideas · Una aventura para aprender a preguntar</span><span>Miniplaneta de la Polis · Phaser 3</span></footer></div>
+<input id="import-input" type="file" accept="application/json" hidden>
+<!-- Phaser 3 se empaqueta localmente con Vite; no se usa un CDN. -->
+
+<script type="module" src="/src/main.ts"></script>
+</body></html>
