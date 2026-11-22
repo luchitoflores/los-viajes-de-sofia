@@ -780,3 +780,5 @@ El menú inicial precede ahora al mapa de Historia. Las comprobaciones antiguas 
 - Cero errores de navegador y cero recursos HTTP fallidos; incluye atlas con candados y fondos CSS. Informe local: `captures/planet-introduction-validation.json`. Capturas: `tierra-introduccion-lejana.png`, `tierra-introduccion-cercana-tooltip.png` y `pages-mapa-con-recursos-relativos.png`.
 - Se verificó con toque emulado, no en teléfono físico. La Tierra usa `surface.introduction`; el módulo compartido no tiene una rama por ID de mundo.
 - La prueba cubre presentación y publicación estática, no vuelve a recorrer los tres actos de la caverna, cuya lógica no cambió.
+
+- Publicación comprobada: GitHub Actions `45074746909` completó pruebas, compilación y despliegue con éxito. La URL `https://luchitoflores.github.io/los-viajes-de-sofia/` respondió HTTP 200; Chrome creó una partida nueva, cargó Tierra y mostró el tutorial sin errores. Informe local: `captures/github-pages-validation.json`; captura real `captures/github-pages-tierra-publicada.png`. El test del hash de Sartre conserva sus bytes originales mediante `.gitattributes`, también en el runner Linux.

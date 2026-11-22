@@ -33,3 +33,5 @@ Fuentes oficiales consultadas:
 Comprobación inicial del repositorio: privado; la API devolvió 422 al activar Pages porque el plan actual no admite Pages en este repositorio privado. Cambiar su privacidad requiere autorización explícita del autor; no hacerlo como efecto implícito de una publicación.
 
 Tras la autorización explícita del autor se cambió el repositorio a público y se activó Pages con `build_type: workflow` (API 201). El primer código publicado conserva el commit inicial del repositorio como padre.
+
+Publicación confirmada en navegador: HTTP 200, partida nueva en Tierra y tutorial visibles, sin errores. Workflow exitoso: https://github.com/luchitoflores/los-viajes-de-sofia/actions/runs/45074746909 .
