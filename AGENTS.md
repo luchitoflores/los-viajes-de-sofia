@@ -255,3 +255,8 @@ El estado comprobado y las capturas están en `docs/VALIDACION-MOTOR.md`. Para m
 - La primera visita jugada a la Tierra muestra el planeta completo y acerca la cámara; un aviso breve indica el botón Vista. Guardar la marca por partida/mundo, respetar movimiento reducido y no ejecutar ni guardar el tutorial desde el editor.
 - Cambios de contenido por datos; cambios de presentación en módulos pequeños, con puentes mínimos y pruebas del flujo afectado. No introducir un framework ni reescribir el motor para cambios pequeños. Auditoría y orden de extracciones: `docs/EVOLUCION-MODULAR.md`.
 - Publicar el proyecto activo en el repositorio indicado, con GitHub Actions/Pages. El editor web mantiene borradores locales: exportar/aplicar/versionar para compartir contenido publicado.
+
+
+## Editor sin paneles superpuestos — 2026-11-22
+- En las rutas del motor, las herramientas del escenario se integran en el panel lateral, en una sección plegable; no deben tapar el lienzo. Mantener la navegación superior, la selección de mundo/escena y las herramientas funcionales sin duplicar IDs ni perder eventos al cambiar de ruta.
+- En móvil estrecho mostrar el escenario completo y el panel de edición debajo, sin superponer controles. Conservar el editor durante el juego como compatibilidad independiente.

@@ -10,3 +10,6 @@ npm-debug.log*
 
 /captura_*.png
 /fallback_*.png
+
+__pycache__/
+*.pyc

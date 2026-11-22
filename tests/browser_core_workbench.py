@@ -24,7 +24,14 @@ with sync_playwright() as pw:
  def click_item(id):
   q=page.evaluate(f"()=>{{const s={W},c=s.cameras.main,r=s.game.canvas.getBoundingClientRect(),v=s.propViews.find(v=>v.id==='{id}'&&v.obj.type==='Zone').obj.getCenter(),p=c.matrix.transformPoint(v.x-c.scrollX,v.y-c.scrollY);return{{x:r.left+p.x*r.width/s.scale.width,y:r.top+p.y*r.height/s.scale.height}}}}")
   page.mouse.click(q['x'],q['y'])
- page.goto(URL+'#/edicion?world=plato&scene=prisioneros',wait_until='domcontentloaded');ready_world('plato','prisioneros');kept();page.locator('summary').filter(has_text='Estado de la prueba').click();page.locator('#core-test-mission').select_option('0');page.locator('#core-test-scene').click();page.wait_for_selector('body.core-scene-preview');page.wait_for_selector('[data-conversation="prisionero-encadenado"]:not([hidden])');page.locator('[data-conversation="prisionero-encadenado"]').click();page.wait_for_selector('#dialogue-text');
+ page.goto(URL+'#/edicion?world=plato&scene=prisioneros',wait_until='domcontentloaded');ready_world('plato','prisioneros');kept();
+ def clear_canvas():
+  result=page.evaluate("()=>{const c=document.querySelector('canvas').getBoundingClientRect(),t=document.getElementById('editor-tools').getBoundingClientRect();return{inside:!!document.querySelector('#core-editor-tools-slot #editor-tools'),overlap:Math.min(c.right,t.right)>Math.max(c.left,t.left)&&Math.min(c.bottom,t.bottom)>Math.max(c.top,t.top),clear:[.04,.2,.5,.85,.96].every(x=>[.12,.5,.85].every(y=>document.elementFromPoint(c.left+c.width*x,c.top+c.height*y)?.tagName==='CANVAS')),bottom:c.bottom}}")
+  assert result['inside'] and not result['overlap'] and result['clear'],result
+ for width,height in [(1920,900),(1366,768),(932,430),(600,850)]:
+  page.set_viewport_size({'width':width,'height':height});page.evaluate('scrollTo(0,0)');page.wait_for_timeout(350);clear_canvas();page.screenshot(path=str(OUT/f'editor-sin-panel-superpuesto-{width}.png'))
+ page.set_viewport_size({'width':1600,'height':1000});page.wait_for_timeout(350);page.locator('#core-toggle-tools').click();assert page.locator('#core-toggle-tools').get_attribute('aria-expanded')=='false';page.locator('#core-toggle-tools').click();assert page.locator('#core-toggle-tools').get_attribute('aria-expanded')=='true';assert page.locator('#editor-tools').count()==1;report['single_docked_tools_leave_entire_canvas_free_desktop_and_mobile']=True
+ page.locator('summary').filter(has_text='Estado de la prueba').click();page.locator('#core-test-mission').select_option('0');page.locator('#core-test-scene').click();page.wait_for_selector('body.core-scene-preview');page.wait_for_selector('[data-conversation="prisionero-encadenado"]:not([hidden])');page.locator('[data-conversation="prisionero-encadenado"]').click();page.wait_for_selector('#dialogue-text');
  for _ in range(25):
   if not page.locator('#veil.visible').count():break
   choices=page.locator('#panel button:not([hidden])')

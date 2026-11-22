@@ -782,3 +782,9 @@ El menú inicial precede ahora al mapa de Historia. Las comprobaciones antiguas 
 - La prueba cubre presentación y publicación estática, no vuelve a recorrer los tres actos de la caverna, cuya lógica no cambió.
 
 - Publicación comprobada: GitHub Actions `45074746909` completó pruebas, compilación y despliegue con éxito. La URL `https://luchitoflores.github.io/los-viajes-de-sofia/` respondió HTTP 200; Chrome creó una partida nueva, cargó Tierra y mostró el tutorial sin errores. Informe local: `captures/github-pages-validation.json`; captura real `captures/github-pages-tierra-publicada.png`. El test del hash de Sartre conserva sus bytes originales mediante `.gitattributes`, también en el runner Linux.
+
+
+## Editor sin herramientas superpuestas — 2026-11-22
+- TypeScript y Vite compilan correctamente. `python tests/browser_core_workbench.py`: correcto, cero errores del navegador y progreso jugado conservado. Se comprueba que los controles están fuera del canvas, sin superposición y con toda su superficie accesible, a 1920×900, 1366×768, 932×430 y 600×850.
+- Verificados ocultar/mostrar, cambiar escenas y rutas, probar habitación, cargar imágenes, editar acciones y diálogos, preguntas e importar/exportar proyecto. Los controles reutilizan sus nodos originales; no se duplican IDs.
+- Capturas auténticas en `captures/editor-sin-panel-superpuesto-*.png`. Las pruebas táctiles son emuladas, no en teléfono físico. La distribución del editor antiguo dentro del juego se conserva; la corrección se aplica a las rutas del motor.

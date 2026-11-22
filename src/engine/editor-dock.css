@@ -1,0 +1,20 @@
+/* En el motor, las herramientas viven en la barra lateral, nunca sobre el lienzo. */
+body.core-mode #core-editor-tools .editor-bar{position:static;inset:auto;display:block;padding:0 0 12px;background:none;border:0;pointer-events:auto}
+body.core-mode #core-editor-tools .editor-bar>div:first-child{display:none}
+body.core-mode #core-editor-tools .editor-bar-actions{display:flex;flex-wrap:wrap;gap:6px}
+body.core-mode #core-editor-tools #editor-tools{position:static;inset:auto;width:100%;height:auto;max-height:none;overflow:visible;padding:0;background:none;border:0;box-shadow:none;pointer-events:auto}
+body.core-mode #core-editor-tools #planet-palette{position:static;width:100%;max-height:none}
+body.core-mode #editor .edit-footer{display:none}
+body.core-mode #core-editor-tools #world-new,body.core-mode #core-editor-tools #world-library,body.core-mode #core-editor-tools #world-dialogue-editor{display:none}
+body.core-mode.core-hide-tools #core-editor-tools{display:none}
+body.core-mode:not(.core-preview) #shell{height:auto;min-height:0}
+body.core-mode:not(.core-preview) #stage{width:min(100%,calc((100dvh - var(--core-nav-height,66px) - 42px)*16/9));max-height:none;flex:none}
+body.core-mode:not(.core-preview) footer{width:100%}
+@media(max-width:760px){
+ body.core-mode:not(.core-sheet):not(.core-preview) #shell{position:relative;inset:auto;margin:calc(var(--core-nav-height,66px) + 12px) 10px 12px;width:calc(100% - 20px);height:auto;min-height:0}
+ body.core-mode:not(.core-sheet):not(.core-preview) #stage{width:100%;max-height:none}
+ body.core-mode:not(.core-sheet) #core-workbench{position:relative;inset:auto;margin:12px 10px;width:calc(100% - 20px);max-height:52dvh}
+}
+
+body.core-mode #core-editor-tools [data-e=close]{display:none}
+body.core-mode #editor{background:none}

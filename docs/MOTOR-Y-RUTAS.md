@@ -126,3 +126,7 @@ Si quedó una entrada en el atlas pero falta tanto su borrador como su JSON, el 
 En Edición aparece «Mundos pendientes de recuperar». Selecciona allí el JSON original del mundo: debe conservar el mismo ID. El motor valida el archivo, repone el borrador y vuelve a permitir abrirlo con su progreso anterior. Un proyecto completo importado también puede reponer las definiciones. Si un mundo canónico conserva una antigua ruta de importación rota, el cargador utiliza su archivo publicado por ID.
 
 No se fabrica contenido sustituto para mundos personalizados perdidos. Mientras falten definiciones, la exportación del proyecto completo explica qué debe recuperarse antes de exportar; así no produce un proyecto incompleto silenciosamente.
+
+
+### Herramientas sin tapar la escena
+En `/#/edicion`, la sección **Herramientas del escenario** reúne los controles de selección, objetos/zonas, propiedades y guardado dentro del panel lateral del motor. Se puede plegar u ocultar. El menú superior sigue separando mundos, diálogos y actividades. Ya no hay un segundo panel flotando sobre la habitación. En pantallas estrechas el lienzo aparece arriba y el panel debajo. `editor-dock.ts` mueve los mismos nodos y los restaura antes de reconstruir la interfaz; conserva sus eventos, IDs y la compatibilidad del editor dentro del juego.
