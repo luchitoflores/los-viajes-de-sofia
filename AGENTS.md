@@ -260,3 +260,9 @@ El estado comprobado y las capturas están en `docs/VALIDACION-MOTOR.md`. Para m
 ## Editor sin paneles superpuestos — 2026-11-22
 - En las rutas del motor, las herramientas del escenario se integran en el panel lateral, en una sección plegable; no deben tapar el lienzo. Mantener la navegación superior, la selección de mundo/escena y las herramientas funcionales sin duplicar IDs ni perder eventos al cambiar de ruta.
 - En móvil estrecho mostrar el escenario completo y el panel de edición debajo, sin superponer controles. Conservar el editor durante el juego como compatibilidad independiente.
+
+
+## Conversaciones por escena — 2026-11-22
+- Separar el aspecto global de bocadillos (`/#/apariencia`) de los textos y estados (`/#/dialogos`). El editor de mundos ofrece entrada directa a las conversaciones de la escena abierta.
+- Enumerar escenas y conversaciones para localizar, conservando IDs permanentes. Incluir diálogos de objetos, eventos de llegada/regreso y compañero, y mostrar sus condiciones y versiones en lenguaje legible.
+- Editar una versión abre su turno sin alterar las otras entradas, recompensas ni cadenas. Las pruebas usan la habitación correspondiente y no guardan progreso. Guía: `docs/DIALOGOS-POR-ESCENA.md`.

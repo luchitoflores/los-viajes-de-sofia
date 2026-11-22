@@ -130,3 +130,7 @@ No se fabrica contenido sustituto para mundos personalizados perdidos. Mientras 
 
 ### Herramientas sin tapar la escena
 En `/#/edicion`, la sección **Herramientas del escenario** reúne los controles de selección, objetos/zonas, propiedades y guardado dentro del panel lateral del motor. Se puede plegar u ocultar. El menú superior sigue separando mundos, diálogos y actividades. Ya no hay un segundo panel flotando sobre la habitación. En pantallas estrechas el lienzo aparece arriba y el panel debajo. `editor-dock.ts` mueve los mismos nodos y los restaura antes de reconstruir la interfaz; conserva sus eventos, IDs y la compatibilidad del editor dentro del juego.
+
+
+### Textos de conversación y aspecto separados
+`/#/dialogos` organiza los textos por mundo y escena e incluye eventos de regreso y versiones condicionadas. `/#/apariencia` se dedica a tema, tipografía y posición global, con un texto de muestra. Desde cada escena del editor se abre directamente su lista de diálogos. Guía: [Diálogos por escena](DIALOGOS-POR-ESCENA.md).

@@ -788,3 +788,13 @@ El menú inicial precede ahora al mapa de Historia. Las comprobaciones antiguas 
 - TypeScript y Vite compilan correctamente. `python tests/browser_core_workbench.py`: correcto, cero errores del navegador y progreso jugado conservado. Se comprueba que los controles están fuera del canvas, sin superposición y con toda su superficie accesible, a 1920×900, 1366×768, 932×430 y 600×850.
 - Verificados ocultar/mostrar, cambiar escenas y rutas, probar habitación, cargar imágenes, editar acciones y diálogos, preguntas e importar/exportar proyecto. Los controles reutilizan sus nodos originales; no se duplican IDs.
 - Capturas auténticas en `captures/editor-sin-panel-superpuesto-*.png`. Las pruebas táctiles son emuladas, no en teléfono físico. La distribución del editor antiguo dentro del juego se conserva; la corrección se aplica a las rutas del motor.
+
+
+## Conversaciones por escena y apariencia independiente — 2026-11-22
+
+- `npm test`: 73/73, incluido el índice de eventos de regreso/compañero, la numeración por escena y el borrado protegido de borradores. TypeScript y Vite correctos.
+- `npm run test:scene-dialogues`: edición del regreso a B conservando recompensa y evento; edición de la versión del prisionero liberado conservando entradas y respuestas; prueba en la habitación real; creación de conversación de llegada condicionada al primer ascenso; creación y eliminación confirmada de un borrador; aspecto global separado con prueba sin guardar y aplicación explícita. Clic real y toque emulado horizontal a 932×430; sin errores del navegador y sin cambiar progreso jugado.
+- `python tests/browser_core_workbench.py`: regresión de mundos, lienzo libre en cuatro tamaños, subida de imágenes, acciones encadenadas, apariencia, conversaciones, preguntas y proyecto completo: correcta, cero errores. La selección de escena/world se conserva al navegar entre secciones.
+- Los datos de Platón solo ganan nombres legibles de conversaciones: se comprobó igualdad de la narrativa, geometría y recompensas al excluir esos nombres. Sartre conserva su SHA256 original.
+- Informes locales: `captures/scene-dialogue-validation.json` y `captures/core-workbench-validation.json`. Capturas: `dialogos-por-escena-prisioneros.png`, `dialogo-version-liberado-editor.png`, `aspecto-dialogos-separado.png`.
+- El toque es emulado; no hay prueba en teléfono físico. No se recorrió de nuevo toda la aventura porque sus reglas no cambiaron. Las nuevas condiciones sencillas se guardan como eventos del motor común; no hay un motor narrativo distinto.

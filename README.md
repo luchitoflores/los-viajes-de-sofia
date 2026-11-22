@@ -348,3 +348,6 @@ Las nuevas partidas parten de la Tierra, con ilustración generada por IA y expl
 
 ## Presentación inicial y publicación
 La primera visita a la Tierra muestra el planeta completo y acerca la cámara. Después aparece un aviso breve del botón Vista; se recuerda por partida. [GitHub Pages](docs/GITHUB-PAGES.md) · [Auditoría y evolución modular](docs/EVOLUCION-MODULAR.md).
+
+
+Los textos se editan en **Diálogos por escena**; el diseño global se configura aparte en **Aspecto de diálogos**. [Guía sencilla de conversaciones, regresos y versiones](docs/DIALOGOS-POR-ESCENA.md).

@@ -1493,7 +1493,8 @@
           ],
           "characterId": "plat"
         }
-      }
+      },
+      "title": "Primer encuentro con Platón"
     },
     "entrada-observacion": {
       "style": "parchment",
@@ -1514,7 +1515,8 @@
         "flags": [
           "lampara_encendida"
         ]
-      }
+      },
+      "title": "Encender la lámpara"
     },
     "prisionero": {
       "style": "parchment",
@@ -1673,7 +1675,8 @@
           ],
           "node": "evidencias"
         }
-      ]
+      ],
+      "title": "Conversación con el prisionero"
     },
     "pared-sombras": {
       "style": "parchment",
@@ -1689,7 +1692,8 @@
             }
           ]
         }
-      }
+      },
+      "title": "Lo que vemos en la pared"
     },
     "observar-fuego": {
       "style": "parchment",
@@ -1710,7 +1714,8 @@
         "flags": [
           "fuego_observado"
         ]
-      }
+      },
+      "title": "El fuego detrás de las sombras"
     },
     "observar-caballo": {
       "style": "parchment",
@@ -1731,7 +1736,8 @@
         "flags": [
           "caballo_observado"
         ]
-      }
+      },
+      "title": "La figura del caballo"
     },
     "observar-vasija": {
       "style": "parchment",
@@ -1752,7 +1758,8 @@
         "flags": [
           "vasija_observada"
         ]
-      }
+      },
+      "title": "La figura de la vasija"
     },
     "observar-figura": {
       "style": "parchment",
@@ -1773,7 +1780,8 @@
         "flags": [
           "figura_observada"
         ]
-      }
+      },
+      "title": "La figura humana"
     },
     "origen-sombras": {
       "style": "ink",
@@ -1846,7 +1854,8 @@
         "flags": [
           "sombras_comprendidas"
         ]
-      }
+      },
+      "title": "Descubrir el origen de las sombras"
     },
     "duda-ascenso": {
       "style": "parchment",
@@ -1902,7 +1911,8 @@
           ],
           "characterId": "prisionero"
         }
-      }
+      },
+      "title": "La dificultad del ascenso"
     },
     "primera-salida": {
       "style": "parchment",
@@ -1970,7 +1980,8 @@
         "flags": [
           "primer_ascenso_completado"
         ]
-      }
+      },
+      "title": "Primera llegada a la luz"
     },
     "regreso-conflicto": {
       "style": "ink",
@@ -2061,7 +2072,8 @@
         "flags": [
           "regreso_caverna_completado"
         ]
-      }
+      },
+      "title": "El rechazo al volver a la caverna"
     },
     "companero": {
       "style": "parchment",
@@ -2192,7 +2204,8 @@
           ],
           "node": "volver"
         }
-      ]
+      ],
+      "title": "El camino con el prisionero"
     },
     "cierre": {
       "style": "parchment",
@@ -2257,7 +2270,8 @@
           "segundo_ascenso_completado",
           "aventura_platon_completada"
         ]
-      }
+      },
+      "title": "La decisión y el segundo ascenso"
     },
     "otros-prisioneros": {
       "style": "parchment",
@@ -2274,7 +2288,8 @@
           ],
           "characterId": "otro-prisionero"
         }
-      }
+      },
+      "title": "Quienes siguen mirando la pared"
     }
   },
   "activities": {},

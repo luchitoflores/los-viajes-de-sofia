@@ -1,0 +1,5 @@
+body.core-mode #core-workbench [hidden]{display:none!important}
+.dialogue-version{margin:12px 0;padding:8px 12px;border-left:3px solid #b28b54;background:#fff8eb}
+#scene-dialogue-edit:not(:empty){margin-top:24px;padding:20px;border:2px solid #b99762;border-radius:12px;background:#fffcf5;scroll-margin-top:calc(var(--core-nav-height,66px) + 20px)}
+#scene-dialogue-list .core-item small{display:block;margin:4px 0}
+#scene-dialogue-list a,#core-scene-dialogues{display:inline-block;margin:8px 0}

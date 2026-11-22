@@ -35,7 +35,8 @@
     "test:activity-invitation": "python tests/browser_activity_invitation.py",
     "test:start-menu": "python tests/browser_start_menu.py",
     "test:earth": "python tests/browser_earth_and_return.py",
-    "test:introduction": "python tests/browser_planet_introduction.py"
+    "test:introduction": "python tests/browser_planet_introduction.py",
+    "test:scene-dialogues": "python tests/browser_scene_dialogues.py"
   },
   "devDependencies": {
     "typescript": "^5.9.3",
