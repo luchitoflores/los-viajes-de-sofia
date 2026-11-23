@@ -1,3 +1,4 @@
+import {conversationKey,finishConversation} from './conversation-status';
 import type {WorldDefinition,Activity} from '../worlds/schema';
 import {dialogueNode,chooseDialogue,answerActivity,finishDecision,type WorldProgress} from './progression';
 export interface ContentHost {face?:(characterId:string)=>void;remember?:(id:string,dialogue:string)=>void;show:(html:string,kind?:'story'|'dark'|'light')=>void;close:()=>void;save:()=>void;atlas:()=>void}
@@ -8,11 +9,12 @@ export class ContentPlayer {
  constructor(private world:()=>WorldDefinition,private progress:()=>WorldProgress,private host:ContentHost){}
  dialogue(id:string,done:(complete:boolean)=>void=()=>this.host.close()){
   const w=this.world(),p=this.progress(),{id:nodeId,node}=dialogueNode(w,p,id),intro=id===w.intro&&!p.introComplete;
+  (p.dialogueStarts??={})[id]??=conversationKey(w,p,id);
   const character=node.characterId?w.characters?.[node.characterId]:node.speaker===w.philosopher.name?w.characters?.[w.philosopher.id]:undefined;const speaker=character?.name??node.speaker;const choices=node.choices.filter(c=>(c.requires??[]).every(id=>p.flags.includes(id))&&!(c.excludes??[]).some(id=>p.flags.includes(id)));
   const speakingId=node.characterId??(node.speaker===w.philosopher.name?w.philosopher.id:undefined);if(speakingId)this.host.face?.(speakingId);
   const portrait=character?.portraitId?w.assets[character.portraitId].src:node.portrait?w.assets[node.portrait].src:node.speaker==='Sofía'?'assets/av_sofia.png':node.speaker===w.philosopher.name?w.philosopher.portrait:null;
   this.host.show(`<div data-dialogue-theme="${w.dialogues[id].style??'parchment'}" data-dialogue-speaker="${escape(node.speaker==='Sofía'?'sofia':speakingId??'narrator')}"></div>${portrait?`<img class="portrait" src="${escape(portrait)}" alt="${escape(speaker)}">`:''}<div class="character-tag">${escape(speaker)}</div><p id="dialogue-text" aria-label="${escape(node.text)}">${escape(node.text)}</p><div class="row">${choices.map((c,i)=>button('choice-'+i,c.text)).join('')}</div>`,'story');
-  choices.forEach((c,i)=>bind('choice-'+i,()=>{const result=chooseDialogue(w,p,id,nodeId,c.id);this.host.save();const next=()=>{if(result.next)this.dialogue(id,done);else{this.host.remember?.(node.characterId??w.philosopher.id,id);done(true)}};if(result.feedback||result.consequence){this.host.show(`<div data-dialogue-theme="${w.dialogues[id].style??'parchment'}" data-dialogue-speaker="${escape(speakingId??'narrator')}"></div><div class="character-tag">${escape(speaker)}</div><p>${escape(result.feedback??result.consequence!)}</p>${button('continue','Continuar')}`,'story');bind('continue',next)}else next()}));
+  choices.forEach((c,i)=>bind('choice-'+i,()=>{const result=chooseDialogue(w,p,id,nodeId,c.id);if(!result.next)finishConversation(p,id,p.dialogueStarts?.[id]??conversationKey(w,p,id));this.host.save();const next=()=>{if(result.next)this.dialogue(id,done);else{this.host.remember?.(node.characterId??w.philosopher.id,id);done(true)}};if(result.feedback||result.consequence){this.host.show(`<div data-dialogue-theme="${w.dialogues[id].style??'parchment'}" data-dialogue-speaker="${escape(speakingId??'narrator')}"></div><div class="character-tag">${escape(speaker)}</div><p>${escape(result.feedback??result.consequence!)}</p>${button('continue','Continuar')}`,'story');bind('continue',next)}else next()}));
   bind('atlas',()=>this.host.atlas());bind('leave',()=>done(false));
  }
  message(text:string,next:()=>void=()=>this.host.close(),title='Descubrimiento'){

@@ -278,3 +278,8 @@ El estado comprobado y las capturas están en `docs/VALIDACION-MOTOR.md`. Para m
 - Barra de Guardar, Deshacer/Rehacer, selección, dibujo y eliminación sobre la escena, fuera del lienzo. Biblioteca e inspector en el lateral.
 - Insertar un objeto o dibujar una zona vuelve a Seleccionar; no repetir inserciones sin elegir de nuevo Colocar. Los clics de los formularios no deben colocar objetos, tampoco en el planeta radial.
 - Mostrar la selección por nombre, confirmar eliminación y permitir recuperarla con Deshacer. Conservar datos, partidas e importación/exportación. Auditoría: `docs/AUDITORIA-EDITOR.md`.
+
+## Indicadores de conversación — decisión posterior, 23 de noviembre de 2026
+- Sustituir el círculo de los pies por un icono sobre la cabeza solo si hay conversación pendiente y disponible. Ocultarlo después de leer; volver a mostrarlo ante una nueva intervención habilitada. Mantener conversación repetida por clic sin anunciarla permanentemente.
+- Mantener separación al acercarse a un NPC; no convertir todo diálogo trivial en bloqueo del camino. Los requisitos narrativos y la geometría de obstáculos son explícitos.
+- La posible configuración visual del indicador en temas fue una consulta, no autorización para añadir controles nuevos. Detalle: `docs/INDICADORES-DE-CONVERSACION.md`.

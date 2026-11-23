@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {freshProgress,restoreProgress} from '../src/engine/progression.ts';
+import {conversationKey,pendingConversation,finishConversation} from '../src/engine/conversation-status.ts';
+const base=JSON.parse(readFileSync(new URL('../public/worlds/plato.json',import.meta.url)));
+test('read conversations hide their marker; later eligible entries and edited content return it',()=>{const w=structuredClone(base),p=freshProgress(w);w.dialogues.test={style:'ink',start:'hello',entries:[{node:'later',requires:['returned']}],nodes:{hello:{speaker:'NPC',text:'Hola',choices:[{id:'end',text:'Continuar'}]},later:{speaker:'NPC',text:'Has vuelto',choices:[{id:'end',text:'Continuar'}]}}};assert.equal(pendingConversation(w,p,'test'),true);finishConversation(p,'test',conversationKey(w,p,'test'));assert.equal(pendingConversation(w,p,'test'),false);p.flags.push('returned');assert.equal(pendingConversation(w,p,'test'),true);finishConversation(p,'test',conversationKey(w,p,'test'));assert.equal(pendingConversation(w,p,'test'),false);p.cursors.test='later';assert.equal(pendingConversation(w,p,'test'),true);delete p.cursors.test;const edited=structuredClone(w);edited.dialogues.test.nodes.later.text='Un texto nuevo';assert.equal(pendingConversation(edited,p,'test'),true);const restored=restoreProgress(w,p);assert.equal(pendingConversation(w,restored,'test'),false);assert.equal(pendingConversation(w,p,'missing'),false)});
+test('completed introductions remain read in older saves without dialogue history',()=>{const p=freshProgress(base);p.introComplete=true;assert.equal(pendingConversation(base,p,base.intro),false)});

@@ -2,7 +2,7 @@ import {dialogueAppearance} from './engine-settings';
 import type Phaser from 'phaser';
 
 type Actor = Phaser.GameObjects.Image | Phaser.GameObjects.Sprite;
-export interface ConversationTarget {id:string;characterId?:string;name:string;view:Actor}
+export interface ConversationTarget {pending?:boolean;id:string;characterId?:string;name:string;view:Actor}
 interface DialogueScene extends Phaser.Scene {
  player?:Actor;speakingCharacter?:string;
  conversationTargets?:()=>ConversationTarget[];
@@ -25,11 +25,11 @@ export function bindDialogueStage(scene:()=>DialogueScene|undefined,blocked:()=>
    const p=(camera as typeof camera & {matrix:Phaser.GameObjects.Components.TransformMatrix}).matrix.transformPoint(view.x+Math.sin(view.rotation)*height-camera.scrollX,view.y-Math.cos(view.rotation)*height-camera.scrollY);
    return{x:rect.left+p.x*rect.width/s.scale.width,y:rect.top+p.y*rect.height/s.scale.height};
   };
-  const targets=s.conversationTargets?.()??[],ids=new Set(targets.map(t=>t.id));
+  const targets=s.conversationTargets?.()??[],ids=new Set(targets.filter(t=>t.pending!==false).map(t=>t.id));
   for(const [id,b] of markers)if(!ids.has(id)){b.remove();markers.delete(id)}
-  if(!layer.hidden)for(const target of targets){
-   let b=markers.get(target.id);if(!b){b=document.createElement('button');b.className='conversation-marker';b.dataset.conversation=target.id;b.innerHTML='<span class="talk-ring"></span><span class="talk-icon" aria-hidden="true"><i></i><i></i><i></i></span>';b.onclick=e=>{e.stopPropagation();scene()?.approachCharacter?.(target.id)};layer.append(b);markers.set(target.id,b)}
-   b.setAttribute('aria-label','Conversar con '+target.name);const p=project(target.view);
+  if(!layer.hidden)for(const target of targets.filter(t=>t.pending!==false)){
+   let b=markers.get(target.id);if(!b){b=document.createElement('button');b.className='conversation-marker';b.dataset.conversation=target.id;b.innerHTML='<span class="talk-icon" aria-hidden="true"><i></i><i></i><i></i></span>';b.onclick=e=>{e.stopPropagation();scene()?.approachCharacter?.(target.id)};layer.append(b);markers.set(target.id,b)}
+   b.setAttribute('aria-label','Conversar con '+target.name);const p=project(target.view,true);
    b.hidden=!target.view.visible||!target.view.active||target.view.alpha===0||p.x<rect.left+22||p.x>rect.right-22||p.y<rect.top+15||p.y>rect.bottom-35;
    b.style.left=p.x+'px';b.style.top=p.y+'px';
   }

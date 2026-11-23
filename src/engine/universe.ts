@@ -1,3 +1,4 @@
+import {pendingConversation} from './conversation-status';
 import {notifyObjectiveChange} from './objective-notice';
 import {restorePlatoContinuity} from '../worlds/plato-compatibility';
 import {jsonResource} from './json-resource';
@@ -124,6 +125,7 @@ export class Universe {
  rememberLift(id:string,y:number){if(!this.world||!this.progress.interior||!Number.isFinite(y))return;this.progress.mechanisms[this.progress.interior+':'+id]=y;this.progress.interiorX=this.host.position().x??this.progress.interiorX;this.store()}
  rememberInterior(x:number){if(!this.active)return;this.progress.interiorX=x;this.store()}
  isCollected(id:string){return this.active&&this.progress.planet.collected.includes(id)}
+ conversationPending(id:string){if(!this.world)return false;const object=id==='companion'?this.companion():this.findObject(id);if(!object)return false;if(!this.progress.introComplete)return id!=='companion'&&object.characterId===this.world.philosopher.id;const b=object.behavior?this.world.interactions[object.behavior]:undefined;if(!gate(this.world,this.progress,object.behavior).allowed)return false;return b?.actions.some(a=>a.type==='talk'&&pendingConversation(this.world!,this.progress,a.target))??false}
  private findObject(id:string){return this.progress.planet.objects.find(o=>o.id===id) as WorldObject|undefined??Object.values(this.world!.interiors).flatMap(i=>i.items).find(o=>o.id===id)}
  interact(id:string){
   if(!this.world)return false;const object=this.findObject(id);if(!object)return true;const b=object.behavior?this.world.interactions[object.behavior]:undefined,g=gate(this.world,this.progress,object.behavior);
