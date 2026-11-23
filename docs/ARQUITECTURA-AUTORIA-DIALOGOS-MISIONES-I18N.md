@@ -1,6 +1,6 @@
 # Propuesta de arquitectura: editor visual de diálogos, misiones, escenas y traducciones
 
-**Estado:** propuesta de diseño para validar antes de programar · 23-11-2026. **NO IMPLEMENTADA.** No reemplaza el sistema actual ni modifica partidas. Debe revisarse contra el código vivo antes de implementar.
+**Estado:** decisiones de experiencia de autoría APROBADAS por el autor (enfoque tipo Genially, 23-11-2026); organización de archivos y pasos técnicos sujetos a validación. **NO IMPLEMENTADAS.** No reemplaza el sistema actual ni modifica partidas. Revisar contra el código vivo antes de implementar.
 
 ## 0. Qué existe realmente y no debemos romper
 
@@ -184,3 +184,75 @@ Al escoger [+ Añadir resultado] → [El prisionero acepta salir]
 - Cada mundo documentará personajes, escenas, misiones, conversaciones, acciones y enseñanzas; el **pergamino** consume evidencias de misiones y actividades, no el texto libre de diálogo como «aprobado».
 
 **Fuentes en repo:** [Diálogos por escena](DIALOGOS-POR-ESCENA.md), [Diálogos y niveles](DIALOGOS-Y-NIVELES.md), [Editor y acontecimientos](EDITOR-Y-ACONTECIMIENTOS.md), [Motor y rutas](MOTOR-Y-RUTAS.md), [Evolución modular](EVOLUCION-MODULAR.md). Referencia externa de UX: TyranoBuilder (componentes de diálogo/variables), GDevelop (eventos con condiciones y acciones), Ren'Py (separación de guion y traducciones), **sin adoptarlos como motores**.
+
+
+## 9. Decisión confirmada: «Genially para crear mundos jugables»
+
+**Aprobación del autor, 23-11-2026.** El modelo mental principal del editor será **crear una presentación interactiva como en Genially**; esta analogía define la EXPERIENCIA DE EDICIÓN, no el motor de ejecución.
+
+| Genially | Sofía y los mundos de las ideas |
+|---|---|
+| Presentación | Planeta/mundo de un filósofo |
+| Diapositiva | Escena o habitación lateral; la superficie circular también es una escena especial |
+| Fondo de diapositiva | Imagen base del escenario; geometría/colliders configurados independientemente |
+| Elemento insertado | NPC, objeto, cadena, antorcha, señal, puerta o zona invisible |
+| Interactividad del elemento | Lista ordenada de acciones y condiciones |
+| Ir a diapositiva | Ir a habitación interior/volver a escena/salir a superficie; preservar punto de retorno |
+| Mostrar texto | Examinar, conversación o comentario con imagen/retrato |
+| Plantilla | Patrón reutilizable de habitación y/o misión |
+| Vista previa | Probar la escena, incluyendo estado de misión simulado |
+
+**Diferencia indispensable:** la escena es **jugable**. En lugar de pulsar el elemento de forma arbitraria, Sofía camina hasta el NPC/objeto, se aproxima y lo examina/habla/activa; el editor muestra la superficie caminable y las colisiones. Sin destruir la lógica de navegación radial exterior, interiores laterales, controles táctiles landscape o guardados.
+
+### 9.1 Flujo de creación que debe parecer sencillo
+1. «Nueva escena» → seleccionar plantilla (habitación plana, ascenso, diálogo, exploración, etc.) → importar/cambiar imagen y nombre.
+2. «Añadir elemento» → elegir NPC existente o nuevo, objeto de biblioteca, zona clicable, puerta, antorcha o señal → colocarlo en el lienzo.
+3. Tocar elemento → inspector **¿Qué ocurre al interactuar?** con botones grandes: **Conversar**, **Examinar**, **Activar**, **Ir a otra escena**, **Recoger**, **Iniciar actividad** (futuro).
+4. Para una secuencia, añadir acciones en orden; permitir moverlas, desactivarlas temporalmente, duplicar y eliminar con validación. Cada acción admite «Solo si…» y «Después…», eligiendo condiciones/resultados por **nombre legible** de un catálogo.
+5. «Conectar escena» → elegir destino de una lista de escenas existentes y punto de llegada; ofrecer regreso automático. No requerir cables ni editar rutas manualmente.
+6. «Probar» → jugar la escena con marcas de progreso simuladas. Ver si NPC habla, cadena libera, puerta abre, misión avanza y regreso conserva estado.
+7. «Guardar» → versión local validada; «Exportar/Publicar» → archivo compatible y flujo de revisión/incorporación GitHub existente, no publicación automática engañosa.
+
+### 9.2 La misión atraviesa varias escenas; no es una diapositiva más
+Una misión es una **secuencia de pasos con condiciones y eventos** sobre varias escenas. Panel separado «Mi misión» con línea temporal de tarjetas:
+- Hablar con NPC → investigar objetos → cambiar evento «sombras comprendidas» → volver a NPC → aceptar misión/acompañamiento → abrir cadenas → desbloquear puerta.
+- Debe permitir reordenar pasos cuando la lógica lo permita, reconocer dependencias, detectar pasos imposibles e ir desde cada paso al NPC, objeto y escena relacionados.
+- La misma escena puede participar en varias misiones y un NPC puede hablar en múltiples escenas. El motor no debe duplicar su identidad ni su diálogo solo porque cambia la aparición.
+
+### 9.3 Inspector unificado de objeto / NPC
+Al seleccionar cualquier recurso:
+- **Aspecto:** sprite, escala, posición y orientación; para planeta radial, ángulo/apoyo; para habitación lateral, coordenadas.
+- **Movimiento / accesibilidad:** suelo, hitbox, distancia de interacción, barrera/puerta/camino; mostrar vista de colisión sin adivinar el suelo desde la imagen.
+- **Interacciones:** título visible, «al acercarse / al tocar / al entrar en zona / al volver», requisitos, acciones ordenadas, repetición y mensaje si bloqueado.
+- **Conversaciones:** seleccionar existente o crear; biblioteca filtrable por NPC/escena/misión, entradas condicionales por progreso, contadores calculados.
+- **Destinos:** selector de escenas/mundos válidos, advertencia de referencias rotas y punto de retorno.
+- **Seguimiento:** «Dónde se usa», «Qué evento dispara», «Qué se desbloquea» y vista previa.
+- **Estado:** identidad permanente (characterId) separada de sprite e instancia, opción para personaje temporal, variaciones por escena y conservación de progreso.
+
+### 9.4 Plantillas de autoría prioritarias
+**Plantillas simples**, configurables en JSON, no motores exclusivos: «Conocer NPC», «Investigar varios objetos», «Aceptar misión», «Convencer NPC con evidencias», «Liberar/activar mecanismo», «Abrir puerta por requisito», «Conseguir pergamino» y «Regresar para concluir». Instanciar plantilla genera objetos, referencias, acciones y flags **con IDs únicos y validados**; el usuario cambia nombres, textos, sprites, escena y requisitos. No inventa automáticamente diálogos filosóficos completos.
+
+### 9.5 Alcance y orden de construcción decidido
+- **P0 / obligatorio:** preservar el juego, escenas, diálogos, eventos y editor actuales; no introducir una segunda fuente de verdad.
+- **P1:** experiencia tipo Genially dentro de `/#/edicion` y paneles actuales: insertar → seleccionar → interactuar → previsualizar; catálogo de NPC con contadores y vistas por escena.
+- **P2:** línea temporal visual de misiones reutilizando `world.missions`, `requires`, `reward.flags`, `interactions`; añadir plantillas y validación de dependencias.
+- **P3:** organizar/exportar diálogos por mundo, preparar localización separada para interfaz y textos y añadir publicación más asistida, conservando `sofia-dialogues` y `apply:project`.
+- **P4:** integrar el framework de minijuegos mediante IDs de actividad/resultado, **sin** rediseñar el editor.
+
+### 9.6 Criterios de aceptación para una primera demostración
+Sin editar manualmente ningún archivo TS, desde el editor visual el autor debe poder:
+1. Abrir «Platón → Sala B», seleccionar el prisionero y ver todas sus conversaciones, escenas y variantes de estado con contadores.
+2. Añadir un NPC genérico con una identidad nueva y otra instancia de un NPC ya existente sin confundirlos.
+3. Crear conversación con opciones «aceptar / no aceptar», que registre un evento concreto solo en la rama correspondiente.
+4. Colocar objeto «cadenas», vincular condición al evento anterior y abrir puerta a D solo después de la aceptación.
+5. Probar el recorrido con varios estados temporales y comprobar qué conversación se elige, sin alterar la partida real.
+6. Exportar e importar el resultado conservando IDs, traducciones futuras y enlaces; al publicar, que `npm test` y `npm run build` sigan funcionando.
+
+**Límite:** no construir un clon general de Genially, un editor de animación profesional ni un nuevo intérprete de guiones. Reutilizar escenas Phaser, renderizador, validadores y flujos reales.
+
+## 10. Reparto de trabajo recomendado
+- **ChatGPT en conversación:** definir la experiencia pedagógica, reglas, flujo visual, casos límite, criterios de aceptación, estructura de datos, diálogos y revisar el trabajo. Mantener documentos y decisiones coherentes.
+- **Codex trabajando en el repositorio:** leer archivos vivos, realizar cambios en módulos TypeScript y tests, ejecutar compilación y pruebas de navegador, mostrar el diff y corregir fallos. Tratar los documentos como especificación, **no** como licencia para reescribir el juego.
+- **Autor:** probar cómodamente en móvil y decidir si el editor realmente se siente como Genially.
+
+**No son exactamente lo mismo:** ambos pueden razonar y producir código, pero para una tarea de implementación y validación continua en el repositorio suele convenir Codex; para visión de producto, pedagogía, documento completo y revisión crítica es útil empezar en conversación. La implementación debe verificarse, nunca darse por terminada solo por existir una especificación.
