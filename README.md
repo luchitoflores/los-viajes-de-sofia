@@ -365,3 +365,8 @@ Los documentos de `docs/mundos/` reúnen el estado implementado y las propuestas
 ## Mapa de cobertura curricular de Filosofía
 
 - [Temario maestro INEVAL: 57 subtemas en seis áreas, ubicaciones propuestas en planetas y experiencias de aprendizaje](docs/CURRICULO-MAESTRO-FILOSOFIA-INEVAL-2026.md). Documento de planificación basado en las capturas y manual aportados; no modifica el juego ni constituye un temario oficial verificado de una convocatoria específica.
+
+
+## Decisiones del editor visual de historias
+
+- [Arquitectura de autoría tipo Genially: escenas, NPC, interacciones, misiones, archivos de diálogos e idiomas](docs/ARQUITECTURA-AUTORIA-DIALOGOS-MISIONES-I18N.md). Decisiones de diseño aprobadas; implementación incremental pendiente.
