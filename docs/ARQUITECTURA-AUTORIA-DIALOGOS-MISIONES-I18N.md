@@ -1,6 +1,6 @@
 # Propuesta de arquitectura: editor visual de diálogos, misiones, escenas y traducciones
 
-**Estado:** decisiones de experiencia de autoría APROBADAS por el autor (enfoque tipo Genially, 23-11-2026); organización de archivos y pasos técnicos sujetos a validación. **NO IMPLEMENTADAS.** No reemplaza el sistema actual ni modifica partidas. Revisar contra el código vivo antes de implementar.
+**Estado:** experiencia de autoría APROBADA por el autor (23-11-2026). Primera entrega funcional de organización por NPC/escena, momentos, línea de objetivos y plantilla de aceptación; exportador/compilador de fuente por idioma validado. El resto conserva carácter de propuesta. Estado y límites concretos: [Estudio de historias](ESTUDIO-DE-HISTORIAS.md). No se migraron masivamente las fuentes ni las partidas.
 
 ## 0. Qué existe realmente y no debemos romper
 

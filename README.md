@@ -370,3 +370,7 @@ Los documentos de `docs/mundos/` reúnen el estado implementado y las propuestas
 ## Decisiones del editor visual de historias
 
 - [Arquitectura de autoría tipo Genially: escenas, NPC, interacciones, misiones, archivos de diálogos e idiomas](docs/ARQUITECTURA-AUTORIA-DIALOGOS-MISIONES-I18N.md). Decisiones de diseño aprobadas; implementación incremental pendiente.
+
+## Estudio de historias
+
+Personajes (`/#/personajes`), guiones por escena (`/#/dialogos`) y objetivos/plantillas (`/#/misiones`) comparten los datos del motor y conservan las partidas. [Manual y límites de la primera entrega](docs/ESTUDIO-DE-HISTORIAS.md).

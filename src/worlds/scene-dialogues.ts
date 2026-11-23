@@ -7,7 +7,7 @@ export function dialoguePlaces(w:WorldDefinition):DialoguePlace[]{
  const places:DialoguePlace[]=[];
  const add=(scene:string,source:string,label:string,trigger:DialoguePlace['trigger'],behavior:string|undefined,requires:string[]=[],excludes:string[]=[])=>{
   const b=behavior?w.interactions[behavior]:undefined;
-  for(const action of b?.actions??[])if(action.type==='talk')places.push({scene,source,label,trigger,behavior,dialogue:action.target,requires:[...new Set([...requires,...b?.requires??[]])],excludes});
+  for(const action of b?.actions??[])if(action.type==='talk')places.push({scene,source,label,trigger,behavior,dialogue:action.target,requires:[...new Set([...requires,...b?.requires??[],...action.requires??[]])],excludes:[...new Set([...excludes,...b?.excludes??[],...action.excludes??[]])]});
  };
  for(const s of conversationScenes(w)){
   const items=s.id==='surface'?w.surface.objects:w.interiors[s.id].items;
@@ -25,7 +25,7 @@ export function sceneDialogueGroups(w:WorldDefinition,scene:string){
  if(scene==='unassigned'||scene==='all')groups.push({id:'unassigned',name:'Borradores sin asignar a una escena',number:-1,dialogues:Object.keys(w.dialogues).filter(id=>!used.has(id)).map((id,i)=>({id,number:'B'+(i+1),title:dialogueTitle(id,w.dialogues[id]),places:[]}))});
  return groups;
 }
-export function conditionLabel(w:WorldDefinition,flag:string){return w.missions.find(m=>m.flag===flag)?.title??readable(flag)}
+export function conditionLabel(w:WorldDefinition,flag:string){return w.storyFlags?.[flag]?.label??w.missions.find(m=>m.flag===flag)?.title??readable(flag)}
 export function conditionOrigin(w:WorldDefinition,flag:string){
  const id=Object.keys(w.dialogues).find(id=>w.dialogues[id].reward?.flags?.includes(flag)||Object.values(w.dialogues[id].nodes).some(n=>n.choices.some(c=>c.reward?.flags?.includes(flag))));
  if(!id)return '';

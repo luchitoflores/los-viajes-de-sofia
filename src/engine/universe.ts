@@ -125,7 +125,7 @@ export class Universe {
  rememberLift(id:string,y:number){if(!this.world||!this.progress.interior||!Number.isFinite(y))return;this.progress.mechanisms[this.progress.interior+':'+id]=y;this.progress.interiorX=this.host.position().x??this.progress.interiorX;this.store()}
  rememberInterior(x:number){if(!this.active)return;this.progress.interiorX=x;this.store()}
  isCollected(id:string){return this.active&&this.progress.planet.collected.includes(id)}
- conversationPending(id:string){if(!this.world)return false;const object=id==='companion'?this.companion():this.findObject(id);if(!object)return false;if(!this.progress.introComplete)return id!=='companion'&&object.characterId===this.world.philosopher.id;const b=object.behavior?this.world.interactions[object.behavior]:undefined;if(!gate(this.world,this.progress,object.behavior).allowed)return false;return b?.actions.some(a=>a.type==='talk'&&pendingConversation(this.world!,this.progress,a.target))??false}
+ conversationPending(id:string){if(!this.world)return false;const object=id==='companion'?this.companion():this.findObject(id);if(!object)return false;if(!this.progress.introComplete)return id!=='companion'&&object.characterId===this.world.philosopher.id;const b=object.behavior?this.world.interactions[object.behavior]:undefined;if(!gate(this.world,this.progress,object.behavior).allowed)return false;return b?.actions.some(a=>a.enabled!==false&&meets(this.progress.flags,a)&&a.type==='talk'&&pendingConversation(this.world!,this.progress,a.target))??false}
  private findObject(id:string){return this.progress.planet.objects.find(o=>o.id===id) as WorldObject|undefined??Object.values(this.world!.interiors).flatMap(i=>i.items).find(o=>o.id===id)}
  interact(id:string){
   if(!this.world)return false;const object=this.findObject(id);if(!object)return true;const b=object.behavior?this.world.interactions[object.behavior]:undefined,g=gate(this.world,this.progress,object.behavior);
@@ -135,6 +135,7 @@ export class Universe {
  }
  private runActions(id:string,actions:Action[],index:number,done?:()=>void){
   const a=actions[index];if(!a){this.host.close();done?.();this.host.refresh();return}const next=()=>this.runActions(id,actions,index+1,done),p=this.progress,w=this.world!;
+  if(a.enabled===false||!meets(p.flags,a)){next();return}
   if(a.type==='record'){reward(p,a.reward);this.store();this.host.refresh();next();return}
   if(a.type==='talk'){const object=this.findObject(id);if(object?.characterId)this.host.faceCharacter(object.characterId);this.player.dialogue(a.target,complete=>{if(complete)next();else{this.eventBusy=false;this.host.close()}});return}
   if(a.type==='portal'){this.travel(a.target,a.spawn).catch(e=>this.host.note(e.message));return}if(a.type==='return-world'){this.backPortal().catch(e=>this.host.note(e.message));return}if(a.type==='lift'){this.host.lift(a.target);return}

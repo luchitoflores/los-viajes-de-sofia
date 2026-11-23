@@ -283,3 +283,9 @@ El estado comprobado y las capturas están en `docs/VALIDACION-MOTOR.md`. Para m
 - Sustituir el círculo de los pies por un icono sobre la cabeza solo si hay conversación pendiente y disponible. Ocultarlo después de leer; volver a mostrarlo ante una nueva intervención habilitada. Mantener conversación repetida por clic sin anunciarla permanentemente.
 - Mantener separación al acercarse a un NPC; no convertir todo diálogo trivial en bloqueo del camino. Los requisitos narrativos y la geometría de obstáculos son explícitos.
 - La posible configuración visual del indicador en temas fue una consulta, no autorización para añadir controles nuevos. Detalle: `docs/INDICADORES-DE-CONVERSACION.md`.
+
+## Estudio de historias — 23 de noviembre de 2026
+- Mantener fichas por identidad con contadores calculados, apariciones separadas y acceso contextual a guion/variantes. Rutas `/#/personajes` y `/#/misiones` complementan los editores existentes.
+- Nombrar momentos de conversación sin cambiar IDs; la primera entrada válida conserva prioridad. Objetivos y plantillas reutilizan flags, acciones y puertas del motor.
+- Una condición de interacción bloquea la cadena; una condición de acción o `enabled:false` omite solo ese paso. Preservar condiciones, recompensas y cola al cambiar la primera acción.
+- El paquete `sofia-dialogue-sources` separa flujo/textos y recompila al contrato existente; no presentar esta preparación como traducción completa de interfaz ni migrar mundos sin validar equivalencia. Manual: `docs/ESTUDIO-DE-HISTORIAS.md`.

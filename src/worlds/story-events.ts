@@ -13,7 +13,7 @@ export function eventCatalog(w:WorldDefinition){
   for(const [node,n] of Object.entries(d.nodes))for(const c of n.choices){for(const f of c.reward?.flags??[])add(f,undefined,title+' / '+c.text);if(n.kind==='decision'||n.kind==='branch')add(answerFlag(id,node,c.id),'Respuesta: '+title+' / '+c.text,title+' / '+c.text,'event')}
   for(const e of d.entries??[])for(const f of [...e.requires??[],...e.excludes??[]])add(f);
  }
- for(const [id,b] of Object.entries(w.interactions)){for(const f of [...b.requires??[],...b.excludes??[]])add(f);for(const a of b.actions)if('reward' in a)for(const f of a.reward?.flags??[])add(f,undefined,'Acción: '+id)}
+ for(const [id,b] of Object.entries(w.interactions)){for(const f of [...b.requires??[],...b.excludes??[]])add(f);for(const a of b.actions){for(const f of [...a.requires??[],...a.excludes??[]])add(f);if('reward' in a)for(const f of a.reward?.flags??[])add(f,undefined,a.enabled===false?undefined:'Acción: '+id)}}
  for(const a of Object.values(w.activities))for(const f of a.reward?.flags??[])add(f,undefined,'Actividad: '+a.title);
  for(const room of Object.values(w.interiors))for(const e of room.events??[])for(const f of [...e.requires??[],...e.excludes??[]])add(f);
  for(const [id,f] of Object.entries(w.storyFlags??{}))add(id,f.label,undefined,f.kind);
