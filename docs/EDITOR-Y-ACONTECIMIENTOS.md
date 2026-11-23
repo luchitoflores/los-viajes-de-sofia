@@ -62,3 +62,5 @@ Los borradores y ajustes del editor se guardan localmente. **Exportar proyecto**
 - `story-event-editor.ts`: registro visual por mundo.
 
 El motor narrativo sigue siendo común. `record` es una acción de datos silenciosa para registrar un resultado, no un nuevo motor ni un LLM.
+
+Los recuadros del lienzo muestran el nombre/identificador y una explicación de su función (camino, obstáculo, pendiente, entrada, evento u objeto). Estas etiquetas solo se muestran al editar y no capturan los clics del escenario.
