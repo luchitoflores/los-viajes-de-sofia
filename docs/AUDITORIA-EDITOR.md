@@ -33,3 +33,7 @@ Capturas: `captures/editor-reorganizado.png` y `captures/editor-reorganizado-com
 ## Límites
 
 La biblioteca mantiene el selector de recursos existente; esta revisión no incorpora un explorador de miniaturas ni capas. El historial es acotado a la escena abierta y se reinicia al cambiarla. La geometría sigue siendo manual. Se mantienen importación/exportación y los controles del prototipo antiguo como compatibilidad.
+
+## Ajuste de espacio — 23 de noviembre de 2026
+
+Barra compacta con iconos SVG para Deshacer, Rehacer, Guardar, Importar, Exportar y Eliminar; títulos nativos al mantener el cursor y nombres accesibles para teclado/lector. Herramientas de dibujo con etiquetas abreviadas, navegación y lateral reducidos. A 1536×768 se comprobó navegación de 44 px, herramientas de 64 px y lienzo de aproximadamente 1067×600, sin superposición. En pantallas táctiles estrechas se conservan controles de al menos 36 px de alto. Captura: `captures/editor-compacto-iconos.png`.

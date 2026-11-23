@@ -1,3 +1,4 @@
+import {compactSceneControls} from './compact-editor-controls';
 /** Disposición única: barra fuera del lienzo y biblioteca/inspector en el lateral. */
 export function mountSceneWorkspace(root:HTMLElement,resize:()=>void){
  document.getElementById('scene-place-resource')?.remove();
@@ -12,6 +13,7 @@ export function mountSceneWorkspace(root:HTMLElement,resize:()=>void){
  const selected=document.createElement('span');selected.id='scene-current-selection';selected.setAttribute('role','status');
  const del=document.createElement('button');del.id='scene-delete';del.textContent='Eliminar selección';del.onclick=()=>{const label=document.getElementById('editor')!.dataset.selectionLabel??'Sin selección';if(label==='Sin selección')return;if(confirm('¿Eliminar «'+label+'» de esta escena? Puedes recuperarlo con Deshacer.'))document.getElementById('delete-selection')!.click()};row.append(selected,del);
  const trial=document.getElementById('core-test-scene')!;row.append(trial);bar.append(row);
+ compactSceneControls(bar);
  const editor=document.getElementById('editor')!;const sync=()=>{const label=editor.dataset.selectionLabel??'Sin selección';selected.textContent='Selección: '+label;del.disabled=label==='Sin selección'};sync();const observer=new MutationObserver(sync);observer.observe(editor,{attributes:true,attributeFilter:['data-selection-label','data-selected-object']});
  const cleanup=new MutationObserver(()=>{if(!bar.isConnected){observer.disconnect();cleanup.disconnect()}});cleanup.observe(stage.parentElement!,{childList:true});
  const panel=document.getElementById('core-editor-tools') as HTMLDetailsElement;panel.querySelector('summary')!.textContent='1. Biblioteca y propiedades de la selección';

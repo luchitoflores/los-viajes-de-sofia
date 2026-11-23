@@ -1,3 +1,4 @@
+import {compactNavigation} from './compact-editor-controls';
 import {mountSceneWorkspace} from './scene-workspace';
 import {sceneToolbox} from './scene-toolbox';
 import {storyEventEditor} from './story-event-editor';
@@ -23,6 +24,7 @@ export function bindCoreWorkbench(host:CoreHost){
  const dock=createEditorDock();
  const u=host.universe,nav=document.createElement('nav'),root=document.createElement('aside');nav.id='core-navigation';root.id='core-workbench';document.body.append(nav,root);
  nav.innerHTML='<strong>Motor de Sofía</strong><a href="#/edicion">Mundos y escenas</a><a href="#/dialogos">Diálogos por escena</a><a href="#/apariencia">Aspecto de diálogos</a><a href="#/eventos">Eventos y objetivos</a><a href="#/preguntas">Preguntas y minijuegos</a><button id="core-refresh">Actualizar biblioteca</button><button id="core-export">Exportar proyecto</button><button id="core-import">Importar proyecto</button><button id="core-play">Volver a jugar</button><input id="core-project-file" type="file" accept=".json,application/json" hidden>';
+ compactNavigation(nav);
  const launcher=document.createElement('a');launcher.id='core-launcher';launcher.href='#/edicion';launcher.textContent='Abrir motor / edición';document.querySelector('footer span')?.append(launcher);
  new ResizeObserver(()=>{document.documentElement.style.setProperty('--core-nav-height',nav.getBoundingClientRect().height+'px');requestAnimationFrame(()=>host.resize())}).observe(nav);
  const closePreview=document.createElement('button');closePreview.id='core-close-preview';closePreview.textContent='Cerrar prueba';document.body.append(closePreview);
