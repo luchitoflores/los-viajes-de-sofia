@@ -64,3 +64,5 @@ Los borradores y ajustes del editor se guardan localmente. **Exportar proyecto**
 El motor narrativo sigue siendo común. `record` es una acción de datos silenciosa para registrar un resultado, no un nuevo motor ni un LLM.
 
 Los recuadros del lienzo muestran el nombre/identificador y una explicación de su función (camino, obstáculo, pendiente, entrada, evento u objeto). Estas etiquetas solo se muestran al editar y no capturan los clics del escenario.
+
+Objetivos en juego: los cumplidos se muestran tachados, con fondo verde y estado Cumplido. Al completar uno o terminar la presentación inicial se anuncia el siguiente pendiente durante cinco segundos, sin bloquear controles. Abrir el menú o volver a guardar no repite el aviso. Es una primera prueba de esta presentación discreta.

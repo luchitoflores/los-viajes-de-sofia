@@ -1,3 +1,4 @@
+import {notifyObjectiveChange} from './objective-notice';
 import {restorePlatoContinuity} from '../worlds/plato-compatibility';
 import {jsonResource} from './json-resource';
 import {parseProject,type ProjectBundle} from '../worlds/project';
@@ -59,6 +60,7 @@ export class Universe {
  }
  private saveProgress(id:string,p:WorldProgress){
   if(!canWriteProgress())return true;
+  if(this.world?.id===id)notifyObjectiveChange(this.world,this.saved[id] as Partial<WorldProgress>|undefined,p);
   this.saved[id]={...structuredClone(p),planet:{...structuredClone(p.planet),objects:[]}};
   try{localStorage.setItem(KEY,JSON.stringify({version:1,last:this.world?.id??this.last,worlds:this.saved,journeys:this.journeys,characterMemory:this.characterMemory}))}catch{this.host.note('No se pudo guardar el progreso. Mantén esta pestaña abierta y vuelve a intentar guardar.');return false}return true;
  }
@@ -181,7 +183,7 @@ export class Universe {
   document.querySelectorAll<HTMLElement>('#panel [data-existing-world]').forEach(b=>b.onclick=()=>this.host.legacy(Number(b.dataset.existingWorld)));
   bind('story-modes',this.host.showModes);bind('universe',()=>this.showAtlas());bind('legacy',()=>this.host.legacy());bind('resume',()=>{if(this.choosingFlight){this.choosingFlight=false;this.host.cancelShip();return}this.host.close()});
  }
- objectives(){if(!this.world)return;const stage=PLAY_MODE==='story'?this.story?.stages.find(s=>s.world===this.world!.id):null;this.host.show(`<h2>${escape(this.world.title)}</h2>${stage?`<p><b>Etapa de Historia</b> · ${escape(stage.goal)}</p>`:''}<ol class="cave-missions">${this.world.missions.map(m=>`<li class="${this.progress.flags.includes(m.flag)?'done':''}"><b>${escape(m.title)}</b><p>${escape(m.goal)}</p></li>`).join('')}</ol>${button('close','Volver al camino')}`);bind('close',this.host.close)}
+ objectives(){if(!this.world)return;const stage=PLAY_MODE==='story'?this.story?.stages.find(s=>s.world===this.world!.id):null;this.host.show(`<h2>${escape(this.world.title)}</h2>${stage?`<p><b>Etapa de Historia</b> · ${escape(stage.goal)}</p>`:''}<ol class="cave-missions">${this.world.missions.map(m=>`<li class="${this.progress.flags.includes(m.flag)?'done':''}"><small class="mission-status">${this.progress.flags.includes(m.flag)?'✓ Cumplido':'Pendiente'}</small><b>${escape(m.title)}</b><p>${escape(m.goal)}</p></li>`).join('')}</ol>${button('close','Volver al camino')}`);bind('close',this.host.close)}
  collection(kind:string){if(!this.world)return;const p=this.progress,w=this.world;const ids=kind==='concepts'?p.concepts:kind==='memories'?p.memories:[];const defs=kind==='concepts'?w.concepts:w.memories;this.host.show(`<h2>${kind==='philosophers'?escape(w.philosopher.name):kind==='concepts'?'Conceptos descubiertos':'Recuerdos'}</h2>${kind==='philosophers'?`<img class="portrait" src="${escape(w.philosopher.portrait)}" alt=""><p>${escape(w.summary)}</p>`:ids.length?ids.map(id=>defs[id]?`<h3>${escape(defs[id].name)}</h3><p>${escape(defs[id].text)}</p>`:'').join(''):'<p>Explora para descubrir nuevas ideas.</p>'}${button('close','Volver al camino')}`);bind('close',this.host.close)}
  exportWorld(){if(!this.world)return;const value=parseWorld(this.world);const url=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=`sofia-world-${value.id}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
  async definitions(){if(!this.catalog)throw Error('Carga primero el atlas.');const worlds:WorldDefinition[]=[];for(const p of this.catalog.planets)try{const w=this.world?.id===p.id?structuredClone(this.world):await this.definition(p);this.unavailableWorlds.delete(p.id);worlds.push(w)}catch(e){this.unavailableWorlds.set(p.id,(e as Error).message)}return worlds}
