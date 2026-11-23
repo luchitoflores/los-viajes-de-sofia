@@ -273,3 +273,8 @@ El estado comprobado y las capturas están en `docs/VALIDACION-MOTOR.md`. Para m
 - Conversaciones con secuencia editable, turnos alternados, eliminación con confirmación, diálogo simple, decisión y bifurcación. Las respuestas registran resultados elegibles en condiciones y pueden cumplir objetivos o habilitar puertas conectadas. No inventar acciones al registrar un nombre.
 - Separar presencia/seguimiento del prisionero de las conversaciones por habitación. Debe acompañar al subir y bajar, poder quedarse en B y conservar conversaciones allí; nunca seguir por el universo.
 - La exportación del autor se integra con copia de seguridad y preservando los otros mundos y las mejoras posteriores. Manual: `docs/EDITOR-Y-ACONTECIMIENTOS.md`.
+
+## Usabilidad del editor — 22 de noviembre de 2026
+- Barra de Guardar, Deshacer/Rehacer, selección, dibujo y eliminación sobre la escena, fuera del lienzo. Biblioteca e inspector en el lateral.
+- Insertar un objeto o dibujar una zona vuelve a Seleccionar; no repetir inserciones sin elegir de nuevo Colocar. Los clics de los formularios no deben colocar objetos, tampoco en el planeta radial.
+- Mostrar la selección por nombre, confirmar eliminación y permitir recuperarla con Deshacer. Conservar datos, partidas e importación/exportación. Auditoría: `docs/AUDITORIA-EDITOR.md`.

@@ -30,3 +30,12 @@ body.core-mode #world-editor-tools,body.core-mode #editor-tools .editor-tabs{dis
 .story-effect-options{max-height:220px;overflow:auto;padding:8px;background:#fffcf5;border:1px solid #cfb789}
 
 #dialogue-sequence{list-style:none;padding-left:0}
+
+#core-canvas-toolbar{width:100%;flex:none;display:flex;flex-direction:column;gap:7px;padding:10px 12px;background:#1b2e43;border:1px solid #64728a;border-radius:10px;margin-bottom:10px;color:#fff0d5;font:13px system-ui}
+#core-canvas-toolbar .editor-bar{position:static;inset:auto;padding:0;border:0;background:none;display:block;pointer-events:auto}#core-canvas-toolbar .editor-bar>div:first-child{display:none}#core-canvas-toolbar .editor-bar-actions{display:flex;gap:6px;flex-wrap:wrap}#core-canvas-toolbar [data-e=close]{display:none}
+#core-canvas-toolbar button{min-height:36px;padding:7px 12px;border:1px solid #798da2;border-radius:6px;background:#2e526b;color:#fff5de;font:600 13px system-ui;cursor:pointer}#core-canvas-toolbar button[aria-pressed=true]{background:#b68839!important;color:#171d2a;outline:2px solid #f3cd85}#core-canvas-toolbar [data-e=save]{background:#396a50}#core-canvas-toolbar #scene-delete{background:#7b3944}#core-canvas-toolbar button:disabled{opacity:.45;cursor:default}.scene-workspace-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}#scene-current-selection{flex:1;min-width:140px}body.core-preview #core-canvas-toolbar{display:none}
+body.core-mode:not(.core-preview) #stage{width:min(100%,calc((100dvh - var(--core-nav-height,66px) - var(--scene-toolbar-height,150px) - 60px)*16/9))}body.core-mode:not(.core-preview) #shell{justify-content:flex-start}
+body.core-mode #delete-selection{display:none}body.core-mode #core-editor-tools>summary{font-weight:bold}body.core-mode #core-workbench h1{font-size:24px;margin:12px 0}body.core-mode #core-editor-tools-slot #edit-help{padding:10px;background:#e7f0e4;color:#294c3a;border-radius:7px;margin:8px 0}body.core-mode #core-editor-tools-slot #properties{border-top:2px solid #b9a37c;margin-top:14px;padding-top:12px}
+@media(max-width:760px){body.core-mode:not(.core-preview) #stage{width:100%}#core-canvas-toolbar button{min-height:40px;font-size:12px}body.core-mode:not(.core-sheet):not(.core-preview) #shell{margin-top:calc(var(--core-nav-height,66px) + 12px)}}
+
+#core-canvas-toolbar #scene-edit-status{margin:0;padding:0;background:none;color:#d8efd8;font-size:12px}#scene-place-resource{width:100%;background:#396a50!important}body.core-mode #core-editor-tools-slot #properties input{max-width:100%}

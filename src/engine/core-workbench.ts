@@ -1,3 +1,4 @@
+import {mountSceneWorkspace} from './scene-workspace';
 import {sceneToolbox} from './scene-toolbox';
 import {storyEventEditor} from './story-event-editor';
 import {dialogueAppearanceEditor} from './dialogue-appearance-editor';
@@ -39,7 +40,7 @@ export function bindCoreWorkbench(host:CoreHost){
  const worldSelector=()=>`<label>Mundo<select id="core-world">${worlds.map(w=>`<option value="${w.id}" ${active?.id===w.id?'selected':''}>${escape(w.title)}</option>`).join('')}</select></label>`;
 
  async function renderEditor(token:number){
-  dock.restore();
+  dock.restore();document.getElementById('core-canvas-toolbar')?.remove();
   const w=active!,q=params();scene=q.get('scene')??'surface';if(scene!=='surface'&&!w.interiors[scene])scene='surface';objectId=q.get('object')??'';
   const objects=scene==='surface'?w.surface.objects:w.interiors[scene].items;
   root.innerHTML=`<p id="core-status" role="status">Edición independiente de la partida.</p><h1>Mundos y escenarios</h1>${worldSelector()}<label>Escena<select id="core-scene"><option value="surface">Planeta / superficie</option>${Object.entries(w.interiors).map(([id,i])=>`<option value="${id}" ${scene===id?'selected':''}>${escape(i.name)}</option>`).join('')}</select></label><button id="core-scene-settings">Cambiar fondo / configurar escena</button><div id="scene-toolbox"></div><div class="core-row"><button id="core-load-scene">Cargar escena</button><button id="core-test-scene">Probar escena</button><button id="core-new-world">Nuevo mundo</button><button id="core-new-room">Nuevo interior</button></div><button id="core-toggle-tools" aria-controls="core-editor-tools">Mostrar / ocultar herramientas</button><details id="core-editor-tools" open><summary>Herramientas del escenario</summary><div id="core-editor-tools-slot"></div></details><a id="core-scene-dialogues" href="#/dialogos?world=${w.id}&scene=${scene}">Ver y editar los diálogos de esta escena</a><details><summary>Estado de la prueba</summary><label>Hasta qué objetivo<select id="core-test-mission"><option value="-1">Estado inicial</option>${w.missions.map((m,i)=>`<option value="${i}">${escape(m.title)}</option>`).join('')}</select></label><label>Marcas adicionales<input id="core-test-flags" placeholder="marca-1, marca-2"></label><small>Solo afectan a la simulación, no a la partida.</small></details><label>Objeto<select id="core-object"><option value="">Seleccionar objeto</option>${objects.map(o=>`<option value="${o.id}" ${o.id===objectId?'selected':''}>${escape(o.label+' · '+o.id)}</option>`).join('')}</select></label><p>Arrastra y coloca en el escenario. Para ver una descripción en el juego, señala el objeto o mantenlo pulsado.</p><div id="core-object-inspector"></div><details open><summary>Cargar imágenes</summary><label>PNG, WebP o JPEG (hasta 5 MB)<input id="core-image" type="file" accept="image/png,image/webp,image/jpeg"></label><label>Uso<select id="core-image-use"><option value="sprite">Recurso para objeto / biblioteca</option><option value="background" ${scene==='surface'?'disabled':''}>Fondo de esta habitación</option><option value="terrain">Ilustración del planeta</option></select></label><label>Nombre del recurso<input id="core-image-label" maxlength="140"></label><label>Ruta propuesta en el proyecto<input id="core-image-path" placeholder="assets/imported/mi-imagen.png"></label><small>La imagen se incluye en la exportación. La ruta completa de tu disco no está disponible para el navegador.</small><button id="core-upload-image">Importar y aplicar imagen</button></details><button id="core-resource-library">Biblioteca de imágenes y personajes</button><button id="core-npc-catalog">Catálogo de personajes</button><button id="core-connect-instruction">Conectar escenas con una instrucción</button><button id="core-export-world">Exportar este mundo</button>${decisions()}`;
@@ -57,6 +58,7 @@ export function bindCoreWorkbench(host:CoreHost){
   sceneToolbox(document.getElementById('scene-toolbox')!,scene==='surface');
   document.getElementById('scene-object-dialogues')!.onclick=()=>{const selected=document.getElementById('editor')!.dataset.selectedObject||objectId;if(!selected){status('Selecciona un personaje u objeto en el escenario o en su lista.',true);return}go('dialogos',w.id,scene,selected)};
   document.getElementById('core-npc-catalog')!.onclick=()=>u.npcCatalogForm();document.getElementById('core-connect-instruction')!.onclick=()=>u.connectionForm();
+  mountSceneWorkspace(root,()=>host.resize());
   bindNote();await host.prepare(w.id,scene==='surface'?null:scene,objectId);if(token!==generation)return;window.dispatchEvent(new CustomEvent('sofia-editor-tool',{detail:{mode:'select'}}));
 
  }
@@ -69,7 +71,7 @@ export function bindCoreWorkbench(host:CoreHost){
  function renderAppearance(){root.innerHTML=worldSelector()+'<div id="dialogue-appearance-panel"></div>';document.getElementById('core-world')!.onchange=e=>go('apariencia',(e.target as HTMLSelectElement).value);dialogueAppearanceEditor(document.getElementById('dialogue-appearance-panel')!,active!,{preview:(w,id)=>preview(w,'dialogue',id),status})}
 
  async function render(){
-  dock.restore();
+  dock.restore();document.getElementById('core-canvas-toolbar')?.remove();
   const token=++generation;navigationPending=true;if(!isCoreRoute()){if(entered){await host.flush();location.reload()}return}
   if(!entered){host.enter();entered=true}host.close();previewAppearance(null);document.body.classList.add('core-mode');document.body.classList.remove('core-preview','core-scene-preview');scenePreview=false;host.editing('paused');
   const route=location.hash.replace(/^#\//,'').split('?')[0];document.body.classList.toggle('core-sheet',route!=='edicion');nav.querySelectorAll('a').forEach(a=>a.classList.toggle('chosen',a.hash.split('?')[0]==='#/'+route));
