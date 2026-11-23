@@ -360,3 +360,8 @@ Los textos se editan en **Diálogos por escena**; el diseño global se configura
 - [Platón: estado actual, escenas, acciones, diálogos e ideas de desarrollo](docs/mundos/PLATON.md).
 
 Los documentos de `docs/mundos/` reúnen el estado implementado y las propuestas de cada planeta. Las ideas pendientes se distinguen del contenido ya jugable.
+
+
+## Mapa de cobertura curricular de Filosofía
+
+- [Temario maestro INEVAL: 57 subtemas en seis áreas, ubicaciones propuestas en planetas y experiencias de aprendizaje](docs/CURRICULO-MAESTRO-FILOSOFIA-INEVAL-2026.md). Documento de planificación basado en las capturas y manual aportados; no modifica el juego ni constituye un temario oficial verificado de una convocatoria específica.
