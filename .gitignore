@@ -13,3 +13,6 @@ npm-debug.log*
 
 __pycache__/
 *.pyc
+
+.sofia-project-backups/
+.project-backups/

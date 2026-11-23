@@ -351,3 +351,6 @@ La primera visita a la Tierra muestra el planeta completo y acerca la cámara. D
 
 
 Los textos se editan en **Diálogos por escena**; el diseño global se configura aparte en **Aspecto de diálogos**. [Guía sencilla de conversaciones, regresos y versiones](docs/DIALOGOS-POR-ESCENA.md).
+
+
+[Manual de zonas, conversaciones, decisiones y acontecimientos](docs/EDITOR-Y-ACONTECIMIENTOS.md).

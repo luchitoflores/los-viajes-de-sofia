@@ -34,6 +34,7 @@ export class Universe {
  readonly libraryAssets:Record<string,Asset>={...BUILTIN_ASSETS};readonly legacyResources=new Set<string>();
  readonly unavailableWorlds=new Map<string,string>();
  private publishedSources=new Map<string,string>();
+ private visitEvents=new Set<string>();
  private checkedImages=new Set<string>();
  readonly player:ContentPlayer;
  constructor(private host:UniverseHost){this.player=new ContentPlayer(()=>this.world!,()=>this.progress,{face:host.faceCharacter,show:host.show,close:host.close,save:()=>{this.store();this.host.refresh()},atlas:()=>this.showAtlas(),remember:(id,dialogue)=>this.rememberCharacter(id,dialogue)});this.legacyPlayer=new ContentPlayer(()=>this.legacyWorld!,()=>this.legacyProgress!,{face:host.faceCharacter,show:host.show,close:host.close,save:()=>this.saveProgress(this.legacyWorld!.id,this.legacyProgress!),atlas:()=>this.showAtlas(),remember:(id,dialogue)=>this.rememberCharacter(id,dialogue)})}
@@ -110,7 +111,7 @@ export class Universe {
  onSurface(_showIntro=true){if(!this.active)return;this.progress.interior=null;this.progress.interiorX=null;this.releaseAssets();this.store();}
  beginPlay(){/* La presentación se abre solo al elegir al anfitrión. */}
  meetHost(){if(this.active&&!this.progress.introComplete)this.player.dialogue(this.world!.intro,complete=>{if(complete&&this.progress.pendingArrival){const id=this.progress.pendingArrival;this.progress.pendingArrival=null;try{const point=resolveSpawn(this.world!,id);this.progress.interior=point.scene==='surface'?null:point.scene;this.progress.interiorX=point.x??null;this.store();this.progress.interior?this.host.interior():this.host.surface()}catch(e){this.host.close();this.host.note((e as Error).message)}}else this.host.close()})}
- onInterior(){this.releaseAssets();this.store()}
+ onInterior(){this.eventBusy=false;this.visitEvents.clear();this.releaseAssets();this.store()}
  releaseAssets(){this.host.release(new Set(this.context?.sources.map(a=>a.key)??[]))}
  getInterior(){
   if(!this.world||!this.progress.interior)return null;const i=this.world.interiors[this.progress.interior];if(!i)return null;
@@ -130,9 +131,10 @@ export class Universe {
  }
  private runActions(id:string,actions:Action[],index:number,done?:()=>void){
   const a=actions[index];if(!a){this.host.close();done?.();this.host.refresh();return}const next=()=>this.runActions(id,actions,index+1,done),p=this.progress,w=this.world!;
-  if(a.type==='talk'){const object=this.findObject(id);if(object?.characterId)this.host.faceCharacter(object.characterId);this.player.dialogue(a.target,complete=>complete?next():this.host.close());return}
+  if(a.type==='record'){reward(p,a.reward);this.store();this.host.refresh();next();return}
+  if(a.type==='talk'){const object=this.findObject(id);if(object?.characterId)this.host.faceCharacter(object.characterId);this.player.dialogue(a.target,complete=>{if(complete)next();else{this.eventBusy=false;this.host.close()}});return}
   if(a.type==='portal'){this.travel(a.target,a.spawn).catch(e=>this.host.note(e.message));return}if(a.type==='return-world'){this.backPortal().catch(e=>this.host.note(e.message));return}if(a.type==='lift'){this.host.lift(a.target);return}
-  if(a.type==='activity'){this.host.show(`<div data-dialogue-speaker="sofia"></div><div class="character-tag">Sofía</div><p>¿Quieres realizar la actividad «${escape(w.activities[a.target].title)}»?</p><div class="row">${button('play-activity','Sí')}${button('leave-activity','No')}</div>`,'story');bind('play-activity',()=>this.player.activity(a.target,complete=>complete?next():this.host.close()));bind('leave-activity',this.host.close);return}
+  if(a.type==='activity'){this.host.show(`<div data-dialogue-speaker="sofia"></div><div class="character-tag">Sofía</div><p>¿Quieres realizar la actividad «${escape(w.activities[a.target].title)}»?</p><div class="row">${button('play-activity','Sí')}${button('leave-activity','No')}</div>`,'story');bind('play-activity',()=>this.player.activity(a.target,complete=>{if(complete)next();else{this.eventBusy=false;this.host.close()}}));bind('leave-activity',()=>{this.eventBusy=false;this.host.close()});return}
   if(a.type==='enter'){
    const position=this.host.position();if(p.interior===a.target){this.host.close();return}if(p.trail.length>=100){this.host.note('Demasiadas puertas encadenadas. Regresa primero.');return}p.trail.push({interior:p.interior,x:p.interior?position.x??p.interiorX:null});if(!p.interior){p.planet.angle=position.angle;p.planet.returnAnchor={id,angle:position.angle,height:position.height}}p.interior=a.target;p.interiorX=w.interiors[a.target].spawn.x;this.store();this.host.interior();return;
   }
@@ -144,9 +146,9 @@ export class Universe {
  canDepart(){return !this.world?.journey?.physicalDoors||!this.progress.interior}
  departureMessage(){return 'Regresa por las entradas de la caverna hasta la superficie para subir a tu nave. No necesitas completar las misiones para viajar.'}
  isVisible(id:string){return !this.world||visibleObject(this.world,this.progress.flags,id)}
- companion(){const c=this.world?.journey?.companion;return c&&this.progress.interior&&c.scenes.includes(this.progress.interior)&&meets(this.progress.flags,c)?{...c,name:this.world!.characters![c.characterId].name}:null}
- talkCompanion(){const c=this.companion();if(c){this.host.faceCharacter(c.characterId);this.runActions('companion',this.world!.interactions[c.behavior].actions,0)}}
- sceneEvent(x:number){if(!this.world||!this.progress.interior||this.eventBusy)return;const scene=this.progress.interior,room=this.world.interiors[scene],p=this.progress;const event=room.events?.find(e=>x>=e.from&&x<=e.to&&meets(p.flags,e)&&!p.flags.includes('event:'+scene+':'+e.id));if(!event)return;this.eventBusy=true;this.runActions(event.id,this.world.interactions[event.behavior].actions,0,()=>{reward(p,{flags:['event:'+scene+':'+event.id]});this.eventBusy=false;this.store()})}
+ companion(){const c=this.world?.journey?.companion;return c&&this.progress.interior&&c.scenes.includes(this.progress.interior)&&meets(this.progress.flags,c)?{...c,behavior:c.encounters?.[this.progress.interior]??c.behavior,name:this.world!.characters![c.characterId].name}:null}
+ talkCompanion(){const c=this.companion();if(c){const allowed=gate(this.world!,this.progress,c.behavior);if(!allowed.allowed){this.host.note(allowed.text??'Esta conversación todavía no está disponible.');return}this.host.faceCharacter(c.characterId);this.runActions('companion',this.world!.interactions[c.behavior].actions,0)}}
+ sceneEvent(x:number){if(!this.world||!this.progress.interior||this.eventBusy)return;const scene=this.progress.interior,room=this.world.interiors[scene],p=this.progress;const event=room.events?.find(e=>x>=e.from&&x<=e.to&&meets(p.flags,e)&&meets(p.flags,this.world!.interactions[e.behavior])&&(e.repeat==='visit'?!this.visitEvents.has(scene+':'+e.id):!p.flags.includes('event:'+scene+':'+e.id)));if(!event)return;this.eventBusy=true;this.runActions(event.id,this.world.interactions[event.behavior].actions,0,()=>{this.visitEvents.add(scene+':'+event.id);if(event.repeat!=='visit')reward(p,{flags:['event:'+scene+':'+event.id]});this.eventBusy=false;this.store()})}
  leaveInterior(){if(!this.active)return;if(this.canReturnPortal&&!this.progress.trail.length&&this.progress.entryPortalScene===this.progress.interior){this.backPortal().catch(e=>this.host.note(e.message));return}const previous=this.progress.trail.pop();this.progress.interior=previous?.interior??null;this.progress.interiorX=previous?.x??null;this.store();this.progress.interior?this.host.interior():this.host.surface()}
  saveInterior(items:InteriorItem[],regions:Region[]){if(!this.world||!this.progress.interior)return false;const candidate=structuredClone(this.world);candidate.interiors[this.progress.interior].items=structuredClone(items);candidate.interiors[this.progress.interior].regions=structuredClone(regions);try{parseWorld(candidate)}catch(e){this.host.note((e as Error).message);return false}const i=this.world.interiors[this.progress.interior];i.items=structuredClone(items);i.regions=structuredClone(regions);this.saveDraft();return true}
 

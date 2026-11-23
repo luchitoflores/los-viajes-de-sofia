@@ -146,7 +146,7 @@ export function createPlanetScene(host:PlanetBridge){
   deleteSelected(){if(!this.selected)return;this.snapshot();this.objects=this.objects.filter(o=>o.id!==this.selected);this.selected=null;this.saveEdit();this.renderObjects();this.showProps();this.drawSelection()}
   exportEdit(){this.saveEdit();if(this.currentContext){this.currentContext.exportWorld();return}const data={format:'sofia-radial-planet',version:1,radius:RADIUS,objects:this.objects,resources:host.exportResources?.(this.objects)};const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='sofia-planeta-polis.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
   importEdit(data:unknown){const objects=parseLayout(data);this.currentContext?.validateObjects(objects);this.snapshot();this.objects=objects;this.selected=null;this.saveEdit();this.renderObjects();this.showProps();this.drawSelection();host.note('Planeta importado y guardado.')}
-  drawEditor(){
+  drawEditor(){element('editor').dataset.selectedObject=this.selected??'';
    const edit=host.editing();this.wasEditing=edit;this.player?.setAlpha(edit?0.45:1);this.outline?.clear();
    const zoneButton=document.querySelector('[data-tool="zone"]') as HTMLElement;zoneButton.hidden=edit;
    const zoneLabel=element('zone-kind').closest('label') as HTMLElement;zoneLabel.hidden=edit;

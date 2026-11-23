@@ -172,6 +172,85 @@
       "height": 720,
       "kind": "rock",
       "label": "Interior del templo y ágora"
+    },
+    "image-fcf3d201-8a68-4743-bdd6-6d37a4981513": {
+      "src": "assets/imported/bbb40b06-5c0b-4aa5-b3a3-2b9b387b6719-Entrada-de-cueva-con-ruinas-antiguas.png",
+      "width": 213.21997874601487,
+      "height": 120,
+      "kind": "rock",
+      "label": "Entrada de cueva con ruinas antiguas.png",
+      "sourceName": "Entrada de cueva con ruinas antiguas.png",
+      "projectPath": "assets/imported/bbb40b06-5c0b-4aa5-b3a3-2b9b387b6719-Entrada-de-cueva-con-ruinas-antiguas.png"
+    },
+    "background-61c24302-657d-44b5-9feb-0151f5558d05": {
+      "src": "assets/imported/0f07cf58-90f6-4279-8848-c231d2032118-Entrada-de-cueva-con-ruinas-antiguas.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Entrada de cueva con ruinas antiguas.png",
+      "sourceName": "Entrada de cueva con ruinas antiguas.png",
+      "projectPath": "assets/imported/0f07cf58-90f6-4279-8848-c231d2032118-Entrada-de-cueva-con-ruinas-antiguas.png"
+    },
+    "background-8397ce44-e262-4f21-aed6-d4710aead6b5": {
+      "src": "assets/imported/a5a4c0f3-5758-4119-981a-ae37de16badb-Caverna-de-fuego-y-piedra.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Caverna de fuego y piedra.png",
+      "sourceName": "Caverna de fuego y piedra.png",
+      "projectPath": "assets/imported/a5a4c0f3-5758-4119-981a-ae37de16badb-Caverna-de-fuego-y-piedra.png"
+    },
+    "background-d132adc0-432c-4f39-95f8-b8a0209cd025": {
+      "src": "assets/imported/452ffd62-8455-4ca4-b9f6-f55f69e916b6-Caverna-de-fuego-y-piedra.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Caverna de fuego y piedra.png",
+      "sourceName": "Caverna de fuego y piedra.png",
+      "projectPath": "assets/imported/452ffd62-8455-4ca4-b9f6-f55f69e916b6-Caverna-de-fuego-y-piedra.png"
+    },
+    "background-0e707957-811d-45d3-91a7-48b5e4c5a4ca": {
+      "src": "assets/imported/bc8220f3-6eed-42e0-bae2-aadfe8bb8796-Ascenso-entre-ruinas-y-antorchas.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Ascenso entre ruinas y antorchas.png",
+      "sourceName": "Ascenso entre ruinas y antorchas.png",
+      "projectPath": "assets/imported/bc8220f3-6eed-42e0-bae2-aadfe8bb8796-Ascenso-entre-ruinas-y-antorchas.png"
+    },
+    "background-16a2c52f-b8f0-468e-8896-acfd014356e3": {
+      "src": "assets/imported/98cdd8cc-1b4b-406f-98c3-46286eff0b16-Paisaje-Griego-Soleado-desde-la-Cueva.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Paisaje Griego Soleado desde la Cueva.png",
+      "sourceName": "Paisaje Griego Soleado desde la Cueva.png",
+      "projectPath": "assets/imported/98cdd8cc-1b4b-406f-98c3-46286eff0b16-Paisaje-Griego-Soleado-desde-la-Cueva.png"
+    },
+    "background-011b6c9c-e390-4dec-9dcf-0ab31612cbb2": {
+      "src": "assets/imported/5995cdba-b539-4162-8527-577ed2a3d117-Caverna-de-fuego-y-piedra.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Caverna de fuego y piedra.png",
+      "sourceName": "Caverna de fuego y piedra.png",
+      "projectPath": "assets/imported/5995cdba-b539-4162-8527-577ed2a3d117-Caverna-de-fuego-y-piedra.png"
+    },
+    "background-51e34e83-8875-4884-95cc-0ec3bfba98f7": {
+      "src": "assets/imported/ec43f3ee-167f-4349-8070-2394379ab0a2-Caverna-de-Platon-a-la-Luz-del-Fuego.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Caverna de Platón a la Luz del Fuego.png",
+      "sourceName": "Caverna de Platón a la Luz del Fuego.png",
+      "projectPath": "assets/imported/ec43f3ee-167f-4349-8070-2394379ab0a2-Caverna-de-Platon-a-la-Luz-del-Fuego.png"
+    },
+    "resource-ziocaz-25": {
+      "src": "assets/companion-idle.png",
+      "width": 110,
+      "height": 157,
+      "kind": "philosopher",
+      "label": "Prisionero principal"
     }
   },
   "terrain": "terrain",
@@ -441,8 +520,8 @@
       "template": "room",
       "name": "A · Entrada de la caverna",
       "subtitle": "Aventura de la caverna · adaptación narrativa",
-      "background": "room-entrada",
-      "backgroundGround": 430,
+      "background": "background-61c24302-657d-44b5-9feb-0151f5558d05",
+      "backgroundGround": 420,
       "width": 1280,
       "floor": 560,
       "spawn": {
@@ -453,8 +532,8 @@
         {
           "id": "entrada-planeta",
           "type": "door",
-          "x": 55,
-          "y": 560,
+          "x": 141,
+          "y": 520,
           "label": "Regresar al planeta",
           "integrated": true,
           "behavior": "entrada-planeta"
@@ -462,23 +541,29 @@
         {
           "id": "entrada-prisioneros",
           "type": "door",
-          "x": 1160,
-          "y": 560,
+          "x": 1007,
+          "y": 499,
           "label": "Seguir las voces hacia los prisioneros",
           "integrated": true,
-          "behavior": "entrada-prisioneros"
+          "behavior": "entrada-prisioneros",
+          "hotspot": {
+            "x": 1010,
+            "y": 482,
+            "w": 63,
+            "h": 138
+          }
         },
         {
           "id": "lampara-sofia",
           "type": "lamp",
-          "x": 230,
-          "y": 560,
+          "x": 743,
+          "y": 559,
           "label": "Encender la lámpara de Sofía",
           "integrated": true,
           "behavior": "encender-lampara",
           "hotspot": {
-            "x": 230,
-            "y": 535,
+            "x": 743,
+            "y": 534,
             "w": 190,
             "h": 180
           }
@@ -486,8 +571,8 @@
         {
           "id": "antorcha-entrada",
           "type": "torch",
-          "x": 1000,
-          "y": 560,
+          "x": 459,
+          "y": 125,
           "label": "Encender la antorcha",
           "integrated": false,
           "behavior": "encender-antorcha",
@@ -533,8 +618,8 @@
       "template": "room",
       "name": "B · Sala de los prisioneros",
       "subtitle": "Aventura de la caverna · adaptación narrativa",
-      "background": "room-prisioneros",
-      "backgroundGround": 435,
+      "background": "background-51e34e83-8875-4884-95cc-0ec3bfba98f7",
+      "backgroundGround": 420,
       "width": 1280,
       "floor": 560,
       "spawn": {
@@ -583,7 +668,8 @@
             "excludes": [
               "prisionero_liberado"
             ]
-          }
+          },
+          "asset": "prisoner"
         },
         {
           "id": "prisionero-se-queda",
@@ -599,7 +685,8 @@
             "requires": [
               "prisionero_se_queda"
             ]
-          }
+          },
+          "asset": "prisoner"
         },
         {
           "id": "otros-encadenados",
@@ -610,7 +697,8 @@
           "integrated": false,
           "behavior": "hablar-otros",
           "characterId": "otro-prisionero",
-          "instanceId": "otros-encadenados"
+          "instanceId": "otros-encadenados",
+          "asset": "warden"
         },
         {
           "id": "cadenas-prisionero",
@@ -694,8 +782,8 @@
       "template": "room",
       "name": "C · Fuego y sombras",
       "subtitle": "Aventura de la caverna · adaptación narrativa",
-      "background": "room-fuego",
-      "backgroundGround": 415,
+      "background": "background-011b6c9c-e390-4dec-9dcf-0ab31612cbb2",
+      "backgroundGround": 420,
       "width": 1280,
       "floor": 560,
       "spawn": {
@@ -835,7 +923,7 @@
       "template": "stairs",
       "name": "D · Camino del ascenso",
       "subtitle": "Aventura de la caverna · adaptación narrativa",
-      "background": "room-ascenso",
+      "background": "background-0e707957-811d-45d3-91a7-48b5e4c5a4ca",
       "backgroundGround": 420,
       "width": 1280,
       "floor": 560,
@@ -847,8 +935,8 @@
         {
           "id": "ascenso-prisioneros",
           "type": "door",
-          "x": 55,
-          "y": 560,
+          "x": 80,
+          "y": 490,
           "label": "Regresar a la sala de los prisioneros",
           "integrated": true,
           "behavior": "ascenso-prisioneros"
@@ -856,14 +944,14 @@
         {
           "id": "ascenso-salida",
           "type": "door",
-          "x": 930,
-          "y": 215,
+          "x": 905,
+          "y": 238,
           "label": "Alcanzar la salida luminosa",
           "integrated": true,
           "behavior": "ascenso-salida",
           "hotspot": {
-            "x": 930,
-            "y": 215,
+            "x": 905,
+            "y": 238,
             "w": 160,
             "h": 180
           }
@@ -892,17 +980,18 @@
           "id": "escalera-pintada",
           "type": "stairs",
           "x": 165,
-          "y": 310,
+          "y": 400,
           "w": 305,
-          "h": 250
+          "h": 160,
+          "bottom": 560
         },
         {
           "id": "descanso",
           "type": "floor",
           "x": 470,
-          "y": 310,
+          "y": 400,
           "w": 295,
-          "h": 30
+          "h": 22
         },
         {
           "id": "paso-piedra",
@@ -910,8 +999,8 @@
           "x": 765,
           "y": 215,
           "w": 65,
-          "h": 345,
-          "bottom": 310
+          "h": 185,
+          "bottom": 400
         },
         {
           "id": "alto",
@@ -928,6 +1017,14 @@
           "y": 0,
           "w": 300,
           "h": 720
+        },
+        {
+          "id": "zone_1795397708870",
+          "type": "floor",
+          "x": 589,
+          "y": 396,
+          "w": 12,
+          "h": 12
         }
       ],
       "lighting": {
@@ -961,8 +1058,8 @@
       "template": "room",
       "name": "E · Salida luminosa",
       "subtitle": "Aventura de la caverna · adaptación narrativa",
-      "background": "room-salida",
-      "backgroundGround": 440,
+      "background": "background-16a2c52f-b8f0-468e-8896-acfd014356e3",
+      "backgroundGround": 420,
       "width": 1280,
       "floor": 560,
       "spawn": {
@@ -1002,7 +1099,8 @@
             "requires": [
               "decision_final_prisionero"
             ]
-          }
+          },
+          "asset": "mentor"
         },
         {
           "id": "prisionero-libre-salida",
@@ -1019,7 +1117,8 @@
               "prisionero_sale",
               "aventura_platon_completada"
             ]
-          }
+          },
+          "asset": "prisoner"
         }
       ],
       "regions": [

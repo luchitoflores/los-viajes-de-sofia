@@ -266,3 +266,10 @@ El estado comprobado y las capturas están en `docs/VALIDACION-MOTOR.md`. Para m
 - Separar el aspecto global de bocadillos (`/#/apariencia`) de los textos y estados (`/#/dialogos`). El editor de mundos ofrece entrada directa a las conversaciones de la escena abierta.
 - Enumerar escenas y conversaciones para localizar, conservando IDs permanentes. Incluir diálogos de objetos, eventos de llegada/regreso y compañero, y mostrar sus condiciones y versiones en lenguaje legible.
 - Editar una versión abre su turno sin alterar las otras entradas, recompensas ni cadenas. Las pruebas usan la habitación correspondiente y no guardan progreso. Guía: `docs/DIALOGOS-POR-ESCENA.md`.
+
+
+## Herramientas y acontecimientos — decisión del autor, 2026-11-22
+- El editor de los mundos configurables se abre en la ruta de Mundos y escenas, incluso desde el juego; conservar la compatibilidad de prototipos. Fondo y modo activo visibles arriba; todas las zonas se mueven, redimensionan y se eligen por lista. Las entradas dibujadas pueden conectarse con interiores mediante zonas invisibles.
+- Conversaciones con secuencia editable, turnos alternados, eliminación con confirmación, diálogo simple, decisión y bifurcación. Las respuestas registran resultados elegibles en condiciones y pueden cumplir objetivos o habilitar puertas conectadas. No inventar acciones al registrar un nombre.
+- Separar presencia/seguimiento del prisionero de las conversaciones por habitación. Debe acompañar al subir y bajar, poder quedarse en B y conservar conversaciones allí; nunca seguir por el universo.
+- La exportación del autor se integra con copia de seguridad y preservando los otros mundos y las mejoras posteriores. Manual: `docs/EDITOR-Y-ACONTECIMIENTOS.md`.

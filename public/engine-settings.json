@@ -4,10 +4,101 @@
     "theme": "world",
     "placement": "speaker",
     "width": 470,
-    "fontSize": 17,
+    "fontSize": 14,
     "offsetX": 0,
     "offsetY": 0,
     "portraits": true
   },
-  "decisions": []
+  "decisions": [
+    {
+      "id": "1535e424-d3bd-49d0-85e3-0500c8b54081",
+      "time": "2026-11-22T22:17:14.668Z",
+      "scope": "plato",
+      "text": "Guardado del contenido desde #/edicion"
+    },
+    {
+      "id": "3f330e37-a813-4452-b9a6-10cc2ca7ea90",
+      "time": "2026-11-22T23:57:57.261Z",
+      "scope": "plato",
+      "text": "Guardado del contenido desde #/edicion"
+    },
+    {
+      "id": "8c73b004-4714-4a95-b238-9359e51434a0",
+      "time": "2026-11-22T23:59:29.314Z",
+      "scope": "diálogos",
+      "text": "Diseño global aplicado: {\"theme\":\"world\",\"placement\":\"speaker\",\"width\":470,\"fontSize\":14,\"offsetX\":0,\"offsetY\":0,\"portraits\":true}"
+    },
+    {
+      "id": "575d8744-d7f8-47cc-93a1-a86a3f5cf15d",
+      "time": "2026-11-23T00:33:23.765Z",
+      "scope": "plato",
+      "text": "Guardado del contenido desde #/edicion"
+    },
+    {
+      "id": "c8844a14-1d50-4616-a958-9d12b9d11be4",
+      "time": "2026-11-23T00:38:44.736Z",
+      "scope": "plato",
+      "text": "Guardado del contenido desde #/edicion"
+    },
+    {
+      "id": "8ed7049e-22ed-4b3b-ae43-b99ba52a47cf",
+      "time": "2026-11-23T00:41:54.623Z",
+      "scope": "plato",
+      "text": "Guardado del contenido desde #/edicion"
+    },
+    {
+      "id": "6d3ef52e-a365-4ea7-ae80-e59c99cbf3b5",
+      "time": "2026-11-23T00:43:33.236Z",
+      "scope": "plato",
+      "text": "Guardado del contenido desde #/edicion"
+    },
+    {
+      "id": "f3f607bb-5e85-4068-a89f-ed9d2b6d40fb",
+      "time": "2026-11-23T00:48:02.956Z",
+      "scope": "plato",
+      "text": "Guardado del contenido desde #/edicion"
+    },
+    {
+      "id": "fe32eaa6-2bbf-4a54-8bde-5dbabf8213e9",
+      "time": "2026-11-23T00:48:03.804Z",
+      "scope": "plato",
+      "text": "Guardado del contenido desde #/jugar"
+    },
+    {
+      "id": "ff742f2e-f83f-489c-8c37-9c302805fdd2",
+      "time": "2026-11-23T00:55:33.975Z",
+      "scope": "plato",
+      "text": "Guardado del contenido desde #/edicion"
+    },
+    {
+      "id": "daf8e768-9bdf-4097-99b7-262907c1634e",
+      "time": "2026-11-23T01:31:18.910Z",
+      "scope": "plato",
+      "text": "Guardado del contenido desde #/edicion"
+    },
+    {
+      "id": "edf47802-69e2-4466-bf33-333a0d197c17",
+      "time": "2026-11-23T01:32:34.290Z",
+      "scope": "plato",
+      "text": "Guardado del contenido desde #/edicion"
+    },
+    {
+      "id": "7c0faba9-0fe2-4eba-ace9-4da98813a73a",
+      "time": "2026-11-23T01:32:49.624Z",
+      "scope": "plato",
+      "text": "Guardado del contenido desde #/dialogos"
+    },
+    {
+      "id": "0eaef969-b213-41c4-881b-857f9ad5c53d",
+      "time": "2026-11-23T01:32:50.805Z",
+      "scope": "plato",
+      "text": "Guardado del contenido desde #/jugar"
+    },
+    {
+      "id": "b1e1969a-c692-460d-aa4d-47afad0b2d22",
+      "time": "2026-11-23T01:46:17.375Z",
+      "scope": "earth",
+      "text": "Guardado del contenido desde #/edicion"
+    }
+  ]
 }

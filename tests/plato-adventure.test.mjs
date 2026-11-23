@@ -22,7 +22,7 @@ test('Platón preserves five cave rooms and adds the agora and both endings requ
 test('Shared stair landings join continuously on ascent and descent',()=>{
  const i=parseWorld(raw()).interiors.ascenso;
  for(const x of [165,470,765,830])assert.ok(Math.abs(groundAt(i,x-.001)-groundAt(i,x+.001))<.01);
- assert.equal(groundAt(i,0),560);assert.equal(groundAt(i,900),215);assert.equal(groundAt(i,765),310);
+ assert.equal(groundAt(i,0),560);assert.equal(groundAt(i,900),215);assert.equal(groundAt(i,765),400);
 });
 test('Narrative inputs reject invalid light, events, companion identity and conditional dialogue dead ends',()=>{
  for(const change of [w=>w.interiors.entrada.lighting.darkness=2,w=>w.interiors.entrada.lighting.lights[0].radius=-1,w=>w.interiors.entrada.events[0].behavior='missing',w=>w.journey.companion.characterId='missing',w=>w.interiors.ascenso.regions[3].bottom=-1,w=>{w.dialogues.companero.nodes['segunda-vez'].choices[0].next='segunda-vez'}]){const w=raw();change(w);assert.throws(()=>parseWorld(w))}

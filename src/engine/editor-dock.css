@@ -18,3 +18,15 @@ body.core-mode:not(.core-preview) footer{width:100%}
 
 body.core-mode #core-editor-tools [data-e=close]{display:none}
 body.core-mode #editor{background:none}
+
+body.core-mode #world-editor-tools,body.core-mode #editor-tools .editor-tabs{display:none}
+#scene-edit-status{padding:10px;background:#def0df;color:#244937;border-radius:8px;font-weight:bold;margin:12px 0}
+.scene-tool-buttons{display:flex;gap:5px;flex-wrap:wrap}.scene-tool-buttons button[aria-pressed=true]{background:#946c25!important;outline:2px solid #e7c078}
+#core-scene-settings{width:100%;font-weight:bold!important;margin:10px 0!important}
+.story-check{font-weight:normal!important}.story-check input{width:auto!important;display:inline!important}
+#dialogue-sequence{display:flex;flex-direction:column;gap:5px;padding-left:22px;max-height:260px;overflow:auto}
+#dialogue-sequence button{text-align:left;width:100%}#dialogue-sequence .selected button{background:#916826}
+
+.story-effect-options{max-height:220px;overflow:auto;padding:8px;background:#fffcf5;border:1px solid #cfb789}
+
+#dialogue-sequence{list-style:none;padding-left:0}

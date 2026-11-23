@@ -1,6 +1,734 @@
 {
   "format": "sofia-engine-library",
   "version": 1,
-  "resources": {},
-  "characters": []
+  "resources": {
+    "stock-temple": {
+      "src": "assets/polis-temple.png",
+      "width": 220,
+      "height": 220,
+      "kind": "temple",
+      "label": "Templo de la Polis"
+    },
+    "stock-ship": {
+      "src": "assets/polis-ship.png",
+      "width": 130,
+      "height": 150,
+      "kind": "ship",
+      "label": "La nave de Sofía"
+    },
+    "stock-tree": {
+      "src": "assets/polis-tree.png",
+      "width": 180,
+      "height": 205,
+      "kind": "tree",
+      "label": "Olivo"
+    },
+    "stock-cave": {
+      "src": "assets/polis-cave.png",
+      "width": 180,
+      "height": 170,
+      "kind": "cave",
+      "label": "Entrada a la caverna"
+    },
+    "stock-house": {
+      "src": "assets/polis-house.png",
+      "width": 160,
+      "height": 190,
+      "kind": "house",
+      "label": "Casa del ágora"
+    },
+    "stock-door": {
+      "src": "assets/polis-door.png",
+      "width": 70,
+      "height": 100,
+      "kind": "door",
+      "label": "Puerta de la biblioteca"
+    },
+    "stock-vase": {
+      "src": "assets/polis-vase.png",
+      "width": 34,
+      "height": 44,
+      "kind": "vase",
+      "label": "Ánfora de la Polis"
+    },
+    "stock-scroll": {
+      "src": "assets/polis-scroll.png",
+      "width": 48,
+      "height": 32,
+      "kind": "scroll",
+      "label": "Pergamino de preguntas"
+    },
+    "stock-rock": {
+      "src": "assets/polis-rock.png",
+      "width": 85,
+      "height": 65,
+      "kind": "rock",
+      "label": "Rocas del sendero"
+    },
+    "stock-philosopher": {
+      "src": "assets/cast-socr.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "Sócrates"
+    },
+    "cast-diog": {
+      "src": "assets/cast-diog.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "diog"
+    },
+    "cast-beau": {
+      "src": "assets/cast-beau.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "beau"
+    },
+    "cast-camus": {
+      "src": "assets/cast-camus.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "camus"
+    },
+    "cast-aver": {
+      "src": "assets/cast-aver.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "aver"
+    },
+    "cast-ockh": {
+      "src": "assets/cast-ockh.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "ockh"
+    },
+    "cast-rous": {
+      "src": "assets/cast-rous.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "rous"
+    },
+    "cast-plat": {
+      "src": "assets/cast-plat.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "plat"
+    },
+    "cast-socr": {
+      "src": "assets/cast-socr.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "socr"
+    },
+    "cast-aris": {
+      "src": "assets/cast-aris.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "aris"
+    },
+    "cast-agus": {
+      "src": "assets/cast-agus.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "agus"
+    },
+    "cast-toma": {
+      "src": "assets/cast-toma.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "toma"
+    },
+    "cast-desc": {
+      "src": "assets/cast-desc.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "desc"
+    },
+    "cast-hume": {
+      "src": "assets/cast-hume.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "hume"
+    },
+    "cast-kant": {
+      "src": "assets/cast-kant.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "kant"
+    },
+    "cast-nietz": {
+      "src": "assets/cast-nietz.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "nietz"
+    },
+    "cast-sartre": {
+      "src": "assets/cast-sartre.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "sartre"
+    },
+    "cast-fouc": {
+      "src": "assets/cast-fouc.png",
+      "width": 80,
+      "height": 118,
+      "kind": "philosopher",
+      "label": "fouc"
+    },
+    "cave-lamp": {
+      "src": "assets/cave-lamp.png",
+      "width": 80,
+      "height": 110,
+      "kind": "rock",
+      "label": "Caverna: lamp"
+    },
+    "cave-warden": {
+      "src": "assets/cave-warden.png",
+      "width": 80,
+      "height": 110,
+      "kind": "rock",
+      "label": "Caverna: warden"
+    },
+    "cave-chains": {
+      "src": "assets/cave-chains.png",
+      "width": 80,
+      "height": 110,
+      "kind": "rock",
+      "label": "Caverna: chains"
+    },
+    "cave-key": {
+      "src": "assets/cave-key.png",
+      "width": 80,
+      "height": 110,
+      "kind": "rock",
+      "label": "Caverna: key"
+    },
+    "cave-shadows": {
+      "src": "assets/cave-puppet.png",
+      "width": 80,
+      "height": 110,
+      "kind": "rock",
+      "label": "Caverna: shadows"
+    },
+    "cave-scroll": {
+      "src": "assets/cave-papyrus.png",
+      "width": 80,
+      "height": 110,
+      "kind": "rock",
+      "label": "Caverna: scroll"
+    },
+    "background-library": {
+      "src": "assets/polis-library-v2.png",
+      "width": 1600,
+      "height": 540,
+      "kind": "rock",
+      "label": "Fondo: library"
+    },
+    "background-entrance": {
+      "src": "assets/polis-cave-entry-v3.png",
+      "width": 1600,
+      "height": 540,
+      "kind": "rock",
+      "label": "Fondo: entrance"
+    },
+    "background-shadows": {
+      "src": "assets/polis-cave-shadows-v3.png",
+      "width": 1600,
+      "height": 540,
+      "kind": "rock",
+      "label": "Fondo: shadows"
+    },
+    "background-ascent": {
+      "src": "assets/polis-ascent-v2.png",
+      "width": 1600,
+      "height": 540,
+      "kind": "rock",
+      "label": "Fondo: ascent"
+    },
+    "background-exterior": {
+      "src": "assets/exterior.webp",
+      "width": 1600,
+      "height": 540,
+      "kind": "rock",
+      "label": "Fondo: exterior"
+    },
+    "background-medieval": {
+      "src": "assets/mmid.webp",
+      "width": 1600,
+      "height": 540,
+      "kind": "rock",
+      "label": "Fondo: medieval"
+    },
+    "background-modern": {
+      "src": "assets/dmid.webp",
+      "width": 1600,
+      "height": 540,
+      "kind": "rock",
+      "label": "Fondo: modern"
+    },
+    "background-contemporary": {
+      "src": "assets/cmid.webp",
+      "width": 1600,
+      "height": 540,
+      "kind": "rock",
+      "label": "Fondo: contemporary"
+    },
+    "resource-1pzkast-29": {
+      "src": "assets/planet-plato-stone.png",
+      "kind": "rock",
+      "width": 1012,
+      "height": 1012,
+      "label": "Planeta de dos mundos pétreos — ilustración del autor"
+    },
+    "resource-f08xwd-20": {
+      "src": "assets/cast-plat.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Recurso provisional"
+    },
+    "resource-19lbd35-24": {
+      "src": "assets/portrait-plat.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Recurso provisional"
+    },
+    "resource-1pxt17w-21": {
+      "src": "assets/polis-ship.png",
+      "width": 130,
+      "height": 150,
+      "kind": "ship",
+      "label": "ship"
+    },
+    "resource-t06wuz-23": {
+      "src": "assets/polis-temple.png",
+      "width": 200,
+      "height": 210,
+      "kind": "temple",
+      "label": "temple"
+    },
+    "resource-7wl546-21": {
+      "src": "assets/polis-tree.png",
+      "width": 180,
+      "height": 205,
+      "kind": "tree",
+      "label": "tree"
+    },
+    "resource-1xphv5z-21": {
+      "src": "assets/polis-cave.png",
+      "width": 180,
+      "height": 170,
+      "kind": "cave",
+      "label": "cave"
+    },
+    "resource-1u7i15u-21": {
+      "src": "assets/polis-door.png",
+      "width": 70,
+      "height": 100,
+      "kind": "door",
+      "label": "door"
+    },
+    "resource-15oz7aw-22": {
+      "src": "assets/polis-house.png",
+      "width": 160,
+      "height": 190,
+      "kind": "house",
+      "label": "house"
+    },
+    "resource-x57btn-21": {
+      "src": "assets/polis-vase.png",
+      "width": 34,
+      "height": 44,
+      "kind": "vase",
+      "label": "vase"
+    },
+    "resource-ojwx6j-23": {
+      "src": "assets/polis-scroll.png",
+      "width": 48,
+      "height": 32,
+      "kind": "scroll",
+      "label": "scroll"
+    },
+    "resource-1birt9n-21": {
+      "src": "assets/polis-rock.png",
+      "width": 112,
+      "height": 24,
+      "kind": "rock",
+      "label": "Paso de piedra del ascenso"
+    },
+    "resource-ziocaz-25": {
+      "src": "assets/companion-idle.png",
+      "width": 110,
+      "height": 157,
+      "kind": "philosopher",
+      "label": "Prisionero principal"
+    },
+    "resource-zizhas-28": {
+      "src": "assets/portrait-prisoner.png",
+      "width": 160,
+      "height": 160,
+      "kind": "rock",
+      "label": "prisoner-face"
+    },
+    "resource-for2cz-22": {
+      "src": "assets/cave-warden.png",
+      "width": 100,
+      "height": 157,
+      "kind": "philosopher",
+      "label": "Otro prisionero"
+    },
+    "resource-1otbpn5-26": {
+      "src": "assets/portrait-warden.png",
+      "width": 160,
+      "height": 160,
+      "kind": "rock",
+      "label": "warden-face"
+    },
+    "resource-1f710tk-20": {
+      "src": "assets/cave-lamp.png",
+      "width": 42,
+      "height": 65,
+      "kind": "rock",
+      "label": "Lámpara de pared"
+    },
+    "resource-4ri7he-27": {
+      "src": "assets/plato-01_entrada.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "A · Entrada de la caverna"
+    },
+    "resource-1be41l0-39": {
+      "src": "assets/plato-02_prisioneros_sin_npc.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "B · Sala de los prisioneros"
+    },
+    "resource-jdit7j-35": {
+      "src": "assets/plato-03_fuego_y_sombras.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "C · Fuego y sombras"
+    },
+    "resource-1iankj8-38": {
+      "src": "assets/plato-04_camino_del_ascenso.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "D · Camino del ascenso"
+    },
+    "resource-1lw61za-35": {
+      "src": "assets/plato-05_salida_luminosa.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "E · Salida luminosa"
+    },
+    "resource-1lfj8ww-27": {
+      "src": "assets/polis-library-v2.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Interior del templo y ágora"
+    },
+    "resource-1mv25ig-2686130": {
+      "src": "assets/imported/0f07cf58-90f6-4279-8848-c231d2032118-Entrada-de-cueva-con-ruinas-antiguas.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Entrada de cueva con ruinas antiguas.png",
+      "sourceName": "Entrada de cueva con ruinas antiguas.png",
+      "projectPath": "assets/imported/0f07cf58-90f6-4279-8848-c231d2032118-Entrada-de-cueva-con-ruinas-antiguas.png"
+    },
+    "resource-11i3h83-2699450": {
+      "src": "assets/imported/5995cdba-b539-4162-8527-577ed2a3d117-Caverna-de-fuego-y-piedra.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Caverna de fuego y piedra.png",
+      "sourceName": "Caverna de fuego y piedra.png",
+      "projectPath": "assets/imported/5995cdba-b539-4162-8527-577ed2a3d117-Caverna-de-fuego-y-piedra.png"
+    },
+    "resource-r0ffdn-2697846": {
+      "src": "assets/imported/bc8220f3-6eed-42e0-bae2-aadfe8bb8796-Ascenso-entre-ruinas-y-antorchas.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Ascenso entre ruinas y antorchas.png",
+      "sourceName": "Ascenso entre ruinas y antorchas.png",
+      "projectPath": "assets/imported/bc8220f3-6eed-42e0-bae2-aadfe8bb8796-Ascenso-entre-ruinas-y-antorchas.png"
+    },
+    "resource-4ty6tk-2884114": {
+      "src": "assets/imported/98cdd8cc-1b4b-406f-98c3-46286eff0b16-Paisaje-Griego-Soleado-desde-la-Cueva.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Paisaje Griego Soleado desde la Cueva.png",
+      "sourceName": "Paisaje Griego Soleado desde la Cueva.png",
+      "projectPath": "assets/imported/98cdd8cc-1b4b-406f-98c3-46286eff0b16-Paisaje-Griego-Soleado-desde-la-Cueva.png"
+    },
+    "resource-bvy0v5-2527374": {
+      "src": "assets/imported/ec43f3ee-167f-4349-8070-2394379ab0a2-Caverna-de-Platon-a-la-Luz-del-Fuego.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Caverna de Platón a la Luz del Fuego.png",
+      "sourceName": "Caverna de Platón a la Luz del Fuego.png",
+      "projectPath": "assets/imported/ec43f3ee-167f-4349-8070-2394379ab0a2-Caverna-de-Platon-a-la-Luz-del-Fuego.png"
+    },
+    "resource-1qanlxt-26": {
+      "src": "assets/planet-earth-v1.png",
+      "width": 1012,
+      "height": 1012,
+      "kind": "rock",
+      "label": "La Tierra ilustrada"
+    }
+  },
+  "characters": [
+    {
+      "id": "plat",
+      "name": "Platón",
+      "personality": "Anfitrión y guía en encuentros clave.",
+      "sprite": {
+        "src": "assets/cast-plat.png",
+        "kind": "philosopher",
+        "width": 80,
+        "height": 118,
+        "label": "Recurso provisional"
+      },
+      "portrait": {
+        "src": "assets/portrait-plat.png",
+        "kind": "rock",
+        "width": 160,
+        "height": 160,
+        "label": "Recurso provisional"
+      }
+    },
+    {
+      "id": "prisionero",
+      "name": "El prisionero",
+      "personality": "Teme dejar las sombras y aprende a compartir lo que descubre.",
+      "sprite": {
+        "src": "assets/companion-idle.png",
+        "width": 110,
+        "height": 157,
+        "kind": "philosopher",
+        "label": "Prisionero principal"
+      },
+      "portrait": {
+        "src": "assets/portrait-prisoner.png",
+        "width": 160,
+        "height": 160,
+        "kind": "rock"
+      }
+    },
+    {
+      "id": "otro-prisionero",
+      "name": "Otro prisionero",
+      "personality": "Defiende lo que siempre ha creído.",
+      "sprite": {
+        "src": "assets/cave-warden.png",
+        "width": 100,
+        "height": 157,
+        "kind": "philosopher",
+        "label": "Otro prisionero"
+      },
+      "portrait": {
+        "src": "assets/portrait-warden.png",
+        "width": 160,
+        "height": 160,
+        "kind": "rock"
+      }
+    },
+    {
+      "id": "camus",
+      "name": "Albert Camus",
+      "personality": "Interlocutor atento al absurdo y a la lucidez.",
+      "sprite": {
+        "src": "assets/cast-camus.png",
+        "kind": "philosopher",
+        "width": 80,
+        "height": 118,
+        "label": "Apariencia provisional: Albert Camus"
+      },
+      "portrait": {
+        "src": "assets/portrait-camus.png",
+        "kind": "rock",
+        "width": 160,
+        "height": 160,
+        "label": "Retrato provisional: Albert Camus"
+      }
+    },
+    {
+      "id": "sisyphus",
+      "name": "Sísifo",
+      "personality": "Personaje del mito; reflexiona sobre su esfuerzo repetido.",
+      "sprite": {
+        "src": "assets/companion-idle.png",
+        "kind": "philosopher",
+        "width": 80,
+        "height": 118,
+        "label": "NPC genérico: trabajador"
+      },
+      "portrait": {
+        "src": "assets/portrait-prisoner.png",
+        "kind": "rock",
+        "width": 160,
+        "height": 160,
+        "label": "Retrato genérico: trabajador"
+      }
+    },
+    {
+      "id": "hegel",
+      "name": "Georg W. F. Hegel",
+      "personality": "Busca comprender las mediaciones del cambio; apariencia genérica provisional.",
+      "sprite": {
+        "src": "assets/cast-socr.png",
+        "kind": "philosopher",
+        "width": 80,
+        "height": 118,
+        "label": "Apariencia provisional: Georg W. F. Hegel"
+      },
+      "portrait": {
+        "src": "assets/portrait-socr.png",
+        "kind": "rock",
+        "width": 160,
+        "height": 160,
+        "label": "Retrato provisional: Georg W. F. Hegel"
+      }
+    },
+    {
+      "id": "marco",
+      "name": "Marco",
+      "personality": "Habitante que examina un conflicto en su comunidad.",
+      "sprite": {
+        "src": "assets/companion-idle.png",
+        "kind": "philosopher",
+        "width": 80,
+        "height": 118,
+        "label": "NPC genérico: trabajador"
+      },
+      "portrait": {
+        "src": "assets/portrait-prisoner.png",
+        "kind": "rock",
+        "width": 160,
+        "height": 160,
+        "label": "Retrato genérico: trabajador"
+      }
+    },
+    {
+      "id": "ana",
+      "name": "Ana",
+      "personality": "Interlocutora que pregunta qué se conserva al cambiar.",
+      "sprite": {
+        "src": "assets/cast-beau.png",
+        "kind": "philosopher",
+        "width": 80,
+        "height": 118,
+        "label": "Apariencia provisional: Ana"
+      },
+      "portrait": {
+        "src": "assets/portrait-beau.png",
+        "kind": "rock",
+        "width": 160,
+        "height": 160,
+        "label": "Retrato provisional: Ana"
+      }
+    },
+    {
+      "id": "kant",
+      "name": "Immanuel Kant",
+      "personality": "Pregunta por las condiciones del conocimiento y la autonomía moral.",
+      "sprite": {
+        "src": "assets/cast-kant.png",
+        "kind": "philosopher",
+        "width": 80,
+        "height": 118,
+        "label": "Apariencia provisional: Immanuel Kant"
+      },
+      "portrait": {
+        "src": "assets/portrait-kant.png",
+        "kind": "rock",
+        "width": 160,
+        "height": 160,
+        "label": "Retrato provisional: Immanuel Kant"
+      }
+    },
+    {
+      "id": "elena",
+      "name": "Elena",
+      "personality": "Observadora que contrasta lo experimentado con los modos de conocer.",
+      "sprite": {
+        "src": "assets/cast-desc.png",
+        "kind": "philosopher",
+        "width": 80,
+        "height": 118,
+        "label": "Apariencia provisional: Elena"
+      },
+      "portrait": {
+        "src": "assets/portrait-desc.png",
+        "kind": "rock",
+        "width": 160,
+        "height": 160,
+        "label": "Retrato provisional: Elena"
+      }
+    },
+    {
+      "id": "heidegger",
+      "name": "Martin Heidegger",
+      "personality": "Interlocutor sobre ser-en-el-mundo y temporalidad; apariencia genérica provisional.",
+      "sprite": {
+        "src": "assets/cast-aris.png",
+        "kind": "philosopher",
+        "width": 80,
+        "height": 118,
+        "label": "Apariencia provisional: Martin Heidegger"
+      },
+      "portrait": {
+        "src": "assets/portrait-aris.png",
+        "kind": "rock",
+        "width": 160,
+        "height": 160,
+        "label": "Retrato provisional: Martin Heidegger"
+      }
+    },
+    {
+      "id": "clara",
+      "name": "Clara",
+      "personality": "Habitante que reflexiona sobre ocupaciones y posibilidades cotidianas.",
+      "sprite": {
+        "src": "assets/cast-beau.png",
+        "kind": "philosopher",
+        "width": 80,
+        "height": 118,
+        "label": "Apariencia provisional: Clara"
+      },
+      "portrait": {
+        "src": "assets/portrait-beau.png",
+        "kind": "rock",
+        "width": 160,
+        "height": 160,
+        "label": "Retrato provisional: Clara"
+      }
+    }
+  ]
 }

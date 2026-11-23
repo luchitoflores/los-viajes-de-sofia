@@ -16,7 +16,7 @@ export function usages(w:WorldDefinition,kind:'dialogue'|'activity',id:string){
  for(const [scene,items] of [['surface',w.surface.objects],...Object.entries(w.interiors).map(([id,i])=>[id,i.items])] as [string,{id:string;label:string;behavior?:string}[]][])
   for(const o of items)if(o.behavior&&w.interactions[o.behavior]?.actions.some(a=>a.type===(kind==='dialogue'?'talk':'activity')&&'target' in a&&a.target===id))result.push({scene,object:o.id,label:o.label});
  if(kind==='dialogue'&&id===w.intro)result.push({scene:'surface',object:'',label:'Encuentro inicial del mundo'});
- const companion=w.journey?.companion;if(companion&&w.interactions[companion.behavior]?.actions.some(a=>a.type===(kind==='dialogue'?'talk':'activity')&&'target' in a&&a.target===id))for(const scene of companion.scenes)result.push({scene,object:'',label:'Compañero: '+w.characters?.[companion.characterId]?.name});
+ const companion=w.journey?.companion;if(companion)for(const scene of companion.scenes)if(w.interactions[companion.encounters?.[scene]??companion.behavior]?.actions.some(a=>a.type===(kind==='dialogue'?'talk':'activity')&&'target' in a&&a.target===id))result.push({scene,object:'',label:'Compañero: '+w.characters?.[companion.characterId]?.name});
  for(const [scene,i] of Object.entries(w.interiors))for(const e of i.events??[])if(w.interactions[e.behavior]?.actions.some(a=>a.type===(kind==='dialogue'?'talk':'activity')&&'target' in a&&a.target===id))result.push({scene,object:'',label:'Evento: '+e.id});
  return result;
 }

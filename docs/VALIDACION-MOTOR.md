@@ -798,3 +798,15 @@ El menú inicial precede ahora al mapa de Historia. Las comprobaciones antiguas 
 - Los datos de Platón solo ganan nombres legibles de conversaciones: se comprobó igualdad de la narrativa, geometría y recompensas al excluir esos nombres. Sartre conserva su SHA256 original.
 - Informes locales: `captures/scene-dialogue-validation.json` y `captures/core-workbench-validation.json`. Capturas: `dialogos-por-escena-prisioneros.png`, `dialogo-version-liberado-editor.png`, `aspecto-dialogos-separado.png`.
 - El toque es emulado; no hay prueba en teléfono físico. No se recorrió de nuevo toda la aventura porque sus reglas no cambiaron. Las nuevas condiciones sencillas se guardan como eventos del motor común; no hay un motor narrativo distinto.
+
+
+## Herramientas integradas, ramas y acontecimientos — 2026-11-22
+
+- `npm test`: 81/81. TypeScript y Vite compilan. Módulos puros comprueban ramas y respuestas exclusivas, resultados/puertas, encuentros del compañero por habitación, repetición, borrado/reconexión, tiradores y migración del descanso antiguo.
+- `tests/browser_authoring_next.py` sobre la compilación final: dibujo, movimiento, ocho tiradores, cambio de tipo, toque emulado, rechazo del clic mínimo; añadir textos alternados, reordenar, cancelar/confirmar borrado y reconectar; rama con dos caminos; objetivo y permiso de puerta aplicados en el juego real. Condiciones del compañero por habitación y registro de productores. Cero errores de navegador; progreso del editor aislado.
+- `tests/browser_zone_doors.py`: entrada invisible dibujada y conexión efectiva a otro interior; prueba sin escribir progreso; botón del juego abre el mismo editor con mundo/escena conservados.
+- `tests/browser_plato_adventure.py` con los fondos del autor: lámpara/antorcha y recarga, investigación, liberación única, ascenso y descenso con pies estables de ambos personajes, regreso obligatorio, prisionero que se queda en B y desenlace alternativo en E. No hay acompañante por el universo. Los objetos de pared se investigan desde el apoyo del suelo, sin exigir saltar hasta su altura visual.
+- Regresión `tests/browser_core_workbench.py`: cuatro tamaños del lienzo, imágenes, acciones, apariencia, diálogos, preguntas e importación/exportación completas: correcta.
+- Capturas reales: `editor-zonas-tiradores.png`, `editor-conversacion-bifurcacion-eventos.png`, `registro-eventos-y-objetivos.png`, `caverna-b-regreso.png`, `caverna-final-exterior-movil.png`. Informes en `captures/authoring-next-validation.json`, `zone-door-validation.json` y `plato-adventure-validation.json` (según el nombre conservado por el test).
+- Integración del proyecto del autor validada antes de escribir, con copia y restauración. Se conservaron los otros mundos sin cambios, los nombres posteriores y el SHA256 original de Sartre. Los datos del editor no contienen las partidas del autor.
+- El toque es emulado; no se probó un teléfono físico. La geometría sigue siendo manual y rectangular en interiores, radial en superficies; no hay detección automática de suelo a partir del fondo. Manual: `EDITOR-Y-ACONTECIMIENTOS.md`.

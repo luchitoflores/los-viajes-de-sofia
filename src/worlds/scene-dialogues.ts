@@ -15,7 +15,7 @@ export function dialoguePlaces(w:WorldDefinition):DialoguePlace[]{
   if(s.id!=='surface')for(const e of w.interiors[s.id].events??[])add(s.id,e.id,'Al recorrer esta escena · una vez por partida','event',e.behavior,e.requires,e.excludes);
  }
  if(w.dialogues[w.intro])places.push({scene:'surface',source:'intro',label:'Al conocer al anfitrión','trigger':'intro',dialogue:w.intro,requires:[],excludes:[]});
- const c=w.journey?.companion;if(c)for(const scene of c.scenes)add(scene,'companion','Al hablar con '+(w.characters?.[c.characterId]?.name??'el compañero'),'companion',c.behavior,c.requires,c.excludes);
+ const c=w.journey?.companion;if(c)for(const scene of c.scenes)add(scene,'companion','Al hablar con '+(w.characters?.[c.characterId]?.name??'el compañero'),'companion',c.encounters?.[scene]??c.behavior,c.requires,c.excludes);
  return places;
 }
 export function sceneDialogueGroups(w:WorldDefinition,scene:string){

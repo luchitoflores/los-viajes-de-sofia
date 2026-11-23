@@ -1,3 +1,4 @@
+import {answerFlag} from '../worlds/story-events.ts';
 import {meets} from '../worlds/narrative.ts';
 import {radians,type PlanetSave} from '../planet-model.ts';
 import {validId,type WorldDefinition,type Reward,type DialogueNode,type Choice} from '../worlds/schema.ts';
@@ -19,7 +20,7 @@ export function restoreProgress(w:WorldDefinition,raw:unknown):WorldProgress{
 export function reward(p:WorldProgress,r:Reward|undefined){if(!r)return;for(const k of ['flags','concepts','memories'] as const)for(const id of r[k]??[])if(!p[k].includes(id))p[k].push(id)}
 export function dialogueNode(w:WorldDefinition,p:WorldProgress,id:string):{id:string;node:DialogueNode}{const d=w.dialogues[id];if(!d)throw Error('Diálogo inexistente.');const cursor=p.cursors[id];const nodeId=cursor&&d.nodes[cursor]?cursor:(d.entries?.find(e=>meets(p.flags,e))?.node??d.start);return{id:nodeId,node:d.nodes[nodeId]}}
 export function chooseDialogue(w:WorldDefinition,p:WorldProgress,id:string,nodeId:string,choiceId:string):Choice {
- const d=w.dialogues[id],n=d?.nodes[nodeId],c=n?.choices.find(c=>c.id===choiceId);if(!c||(c.requires??[]).some(id=>!p.flags.includes(id))||(c.excludes??[]).some(id=>p.flags.includes(id)))throw Error('Opción de diálogo inexistente o bloqueada.');reward(p,c.reward);
+ const d=w.dialogues[id],n=d?.nodes[nodeId],c=n?.choices.find(c=>c.id===choiceId);if(!c||(c.requires??[]).some(id=>!p.flags.includes(id))||(c.excludes??[]).some(id=>p.flags.includes(id)))throw Error('Opción de diálogo inexistente o bloqueada.');if(n.kind==='decision'||n.kind==='branch'){const alternatives=n.choices.map(c=>answerFlag(id,nodeId,c.id));p.flags=p.flags.filter(f=>!alternatives.includes(f));p.flags.push(answerFlag(id,nodeId,c.id))}reward(p,c.reward);
  if(c.next)p.cursors[id]=c.next;else{delete p.cursors[id];reward(p,d.reward);if(id===w.intro){p.introComplete=true;if(!p.flags.includes('intro-complete'))p.flags.push('intro-complete')}}return c;
 }
 export function answerActivity(w:WorldDefinition,p:WorldProgress,id:string,itemId:string,targetId:string){
@@ -35,5 +36,5 @@ export function finishDecision(w:WorldDefinition,p:WorldProgress,id:string,optio
  if(reason.adequate&&!p.completed.includes(id)){p.choices[id]=option.id;p.reasons[id]=reason.id;p.completed.push(id);reward(p,option.reward);reward(p,a.reward)}return{adequate:reason.adequate,feedback:reason.feedback,consequence:option.consequence!};
 }
 export function gate(w:WorldDefinition,p:WorldProgress,behaviorId:string|undefined):{allowed:boolean;intro?:boolean;text?:string}{
- if(!p.introComplete)return{allowed:false,intro:true};const b=behaviorId?w.interactions[behaviorId]:undefined;if(b?.requires?.some(id=>!p.flags.includes(id)))return{allowed:false,text:b.blockedText??'Hay algo que investigar antes.'};return{allowed:true};
+ if(!p.introComplete)return{allowed:false,intro:true};const b=behaviorId?w.interactions[behaviorId]:undefined;if(b?.requires?.some(id=>!p.flags.includes(id))||b?.excludes?.some(id=>p.flags.includes(id)))return{allowed:false,text:b.blockedText??'Hay algo que investigar antes.'};return{allowed:true};
 }
