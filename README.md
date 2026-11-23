@@ -354,3 +354,9 @@ Los textos se editan en **Diálogos por escena**; el diseño global se configura
 
 
 [Manual de zonas, conversaciones, decisiones y acontecimientos](docs/EDITOR-Y-ACONTECIMIENTOS.md).
+
+## Documentos de cada mundo
+
+- [Platón: estado actual, escenas, acciones, diálogos e ideas de desarrollo](docs/mundos/PLATON.md).
+
+Los documentos de `docs/mundos/` reúnen el estado implementado y las propuestas de cada planeta. Las ideas pendientes se distinguen del contenido ya jugable.
