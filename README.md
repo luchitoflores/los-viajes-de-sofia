@@ -374,3 +374,8 @@ Los documentos de `docs/mundos/` reúnen el estado implementado y las propuestas
 ## Estudio de historias
 
 Personajes (`/#/personajes`), guiones por escena (`/#/dialogos`) y objetivos/plantillas (`/#/misiones`) comparten los datos del motor y conservan las partidas. [Manual y límites de la primera entrega](docs/ESTUDIO-DE-HISTORIAS.md).
+
+
+## Constructor visual de mecánicas reutilizables (decisiones para Codex)
+
+- [Crear juegos seleccionando personajes, sprites y capacidades desde una paleta visual](docs/DECISIONES-EDITOR-VISUAL-MECANICAS-REUTILIZABLES.md). Especificación de producto y etapas de implementación Phaser 2D, presets, controles, eventos, compatibilidad, rendimiento y pruebas; **aún no implementada**.
