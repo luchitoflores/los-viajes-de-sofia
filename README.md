@@ -400,3 +400,8 @@ Personajes (`/#/personajes`), guiones por escena (`/#/dialogos`) y objetivos/pla
 ### Gameplay Core y sprites de Sofía
 
 [Laboratorio de mecánicas](playground.html?actor=foot): caminar, correr, agacharse, salto y linterna, con presets exportables y biblioteca de sprites. [Arquitectura, uso y límites](docs/GAMEPLAY-CORE-SOFIA.md). Entrada reutilizable: `src/gameplay/index.ts`. `npm run test:gameplay` ejecuta la validación del laboratorio; las nuevas capacidades no se habilitan automáticamente en la caverna.
+
+
+## Ideas para estudiar más adelante
+
+- [Banco de ideas pendientes por definir](docs/IDEAS-PENDIENTES-POR-DEFINIR.md): propuestas no aprobadas aún para programación, incluida la posibilidad de que cada pergamino otorgue una habilidad reutilizable entre planetas. Separado de los requisitos implementables.
