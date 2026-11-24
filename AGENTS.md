@@ -289,3 +289,10 @@ El estado comprobado y las capturas están en `docs/VALIDACION-MOTOR.md`. Para m
 - Nombrar momentos de conversación sin cambiar IDs; la primera entrada válida conserva prioridad. Objetivos y plantillas reutilizan flags, acciones y puertas del motor.
 - Una condición de interacción bloquea la cadena; una condición de acción o `enabled:false` omite solo ese paso. Preservar condiciones, recompensas y cola al cambiar la primera acción.
 - El paquete `sofia-dialogue-sources` separa flujo/textos y recompila al contrato existente; no presentar esta preparación como traducción completa de interfaz ni migrar mundos sin validar equivalencia. Manual: `docs/ESTUDIO-DE-HISTORIAS.md`.
+
+
+## Controles y lámpara — 24 de noviembre de 2026
+- Conservar el toque directo y el teclado. Joystick analógico reutilizado; botón contextual cercano y secundario para la lámpara cuando el principal atiende un objeto. Mantener acceso por pulsación prolongada del principal y L. Sin botones de combate en escenas que no lo implementan.
+- `lampara_encendida` conserva el descubrimiento narrativo; apagar/guardar nunca borra esa marca ni reactiva la recuperación. `equipment.lamp` guarda el estado físico por partida/mundo; adaptar guardados antiguos sin reiniciar.
+- Usar la capa RoomLight existente, luces fijas y gradiente A–E; conservar los fotogramas y pies de Sofía. Lámpara portátil independiente con anclajes por frame; no presentarla como nuevas poses de agarre final.
+- Configuración validada `world.mechanics`, presets e intérprete de acciones `equipment`. Alcance y límites en `docs/CONTROLES-Y-EQUIPAMIENTO.md`. No convertir esta entrega en un motor nuevo ni incorporar el disparo del playground a la caverna.

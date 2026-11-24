@@ -1,3 +1,4 @@
+import {attachHeldLamp,preloadHeldLamp} from './engine/held-lamp';
 import {PlanetIntroduction,showPlanetViewHint,type PlanetIntroductionSettings} from './engine/planet-introduction';
 import {ObjectHints} from './engine/object-hints';
 import {planetTexture} from './engine/planet-texture';
@@ -14,7 +15,7 @@ let stored:string|null=null;try{stored=localStorage.getItem(KEY)}catch{}
 export const planetState:PlanetSave=parseSave(stored);
 export interface ResourceArt {file:string;width:number;height:number;src?:string}
 export interface PlanetContext {introduction?:{settings:PlanetIntroductionSettings;seen:()=>boolean;complete:()=>void};terrainScale?:number;viewport?:{width:number;height:number};id:string;state:PlanetSave;terrain:string;sources:{key:string;url:string}[];separateObjects:boolean;art:(item:PlanetObject)=>ResourceArt;palette:{characterId?:string;id:string;kind:Kind;label:string;art:ResourceArt}[];save:(state:PlanetSave)=>void;edited:(objects:PlanetObject[])=>void;properties:(item:PlanetObject)=>void;exportWorld:()=>void;validateObjects:(objects:PlanetObject[])=>void}
-export interface PlanetBridge {conversationPending?:(id:string)=>boolean;legacyTerrainArt?:()=>ResourceArt|undefined;legacyHostArt?:()=>ResourceArt|undefined;board:(item:PlanetObject)=>void;exportResources?:(objects:PlanetObject[])=>Record<string,unknown>;resources?:()=>{id:string;kind:Kind;label:string;art:ResourceArt}[];resource?:(id:string)=>ResourceArt|undefined;context?:()=>PlanetContext|undefined;dispatch?:(item:PlanetObject)=>boolean;activate:(scene:Phaser.Scene)=>void;blocked:()=>boolean;editing:()=>boolean;axis:()=>number;mode:()=>string;note:(message:string)=>void;talk:()=>void;collect:(item:PlanetObject)=>void;enter:(place:Interior)=>void;galaxy:()=>void}
+export interface PlanetBridge {available?:(id:string)=>boolean;equipment?:()=>{settings:import('./worlds/equipment').LampSettings;state:{equipped:boolean;on:boolean}}|null;conversationPending?:(id:string)=>boolean;legacyTerrainArt?:()=>ResourceArt|undefined;legacyHostArt?:()=>ResourceArt|undefined;board:(item:PlanetObject)=>void;exportResources?:(objects:PlanetObject[])=>Record<string,unknown>;resources?:()=>{id:string;kind:Kind;label:string;art:ResourceArt}[];resource?:(id:string)=>ResourceArt|undefined;context?:()=>PlanetContext|undefined;dispatch?:(item:PlanetObject)=>boolean;activate:(scene:Phaser.Scene)=>void;blocked:()=>boolean;editing:()=>boolean;axis:()=>number;mode:()=>string;note:(message:string)=>void;talk:()=>void;collect:(item:PlanetObject)=>void;enter:(place:Interior)=>void;galaxy:()=>void}
 const element=(id:string)=>document.getElementById(id)!;
 const escape=(s:string)=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 export function createPlanetScene(host:PlanetBridge){
@@ -24,7 +25,7 @@ export function createPlanetScene(host:PlanetBridge){
   private art(item:PlanetObject){return this.currentContext?.art(item)??(item.id==='philosopher'?host.legacyHostArt?.():undefined)??(item.asset?host.resource?.(item.asset):undefined)??ART[item.kind]}
   init(){this.currentContext=host.context?.();ensureShip(this.state.objects,-17)}
   bodyState:Body={angle:this.state.angle,height:0,velocity:0,grounded:true};
-  player!:Phaser.GameObjects.Sprite;private hints:ObjectHints|null=null;
+  heldLamp:ReturnType<typeof attachHeldLamp>;player!:Phaser.GameObjects.Sprite;private hints:ObjectHints|null=null;
   
   objects:PlanetObject[]=this.state.objects;
   views=new Map<string,Phaser.GameObjects.Image>();
@@ -36,7 +37,7 @@ export function createPlanetScene(host:PlanetBridge){
   overview=false;private cameraAngle=0;private center=new Phaser.Math.Vector2();private lastSave=0;
   private selected:string|null=null;private redo:PlanetObject[][]=[];private undo:PlanetObject[][]=[];private outline!:Phaser.GameObjects.Graphics;private wasEditing=false;private dragKind:string|null=null;private ghost:Phaser.GameObjects.Image|null=null;
   constructor(){super('Planet')}
-  preload(){const terrain=host.legacyTerrainArt?.();if(terrain&&!this.textures.exists(terrain.file))this.load.image(terrain.file,terrain.src??'assets/'+terrain.file);const mentor=host.legacyHostArt?.();if(mentor&&!this.textures.exists(mentor.file))this.load.image(mentor.file,mentor.src??'assets/'+mentor.file);for(const item of this.state.objects){const a=item.asset?host.resource?.(item.asset):undefined;if(a&&!this.textures.exists(a.file))this.load.image(a.file,a.src!)}const files=['av_sofia.png','planet-terrain.png','galaxy.jpg',...Object.values(ART).map(a=>a.file),...Array.from({length:8},(_,i)=>`sofia_${i}.png`)];for(const file of new Set(files))if(!this.textures.exists(file))this.load.image(file,'assets/'+file);for(const source of this.currentContext?.sources??[])if(!this.textures.exists(source.key))this.load.image(source.key,source.url)}
+  preload(){preloadHeldLamp(this,host.equipment?.()?.settings.asset);const terrain=host.legacyTerrainArt?.();if(terrain&&!this.textures.exists(terrain.file))this.load.image(terrain.file,terrain.src??'assets/'+terrain.file);const mentor=host.legacyHostArt?.();if(mentor&&!this.textures.exists(mentor.file))this.load.image(mentor.file,mentor.src??'assets/'+mentor.file);for(const item of this.state.objects){const a=item.asset?host.resource?.(item.asset):undefined;if(a&&!this.textures.exists(a.file))this.load.image(a.file,a.src!)}const files=['cave-lamp.png','av_sofia.png','planet-terrain.png','galaxy.jpg',...Object.values(ART).map(a=>a.file),...Array.from({length:8},(_,i)=>`sofia_${i}.png`)];for(const file of new Set(files))if(!this.textures.exists(file))this.load.image(file,'assets/'+file);for(const source of this.currentContext?.sources??[])if(!this.textures.exists(source.key))this.load.image(source.key,source.url)}
   create(){
    const view=this.currentContext?.viewport??{width:960,height:540};this.scale.setGameSize(view.width,view.height);this.cameras.main.setViewport(0,0,view.width,view.height);
    this.cinematic=false;this.objects=this.state.objects;
@@ -47,7 +48,7 @@ export function createPlanetScene(host:PlanetBridge){
    this.outline=this.add.graphics().setDepth(80);
    this.renderObjects();
    prepareSofia(this);
-   this.player=this.add.sprite(0,0,'sofia-stable-0').setOrigin(.5,304/314).setScale(SOFIA_SCALE).setDepth(30);this.player.play('sofia-idle');
+   this.player=this.add.sprite(0,0,'sofia-stable-0').setOrigin(.5,304/314).setScale(SOFIA_SCALE).setDepth(30);this.player.play('sofia-idle');this.heldLamp=attachHeldLamp(this,this.player,()=>host.equipment?.()?.settings??null,()=>host.equipment?.()?.state??{equipped:false,on:false},()=>host.editing()||this.cinematic);
    this.cursors=this.input.keyboard!.createCursorKeys();this.cameraAngle=-this.bodyState.angle;
    this.center.set(...this.cameraTarget());this.cameras.main.setZoom(1).setRotation(this.cameraAngle).centerOn(this.center.x,this.center.y);
    this.input.on('gameobjectdown',(_p:Phaser.Input.Pointer,view:Phaser.GameObjects.Image)=>{if(!host.editing())return;const id=view.getData('planetId') as string;if(id){this.selected=id;this.showProps();this.drawSelection()}});
@@ -125,7 +126,7 @@ export function createPlanetScene(host:PlanetBridge){
   private faceNearbyCharacters(){for(const o of this.objects.filter(o=>o.kind==='philosopher')){const v=this.views.get(o.id);if(v&&Phaser.Math.Distance.Between(this.player.x,this.player.y,v.x,v.y)<350)v.setFlipX(facingFlip(radialDifference(this.player,v,v.rotation),v.flipX))}}
   toggleOverview(){this.introduction?.finish();this.overview=!this.overview;element('planet-view').setAttribute('aria-pressed',String(this.overview))}
   private isNear(item:PlanetObject){return Math.abs(angleDiff(this.bodyState.angle,radians(item.angleDeg)))*RADIUS<95&&Math.abs(this.bodyState.height-item.height)<90&&!this.state.collected.includes(item.id)}
-  closest(){return this.objects.filter(o=>(o.interaction!=='none'||(this.currentContext&&!!o.behavior))&&this.isNear(o)).sort((a,b)=>Math.abs(angleDiff(this.bodyState.angle,radians(a.angleDeg)))-Math.abs(angleDiff(this.bodyState.angle,radians(b.angleDeg))))[0]??null}
+  closest(){return this.objects.filter(o=>(o.interaction!=='none'||(this.currentContext&&!!o.behavior))&&this.isNear(o)).sort((a,b)=>Number(host.available?.(b.id)??true)-Number(host.available?.(a.id)??true)||Math.abs(angleDiff(this.bodyState.angle,radians(a.angleDeg)))-Math.abs(angleDiff(this.bodyState.angle,radians(b.angleDeg))))[0]??null}
   interact(){if(this.introduction||host.blocked()||host.editing())return;const item=this.closest();if(item)this.interactWith(item);else host.note('Acércate a una persona, un objeto o una entrada.')}
   interactWith(item:PlanetObject){
    if(host.blocked()||host.editing()||!this.isNear(item))return;if(item.kind==='philosopher')this.faceCharacter(item.id);

@@ -822,3 +822,18 @@ El menú inicial precede ahora al mapa de Historia. Las comprobaciones antiguas 
 - El descriptor publicado de Platón y los otros mundos no se reescriben. Sartre conserva su SHA256 `69F7A16ED882DF14FE5D6DF0A9F3820821E028F950913192CF7DC70E092B37FF`. Los ejemplos de la prueba son borradores de un navegador aislado, no contenido filosófico nuevo publicado.
 - Capturas: `estudio-ficha-personajes.png`, `estudio-linea-mision.png`, `estudio-guion-ramificado.png`, `estudio-personajes-movil.png`. No se ha probado un teléfono físico.
 - Manual, contrato y límites: [Estudio de historias](ESTUDIO-DE-HISTORIAS.md). No se presenta la preparación de archivos de conversación como traducción completa de interfaz ni como integración del minicore externo.
+
+
+## 24-11-2026 · Controles contextuales y lámpara
+
+- `npm test`: 102 pruebas; `npm run build`: TypeScript y Vite (juego + playground). Se mantiene el aviso de tamaño del paquete compartido de Phaser; no es un fallo de compilación.
+- `browser_mobile_lamp.py`: contexto Hablar + luz secundaria; ocultación en diálogo; joystick con eventos táctiles emulados; cuatro fotogramas de caminar, escala estable y recurso anclado; guardar/equipar, L, recuperación, recarga conservando apagado; edición y exportación/importación de preset; simulación A–E sin escribir progreso jugado. Sin errores de navegador.
+- Oscuridad ambiental medida con lámpara apagada (alfa sobre 255): A 128, B 245, C 128, D 114 en el punto observado y E 10. Se conservan el fuego fijo y el gradiente del ascenso.
+- `browser_lamp_travel.py`: A → B → C → D → E y vuelta real por el historial, manteniendo apagada la lámpara; compañero presente solo en las habitaciones configuradas; clic y teclado; joystick tangencial en Tierra con apoyo radial estable. Sin errores de navegador.
+- `browser_lamp_actions.py`: una acción de equipo configurada en el editor se omite sin su requisito y apaga la luz cuando se cumple; el paso `record` posterior se ejecuta en ambos casos. Se conservan las marcas añadidas por JSON al volver al formulario; la simulación no crea una partida jugada.
+- `browser_plato_adventure.py`: regresión completa con investigación, antorcha, guardado, diálogos sin botones auxiliares, cadenas, compañero, escaleras, primer ascenso, regreso obligatorio, ambos desenlaces, segundo ascenso y vuelta al planeta. Sin errores de navegador.
+- Sartre conserva el archivo publicado sin cambios. El playground no recibió mecánicas narrativas ni comparte guardados con Platón.
+
+Capturas auténticas: [quieta encendida](capturas/lampara/idle-on-mobile.png), [quieta apagada](capturas/lampara/idle-off-mobile.png), [caminando encendida](capturas/lampara/walk-on-mobile.png), [caminando apagada](capturas/lampara/walk-off-mobile.png).
+
+Chrome de escritorio y viewport 932×430 con toque emulado; **no teléfono físico**. La portación usa las animaciones existentes y una lámpara independiente; faltan poses dedicadas de agarre y llama animada, como explica [CONTROLES-Y-EQUIPAMIENTO.md](CONTROLES-Y-EQUIPAMIENTO.md).

@@ -1,3 +1,4 @@
+import {mechanicsFor,lampState,commandLamp,syncEquipmentFlags,type LampCommand} from '../worlds/equipment';
 import {pendingConversation} from './conversation-status';
 import {notifyObjectiveChange} from './objective-notice';
 import {restorePlatoContinuity} from '../worlds/plato-compatibility';
@@ -66,7 +67,7 @@ export class Universe {
   try{localStorage.setItem(KEY,JSON.stringify({version:1,last:this.world?.id??this.last,worlds:this.saved,journeys:this.journeys,characterMemory:this.characterMemory}))}catch{this.host.note('No se pudo guardar el progreso. Mantén esta pestaña abierta y vuelve a intentar guardar.');return false}return true;
  }
  flush(){if(this.world&&this.current)return this.saveProgress(this.world.id,this.current);if(this.legacyWorld&&this.legacyProgress)return this.saveProgress(this.legacyWorld.id,this.legacyProgress);return true}
- store(){if(this.world&&this.current){this.last=this.world.id;this.saveProgress(this.world.id,this.current)}}
+ store(){if(this.world&&this.current){syncEquipmentFlags(this.current,mechanicsFor(this.world));this.last=this.world.id;this.saveProgress(this.world.id,this.current)}}
  async load(id:string,open=true,edit=false,byShip=false){
   if(open&&!edit&&this.world&&this.world.id!==id&&!this.canDepart())throw Error(this.departureMessage());const generation=++this.loadGeneration;const entry=this.catalog?.planets.find(p=>p.id===id);if(!entry)throw Error('Ese planeta no está disponible.');if(this.unavailableWorlds.has(id))throw Error('Este mundo necesita recuperar su archivo desde el motor.');if(open&&!edit&&!this.canVisit(id))throw Error('Completa la etapa anterior del modo Historia.');
   const response=await this.definition(entry);const w=applyCharacters(identifyHost(parseWorld(response)),this.characterOverrides);if(w.id!==id||w.philosopher.id!==entry.philosopherId)throw Error('La identidad del planeta no coincide con el atlas.');
@@ -133,9 +134,13 @@ export class Universe {
   if(this.isCollected(id))return true;if(!this.progress.planet.discovered.includes(id))this.progress.planet.discovered.push(id);
   if(!b)this.player.message('Observas '+object.label+'.');else this.runActions(id,b.actions,0);this.store();return true;
  }
+ equipmentSettings(){return this.world?mechanicsFor(this.world):null}
+ lamp(){const c=this.equipmentSettings();return c?lampState(this.progress,c):{owned:false,available:false,equipped:false,on:false}}
+ useLamp(command:LampCommand){const c=this.equipmentSettings();if(!c||!commandLamp(this.progress,c,command))return false;this.store();this.host.refresh();return true}
  private runActions(id:string,actions:Action[],index:number,done?:()=>void){
   const a=actions[index];if(!a){this.host.close();done?.();this.host.refresh();return}const next=()=>this.runActions(id,actions,index+1,done),p=this.progress,w=this.world!;
   if(a.enabled===false||!meets(p.flags,a)){next();return}
+  if(a.type==='equipment'){this.useLamp(a.command);next();return}
   if(a.type==='record'){reward(p,a.reward);this.store();this.host.refresh();next();return}
   if(a.type==='talk'){const object=this.findObject(id);if(object?.characterId)this.host.faceCharacter(object.characterId);this.player.dialogue(a.target,complete=>{if(complete)next();else{this.eventBusy=false;this.host.close()}});return}
   if(a.type==='portal'){this.travel(a.target,a.spawn).catch(e=>this.host.note(e.message));return}if(a.type==='return-world'){this.backPortal().catch(e=>this.host.note(e.message));return}if(a.type==='lift'){this.host.lift(a.target);return}
@@ -153,7 +158,7 @@ export class Universe {
  isVisible(id:string){return !this.world||visibleObject(this.world,this.progress.flags,id)}
  companion(){const c=this.world?.journey?.companion;return c&&this.progress.interior&&c.scenes.includes(this.progress.interior)&&meets(this.progress.flags,c)?{...c,behavior:c.encounters?.[this.progress.interior]??c.behavior,name:this.world!.characters![c.characterId].name}:null}
  talkCompanion(){const c=this.companion();if(c){const allowed=gate(this.world!,this.progress,c.behavior);if(!allowed.allowed){this.host.note(allowed.text??'Esta conversación todavía no está disponible.');return}this.host.faceCharacter(c.characterId);this.runActions('companion',this.world!.interactions[c.behavior].actions,0)}}
- sceneEvent(x:number){if(!this.world||!this.progress.interior||this.eventBusy)return;const scene=this.progress.interior,room=this.world.interiors[scene],p=this.progress;const event=room.events?.find(e=>x>=e.from&&x<=e.to&&meets(p.flags,e)&&meets(p.flags,this.world!.interactions[e.behavior])&&(e.repeat==='visit'?!this.visitEvents.has(scene+':'+e.id):!p.flags.includes('event:'+scene+':'+e.id)));if(!event)return;this.eventBusy=true;this.runActions(event.id,this.world.interactions[event.behavior].actions,0,()=>{this.visitEvents.add(scene+':'+event.id);if(event.repeat!=='visit')reward(p,{flags:['event:'+scene+':'+event.id]});this.eventBusy=false;this.store()})}
+ sceneEvent(x:number){if(!this.world||!this.progress.interior||this.eventBusy)return;syncEquipmentFlags(this.progress,mechanicsFor(this.world));const scene=this.progress.interior,room=this.world.interiors[scene],p=this.progress;const event=room.events?.find(e=>x>=e.from&&x<=e.to&&meets(p.flags,e)&&meets(p.flags,this.world!.interactions[e.behavior])&&(e.repeat==='visit'?!this.visitEvents.has(scene+':'+e.id):!p.flags.includes('event:'+scene+':'+e.id)));if(!event)return;this.eventBusy=true;this.runActions(event.id,this.world.interactions[event.behavior].actions,0,()=>{this.visitEvents.add(scene+':'+event.id);if(event.repeat!=='visit')reward(p,{flags:['event:'+scene+':'+event.id]});this.eventBusy=false;this.store()})}
  leaveInterior(){if(!this.active)return;if(this.canReturnPortal&&!this.progress.trail.length&&this.progress.entryPortalScene===this.progress.interior){this.backPortal().catch(e=>this.host.note(e.message));return}const previous=this.progress.trail.pop();this.progress.interior=previous?.interior??null;this.progress.interiorX=previous?.x??null;this.store();this.progress.interior?this.host.interior():this.host.surface()}
  saveInterior(items:InteriorItem[],regions:Region[]){if(!this.world||!this.progress.interior)return false;const candidate=structuredClone(this.world);candidate.interiors[this.progress.interior].items=structuredClone(items);candidate.interiors[this.progress.interior].regions=structuredClone(regions);try{parseWorld(candidate)}catch(e){this.host.note((e as Error).message);return false}const i=this.world.interiors[this.progress.interior];i.items=structuredClone(items);i.regions=structuredClone(regions);this.saveDraft();return true}
 

@@ -390,3 +390,8 @@ Personajes (`/#/personajes`), guiones por escena (`/#/dialogos`) y objetivos/pla
 ## Pendiente aprobado: controles móviles y lámpara de Sofía
 
 - [Joystick, botón contextual inteligente, encender/apagar lámpara y animaciones con herramienta](docs/PENDIENTE-CONTROLES-MOVILES-LAMPARA-SPRITES.md): decisiones, criterios de aceptación y backlog P0–P5 para Codex. **La caverna ya dispone de un encendido narrativo e iluminación: la nueva tarea es conmutación y control móvil, no reconstruirlo.**
+
+
+### Controles contextuales y lámpara
+
+[Uso, configuración, presets y límites de la lámpara](docs/CONTROLES-Y-EQUIPAMIENTO.md). Joystick táctil, interacción contextual y encendido/apagado persistente sobre la iluminación existente. `npm run test:mobile-lamp` y `npm run test:lamp-travel` ejecutan pruebas en Chrome con toque emulado. No son pruebas en teléfono físico.

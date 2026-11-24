@@ -1,5 +1,7 @@
 # Decisión aprobada y backlog: controles móviles contextuales, lámpara y animaciones de Sofía
 
+**Entrega incremental 24-11-2026:** controles contextuales, equipo de lámpara persistente, portación sobre animaciones existentes y ajustes/presets acotados del editor implementados. Alcance, uso, pruebas y límites artísticos: [CONTROLES-Y-EQUIPAMIENTO.md](CONTROLES-Y-EQUIPAMIENTO.md). El catálogo general de capacidades y las poses dedicadas de agarre siguen pendientes. La especificación original se conserva debajo.
+
 > **Estado:** decisiones de diseño aprobadas por el autor, **pendientes de implementación o ampliación** donde se indica. Fecha: 24-11-2026. Documento de especificación para Codex, no certificación de funcionamiento. **No sustituir lo existente.**
 
 ## 1. Referencia visual y objetivo
@@ -135,4 +137,4 @@ Consultar el prompt de Codex compartido con el autor. **Primero inspeccionar, de
 
 **Fuentes del propio proyecto:** [Guía de Caverna](CAVERNA-JUGABLE.md), [constructor reutilizable](DECISIONES-EDITOR-VISUAL-MECANICAS-REUTILIZABLES.md), [Estudio de Historias](ESTUDIO-DE-HISTORIAS.md), `public/worlds/plato.json`, `src/sofia.ts`. Capturas de referencia aportadas por el autor en conversación.
 
-**Estado actual:** ESPECIFICACIÓN Y BACKLOG, NO CÓDIGO IMPLEMENTADO.
+**Estado de este documento:** especificación original y backlog. Consultar la entrega incremental enlazada arriba para distinguir lo implementado de lo pendiente.
