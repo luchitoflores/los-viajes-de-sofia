@@ -4,20 +4,21 @@ import {MODES,DEFAULT_SETTINGS,clamp,normalizedAxis,makeSequence,nextTarget,scor
 const W=960,H=540,$=id=>document.getElementById(id);
 const touch={up:false,down:false,left:false,right:false,fire:false};
 const settings={...DEFAULT_SETTINGS};
-let activeScene=null,feedbackTimer=null;
+let activeScene=null,feedbackTimer=null,avatarKind='ship';
 const ASSETS={
-  ship:'polis-ship.png',galaxy:'galaxy.jpg',cave:'plato-03_fuego_y_sombras.png',
+  ship:'polis-ship.png',sofia:'sofia_0.png',galaxy:'galaxy.jpg',cave:'plato-03_fuego_y_sombras.png',
   horse:'shadow_horse.webp',tree:'shadow_tree.webp',warrior:'shadow_warrior.webp',
   vase:'polis-vase.png'
 };
 
 function notice(result){
   $('feedback-title').textContent=result.heading;
-  $('feedback-text').textContent=result.explanation;
+  $('feedback-text').textContent='';
+  $('learning-log').textContent=result.heading+': '+result.explanation;
   const box=$('feedback');
   box.style.borderColor=result.kind==='wrong'?'#ff9494':'#aae8ba';
   box.classList.add('show');clearTimeout(feedbackTimer);
-  feedbackTimer=setTimeout(()=>box.classList.remove('show'),3400);
+  feedbackTimer=setTimeout(()=>box.classList.remove('show'),1150);
 }
 function modeInfo(modeId){
   const m=MODES[modeId];
@@ -47,6 +48,9 @@ class MechanicsPlayground extends Phaser.Scene {
     this.glow=this.add.circle(160,H/2,56,0x67dff3,.18).setDepth(9);
     this.ship=this.add.image(160,H/2,'ship').setDisplaySize(113,105).setDepth(10);
     this.thruster=this.add.circle(103,H/2,15,0xffb067,.7).setDepth(8);
+    this.floor=this.add.rectangle(W/2,H-40,W,80,0x304254,.95).setDepth(1).setVisible(false);
+    this.floorEdge=this.add.rectangle(W/2,H-80,W,5,0xc6c5b0,.95).setDepth(2).setVisible(false);
+    this.grounded=true;this.verticalVelocity=0;this.wasJump=false;
     this.tooltip=this.add.text(180,420,'Usa las flechas para mover la nave',{
       fontFamily:'system-ui',fontSize:'14px',color:'#f4f4ff',
       backgroundColor:'#10152cbb',padding:{x:11,y:7}
@@ -54,6 +58,21 @@ class MechanicsPlayground extends Phaser.Scene {
     this.tweens.add({targets:this.tooltip,alpha:0,delay:3500,duration:650});
     activeScene=this;
     this.setMode('fallacies');
+    this.setAvatar('ship');
+  }
+  setAvatar(kind){
+    if(kind!=='foot'&&kind!=='ship')return;
+    avatarKind=kind;
+    const foot=kind==='foot';
+    this.ship.setTexture(foot?'sofia':'ship');
+    this.ship.setOrigin(.5,foot?1:.5);
+    this.ship.setDisplaySize(foot?79:113,foot?108:105);
+    this.ship.setPosition(160,foot?H-80:H/2).setRotation(0).setFlipX(false);
+    this.grounded=true;this.verticalVelocity=0;this.wasJump=false;
+    this.glow.setVisible(!foot);this.thruster.setVisible(!foot);
+    this.floor.setVisible(foot);this.floorEdge.setVisible(foot);
+    document.querySelectorAll('[data-avatar]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.avatar===kind)));
+    this.setMode(this.modeId);
   }
   setMode(id){
     if(!MODES[id])return;
@@ -66,14 +85,15 @@ class MechanicsPlayground extends Phaser.Scene {
     this.background=this.add.image(W/2,H/2,this.mode.background).setDisplaySize(W,H).setDepth(-40);
     this.shade=this.add.rectangle(W/2,H/2,W,H,0x0a1130,id==='shadows'?.37:.2).setDepth(-39);
     modeInfo(id);this.updateHud();
-    notice({heading:this.mode.title,explanation:this.mode.instruction,kind:'correct'});
+    $('learning-log').textContent=this.mode.instruction;
+    $('feedback').classList.remove('show');clearTimeout(feedbackTimer);
   }
   updateHud(){$('points').textContent=String(this.score);$('hits').textContent=String(this.hits)}
   fire(){
     if(this.time.now-this.lastShot<settings.cadence)return;
     this.lastShot=this.time.now;
     const light=this.mode.projectile==='light';
-    const view=this.add.container(this.ship.x+65,this.ship.y).setDepth(14);
+    const view=this.add.container(this.ship.x+(avatarKind==='foot'?42:65),this.ship.y-(avatarKind==='foot'?48:0)).setDepth(14);
     view.add([
       this.add.circle(0,0,light?17:11,light?0xffea92:0x5fe5ff,.28),
       this.add.rectangle(-16,0,24,4,light?0xffe9bb:0xaff4ff,.7),
@@ -84,7 +104,7 @@ class MechanicsPlayground extends Phaser.Scene {
   spawnTarget(){
     if(this.targets.length>=6)return;
     const definition=nextTarget(this.sequence,this.index++);
-    const lane=[115,205,301,391][(this.index*3)%4];
+    const lane=avatarKind==='foot'?H-128:[115,205,301,391][(this.index*3)%4];
     const view=this.add.container(1060,lane+(Math.random()-.5)*23).setDepth(5);
     const shadow=this.modeId==='shadows';
     if(shadow){
@@ -126,10 +146,23 @@ class MechanicsPlayground extends Phaser.Scene {
     const y=Number(k.down.isDown||k.s.isDown||touch.down)-Number(k.up.isDown||k.w.isDown||touch.up);
     const direction=normalizedAxis(x,y);
     this.ship.x=clamp(this.ship.x+direction.x*dt*settings.speed,70,W*.53);
-    this.ship.y=clamp(this.ship.y+direction.y*dt*settings.speed,70,H-68);
-    this.ship.setAngle(90+direction.y*8);
-    this.glow.setPosition(this.ship.x,this.ship.y);
-    this.thruster.setPosition(this.ship.x-54,this.ship.y+8);
+    if(avatarKind==='foot'){
+      const jumpNow=direction.y<0;
+      if(jumpNow&&!this.wasJump&&this.grounded){this.verticalVelocity=-490;this.grounded=false}
+      this.wasJump=jumpNow;
+      if(!this.grounded){
+        this.ship.y+=this.verticalVelocity*dt;
+        this.verticalVelocity+=1250*dt;
+        if(this.ship.y>=H-80){this.ship.y=H-80;this.verticalVelocity=0;this.grounded=true}
+      }
+      this.ship.setAngle(0);
+      if(direction.x!==0)this.ship.setFlipX(direction.x<0);
+    }else{
+      this.ship.y=clamp(this.ship.y+direction.y*dt*settings.speed,70,H-68);
+      this.ship.setAngle(90+direction.y*8);
+      this.glow.setPosition(this.ship.x,this.ship.y);
+      this.thruster.setPosition(this.ship.x-54,this.ship.y+8);
+    }
     if(k.fire.isDown||touch.fire)this.fire();
     this.elapsed+=delta;
     if(this.elapsed>=settings.spawnInterval){this.elapsed=0;this.spawnTarget()}
@@ -160,6 +193,7 @@ new Phaser.Game({
   scene:[MechanicsPlayground]
 });
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>activeScene?.setMode(b.dataset.mode)));
+document.querySelectorAll('[data-avatar]').forEach(b=>b.addEventListener('click',()=>activeScene?.setAvatar(b.dataset.avatar)));
 document.querySelectorAll('[data-dir]').forEach(button=>{
   const name=button.dataset.dir;
   button.addEventListener('pointerdown',e=>{
