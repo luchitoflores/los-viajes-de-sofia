@@ -70,3 +70,14 @@ Ruta prevista en Pages tras una publicación exitosa:
 - No hay música ni enemigos de combate; sin guardado ni XP persistente.
 - Sin prueba visual certificada en celular real al crear esta página.
 - Mantener separada la primera implementación y usar el [documento de decisiones del constructor visual](DECISIONES-EDITOR-VISUAL-MECANICAS-REUTILIZABLES.md) como roadmap.
+
+## Actualización: dos portadores del disparo y feedback sin bloquear la pantalla
+
+**Versión siguiente del prototipo:** se incorporó selector entre **nave** y **Sofía a pie**. La nave permite movimiento libre X/Y; el avatar a pie utiliza desplazamiento lateral sobre una plataforma provisional, salto simple y el mismo sistema de disparo horizontal. La imagen a pie usa temporalmente `sofia_0.png`. Es una demostración de un patrón de equipamiento compartido, **no** una animación de caminar definitiva ni un motor de plataformas completo.
+
+**Retroalimentación:** la ventana larga y persistente se sustituyó por un aviso de título breve dentro del lienzo (~1,15 s) y la explicación íntegra se traslada al panel **Hallazgos y explicaciones**, fuera del área de juego. Cambiar de modo muestra su instrucción fuera del juego, no un diálogo invasivo encima de Sofía.
+
+**Separación explícita:** disparar/caminar/saltar/colisionar son mecánicas (Gameplay Core); cazar falacias e iluminar sombras son experiencias cognitivas/minijuegos (Framework de Preguntas); los estados y puertas dependen del Estudio de Historias. Los primeros tres modos de este playground son combinaciones didácticas **de prueba**, no tres mecánicas físicas diferentes. Consulte [decisiones del constructor visual](DECISIONES-EDITOR-VISUAL-MECANICAS-REUTILIZABLES.md#13-decisión-confirmada-mecánicas-de-juego--minijuegos-educativos).
+
+**Pendiente:** extraer API de arma/equipamiento independiente del avatar, animaciones finales y pruebas reales de interacción en móvil. Los cambios de UI requieren pasar nuevamente `npm test`, `npm run build` y la publicación Pages antes de darse por verificables.
+
