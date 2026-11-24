@@ -154,3 +154,19 @@ body:has(#veil.visible) #context-controls,body.editing #context-controls,body.sh
 
 /* Layout inspired by thumb reach: one large context button and smaller real actions. */
 #context-controls{width:170px;height:137px;display:block}#context-controls button{position:absolute}#context-controls #context-primary{right:0;bottom:0;width:80px;height:80px}#context-controls #context-secondary{left:0;bottom:6px;width:54px;height:54px}#context-controls #equipment-menu{right:8px;top:0;width:52px;height:52px;border-radius:50%;padding:5px;font-size:10px}#context-controls #equipment-menu svg{width:20px;height:20px}#context-controls #context-primary svg{width:33px;height:33px}@media(max-height:500px){#context-controls{transform:scale(.86);transform-origin:right bottom}}@media(pointer:fine){#context-controls{transform:scale(.8);transform-origin:right bottom}}
+
+/* Mobile gameplay: left = weapon/tool, center = contextual interaction, right = one lamp toggle.
+   The lamp button retains its location while only its icon state/label changes. */
+#context-controls{width:218px;height:92px;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));transform:none}
+#context-controls button{position:absolute;top:auto;right:auto;left:auto;border-radius:50%;display:flex;flex-direction:column}
+#context-controls #context-weapon{left:0;bottom:9px;width:54px;height:54px}
+#context-controls #context-primary{left:64px;right:auto;bottom:0;width:87px;height:87px}
+#context-controls #context-lamp{right:0;bottom:9px;width:54px;height:54px}
+#context-controls #context-primary svg{width:33px;height:33px}
+#context-controls #context-lamp svg,#context-controls #context-weapon svg{width:24px;height:24px}
+#context-controls #context-weapon:disabled{opacity:.42;cursor:default}
+#context-controls #context-weapon small{font-size:9px}
+#context-controls[data-lamp=on] #context-lamp{border-color:#ffdb73;background:#5a4427c9}
+#context-controls #context-primary[hidden],#context-controls #context-lamp[hidden]{display:none}
+@media(max-height:500px){#context-controls{transform:scale(.86);transform-origin:right bottom}}
+@media(pointer:fine){#context-controls{transform:scale(.8);transform-origin:right bottom}}
