@@ -379,3 +379,9 @@ Personajes (`/#/personajes`), guiones por escena (`/#/dialogos`) y objetivos/pla
 ## Constructor visual de mecánicas reutilizables (decisiones para Codex)
 
 - [Crear juegos seleccionando personajes, sprites y capacidades desde una paleta visual](docs/DECISIONES-EDITOR-VISUAL-MECANICAS-REUTILIZABLES.md). Especificación de producto y etapas de implementación Phaser 2D, presets, controles, eventos, compatibilidad, rendimiento y pruebas; **aún no implementada**.
+
+
+## Playground de mecánicas · nave de Sofía
+
+- [Probar el playground de mecánicas](playground.html) en Vite / GitHub Pages: nave con controles táctiles, falacias, sombras de Platón y mala fe de Sartre; no altera las partidas.
+- [Documentación técnica y pedagógica del playground](docs/PLAYGROUND-MECANICAS-SOFIA.md). Es un prototipo independiente y configurable, no un SDK de mecánicas concluido.
