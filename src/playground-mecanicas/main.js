@@ -60,7 +60,7 @@ class MechanicsPlayground extends Phaser.Scene {
     }).setOrigin(.5).setDepth(19);
     this.tweens.add({targets:this.tooltip,alpha:0,delay:3500,duration:650});
     activeScene=this;
-    this.setMode('fallacies');
+    this.setMode('movement');
     // Abrir mostrando la animación real de Sofía, no la nave.
     const requested=new URLSearchParams(location.search).get('actor');
     this.setAvatar(requested==='ship'?'ship':'foot');
@@ -152,7 +152,7 @@ class MechanicsPlayground extends Phaser.Scene {
     const x=Number(k.right.isDown||k.d.isDown||touch.right)-Number(k.left.isDown||k.a.isDown||touch.left);
     const y=Number(k.down.isDown||k.s.isDown||touch.down)-Number(k.up.isDown||k.w.isDown||touch.up);
     const direction=normalizedAxis(x,y);
-    this.ship.x=clamp(this.ship.x+direction.x*dt*settings.speed,70,W*.53);
+    this.ship.x=clamp(this.ship.x+direction.x*dt*settings.speed,70,avatarKind==='foot'?W-70:W*.53);
     if(avatarKind==='foot'){
       const jumpNow=direction.y<0;
       if(jumpNow&&!this.wasJump&&this.grounded){this.verticalVelocity=-490;this.grounded=false}
@@ -173,7 +173,7 @@ class MechanicsPlayground extends Phaser.Scene {
     }
     if(k.fire.isDown||touch.fire)this.fire();
     this.elapsed+=delta;
-    if(this.elapsed>=settings.spawnInterval){this.elapsed=0;this.spawnTarget()}
+    if(this.elapsed>=settings.spawnInterval){this.elapsed=0;if(this.sequence.length)this.spawnTarget()}
     for(const bullet of [...this.bullets]){
       bullet.view.x+=bullet.speed*dt;
       if(bullet.view.x>W+60){
