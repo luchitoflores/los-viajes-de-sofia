@@ -1,0 +1,199 @@
+# Decisiones aprobadas · Constructor visual de mecánicas reutilizables
+
+**Proyecto:** Sofía y los mundos de las ideas · **Fecha:** 23 de noviembre de 2026  
+**Estado:** decisiones de producto registradas para ejecución gradual mediante Codex. **No implementadas por el hecho de crear este documento.**  
+**Inspiración:** captura aportada por el autor de un creador de juegos que presenta múltiples capacidades como una cuadrícula de iconos seleccionables. La captura es **referencia de facilidad de uso y selección de mecánicas**, no un mandato de copiar marca, sprites, iconos ni interfaz de terceros.
+
+## 1. Decisión fundamental
+
+El autor quiere **construir videojuegos sin reprogramar cada personaje o escenario**. En un editor visual intuitivo, similar en flujo de trabajo a Genially:
+
+1. Crear o escoger un juego, mundo o escena (como una diapositiva jugable).
+2. **Elegir/importar el fondo** y configurar suelo, plataformas, caminos, puertas y zonas sin deducir colisiones del dibujo.
+3. **Elegir/importar personajes, NPC, enemigos, vehículos y objetos** desde una biblioteca de sprites e imágenes.
+4. Colocarlos con toque o arrastre, editando tamaño, posición, orientación, hitbox y, cuando corresponda, ángulo radial.
+5. Abrir una **paleta de mecánicas** visuales, representadas por iconos y nombres claros. Tocar «Caminar», «Correr», «Saltar», «Subir escalera», «Volar», «Nadar», «Empujar», «Interactuar», etc., para añadir **capacidades** al personaje u objeto seleccionado.
+6. Configurar la capacidad con controles sencillos: velocidad, altura de salto, gravedad, restricciones, sonido, animación/sprite, controles de usuario o IA.
+7. Vincular **eventos/condiciones/acciones** («cuando llega», «cuando toca», «si tiene llave», «al terminar», «ir a escena», «hablar con NPC», «iniciar actividad del minicore»).
+8. Pulsar **Probar** en el mismo editor. Guardar datos y exportarlos para su publicación.
+9. Reutilizar **perfiles de capacidades** en otros personajes, escenas, planetas y eventualmente otros videojuegos.
+
+**Motor común, editor visual y datos configurables; no un nuevo programa por filósofo.**
+
+## 2. Qué conservar del repositorio existente (estado comprobado)
+
+- Phaser **3.90.0**, TypeScript y Vite.
+- Movimiento radial de planetas en `src/planet-model.ts` y `src/planet-scene.ts`, incluyendo velocidad angular, apoyo, colisiones radiales, controles táctiles, cámara y guardado. **NO sustituir** por un controlador de plataformas.
+- Movimiento lateral y plantillas de interiores (suelos, escaleras y ascensores) en el motor actual; `src/worlds/templates.ts` y controladores de escena. Mantener colisiones y retornos actuales.
+- Edición de objetos, sprites, zonas, escenas, conexiones y acciones en `/#/edicion`.
+- Estudio de Historias **ya funcional**: `/#/personajes`, `/#/dialogos`, `/#/misiones`, `/#/eventos`; identidades/apariciones, condiciones y acciones. Ver [estado implementado](ESTUDIO-DE-HISTORIAS.md).
+- Fuente de conversaciones y preparativos para idiomas mediante exportación/compilación; NO implementar un nuevo intérprete de diálogos.
+- Dos modos y partidas existentes; las pruebas del editor no deben guardar progreso en la partida real.
+
+**El nuevo catálogo de capacidades complementa el Estudio de Historias: movimiento y acciones físicas = Gameplay Core; diálogos y misiones = Story Studio; minijuegos y Bloom = framework de preguntas; XP y recompensas = framework de gamificación. No duplicar sus responsabilidades.**
+
+## 3. Tres cosas diferentes que el editor debe distinguir
+
+| Concepto | ¿Qué significa? | Ejemplo |
+|---|---|---|
+| **Recurso gráfico** | Qué se ve; PNG/WebP, spritesheet, atlas o animación | Sofía, un caballo, un NPC genérico, un cofre |
+| **Entidad/identidad** | Qué personaje u objeto es realmente; ID y estado persistente, independiente de la imagen | El mismo prisionero aparece en B, D y E; otro NPC puede usar su sprite sin ser él |
+| **Comportamiento o capacidad** | Qué puede hacer y con qué parámetros | Sofía camina, el caballo patrulla, una puerta se abre |
+
+Cambiar una imagen **no** debe borrar los comportamientos ni romper los eventos. Reutilizar un sprite **no** debe duplicar la identidad de un personaje. Reutilizar una capacidad **no** debe copiar indebidamente la historia ni las recompensas de otra escena.
+
+## 4. Catálogo de mecánicas pensado a largo plazo
+
+### 4.1 Movimiento y desplazamiento (primera familia)
+- **Caminar lateral 2D** y **correr**; velocidad, aceleración, frenado, giro/flip y animación.
+- **Caminar 4 u 8 direcciones** para futuros juegos RPG 2D, NO convertir automáticamente los interiores actuales a vista cenital.
+- **Movimiento radial 2D** sobre una circunferencia/planeta: reutilizar controlador existente y parametrizar límites; **no se combina** sin un adaptador explícito con caminar lateral.
+- **Saltar / doble salto opcional**, caer, gravedad, altura de salto, coyote time opcional; deshabilitado cuando no corresponde.
+- **Escaleras, rampas, ascensores y plataformas móviles**; geometría configurable desde el editor.
+- **Volar/flotar/planear** y **nadar** como futuras capacidades independientes; no exponerlas como implementadas antes de probarlas.
+- **Vehículos/nave**: entrar/salir, despegar/aterrizar, cambios de controlador, sin reprogramar navegación interestelar ya existente.
+
+### 4.2 Interacciones, objetos y mundo
+- **Hablar**, examinar, recoger, usar, entregar, equipar, empujar, arrastrar y activar.
+- **Abrir/cerrar puerta**, bloqueo por requisito, portal entre escenas o mundos, punto de llegada/regreso.
+- **Interruptor, palanca, antorcha, lámpara, cadenas, cofre, plataforma**; plantilla de interacciones, no lógica ad hoc por mundo.
+- **Observar/manipular experimento** (luz, sombra, variables/estados): el motor ofrece mover/escalar/mostrar/ocultar/registrar evidencia; la interpretación filosófica se define por datos y diálogos.
+- **Lanzar actividad del framework de preguntas** con ID, resultado, feedback y flags, como integración futura.
+
+### 4.3 Acción / personajes autónomos (fase posterior)
+- **Disparar/lanzar proyectiles**, recoger munición, daño, salud, invulnerabilidad temporal.
+- **Enemigo/NPC automático**: estar quieto, patrullar, seguir, huir, perseguir, mirar, reaccionar, atacar; estados con transiciones; configuración sencilla de detección, velocidad y límites.
+- **Seguidor/compañero** (ya existe el caso prisionero, no romperlo).
+- **Checkpoint, muerte y reaparición**, solo donde el proyecto los necesite.
+- Prioridad: **no programar combate/enemigos antes de que una escena real los requiera**. Estarán visibles como «Planificado» o fuera del catálogo inicial, nunca como botones inertes que simulen funcionar.
+
+### 4.4 Lo reutilizable en 2D y 3D
+- Reutilizable sin cambios de dimensión: **intención** (`move`, `jump`, `interact`), contratos de entrada/salida, acciones y eventos, estados, parámetros, IA de alto nivel, perfiles, guardado y editor.
+- **Distinto por motor/dimensión**: coordenadas, gravedad, colisiones, física, control de cámara, animaciones y proyección. Phaser 3 es 2D; 3D requiere adaptador distinto (Godot 3D / Three.js u otro) y **no es compatible automáticamente**.
+- **Primera entrega es Phaser 2D**. Construir un SDK 3D universal ahora gastaría recursos y dificultaría probarlo.
+
+## 5. Diseño del editor visual — modelo similar a la captura
+
+El menú principal de creación mantiene una sola experiencia tipo Genially:
+
+```text
+CREADOR DE MUNDOS / JUEGOS
+[Mundo ▼] [Escena ▼] [Personajes] [Objetos] [Mecánicas] [Eventos] [Probar]
+
+┌──────────────────────────── LIENZO JUGABLE ───────────────────────────┐
+│  imagen de fondo  ·  NPC · Sofía · puerta · antorcha                   │
+│  zonas caminables/colisiones visibles SOLO al editar                  │
+└───────────────────────────────────────────────────────────────────────┘
+
+Elemento seleccionado: Sofía                [Editar sprite] [Cambiar recurso]
+MECÁNICAS DISPONIBLES  (filtro: Movimiento / Interacción / Acción)
+[Caminar ✓] [Correr +] [Saltar +] [Escaleras ✓] [Volar +]
+[Hablar ✓]  [Recoger +] [Empujar +] [Disparar • previsto]
+Al seleccionar «Caminar»:
+  Velocidad [_____slider]   Controles [Toque / Teclado / IA]
+  Animación [idle / walk]   Colisión [cuerpo configurado]
+  Condición [Siempre]      [PROBAR] [GUARDAR PRESET]
+```
+
+**Usabilidad obligatoria:** panel comprensible para una persona sin conocimientos de programación; icono + nombre (no iconos solos); categorías y búsqueda; mostrar «Disponible / Requiere animación / Próximamente» como texto no intrusivo; configuración básica visible y avanzada plegada; deshacer/rehacer, duplicar, plantillas, inspección de errores, diseño táctil y escritorio.
+
+**No permitir combinaciones inválidas silenciosas:** por ejemplo, dos controladores principales que mueven el mismo personaje a la vez o salto sin un controlador de gravedad compatible. Resolver con perfiles por contexto: `radial-2d`, `side-scroller-2d`, `top-down-2d`, `flight-2d`. Un personaje puede cambiar de perfil **al entrar en otra escena** sin perder identidad.
+
+## 6. Biblioteca gráfica y de recursos
+
+- Cargar PNG, WebP, JPEG; para movimiento animado, spritesheets/atlases con metadatos de frames y animaciones. Una imagen estática sigue siendo válida para un NPC quieto o placeholder, pero no equivale a una animación.
+- Biblioteca con **Personajes**, **NPC**, **Fondos**, **Objetos**, **Vehículos**, **Efectos**, **Sonidos**, **Animaciones**.
+- Los recursos tienen `assetId` estable, descripción/tags, origen, dimensiones, tamaño, estado de publicación y referencias de uso. Detectar cambios de recurso que afecten escala/colisión.
+- Separar **sprite/prefab reutilizable** de **instancia concreta** y de **identidad narrativa**. Un mismo icono puede ser Sísifo en unas escenas y otro NPC distinto en otras; la identidad no se decide por similitud de imagen.
+- Seleccionar imagen del fondo no crea colisiones automáticamente: permitir dibujar suelo plano, escaleras, obstáculos, regiones y puntos de interacción encima del fondo.
+- Mantener importación/exportación, copias y manifestaciones actuales; no embeber indiscriminadamente centenares de imágenes en un JSON de mundo para producción.
+
+## 7. Contrato de datos deseado — PROUESTA, NO ESQUEMA IMPLEMENTADO
+
+```json
+{
+  "entityId": "sofia",
+  "sceneId": "platon_entrada",
+  "spriteId": "sofia-standard",
+  "controllerProfile": "side-scroller-2d",
+  "behaviors": [
+    { "type": "walk", "enabled": true, "speed": 180 },
+    { "type": "run", "enabled": false, "speed": 260 },
+    { "type": "stairs", "enabled": true },
+    { "type": "interact", "enabled": true, "distance": 60 }
+  ],
+  "onInteract": [
+    { "type": "talk", "target": "dialogue-id" }
+  ]
+}
+```
+
+**La forma definitiva se decide tras auditar `WorldDefinition`, entidades, acciones, perfiles y editor existentes.** Se debe compilar/validar hacia los contratos actuales; **no** exigir que los JSON publicados cambien antes de tener migraciones y pruebas de equivalencia. El lenguaje del usuario será «Velocidad: normal» y «Puede subir escaleras», no editar esta sintaxis.
+
+## 8. Arquitectura y repositorio
+
+**Decisión a largo plazo:** convertir las mecánicas en un **framework independiente reutilizable**, no acoplado a la filosofía ni al nombre de Sofía. No crear desde el primer día una copia paralela del controlador actual.
+
+Fases recomendadas:
+1. **Local primero:** identificar y encapsular el movimiento/reacciones compartidas dentro del repo de Sofía con interfaces TypeScript tipadas, tests y adaptadores Phaser para lateral/radial; sin alterar su comportamiento.
+2. **Editor de capacidades:** fichas de personaje/objeto con paleta, presets y validación; mostrar en Phaser escenas actuales.
+3. **Nuevos módulos bajo demanda:** carrera, salto, seguimiento, vuelo, acción, etc. con tests de compatibilidad y control táctil.
+4. **Extraer paquete independiente** (por ejemplo `gameplay-framework` o `@luchitoflores/gameplay-core`) **cuando al menos dos proyectos lo reutilicen de verdad**; mantener versiones semánticas, changelog y adaptador `phaser-2d`.
+5. **Adaptador 3D futuro**: nuevo controlador y física; compartir el contrato, no prometer el mismo algoritmo ni sprites.
+
+Esto reduce el coste de Codex y evita que refactorizar el motor de Sofía rompa los mundos actuales.
+
+## 9. Rendimiento, publicación y móviles
+
+- Mobile first, orientación horizontal para jugar; controles táctiles configurables, teclado y accesibilidad.
+- **Lazy loading por escena:** precargar únicamente habitación actual + comunes + algunos recursos del siguiente destino; liberar texturas que no están en uso. Los mundos existentes ya tienen carga por mundo; todavía no debe asumirse carga por habitación implementada.
+- Para 30 planetas × 6 accesos × 5 fondos = **900 imágenes de interiores**, con un promedio hipotético de 350 KB = **315 MB solo de fondos comprimidos**. Una imagen 1920×1080 RGBA puede consumir ~8,3 MB de memoria de textura; NO cargar todas simultáneamente.
+- Reutilización y optimización de sprites, atlas por mundo cuando convenga, WebP, imágenes reducidas según dispositivo y manifests. No exigir un atlas monolítico.
+- **GitHub Pages** para el sitio completo, respetando sus límites de sitio y tráfico; **itch.io** para demo o build con presupuesto de tamaño/archivos ajustado a sus límites vigentes. Validar métricas de carga y memoria en teléfono físico antes de prometer rendimiento.
+- El juego debe poder continuar con un recurso ausente de forma controlada: imagen placeholder, error explicado y no bloquear la partida por un recurso opcional.
+
+## 10. Prioridad para Codex: primeras entregas pequeñas, verificables
+
+### Entrega 0 — Auditoría sin cambios
+- Enumerar controladores y capacidades **reales** en repo, tipar dependencias y detectar duplicaciones.
+- Mapear `radial-2d` versus `side-scroller-2d`, controles táctiles, NPC y editor.
+- Identificar cambios mínimos para introducir `behaviorPresets` sin migración destructiva.
+- Documentar riesgos para guardar partidas, escenas actuales y controles.
+- **No programar todo el framework ni extraer repo aparte todavía.**
+
+### Entrega 1 — Paleta y presets funcionales para escena lateral de Platón
+- Añadir en el editor existente una pestaña **«Mecánicas»** al seleccionar a Sofía, un NPC u objeto.
+- Mostrar iconos/nombres/estado real de capacidades; por defecto únicamente capacidades implementadas y comprobadas.
+- Activar/desactivar **Caminar**, **Interactuar** y **Escaleras** donde el esquema lo permita, con configuración y validación en tiempo real; si **Correr** aún no existe, implementarlo de modo incremental como primera mecánica nueva simple o marcarlo «Próximamente».
+- Guardar un preset reutilizable **«Exploración lateral»**, asignarlo a otra escena y probar; volver sin perder controles radiales.
+- **No añadir disparos, enemigos ni vuelo en esta entrega.**
+
+### Entrega 2 — Personajes y recursos configurables
+- Importar/sustituir sprite, elegir animaciones disponibles, asignar preset a NPC/objeto, preservar ID y diálogos, mostrar «dónde se usa».
+- Validar y resolver problemas de colisión, tamaño y recursos faltantes.
+
+### Entrega 3 — Generalización y nuevos comportamientos bajo demanda
+- Añadir salto, correr, estados de NPC y seguimiento, usando presets y adaptadores comprobables; después sólo lo que el juego necesite.
+- Integrar evento tipado `launchActivity` con el framework de preguntas cuando haya minijuegos reales.
+- Preparar distribución como paquete cuando otro juego pueda consumir una versión estable.
+
+## 11. Criterios de aceptación / pruebas
+
+La entrega 1 estará lista **solo si**:
+1. El autor abre `/#/edicion`, selecciona un personaje y ve paleta por categorías con **nombre e icono**.
+2. Puede asignar una capacidad existente, configurar parámetros y previsualizarla **sin modificar archivos TypeScript**.
+3. El preset asignado funciona realmente tras guardar, recargar e importar/exportar.
+4. Al reutilizar el mismo sprite en otro NPC, la **identidad narrativa** y los diálogos siguen independientes.
+5. El planeta de Platón **continúa** caminándose radialmente; la Caverna A–E conserva escaleras, puertas, iluminación, prisionero y su progreso.
+6. Historia/Libre, las rutas del Estudio de Historias y los guardados antiguos siguen funcionando.
+7. El toque en móvil horizontal no ejecuta una acción equivocada al arrastrar iconos ni bloquea controles.
+8. Tests unitarios de presets/validación + prueba en navegador del editor/juego; ejecutar `npm run check`, `npm test`, `npm run build`, y registrar resultados reales.
+9. No declarar «implementado» aquello que solo aparece en el catálogo; todos los botones funcionales deben ejecutar su comportamiento o estar claramente deshabilitados.
+10. El código producido separa datos/comportamientos de referencias filosóficas y de UI para futura extracción a otro juego.
+
+## 12. Instrucción única para Codex
+> Lee este documento, `docs/ESTUDIO-DE-HISTORIAS.md`, `docs/ARQUITECTURA-AUTORIA-DIALOGOS-MISIONES-I18N.md`, `docs/EVOLUCION-MODULAR.md` y el código actual. No sustituyas lo existente. Empieza por la **Entrega 0 (auditoría)** y luego desarrolla exclusivamente la **Entrega 1**, con la paleta real de mecánicas, parámetros, presets y prueba en escena lateral. Mantén movimiento radial y lateral, diálogos, escenas, navegación, guardados y exportación. No crees todavía un nuevo repositorio ni prometas compatibilidad 3D. Acompaña tus cambios de pruebas y documentación verificada.
+
+---
+
+**Referencias del propio proyecto:** [Diseño del editor tipo Genially](ARQUITECTURA-AUTORIA-DIALOGOS-MISIONES-I18N.md) · [Primera entrega del Estudio de Historias](ESTUDIO-DE-HISTORIAS.md) · [Arquitectura del motor](ARQUITECTURA-MOTOR.md) · [Evolución modular](EVOLUCION-MODULAR.md).
