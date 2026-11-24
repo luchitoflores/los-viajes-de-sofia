@@ -14,8 +14,8 @@ header{display:flex;justify-content:space-between;align-items:center;gap:12px;ma
 #arena canvas{display:block!important;max-width:100%}
 .overlay{position:absolute;top:8px;left:10px;right:10px;display:flex;justify-content:space-between;pointer-events:none;gap:7px}
 .pill{border:1px solid #aecbe388;background:#0b1429d9;border-radius:11px;padding:6px 10px;font-size:12px;font-weight:750}
-#feedback{position:absolute;top:52px;left:50%;transform:translateX(-50%);width:min(88%,650px);background:#121a32ee;border:1px solid #91d4ef;border-radius:14px;padding:10px 14px;opacity:0;transition:opacity .22s;text-align:center;pointer-events:none;box-shadow:0 8px 20px #0008}
-#feedback.show{opacity:1}#feedback strong{display:block;color:#ffe3a7}#feedback small{font-size:12px;color:#f0f3fa}
+#feedback{position:absolute;top:43px;right:10px;max-width:42%;background:#121a32e3;border:1px solid #91d4ef;border-radius:9px;padding:4px 8px;opacity:0;transition:opacity .18s;text-align:center;pointer-events:none;box-shadow:0 3px 9px #0007;overflow:hidden}
+#feedback.show{opacity:1}#feedback strong{display:block;color:#ffe3a7;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#feedback small{display:none}.avatarbar{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:12px;color:#dce7fa;flex-wrap:wrap}.avatar-choice{border:1px solid #677ba3;border-radius:10px;background:#262e4c;color:#fff;padding:7px 12px;cursor:pointer}.avatar-choice[aria-pressed=true]{background:#31516a;border-color:#9fdef2}#learning-log{min-height:38px;color:#e8edfa}.meta{font-size:12px;color:#b5c7e8}
 .touches{position:absolute;bottom:8px;left:9px;right:9px;pointer-events:none;display:flex;justify-content:space-between;align-items:end}
 .dpad{display:grid;grid-template-columns:repeat(3,46px);grid-template-rows:repeat(3,37px);gap:2px}.ctrl{pointer-events:auto;touch-action:none;user-select:none;border:1px solid #dbeaff88;border-radius:12px;background:#101a38c2;color:#fff;min-height:34px;min-width:38px;font-size:21px;font-weight:900;cursor:pointer}.ctrl.pressed{background:#6b73b2}
 .up{grid-column:2;grid-row:1}.left{grid-column:1;grid-row:2}.right{grid-column:3;grid-row:2}.down{grid-column:2;grid-row:3}
@@ -25,7 +25,7 @@ aside{display:grid;gap:12px;align-content:start}section{background:#252c49;borde
 #reset{background:#424b72;border:1px solid #a9b8dd;color:white;border-radius:11px;padding:11px;font-weight:750;cursor:pointer;width:100%}
 .foot{color:#b4bdd8;font-size:12px;padding:9px}.key{border:1px solid #6b759a;border-radius:5px;padding:2px 5px}
 @media(max-width:880px){.layout{grid-template-columns:1fr}aside{grid-template-columns:repeat(2,minmax(0,1fr))}.sub{display:none}}
-@media(max-width:650px){.page{padding:7px}.mode{font-size:11px;padding:7px}.dpad{grid-template-columns:repeat(3,35px);grid-template-rows:repeat(3,28px)}.ctrl{min-height:27px;min-width:33px;font-size:16px;border-radius:7px}.fire{height:63px;min-width:69px;font-size:11px}.pill{font-size:10px;padding:5px 7px}#feedback{top:40px;padding:7px}#feedback small{font-size:10px}aside{grid-template-columns:1fr}}
+@media(max-width:650px){.page{padding:7px}.mode{font-size:11px;padding:7px}.dpad{grid-template-columns:repeat(3,35px);grid-template-rows:repeat(3,28px)}.ctrl{min-height:27px;min-width:33px;font-size:16px;border-radius:7px}.fire{height:63px;min-width:69px;font-size:11px}.pill{font-size:10px;padding:5px 7px}#feedback{top:34px;right:5px;max-width:49%;padding:3px 6px}#feedback strong{font-size:9px}aside{grid-template-columns:1fr}}
 </style></head>
 <body><div class="page">
 <header><div><div class="brand">🚀 Sofía · Playground de mecánicas</div><div class="sub">Tres experiencias con una mecánica Phaser reutilizable · sin afectar tu partida</div></div><a class="back" href="./">Regresar al juego</a></header>
@@ -33,6 +33,7 @@ aside{display:grid;gap:12px;align-content:start}section{background:#252c49;borde
 <button class="mode" data-mode="fallacies" aria-pressed="true">🎯 Cazar falacias</button>
 <button class="mode" data-mode="shadows" aria-pressed="false">🔦 Sombras de Platón</button>
 <button class="mode" data-mode="badFaith" aria-pressed="false">🧠 Mala fe de Sartre</button></nav>
+<div class="avatarbar">Personaje: <button class="avatar-choice" data-avatar="ship" aria-pressed="true">🚀 En nave</button><button class="avatar-choice" data-avatar="foot" aria-pressed="false">🚶 Sofía a pie (prueba)</button></div>
 <div class="layout"><div class="card"><div id="arena" aria-label="Campo de juego de Sofía">
 <div class="overlay"><span class="pill" id="mode-label">Cazar falacias</span><span class="pill"><span id="points">0</span> puntos · <span id="hits">0</span> aciertos</span></div>
 <div id="feedback" role="status" aria-live="polite"><strong id="feedback-title"></strong><small id="feedback-text"></small></div>
@@ -46,8 +47,8 @@ aside{display:grid;gap:12px;align-content:start}section{background:#252c49;borde
 <aside>
 <section><h2 id="lesson-title">Laboratorio de lógica</h2><p id="lesson-instruction">Dispara a las falacias, no a los razonamientos válidos.</p><p id="lesson-action">Los modos comparten motor, cambian reglas y objetivos.</p></section>
 <section><h2>⚙️ Configurar mecánica</h2>
-<label class="row" for="speed">Velocidad de nave <output id="speed-label">280</output></label><input id="speed" type="range" min="130" max="480" value="280" step="10">
+<label class="row" for="speed">Velocidad de movimiento <output id="speed-label">280</output></label><input id="speed" type="range" min="130" max="480" value="280" step="10">
 <label class="row" for="cadence">Intervalo de disparo <output id="cadence-label">350</output></label><input id="cadence" type="range" min="140" max="800" value="350" step="30">
-<button id="reset">↻ Reiniciar esta prueba</button><p>No se dispara a personas. Los pulsos representan examinar argumentos o revelar objetos detrás de las sombras.</p></section>
+<button id="reset">↻ Reiniciar esta prueba</button><p>No se dispara a personas. Los pulsos representan examinar argumentos o revelar objetos detrás de las sombras.</p></section><section><h2>📖 Hallazgos y explicaciones</h2><p id="learning-log" role="status" aria-live="polite">Aquí aparecerán las explicaciones completas, fuera del área de juego.</p><p class="meta">Durante la acción aparece solo un aviso breve. Sofía a pie utiliza un sprite provisional y se mueve lateralmente, con salto.</p></section>
 </aside></div></div>
 <script type="module" src="./src/playground-mecanicas/main.js"></script></body></html>
