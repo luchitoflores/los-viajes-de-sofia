@@ -311,3 +311,9 @@ El estado comprobado y las capturas están en `docs/VALIDACION-MOTOR.md`. Para m
 - Autoría por bloques documentada en `docs/ESTUDIO-DE-HISTORIAS.md`; conservar el intérprete, condiciones, destinos, recompensas y guardados existentes.
 - Petición posterior del autor: permitir salto voluntario en interiores mediante Espacio o doble toque en espacio vacío. No habilitarlo en superficies radiales ni exigirlo en las escaleras. Conservar clic/toque simple y bloquear acciones al editar o conversar.
 - Las prioridades de plantilla, duplicación y parallax están en las secciones 14–15 de `docs/DECISIONES-EDITOR-VISUAL-MECANICAS-REUTILIZABLES.md`; distinguir las propuestas pendientes del guion visual ya implementado.
+
+
+## Presentación de prisioneros en B — 24 de noviembre de 2026
+- B muestra sombras y prisioneros encadenados de espaldas, sin brasero/fuego visible. La fuente de fuego pertenece a C; conservar la linterna de Sofía y las zonas de geometría.
+- Distinguir identidad (`characterId`) y aspecto de la aparición (`spriteId`, `lockFacing` en interiores). Antes de liberarse usar el estado encadenado; tras la liberación conservar el compañero libre y su progreso.
+- Recursos, prompts y límites en `docs/PRISIONEROS-ARTE-Y-ESTADOS.md`. No afirmar que existe una animación de desencadenarse: el bucle encadenado tiene seis fotogramas y el cambio al libre reutiliza la transición existente.

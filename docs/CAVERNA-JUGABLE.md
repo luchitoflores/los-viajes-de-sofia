@@ -56,3 +56,6 @@ Pruebas: `npm test`, `npm run build` y `npm run test:plato-adventure`. Las compr
 
 
 La sala C tiene ahora una salida por el arco pintado a la derecha (`fuego-ascenso`). Exige `prisionero_liberado`; quien ya va acompañado puede cruzar directamente hacia D. Antes de cumplirlo se indica regresar a liberar al prisionero. El acceso anterior desde B se conserva. D regresa por el historial: si se llegó desde C, vuelve a C en el punto del arco. Para el regreso narrativo obligatorio se continúa hacia B por la salida izquierda de C. Los borradores anteriores reciben el acceso mediante `plato-compatibility.ts`.
+
+
+La sala B utiliza ahora un fondo sin fuego visible y apariencias encadenadas animadas antes de la liberación. Arte, estados, personalización y límites: [Prisioneros, arte y estados](PRISIONEROS-ARTE-Y-ESTADOS.md).

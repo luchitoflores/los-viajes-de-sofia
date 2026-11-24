@@ -291,6 +291,27 @@
       "width": 160,
       "height": 160,
       "kind": "rock"
+    },
+    "prisoners-shadow-background": {
+      "src": "assets/cave-prisoners/shadow-room-v2.png",
+      "width": 1280,
+      "height": 720,
+      "kind": "rock",
+      "label": "Sala de sombras · sin fuego visible"
+    },
+    "prisoner-bound-back": {
+      "src": "assets/cave-prisoners/prisoner-bound-back-idle.png",
+      "width": 140,
+      "height": 140,
+      "kind": "philosopher",
+      "label": "Prisionero sentado de espaldas y encadenado · animado",
+      "animation": {
+        "columns": 3,
+        "rows": 2,
+        "frames": 6,
+        "frameRate": 3,
+        "anchorY": 0.94
+      }
     }
   },
   "terrain": "terrain",
@@ -658,7 +679,7 @@
       "template": "room",
       "name": "B · Sala de los prisioneros",
       "subtitle": "Aventura de la caverna · adaptación narrativa",
-      "background": "background-51e34e83-8875-4884-95cc-0ec3bfba98f7",
+      "background": "prisoners-shadow-background",
       "backgroundGround": 420,
       "width": 1280,
       "floor": 560,
@@ -709,7 +730,9 @@
               "prisionero_liberado"
             ]
           },
-          "asset": "character-prisionero-sprite"
+          "asset": "character-prisionero-sprite",
+          "spriteId": "prisoner-bound-back",
+          "lockFacing": true
         },
         {
           "id": "prisionero-se-queda",
@@ -738,7 +761,9 @@
           "behavior": "hablar-otros",
           "characterId": "otro-prisionero",
           "instanceId": "otros-encadenados",
-          "asset": "character-otro-prisionero-sprite"
+          "asset": "character-otro-prisionero-sprite",
+          "spriteId": "prisoner-bound-back",
+          "lockFacing": true
         },
         {
           "id": "cadenas-prisionero",
@@ -787,7 +812,7 @@
         }
       ],
       "lighting": {
-        "darkness": 0.96,
+        "darkness": 0.82,
         "lampFlag": "lampara_encendida"
       },
       "events": [

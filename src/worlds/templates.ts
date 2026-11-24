@@ -23,4 +23,4 @@ export function groundAt(i:Pick<Interior,'floor'|'regions'>,x:number,lifts:Recor
  const lift=i.regions.find(r=>r.type==='elevator'&&x>=r.x&&x<=r.x+r.w);if(lift)return lifts[lift.id]??i.floor;
  return i.regions.find(r=>r.type==='floor'&&x>=r.x&&x<=r.x+r.w)?.y??i.floor;
 }
-export function characterAsset(w:WorldDefinition,o:{characterId?:string;asset?:string}){return o.characterId?w.characters?.[o.characterId]?.spriteId??o.asset:o.asset}
+export function characterAsset(w:WorldDefinition,o:{characterId?:string;asset?:string;spriteId?:string}){return o.spriteId??(o.characterId?w.characters?.[o.characterId]?.spriteId??o.asset:o.asset)}

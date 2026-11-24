@@ -865,3 +865,14 @@ La comprobación adicional de pendientes con reloj de navegador limitado cerca d
 - La importación conserva los recursos: ocho imágenes incrustadas verificadas byte por byte frente a sus archivos existentes, sin duplicarlas; copia original y versión anterior en `.project-backups/`.
 - Capturas: [guion en escritorio](capturas/editor-visual/guion-escritorio.png), [guion horizontal](capturas/editor-visual/guion-movil.png), [salto real en interior](capturas/editor-visual/salto-interior.png).
 - No se probó un teléfono físico. No se implementa un grafo de cables libres, editor parallax ni duplicación de escenarios en esta entrega.
+
+
+## Sala de sombras y apariencias encadenadas — 24 de noviembre de 2026
+
+- `npm test`: 114 pruebas correctas; valida metadatos de animación, referencias por aparición, migración acotada y conservación de estados, geometría y conversaciones.
+- TypeScript y Vite compilan. Nuevas imágenes PNG generadas con `image_gen`, originales conservados y prompts en [PRISIONEROS-ARTE-Y-ESTADOS.md](PRISIONEROS-ARTE-Y-ESTADOS.md).
+- `tests/browser_bound_prisoner.py`, ejecutado contra producción: varios fotogramas reales, posición y escala constantes, orientación fija al conversar, ausencia de doble aparición libre/encadenada, selector del inspector y cambio inmediato de aspecto. Partida de prueba liberada abre al compañero libre con la misma identidad. Sin errores JavaScript.
+- [Sala B encadenados y sombras](capturas/prisioneros/prisioneros-encadenados-sombras.png) y [compañero liberado en móvil horizontal](capturas/prisioneros/prisionero-liberado-movil.png).
+- Los controles móviles se comprobaron con navegador y pantalla horizontal emulada; no en teléfono físico. No se creó animación de levantarse/desencadenarse: se conserva la transición de aparición del motor.
+
+La aventura A–E volvió a comprobarse sobre la compilación de producción con el nuevo arte: investigación, liberación, primer ascenso, regreso y ambos desenlaces del segundo ascenso. Las escaleras se recorren caminando y no se altera el avance narrativo.
