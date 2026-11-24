@@ -3,6 +3,12 @@
  * No tiene acceso a partidas, puertas, NPC ni a los estados de Historia.
  */
 export const MODES = Object.freeze({
+  movement: {
+    id:'movement', title:'Caminar y saltar', philosopher:'Laboratorio de movimiento',
+    action:'Movimiento lateral 2D',
+    instruction:'Sofía camina con las flechas izquierda y derecha; pulsa arriba para saltar. Observa sus pasos y prueba velocidades. Cambia a la nave cuando quieras.',
+    background:'cave', projectile:'pulse', targetSpeed:0, targets:[]
+  },
   fallacies: {
     id:'fallacies', title:'Cazar falacias', philosopher:'Laboratorio de lógica',
     action:'Disparo de análisis',
