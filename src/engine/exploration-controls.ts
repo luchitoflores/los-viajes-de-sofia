@@ -4,7 +4,7 @@ const paths:Record<string,string>={
  talk:'M4 4h16v11H9l-5 5V4Z M8 8h8 M8 11h5',
  door:'M5 21V3h13v18 M14 12h1',enter:'M5 21V3h13v18 M14 12h1',
  collect:'M4 9h16v11H4Z M8 9V5h8v4 M12 12v5 M9 14h6',
- lamp:'M4 10h10l5-4v14l-5-4H4Z M7 10v6 M22 8v10',
+ lamp:'M9 3h6 M8 6h8 M7 8h10l-2 5-2.5 8h-1L9 13Z',
  weapon:'M4 20L19 5 M13 5h6v6 M4 20l-1-4 M4 20l4 1',
  examine:'M15 15l6 6 M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0'
 };
