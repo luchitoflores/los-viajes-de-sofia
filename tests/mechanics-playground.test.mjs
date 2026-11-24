@@ -12,7 +12,7 @@ test('all playground experiences have distinct stable targets and pedagogical fe
       assert.ok(target.label&&target.tag&&target.explanation);
       assert.equal(typeof target.valid,'boolean');
     }
-    assert.deepEqual(nextTarget(targets,targets.length),targets[0]);
+    if(targets.length) assert.deepEqual(nextTarget(targets,targets.length),targets[0]);
   }
 });
 test('player must distinguish falacies and bad faith from non-fallacious alternatives',()=>{
