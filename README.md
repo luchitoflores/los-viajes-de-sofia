@@ -385,3 +385,8 @@ Personajes (`/#/personajes`), guiones por escena (`/#/dialogos`) y objetivos/pla
 
 - [Probar el playground de mecánicas](playground.html) en Vite / GitHub Pages: nave con controles táctiles, falacias, sombras de Platón y mala fe de Sartre; no altera las partidas.
 - [Documentación técnica y pedagógica del playground](docs/PLAYGROUND-MECANICAS-SOFIA.md). Es un prototipo independiente y configurable, no un SDK de mecánicas concluido.
+
+
+## Pendiente aprobado: controles móviles y lámpara de Sofía
+
+- [Joystick, botón contextual inteligente, encender/apagar lámpara y animaciones con herramienta](docs/PENDIENTE-CONTROLES-MOVILES-LAMPARA-SPRITES.md): decisiones, criterios de aceptación y backlog P0–P5 para Codex. **La caverna ya dispone de un encendido narrativo e iluminación: la nueva tarea es conmutación y control móvil, no reconstruirlo.**
