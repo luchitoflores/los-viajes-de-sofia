@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import {prepareSofia} from '../sofia.ts';
 import {MODES,DEFAULT_SETTINGS,clamp,normalizedAxis,makeSequence,nextTarget,scoreImpact} from './core.js';
 
 const W=960,H=540,$=id=>document.getElementById(id);
@@ -6,7 +7,7 @@ const touch={up:false,down:false,left:false,right:false,fire:false};
 const settings={...DEFAULT_SETTINGS};
 let activeScene=null,feedbackTimer=null,avatarKind='ship';
 const ASSETS={
-  ship:'polis-ship.png',sofia:'sofia_0.png',galaxy:'galaxy.jpg',cave:'plato-03_fuego_y_sombras.png',
+  ship:'polis-ship.png',galaxy:'galaxy.jpg',cave:'plato-03_fuego_y_sombras.png',
   horse:'shadow_horse.webp',tree:'shadow_tree.webp',warrior:'shadow_warrior.webp',
   vase:'polis-vase.png'
 };
@@ -33,8 +34,10 @@ class MechanicsPlayground extends Phaser.Scene {
   constructor(){super('MechanicsPlayground')}
   preload(){
     for(const [key,file] of Object.entries(ASSETS))this.load.image(key,'./assets/'+file);
+    for(let i=0;i<6;i++)this.load.image('sofia_'+i+'.png','./assets/sofia_'+i+'.png');
   }
   create(){
+    prepareSofia(this);
     this.keys=this.input.keyboard.addKeys({
       left:Phaser.Input.Keyboard.KeyCodes.LEFT,right:Phaser.Input.Keyboard.KeyCodes.RIGHT,
       up:Phaser.Input.Keyboard.KeyCodes.UP,down:Phaser.Input.Keyboard.KeyCodes.DOWN,
@@ -46,7 +49,7 @@ class MechanicsPlayground extends Phaser.Scene {
     this.targets=[];this.bullets=[];
     this.background=null;this.shade=null;this.elapsed=0;this.lastShot=-10000;
     this.glow=this.add.circle(160,H/2,56,0x67dff3,.18).setDepth(9);
-    this.ship=this.add.image(160,H/2,'ship').setDisplaySize(113,105).setDepth(10);
+    this.ship=this.add.sprite(160,H/2,'ship').setDisplaySize(113,105).setDepth(10);
     this.thruster=this.add.circle(103,H/2,15,0xffb067,.7).setDepth(8);
     this.floor=this.add.rectangle(W/2,H-40,W,80,0x304254,.95).setDepth(1).setVisible(false);
     this.floorEdge=this.add.rectangle(W/2,H-80,W,5,0xc6c5b0,.95).setDepth(2).setVisible(false);
@@ -58,15 +61,19 @@ class MechanicsPlayground extends Phaser.Scene {
     this.tweens.add({targets:this.tooltip,alpha:0,delay:3500,duration:650});
     activeScene=this;
     this.setMode('fallacies');
-    this.setAvatar('ship');
+    // Abrir mostrando la animación real de Sofía, no la nave.
+    const requested=new URLSearchParams(location.search).get('actor');
+    this.setAvatar(requested==='ship'?'ship':'foot');
   }
   setAvatar(kind){
     if(kind!=='foot'&&kind!=='ship')return;
     avatarKind=kind;
     const foot=kind==='foot';
-    this.ship.setTexture(foot?'sofia':'ship');
+    this.ship.stop();
+    this.ship.setTexture(foot?'sofia-stable-0':'ship');
     this.ship.setOrigin(.5,foot?1:.5);
-    this.ship.setDisplaySize(foot?79:113,foot?108:105);
+    this.ship.setDisplaySize(foot?107:113,foot?120:105);
+    if(foot)this.ship.play('sofia-idle');
     this.ship.setPosition(160,foot?H-80:H/2).setRotation(0).setFlipX(false);
     this.grounded=true;this.verticalVelocity=0;this.wasJump=false;
     this.glow.setVisible(!foot);this.thruster.setVisible(!foot);
@@ -157,6 +164,7 @@ class MechanicsPlayground extends Phaser.Scene {
       }
       this.ship.setAngle(0);
       if(direction.x!==0)this.ship.setFlipX(direction.x<0);
+      this.ship.play(Math.abs(direction.x)>.1&&this.grounded?'sofia-walk':'sofia-idle',true);
     }else{
       this.ship.y=clamp(this.ship.y+direction.y*dt*settings.speed,70,H-68);
       this.ship.setAngle(90+direction.y*8);
