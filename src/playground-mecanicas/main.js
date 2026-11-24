@@ -48,13 +48,13 @@ class MechanicsPlayground extends Phaser.Scene {
     this.input.keyboard.addCapture(['LEFT','RIGHT','UP','DOWN','SPACE']);
     this.targets=[];this.bullets=[];
     this.background=null;this.shade=null;this.elapsed=0;this.lastShot=-10000;
-    this.glow=this.add.circle(160,H/2,56,0x67dff3,.18).setDepth(9);
-    this.ship=this.add.sprite(160,H/2,'ship').setDisplaySize(113,105).setDepth(10);
-    this.thruster=this.add.circle(103,H/2,15,0xffb067,.7).setDepth(8);
+    this.glow=this.add.circle(390,H/2,56,0x67dff3,.18).setDepth(9);
+    this.ship=this.add.sprite(390,H/2,'ship').setDisplaySize(113,105).setDepth(10);
+    this.thruster=this.add.circle(335,H/2,15,0xffb067,.7).setDepth(8);
     this.floor=this.add.rectangle(W/2,H-40,W,80,0x304254,.95).setDepth(1).setVisible(false);
     this.floorEdge=this.add.rectangle(W/2,H-80,W,5,0xc6c5b0,.95).setDepth(2).setVisible(false);
     this.grounded=true;this.verticalVelocity=0;this.wasJump=false;
-    this.tooltip=this.add.text(180,420,'Usa las flechas para mover la nave',{
+    this.tooltip=this.add.text(470,215,'◀ Camina ▶ · ▲ Salta',{
       fontFamily:'system-ui',fontSize:'14px',color:'#f4f4ff',
       backgroundColor:'#10152cbb',padding:{x:11,y:7}
     }).setOrigin(.5).setDepth(19);
@@ -74,7 +74,7 @@ class MechanicsPlayground extends Phaser.Scene {
     this.ship.setOrigin(.5,foot?1:.5);
     this.ship.setDisplaySize(foot?107:113,foot?120:105);
     if(foot)this.ship.play('sofia-idle');
-    this.ship.setPosition(160,foot?H-80:H/2).setRotation(0).setFlipX(false);
+    this.ship.setPosition(390,foot?H-80:H/2).setRotation(0).setFlipX(false);
     this.grounded=true;this.verticalVelocity=0;this.wasJump=false;
     this.glow.setVisible(!foot);this.thruster.setVisible(!foot);
     this.floor.setVisible(foot);this.floorEdge.setVisible(foot);
@@ -152,7 +152,7 @@ class MechanicsPlayground extends Phaser.Scene {
     const x=Number(k.right.isDown||k.d.isDown||touch.right)-Number(k.left.isDown||k.a.isDown||touch.left);
     const y=Number(k.down.isDown||k.s.isDown||touch.down)-Number(k.up.isDown||k.w.isDown||touch.up);
     const direction=normalizedAxis(x,y);
-    this.ship.x=clamp(this.ship.x+direction.x*dt*settings.speed,70,avatarKind==='foot'?W-70:W*.53);
+    this.ship.x=clamp(this.ship.x+direction.x*dt*settings.speed,320,avatarKind==='foot'?W-120:W*.78);
     if(avatarKind==='foot'){
       const jumpNow=direction.y<0;
       if(jumpNow&&!this.wasJump&&this.grounded){this.verticalVelocity=-490;this.grounded=false}
