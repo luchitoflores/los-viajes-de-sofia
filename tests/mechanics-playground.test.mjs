@@ -5,7 +5,8 @@ import {MODES,makeSequence,nextTarget,normalizedAxis,scoreImpact,clamp} from '..
 test('all playground experiences have distinct stable targets and pedagogical feedback',()=>{
   for(const id of Object.keys(MODES)){
     const targets=makeSequence(id);
-    assert.ok(targets.length>=3);
+    if(id==='movement')assert.equal(targets.length,0,'Free movement mode should not spawn educational targets');
+    else assert.ok(targets.length>=3);
     assert.equal(new Set(targets.map(t=>t.id)).size,targets.length);
     for(const target of targets){
       assert.ok(target.label&&target.tag&&target.explanation);
@@ -33,4 +34,10 @@ test('movement vector normalization prevents a faster diagonal',()=>{
 });
 test('invalid scene mode is rejected before loading targets',()=>{
   assert.throws(()=>makeSequence('missing'),/desconocido/);
+});
+
+test('Free walking is separated from cognitive minigames',()=>{
+  assert.equal(MODES.movement.id,'movement');
+  assert.equal(MODES.movement.background,'cave');
+  assert.equal(makeSequence('movement').length,0);
 });
