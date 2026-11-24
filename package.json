@@ -40,7 +40,9 @@
     "test:authoring-next": "python tests/browser_authoring_next.py",
     "test:zone-doors": "python tests/browser_zone_doors.py",
     "test:mobile-lamp": "python tests/browser_mobile_lamp.py",
-    "test:lamp-travel": "python tests/browser_lamp_travel.py"
+    "test:lamp-travel": "python tests/browser_lamp_travel.py",
+    "test:gameplay": "python tests/browser_gameplay_framework.py",
+    "test:stairs": "python tests/browser_steep_stairs.py"
   },
   "devDependencies": {
     "typescript": "^5.9.3",

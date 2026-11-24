@@ -1,5 +1,7 @@
 # Controles contextuales y lámpara de Sofía
 
+**Actualización posterior del autor:** la herramienta portátil pasó a ser una linterna. Se conservan los IDs y estados de esta entrega. La implementación reutilizable está ahora en `src/gameplay/`, con rutas de compatibilidad. Estado vigente, sprites nuevos y límites: [GAMEPLAY-CORE-SOFIA.md](GAMEPLAY-CORE-SOFIA.md).
+
 Implementación incremental del 24-11-2026. Mantiene Phaser, los controladores radial/lateral, las habitaciones, las acciones, los diálogos y el guardado anteriores. El playground sigue separado; no se incorporan disparos a la caverna.
 
 ## Auditoría y decisión de compatibilidad

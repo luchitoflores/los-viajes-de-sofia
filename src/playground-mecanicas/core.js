@@ -4,9 +4,9 @@
  */
 export const MODES = Object.freeze({
   movement: {
-    id:'movement', title:'Caminar y saltar', philosopher:'Laboratorio de movimiento',
+    id:'movement', title:'Mecánicas de Sofía', philosopher:'Laboratorio de movimiento',
     action:'Movimiento lateral 2D',
-    instruction:'Sofía camina con las flechas izquierda y derecha; pulsa arriba para saltar. Observa sus pasos y prueba velocidades. Cambia a la nave cuando quieras.',
+    instruction:'Prueba caminar con joystick/A-D, correr con Shift, agacharte con C o abajo y saltar con arriba. Configura capacidades y exporta el preset.',
     background:'cave', projectile:'pulse', targetSpeed:0, targets:[]
   },
   fallacies: {

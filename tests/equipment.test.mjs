@@ -19,3 +19,5 @@ test('Mechanics presets, condition gates and equipment actions validate and roun
  for(const bad of [0,601,NaN]){const next=structuredClone(w);next.mechanics.lamp.radius=bad;assert.throws(()=>parseWorld(next));}const bad=structuredClone(w);bad.interactions['lamp-test'].actions[0].command='shoot';assert.throws(()=>parseWorld(bad));
  const other=JSON.parse(fs.readFileSync('public/worlds/sartre.json','utf8'));assert.equal(mechanicsFor(other).lamp.enabled,false);
 });
+
+test('Flashlight migrates only the old default artwork and preserves explicit off state and custom assets',()=>{const w=world();w.mechanics=structuredClone(equipmentPreset);w.mechanics.lamp.asset='assets/sofia-lamp-handheld.png';const adapted=mechanicsFor(w);assert.equal(adapted.lamp.asset,'assets/sofia-actions/flashlight.png');assert.equal(w.mechanics.lamp.asset,'assets/sofia-lamp-handheld.png');const p=restoreProgress(w,{flags:['lampara_encendida'],equipment:{lamp:{equipped:true,on:false}}});assert.equal(lampState(p,adapted).on,false);w.mechanics.lamp.asset='assets/my-tool.png';assert.equal(mechanicsFor(w).lamp.asset,'assets/my-tool.png')});

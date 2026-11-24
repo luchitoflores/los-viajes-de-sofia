@@ -7,7 +7,7 @@ export function eventCatalog(w:WorldDefinition){
  const found=new Map<string,{id:string;label:string;kind:StoryFlag['kind'];sources:string[]}>();
  const add=(id:string,label?:string,source?:string,kind:StoryFlag['kind']='state')=>{const prev=found.get(id);if(prev){if(label)prev.label=label;if(source&&!prev.sources.includes(source))prev.sources.push(source);if(kind!=='state')prev.kind=kind}else found.set(id,{id,label:label??id.replace(/[_:-]/g,' '),kind,sources:source?[source]:[]})};
  for(const [id,f] of Object.entries(w.storyFlags??{}))add(id,f.label,undefined,f.kind);
- for(const [id,label] of [['owned','Lámpara obtenida'],['equipped','Lámpara equipada'],['on','Lámpara encendida ahora'],['off','Lámpara apagada o guardada']])add('equipment:lamp:'+id,label,'Equipamiento de Sofía');
+ for(const [id,label] of [['owned','Linterna obtenida'],['equipped','Linterna equipada'],['on','Linterna encendida ahora'],['off','Linterna apagada o guardada']])add('equipment:lamp:'+id,label,'Equipamiento de Sofía');
  for(const m of w.missions)add(m.flag,m.title,undefined,'mission');
  for(const [id,d] of Object.entries(w.dialogues)){
   const title=d.title??id.replace(/[-_]/g,' ');for(const f of d.reward?.flags??[])add(f,undefined,'Al terminar: '+title);

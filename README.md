@@ -395,3 +395,8 @@ Personajes (`/#/personajes`), guiones por escena (`/#/dialogos`) y objetivos/pla
 ### Controles contextuales y lámpara
 
 [Uso, configuración, presets y límites de la lámpara](docs/CONTROLES-Y-EQUIPAMIENTO.md). Joystick táctil, interacción contextual y encendido/apagado persistente sobre la iluminación existente. `npm run test:mobile-lamp` y `npm run test:lamp-travel` ejecutan pruebas en Chrome con toque emulado. No son pruebas en teléfono físico.
+
+
+### Gameplay Core y sprites de Sofía
+
+[Laboratorio de mecánicas](playground.html?actor=foot): caminar, correr, agacharse, salto y linterna, con presets exportables y biblioteca de sprites. [Arquitectura, uso y límites](docs/GAMEPLAY-CORE-SOFIA.md). Entrada reutilizable: `src/gameplay/index.ts`. `npm run test:gameplay` ejecuta la validación del laboratorio; las nuevas capacidades no se habilitan automáticamente en la caverna.

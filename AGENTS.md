@@ -296,3 +296,12 @@ El estado comprobado y las capturas están en `docs/VALIDACION-MOTOR.md`. Para m
 - `lampara_encendida` conserva el descubrimiento narrativo; apagar/guardar nunca borra esa marca ni reactiva la recuperación. `equipment.lamp` guarda el estado físico por partida/mundo; adaptar guardados antiguos sin reiniciar.
 - Usar la capa RoomLight existente, luces fijas y gradiente A–E; conservar los fotogramas y pies de Sofía. Lámpara portátil independiente con anclajes por frame; no presentarla como nuevas poses de agarre final.
 - Configuración validada `world.mechanics`, presets e intérprete de acciones `equipment`. Alcance y límites en `docs/CONTROLES-Y-EQUIPAMIENTO.md`. No convertir esta entrega en un motor nuevo ni incorporar el disparo del playground a la caverna.
+
+
+## Linterna y Gameplay Core — 24 de noviembre de 2026
+- La herramienta portátil de Sofía es una linterna acorde a su traje, con haz dirigido y luz de seguridad cercana. Mantener los IDs, campos y `lampara_encendida` por compatibilidad; preservar imágenes personalizadas.
+- Implementaciones reutilizables en `src/gameplay/`: entrada analógica, condiciones, equipamiento, adaptadores Phaser de luz/portación, controlador lateral por capacidades, animaciones y helpers de proyectiles. Los antiguos imports reexportan para no romper el motor.
+- Correr, agacharse y saltar se prueban/configuran en `playground.html`; no imponerlos a la caverna ni sustituir la física radial. La integración de nuevas capacidades en escenas narrativas debe ser explícita y validada.
+- Conservar evaluación educativa y progreso separados de física. El preset local del laboratorio no es una partida ni reemplaza la exportación de proyecto. Guía y límites: `docs/GAMEPLAY-CORE-SOFIA.md`.
+
+- En pendientes explícitas, reutilizar `canWalkPath`: el antiguo máximo de 24 unidades por fotograma bloqueaba tramos empinados con cuadros lentos. No cambiar geometría para ocultar ese bloqueo. Para el toque lateral, conservar coordenadas frescas del canvas y selección de zonas como respaldo, sin convertir clics de menús en caminata.

@@ -837,3 +837,20 @@ El menú inicial precede ahora al mapa de Historia. Las comprobaciones antiguas 
 Capturas auténticas: [quieta encendida](capturas/lampara/idle-on-mobile.png), [quieta apagada](capturas/lampara/idle-off-mobile.png), [caminando encendida](capturas/lampara/walk-on-mobile.png), [caminando apagada](capturas/lampara/walk-off-mobile.png).
 
 Chrome de escritorio y viewport 932×430 con toque emulado; **no teléfono físico**. La portación usa las animaciones existentes y una lámpara independiente; faltan poses dedicadas de agarre y llama animada, como explica [CONTROLES-Y-EQUIPAMIENTO.md](CONTROLES-Y-EQUIPAMIENTO.md).
+
+
+## 24-11-2026 · Gameplay Core, sprites y linterna
+
+- `npm test`: **108/108**. Compilación TypeScript/Vite aprobada; persiste el aviso conocido de tamaño del paquete compartido de Phaser.
+- `browser_gameplay_framework.py`: carrera con varios fotogramas y multiplicador, agacharse conservando apoyo, salto/gravedad/aterrizaje sin repetición automática, capacidades activas/desactivadas, linterna, presets exportados/importados y recuperados tras recargar, joystick + Correr simultáneos con dos contactos emulados, nave/proyectiles previos. Sin errores de navegador ni escritura de partidas jugadas.
+- `browser_mobile_lamp.py`: linterna en aventura, luz ambiente A–E, conversaciones, ocultación de controles, portación, orientación, guardado y presets. Sin errores de navegador.
+- `browser_plato_adventure.py` pasó en producción sin instrumentación: investigación, escaleras, regreso, ambos desenlaces y segundo ascenso, sin errores. Se corrigieron el bloqueo de pendientes por cuadros lentos y el respaldo de selección por coordenadas del canvas, conservando geometría y requisitos narrativos.
+- Las hojas nuevas tienen seis celdas cada una: carrera, agacharse y salto. Se registran y reproducen en Phaser; no se presentan PNG estáticos como animaciones terminadas. La galería del laboratorio conserva las hojas fuente con transparencia.
+- El estado de la linterna usa los IDs y guardados anteriores. La adaptación del antiguo recurso por defecto y la conservación de imágenes personalizadas tienen prueba unitaria.
+
+Capturas auténticas: [laboratorio](capturas/gameplay/idle.png), [carrera](capturas/gameplay/run.png), [agacharse](capturas/gameplay/crouch.png), [salto](capturas/gameplay/jump.png), [multitáctil horizontal](capturas/gameplay/mobile-controls.png), [linterna en caverna](capturas/gameplay/linterna-caverna.png).
+
+Móvil emulado en Chrome a 932×430; no teléfono físico. El controlador nuevo se utiliza en el laboratorio; el movimiento narrativo de la caverna y la física radial se conservan. Límites de extracción y arte en [GAMEPLAY-CORE-SOFIA.md](GAMEPLAY-CORE-SOFIA.md).
+
+
+La comprobación adicional de pendientes con reloj de navegador limitado cerca de 20 FPS pasó subida y bajada. Se corrigió el bloqueo por salto de altura por fotograma sin modificar regiones ni permitir bordes sin escalera. La selección lateral también resuelve las zonas reales con coordenadas actuales del canvas, como respaldo a la lista de objetos de Phaser; conserva las exclusiones de menús y diálogos. Pruebas unitarias de pendiente y selección en `gameplay-movement.test.mjs`.

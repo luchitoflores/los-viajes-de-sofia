@@ -1,0 +1,16 @@
+{
+  "format": "sofia-movement",
+  "version": 1,
+  "id": "exploration-side",
+  "walk": true,
+  "run": true,
+  "jump": true,
+  "crouch": true,
+  "speed": 220,
+  "runMultiplier": 1.65,
+  "crouchMultiplier": 0.4,
+  "jumpSpeed": 490,
+  "gravity": 1250,
+  "height": 118,
+  "crouchHeight": 100
+}

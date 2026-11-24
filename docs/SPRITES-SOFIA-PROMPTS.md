@@ -1,0 +1,19 @@
+# Prompts de sprites de Sofía · 24-11-2026
+
+Herramienta integrada `image_gen`, con `transparent_background: true`. Referencia de identidad/estilo: `public/assets/sofia_0.png`. Destino: `public/assets/sofia-actions/`. Se conservan los originales; las hojas se preparan y animan en Phaser. Estos prompts generan recursos, no implementan por sí solos las mecánicas.
+
+## run.png
+
+Use the reference image as STRICT character identity and art-style reference: Sofia, small girl with chestnut bob hair, big brown eyes, cream astronaut suit, olive-green helmet rim/backpack/gloves/boots, gold brass trims, orange scarf, painterly illustrated storybook 2D. Preserve exact face, outfit and proportions. Transparent background, no labels/text/grid/borders, no props. Sprite animation sheet: EXACTLY 3 columns by 2 rows, six equally sized cells, one entire Sofia per cell, same side view FACING RIGHT, fixed camera and character scale, full body with margin. Each cell is a successive animation frame in reading order. Consistent feet baseline in grounded poses; no duplicate people in any cell. Six distinct frames of a natural RUN cycle, legs alternating forward/back, slight lean, arms swinging, backpack/scarf following. Clear readable running poses, not six copies of idle.
+
+## crouch.png
+
+Use the reference image as STRICT character identity and art-style reference: Sofia, small girl with chestnut bob hair, big brown eyes, cream astronaut suit, olive-green helmet rim/backpack/gloves/boots, gold brass trims, orange scarf, painterly illustrated storybook 2D. Preserve exact face, outfit and proportions. Transparent background, no labels/text/grid/borders, no props. Sprite animation sheet: EXACTLY 3 columns by 2 rows, six equally sized cells, one entire Sofia per cell, same side view FACING RIGHT, fixed camera and character scale, full body with margin. Each cell is a successive animation frame in reading order. Consistent feet baseline in grounded poses; no duplicate people in any cell. Six frames: transitioning from standing to crouch. Frame 1 slight bend, frame 2 half crouch, frames 3-6 fully crouched with knees bent and torso lowered, subtle idle breathing. Do not shrink anatomy or helmet: bend joints to lower height. All boot soles at same baseline.
+
+## jump.png
+
+Use the reference image as STRICT character identity and art-style reference: Sofia, small girl with chestnut bob hair, big brown eyes, cream astronaut suit, olive-green helmet rim/backpack/gloves/boots, gold brass trims, orange scarf, painterly illustrated storybook 2D. Preserve exact face, outfit and proportions. Transparent background, no labels/text/grid/borders, no props. Sprite animation sheet: EXACTLY 3 columns by 2 rows, six equally sized cells, one entire Sofia per cell, same side view FACING RIGHT, fixed camera and character scale, full body with margin. Each cell is a successive animation frame in reading order. Consistent feet baseline in grounded poses; no duplicate people in any cell. Six successive jump poses: anticipation crouch, takeoff stretch, rising knees slightly bent, apex relaxed legs bent, falling legs extended, landing crouch. Keep same body scale. Each pose isolated at its own cell baseline; actual game will move character upward.
+
+## flashlight.png
+
+Create ONE independent game sprite: a compact futuristic handheld FLASHLIGHT for Sofia's cream-and-olive astronaut suit shown in reference. Side view horizontally aimed RIGHT, handle/grip at LEFT, lamp lens on RIGHT. Olive-green housing, cream shell, small brass details, blue-white glass lens, storybook painterly style matching Sofia. Unlit, no beam or glow, no hand, no person, no words, no pedestal. Center entire object on genuinely transparent background, tight composition. Must look like a practical astronaut flashlight, not an oil lamp or lantern.
