@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10162c"><title>Sofía · Playground de mecánicas</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#f5f3ff;background:#10162c;--gold:#f7d68b}*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 45% -35%,#4a356b,#10162c 75%);min-height:100vh}.page{max-width:1200px;margin:auto;padding:12px 14px 24px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.brand{font-weight:850;font-size:clamp(16px,2.6vw,24px)}.sub{font-size:12px;color:#bbc5e6}
+.back{border:1px solid #697392;padding:8px 11px;color:#e5eaff;text-decoration:none;border-radius:11px;font-size:12px;white-space:nowrap}
+.modebar{display:flex;gap:8px;margin:0 0 10px;flex-wrap:wrap}.mode{background:#283050;border:1px solid #667299;border-radius:12px;padding:10px 12px;color:#f1edff;font-weight:700;cursor:pointer}
+.mode[aria-pressed=true]{border-color:#e4b4ff;background:#484374;box-shadow:inset 0 0 0 1px #b7a1ff}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 245px;gap:12px}.card{background:#182039;border-radius:17px;border:1px solid #616b91;overflow:hidden}
+#arena{width:100%;aspect-ratio:16/9;position:relative;touch-action:none;overflow:hidden;background:#121931}
+#arena canvas{display:block!important;max-width:100%}
+.overlay{position:absolute;top:8px;left:10px;right:10px;display:flex;justify-content:space-between;pointer-events:none;gap:7px}
+.pill{border:1px solid #aecbe388;background:#0b1429d9;border-radius:11px;padding:6px 10px;font-size:12px;font-weight:750}
+#feedback{position:absolute;top:52px;left:50%;transform:translateX(-50%);width:min(88%,650px);background:#121a32ee;border:1px solid #91d4ef;border-radius:14px;padding:10px 14px;opacity:0;transition:opacity .22s;text-align:center;pointer-events:none;box-shadow:0 8px 20px #0008}
+#feedback.show{opacity:1}#feedback strong{display:block;color:#ffe3a7}#feedback small{font-size:12px;color:#f0f3fa}
+.touches{position:absolute;bottom:8px;left:9px;right:9px;pointer-events:none;display:flex;justify-content:space-between;align-items:end}
+.dpad{display:grid;grid-template-columns:repeat(3,46px);grid-template-rows:repeat(3,37px);gap:2px}.ctrl{pointer-events:auto;touch-action:none;user-select:none;border:1px solid #dbeaff88;border-radius:12px;background:#101a38c2;color:#fff;min-height:34px;min-width:38px;font-size:21px;font-weight:900;cursor:pointer}.ctrl.pressed{background:#6b73b2}
+.up{grid-column:2;grid-row:1}.left{grid-column:1;grid-row:2}.right{grid-column:3;grid-row:2}.down{grid-column:2;grid-row:3}
+.fire{border:2px solid #ffe7a4;background:#dc893cbe;border-radius:50%;height:81px;min-width:86px;font-size:14px;box-shadow:0 0 19px #ffaa5999}
+aside{display:grid;gap:12px;align-content:start}section{background:#252c49;border:1px solid #5b6384;border-radius:15px;padding:14px}h2{font-size:15px;margin:0 0 10px}p{margin:8px 0;color:#d5d9ed;line-height:1.45;font-size:13px}
+.row{display:flex;justify-content:space-between;font-size:12px}input[type=range]{width:100%;accent-color:#b7a2f4;margin:7px 0 14px}
+#reset{background:#424b72;border:1px solid #a9b8dd;color:white;border-radius:11px;padding:11px;font-weight:750;cursor:pointer;width:100%}
+.foot{color:#b4bdd8;font-size:12px;padding:9px}.key{border:1px solid #6b759a;border-radius:5px;padding:2px 5px}
+@media(max-width:880px){.layout{grid-template-columns:1fr}aside{grid-template-columns:repeat(2,minmax(0,1fr))}.sub{display:none}}
+@media(max-width:650px){.page{padding:7px}.mode{font-size:11px;padding:7px}.dpad{grid-template-columns:repeat(3,35px);grid-template-rows:repeat(3,28px)}.ctrl{min-height:27px;min-width:33px;font-size:16px;border-radius:7px}.fire{height:63px;min-width:69px;font-size:11px}.pill{font-size:10px;padding:5px 7px}#feedback{top:40px;padding:7px}#feedback small{font-size:10px}aside{grid-template-columns:1fr}}
+</style></head>
+<body><div class="page">
+<header><div><div class="brand">🚀 Sofía · Playground de mecánicas</div><div class="sub">Tres experiencias con una mecánica Phaser reutilizable · sin afectar tu partida</div></div><a class="back" href="./">Regresar al juego</a></header>
+<nav class="modebar" aria-label="Seleccionar mecánica filosófica">
+<button class="mode" data-mode="fallacies" aria-pressed="true">🎯 Cazar falacias</button>
+<button class="mode" data-mode="shadows" aria-pressed="false">🔦 Sombras de Platón</button>
+<button class="mode" data-mode="badFaith" aria-pressed="false">🧠 Mala fe de Sartre</button></nav>
+<div class="layout"><div class="card"><div id="arena" aria-label="Campo de juego de Sofía">
+<div class="overlay"><span class="pill" id="mode-label">Cazar falacias</span><span class="pill"><span id="points">0</span> puntos · <span id="hits">0</span> aciertos</span></div>
+<div id="feedback" role="status" aria-live="polite"><strong id="feedback-title"></strong><small id="feedback-text"></small></div>
+<div class="touches"><div class="dpad">
+<button class="ctrl up" data-dir="up" aria-label="Arriba">↑</button>
+<button class="ctrl left" data-dir="left" aria-label="Izquierda">←</button>
+<button class="ctrl right" data-dir="right" aria-label="Derecha">→</button>
+<button class="ctrl down" data-dir="down" aria-label="Abajo">↓</button></div>
+<button class="ctrl fire" data-dir="fire" aria-label="Disparar o iluminar">PULSO ✦</button></div></div>
+<div class="foot">Teclado: <span class="key">WASD</span> o <span class="key">flechas</span> para moverte · <span class="key">Espacio</span> para disparar. También hay controles táctiles.</div></div>
+<aside>
+<section><h2 id="lesson-title">Laboratorio de lógica</h2><p id="lesson-instruction">Dispara a las falacias, no a los razonamientos válidos.</p><p id="lesson-action">Los modos comparten motor, cambian reglas y objetivos.</p></section>
+<section><h2>⚙️ Configurar mecánica</h2>
+<label class="row" for="speed">Velocidad de nave <output id="speed-label">280</output></label><input id="speed" type="range" min="130" max="480" value="280" step="10">
+<label class="row" for="cadence">Intervalo de disparo <output id="cadence-label">350</output></label><input id="cadence" type="range" min="140" max="800" value="350" step="30">
+<button id="reset">↻ Reiniciar esta prueba</button><p>No se dispara a personas. Los pulsos representan examinar argumentos o revelar objetos detrás de las sombras.</p></section>
+</aside></div></div>
+<script type="module" src="./src/playground-mecanicas/main.js"></script></body></html>
