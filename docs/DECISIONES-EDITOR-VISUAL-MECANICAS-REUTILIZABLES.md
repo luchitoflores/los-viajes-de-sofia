@@ -197,3 +197,42 @@ La entrega 1 estará lista **solo si**:
 ---
 
 **Referencias del propio proyecto:** [Diseño del editor tipo Genially](ARQUITECTURA-AUTORIA-DIALOGOS-MISIONES-I18N.md) · [Primera entrega del Estudio de Historias](ESTUDIO-DE-HISTORIAS.md) · [Arquitectura del motor](ARQUITECTURA-MOTOR.md) · [Evolución modular](EVOLUCION-MODULAR.md).
+
+
+## 13. Decisión confirmada: mecánicas de juego ≠ minijuegos educativos
+
+**Confirmación del autor, noviembre 2026.** La paleta visual del anuncio aportado es una **referencia de experiencia de usuario**: escoger capacidades prefabricadas desde iconos e importar imágenes/sprites. No se trata de copiar ese juego, sus personajes ni sus recursos.
+
+**No confundir los tres niveles:**
+
+| Sistema | Responsabilidad | Ejemplo |
+|---|---|---|
+| **Gameplay Core** | Cómo se mueve y actúa una entidad: caminar, correr, volar, saltar, apuntar, disparar, colisionar, iluminar, mover objetos, perseguir, usar un mecanismo | Un mismo módulo de proyectiles funciona con la nave o con Sofía caminando |
+| **Framework de Preguntas / Minijuegos** | Qué reto cognitivo se plantea, objetivos válidos/invalidos, contenidos, evaluación, feedback, evidencias y nivel de Bloom | «Cazar falacias» aprovecha apuntar y disparar, pero valida argumentos; «Sombras» aprovecha luz y manipulación |
+| **Estudio de Historias** | Cuándo y dónde se lanza el reto; NPC, misión, escenas, requisitos, estados y resultados | Entrar a una sala y desbloquear el diálogo al demostrar el origen de una sombra |
+| **Gamificación** | Logros, XP, premios, pergaminos, progreso de colecciones | Registrar evidencia correcta y conceder sello del folio |
+
+**Consecuencia arquitectónica:** «disparar» **es una mecánica**; «disparar a falacias», «disparar luz a sombras» y «cuestionar mala fe» **son actividades educativas** configuradas sobre una o varias mecánicas. No codificar un controlador de disparo nuevo para cada filósofo ni implementar el sistema de preguntas dos veces.
+
+### Personajes y equipos intercambiables
+
+- **Sofía a pie** (escena 2D lateral): caminar, saltar, apuntar y utilizar un instrumento de luz o herramienta de lanzamiento; sprite, animación, hitbox y origen del proyectil propios.
+- **Sofía en su nave** (escena de vuelo): mover X/Y, apuntar y disparar pulsos; misma API de disparo/impacto, distinto controlador, sprite, origen y VFX.
+- **NPC / enemigos / objetos**: patrolla, seguimiento, interacción y uso de herramientas, si una experiencia concreta lo requiere.
+- Las armas/herramientas no deben acoplarse a «nave» ni a «Sofía»: `equipableId`, `actorId`, `spawnOffset`, `projectilePresetId`, `onHit` y restricciones por contexto son conceptos de contrato propuesto.
+- La vista lateral **no** se transforma automáticamente en RPG cenital y los planetas radiales **no** cambian su física para habilitar un arma.
+
+### Retroalimentación del playground
+
+El usuario detectó que los textos largos tapan el juego. Estándar aprobado:
+1. Mientras se juega: **aviso de una sola línea, discreto, breve**, que nunca bloquee controles.
+2. Debajo/fuera del lienzo: **panel de hallazgos** con explicación filosófica completa, retroalimentación negativa constructiva y registro consultable.
+3. Las reflexiones extensas se mostrarán **cuando el jugador pausa o termina** un desafío, no como ventanas modales que interrumpen cada impacto.
+4. En escenas reales, conservar accesibilidad de lectura, tamaño de fuentes, contraste y controles táctiles; la retroalimentación de filosofía jamás debe confundirse con indicadores de daño/combate.
+5. Permitir configurar en la versión futura del editor la política de feedback: discreta, al terminar, diálogo con NPC, completa en panel, según actividad.
+
+### Nuevo criterio de demostración
+
+El Playground de Mecánicas probará **dos tipos de portador** (nave y personaje a pie) y **una mecánica compartida** (disparo/proyectil) con distintas experiencias. El modo a pie inicial usa sprite provisional y una plataforma plana. No constituye un controlador de juego lateral completo ni sustituye los controladores de la caverna existentes. Sus configuraciones de velocidad y cadencia no editan mundos reales.
+
+**Próximos avances para Codex:** dibujar/seleccionar actor en editor, configurar presets de movimiento y herramientas, separar la lógica de evaluación del juego de acción, ampliar demos a recoger, esquivar, perseguir y activar, integrar al minicore con resultado tipado. Solo extraer SDK independiente cuando exista uso repetido en otro juego.
