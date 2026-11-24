@@ -95,3 +95,14 @@ Regresión corregida durante la extracción: el antiguo límite de 24 unidades d
 
 
 Prompts exactos y destinos de los recursos: [SPRITES-SOFIA-PROMPTS.md](SPRITES-SOFIA-PROMPTS.md). Validación de pendientes a cadencia reducida: `npm run test:stairs`, con `SOFIA_URL` opcional.
+
+
+## Salto opcional en interiores — 24 de noviembre de 2026
+
+Petición posterior del autor: permitir saltar voluntariamente dentro de habitaciones, conservando la exploración radial de los planetas. **Espacio** inicia un salto; mantenerlo pulsado no repite saltos. En móvil, **doble toque en un punto vacío del escenario** inicia un salto, sin añadir flechas ni botones permanentes. Un toque simple conserva caminar al destino; tocar un objeto conserva acercarse e interactuar.
+
+`src/gameplay/interior-jump.ts` aporta el movimiento vertical sobre la geometría manual existente, reutilizando velocidad y gravedad del preset de exploración y las animaciones de ascenso/apogeo/caída. La luz y herramienta acompañan al sprite. No se guardan alturas transitorias: al recargar se recupera el apoyo en el suelo. En diálogos, edición, viaje y elevadores no se aceptan saltos; las escaleras se siguen recorriendo caminando y el acompañante no necesita saltar.
+
+La exportación `sofia-world-plato.json` del autor se incorporó con copia en `.project-backups/2026-11-24T20-26-12-298Z-8bac264f`. Se reutilizaron las ocho imágenes incrustadas porque sus bytes coinciden con los archivos ya publicados. Se conservan textos, apariciones y ajustes de objetos. Correcciones geométricas de transitabilidad: pie de la primera pendiente a Y=560; segunda pendiente entre el descanso (765,400) y el piso superior (984,210); sólido del lado derecho desde Y=280 para no bloquear la plataforma de acceso. El archivo original queda en la copia de seguridad.
+
+La misma reparación acotada se aplica al cargar borradores locales con exactamente esos valores antiguos. No sobrescribe otras geometrías personalizadas.

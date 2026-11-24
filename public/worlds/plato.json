@@ -251,6 +251,46 @@
       "height": 157,
       "kind": "philosopher",
       "label": "Prisionero principal"
+    },
+    "character-plat-sprite": {
+      "src": "assets/cast-plat.png",
+      "kind": "philosopher",
+      "width": 80,
+      "height": 118,
+      "label": "Recurso provisional"
+    },
+    "character-plat-portrait": {
+      "src": "assets/portrait-plat.png",
+      "kind": "rock",
+      "width": 160,
+      "height": 160,
+      "label": "Recurso provisional"
+    },
+    "character-prisionero-sprite": {
+      "src": "assets/companion-idle.png",
+      "width": 110,
+      "height": 157,
+      "kind": "philosopher",
+      "label": "Prisionero principal"
+    },
+    "character-prisionero-portrait": {
+      "src": "assets/portrait-prisoner.png",
+      "width": 160,
+      "height": 160,
+      "kind": "rock"
+    },
+    "character-otro-prisionero-sprite": {
+      "src": "assets/cave-warden.png",
+      "width": 100,
+      "height": 157,
+      "kind": "philosopher",
+      "label": "Otro prisionero"
+    },
+    "character-otro-prisionero-portrait": {
+      "src": "assets/portrait-warden.png",
+      "width": 160,
+      "height": 160,
+      "kind": "rock"
     }
   },
   "terrain": "terrain",
@@ -669,7 +709,7 @@
               "prisionero_liberado"
             ]
           },
-          "asset": "prisoner"
+          "asset": "character-prisionero-sprite"
         },
         {
           "id": "prisionero-se-queda",
@@ -686,7 +726,7 @@
               "prisionero_se_queda"
             ]
           },
-          "asset": "prisoner"
+          "asset": "character-prisionero-sprite"
         },
         {
           "id": "otros-encadenados",
@@ -698,7 +738,7 @@
           "behavior": "hablar-otros",
           "characterId": "otro-prisionero",
           "instanceId": "otros-encadenados",
-          "asset": "warden"
+          "asset": "character-otro-prisionero-sprite"
         },
         {
           "id": "cadenas-prisionero",
@@ -803,14 +843,14 @@
         {
           "id": "objeto-fuego",
           "type": "vase",
-          "x": 310,
-          "y": 560,
+          "x": 349,
+          "y": 544,
           "label": "Examinar la fuente de fuego",
           "integrated": true,
           "behavior": "examinar-fuego",
           "hotspot": {
-            "x": 310,
-            "y": 495,
+            "x": 349,
+            "y": 479,
             "w": 180,
             "h": 300
           }
@@ -818,14 +858,14 @@
         {
           "id": "objeto-caballo",
           "type": "vase",
-          "x": 735,
-          "y": 560,
+          "x": 530,
+          "y": 555,
           "label": "Examinar la figura de caballo",
           "integrated": true,
           "behavior": "examinar-caballo",
           "hotspot": {
-            "x": 735,
-            "y": 350,
+            "x": 530,
+            "y": 345,
             "w": 190,
             "h": 190
           }
@@ -833,14 +873,14 @@
         {
           "id": "objeto-vasija",
           "type": "vase",
-          "x": 160,
-          "y": 560,
+          "x": 208,
+          "y": 552,
           "label": "Examinar la vasija",
           "integrated": true,
           "behavior": "examinar-vasija",
           "hotspot": {
-            "x": 160,
-            "y": 540,
+            "x": 208,
+            "y": 532,
             "w": 105,
             "h": 190
           }
@@ -848,14 +888,14 @@
         {
           "id": "objeto-figura",
           "type": "vase",
-          "x": 875,
-          "y": 560,
+          "x": 704,
+          "y": 554,
           "label": "Examinar la figura humana",
           "integrated": true,
           "behavior": "examinar-figura",
           "hotspot": {
-            "x": 875,
-            "y": 350,
+            "x": 704,
+            "y": 344,
             "w": 120,
             "h": 210
           }
@@ -863,14 +903,14 @@
         {
           "id": "muro-proyeccion",
           "type": "shadows",
-          "x": 1050,
-          "y": 560,
+          "x": 963,
+          "y": 534,
           "label": "Relacionar luz, objetos y proyección",
           "integrated": true,
           "behavior": "comprender-sombras",
           "hotspot": {
-            "x": 1050,
-            "y": 520,
+            "x": 963,
+            "y": 494,
             "w": 180,
             "h": 300
           }
@@ -878,18 +918,26 @@
         {
           "id": "fuego-ascenso",
           "type": "door",
-          "x": 1130,
-          "y": 560,
+          "x": 1226,
+          "y": 554,
           "label": "Arco hacia el ascenso",
           "integrated": true,
           "behavior": "fuego-ascenso",
           "hotspot": {
-            "x": 1130,
-            "y": 430,
+            "x": 1226,
+            "y": 424,
             "w": 160,
             "h": 250
           },
           "tooltip": "Este arco conduce al camino del ascenso. Puedes cruzarlo cuando el prisionero esté liberado."
+        },
+        {
+          "id": "object-efdaf7f3-cf56-4375-b5a9-24d24f3032fb",
+          "type": "scroll",
+          "x": 845,
+          "y": 335,
+          "label": "pergamino",
+          "asset": "vase"
         }
       ],
       "regions": [
@@ -944,14 +992,14 @@
         {
           "id": "ascenso-salida",
           "type": "door",
-          "x": 905,
-          "y": 238,
+          "x": 1141,
+          "y": 196,
           "label": "Alcanzar la salida luminosa",
           "integrated": true,
           "behavior": "ascenso-salida",
           "hotspot": {
-            "x": 905,
-            "y": 238,
+            "x": 1141,
+            "y": 196,
             "w": 160,
             "h": 180
           }
@@ -959,8 +1007,8 @@
         {
           "id": "paso-piedra-visible",
           "type": "vase",
-          "x": 807,
-          "y": 269,
+          "x": 550,
+          "y": 219,
           "label": "Paso de piedra del ascenso",
           "integrated": false,
           "asset": "bridge",
@@ -979,9 +1027,9 @@
         {
           "id": "escalera-pintada",
           "type": "stairs",
-          "x": 165,
+          "x": 227,
           "y": 400,
-          "w": 305,
+          "w": 243,
           "h": 160,
           "bottom": 560
         },
@@ -997,26 +1045,26 @@
           "id": "paso-piedra",
           "type": "stairs",
           "x": 765,
-          "y": 215,
-          "w": 65,
-          "h": 185,
+          "y": 210,
+          "w": 219,
+          "h": 190,
           "bottom": 400
         },
         {
           "id": "alto",
           "type": "floor",
-          "x": 830,
-          "y": 215,
-          "w": 150,
-          "h": 30
+          "x": 984,
+          "y": 210,
+          "w": 291,
+          "h": 380
         },
         {
           "id": "limite-roca",
           "type": "solid",
           "x": 980,
-          "y": 0,
+          "y": 280,
           "w": 300,
-          "h": 720
+          "h": 440
         },
         {
           "id": "zone_1795397708870",
@@ -1592,8 +1640,7 @@
           ],
           "characterId": "plat"
         }
-      },
-      "title": "Primer encuentro con Platón"
+      }
     },
     "entrada-observacion": {
       "style": "parchment",
@@ -1614,8 +1661,7 @@
         "flags": [
           "lampara_encendida"
         ]
-      },
-      "title": "Encender la lámpara"
+      }
     },
     "prisionero": {
       "style": "parchment",
@@ -1774,8 +1820,7 @@
           ],
           "node": "evidencias"
         }
-      ],
-      "title": "Conversación con el prisionero"
+      ]
     },
     "pared-sombras": {
       "style": "parchment",
@@ -1791,8 +1836,7 @@
             }
           ]
         }
-      },
-      "title": "Lo que vemos en la pared"
+      }
     },
     "observar-fuego": {
       "style": "parchment",
@@ -1813,8 +1857,7 @@
         "flags": [
           "fuego_observado"
         ]
-      },
-      "title": "El fuego detrás de las sombras"
+      }
     },
     "observar-caballo": {
       "style": "parchment",
@@ -1835,8 +1878,7 @@
         "flags": [
           "caballo_observado"
         ]
-      },
-      "title": "La figura del caballo"
+      }
     },
     "observar-vasija": {
       "style": "parchment",
@@ -1857,8 +1899,7 @@
         "flags": [
           "vasija_observada"
         ]
-      },
-      "title": "La figura de la vasija"
+      }
     },
     "observar-figura": {
       "style": "parchment",
@@ -1879,8 +1920,7 @@
         "flags": [
           "figura_observada"
         ]
-      },
-      "title": "La figura humana"
+      }
     },
     "origen-sombras": {
       "style": "ink",
@@ -1953,8 +1993,7 @@
         "flags": [
           "sombras_comprendidas"
         ]
-      },
-      "title": "Descubrir el origen de las sombras"
+      }
     },
     "duda-ascenso": {
       "style": "parchment",
@@ -2010,8 +2049,7 @@
           ],
           "characterId": "prisionero"
         }
-      },
-      "title": "La dificultad del ascenso"
+      }
     },
     "primera-salida": {
       "style": "parchment",
@@ -2079,8 +2117,7 @@
         "flags": [
           "primer_ascenso_completado"
         ]
-      },
-      "title": "Primera llegada a la luz"
+      }
     },
     "regreso-conflicto": {
       "style": "ink",
@@ -2171,8 +2208,7 @@
         "flags": [
           "regreso_caverna_completado"
         ]
-      },
-      "title": "El rechazo al volver a la caverna"
+      }
     },
     "companero": {
       "style": "parchment",
@@ -2303,8 +2339,7 @@
           ],
           "node": "volver"
         }
-      ],
-      "title": "El camino con el prisionero"
+      ]
     },
     "cierre": {
       "style": "parchment",
@@ -2369,8 +2404,7 @@
           "segundo_ascenso_completado",
           "aventura_platon_completada"
         ]
-      },
-      "title": "La decisión y el segundo ascenso"
+      }
     },
     "otros-prisioneros": {
       "style": "parchment",
@@ -2387,8 +2421,7 @@
           ],
           "characterId": "otro-prisionero"
         }
-      },
-      "title": "Quienes siguen mirando la pared"
+      }
     }
   },
   "activities": {},
@@ -2440,20 +2473,20 @@
     "plat": {
       "name": "Platón",
       "personality": "Anfitrión y guía en encuentros clave.",
-      "spriteId": "mentor",
-      "portraitId": "portrait"
+      "spriteId": "character-plat-sprite",
+      "portraitId": "character-plat-portrait"
     },
     "prisionero": {
       "name": "El prisionero",
       "personality": "Teme dejar las sombras y aprende a compartir lo que descubre.",
-      "spriteId": "prisoner",
-      "portraitId": "prisoner-face"
+      "spriteId": "character-prisionero-sprite",
+      "portraitId": "character-prisionero-portrait"
     },
     "otro-prisionero": {
       "name": "Otro prisionero",
       "personality": "Defiende lo que siempre ha creído.",
-      "spriteId": "warden",
-      "portraitId": "warden-face"
+      "spriteId": "character-otro-prisionero-sprite",
+      "portraitId": "character-otro-prisionero-portrait"
     }
   },
   "journey": {

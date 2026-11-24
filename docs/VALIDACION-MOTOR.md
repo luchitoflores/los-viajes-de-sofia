@@ -854,3 +854,14 @@ Móvil emulado en Chrome a 932×430; no teléfono físico. El controlador nuevo 
 
 
 La comprobación adicional de pendientes con reloj de navegador limitado cerca de 20 FPS pasó subida y bajada. Se corrigió el bloqueo por salto de altura por fotograma sin modificar regiones ni permitir bordes sin escalera. La selección lateral también resuelve las zonas reales con coordenadas actuales del canvas, como respaldo a la lista de objetos de Phaser; conserva las exclusiones de menús y diálogos. Pruebas unitarias de pendiente y selección en `gameplay-movement.test.mjs`.
+
+
+## Guion visual, salto e importación de Platón — 24 de noviembre de 2026
+
+- TypeScript y compilación Vite correctos. La advertencia de tamaño del paquete de Phaser sigue presente.
+- `tests/browser_visual_dialogue_jump.py`: Chrome, clic real y pantalla horizontal con toque emulado; escritura inline, arrastre, duplicación de bloque, deshacer/rehacer, prueba desde el turno con texto sin guardar, guardado, momentos/condiciones y duplicación de conversación; salto con Espacio, animación, aterrizaje, no repetición al mantener, doble toque en espacio vacío.
+- `tests/browser_plato_adventure.py`: recorrido A–E completo, requisitos, liberación, seguimiento por escaleras sin saltar, primer ascenso, regreso obligatorio, segundo ascenso y ambos desenlaces. Sin errores JavaScript. Se actualizó el punto de muestreo superior de la prueba para coincidir con la geometría importada (el piso alto ahora empieza en X=984).
+- Las pruebas unitarias de continuidad ya no presuponen las coordenadas antiguas del escenario del autor: los límites se comprueban desde los extremos de las pendientes publicadas; el caso de pendiente muy empinada usa una fixture independiente para conservar la regresión original.
+- La importación conserva los recursos: ocho imágenes incrustadas verificadas byte por byte frente a sus archivos existentes, sin duplicarlas; copia original y versión anterior en `.project-backups/`.
+- Capturas: [guion en escritorio](capturas/editor-visual/guion-escritorio.png), [guion horizontal](capturas/editor-visual/guion-movil.png), [salto real en interior](capturas/editor-visual/salto-interior.png).
+- No se probó un teléfono físico. No se implementa un grafo de cables libres, editor parallax ni duplicación de escenarios en esta entrega.

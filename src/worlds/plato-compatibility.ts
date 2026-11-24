@@ -8,6 +8,11 @@ export function restorePlatoContinuity(w:WorldDefinition):WorldDefinition{
  const ascent=w.interiors.ascenso,landing=ascent?.regions.find(r=>r.id==='descanso'),first=ascent?.regions.find(r=>r.id==='escalera-pintada'),upper=ascent?.regions.find(r=>r.id==='paso-piedra');
  if(landing?.y===400&&first?.bottom===undefined&&first?.y===310&&first?.h===250){first.y=400;first.h=160;first.bottom=560}
  if(landing?.y===400&&upper?.bottom===undefined&&upper?.y===215&&upper?.h===345){upper.bottom=400;upper.h=185}
+ // Exact geometry from the author's 24-Nov export: preserve all unrelated custom edits.
+ if(first?.x===227&&first.y===400&&first.w===243&&first.bottom===586){first.bottom=560;first.h=160}
+ if(upper?.x===748&&upper.y===177&&upper.w===256&&upper.bottom===392){Object.assign(upper,{x:765,y:210,w:219,h:190,bottom:400})}
+ const rock=ascent?.regions.find(r=>r.id==='limite-roca'),exit=ascent?.items.find(o=>o.id==='ascenso-salida');
+ if(exit?.x===1141&&rock?.x===980&&rock.y===0&&rock.w===300&&rock.h===720){rock.y=280;rock.h=440}
 
  if(dialogue&&room?.lighting?.lampFlag===flag&&door&&w.interactions['encender-lampara']?.actions.some(a=>'reward' in a&&a.reward?.flags?.includes(flag))){
  dialogue.reward={...dialogue.reward,flags:[...new Set([...(dialogue.reward?.flags??[]),flag])]};

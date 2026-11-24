@@ -305,3 +305,9 @@ El estado comprobado y las capturas están en `docs/VALIDACION-MOTOR.md`. Para m
 - Conservar evaluación educativa y progreso separados de física. El preset local del laboratorio no es una partida ni reemplaza la exportación de proyecto. Guía y límites: `docs/GAMEPLAY-CORE-SOFIA.md`.
 
 - En pendientes explícitas, reutilizar `canWalkPath`: el antiguo máximo de 24 unidades por fotograma bloqueaba tramos empinados con cuadros lentos. No cambiar geometría para ocultar ese bloqueo. Para el toque lateral, conservar coordenadas frescas del canvas y selección de zonas como respaldo, sin convertir clics de menús en caminata.
+
+
+## Guion visual y salto voluntario en interiores — 24 de noviembre de 2026
+- Autoría por bloques documentada en `docs/ESTUDIO-DE-HISTORIAS.md`; conservar el intérprete, condiciones, destinos, recompensas y guardados existentes.
+- Petición posterior del autor: permitir salto voluntario en interiores mediante Espacio o doble toque en espacio vacío. No habilitarlo en superficies radiales ni exigirlo en las escaleras. Conservar clic/toque simple y bloquear acciones al editar o conversar.
+- Las prioridades de plantilla, duplicación y parallax están en las secciones 14–15 de `docs/DECISIONES-EDITOR-VISUAL-MECANICAS-REUTILIZABLES.md`; distinguir las propuestas pendientes del guion visual ya implementado.

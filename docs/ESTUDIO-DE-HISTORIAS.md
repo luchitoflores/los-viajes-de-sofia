@@ -117,3 +117,23 @@ Las fuentes nuevas están en `src/worlds/story-studio.ts` y `dialogue-sources.ts
 ## Trabajo posterior de la propuesta
 
 Agrupaciones de varias misiones por mundo, las otras plantillas del catálogo, archivo/desvinculación avanzada de contenido usado, análisis completo de accesibilidad lógica, catálogo global de interfaz por IDs y herramientas visuales de traducción. El framework externo de minijuegos se conectará mediante los IDs de actividad existentes, sin crear minijuegos nuevos aquí.
+
+
+## Guion visual — actualización del 24 de noviembre de 2026
+
+En Diálogos por escena, «Editar conversación completa» abre ahora dos columnas: referencia del escenario y bloques del guion a la izquierda; propiedades, interlocutor, conexiones y resultados del bloque seleccionado a la derecha. En pantallas estrechas se apilan sin tapar la escena.
+
+- Escribir directamente en el texto de cada bloque. Seleccionarlo abre sus propiedades; los botones de conexión llevan al siguiente bloque.
+- En una secuencia lineal, arrastrar por el asa o usar ↑/↓. Las conversaciones con ramas o momentos conservan su estructura: se modifican sus destinos, no se reordenan automáticamente.
+- Añadir texto, decisión o bifurcación desde la paleta; para extender una respuesta de una decisión, usar «Añadir texto a esta respuesta».
+- Duplicar un bloque copia sus textos y resultados. En una línea se inserta a continuación; una copia de una decisión debe conectarse explícitamente. Revisar recompensas antes de reutilizarla.
+- Deshacer/rehacer restaura el guion durante esta sesión de edición, incluso tras eliminar un turno. No revierte modificaciones ya guardadas en otras pantallas ni el catálogo de acontecimientos.
+- Los momentos aparecen como accesos con sus requisitos legibles. Sus condiciones, nombre y prioridad también se editan en «Cuándo aparece» dentro del guion; aplicar al borrador y después guardar la conversación. El acceso del índice sigue disponible.
+- «Probar desde aquí» utiliza el turno actual y sus cambios sin guardar, en su habitación y con requisitos simulados de la entrada correspondiente. El juego usa el aspecto global de los bocadillos; no escribe progreso jugado.
+- «Guardar conversación» conserva los cambios del borrador. La referencia del fondo no es un editor de colocación: su enlace abre el editor de escenarios/NPC.
+
+Se advierte sobre bloques sin conexión desde el inicio o los momentos. Se conserva la validación del motor al guardar. No se implementa un grafo de cables libres ni se afirma análisis exhaustivo de accesibilidad narrativa. La selección directa de NPC en el editor de escenarios conserva su enlace a las conversaciones; en la referencia del guion hay accesos por interlocutor.
+
+Prueba reproducible: `python tests/browser_visual_dialogue_jump.py` con `SOFIA_URL` apuntando al servidor local. Comprueba escritura, arrastre real, duplicación, deshacer/rehacer, prueba desde un bloque, guardado, momentos y toque emulado horizontal. No es una prueba en teléfono físico.
+
+«Duplicar conversación» en el índice abre una copia sin asignar, con ID nuevo y textos, momentos y resultados independientes del original. Revisar las condiciones/recompensas compartidas y elegir su aparición; no duplica el personaje ni cambia las vinculaciones originales.

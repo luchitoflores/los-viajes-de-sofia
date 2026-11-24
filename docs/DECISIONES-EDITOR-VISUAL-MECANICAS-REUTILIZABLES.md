@@ -236,3 +236,62 @@ El usuario detectó que los textos largos tapan el juego. Estándar aprobado:
 El Playground de Mecánicas probará **dos tipos de portador** (nave y personaje a pie) y **una mecánica compartida** (disparo/proyectil) con distintas experiencias. El modo a pie inicial usa sprite provisional y una plataforma plana. No constituye un controlador de juego lateral completo ni sustituye los controladores de la caverna existentes. Sus configuraciones de velocidad y cadencia no editan mundos reales.
 
 **Próximos avances para Codex:** dibujar/seleccionar actor en editor, configurar presets de movimiento y herramientas, separar la lógica de evaluación del juego de acción, ampliar demos a recoger, esquivar, perseguir y activar, integrar al minicore con resultado tipado. Solo extraer SDK independiente cuando exista uso repetido en otro juego.
+
+## 14. Plantilla reutilizable de juegos — 24 de noviembre de 2026
+
+**Objetivo confirmado por el autor:** disponer de un proyecto base como sus plantillas de Genially: cambiar personajes, historia y escenarios conservando las mecánicas y unas ventanas de configuración comprensibles. Sofía será el primer juego que utiliza esa base; la identidad de Sofía y el universo filosófico no deben ser requisitos de futuros juegos.
+
+Recorrido deseado: **Crear juego desde plantilla → cambiar personajes y escenarios → escribir historia → conectar acciones → probar → exportar**. Es un objetivo de producto, no una función completa disponible hoy. Conservar el motor común de Phaser y los datos existentes; esta conversación no autoriza una migración a GDevelop ni una reescritura.
+
+### Estado actual y prioridades pendientes
+
+| Capacidad | Estado al registrar la decisión |
+|---|---|
+| Crear mundos e interiores desde bases, cambiar fondos, colocar NPC/objetos y conectar puertas | Disponible; mejorar la facilidad de autoría |
+| Conversaciones con condiciones, decisiones y consecuencias | Disponible mediante formularios y vistas por escena |
+| Duplicar una escena completa desde un botón | Pendiente |
+| Guardar una composición como plantilla reutilizable | Pendiente de completar como flujo del editor |
+| Editor visual de capas parallax | Pendiente; los interiores laterales actuales usan un fondo principal |
+| Asignar libremente correr, saltar o agacharse desde cualquier escena narrativa | Pendiente de integrar; el controlador se prueba en el playground |
+| Crear y exportar otro juego independiente desde una plantilla | Objetivo pendiente; no confundir exportar el proyecto actual con generar otro juego completo |
+
+Orden acordado de trabajo: **duplicar escenas → guardar plantillas → editar capas parallax → aplicar mecánicas desde el editor → crear otro juego desde plantilla**. Desarrollar incrementalmente y comprobar qué existe antes de añadir sistemas.
+
+Duplicar deberá permitir elegir qué conservar: fondo, objetos, geometría, NPC, conversaciones, puertas, eventos y objetivos. Generar los IDs nuevos que correspondan y ajustar referencias internas; distinguir reutilizar una identidad de personaje de crear otra. Modificar la copia no debe alterar el original ni copiar progreso jugado. Las conexiones externas deben revisarse explícitamente.
+
+El editor parallax deberá permitir cargar capas independientes, ordenarlas, ajustar su velocidad relativa y mover una cámara de prueba para ver el resultado. El suelo y las colisiones siguen siendo geometría manual independiente del arte. Conservar las escenas de fondo único; exportar capas y recursos mediante datos validados. Crear imágenes por capas en una herramienta gráfica no equivale a tener ya un editor parallax dentro del juego.
+
+## 15. Autoría de diálogos: estado y dirección visual — 24 de noviembre de 2026
+
+**Petición del autor:** registrar cómo funciona el editor actual y qué falta para acercarlo a una experiencia visual como TyranoBuilder. La referencia es su autoría con componentes arrastrables, descrita en su [sitio oficial](https://tyranobuilder.com/). No se propone adoptar su motor ni afirmar compatibilidad con sus proyectos.
+
+### Lo que funciona actualmente
+
+Recorrido: **mundo → escena → conversación → momento/variante → turnos → condiciones y consecuencias → prueba contextual**. El manual del estado funcional está en [Estudio de historias](ESTUDIO-DE-HISTORIAS.md) y la localización de conversaciones en [Diálogos por escena](DIALOGOS-POR-ESCENA.md).
+
+- Las conversaciones se localizan por escena, personaje u objeto; también hay encuentros de llegada/regreso y versiones condicionadas. La numeración ayuda a encontrarlas, no impone el orden del juego.
+- Se pueden añadir textos y turnos, alternar interlocutores, configurar decisiones y bifurcaciones y eliminar textos con confirmación. «Turno» selecciona lo que se edita; «Primer turno» configura el inicio de la conversación.
+- Los momentos nombrados permiten diferenciar, por ejemplo, «primera visita», «regreso tras el ascenso» o «prisionero que decide quedarse». Las condiciones y su prioridad eligen la entrada válida; no basta contar cuántas veces se habló.
+- Los resultados de respuestas y acciones se relacionan con acontecimientos, requisitos de objetivos y puertas. Registrar un acontecimiento no inventa por sí solo la acción de abrir una puerta: esa acción debe estar conectada.
+- La identidad y el seguimiento del compañero son independientes de sus diálogos por habitación. Mantener al mismo prisionero al subir, regresar y decidir su desenlace.
+- El aspecto global del bocadillo se configura aparte en `/#/apariencia`. Las pruebas no deben guardar avances de la partida real.
+
+**Límite actual:** la autoría se basa principalmente en listas y formularios. Tener nodos y bifurcaciones en los datos no significa disponer ya de una secuencia gráfica arrastrable ni de un grafo visual completo.
+
+### Mejoras propuestas para validar antes de implementarlas
+
+1. Mostrar la escena de referencia junto al guion. Seleccionar un NPC en ella debe llevar directamente a sus conversaciones y momentos, aprovechando los enlaces que ya existen.
+2. Sustituir la edición dispersa por una secuencia de bloques legibles: interlocutor, retrato y texto editables en el mismo bloque. Arrastrar para ordenar una secuencia; las ramas deben mostrar destinos explícitos, sin romper conexiones al mover un bloque.
+3. Ofrecer una paleta pequeña: hablar, respuesta de Sofía, decisión y acción existente del motor. Cada componente debe corresponder a un comportamiento validado y real.
+4. Hacer visibles los momentos y sus requisitos en lenguaje cotidiano: antes/después de una misión, al regresar de otra habitación, acompañado o solo. Mantener los IDs estables internamente.
+5. Previsualizar el bocadillo con el tema global y probar desde el turno o momento elegido, con un estado simulado visible. Conservar la prueba contextual existente como base.
+6. Facilitar duplicar conversaciones/momentos, confirmar eliminaciones y recuperar errores; advertir sobre destinos ausentes y condiciones incompatibles. La validación actual es parcial y no demuestra que toda rama sea alcanzable.
+
+Esta lista es una **dirección de mejora pendiente de validar visualmente**, no una interfaz ya implementada ni un mockup aprobado. Reutilizar el intérprete, los nodos, entradas condicionales, acciones y exportación actuales; la mejora principal es cómo el autor los ve y modifica. Separar siempre **apariencia global**, **guion de la escena** y **acontecimientos/objetivos** con enlaces claros entre ellos.
+
+
+### Implementación posterior de la sección 15
+
+El 24 de noviembre se implementaron bloques con texto editable, selección y destinos visibles, referencia del escenario, accesos por interlocutor y momento, paleta de textos/decisiones/bifurcaciones, duplicación de bloque, arrastre de secuencias lineales, botones accesibles de orden, deshacer/rehacer local y prueba contextual desde el turno sin guardar. Guía y límites actuales: [Estudio de historias](ESTUDIO-DE-HISTORIAS.md#guion-visual--actualización-del-24-de-noviembre-de-2026).
+
+También se implementaron duplicación completa de conversaciones desde el índice y edición de condiciones/prioridad de momentos dentro del guion. Sigue pendiente el grafo de conexiones con cables arrastrables; los destinos actuales son botones y selectores explícitos. Las plantillas de juegos, duplicación de escenarios y parallax de la sección 14 no se implementan en esta entrega.
