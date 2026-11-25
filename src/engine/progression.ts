@@ -1,15 +1,17 @@
+import {grantKnowledge} from '../worlds/knowledge.ts';
 import {mechanicsFor,syncEquipmentFlags,type EquipmentState} from '../worlds/equipment.ts';
 import {answerFlag} from '../worlds/story-events.ts';
 import {meets} from '../worlds/narrative.ts';
 import {radians,type PlanetSave} from '../planet-model.ts';
 import {validId,type WorldDefinition,type Reward,type DialogueNode,type Choice} from '../worlds/schema.ts';
-export interface WorldProgress {equipment?:EquipmentState;dialogueRead?:Record<string,string[]>;dialogueStarts?:Record<string,string>;entryPortalScene:string|null;pendingArrival:string|null;mechanisms:Record<string,number>;introComplete:boolean;flags:string[];concepts:string[];memories:string[];completed:string[];answers:Record<string,string[]>;choices:Record<string,string>;reasons:Record<string,string>;cursors:Record<string,string>;planet:PlanetSave;interior:string|null;interiorX:number|null;trail:{interior:string|null;x:number|null}[]}
+export interface WorldProgress {interiorFacing?:1|-1;equipment?:EquipmentState;dialogueRead?:Record<string,string[]>;dialogueStarts?:Record<string,string>;entryPortalScene:string|null;pendingArrival:string|null;mechanisms:Record<string,number>;introComplete:boolean;flags:string[];concepts:string[];memories:string[];completed:string[];answers:Record<string,string[]>;choices:Record<string,string>;reasons:Record<string,string>;cursors:Record<string,string>;planet:PlanetSave;interior:string|null;interiorX:number|null;trail:{interior:string|null;x:number|null}[]}
 export function freshProgress(w:WorldDefinition):WorldProgress{return{entryPortalScene:null,pendingArrival:null,mechanisms:{},introComplete:w.role==='home',flags:[],concepts:[],memories:[],completed:[],answers:{},choices:{},reasons:{},cursors:{},planet:{version:1,angle:radians(w.surface.spawnAngle),collected:[],discovered:[],objects:structuredClone(w.surface.objects),returnAnchor:null},interior:null,interiorX:null,trail:[]}}
 export function restoreProgress(w:WorldDefinition,raw:unknown):WorldProgress{
  const p=freshProgress(w);if(!raw||typeof raw!=='object')return p;const s=raw as Partial<WorldProgress>;
  if(s.mechanisms&&typeof s.mechanisms==='object'&&!Array.isArray(s.mechanisms))for(const [id,y] of Object.entries(s.mechanisms))if(validId(id)&&Number.isFinite(y)&&y>=0&&y<=720)p.mechanisms[id]=y;
  if(s.entryPortalScene==='surface'||(validId(s.entryPortalScene)&&Object.hasOwn(w.interiors,s.entryPortalScene)))p.entryPortalScene=s.entryPortalScene;
  if(validId(s.pendingArrival))p.pendingArrival=s.pendingArrival;
+ if(s.interiorFacing===1||s.interiorFacing===-1)p.interiorFacing=s.interiorFacing;
  p.introComplete=w.role==='home'||s.introComplete===true;for(const k of ['flags','concepts','memories','completed'] as const)if(Array.isArray(s[k]))p[k]=[...new Set(s[k]!.filter(validId))];
  for(const k of ['choices','cursors','reasons'] as const)if(s[k]&&typeof s[k]==='object'&&!Array.isArray(s[k]))for(const [id,v] of Object.entries(s[k]!))if(validId(id)&&validId(v))p[k][id]=v;
  if(s.answers&&typeof s.answers==='object'&&!Array.isArray(s.answers))for(const [id,v] of Object.entries(s.answers))if(validId(id)&&Array.isArray(v))p.answers[id]=v.filter(validId);
@@ -19,7 +21,7 @@ export function restoreProgress(w:WorldDefinition,raw:unknown):WorldProgress{
  if(validId(s.interior)&&Object.hasOwn(w.interiors,s.interior))p.interior=s.interior;if(typeof s.interiorX==='number'&&Number.isFinite(s.interiorX)&&s.interiorX>=0&&s.interiorX<=10000)p.interiorX=s.interiorX;
  if(Array.isArray(s.trail))p.trail=s.trail.filter(v=>v&&((v.interior===null)||(validId(v.interior)&&Object.hasOwn(w.interiors,v.interior)))&&(v.x===null||(typeof v.x==='number'&&Number.isFinite(v.x)&&v.x>=0&&v.x<=10000))).slice(-100);
  if(s.equipment?.lamp&&typeof s.equipment.lamp.equipped==='boolean'&&typeof s.equipment.lamp.on==='boolean')p.equipment={lamp:{equipped:s.equipment.lamp.equipped,on:s.equipment.lamp.on}};
- syncEquipmentFlags(p,mechanicsFor(w));return p;
+ grantKnowledge(w,p);syncEquipmentFlags(p,mechanicsFor(w),p.interior??'surface');return p;
 }
 export function reward(p:WorldProgress,r:Reward|undefined){if(!r)return;for(const k of ['flags','concepts','memories'] as const)for(const id of r[k]??[])if(!p[k].includes(id))p[k].push(id)}
 export function dialogueNode(w:WorldDefinition,p:WorldProgress,id:string):{id:string;node:DialogueNode}{const d=w.dialogues[id];if(!d)throw Error('Diálogo inexistente.');const cursor=p.cursors[id];const nodeId=cursor&&d.nodes[cursor]?cursor:(d.entries?.find(e=>meets(p.flags,e))?.node??d.start);return{id:nodeId,node:d.nodes[nodeId]}}

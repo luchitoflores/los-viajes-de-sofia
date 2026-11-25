@@ -10,6 +10,7 @@ export class RoomLight {
   scene.add.image(0,0,key).setOrigin(0).setScrollFactor(0).setDepth(65);
   scene.events.once('shutdown',()=>{if(scene.textures.exists(key))scene.textures.remove(key)});
  }
+ configure(config:RoomLighting){this.config=config;this.last=0}
  private lampLight(){return this.lamp?.()??{on:!!this.config.lampFlag&&this.flags().includes(this.config.lampFlag),radius:250,intensity:1}}
  private inLamp(x:number,y:number,hero:{x:number;y:number}){const l=this.lampLight(),dx=x-hero.x,dy=y-(hero.y-65);return l.on&&(Math.hypot(dx,dy)<l.radius*(l.focused?.55:1)||(l.focused&&dx*(l.facing??1)>0&&Math.abs(dy)<Math.abs(dx)*.55+15&&Math.hypot(dx,dy)<l.radius*1.4))}
  private darkness(x:number){const c=this.config;return c.fadeTo?c.darkness+(c.fadeTo.darkness-c.darkness)*Math.max(0,Math.min(1,x/c.fadeTo.x)):c.darkness}

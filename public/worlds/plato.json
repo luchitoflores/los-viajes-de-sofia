@@ -312,6 +312,20 @@
         "frameRate": 3,
         "anchorY": 0.94
       }
+    },
+    "surface-portal": {
+      "src": "assets/cave-prisoners/surface-portal-blue.png",
+      "width": 150,
+      "height": 225,
+      "kind": "door",
+      "label": "Portal azul · regreso a la superficie",
+      "animation": {
+        "columns": 2,
+        "rows": 2,
+        "frames": 4,
+        "frameRate": 3,
+        "anchorY": 1
+      }
     }
   },
   "terrain": "terrain",
@@ -820,7 +834,7 @@
           "id": "recuperar-lampara",
           "from": 0,
           "to": 1280,
-          "behavior": "encender-lampara",
+          "behavior": "recuperar-equipo",
           "excludes": [
             "lampara_encendida"
           ]
@@ -1155,8 +1169,10 @@
           "x": 1190,
           "y": 560,
           "label": "Salir de la caverna al planeta",
-          "integrated": true,
-          "behavior": "salida-planeta"
+          "integrated": false,
+          "behavior": "salida-planeta",
+          "asset": "surface-portal",
+          "tooltip": "Portal a la superficie. Se abre cuando completas la misión de la caverna."
         },
         {
           "id": "platon-salida",
@@ -1476,6 +1492,10 @@
               "lampara_encendida"
             ]
           }
+        },
+        {
+          "type": "equipment",
+          "command": "turnOn"
         }
       ]
     },
@@ -1647,6 +1667,18 @@
           "text": "Un espacio para leer y conversar. Puedes volver a la nave cuando quieras; tus descubrimientos y el avance de la caverna quedan guardados."
         }
       ]
+    },
+    "recuperar-equipo": {
+      "actions": [
+        {
+          "type": "record",
+          "reward": {
+            "flags": [
+              "lampara_encendida"
+            ]
+          }
+        }
+      ]
     }
   },
   "dialogues": {
@@ -1673,7 +1705,7 @@
       "nodes": {
         "oscuro": {
           "speaker": "Sofía",
-          "text": "Aquí casi no se ve nada... ¿Quiénes vivirán en un lugar tan oscuro? Enciendo mi lámpara para investigar esas voces.",
+          "text": "Aquí casi no se ve nada... ¿Quiénes vivirán en un lugar tan oscuro? Tengo mi linterna. Puedo encenderla con L o tocarla para investigar esas voces.",
           "choices": [
             {
               "id": "seguir",
@@ -2451,7 +2483,12 @@
   },
   "activities": {},
   "concepts": {},
-  "memories": {},
+  "memories": {
+    "pergamino-platon": {
+      "name": "Platón · Pergamino de conocimiento",
+      "text": "Este pergamino reúne los conocimientos descubiertos en sus misiones."
+    }
+  },
   "missions": [
     {
       "flag": "lampara_encendida",
@@ -2539,5 +2576,31 @@
       ]
     },
     "physicalDoors": true
-  }
+  },
+  "authorProfile": {
+    "life": "Platón fue un filósofo griego de Atenas, discípulo de Sócrates y fundador de la Academia. Escribió diálogos en los que examina cómo vivir, conocer y organizar una ciudad justa.",
+    "works": [
+      "República: justicia, educación y alegoría de la caverna",
+      "Apología de Sócrates",
+      "Fedón",
+      "Banquete"
+    ],
+    "thought": "Explora la diferencia entre apariencia y conocimiento, la búsqueda de razones y las Formas inteligibles. En la caverna presenta la educación como una transformación de la mirada: no basta ver sombras ni recibir respuestas sin examinarlas."
+  },
+  "knowledgeScrolls": [
+    {
+      "id": "pergamino-platon",
+      "title": "Platón · Pergamino de conocimiento",
+      "sections": [
+        {
+          "id": "caverna",
+          "title": "La alegoría de la caverna",
+          "requires": [
+            "aventura_platon_completada"
+          ],
+          "text": "Las sombras representan una manera limitada de comprender la realidad. Investigar su origen permite distinguir la proyección, el objeto y la fuente que la produce. Aprender exige revisar lo familiar y orientar la mirada hacia mejores razones. Salir no es solo cambiar de lugar: es transformar cómo comprendemos. Volver plantea cómo compartir ese aprendizaje con quienes todavía confían en las sombras. El recorrido y las decisiones del compañero son una recreación didáctica inspirada en el libro VII de República, no una cita literal de Platón."
+        }
+      ]
+    }
+  ]
 }

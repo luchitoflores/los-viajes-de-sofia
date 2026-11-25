@@ -1,5 +1,6 @@
 import type {WorldDefinition} from './schema';
 import {restorePrisonerPresentation} from './prisoner-presentation.ts';
+import {restoreCaveTravel} from './cave-travel-presentation.ts';
 
 /** Repair known prototype links while retaining authored scenes and progress IDs. */
 export function restorePlatoContinuity(w:WorldDefinition):WorldDefinition{
@@ -36,5 +37,5 @@ export function restorePlatoContinuity(w:WorldDefinition):WorldDefinition{
   Object.assign(temple,{label:'Entrar al templo del ágora',interaction:'door',to:'library',behavior:'entrar-agora',tooltip:'Entra al ágora para leer y conversar con Platón. No necesitas terminar la caverna.',hitWidth:180,hitHeight:220});
  }
  for(const mission of w.missions)mission.goal=mission.goal.replace('La nave podrá partir.','Se completará la aventura y se abrirá la siguiente etapa de Historia.');
- return restorePrisonerPresentation(w);
+ return restoreCaveTravel(restorePrisonerPresentation(w));
 }

@@ -1,0 +1,46 @@
+{
+  "format": "sofia-collections",
+  "version": 1,
+  "worlds": {
+    "plato": {
+      "authorProfile": {
+        "life": "Platón fue un filósofo griego de Atenas, discípulo de Sócrates y fundador de la Academia. Escribió diálogos en los que examina cómo vivir, conocer y organizar una ciudad justa.",
+        "works": [
+          "República: justicia, educación y alegoría de la caverna",
+          "Apología de Sócrates",
+          "Fedón",
+          "Banquete"
+        ],
+        "thought": "Explora la diferencia entre apariencia y conocimiento, la búsqueda de razones y las Formas inteligibles. En la caverna presenta la educación como una transformación de la mirada: no basta ver sombras ni recibir respuestas sin examinarlas."
+      },
+      "knowledgeScrolls": [
+        {
+          "id": "pergamino-platon",
+          "title": "Platón · Pergamino de conocimiento",
+          "sections": [
+            {
+              "id": "caverna",
+              "title": "La alegoría de la caverna",
+              "requires": [
+                "aventura_platon_completada"
+              ],
+              "text": "Las sombras representan una manera limitada de comprender la realidad. Investigar su origen permite distinguir la proyección, el objeto y la fuente que la produce. Aprender exige revisar lo familiar y orientar la mirada hacia mejores razones. Salir no es solo cambiar de lugar: es transformar cómo comprendemos. Volver plantea cómo compartir ese aprendizaje con quienes todavía confían en las sombras. El recorrido y las decisiones del compañero son una recreación didáctica inspirada en el libro VII de República, no una cita literal de Platón."
+            }
+          ]
+        }
+      ]
+    },
+    "sartre": {
+      "authorProfile": {
+        "life": "Jean-Paul Sartre (1905–1980) fue un filósofo y escritor francés. Desarrolló su filosofía mediante ensayos, novelas y teatro, y participó en los debates intelectuales y políticos de su época.",
+        "works": [
+          "El ser y la nada",
+          "El existencialismo es un humanismo",
+          "La náusea",
+          "A puerta cerrada"
+        ],
+        "thought": "Analiza la conciencia, la libertad y la responsabilidad en situaciones concretas. La existencia precede a la esencia significa que una persona no llega con una definición acabada de lo que debe ser. La mala fe aparece cuando intenta tratarse como una cosa o un papel fijo para eludir su responsabilidad. Elegir siempre ocurre dentro de condiciones y relaciones con otras personas."
+      }
+    }
+  }
+}

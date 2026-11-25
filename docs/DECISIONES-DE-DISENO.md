@@ -333,3 +333,17 @@ La llegada queda libre de diálogos automáticos. Sofía desembarca cerca del an
 ## Historia: mapa antes del aterrizaje
 
 Al empezar, reanudar o reiniciar Historia aparece primero el mapa. El jugador selecciona un planeta sin candado y observa a Sofía en su nave, el descenso y el desembarque antes de explorar. La superficie precargada permanece oculta durante esa selección. Esta llegada reutiliza el viaje común y conserva una sola nave. Las decisiones y descubrimientos se guardan; la entrada desde el mapa vuelve a la superficie por aterrizaje. Libre mantiene su continuación en la posición guardada.
+
+
+## Continuidad, edición y colecciones — 24 de noviembre de 2026
+
+- Colección de autores global por partida: retratos de conocidos, incógnitas de pendientes y fichas de vida, obras y pensamiento.
+- Un pergamino por tema/mundo con apartados desbloqueados por misión; recuperar premios de partidas anteriores sin reiniciar.
+- Linterna inicialmente apagada y disponible por escenas, de momento solo caverna. Conservar decisiones explícitas guardadas.
+- Llegadas y compañero orientados según entrada; vuelos de ida y vuelta según orden de planetas.
+- Suelo físico y anclaje de imagen independientes; 560 es valor inicial, no límite inferior obligatorio.
+- Salto opcional en interiores mediante teclado o gesto; no en superficies radiales.
+- Portal azul de salida habilitado al completar la aventura; conserva regreso por puertas anteriores.
+- Cerrar edición sin cambios vuelve sin recargar; con cambios permite guardar, descartar o cancelar.
+
+Implementación y pruebas: [COLECCIONES-Y-CONTINUIDAD.md](COLECCIONES-Y-CONTINUIDAD.md).

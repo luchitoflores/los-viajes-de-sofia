@@ -170,3 +170,5 @@ body:has(#veil.visible) #context-controls,body.editing #context-controls,body.sh
 #context-controls #context-primary[hidden],#context-controls #context-lamp[hidden]{display:none}
 @media(max-height:500px){#context-controls{transform:scale(.86);transform-origin:right bottom}}
 @media(pointer:fine){#context-controls{transform:scale(.8);transform-origin:right bottom}}
+
+.philosopher-album{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:16px;padding:15px 0}.philosopher-album button{display:flex;align-items:center;flex-direction:column;gap:9px}.philosopher-album img,.unknown-author span{width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid #dec085;background:#152337}.unknown-author{text-align:center;display:flex;flex-direction:column;align-items:center;gap:9px}.unknown-author span{display:grid;place-items:center;font:42px Georgia;color:#adbbca}.knowledge-card{display:block;width:100%;text-align:left;margin:12px 0}.knowledge-card small{display:block;margin-top:7px}

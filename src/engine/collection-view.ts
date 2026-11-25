@@ -1,0 +1,16 @@
+import {escape} from './content-player';
+import {grantKnowledge,scrollSections} from '../worlds/knowledge';
+import type {WorldDefinition} from '../worlds/schema';
+interface Progress {introComplete?:boolean;flags?:string[];memories?:string[];concepts?:string[]}
+export function collectionView(worlds:WorldDefinition[],kind:string,ports:{progress:(w:WorldDefinition)=>Progress;met:(w:WorldDefinition)=>boolean;show:(s:string)=>void;close:()=>void}){
+ const shell=(title:string,content:string)=>{ports.show(`<h2>${escape(title)}</h2><div class="row"><button data-collection-tab="philosophers">Filósofos</button><button data-collection-tab="memories">Pergaminos</button><button data-collection-tab="concepts">Conceptos</button></div>${content}<button id="collection-close">Cerrar colección</button>`);document.querySelectorAll<HTMLButtonElement>('[data-collection-tab]').forEach(b=>b.onclick=()=>render(b.dataset.collectionTab!));document.getElementById('collection-close')!.onclick=ports.close};
+ const render=(tab:string)=>{
+  if(tab==='philosophers'){
+   const authors=worlds.filter(w=>w.role!=='home');shell('Colección de filósofos',`<div class="philosopher-album">${authors.map(w=>ports.met(w)?`<button data-author="${w.id}"><img src="${escape(w.philosopher.portrait)}" alt="${escape(w.philosopher.name)}"><b>${escape(w.philosopher.name)}</b></button>`:'<div class="unknown-author" aria-label="Filósofo por conocer"><span>?</span><small>Por conocer</small></div>').join('')}</div>`);
+   document.querySelectorAll<HTMLButtonElement>('[data-author]').forEach(b=>b.onclick=()=>{const w=authors.find(w=>w.id===b.dataset.author)!,p=w.authorProfile;shell(w.philosopher.name,`<img class="portrait" src="${escape(w.philosopher.portrait)}" alt="${escape(w.philosopher.name)}">${p?`<h3>Vida y biografía</h3><p>${escape(p.life)}</p><h3>Obras</h3><ul>${p.works.map(t=>`<li>${escape(t)}</li>`).join('')}</ul><h3>Pensamiento</h3><p>${escape(p.thought)}</p>`:`<p>${escape(w.summary)}</p><p>La biografía y las obras de esta ficha están pendientes de ampliar.</p>`}`)});return;
+  }
+  const entries=worlds.flatMap(w=>{const p=ports.progress(w),flags=p.flags??[],memories=[...(p.memories??[])];grantKnowledge(w,{flags,memories});const ids=tab==='concepts'?p.concepts??[]:memories,table=tab==='concepts'?w.concepts:w.memories;return ids.filter(id=>table[id]).map(id=>({w,id,entry:table[id],flags}))});
+  shell(tab==='concepts'?'Conceptos descubiertos':'Pergaminos de conocimiento',entries.length?entries.map(({w,id,entry,flags},i)=>`<button class="knowledge-card" data-knowledge="${i}"><b>${escape(entry.name)}</b><small>${escape(w.philosopher.name)}${w.knowledgeScrolls?.some(s=>s.id===id)?' · '+scrollSections(w,flags,id).length+'/'+w.knowledgeScrolls.find(s=>s.id===id)!.sections.length+' apartados descubiertos':''}</small></button>`).join(''):'<p>Todavía no has obtenido pergaminos en esta partida. Completa misiones para registrar lo aprendido.</p>');
+  document.querySelectorAll<HTMLButtonElement>('[data-knowledge]').forEach(b=>b.onclick=()=>{const {w,id,entry,flags}=entries[Number(b.dataset.knowledge)],sections=scrollSections(w,flags,id);shell(entry.name,sections.length?sections.map(s=>`<section><h3>${escape(s.title)}</h3><p>${escape(s.text)}</p></section>`).join(''):`<p>${escape(entry.text)}</p>`)});
+ };render(kind==='worlds'?'philosophers':kind);
+}

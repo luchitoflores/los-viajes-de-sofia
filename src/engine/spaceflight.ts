@@ -37,30 +37,30 @@ export async function dockShip(scene:Phaser.Scene,view:Phaser.GameObjects.Image,
  view.setData('flightPhase',landing?'parked':'departed');
 }
 
-interface FlightData {fromMap?:boolean;shipSource?:string;source:string;destination:string;name:string;arrive:(reveal:()=>void)=>Promise<void>;done:(error?:unknown)=>void}
+interface FlightData {direction?:1|-1;fromMap?:boolean;shipSource?:string;source:string;destination:string;name:string;arrive:(reveal:()=>void)=>Promise<void>;done:(error?:unknown)=>void}
 /** Escena superpuesta: el viaje no destruye el mundo de origen antes de cargar el destino. */
 export class SpaceflightScene extends Phaser.Scene {
- phase='idle';private flightData!:FlightData;
+ direction:1|-1=1;phase='idle';private flightData!:FlightData;
  constructor(){super('Spaceflight')}
- init(data:FlightData){this.flightData=data;this.phase='launch'}
+ init(data:FlightData){this.flightData=data;this.direction=data.direction??1;this.phase='launch'}
  preload(){if(this.textures.exists('flight-ship-current'))this.textures.remove('flight-ship-current');this.load.image('flight-ship-current',this.flightData.shipSource??'assets/polis-ship.png');for(const file of new Set(['galaxy.jpg','polis-ship.png','av_sofia.png',this.flightData.source,this.flightData.destination]))if(!this.textures.exists(file))this.load.image(file,file.startsWith('data:')?file:'assets/'+file)}
  create(){this.tweens.timeScale=1;this.cameras.main.setVisible(true);this.scene.bringToTop();const flight=this.run();document.body.classList.remove('story-selecting');flight.catch(e=>{this.flightData.done(e);this.scene.stop()})}
  private async run(){
-  const w=this.scale.width,h=this.scale.height;this.cameras.main.setViewport(0,0,w,h);
+  const w=this.scale.width,h=this.scale.height,dir=this.direction,x=(fraction:number)=>w*(dir===1?fraction:1-fraction);this.cameras.main.setViewport(0,0,w,h);
   this.add.image(w/2,h/2,'galaxy.jpg').setDisplaySize(w,h);
-  const source=this.add.image(w*.13,h*.91,planetTexture(this,this.flightData.source)).setDisplaySize(h*.72,h*.72).setVisible(!this.flightData.fromMap);
-  const target=this.add.image(w*1.2,h*.66,planetTexture(this,this.flightData.destination)).setDisplaySize(h*.14,h*.14);
-  const ship=this.add.container(w*.2,h*.55);ship.add(this.add.image(0,0,'flight-ship-current').setOrigin(.5,1).setDisplaySize(100,126));
+  const source=this.add.image(x(.13),h*.91,planetTexture(this,this.flightData.source)).setDisplaySize(h*.72,h*.72).setVisible(!this.flightData.fromMap);
+  const target=this.add.image(x(1.2),h*.66,planetTexture(this,this.flightData.destination)).setDisplaySize(h*.14,h*.14);
+  const ship=this.add.container(x(.2),h*.55).setScale(dir,1);ship.add(this.add.image(0,0,'flight-ship-current').setOrigin(.5,1).setDisplaySize(100,126));
   const pilot=pilotAt(this,{x:0,y:0,rotation:0,width:100,height:126});ship.add(pilot);
   const label=this.add.text(w/2,36,this.flightData.fromMap?'Viajando hacia '+this.flightData.name+'…':'Despegando…',{fontFamily:'Georgia',fontSize:'22px',color:'#fff0d2',stroke:'#162238',strokeThickness:4}).setOrigin(.5,0);
   const skip=this.add.text(w-20,h-28,'Omitir animación',{fontFamily:'Arial',fontSize:'15px',color:'#fff0d2',backgroundColor:'#152338'}).setOrigin(1).setPadding(12).setInteractive({useHandCursor:true});
   let fast=false;skip.on('pointerup',()=>{if(fast)return;fast=true;this.tweens.timeScale=12;skip.setVisible(false)});
-  await tween(this,{targets:ship,x:w*.44,y:h*.46,angle:14,duration:duration(900),ease:'Sine.easeIn'});
+  await tween(this,{targets:ship,x:x(.44),y:h*.46,angle:14*dir,duration:duration(900),ease:'Sine.easeIn'});
   this.phase='cruise';label.setText('Rumbo a '+this.flightData.name);
-  this.tweens.add({targets:source,x:-h*.5,scaleX:source.scaleX*.35,scaleY:source.scaleY*.35,duration:duration(1800),ease:'Sine.easeInOut'});
-  await Promise.all([tween(this,{targets:target,x:w*.85,y:h*.83,displayWidth:h*.7,displayHeight:h*.7,duration:duration(1800),ease:'Sine.easeInOut'}),tween(this,{targets:ship,x:w*.65,y:h*.42,angle:-8,duration:duration(1800),ease:'Sine.easeInOut'})]);
+  this.tweens.add({targets:source,x:dir===1?-h*.5:w+h*.5,scaleX:source.scaleX*.35,scaleY:source.scaleY*.35,duration:duration(1800),ease:'Sine.easeInOut'});
+  await Promise.all([tween(this,{targets:target,x:x(.85),y:h*.83,displayWidth:h*.7,displayHeight:h*.7,duration:duration(1800),ease:'Sine.easeInOut'}),tween(this,{targets:ship,x:x(.65),y:h*.42,angle:-8*dir,duration:duration(1800),ease:'Sine.easeInOut'})]);
   this.phase='landing';label.setText('Aterrizando en '+this.flightData.name+'…');skip.setVisible(false);
-  await tween(this,{targets:ship,x:w*.78,y:h*.56,angle:0,duration:duration(800),ease:'Sine.easeOut'});
+  await tween(this,{targets:ship,x:x(.78),y:h*.56,angle:0,duration:duration(800),ease:'Sine.easeOut'});
   await this.flightData.arrive(()=>{this.cameras.main.setVisible(false);document.body.classList.remove('ship-in-flight');document.body.classList.add('ship-arriving')});this.phase='complete';this.flightData.done();this.scene.stop();
  }
 }

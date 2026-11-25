@@ -14,7 +14,7 @@ const W=960,H=540,$=id=>document.getElementById(id);
 const touch={up:false,down:false,left:false,right:false,fire:false,jump:false,run:false,crouch:false};
 const stick={x:0,y:0};let profile=structuredClone(explorationProfile);const toolConfig=structuredClone(equipmentPreset),toolProgress={flags:[toolConfig.lamp.flag]};
 const settings={...DEFAULT_SETTINGS};
-let activeScene=null,feedbackTimer=null,avatarKind='ship';
+let activeScene=null,feedbackTimer=null,avatarKind='foot';
 const ASSETS={
   ship:'polis-ship.png',galaxy:'galaxy.jpg',cave:'plato-03_fuego_y_sombras.png',
   horse:'shadow_horse.webp',tree:'shadow_tree.webp',warrior:'shadow_warrior.webp',
@@ -95,9 +95,9 @@ class MechanicsPlayground extends Phaser.Scene {
   controlsVisibility(){
     const foot=avatarKind==='foot',movement=this.modeId==='movement';
     document.querySelector('[data-dir=fire]').hidden=foot&&movement;
-    document.querySelector('[data-dir=jump]').hidden=!foot||!profile.jump;
-    document.querySelector('[data-dir=run]').hidden=!foot||!profile.run;
-    document.querySelector('[data-dir=crouch]').hidden=!foot||!profile.crouch;
+    document.querySelector('[data-dir=jump]').hidden=false;document.querySelector('[data-dir=jump]').disabled=!foot||!profile.jump;document.querySelector('[data-dir=jump]').title=foot?'Activar o desactivar desde Capacidades':'Selecciona Sofía a pie para saltar';
+    document.querySelector('[data-dir=run]').hidden=false;document.querySelector('[data-dir=run]').disabled=!foot||!profile.run;
+    document.querySelector('[data-dir=crouch]').hidden=false;document.querySelector('[data-dir=crouch]').disabled=!foot||!profile.crouch;
     document.getElementById('tool-light').hidden=!foot||!movement;
     document.querySelector('.right-actions').classList.toggle('movement-controls',foot&&movement);
   }

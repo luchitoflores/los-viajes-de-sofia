@@ -5,9 +5,9 @@ import {mechanicsFor,commandLamp,lampState,syncEquipmentFlags,equipmentPreset} f
 import {parseWorld} from '../src/worlds/schema.ts';
 import {freshProgress,restoreProgress} from '../src/engine/progression.ts';
 const world=()=>parseWorld(JSON.parse(fs.readFileSync('public/worlds/plato.json','utf8')));
-test('Legacy lamp milestone migrates to lit equipment; manual off survives save without erasing narrative progress',()=>{
+test('Legacy lamp milestone defaults to off equipment; manual state survives save without erasing narrative progress',()=>{
  const w=world(),c=mechanicsFor(w),p=freshProgress(w);p.flags.push('lampara_encendida','prisionero_liberado');
- assert.equal(lampState(p,c).on,true);assert.ok(commandLamp(p,c,'turnOff'));assert.ok(p.flags.includes('lampara_encendida'));assert.ok(p.flags.includes('prisionero_liberado'));
+ assert.equal(lampState(p,c).on,false);assert.ok(commandLamp(p,c,'turnOff'));assert.ok(p.flags.includes('lampara_encendida'));assert.ok(p.flags.includes('prisionero_liberado'));
  const restored=restoreProgress(w,JSON.parse(JSON.stringify(p)));assert.equal(lampState(restored,c).on,false);assert.equal(lampState(restored,c).equipped,true);
  assert.ok(commandLamp(restored,c,'unequip'));assert.equal(lampState(restored,c).equipped,false);assert.ok(commandLamp(restored,c,'toggle'));assert.equal(lampState(restored,c).on,true);
 });
