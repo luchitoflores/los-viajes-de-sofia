@@ -406,7 +406,7 @@
       {
         "id": "scroll",
         "kind": "scroll",
-        "label": "scroll",
+        "label": "Pergamino de preguntas",
         "angleDeg": 85,
         "height": 0,
         "scale": 1,
@@ -505,7 +505,7 @@
       {
         "id": "vase",
         "kind": "vase",
-        "label": "vase",
+        "label": "Ánfora de la Polis",
         "angleDeg": 234,
         "height": 0,
         "scale": 1,
@@ -554,7 +554,7 @@
       {
         "id": "scroll-return",
         "kind": "scroll",
-        "label": "scroll",
+        "label": "Pergamino del regreso",
         "angleDeg": 312,
         "height": 0,
         "scale": 1,

@@ -37,13 +37,13 @@ export async function dockShip(scene:Phaser.Scene,view:Phaser.GameObjects.Image,
  view.setData('flightPhase',landing?'parked':'departed');
 }
 
-interface FlightData {direction?:1|-1;fromMap?:boolean;shipSource?:string;source:string;destination:string;name:string;arrive:(reveal:()=>void)=>Promise<void>;done:(error?:unknown)=>void}
+interface FlightData {via?:{id:string;name:string;image:string}[];direction?:1|-1;fromMap?:boolean;shipSource?:string;source:string;destination:string;name:string;arrive:(reveal:()=>void)=>Promise<void>;done:(error?:unknown)=>void}
 /** Escena superpuesta: el viaje no destruye el mundo de origen antes de cargar el destino. */
 export class SpaceflightScene extends Phaser.Scene {
- direction:1|-1=1;phase='idle';private flightData!:FlightData;
+ direction:1|-1=1;phase='idle';currentStop:string|null=null;overflown:string[]=[];private flightData!:FlightData;
  constructor(){super('Spaceflight')}
- init(data:FlightData){this.flightData=data;this.direction=data.direction??1;this.phase='launch'}
- preload(){if(this.textures.exists('flight-ship-current'))this.textures.remove('flight-ship-current');this.load.image('flight-ship-current',this.flightData.shipSource??'assets/polis-ship.png');for(const file of new Set(['galaxy.jpg','polis-ship.png','av_sofia.png',this.flightData.source,this.flightData.destination]))if(!this.textures.exists(file))this.load.image(file,file.startsWith('data:')?file:'assets/'+file)}
+ init(data:FlightData){this.flightData=data;this.direction=data.direction??1;this.phase='launch';this.currentStop=null;this.overflown=[]}
+ preload(){if(this.textures.exists('flight-ship-current'))this.textures.remove('flight-ship-current');this.load.image('flight-ship-current',this.flightData.shipSource??'assets/polis-ship.png');for(const file of new Set(['galaxy.jpg','polis-ship.png','av_sofia.png',this.flightData.source,this.flightData.destination,...(this.flightData.via??[]).map(p=>p.image)]))if(!this.textures.exists(file))this.load.image(file,file.startsWith('data:')?file:'assets/'+file)}
  create(){this.tweens.timeScale=1;this.cameras.main.setVisible(true);this.scene.bringToTop();const flight=this.run();document.body.classList.remove('story-selecting');flight.catch(e=>{this.flightData.done(e);this.scene.stop()})}
  private async run(){
   const w=this.scale.width,h=this.scale.height,dir=this.direction,x=(fraction:number)=>w*(dir===1?fraction:1-fraction);this.cameras.main.setViewport(0,0,w,h);
@@ -58,6 +58,15 @@ export class SpaceflightScene extends Phaser.Scene {
   await tween(this,{targets:ship,x:x(.44),y:h*.46,angle:14*dir,duration:duration(900),ease:'Sine.easeIn'});
   this.phase='cruise';label.setText('Rumbo a '+this.flightData.name);
   this.tweens.add({targets:source,x:dir===1?-h*.5:w+h*.5,scaleX:source.scaleX*.35,scaleY:source.scaleY*.35,duration:duration(1800),ease:'Sine.easeInOut'});
+  const stops=this.flightData.via??[];
+  for(const stop of stops){
+   this.phase='flyover';this.currentStop=stop.id;label.setText('Sobrevolando '+stop.name+' · Rumbo a '+this.flightData.name);
+   const planet=this.add.image(x(1.2),h*.91,planetTexture(this,stop.image)).setDisplaySize(h*.46,h*.46).setData('flyover-world',stop.id);
+   // Scenery only: never loads, visits or unlocks an intermediate world.
+   await tween(this,{targets:planet,x:x(-.2),duration:duration(Math.max(500,Math.min(1300,6000/stops.length))),ease:'Linear'});
+   this.overflown.push(stop.id);planet.destroy();
+  }
+  this.currentStop=null;this.phase='cruise';label.setText('Rumbo a '+this.flightData.name);
   await Promise.all([tween(this,{targets:target,x:x(.85),y:h*.83,displayWidth:h*.7,displayHeight:h*.7,duration:duration(1800),ease:'Sine.easeInOut'}),tween(this,{targets:ship,x:x(.65),y:h*.42,angle:-8*dir,duration:duration(1800),ease:'Sine.easeInOut'})]);
   this.phase='landing';label.setText('Aterrizando en '+this.flightData.name+'…');skip.setVisible(false);
   await tween(this,{targets:ship,x:x(.78),y:h*.56,angle:0,duration:duration(800),ease:'Sine.easeOut'});

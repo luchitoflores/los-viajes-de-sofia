@@ -347,3 +347,10 @@ Al empezar, reanudar o reiniciar Historia aparece primero el mapa. El jugador se
 - Cerrar edición sin cambios vuelve sin recargar; con cambios permite guardar, descartar o cancelar.
 
 Implementación y pruebas: [COLECCIONES-Y-CONTINUIDAD.md](COLECCIONES-Y-CONTINUIDAD.md).
+
+## Sobrevuelo e inventario — 24 de noviembre de 2026
+
+- El catálogo define el orden espacial compartido del mapa y los vuelos, editable desde Mundos y escenas. Tierra permanece primero; los requisitos de Historia se conservan separados.
+- Viajar a un destino lejano muestra los planetas intermedios, en orden inverso al volver, sin visitarlos ni desbloquearlos. Un mundo insertado en ese orden se incorpora al trayecto automáticamente.
+- El inventario reúne los objetos realmente recogidos de la partida, con procedencia y significado editable. Recuperar los ID ya guardados; conservar separados objetos, conceptos y pergaminos de conocimiento.
+- Guía: [VIAJES-E-INVENTARIO.md](VIAJES-E-INVENTARIO.md).

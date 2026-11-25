@@ -1,0 +1,5 @@
+import {escape} from './content-player';
+import type {Universe} from './universe';
+export function travelOrderEditor(root:HTMLElement,u:Universe){
+ const render=()=>{const order=u.travelOrder();root.innerHTML=`<details><summary>Orden de planetas del viaje</summary><p>La nave sobrevuela los mundos intermedios sin aterrizar. Este orden no cambia los requisitos de Historia.</p>${order.map((id,i)=>{const p=u.catalog!.planets.find(p=>p.id===id)!;return`<div class="core-row"><span>${i+1}. ${escape(p.name)}</span><button type="button" data-reorder="${id}" data-step="-1" title="Mover antes" aria-label="Mover ${escape(p.name)} antes" ${i<2?'disabled':''}>↑</button><button type="button" data-reorder="${id}" data-step="1" title="Mover después" aria-label="Mover ${escape(p.name)} después" ${i===0||i===order.length-1?'disabled':''}>↓</button></div>`}).join('')}</details>`;root.querySelectorAll<HTMLButtonElement>('[data-reorder]').forEach(b=>b.onclick=()=>{u.reorderPlanet(b.dataset.reorder!,Number(b.dataset.step) as 1|-1);render()})};render();
+}
