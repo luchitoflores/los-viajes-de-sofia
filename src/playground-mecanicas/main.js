@@ -1,3 +1,5 @@
+import {PhaserCombat} from '../gameplay/phaser/combat';
+import combatExamples from '../../public/presets/combat-lab.json';
 import {shotReady,advanceProjectile,insideTarget} from '../gameplay/projectiles.ts';
 import {controlIcon} from '../gameplay/control-icons.ts';
 import {RoomLight} from '../engine/room-lighting.ts';
@@ -18,7 +20,7 @@ let activeScene=null,feedbackTimer=null,avatarKind='foot';
 const ASSETS={
   ship:'polis-ship.png',galaxy:'galaxy.jpg',cave:'plato-03_fuego_y_sombras.png',
   horse:'shadow_horse.webp',tree:'shadow_tree.webp',warrior:'shadow_warrior.webp',
-  vase:'polis-vase.png'
+  vase:'polis-vase.png',warden:'cave-warden.png'
 };
 
 function notice(result){
@@ -103,7 +105,7 @@ class MechanicsPlayground extends Phaser.Scene {
   }
   setMode(id){
     if(!MODES[id])return;
-    this.modeId=id;this.mode=MODES[id];this.sequence=makeSequence(id);
+    this.combat?.destroy();this.combat=null;this.combatPaused=false;this.modeId=id;this.mode=MODES[id];this.sequence=makeSequence(id);
     this.index=0;this.score=0;this.hits=0;this.elapsed=0;this.lastShot=-10000;
     for(const obj of [...this.targets,...this.bullets])obj.view.destroy();
     this.targets=[];this.bullets=[];
@@ -111,12 +113,21 @@ class MechanicsPlayground extends Phaser.Scene {
     if(this.shade)this.shade.destroy();
     this.background=this.add.image(W/2,H/2,this.mode.background).setDisplaySize(W,H).setDepth(-40);
     this.shade=this.add.rectangle(W/2,H/2,W,H,0x0a1130,id==='shadows'?.37:.2).setDepth(-39);
+    if(id==='combat'){
+     const flags=[],records={};this.combat=new PhaserCombat(this,combatExamples,{
+      hero:()=>({x:this.ship.x,y:this.ship.y,facing:this.ship.flipX?-1:1}),flags:()=>flags,record:id=>records[id],asset:id=>id,blocked:()=>this.combatPaused,editing:()=>false,floorAt:()=>H-80,canMove:()=>true,
+      push:dx=>{this.actor.x=clamp(this.actor.x+dx,170,W-210)},checkpoint:x=>{this.actor=createActor(x,H-80)},approach:x=>{this.actor.x=clamp(x-100,170,W-210)},
+      begin:(id,ready)=>{records[id]={state:'active',attempts:0};ready()},victory:id=>{records[id]={state:'defeated',attempts:records[id]?.attempts??0};flags.push(combatExamples.find(c=>c.id===id).victoryFlag);$('learning-log').textContent='Enemigo vencido. Camina hacia la derecha para probar el siguiente aspecto.'},
+      defeat:(id,retry)=>{this.combatPaused=true;const b=document.createElement('button');b.textContent='Reintentar encuentro';b.id='lab-combat-retry';$('learning-log').replaceChildren(b);b.onclick=()=>{records[id]={state:'active',attempts:(records[id]?.attempts??0)+1};this.combatPaused=false;retry();b.remove()}}
+     });
+    }
     modeInfo(id);this.controlsVisibility();this.updateHud();
     $('learning-log').textContent=this.mode.instruction;
     $('feedback').classList.remove('show');clearTimeout(feedbackTimer);
   }
   updateHud(){$('points').textContent=String(this.score);$('hits').textContent=String(this.hits)}
   fire(){
+    if(this.combat){this.combat.attack();return}
     if(!shotReady(this.time.now,this.lastShot,settings.cadence))return;
     this.lastShot=this.time.now;
     const light=this.mode.projectile==='light';
@@ -172,7 +183,7 @@ class MechanicsPlayground extends Phaser.Scene {
     const typing=document.activeElement?.matches('input,textarea,select');
     const x=typing?0:stick.x||Number(k.right.isDown||k.d.isDown||touch.right)-Number(k.left.isDown||k.a.isDown||touch.left);
     const y=typing?0:stick.y||Number(k.down.isDown||k.s.isDown||touch.down)-Number(k.up.isDown||k.w.isDown||touch.up);
-    const direction=normalizedAxis(x,y);
+    const direction=normalizedAxis(x,y);if(this.combatPaused){this.combat?.update(dt);return}
     if(avatarKind==='foot'){
       stepActor(this.actor,{axis:x,run:!typing&&(k.run.isDown||touch.run),crouch:!typing&&(k.crouch.isDown||k.down.isDown||touch.crouch),jump:!typing&&(k.up.isDown||k.w.isDown||touch.jump||this.modeId==='movement'&&k.fire.isDown)},profile,dt,{minX:170,maxX:W-210,floorAt:()=>H-80});
       this.ship.setPosition(this.actor.x,this.actor.y).setAngle(0).setFlipX(this.actor.facing<0);
@@ -189,6 +200,7 @@ class MechanicsPlayground extends Phaser.Scene {
     }
     this.labLighting.darkness=avatarKind==='foot'&&this.modeId==='movement'?.72:0;this.roomLight.update(time,this.ship);
     if(!typing&&(k.fire.isDown||touch.fire)&&this.modeId!=='movement')this.fire();
+    if(this.combat){this.combat.update(dt);return}
     this.elapsed+=delta;
     if(this.elapsed>=settings.spawnInterval){this.elapsed=0;if(this.sequence.length)this.spawnTarget()}
     for(const bullet of [...this.bullets]){

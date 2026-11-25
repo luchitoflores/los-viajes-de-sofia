@@ -13,7 +13,7 @@ test('Arrivals face into the room and flights reverse in the same ordered univer
  const w=world(),p=freshProgress(w);p.interior='salida';p.interiorX=1190;p.interiorFacing=-1;assert.equal(restoreProgress(w,JSON.parse(JSON.stringify(p))).interiorFacing,-1);
 });
 test('Lamp starts off, stays scoped to authored cave rooms and preserves deliberate on state',()=>{
- const w=world(),p=freshProgress(w),c=mechanicsFor(w);p.flags.push(c.lamp.flag);
+ const w=world(),p=restoreProgress(w,{flags:['lampara_encendida']}),c=mechanicsFor(w);
  assert.equal(lampState(p,c,'prisioneros').on,false);assert.equal(lampState(p,c,'surface').available,false);assert.equal(lampState(p,c,'agora').equipped,false);
  assert.equal(commandLamp(p,c,'turnOn','surface'),false);assert.equal(commandLamp(p,c,'turnOn','prisioneros'),true);assert.equal(lampState(p,c,'prisioneros').on,true);
  assert.equal(lampState(p,c,'surface').on,false);assert.equal(lampState(p,c,'prisioneros').on,true);assert.ok(p.flags.includes('lampara_encendida'));

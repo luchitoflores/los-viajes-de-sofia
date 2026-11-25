@@ -15,7 +15,7 @@ flowchart LR
 ```
 
 1. Toca a Platón para conocer el problema de la caverna. No se abre automáticamente al aterrizar.
-2. Entra por la caverna. En A enciende la lámpara; la antorcha de pared es opcional. Sigue las voces hasta B.
+2. Entra al escenario A y busca la linterna física. Recógela, consérvala en Inventario y regresa a la superficie para conversar de nuevo con Platón. La antorcha sigue siendo opcional. Con su permiso, vuelve a A y enciende la linterna para poder seguir hacia B. La herramienta no se obtiene por leer el pensamiento inicial.
 3. Conversa con el prisionero. En C examina el fuego y las figuras de caballo y humana; puedes examinar también la vasija. Toca después la zona del muro a la derecha para relacionar luz, objetos y proyecciones. No hay un cuestionario ni una respuesta moral puntuada.
 4. Regresa a B. Presenta lo descubierto y escucha al prisionero. Cuando acepte, toca las cadenas junto a él. Su identidad se mantiene; cambia de aparición estática a compañero animado.
 5. El camino del ascenso está en la zona central de B. Sube por D y alcanza E. El primer encuentro en la luz explica la adaptación y el sentido educativo del ascenso. Todavía no puedes cerrar la misión.
@@ -59,3 +59,6 @@ La sala C tiene ahora una salida por el arco pintado a la derecha (`fuego-ascens
 
 
 La sala B utiliza ahora un fondo sin fuego visible y apariencias encadenadas animadas antes de la liberación. Arte, estados, personalización y límites: [Prisioneros, arte y estados](PRISIONEROS-ARTE-Y-ESTADOS.md).
+
+
+La introducción vigente se describe en [INTRODUCCION-PLATON-IMPLEMENTACION.md](INTRODUCCION-PLATON-IMPLEMENTACION.md). «lampara_encendida» conserva su ID histórico como adquisición; el estado real de luz es `equipment:lamp:on`. El escenario 1 permanece accesible durante la búsqueda.

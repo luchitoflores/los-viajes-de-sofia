@@ -137,3 +137,10 @@ Se advierte sobre bloques sin conexión desde el inicio o los momentos. Se conse
 Prueba reproducible: `python tests/browser_visual_dialogue_jump.py` con `SOFIA_URL` apuntando al servidor local. Comprueba escritura, arrastre real, duplicación, deshacer/rehacer, prueba desde un bloque, guardado, momentos y toque emulado horizontal. No es una prueba en teléfono físico.
 
 «Duplicar conversación» en el índice abre una copia sin asignar, con ID nuevo y textos, momentos y resultados independientes del original. Revisar las condiciones/recompensas compartidas y elegir su aparición; no duplica el personaje ni cambia las vinculaciones originales.
+
+
+## Equipamiento, búsqueda y combate común
+
+Mundos y escenarios incluye Objetos de aventura (identidad, descripción, apariencia, operaciones y condiciones), y Encuentros (enemigo, zona, estadísticas, diálogos y evento de victoria). Las etapas de una misión se configuran en Eventos y objetivos y se completan mediante marcas del mismo motor. Las conversaciones previas y posteriores a un combate se enumeran en la habitación correspondiente. El JSON exportado contiene las configuraciones; las pruebas son independientes de la partida.
+
+Consultar `INTRODUCCION-PLATON-IMPLEMENTACION.md` y `COMBATE-COMUN.md` para dependencias y alcance real.

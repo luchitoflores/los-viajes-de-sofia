@@ -354,3 +354,23 @@ Implementación y pruebas: [COLECCIONES-Y-CONTINUIDAD.md](COLECCIONES-Y-CONTINUI
 - Viajar a un destino lejano muestra los planetas intermedios, en orden inverso al volver, sin visitarlos ni desbloquearlos. Un mundo insertado en ese orden se incorpora al trayecto automáticamente.
 - El inventario reúne los objetos realmente recogidos de la partida, con procedencia y significado editable. Recuperar los ID ya guardados; conservar separados objetos, conceptos y pergaminos de conocimiento.
 - Guía: [VIAJES-E-INVENTARIO.md](VIAJES-E-INVENTARIO.md).
+
+
+## Introducción y búsqueda de la linterna — 24 de noviembre de 2026
+
+- Platón espera cerca de la caverna. La presentación se inicia por clic/toque; una conversación breve activa «Una luz en la oscuridad».
+- Corrección explícita del autor: la linterna se encuentra en el escenario 1 (A) de la caverna. A permanece accesible para buscarla. Recogerla no enciende su luz automáticamente.
+- Tras recogerla, regresar a la superficie y conversar con Platón habilita el paso al escenario 2 (B), que además exige la linterna encendida.
+- No se obtiene la herramienta por leer un pensamiento. Las partidas avanzadas conservan acceso, equipo y progreso mediante compatibilidad.
+- Inventario funcional y misiones por etapas se definen en datos y usan el intérprete común de acciones. Equipar, usar y entregar respetan condiciones y destinatarios cercanos.
+- Solicitud y corrección: [INTRODUCCION-PLATON-SOLICITUD.md](INTRODUCCION-PLATON-SOLICITUD.md).
+
+
+## Combate común — 25 de noviembre de 2026
+
+- Pulso de energía provisional independiente de la linterna, activado con F o control táctil solo en encuentros reales. No dañar NPC amistosos.
+- Encuentros configurados por interior: estadísticas, zona, comportamiento, proyectiles, conversaciones, condiciones, victoria y checkpoint. Un modelo común para juego y playground; editor y laboratorio no escriben partidas.
+- Sala C: diálogo obligatorio antes del encuentro, tres impactos y esferas lentas. Vencer habilita investigar, sin adelantar pergamino, portal ni desenlace. Conservar ambos ascensos y el regreso al prisionero.
+- Hasta implementar el desafío visual de B, el requisito provisional es completar la conversación del prisionero. La evaluación ERCA final sigue pendiente. Recurso del encapuchado y efectos de pulso provisionales, sin animación nueva de ataque.
+- La linterna se recoge en A, primera habitación de la caverna, según la corrección más reciente del autor. No en la superficie.
+- Detalles y pruebas: `COMBATE-COMUN.md` e `INTRODUCCION-PLATON-IMPLEMENTACION.md`.

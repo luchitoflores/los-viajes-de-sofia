@@ -1,0 +1,102 @@
+[
+  {
+    "id": "lab-hood",
+    "name": "Encapuchado",
+    "asset": "warden",
+    "x": 500,
+    "y": 460,
+    "scale": 1,
+    "grounded": true,
+    "hp": 3,
+    "speed": 45,
+    "behavior": "static",
+    "zone": {
+      "min": 480,
+      "max": 570
+    },
+    "hitbox": {
+      "width": 64,
+      "height": 138
+    },
+    "triggerRadius": 260,
+    "requires": [],
+    "victoryFlag": "lab-hood-won",
+    "checkpoint": {
+      "x": 220,
+      "y": 460
+    },
+    "attack": {
+      "type": "projectile",
+      "damage": 1,
+      "interval": 2.1,
+      "range": 850,
+      "speed": 140,
+      "radius": 14,
+      "color": "#302046"
+    },
+    "sofia": {
+      "hp": 3,
+      "damage": 1,
+      "interval": 0.5,
+      "range": 650,
+      "speed": 650,
+      "invulnerability": 0.9,
+      "knockback": 26,
+      "hitbox": {
+        "width": 46,
+        "height": 126
+      }
+    }
+  },
+  {
+    "id": "lab-generic",
+    "name": "Vasija de prueba (provisional)",
+    "asset": "vase",
+    "x": 820,
+    "y": 460,
+    "scale": 1,
+    "grounded": true,
+    "hp": 3,
+    "speed": 45,
+    "behavior": "static",
+    "zone": {
+      "min": 780,
+      "max": 890
+    },
+    "hitbox": {
+      "width": 64,
+      "height": 138
+    },
+    "triggerRadius": 260,
+    "requires": [
+      "lab-hood-won"
+    ],
+    "victoryFlag": "lab-generic-won",
+    "checkpoint": {
+      "x": 570,
+      "y": 460
+    },
+    "attack": {
+      "type": "projectile",
+      "damage": 1,
+      "interval": 2.1,
+      "range": 850,
+      "speed": 140,
+      "radius": 14,
+      "color": "#302046"
+    },
+    "sofia": {
+      "hp": 3,
+      "damage": 1,
+      "interval": 0.5,
+      "range": 650,
+      "speed": 650,
+      "invulnerability": 0.9,
+      "knockback": 26,
+      "hitbox": {
+        "width": 46,
+        "height": 126
+      }
+    }
+  }
+]

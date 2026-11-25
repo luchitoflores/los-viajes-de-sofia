@@ -1,0 +1,140 @@
+{
+  "world": "plato",
+  "scene": "fuego",
+  "encounter": {
+    "id": "caverna-encapuchado",
+    "name": "Encapuchado",
+    "asset": "warden",
+    "x": 465,
+    "y": 560,
+    "scale": 1,
+    "grounded": true,
+    "hp": 3,
+    "speed": 45,
+    "behavior": "static",
+    "zone": {
+      "min": 420,
+      "max": 850
+    },
+    "hitbox": {
+      "width": 64,
+      "height": 138
+    },
+    "triggerRadius": 310,
+    "requires": [
+      "prisionero_escuchado"
+    ],
+    "beforeDialogue": "encapuchado-inicio",
+    "afterDialogue": "encapuchado-victoria",
+    "victoryFlag": "encapuchado_vencido",
+    "checkpoint": {
+      "x": 170,
+      "y": 560
+    },
+    "attack": {
+      "type": "projectile",
+      "damage": 1,
+      "interval": 2.1,
+      "range": 850,
+      "speed": 140,
+      "radius": 14,
+      "color": "#302046"
+    },
+    "sofia": {
+      "hp": 3,
+      "damage": 1,
+      "interval": 0.5,
+      "range": 650,
+      "speed": 650,
+      "invulnerability": 0.9,
+      "knockback": 26,
+      "hitbox": {
+        "width": 46,
+        "height": 126
+      }
+    },
+    "characterId": "encapuchado"
+  },
+  "dialogues": {
+    "encapuchado-inicio": {
+      "start": "turno-1",
+      "nodes": {
+        "turno-1": {
+          "speaker": "Encapuchado",
+          "text": "¿Qué haces aquí? No deberías haber llegado tan lejos.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-2"
+            }
+          ],
+          "characterId": "encapuchado"
+        },
+        "turno-2": {
+          "speaker": "Sofía",
+          "text": "Quiero descubrir de dónde vienen las sombras.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-3"
+            }
+          ]
+        },
+        "turno-3": {
+          "speaker": "Encapuchado",
+          "text": "Hay cosas que es mejor no conocer. ¡Regresa por donde viniste!",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-4"
+            }
+          ],
+          "characterId": "encapuchado"
+        },
+        "turno-4": {
+          "speaker": "Sofía",
+          "text": "No me iré hasta descubrir la verdad.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        }
+      }
+    },
+    "encapuchado-victoria": {
+      "start": "turno-1",
+      "nodes": {
+        "turno-1": {
+          "speaker": "Sofía",
+          "text": "Ahora puedo investigar qué produce esas sombras.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "gated": [
+    "examinar-fuego",
+    "examinar-caballo",
+    "examinar-vasija",
+    "examinar-figura",
+    "comprender-sombras"
+  ],
+  "characters": {
+    "encapuchado": {
+      "name": "Encapuchado",
+      "personality": "Personaje ficticio de la adaptación didáctica.",
+      "spriteId": "warden",
+      "portraitId": "warden-face"
+    }
+  }
+}

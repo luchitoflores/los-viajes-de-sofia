@@ -5,6 +5,7 @@ const paths:Record<string,string>={
  door:'M5 21V3h13v18 M14 12h1',enter:'M5 21V3h13v18 M14 12h1',
  collect:'M4 9h16v11H4Z M8 9V5h8v4 M12 12v5 M9 14h6',
  lamp:'M9 3h6 M8 6h8 M7 8h10l-2 5-2.5 8h-1L9 13Z',
+ pulse:'M3 12h7 M7 7l5 5-5 5 M15 5a8 8 0 0 1 0 14 M18 8a4 4 0 0 1 0 8',
  weapon:'M4 20L19 5 M13 5h6v6 M4 20l-1-4 M4 20l4 1',
  examine:'M15 15l6 6 M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0'
 };
@@ -60,10 +61,10 @@ export function bindExplorationControls(host:ExplorationControlsHost){
    equippedWeapon=host.weapon?.()??null;
    // An unequipped slot is visually present but does not perform a fake attack.
    if(equippedWeapon){
-    weapon.disabled=false;
+    weapon.hidden=false;weapon.disabled=false;
     paint(weapon,equippedWeapon);
    }else{
-    weapon.hidden=false;weapon.disabled=true;
+    weapon.hidden=true;weapon.disabled=true;
     if(weapon.dataset.key!=='unarmed'){
      weapon.dataset.key='unarmed';
      weapon.innerHTML=icon('weapon')+'<small>Sin arma</small>';

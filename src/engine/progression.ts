@@ -1,10 +1,15 @@
+import {restoreCombatProgress} from '../worlds/combat-compatibility.ts';
+import type {CombatRecord} from '../gameplay/combat';
+import {syncMissionProgress} from '../worlds/mission-progress.ts';
+import {syncInventoryFlags,type ItemState} from '../worlds/inventory-operations.ts';
+import {restorePlatoSearchProgress} from '../worlds/plato-search-progress.ts';
 import {grantKnowledge} from '../worlds/knowledge.ts';
 import {mechanicsFor,syncEquipmentFlags,type EquipmentState} from '../worlds/equipment.ts';
 import {answerFlag} from '../worlds/story-events.ts';
 import {meets} from '../worlds/narrative.ts';
 import {radians,type PlanetSave} from '../planet-model.ts';
 import {validId,type WorldDefinition,type Reward,type DialogueNode,type Choice} from '../worlds/schema.ts';
-export interface WorldProgress {interiorFacing?:1|-1;equipment?:EquipmentState;dialogueRead?:Record<string,string[]>;dialogueStarts?:Record<string,string>;entryPortalScene:string|null;pendingArrival:string|null;mechanisms:Record<string,number>;introComplete:boolean;flags:string[];concepts:string[];memories:string[];completed:string[];answers:Record<string,string[]>;choices:Record<string,string>;reasons:Record<string,string>;cursors:Record<string,string>;planet:PlanetSave;interior:string|null;interiorX:number|null;trail:{interior:string|null;x:number|null}[]}
+export interface WorldProgress {combats?:Record<string,CombatRecord>;inventoryState?:Record<string,ItemState>;interiorFacing?:1|-1;equipment?:EquipmentState;dialogueRead?:Record<string,string[]>;dialogueStarts?:Record<string,string>;entryPortalScene:string|null;pendingArrival:string|null;mechanisms:Record<string,number>;introComplete:boolean;flags:string[];concepts:string[];memories:string[];completed:string[];answers:Record<string,string[]>;choices:Record<string,string>;reasons:Record<string,string>;cursors:Record<string,string>;planet:PlanetSave;interior:string|null;interiorX:number|null;trail:{interior:string|null;x:number|null}[]}
 export function freshProgress(w:WorldDefinition):WorldProgress{return{entryPortalScene:null,pendingArrival:null,mechanisms:{},introComplete:w.role==='home',flags:[],concepts:[],memories:[],completed:[],answers:{},choices:{},reasons:{},cursors:{},planet:{version:1,angle:radians(w.surface.spawnAngle),collected:[],discovered:[],objects:structuredClone(w.surface.objects),returnAnchor:null},interior:null,interiorX:null,trail:[]}}
 export function restoreProgress(w:WorldDefinition,raw:unknown):WorldProgress{
  const p=freshProgress(w);if(!raw||typeof raw!=='object')return p;const s=raw as Partial<WorldProgress>;
@@ -21,7 +26,9 @@ export function restoreProgress(w:WorldDefinition,raw:unknown):WorldProgress{
  if(validId(s.interior)&&Object.hasOwn(w.interiors,s.interior))p.interior=s.interior;if(typeof s.interiorX==='number'&&Number.isFinite(s.interiorX)&&s.interiorX>=0&&s.interiorX<=10000)p.interiorX=s.interiorX;
  if(Array.isArray(s.trail))p.trail=s.trail.filter(v=>v&&((v.interior===null)||(validId(v.interior)&&Object.hasOwn(w.interiors,v.interior)))&&(v.x===null||(typeof v.x==='number'&&Number.isFinite(v.x)&&v.x>=0&&v.x<=10000))).slice(-100);
  if(s.equipment?.lamp&&typeof s.equipment.lamp.equipped==='boolean'&&typeof s.equipment.lamp.on==='boolean')p.equipment={lamp:{equipped:s.equipment.lamp.equipped,on:s.equipment.lamp.on}};
- grantKnowledge(w,p);syncEquipmentFlags(p,mechanicsFor(w),p.interior??'surface');return p;
+ if(s.combats&&typeof s.combats==='object'&&!Array.isArray(s.combats)){p.combats={};for(const [id,c] of Object.entries(s.combats))if(validId(id)&&c&&['inactive','active','defeated'].includes(c.state)&&Number.isInteger(c.attempts)&&c.attempts>=0&&c.attempts<10000)p.combats[id]={state:c.state,attempts:c.attempts}}
+ if(s.inventoryState&&typeof s.inventoryState==='object'&&!Array.isArray(s.inventoryState)){p.inventoryState={};for(const [id,state] of Object.entries(s.inventoryState))if(validId(id)&&state&&typeof state==='object')p.inventoryState[id]=Object.fromEntries(Object.entries(state).filter(([k,v])=>['equipped','used','given','consumed','discovered'].includes(k)&&typeof v==='boolean'||['sourceObject','sourceScene'].includes(k)&&validId(v)))}
+ restoreCombatProgress(w,p);restorePlatoSearchProgress(w,p);syncInventoryFlags(w,p);syncMissionProgress(w,p);grantKnowledge(w,p);syncEquipmentFlags(p,mechanicsFor(w),p.interior??'surface');return p;
 }
 export function reward(p:WorldProgress,r:Reward|undefined){if(!r)return;for(const k of ['flags','concepts','memories'] as const)for(const id of r[k]??[])if(!p[k].includes(id))p[k].push(id)}
 export function dialogueNode(w:WorldDefinition,p:WorldProgress,id:string):{id:string;node:DialogueNode}{const d=w.dialogues[id];if(!d)throw Error('Diálogo inexistente.');const cursor=p.cursors[id];const nodeId=cursor&&d.nodes[cursor]?cursor:(d.entries?.find(e=>meets(p.flags,e))?.node??d.start);return{id:nodeId,node:d.nodes[nodeId]}}

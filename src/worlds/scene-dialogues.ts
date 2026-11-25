@@ -2,7 +2,7 @@ import type {WorldDefinition,Dialogue} from './schema.ts';
 export const readable=(id:string)=>{const text=id.replace(/[_:-]+/g,' ');return text.charAt(0).toUpperCase()+text.slice(1)};
 export const dialogueTitle=(id:string,d:Dialogue)=>d.title??readable(id);
 export const conversationScenes=(w:WorldDefinition)=>[{id:'surface',name:'Superficie del planeta',number:0},...Object.entries(w.interiors).map(([id,s],i)=>({id,name:s.name,number:i+1}))];
-export interface DialoguePlace {scene:string;dialogue:string;source:string;label:string;trigger:'object'|'event'|'companion'|'intro';requires:string[];excludes:string[];behavior?:string}
+export interface DialoguePlace {scene:string;dialogue:string;source:string;label:string;trigger:'object'|'event'|'companion'|'intro'|'combat';requires:string[];excludes:string[];behavior?:string}
 export function dialoguePlaces(w:WorldDefinition):DialoguePlace[]{
  const places:DialoguePlace[]=[];
  const add=(scene:string,source:string,label:string,trigger:DialoguePlace['trigger'],behavior:string|undefined,requires:string[]=[],excludes:string[]=[])=>{
@@ -12,6 +12,7 @@ export function dialoguePlaces(w:WorldDefinition):DialoguePlace[]{
  for(const s of conversationScenes(w)){
   const items=s.id==='surface'?w.surface.objects:w.interiors[s.id].items;
   for(const o of items){const c='visibleWhen' in o?o.visibleWhen:undefined;add(s.id,o.id,'Al tocar: '+o.label,'object',o.behavior,c?.requires,c?.excludes)}
+  if(s.id!=='surface')for(const e of w.interiors[s.id].encounters??[]){if(e.beforeDialogue)places.push({scene:s.id,source:e.id,label:'Antes del combate: '+e.name,trigger:'combat',dialogue:e.beforeDialogue,requires:e.requires??[],excludes:[...e.excludes??[],e.victoryFlag]});if(e.afterDialogue)places.push({scene:s.id,source:e.id,label:'Después de vencer: '+e.name,trigger:'combat',dialogue:e.afterDialogue,requires:[e.victoryFlag],excludes:[]})}
   if(s.id!=='surface')for(const e of w.interiors[s.id].events??[])add(s.id,e.id,'Al recorrer esta escena · una vez por partida','event',e.behavior,e.requires,e.excludes);
  }
  if(w.dialogues[w.intro])places.push({scene:'surface',source:'intro',label:'Al conocer al anfitrión','trigger':'intro',dialogue:w.intro,requires:[],excludes:[]});

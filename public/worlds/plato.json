@@ -16,6 +16,13 @@
   ],
   "themes": [],
   "assets": {
+    "linterna-exploracion": {
+      "src": "assets/sofia-actions/flashlight.png",
+      "width": 64,
+      "height": 40,
+      "kind": "scroll",
+      "label": "Linterna portátil de exploración"
+    },
     "terrain": {
       "src": "assets/planet-plato-stone.png",
       "kind": "rock",
@@ -353,7 +360,7 @@
         "id": "philosopher",
         "kind": "philosopher",
         "label": "Platón",
-        "angleDeg": 0,
+        "angleDeg": 170,
         "height": 0,
         "scale": 1,
         "rotation": 0,
@@ -633,15 +640,17 @@
           "type": "lamp",
           "x": 743,
           "y": 559,
-          "label": "Encender la lámpara de Sofía",
-          "integrated": true,
-          "behavior": "encender-lampara",
+          "label": "Linterna de Sofía",
+          "integrated": false,
+          "behavior": "recoger-linterna",
           "hotspot": {
             "x": 743,
-            "y": 534,
-            "w": 190,
-            "h": 180
-          }
+            "y": 540,
+            "w": 88,
+            "h": 80
+          },
+          "asset": "linterna-exploracion",
+          "tooltip": "Una linterna portátil. Tócala para acercarte y recogerla."
         },
         {
           "id": "antorcha-entrada",
@@ -1000,7 +1009,63 @@
           }
         ]
       },
-      "events": []
+      "events": [],
+      "encounters": [
+        {
+          "id": "caverna-encapuchado",
+          "name": "Encapuchado",
+          "asset": "warden",
+          "x": 465,
+          "y": 560,
+          "scale": 1,
+          "grounded": true,
+          "hp": 3,
+          "speed": 45,
+          "behavior": "static",
+          "zone": {
+            "min": 420,
+            "max": 850
+          },
+          "hitbox": {
+            "width": 64,
+            "height": 138
+          },
+          "triggerRadius": 310,
+          "requires": [
+            "prisionero_escuchado"
+          ],
+          "beforeDialogue": "encapuchado-inicio",
+          "afterDialogue": "encapuchado-victoria",
+          "victoryFlag": "encapuchado_vencido",
+          "checkpoint": {
+            "x": 170,
+            "y": 560
+          },
+          "attack": {
+            "type": "projectile",
+            "damage": 1,
+            "interval": 2.1,
+            "range": 850,
+            "speed": 140,
+            "radius": 14,
+            "color": "#302046"
+          },
+          "sofia": {
+            "hp": 3,
+            "damage": 1,
+            "interval": 0.5,
+            "range": 650,
+            "speed": 650,
+            "invulnerability": 0.9,
+            "knockback": 26,
+            "hitbox": {
+              "width": 46,
+              "height": 126
+            }
+          },
+          "characterId": "encapuchado"
+        }
+      ]
     },
     "ascenso": {
       "viewport": {
@@ -1323,7 +1388,27 @@
       "actions": [
         {
           "type": "talk",
-          "target": "arrival"
+          "target": "linterna-regreso",
+          "requires": [
+            "lampara_encendida"
+          ],
+          "excludes": [
+            "permiso_platon"
+          ]
+        },
+        {
+          "type": "talk",
+          "target": "linterna-busqueda",
+          "excludes": [
+            "lampara_encendida"
+          ]
+        },
+        {
+          "type": "talk",
+          "target": "linterna-permiso",
+          "requires": [
+            "permiso_platon"
+          ]
         }
       ]
     },
@@ -1357,7 +1442,11 @@
           "type": "talk",
           "target": "observar-fuego"
         }
-      ]
+      ],
+      "requires": [
+        "encapuchado_vencido"
+      ],
+      "blockedText": "El encapuchado impide investigar. Habla primero con el prisionero y afronta el encuentro."
     },
     "examinar-caballo": {
       "actions": [
@@ -1365,7 +1454,11 @@
           "type": "talk",
           "target": "observar-caballo"
         }
-      ]
+      ],
+      "requires": [
+        "encapuchado_vencido"
+      ],
+      "blockedText": "El encapuchado impide investigar. Habla primero con el prisionero y afronta el encuentro."
     },
     "examinar-vasija": {
       "actions": [
@@ -1373,7 +1466,11 @@
           "type": "talk",
           "target": "observar-vasija"
         }
-      ]
+      ],
+      "requires": [
+        "encapuchado_vencido"
+      ],
+      "blockedText": "El encapuchado impide investigar. Habla primero con el prisionero y afronta el encuentro."
     },
     "examinar-figura": {
       "actions": [
@@ -1381,7 +1478,11 @@
           "type": "talk",
           "target": "observar-figura"
         }
-      ]
+      ],
+      "requires": [
+        "encapuchado_vencido"
+      ],
+      "blockedText": "El encapuchado impide investigar. Habla primero con el prisionero y afronta el encuentro."
     },
     "comprender-sombras": {
       "actions": [
@@ -1393,9 +1494,10 @@
       "requires": [
         "fuego_observado",
         "caballo_observado",
-        "figura_observada"
+        "figura_observada",
+        "encapuchado_vencido"
       ],
-      "blockedText": "Aún necesito observar el fuego, la figura de caballo y la figura humana antes de explicar las proyecciones."
+      "blockedText": "El encapuchado impide investigar. Habla primero con el prisionero y afronta el encuentro."
     },
     "liberar-cadenas": {
       "actions": [
@@ -1473,13 +1575,24 @@
     "entrada-prisioneros": {
       "actions": [
         {
+          "type": "examine",
+          "text": "Está demasiado oscuro. Enciende tu linterna con L o desde Inventario para seguir.",
+          "excludes": [
+            "equipment:lamp:on"
+          ]
+        },
+        {
           "type": "enter",
-          "target": "prisioneros"
+          "target": "prisioneros",
+          "requires": [
+            "equipment:lamp:on"
+          ]
         }
       ],
-      "blockedText": "Sofía necesita encender su lámpara antes de seguir las voces.",
+      "blockedText": "Necesitas encontrar la linterna en este primer recinto y volver a conversar con Platón antes de seguir hacia los prisioneros.",
       "requires": [
-        "lampara_encendida"
+        "lampara_encendida",
+        "caverna_acceso_autorizado"
       ]
     },
     "encender-lampara": {
@@ -1679,16 +1792,97 @@
           }
         }
       ]
+    },
+    "recoger-linterna": {
+      "actions": [
+        {
+          "type": "collect",
+          "item": "linterna-sofia",
+          "text": "Has encontrado una linterna. Permite iluminar lugares oscuros. Ahora regresa con Platón antes de seguir hacia el interior.",
+          "reward": {
+            "flags": [
+              "lampara_encendida"
+            ]
+          }
+        }
+      ]
     }
   },
   "dialogues": {
     "arrival": {
+      "title": "Encuentro en la entrada de la caverna",
       "style": "parchment",
       "start": "bienvenida",
       "nodes": {
-        "bienvenida": {
+        "turno-2": {
+          "speaker": "Sofía",
+          "kind": "line",
+          "text": "¡Hola! ¿Qué hay dentro de esa caverna?",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-3"
+            }
+          ],
+          "speakerId": "sofia"
+        },
+        "turno-3": {
           "speaker": "Platón",
-          "text": "Bienvenida, Sofía. En la caverna encontrarás personas que toman sombras por toda la realidad. Investiga con ellas antes de juzgarlas. Aprender también exige volver y escuchar.",
+          "kind": "line",
+          "text": "En su interior encontrarás personas que creen conocer la realidad, aunque solo han visto sombras.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-4"
+            }
+          ],
+          "characterId": "plat"
+        },
+        "turno-4": {
+          "speaker": "Sofía",
+          "kind": "line",
+          "text": "¡Quiero entrar y descubrirlo!",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-5"
+            }
+          ],
+          "speakerId": "sofia"
+        },
+        "turno-5": {
+          "speaker": "Platón",
+          "kind": "line",
+          "text": "Puedes explorar el primer recinto, pero para seguir hacia el fondo necesitarás algo que ilumine tu camino.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-6"
+            }
+          ],
+          "characterId": "plat"
+        },
+        "turno-6": {
+          "speaker": "Sofía",
+          "kind": "line",
+          "text": "¿Dónde puedo encontrarlo?",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-7"
+            }
+          ],
+          "speakerId": "sofia"
+        },
+        "turno-7": {
+          "speaker": "Platón",
+          "kind": "line",
+          "text": "Hay una linterna en el primer escenario de la caverna. Búscala y vuelve a hablar conmigo antes de continuar. A veces, para descubrir la verdad, primero debemos aprender a buscar.",
           "choices": [
             {
               "id": "seguir",
@@ -1696,7 +1890,25 @@
             }
           ],
           "characterId": "plat"
+        },
+        "bienvenida": {
+          "speaker": "Platón",
+          "kind": "line",
+          "text": "¡Bienvenida, viajera! Pocas personas se atreven a explorar este lugar.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-2"
+            }
+          ],
+          "characterId": "plat"
         }
+      },
+      "reward": {
+        "flags": [
+          "busqueda_linterna_iniciada"
+        ]
       }
     },
     "entrada-observacion": {
@@ -1705,7 +1917,7 @@
       "nodes": {
         "oscuro": {
           "speaker": "Sofía",
-          "text": "Aquí casi no se ve nada... ¿Quiénes vivirán en un lugar tan oscuro? Tengo mi linterna. Puedo encenderla con L o tocarla para investigar esas voces.",
+          "text": "Aquí llega algo de luz de la entrada. Buscaré la linterna antes de seguir hacia esas voces.",
           "choices": [
             {
               "id": "seguir",
@@ -1715,9 +1927,7 @@
         }
       },
       "reward": {
-        "flags": [
-          "lampara_encendida"
-        ]
+        "flags": []
       }
     },
     "prisionero": {
@@ -1877,7 +2087,12 @@
           ],
           "node": "evidencias"
         }
-      ]
+      ],
+      "reward": {
+        "flags": [
+          "prisionero_escuchado"
+        ]
+      }
     },
     "pared-sombras": {
       "style": "parchment",
@@ -2479,6 +2694,185 @@
           "characterId": "otro-prisionero"
         }
       }
+    },
+    "linterna-regreso": {
+      "title": "Al regresar con la linterna",
+      "style": "parchment",
+      "start": "turno-1",
+      "nodes": {
+        "turno-1": {
+          "speaker": "Platón",
+          "kind": "line",
+          "text": "Veo que has encontrado la linterna.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-2"
+            }
+          ],
+          "characterId": "plat"
+        },
+        "turno-2": {
+          "speaker": "Sofía",
+          "kind": "line",
+          "text": "¡Sí! Ahora podremos ver lo que hay dentro.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-3"
+            }
+          ],
+          "speakerId": "sofia"
+        },
+        "turno-3": {
+          "speaker": "Platón",
+          "kind": "line",
+          "text": "Recuerda, Sofía: la luz puede ayudarte a ver, pero comprender lo que ves requerirá algo más.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-4"
+            }
+          ],
+          "characterId": "plat"
+        },
+        "turno-4": {
+          "speaker": "Sofía",
+          "kind": "line",
+          "text": "¿Qué cosa?",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-5"
+            }
+          ],
+          "speakerId": "sofia"
+        },
+        "turno-5": {
+          "speaker": "Platón",
+          "kind": "line",
+          "text": "Tu capacidad de pensar y cuestionar lo que parece evidente. Adelante: enciende tu linterna y sigue hacia los prisioneros.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "plat"
+        }
+      },
+      "reward": {
+        "flags": [
+          "permiso_platon"
+        ]
+      }
+    },
+    "linterna-busqueda": {
+      "title": "Durante la búsqueda",
+      "style": "parchment",
+      "start": "turno-1",
+      "nodes": {
+        "turno-1": {
+          "speaker": "Platón",
+          "kind": "line",
+          "text": "Busca la linterna en el primer recinto de la caverna. Cuando la encuentres, vuelve para conversar antes de seguir hacia las voces.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "plat"
+        }
+      }
+    },
+    "linterna-permiso": {
+      "title": "Entrada ya habilitada",
+      "style": "parchment",
+      "start": "turno-1",
+      "nodes": {
+        "turno-1": {
+          "speaker": "Platón",
+          "kind": "line",
+          "text": "La luz te ayudará a mirar; pregunta también por qué las cosas aparecen como aparecen. Te esperaré aquí cuando regreses.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ],
+          "characterId": "plat"
+        }
+      }
+    },
+    "encapuchado-inicio": {
+      "start": "turno-1",
+      "nodes": {
+        "turno-1": {
+          "speaker": "Encapuchado",
+          "text": "¿Qué haces aquí? No deberías haber llegado tan lejos.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-2"
+            }
+          ],
+          "characterId": "encapuchado"
+        },
+        "turno-2": {
+          "speaker": "Sofía",
+          "text": "Quiero descubrir de dónde vienen las sombras.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-3"
+            }
+          ]
+        },
+        "turno-3": {
+          "speaker": "Encapuchado",
+          "text": "Hay cosas que es mejor no conocer. ¡Regresa por donde viniste!",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar",
+              "next": "turno-4"
+            }
+          ],
+          "characterId": "encapuchado"
+        },
+        "turno-4": {
+          "speaker": "Sofía",
+          "text": "No me iré hasta descubrir la verdad.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        }
+      }
+    },
+    "encapuchado-victoria": {
+      "start": "turno-1",
+      "nodes": {
+        "turno-1": {
+          "speaker": "Sofía",
+          "text": "Ahora puedo investigar qué produce esas sombras.",
+          "choices": [
+            {
+              "id": "seguir",
+              "text": "Continuar"
+            }
+          ]
+        }
+      }
     }
   },
   "activities": {},
@@ -2491,9 +2885,40 @@
   },
   "missions": [
     {
-      "flag": "lampara_encendida",
-      "title": "Una luz propia",
-      "goal": "Enciende la lámpara en la entrada. La antorcha es opcional."
+      "flag": "caverna_acceso_autorizado",
+      "title": "Una luz en la oscuridad",
+      "goal": "Busca la linterna en el primer escenario de la caverna y regresa con Platón.",
+      "requires": [
+        "busqueda_linterna_iniciada"
+      ],
+      "stages": [
+        {
+          "id": "buscar-linterna",
+          "title": "Encuentra la linterna",
+          "goal": "Explora el primer escenario de la caverna y recoge la linterna.",
+          "completeWhen": [
+            "lampara_encendida"
+          ],
+          "item": "linterna-sofia"
+        },
+        {
+          "id": "regresar-platon",
+          "title": "Regresa con Platón",
+          "goal": "Vuelve a la superficie y conversa con Platón junto a la entrada.",
+          "completeWhen": [
+            "permiso_platon"
+          ],
+          "item": "linterna-sofia"
+        }
+      ]
+    },
+    {
+      "flag": "linterna_utilizada",
+      "title": "Ilumina el camino",
+      "goal": "Enciende la linterna para investigar la caverna. Puedes usar L o su botón en Inventario.",
+      "requires": [
+        "caverna_acceso_autorizado"
+      ]
     },
     {
       "flag": "sombras_comprendidas",
@@ -2549,6 +2974,12 @@
       "personality": "Defiende lo que siempre ha creído.",
       "spriteId": "character-otro-prisionero-sprite",
       "portraitId": "character-otro-prisionero-portrait"
+    },
+    "encapuchado": {
+      "name": "Encapuchado",
+      "personality": "Personaje ficticio de la adaptación didáctica.",
+      "spriteId": "warden",
+      "portraitId": "warden-face"
     }
   },
   "journey": {
@@ -2602,5 +3033,108 @@
         }
       ]
     }
-  ]
+  ],
+  "inventoryItems": {
+    "linterna-sofia": {
+      "name": "Linterna de Sofía",
+      "asset": "linterna-exploracion",
+      "description": "Una linterna portátil encontrada en el primer escenario de la caverna. Su luz permite investigar lo que queda oculto en la oscuridad.",
+      "category": "Herramienta",
+      "functionality": "Permite iluminar lugares oscuros.",
+      "equipment": "lamp",
+      "missions": [
+        "caverna_acceso_autorizado",
+        "linterna_utilizada"
+      ],
+      "commands": {
+        "equip": {
+          "label": "Equipar linterna",
+          "blockedText": "La linterna se utiliza dentro de la caverna. Allí puedes equiparla y encenderla.",
+          "actions": [
+            {
+              "type": "equipment",
+              "command": "equip"
+            }
+          ]
+        },
+        "unequip": {
+          "label": "Guardar linterna",
+          "blockedText": "La linterna se utiliza dentro de la caverna. Allí puedes equiparla y encenderla.",
+          "actions": [
+            {
+              "type": "equipment",
+              "command": "unequip"
+            }
+          ]
+        },
+        "use": {
+          "label": "Encender / apagar",
+          "blockedText": "La linterna se utiliza dentro de la caverna. Allí puedes equiparla y encenderla.",
+          "actions": [
+            {
+              "type": "equipment",
+              "command": "toggle"
+            },
+            {
+              "type": "record",
+              "requires": [
+                "equipment:lamp:on"
+              ],
+              "reward": {
+                "flags": [
+                  "linterna_utilizada"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "mechanics": {
+    "lamp": {
+      "focused": true,
+      "enabled": true,
+      "flag": "lampara_encendida",
+      "radius": 250,
+      "intensity": 1,
+      "color": "#ffe2a1",
+      "asset": "assets/sofia-actions/flashlight.png",
+      "handX": 30,
+      "handY": -68,
+      "size": 34,
+      "scenes": [
+        "entrada",
+        "prisioneros",
+        "fuego",
+        "ascenso",
+        "salida"
+      ],
+      "onUseFlags": [
+        "linterna_utilizada"
+      ],
+      "requires": [
+        "inventory:linterna-sofia:owned"
+      ]
+    },
+    "controls": {
+      "deadZone": 0.15,
+      "contextual": "auto",
+      "secondary": "lamp"
+    }
+  },
+  "storyFlags": {
+    "busqueda_linterna_iniciada": {
+      "label": "Buscar la linterna en el primer escenario",
+      "kind": "mission"
+    },
+    "permiso_platon": {
+      "label": "Platón ha autorizado continuar al interior",
+      "kind": "door"
+    },
+    "caverna_acceso_autorizado": {
+      "label": "Una luz en la oscuridad · completada",
+      "kind": "mission"
+    }
+  }
 }

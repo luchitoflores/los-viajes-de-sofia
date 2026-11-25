@@ -1,6 +1,6 @@
 import {meets,type Conditions} from './conditions.ts';
 export type LampCommand='equip'|'unequip'|'toggle'|'turnOn'|'turnOff';
-export interface LampSettings extends Conditions {scenes?:string[];focused?:boolean;enabled:boolean;flag:string;radius:number;intensity:number;color:string;asset:string;handX:number;handY:number;size:number}
+export interface LampSettings extends Conditions {onUseFlags?:string[];scenes?:string[];focused?:boolean;enabled:boolean;flag:string;radius:number;intensity:number;color:string;asset:string;handX:number;handY:number;size:number}
 export interface MechanicsSettings {lamp:LampSettings;controls:{deadZone:number;contextual:'auto'|'lamp';secondary:'lamp'|'none'}}
 export interface EquipmentState {lamp?:{equipped:boolean;on:boolean}}
 export interface EquipmentProgress {flags:string[];equipment?:EquipmentState}

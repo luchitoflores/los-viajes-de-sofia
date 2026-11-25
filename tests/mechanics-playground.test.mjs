@@ -5,7 +5,7 @@ import {MODES,makeSequence,nextTarget,normalizedAxis,scoreImpact,clamp} from '..
 test('all playground experiences have distinct stable targets and pedagogical feedback',()=>{
   for(const id of Object.keys(MODES)){
     const targets=makeSequence(id);
-    if(id==='movement')assert.equal(targets.length,0,'Free movement mode should not spawn educational targets');
+    if(id==='movement'||id==='combat')assert.equal(targets.length,0,'Free movement mode should not spawn educational targets');
     else assert.ok(targets.length>=3);
     assert.equal(new Set(targets.map(t=>t.id)).size,targets.length);
     for(const target of targets){

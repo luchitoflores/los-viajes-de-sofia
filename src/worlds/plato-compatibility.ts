@@ -16,7 +16,7 @@ export function restorePlatoContinuity(w:WorldDefinition):WorldDefinition{
  const rock=ascent?.regions.find(r=>r.id==='limite-roca'),exit=ascent?.items.find(o=>o.id==='ascenso-salida');
  if(exit?.x===1141&&rock?.x===980&&rock.y===0&&rock.w===300&&rock.h===720){rock.y=280;rock.h=440}
 
- if(dialogue&&room?.lighting?.lampFlag===flag&&door&&w.interactions['encender-lampara']?.actions.some(a=>'reward' in a&&a.reward?.flags?.includes(flag))){
+ if(!w.inventoryItems?.['linterna-sofia']&&dialogue&&room?.lighting?.lampFlag===flag&&door&&w.interactions['encender-lampara']?.actions.some(a=>'reward' in a&&a.reward?.flags?.includes(flag))){
  dialogue.reward={...dialogue.reward,flags:[...new Set([...(dialogue.reward?.flags??[]),flag])]};
  door.requires=[...new Set([...(door.requires??[]),flag])];
  if(!room.events?.some(e=>e.id==='recuperar-lampara'))room.events=[{id:'recuperar-lampara',from:0,to:room.width,behavior:'encender-lampara',excludes:[flag]},...(room.events??[])];

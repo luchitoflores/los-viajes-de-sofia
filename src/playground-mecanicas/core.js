@@ -3,6 +3,7 @@
  * No tiene acceso a partidas, puertas, NPC ni a los estados de Historia.
  */
 export const MODES = Object.freeze({
+  combat:{id:'combat',title:'Combate común',philosopher:'Laboratorio aislado',action:'Pulso de energía',instruction:'F o botón Pulso. Tres impactos por enemigo. Prueba derrota y reintento; no se guardan partidas. El encapuchado y la vasija de prueba usan el mismo controlador.',background:'cave',projectile:'pulse',targetSpeed:0,targets:[]},
   movement: {
     id:'movement', title:'Mecánicas de Sofía', philosopher:'Laboratorio de movimiento',
     action:'Movimiento lateral 2D',

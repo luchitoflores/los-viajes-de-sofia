@@ -115,7 +115,7 @@ export function createPlanetScene(host:PlanetBridge){
    const targetAngle=this.overview||edit?0:-this.bodyState.angle;this.cameraAngle+=angleDiff(targetAngle,this.cameraAngle)*alpha;
    const zoom=this.overview||edit?Math.min(camera.width,camera.height)/(2*(RADIUS+235)):1;
    camera.setRotation(this.cameraAngle).setZoom(Phaser.Math.Linear(camera.zoom,zoom,alpha)).centerOn(this.center.x,this.center.y);
-   element('near-hint').hidden=true;
+   const near=this.closest();element('near-hint').hidden=blocked||edit||near?.interaction!=='collect';if(near?.interaction==='collect')element('near-hint').textContent='Recoger: '+near.label;
    if(time-this.lastSave>1200&&!blocked&&!edit){this.persist();this.lastSave=time}
   }
   selectForEdit(id:string){if(this.objects.some(o=>o.id===id)){this.selected=id;this.showProps();this.drawSelection()}}

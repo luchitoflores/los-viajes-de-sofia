@@ -11,3 +11,5 @@ export {meets,type Conditions} from './conditions';
 export * from './projectiles';
 export {canWalkPath} from './side-path';
 export {hitZone,canvasPoint} from './hit-test';
+
+export * from './combat';

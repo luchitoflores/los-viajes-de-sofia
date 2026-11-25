@@ -8,7 +8,9 @@ export function eventCatalog(w:WorldDefinition){
  const add=(id:string,label?:string,source?:string,kind:StoryFlag['kind']='state')=>{const prev=found.get(id);if(prev){if(label)prev.label=label;if(source&&!prev.sources.includes(source))prev.sources.push(source);if(kind!=='state')prev.kind=kind}else found.set(id,{id,label:label??id.replace(/[_:-]/g,' '),kind,sources:source?[source]:[]})};
  for(const [id,f] of Object.entries(w.storyFlags??{}))add(id,f.label,undefined,f.kind);
  for(const [id,label] of [['owned','Linterna obtenida'],['equipped','Linterna equipada'],['on','Linterna encendida ahora'],['off','Linterna apagada o guardada']])add('equipment:lamp:'+id,label,'Equipamiento de Sofía');
- for(const m of w.missions)add(m.flag,m.title,undefined,'mission');
+ for(const m of w.missions){add(m.flag,m.title,undefined,'mission');for(const stage of m.stages??[])for(const flag of stage.completeWhen)add(flag,stage.title,undefined,'mission')}
+ for(const [id,item] of Object.entries(w.inventoryItems??{}))for(const [key,label] of [['discovered','Descubierto'],['owned','En inventario'],['equipped','Equipado'],['used','Usado'],['given','Entregado'],['consumed','Consumido']])add('inventory:'+id+':'+key,item.name+' · '+label,'Inventario de objetos');
+ for(const room of Object.values(w.interiors))for(const e of room.encounters??[]){add(e.victoryFlag,'Vencer: '+e.name,'Combate: '+e.name,'event');for(const f of [...e.requires??[],...e.excludes??[]])add(f);for(const f of e.reward?.flags??[])add(f,undefined,'Victoria: '+e.name)}
  for(const [id,d] of Object.entries(w.dialogues)){
   const title=d.title??id.replace(/[-_]/g,' ');for(const f of d.reward?.flags??[])add(f,undefined,'Al terminar: '+title);
   for(const [node,n] of Object.entries(d.nodes))for(const c of n.choices){for(const f of c.reward?.flags??[])add(f,undefined,title+' / '+c.text);if(n.kind==='decision'||n.kind==='branch')add(answerFlag(id,node,c.id),'Respuesta: '+title+' / '+c.text,title+' / '+c.text,'event')}
