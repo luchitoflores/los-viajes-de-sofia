@@ -1,0 +1,67 @@
+{
+  "worlds": [
+    {
+      "id": "earth",
+      "rooms": [],
+      "artStatus": "final"
+    },
+    {
+      "id": "plato",
+      "rooms": [
+        "entrada",
+        "prisioneros",
+        "fuego",
+        "ascenso",
+        "salida",
+        "agora"
+      ],
+      "artStatus": "provisional"
+    },
+    {
+      "id": "sartre",
+      "rooms": [
+        "cafe",
+        "choice-room"
+      ],
+      "artStatus": "provisional"
+    },
+    {
+      "id": "camus",
+      "rooms": [
+        "mountain"
+      ],
+      "artStatus": "provisional"
+    },
+    {
+      "id": "hegel",
+      "rooms": [
+        "transformation"
+      ],
+      "artStatus": "provisional"
+    },
+    {
+      "id": "kant",
+      "rooms": [
+        "study",
+        "morality-room"
+      ],
+      "artStatus": "provisional"
+    },
+    {
+      "id": "heidegger",
+      "rooms": [
+        "path",
+        "time-room"
+      ],
+      "artStatus": "provisional"
+    }
+  ],
+  "unsupported_actions": [
+    {
+      "world": "plato",
+      "behavior": "recuperar-equipo",
+      "type": "record"
+    }
+  ],
+  "source": "Phaser published world JSON; local browser drafts are not included."
+}

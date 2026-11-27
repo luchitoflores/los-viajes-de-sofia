@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Bienvenida",
+    "tags": "inicio",
+    "body": "Platón: Esta es una recreación didáctica para probar tu plantilla.\nSofía: Quiero explorar y aprender a modificarla.\n<<set $permiso = true>>\nPlatón: Busca la linterna y camina al extremo derecho. Puedes duplicar NPC y cambiar sus conversaciones.",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "Duda",
+    "tags": "inicio",
+    "body": "Platón: Cada aparición puede tener su propio nodo, aunque use la misma imagen.\nSofía: Así puedo ampliar conversaciones sin cambiar el motor.",
+    "position": {
+      "x": 330,
+      "y": 0
+    },
+    "colorID": 1
+  },
+  {
+    "title": "Consejo",
+    "tags": "general",
+    "body": "Prisionero: Acércate, toca un personaje y escucha. Estas palabras se editan en Yarn.",
+    "position": {
+      "x": 660,
+      "y": 0
+    },
+    "colorID": 2
+  },
+  {
+    "title": "Pregunta",
+    "tags": "galeria",
+    "body": "Prisionero: ¿Qué hace posible una sombra?\n[[Elegir una respuesta|Decision]]",
+    "position": {
+      "x": 990,
+      "y": 0
+    },
+    "colorID": 3
+  },
+  {
+    "title": "Decision",
+    "tags": "decision",
+    "body": "Una pregunta: ¿Qué hace posible una sombra?\n[[La luz y un objeto|Correcta]]\n[[La sombra existe por sí sola|Revisar]]",
+    "position": {
+      "x": 0,
+      "y": 250
+    },
+    "colorID": 0
+  },
+  {
+    "title": "Correcta",
+    "tags": "galeria",
+    "body": "<<set $respuesta = true>>\nPrisionero: Bien. Ahora puedes seguir hacia la sala de prueba de combate.",
+    "position": {
+      "x": 330,
+      "y": 250
+    },
+    "colorID": 1
+  },
+  {
+    "title": "Revisar",
+    "tags": "galeria",
+    "body": "Prisionero: Piensa en qué interrumpe el recorrido de la luz.\n[[Decision]]",
+    "position": {
+      "x": 660,
+      "y": 250
+    },
+    "colorID": 2
+  },
+  {
+    "title": "Despedida",
+    "tags": "salida",
+    "body": "Platón: Has probado una conversación, una condición, un objeto y un encuentro.\nSofía: Ahora puedo cambiar esta historia desde GDevelop. El portal azul me devuelve al inicio.",
+    "position": {
+      "x": 990,
+      "y": 250
+    },
+    "colorID": 3
+  }
+]

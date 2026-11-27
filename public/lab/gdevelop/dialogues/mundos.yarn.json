@@ -1,0 +1,2062 @@
+[
+  {
+    "title": "W_earth_home_welcome_home_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_earth_home_welcome_home",
+    "tags": "",
+    "body": "Sofía: Este es mi hogar. Puedo subir a mi nave, elegir un mundo y volver a la Tierra cuando quiera. Mis descubrimientos me acompañarán en cada viaje.\n[[Comenzar el viaje|W_earth_home_welcome_home_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 30
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_arrival_turno_2_choice_0",
+    "tags": "",
+    "body": "[[W_plato_arrival_turno_3]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_arrival_turno_2",
+    "tags": "",
+    "body": "Sofía: ¡Hola! ¿Qué hay dentro de esa caverna?\n[[Continuar|W_plato_arrival_turno_2_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 90
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_arrival_turno_3_choice_0",
+    "tags": "",
+    "body": "[[W_plato_arrival_turno_4]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_arrival_turno_3",
+    "tags": "",
+    "body": "Platón: En su interior encontrarás personas que creen conocer la realidad, aunque solo han visto sombras.\n[[Continuar|W_plato_arrival_turno_3_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 150
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_arrival_turno_4_choice_0",
+    "tags": "",
+    "body": "[[W_plato_arrival_turno_5]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_arrival_turno_4",
+    "tags": "",
+    "body": "Sofía: ¡Quiero entrar y descubrirlo!\n[[Continuar|W_plato_arrival_turno_4_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 210
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_arrival_turno_5_choice_0",
+    "tags": "",
+    "body": "[[W_plato_arrival_turno_6]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_arrival_turno_5",
+    "tags": "",
+    "body": "Platón: Puedes explorar el primer recinto, pero para seguir hacia el fondo necesitarás algo que ilumine tu camino.\n[[Continuar|W_plato_arrival_turno_5_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 270
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_arrival_turno_6_choice_0",
+    "tags": "",
+    "body": "[[W_plato_arrival_turno_7]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_arrival_turno_6",
+    "tags": "",
+    "body": "Sofía: ¿Dónde puedo encontrarlo?\n[[Continuar|W_plato_arrival_turno_6_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 330
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_arrival_turno_7_choice_0",
+    "tags": "",
+    "body": "<<set $busqueda_linterna_iniciada = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_arrival_turno_7",
+    "tags": "",
+    "body": "Platón: Hay una linterna en el primer escenario de la caverna. Búscala y vuelve a hablar conmigo antes de continuar. A veces, para descubrir la verdad, primero debemos aprender a buscar.\n[[Continuar|W_plato_arrival_turno_7_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 390
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_arrival_bienvenida_choice_0",
+    "tags": "",
+    "body": "[[W_plato_arrival_turno_2]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_arrival_bienvenida",
+    "tags": "",
+    "body": "Platón: ¡Bienvenida, viajera! Pocas personas se atreven a explorar este lugar.\n[[Continuar|W_plato_arrival_bienvenida_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 450
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_entrada_observacion_oscuro_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_entrada_observacion_oscuro",
+    "tags": "",
+    "body": "Sofía: Aquí llega algo de luz de la entrada. Buscaré la linterna antes de seguir hacia esas voces.\n[[Continuar|W_plato_entrada_observacion_oscuro_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 510
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_prisionero_pregunta_choice_0",
+    "tags": "",
+    "body": "[[W_plato_prisionero_pared]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_prisionero_pregunta",
+    "tags": "",
+    "body": "Sofía: ¿Por qué permaneces mirando esa pared?\n[[Continuar|W_plato_prisionero_pregunta_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 570
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_prisionero_pared_choice_0",
+    "tags": "",
+    "body": "[[W_plato_prisionero_duda]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_prisionero_pared_choice_1",
+    "tags": "",
+    "body": "[[W_plato_prisionero_certeza]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_prisionero_pared",
+    "tags": "decision",
+    "body": "El prisionero: Porque allí está todo lo que conocemos. No necesitamos buscar otra realidad.\n[[¿Nunca has pensado que podría existir algo detrás de las sombras?|W_plato_prisionero_pared_choice_0]]\n[[¿Cómo sabes que las sombras son todo lo que existe?|W_plato_prisionero_pared_choice_1]]",
+    "position": {
+      "x": 300,
+      "y": 660
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_prisionero_duda_choice_0",
+    "tags": "",
+    "body": "<<set $prisionero_escuchado = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_prisionero_duda",
+    "tags": "",
+    "body": "El prisionero: ¿Detrás? ¿Qué podría existir más allá de la realidad? Tengo miedo de abandonar lo conocido.\n[[Investigaré qué produce esas figuras.|W_plato_prisionero_duda_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 720
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_prisionero_certeza_choice_0",
+    "tags": "",
+    "body": "<<set $prisionero_escuchado = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_prisionero_certeza",
+    "tags": "",
+    "body": "El prisionero: Siempre las hemos visto y todos les damos los mismos nombres. Nunca había pensado en pedir una explicación distinta.\n[[Continuar|W_plato_prisionero_certeza_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 780
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_prisionero_evidencias_choice_0",
+    "tags": "",
+    "body": "[[W_plato_prisionero_aceptar]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_prisionero_evidencias_choice_1",
+    "tags": "",
+    "body": "[[W_plato_prisionero_miedo]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_prisionero_evidencias",
+    "tags": "decision",
+    "body": "Sofía: Encontré un fuego y objetos que interrumpen su luz. La pared muestra proyecciones, no los objetos mismos.\n[[Puedo mostrarte cómo cambian las sombras.|W_plato_prisionero_evidencias_choice_0]]\n[[¿Qué te asusta de comprobarlo?|W_plato_prisionero_evidencias_choice_1]]",
+    "position": {
+      "x": 300,
+      "y": 870
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_prisionero_miedo_choice_0",
+    "tags": "",
+    "body": "[[W_plato_prisionero_aceptar]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_prisionero_miedo",
+    "tags": "",
+    "body": "El prisionero: Si tienes razón, tendría que revisar todo lo que creía. Y la luz me duele.\n[[No hace falta comprenderlo todo de una vez. Iré contigo.|W_plato_prisionero_miedo_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 930
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_prisionero_aceptar_choice_0",
+    "tags": "",
+    "body": "<<set $prisionero_acepta = true>>\n<<set $prisionero_escuchado = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_prisionero_aceptar",
+    "tags": "",
+    "body": "El prisionero: Quiero intentarlo. Abre mis cadenas y caminemos despacio.\n[[Continuar|W_plato_prisionero_aceptar_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 990
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_prisionero_espera_choice_0",
+    "tags": "",
+    "body": "<<set $prisionero_escuchado = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_prisionero_espera",
+    "tags": "",
+    "body": "El prisionero: Estoy dispuesto. Puedes abrir las cadenas junto a mí. No quiero que me arrastres: iremos juntos.\n[[Continuar|W_plato_prisionero_espera_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 1050
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_prisionero_se_queda_choice_0",
+    "tags": "",
+    "body": "<<set $prisionero_escuchado = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_prisionero_se_queda",
+    "tags": "",
+    "body": "El prisionero: He decidido quedarme para seguir conversando con ellos. No puedo obligarlos a creerme, pero puedo acompañar sus preguntas.\n[[Continuar|W_plato_prisionero_se_queda_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 1110
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_prisionero_libre_choice_0",
+    "tags": "",
+    "body": "<<set $prisionero_escuchado = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_prisionero_libre",
+    "tags": "",
+    "body": "El prisionero: Ya no confundo la pared con todo lo real. Lo aprendido todavía me plantea preguntas.\n[[Continuar|W_plato_prisionero_libre_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 1170
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_pared_sombras_mirar_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_pared_sombras_mirar",
+    "tags": "",
+    "body": "Sofía: Esas figuras cambian cuando algo se mueve detrás de la pared. Seguiré el recorrido de la luz para comprender por qué.\n[[Continuar|W_plato_pared_sombras_mirar_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 1230
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_observar_fuego_observar_choice_0",
+    "tags": "",
+    "body": "<<set $fuego_observado = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_observar_fuego_observar",
+    "tags": "",
+    "body": "Sofía: Esta fuente de luz permite que aparezcan las sombras. Sin conocerla, la pared parece explicar todo por sí sola.\n[[Continuar|W_plato_observar_fuego_observar_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 1290
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_observar_caballo_observar_choice_0",
+    "tags": "",
+    "body": "<<set $caballo_observado = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_observar_caballo_observar",
+    "tags": "",
+    "body": "Sofía: La figura de caballo tiene contorno y volumen. Su sombra depende de la posición del objeto y de la luz.\n[[Continuar|W_plato_observar_caballo_observar_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 1350
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_observar_vasija_observar_choice_0",
+    "tags": "",
+    "body": "<<set $vasija_observada = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_observar_vasija_observar",
+    "tags": "",
+    "body": "Sofía: Esta vasija no es la mancha oscura de la pared. Puedo rodearla y observar aspectos que su proyección no muestra.\n[[Continuar|W_plato_observar_vasija_observar_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 1410
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_observar_figura_observar_choice_0",
+    "tags": "",
+    "body": "<<set $figura_observada = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_observar_figura_observar",
+    "tags": "",
+    "body": "Sofía: La figura humana se interpone entre el fuego y el muro. Puedo seguir la relación entre objeto, luz y proyección.\n[[Continuar|W_plato_observar_figura_observar_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 1470
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_origen_sombras_hallazgo_choice_0",
+    "tags": "",
+    "body": "[[W_plato_origen_sombras_persuadir]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_origen_sombras_hallazgo",
+    "tags": "",
+    "body": "Sofía: ¡Ahora entiendo! Lo que ellos ven son sombras de estos objetos. Comprender su origen exige relacionar la luz, las figuras y la pared.\n[[Continuar|W_plato_origen_sombras_hallazgo_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 1530
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_origen_sombras_persuadir_choice_0",
+    "tags": "",
+    "body": "[[W_plato_origen_sombras_imponer]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_origen_sombras_persuadir_choice_1",
+    "tags": "",
+    "body": "[[W_plato_origen_sombras_demostrar]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_origen_sombras_persuadir_choice_2",
+    "tags": "",
+    "body": "[[W_plato_origen_sombras_escuchar]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_origen_sombras_persuadir",
+    "tags": "decision",
+    "body": "Sofía: Si alguien solo ha visto sombras durante toda su vida, ¿cómo podría invitarlo a investigar?\n[[Decirle que siempre estuvo equivocado.|W_plato_origen_sombras_persuadir_choice_0]]\n[[Mostrarle cómo se produce una sombra.|W_plato_origen_sombras_persuadir_choice_1]]\n[[Escuchar su miedo y explorar juntos.|W_plato_origen_sombras_persuadir_choice_2]]",
+    "position": {
+      "x": 300,
+      "y": 1650
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_origen_sombras_imponer_choice_0",
+    "tags": "",
+    "body": "<<set $sombras_comprendidas = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_origen_sombras_imponer",
+    "tags": "",
+    "body": "Sofía: Una afirmación tajante puede provocar rechazo. Necesitaré ofrecer razones y darle tiempo para examinar lo que digo.\n[[Continuar|W_plato_origen_sombras_imponer_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 1710
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_origen_sombras_demostrar_choice_0",
+    "tags": "",
+    "body": "<<set $sombras_comprendidas = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_origen_sombras_demostrar",
+    "tags": "",
+    "body": "Sofía: Una experiencia compartida puede abrir preguntas. Ver algo distinto tampoco sustituye el esfuerzo de comprenderlo.\n[[Continuar|W_plato_origen_sombras_demostrar_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 1770
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_origen_sombras_escuchar_choice_0",
+    "tags": "",
+    "body": "<<set $sombras_comprendidas = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_origen_sombras_escuchar",
+    "tags": "",
+    "body": "Sofía: Escuchar no elimina las diferencias, pero permite buscar juntos las razones de nuestras creencias.\n[[Continuar|W_plato_origen_sombras_escuchar_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 1830
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_duda_ascenso_duele_choice_0",
+    "tags": "",
+    "body": "[[W_plato_duda_ascenso_respuesta]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_duda_ascenso_duele",
+    "tags": "",
+    "body": "El prisionero: La luz me lastima. Quiero regresar.\n[[Continuar|W_plato_duda_ascenso_duele_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 1890
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_duda_ascenso_respuesta_choice_0",
+    "tags": "",
+    "body": "[[W_plato_duda_ascenso_paso]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_duda_ascenso_respuesta_choice_1",
+    "tags": "",
+    "body": "[[W_plato_duda_ascenso_razones]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_duda_ascenso_respuesta",
+    "tags": "decision",
+    "body": "Sofía: Es normal que algo desconocido resulte difícil. ¿Quieres continuar?\n[[Podemos detenernos y seguir paso a paso.|W_plato_duda_ascenso_respuesta_choice_0]]\n[[Recordemos lo que pudimos comprobar juntos.|W_plato_duda_ascenso_respuesta_choice_1]]",
+    "position": {
+      "x": 300,
+      "y": 1980
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_duda_ascenso_paso_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_duda_ascenso_paso",
+    "tags": "",
+    "body": "El prisionero: Sí. No necesito acostumbrarme de inmediato. Quiero dar el siguiente paso contigo.\n[[Continuar|W_plato_duda_ascenso_paso_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 2040
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_duda_ascenso_razones_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_duda_ascenso_razones",
+    "tags": "",
+    "body": "El prisionero: Las sombras dependían de cosas que antes no conocía. Seguiré, aunque todavía tenga dudas.\n[[Continuar|W_plato_duda_ascenso_razones_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 2100
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_primera_salida_deslumbrado_choice_0",
+    "tags": "",
+    "body": "[[W_plato_primera_salida_pregunta]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_primera_salida_deslumbrado",
+    "tags": "",
+    "body": "El prisionero: La claridad me deslumbra. Primero puedo distinguir sombras y reflejos; después, poco a poco, los objetos.\n[[Continuar|W_plato_primera_salida_deslumbrado_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 2160
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_primera_salida_pregunta_choice_0",
+    "tags": "",
+    "body": "[[W_plato_primera_salida_respuesta]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_primera_salida_pregunta",
+    "tags": "",
+    "body": "Sofía: ¿Y ahora qué piensas de las sombras que observabas?\n[[Continuar|W_plato_primera_salida_pregunta_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 2220
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_primera_salida_respuesta_choice_0",
+    "tags": "",
+    "body": "[[W_plato_primera_salida_educacion]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_primera_salida_respuesta",
+    "tags": "",
+    "body": "El prisionero: Creía que eran toda la realidad. Nunca imaginé que existiera algo así.\n[[Continuar|W_plato_primera_salida_respuesta_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 2280
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_primera_salida_educacion_choice_0",
+    "tags": "",
+    "body": "[[W_plato_primera_salida_regreso]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_primera_salida_educacion",
+    "tags": "",
+    "body": "Sofía: El ascenso representa también un cambio en nuestra manera de pensar y justificar lo que creemos. Conocer no consiste simplemente en contemplar un paisaje bonito.\n[[Continuar|W_plato_primera_salida_educacion_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 2340
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_primera_salida_regreso_choice_0",
+    "tags": "",
+    "body": "<<set $primer_ascenso_completado = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_primera_salida_regreso",
+    "tags": "",
+    "body": "El prisionero: Quiero volver con mis compañeros y compartir lo que he aprendido. ¿Recorremos de nuevo el camino?\n[[Continuar|W_plato_primera_salida_regreso_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 2400
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_regreso_conflicto_contar_choice_0",
+    "tags": "",
+    "body": "[[W_plato_regreso_conflicto_rechazo]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_regreso_conflicto_contar",
+    "tags": "",
+    "body": "El prisionero: He visto un mundo fuera de esta caverna. Lo que observamos aquí son sombras.\n[[Continuar|W_plato_regreso_conflicto_contar_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 2460
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_regreso_conflicto_rechazo_choice_0",
+    "tags": "",
+    "body": "[[W_plato_regreso_conflicto_explicar]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_regreso_conflicto_rechazo_choice_1",
+    "tags": "",
+    "body": "[[W_plato_regreso_conflicto_preguntar]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_regreso_conflicto_rechazo_choice_2",
+    "tags": "",
+    "body": "[[W_plato_regreso_conflicto_respetar]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_regreso_conflicto_rechazo",
+    "tags": "decision",
+    "body": "Otro prisionero: ¡Imposible! Todo cuanto existe está frente a nosotros. La luz te ha confundido; ya ni siquiera reconoces nuestras sombras.\n[[Sofía: podemos mostrarles el fuego y las figuras.|W_plato_regreso_conflicto_rechazo_choice_0]]\n[[Sofía: ¿qué observación les haría revisar su creencia?|W_plato_regreso_conflicto_rechazo_choice_1]]\n[[Sofía: no vamos a obligarlos a acompañarnos.|W_plato_regreso_conflicto_rechazo_choice_2]]",
+    "position": {
+      "x": 300,
+      "y": 2580
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_regreso_conflicto_explicar_choice_0",
+    "tags": "",
+    "body": "[[W_plato_regreso_conflicto_privado]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_regreso_conflicto_explicar",
+    "tags": "",
+    "body": "Otro prisionero: No quiero abandonar lo que conozco. Tus explicaciones no me convencen.\n[[Continuar|W_plato_regreso_conflicto_explicar_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 2640
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_regreso_conflicto_preguntar_choice_0",
+    "tags": "",
+    "body": "[[W_plato_regreso_conflicto_privado]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_regreso_conflicto_preguntar",
+    "tags": "",
+    "body": "Otro prisionero: No necesito esa prueba. Los nombres que damos a las sombras nos han bastado siempre.\n[[Continuar|W_plato_regreso_conflicto_preguntar_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 2700
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_regreso_conflicto_respetar_choice_0",
+    "tags": "",
+    "body": "[[W_plato_regreso_conflicto_privado]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_regreso_conflicto_respetar",
+    "tags": "",
+    "body": "Otro prisionero: Entonces déjennos mirar nuestra pared.\n[[Continuar|W_plato_regreso_conflicto_respetar_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 2760
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_regreso_conflicto_privado_choice_0",
+    "tags": "",
+    "body": "<<set $regreso_caverna_completado = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_regreso_conflicto_privado",
+    "tags": "",
+    "body": "Sofía: Compartir una experiencia no garantiza que los demás la acepten. Podemos ofrecer razones y escuchar sus objeciones, pero no decidir por ellos. Hablemos en privado sobre lo que deseas hacer.\n[[Continuar|W_plato_regreso_conflicto_privado_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 2820
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_companero_caminar_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_companero_caminar",
+    "tags": "",
+    "body": "El prisionero: Iré a tu lado. Podemos conversar cuando quieras y avanzar sin apresurarnos.\n[[Continuar|W_plato_companero_caminar_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 2880
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_companero_volver_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_companero_volver",
+    "tags": "",
+    "body": "El prisionero: Debemos regresar por el ascenso hasta la sala de mis compañeros. Aún no hemos terminado.\n[[Continuar|W_plato_companero_volver_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 2940
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_companero_decidir_choice_0",
+    "tags": "",
+    "body": "[[W_plato_companero_quedarse]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_companero_decidir_choice_1",
+    "tags": "",
+    "body": "[[W_plato_companero_exterior]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_companero_decidir",
+    "tags": "decision",
+    "body": "Sofía: Ahora conoces la luz, pero tus compañeros no quieren escucharte. ¿Qué deseas hacer?\n[[Permanecer en la caverna e intentar ayudarlos.|W_plato_companero_decidir_choice_0]]\n[[Regresar al exterior con Sofía.|W_plato_companero_decidir_choice_1]]",
+    "position": {
+      "x": 300,
+      "y": 3030
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_companero_quedarse_choice_0",
+    "tags": "",
+    "body": "<<set $decision_final_prisionero = true>>\n<<set $prisionero_se_queda = true>>\n[[W_plato_companero_despedida]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_companero_quedarse",
+    "tags": "",
+    "body": "El prisionero: Me quedaré. No puedo forzar su decisión, pero quiero estar aquí si comienzan a preguntar.\n[[Continuar|W_plato_companero_quedarse_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3090
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_companero_despedida_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_companero_despedida",
+    "tags": "",
+    "body": "Sofía: Respeto tu decisión. Subiré de nuevo para continuar mi viaje. Esta elección es nuestra adaptación narrativa; no es un desenlace que Platón describiera literalmente.\n[[Continuar|W_plato_companero_despedida_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3150
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_companero_exterior_choice_0",
+    "tags": "",
+    "body": "<<set $decision_final_prisionero = true>>\n<<set $prisionero_sale = true>>\n[[W_plato_companero_juntos]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_companero_exterior",
+    "tags": "",
+    "body": "El prisionero: Volveré al exterior contigo. Podemos seguir aprendiendo sin dejar de preguntarnos cómo ayudar a los demás.\n[[Continuar|W_plato_companero_exterior_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3210
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_companero_juntos_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_companero_juntos",
+    "tags": "",
+    "body": "Sofía: Hagamos el segundo ascenso. Esta elección es una adaptación de nuestra aventura, no un final literal del relato de Platón.\n[[Continuar|W_plato_companero_juntos_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3270
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_companero_segunda_vez_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_companero_segunda_vez",
+    "tags": "",
+    "body": "El prisionero: He decidido subir de nuevo contigo. Esta vez conozco el camino, aunque aprender no haya terminado.\n[[Continuar|W_plato_companero_segunda_vez_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3330
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_cierre_sola_choice_0",
+    "tags": "",
+    "body": "[[W_plato_cierre_platon]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_cierre_sola",
+    "tags": "",
+    "body": "Sofía: He recorrido por segunda vez el ascenso. Mi compañero eligió quedarse para ayudar; yo continúo con lo aprendido.\n[[Continuar|W_plato_cierre_sola_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3390
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_cierre_juntos_choice_0",
+    "tags": "",
+    "body": "[[W_plato_cierre_platon]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_cierre_juntos",
+    "tags": "",
+    "body": "El prisionero: Hemos subido de nuevo. Ahora sé que revisar lo que creemos requiere esfuerzo, y que explicarlo a otros también puede ser difícil.\n[[Continuar|W_plato_cierre_juntos_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3450
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_cierre_platon_choice_0",
+    "tags": "",
+    "body": "[[W_plato_cierre_final]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_cierre_platon",
+    "tags": "",
+    "body": "Platón: La educación no es poner visión en unos ojos ciegos: exige orientar la mirada y examinar las razones. El regreso plantea además qué responsabilidad tenemos ante los otros.\n[[Continuar|W_plato_cierre_platon_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3510
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_cierre_final_choice_0",
+    "tags": "",
+    "body": "<<set $segundo_ascenso_completado = true>>\n<<set $aventura_platon_completada = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_cierre_final",
+    "tags": "",
+    "body": "Sofía: Investigué las sombras, acompañé el aprendizaje, regresé para escuchar el rechazo y respeté una decisión. Ahora puedo salir de la caverna y continuar el viaje.\n[[Continuar|W_plato_cierre_final_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3570
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_otros_prisioneros_pared_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_otros_prisioneros_pared",
+    "tags": "",
+    "body": "Otro prisionero: Todo cuanto necesitamos está en esa pared. No queremos abandonar nuestras sombras.\n[[Continuar|W_plato_otros_prisioneros_pared_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3630
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_linterna_regreso_turno_1_choice_0",
+    "tags": "",
+    "body": "[[W_plato_linterna_regreso_turno_2]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_linterna_regreso_turno_1",
+    "tags": "",
+    "body": "Platón: Veo que has encontrado la linterna.\n[[Continuar|W_plato_linterna_regreso_turno_1_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3690
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_linterna_regreso_turno_2_choice_0",
+    "tags": "",
+    "body": "[[W_plato_linterna_regreso_turno_3]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_linterna_regreso_turno_2",
+    "tags": "",
+    "body": "Sofía: ¡Sí! Ahora podremos ver lo que hay dentro.\n[[Continuar|W_plato_linterna_regreso_turno_2_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3750
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_linterna_regreso_turno_3_choice_0",
+    "tags": "",
+    "body": "[[W_plato_linterna_regreso_turno_4]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_linterna_regreso_turno_3",
+    "tags": "",
+    "body": "Platón: Recuerda, Sofía: la luz puede ayudarte a ver, pero comprender lo que ves requerirá algo más.\n[[Continuar|W_plato_linterna_regreso_turno_3_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3810
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_linterna_regreso_turno_4_choice_0",
+    "tags": "",
+    "body": "[[W_plato_linterna_regreso_turno_5]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_linterna_regreso_turno_4",
+    "tags": "",
+    "body": "Sofía: ¿Qué cosa?\n[[Continuar|W_plato_linterna_regreso_turno_4_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3870
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_linterna_regreso_turno_5_choice_0",
+    "tags": "",
+    "body": "<<set $permiso_platon = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_linterna_regreso_turno_5",
+    "tags": "",
+    "body": "Platón: Tu capacidad de pensar y cuestionar lo que parece evidente. Adelante: enciende tu linterna y sigue hacia los prisioneros.\n[[Continuar|W_plato_linterna_regreso_turno_5_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3930
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_linterna_busqueda_turno_1_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_linterna_busqueda_turno_1",
+    "tags": "",
+    "body": "Platón: Busca la linterna en el primer recinto de la caverna. Cuando la encuentres, vuelve para conversar antes de seguir hacia las voces.\n[[Continuar|W_plato_linterna_busqueda_turno_1_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 3990
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_linterna_permiso_turno_1_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_linterna_permiso_turno_1",
+    "tags": "",
+    "body": "Platón: La luz te ayudará a mirar; pregunta también por qué las cosas aparecen como aparecen. Te esperaré aquí cuando regreses.\n[[Continuar|W_plato_linterna_permiso_turno_1_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 4050
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_encapuchado_inicio_turno_1_choice_0",
+    "tags": "",
+    "body": "[[W_plato_encapuchado_inicio_turno_2]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_encapuchado_inicio_turno_1",
+    "tags": "",
+    "body": "Encapuchado: ¿Qué haces aquí? No deberías haber llegado tan lejos.\n[[Continuar|W_plato_encapuchado_inicio_turno_1_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 4110
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_encapuchado_inicio_turno_2_choice_0",
+    "tags": "",
+    "body": "[[W_plato_encapuchado_inicio_turno_3]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_encapuchado_inicio_turno_2",
+    "tags": "",
+    "body": "Sofía: Quiero descubrir de dónde vienen las sombras.\n[[Continuar|W_plato_encapuchado_inicio_turno_2_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 4170
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_encapuchado_inicio_turno_3_choice_0",
+    "tags": "",
+    "body": "[[W_plato_encapuchado_inicio_turno_4]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_encapuchado_inicio_turno_3",
+    "tags": "",
+    "body": "Encapuchado: Hay cosas que es mejor no conocer. ¡Regresa por donde viniste!\n[[Continuar|W_plato_encapuchado_inicio_turno_3_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 4230
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_encapuchado_inicio_turno_4_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_encapuchado_inicio_turno_4",
+    "tags": "",
+    "body": "Sofía: No me iré hasta descubrir la verdad.\n[[Continuar|W_plato_encapuchado_inicio_turno_4_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 4290
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_plato_encapuchado_victoria_turno_1_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_plato_encapuchado_victoria_turno_1",
+    "tags": "",
+    "body": "Sofía: Ahora puedo investigar qué produce esas sombras.\n[[Continuar|W_plato_encapuchado_victoria_turno_1_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 4350
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_sartre_first_meeting_start_choice_0",
+    "tags": "",
+    "body": "[[W_sartre_first_meeting_purpose]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_first_meeting_start_choice_1",
+    "tags": "",
+    "body": "[[W_sartre_first_meeting_object]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_first_meeting_start",
+    "tags": "decision",
+    "body": "Jean-Paul Sartre: Soy Jean-Paul Sartre. Pensemos en un cortapapeles: alguien concibió para qué serviría antes de fabricarlo. ¿Qué vino primero en este objeto?\n[[La finalidad y el diseño.|W_sartre_first_meeting_start_choice_0]]\n[[Se fabricó y después eligió su finalidad.|W_sartre_first_meeting_start_choice_1]]",
+    "position": {
+      "x": 300,
+      "y": 4440
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_sartre_first_meeting_object_choice_0",
+    "tags": "",
+    "body": "[[W_sartre_first_meeting_start]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_first_meeting_object",
+    "tags": "",
+    "body": "Jean-Paul Sartre: Este objeto fue fabricado conforme a un proyecto previo. No puede decidir su finalidad como una persona. Probemos de nuevo.\n[[Volver a observar.|W_sartre_first_meeting_object_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 4500
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_sartre_first_meeting_purpose_choice_0",
+    "tags": "",
+    "body": "[[W_sartre_first_meeting_situated]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_first_meeting_purpose_choice_1",
+    "tags": "",
+    "body": "[[W_sartre_first_meeting_limits]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_first_meeting_purpose",
+    "tags": "decision",
+    "body": "Jean-Paul Sartre: Eso introduce la esencia del objeto antes de su fabricación. En mi filosofía, una persona no llega con una definición cerrada de lo que debe ser. ¿Eso significa poder hacer cualquier cosa?\n[[No: también hay una situación y límites.|W_sartre_first_meeting_purpose_choice_0]]\n[[Sí, ninguna circunstancia importa.|W_sartre_first_meeting_purpose_choice_1]]",
+    "position": {
+      "x": 300,
+      "y": 4590
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_sartre_first_meeting_limits_choice_0",
+    "tags": "",
+    "body": "[[W_sartre_first_meeting_situated]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_first_meeting_limits",
+    "tags": "",
+    "body": "Jean-Paul Sartre: Nuestro cuerpo, historia y entorno importan. Ser libre no equivale a tener todos los medios ni a controlar los resultados.\n[[Entiendo: elijo dentro de una situación.|W_sartre_first_meeting_limits_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 4650
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_sartre_first_meeting_situated_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_first_meeting_situated",
+    "tags": "",
+    "body": "Jean-Paul Sartre: Podemos examinar los papeles que asumimos y cómo respondemos al elegir. Encontrarás el Café de las Máscaras y la Sala de los Dos Caminos. Volveré a conversar contigo cuando quieras.\n[[Quiero explorar y seguir preguntando.|W_sartre_first_meeting_situated_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 4710
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_sartre_mentor_talk_start_choice_0",
+    "tags": "",
+    "body": "[[W_sartre_mentor_talk_essence]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_mentor_talk_start_choice_1",
+    "tags": "",
+    "body": "[[W_sartre_mentor_talk_roles]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_mentor_talk_start_choice_2",
+    "tags": "",
+    "body": "[[W_sartre_mentor_talk_choice]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_mentor_talk_start",
+    "tags": "decision",
+    "body": "Jean-Paul Sartre: ¿Qué quieres examinar?\n[[Existencia y esencia.|W_sartre_mentor_talk_start_choice_0]]\n[[Mis papeles sociales.|W_sartre_mentor_talk_start_choice_1]]\n[[La responsabilidad al elegir.|W_sartre_mentor_talk_start_choice_2]]",
+    "position": {
+      "x": 300,
+      "y": 4830
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_sartre_mentor_talk_essence_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_mentor_talk_essence",
+    "tags": "",
+    "body": "Jean-Paul Sartre: El ejemplo del cortapapeles contrasta un objeto concebido para una función con una existencia que se hace mediante proyectos.\n[[Seguir explorando.|W_sartre_mentor_talk_essence_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 4890
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_sartre_mentor_talk_roles_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_mentor_talk_roles",
+    "tags": "",
+    "body": "Jean-Paul Sartre: Puedes ser camarera, estudiante o astronauta sin quedar reducida para siempre a ese papel. El problema es tratarte como una cosa fija o negar tu situación.\n[[Visitar el café.|W_sartre_mentor_talk_roles_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 4950
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_sartre_mentor_talk_choice_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_mentor_talk_choice",
+    "tags": "",
+    "body": "Jean-Paul Sartre: En la sala no buscamos adivinar una respuesta moral impuesta por mí. Examina la situación, las posibilidades y las razones que puedes asumir.\n[[Examinar mis razones.|W_sartre_mentor_talk_choice_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 5010
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_sartre_cafe_talk_start_choice_0",
+    "tags": "",
+    "body": "[[W_sartre_cafe_talk_roles]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_cafe_talk_start",
+    "tags": "",
+    "body": "Jean-Paul Sartre: Observa el oficio y las expresiones del café. El ejemplo del camarero en El ser y la nada cuestiona identificarse con un papel como si fuera una naturaleza fija. No condena trabajar ni desempeñar bien una tarea.\n[[¿Puedo asumir un papel sin reducirme a él?|W_sartre_cafe_talk_start_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 5070
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_sartre_cafe_talk_roles_choice_0",
+    "tags": "",
+    "body": "<<set $cafe-heard = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_cafe_talk_roles",
+    "tags": "",
+    "body": "Jean-Paul Sartre: Sí. Investiga el cuaderno, relaciona los conceptos y clasifica las evidencias. Distingue negar tus posibilidades de negar tus circunstancias.\n[[Voy a investigar.|W_sartre_cafe_talk_roles_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 5130
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_sartre_young_person_talk_start_choice_0",
+    "tags": "",
+    "body": "[[W_sartre_young_person_talk_formula]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_young_person_talk_start_choice_1",
+    "tags": "",
+    "body": "[[W_sartre_young_person_talk_reason]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_young_person_talk_start",
+    "tags": "decision",
+    "body": "Jean-Paul Sartre: Un joven me consultó si debía quedarse cuidando a su madre o partir para unirse a las fuerzas de la Francia Libre. Lo atraían obligaciones diferentes. ¿Puede una fórmula decidir por él?\n[[Busco una regla que me quite toda responsabilidad.|W_sartre_young_person_talk_start_choice_0]]\n[[Quiero examinar su situación y las razones.|W_sartre_young_person_talk_start_choice_1]]",
+    "position": {
+      "x": 300,
+      "y": 5220
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_sartre_young_person_talk_formula_choice_0",
+    "tags": "",
+    "body": "[[W_sartre_young_person_talk_reason]]",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_young_person_talk_formula",
+    "tags": "",
+    "body": "Jean-Paul Sartre: Puede consultar principios y personas. Pero también debe decidir cómo interpretarlos y a quién escuchar: la consulta no borra su responsabilidad.\n[[Examinar las alternativas.|W_sartre_young_person_talk_formula_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 5280
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_sartre_young_person_talk_reason_choice_0",
+    "tags": "",
+    "body": "<<set $decision-ready = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_sartre_young_person_talk_reason",
+    "tags": "",
+    "body": "Jean-Paul Sartre: Entra en el cuaderno de decisiones. Ninguna de las dos opciones se marca como respuesta moral correcta. Lo que examinaremos es la argumentación y la responsabilidad asumida.\n[[Estoy preparada.|W_sartre_young_person_talk_reason_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 5340
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_camus_arrival_question_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_camus_arrival_question",
+    "tags": "",
+    "body": "Albert Camus: Buscamos claridad y razones, pero el mundo no responde necesariamente a esa exigencia. El absurdo nace de esa confrontación. Visita a Sísifo: ¿cómo continuar sin ocultarnos lo que sabemos?\n[[Quiero escuchar a Sísifo.|W_camus_arrival_question_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 5400
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_camus_sisyphus_talk_question_choice_0",
+    "tags": "",
+    "body": "<<set $sisyphus-reflected = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_camus_sisyphus_talk_question_choice_1",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_camus_sisyphus_talk_question",
+    "tags": "decision",
+    "body": "Sísifo: La roca vuelve a caer y tengo que empezar otra vez. Ser consciente de esa repetición cambia mi relación con ella. ¿La falta de un desenlace definitivo obliga a renunciar?\n[[Podrías continuar sin inventar una garantía final.|W_camus_sisyphus_talk_question_choice_0]]\n[[Solo tendría sentido si al final recibieras un premio.|W_camus_sisyphus_talk_question_choice_1]]",
+    "position": {
+      "x": 300,
+      "y": 5490
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_hegel_arrival_question_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_hegel_arrival_question",
+    "tags": "",
+    "body": "Georg W. F. Hegel: Comprender una forma de vida requiere atender a su desarrollo y a las tensiones que la atraviesan. Una contradicción no es simplemente una pelea: puede mostrar límites internos de lo que tomábamos por estable.\n[[Continuar explorando|W_hegel_arrival_question_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 5550
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_hegel_conflict_question_choice_0",
+    "tags": "",
+    "body": "<<set $hegel-conflict = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_hegel_conflict_question_choice_1",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_hegel_conflict_question",
+    "tags": "decision",
+    "body": "Marco: Nuestra comunidad proclama libertad para todos, pero sus reglas impiden a algunos participar. ¿Basta con repetir la declaración de libertad?\n[[Hay que examinar cómo las reglas contradicen esa pretensión.|W_hegel_conflict_question_choice_0]]\n[[Es mejor ocultar el conflicto para conservar el orden.|W_hegel_conflict_question_choice_1]]",
+    "position": {
+      "x": 300,
+      "y": 5640
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_hegel_development_question_choice_0",
+    "tags": "",
+    "body": "<<set $hegel-development = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_hegel_development_question",
+    "tags": "",
+    "body": "Ana: Subir no significa que toda historia mejore automáticamente. En una transformación se cuestionan formas anteriores y también se conservan determinaciones. ¿Qué tendría que cambiar para realizar mejor aquella libertad?\n[[Revisar las instituciones y lo que permiten hacer a cada persona.|W_hegel_development_question_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 5700
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_kant_arrival_question_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_kant_arrival_question",
+    "tags": "",
+    "body": "Immanuel Kant: Conocer requiere experiencia, pero también las formas y reglas con las que la organizamos. Y actuar moralmente exige examinar la máxima de nuestra acción, no solo calcular lo que nos conviene.\n[[Continuar explorando|W_kant_arrival_question_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 5760
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_kant_knowledge_question_choice_0",
+    "tags": "",
+    "body": "<<set $kant-knowledge = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_kant_knowledge_question_choice_1",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_kant_knowledge_question",
+    "tags": "decision",
+    "body": "Elena: Observo una piedra y anoto sus cambios. ¿Conocer consiste únicamente en acumular sensaciones?\n[[También importa cómo ordenamos lo que recibimos.|W_kant_knowledge_question_choice_0]]\n[[La mente sería una copia pasiva de todo lo que llega.|W_kant_knowledge_question_choice_1]]",
+    "position": {
+      "x": 300,
+      "y": 5850
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_kant_morality_question_choice_0",
+    "tags": "",
+    "body": "<<set $kant-duty = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_kant_morality_question_choice_1",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_kant_morality_question",
+    "tags": "decision",
+    "body": "Immanuel Kant: Alguien pide un préstamo prometiendo devolverlo, aunque sabe que no piensa cumplirlo. ¿Qué máxima guía esa acción?\n[[Prometer falsamente cuando me convenga: ¿podría quererlo como ley universal?|W_kant_morality_question_choice_0]]\n[[Sería correcta siempre que obtuviera más beneficios.|W_kant_morality_question_choice_1]]",
+    "position": {
+      "x": 300,
+      "y": 5940
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_heidegger_arrival_question_choice_0",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_heidegger_arrival_question",
+    "tags": "",
+    "body": "Martin Heidegger: La existencia humana ya está implicada en un mundo de relaciones, tareas y posibilidades. Preguntemos cómo se nos abre ese mundo, antes de tratarlo como una colección de cosas aisladas.\n[[Continuar explorando|W_heidegger_arrival_question_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 6000
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_heidegger_everyday_question_choice_0",
+    "tags": "",
+    "body": "<<set $heidegger-care = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_heidegger_everyday_question_choice_1",
+    "tags": "",
+    "body": "<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_heidegger_everyday_question",
+    "tags": "decision",
+    "body": "Clara: Arreglo esta cabaña, uso herramientas y organizo mis tareas. Las cosas aparecen ligadas a lo que estoy haciendo. ¿Soy primero una mente separada que después se conecta al mundo?\n[[Ya estás implicada en un contexto de actividades y relaciones.|W_heidegger_everyday_question_choice_0]]\n[[Solo habría decisiones individuales sin situación previa.|W_heidegger_everyday_question_choice_1]]",
+    "position": {
+      "x": 300,
+      "y": 6090
+    },
+    "colorID": 1
+  },
+  {
+    "title": "W_heidegger_temporality_question_choice_0",
+    "tags": "",
+    "body": "<<set $heidegger-time = true>>\n<<stop>>",
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "W_heidegger_temporality_question",
+    "tags": "",
+    "body": "Clara: Mis proyectos se abren desde una situación que no elegí por completo y orientan lo que hago ahora. ¿El tiempo de la existencia es solamente una fila de instantes?\n[[Pasado, posibilidades y presente se articulan en esa existencia.|W_heidegger_temporality_question_choice_0]]",
+    "position": {
+      "x": 300,
+      "y": 6150
+    },
+    "colorID": 1
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "emulated_touch": false,
+    "physical_phone": false,
+    "circular_walk": true,
+    "ordered_flight_both_directions": true,
+    "surface_npc_yarn": true,
+    "cave_entry_return": true,
+    "lamp": true,
+    "crouch_evades_projectiles": true,
+    "combat_damage": true,
+    "errors": []
+  },
+  {
+    "emulated_touch": true,
+    "physical_phone": false,
+    "circular_walk": true,
+    "ordered_flight_both_directions": true,
+    "surface_npc_yarn": true,
+    "cave_entry_return": true,
+    "lamp": true,
+    "crouch_evades_projectiles": true,
+    "combat_damage": true,
+    "errors": []
+  }
+]
