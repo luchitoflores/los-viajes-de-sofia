@@ -1,0 +1,11 @@
+[
+  {"title":"Platon_Encuentro","tags":"superficie platon","body":"<<set $met = true>>\nPlatón: Bienvenida, Sofía. En esta caverna hay personas que solo conocen las sombras.\nSofía: ¿Cómo puedo descubrir qué hay detrás de lo que ven?\nPlatón: Busca la linterna en la entrada. Después explora y escucha al prisionero.","position":{"x":0,"y":0},"colorID":0},
+  {"title":"Antes_De_Entrar","tags":"superficie requisito","body":"Sofía: Primero quiero conocer a Platón.","position":{"x":0,"y":220},"colorID":0},
+  {"title":"Linterna_Recogida","tags":"entrada objeto","body":"<<set $owned = true>>\nSofía: He encontrado una linterna. Puedo encenderla o apagarla con L o tocando su icono.","position":{"x":320,"y":0},"colorID":1},
+  {"title":"Puerta_Sin_Luz","tags":"entrada puerta","body":"Sofía: Necesito recoger la linterna y encenderla antes de seguir.","position":{"x":320,"y":220},"colorID":1},
+  {"title":"Prisionero_Encuentro","tags":"prisioneros conversacion","body":"<<if $complete == true>>\n[[Prisionero_Conclusion]]\n<<else>>\nPrisionero: Siempre he mirado esa pared. Creía que las sombras eran todo lo que existía.\nSofía: Las sombras dependen de una luz y de algo que la interrumpe. Podemos investigar su origen.\n[[Pregunta_Sombras]]\n<<endif>>","position":{"x":640,"y":0},"colorID":2},
+  {"title":"Pregunta_Sombras","tags":"prisioneros decision","body":"Una pregunta: ¿Qué hace posible que aparezcan las sombras?\n[[Una fuente de luz y los objetos|Respuesta_Correcta]]\n[[Las sombras existen por sí solas|Respuesta_Investigar]]","position":{"x":960,"y":0},"colorID":2},
+  {"title":"Respuesta_Investigar","tags":"prisioneros reintento","body":"Sofía: La sombra necesita algo que la proyecte. Pensemos también en la luz.\n[[Pregunta_Sombras]]","position":{"x":1280,"y":220},"colorID":2},
+  {"title":"Respuesta_Correcta","tags":"prisioneros objetivo","body":"<<set $complete = true>>\n[[Prisionero_Conclusion]]","position":{"x":1280,"y":0},"colorID":2},
+  {"title":"Prisionero_Conclusion","tags":"prisioneros final","body":"Prisionero: Entonces hay algo más que las apariencias. Quiero seguir preguntando.\nSofía: Hemos completado esta pequeña prueba. Podemos regresar a la superficie por la entrada.","position":{"x":1600,"y":0},"colorID":2}
+]

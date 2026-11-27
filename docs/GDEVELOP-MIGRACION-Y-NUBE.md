@@ -2,7 +2,9 @@
 
 ## Alcance real
 
-Trasladar el juego completo a GDevelop, con componentes visuales editables, tiene dificultad media-alta. Copiar imágenes y textos es la parte sencilla. La demo de GDevelop con Yarn es una prueba funcional abreviada: no contiene todo el motor Phaser ni prueba equivalencia del capítulo completo.
+El autor aclara que **no se migra ni se reconstruye el editor propio de Phaser**. La edición de escenas/objetos utilizará las herramientas nativas de GDevelop o Godot; la autoría narrativa, Yarn o un complemento integrado. Solo se migra el juego y sus datos/comportamientos.
+
+Con ese alcance, la dificultad es media: copiar imágenes y textos es sencillo; física radial, eventos, persistencia y pruebas siguen necesitando adaptación. La demo de GDevelop con Yarn es una prueba funcional abreviada: no contiene todo el motor Phaser ni prueba equivalencia del capítulo completo.
 
 | Parte | Dificultad relativa / trabajo |
 | --- | --- |
@@ -12,10 +14,19 @@ Trasladar el juego completo a GDevelop, con componentes visuales editables, tien
 | Diálogos | Media: convertir nodos/condiciones/recompensas a Yarn y conectarlos con el estado |
 | Física radial, cámara y nave | Alta: adaptar controladores conservando pies, escala y direcciones |
 | Progreso, partidas y rescate en varios actos | Alta: equivalencia de estados, regresos y guardado |
-| Herramientas del editor propio | Alta: decidir cuáles sustituye GDevelop y cuáles siguen necesitando una extensión |
+| Herramientas del editor propio | Fuera de alcance: usar las herramientas nativas, sin reconstruirlas |
 | Framework HTML de minijuegos | Media: adaptador web de inicio, pausa, resultado y cierre; aún pendiente |
 
 Orden recomendado: preparar NPC, objeto, paso/puerta y portal comunes; trasladar el capítulo completo de Platón; comparar guardado y recorridos; probar que el autor puede editarlo sin Codex; luego migrar el resto por datos. No mantener tres implementaciones completas en paralelo ni prometer una conversión automática sin pérdida.
+
+Como orden de magnitud preliminar de trabajo de ingeniería, reservar 40–80 horas para un primer capítulo equivalente con componentes comunes, y 80–160 o más para trasladar lo jugable actual incluyendo modos, viaje, inventario, guardados y regresiones. No son horas medidas ni un presupuesto cerrado; una auditoría de alcance puede cambiar mucho el rango. No incluyen crear treinta mundos futuros, el editor propio ni un editor nuevo de minijuegos. Tampoco equivalen al tiempo de una sesión ni a créditos de Codex; no hay una conversión fija entre esos valores.
+
+## Herramientas existentes, sin un editor nuevo
+
+- GDevelop: [objetos personalizados/prefabs](https://wiki.gdevelop.io/gdevelop5/objects/custom-objects-prefab-template/), comportamientos, eventos externos y Yarn/Dialogue Tree. Son las piezas nativas para reutilizar un NPC o puerta en muchas escenas.
+- Godot: escenas instanciadas, recursos exportados y señales; para narrativa, [Dialogic](https://github.com/dialogic-godot/dialogic) ofrece autoría visual y [Dialogue Manager](https://github.com/nathanhoad/godot_dialogue_manager) ofrece guion ramificado, condiciones y localización. Elegir uno y una versión compatible; no instalar ambos por defecto.
+
+Estas herramientas automatizan/reutilizan partes del desarrollo, no convierten por sí solas el juego Phaser ni infieren su lógica de misiones.
 
 ## Componentes que habría que preparar
 

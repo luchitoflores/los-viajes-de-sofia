@@ -1,128 +1,86 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=12 format=3]
 
-[sub_resource type="GDScript" id="GDScript_room"]
-script/source = "extends Control\n\n@export_multiline var bienvenida: String = \"Platón: Observa las sombras. ¿Son toda la realidad?\"\n@export_multiline var pregunta: String = \"¿Qué produce las sombras de la caverna?\"\n@export var paso: float = 48.0\nvar hablado := false\nvar comprendido := false\nfunc _ready() -> void:\n\t$Left.pressed.connect(func(): mover(-paso))\n\t$Right.pressed.connect(func(): mover(paso))\n\t$Talk.pressed.connect(hablar)\n\t$Correct.pressed.connect(func(): responder(true))\n\t$Wrong.pressed.connect(func(): responder(false))\n\t$Door.pressed.connect(salir)\n\t$Restart.pressed.connect(func(): get_tree().reload_current_scene())\nfunc mover(delta: float) -> void:\n\t$Sofia.position.x = clampf($Sofia.position.x + delta, 35.0, 800.0)\nfunc hablar() -> void:\n\thablado = true\n\t$Message.text = bienvenida + \"\\n\" + pregunta\nfunc responder(correcta: bool) -> void:\n\tif not hablado:\n\t\t$Message.text = \"Primero conversa con Platón.\"\n\t\treturn\n\tif correcta:\n\t\tcomprendido = true\n\t\t$Message.text = \"¡Correcto! La luz y los objetos producen las sombras. Salida desbloqueada.\"\n\t\t$Door.text = \"Salir (abierta)\"\n\telse:\n\t\t$Message.text = \"Piensa en lo que hay detrás de la pared. Inténtalo nuevamente.\"\nfunc salir() -> void:\n\t$Message.text = \"Capítulo de prueba completado.\" if comprendido else \"La salida está cerrada. Completa el desafío.\"\n"
+[ext_resource type="Script" path="res://room.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/galaxy.jpg" id="2"]
+[ext_resource type="Texture2D" path="res://assets/sofia-0.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/plato.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/planet.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/flashlight.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/cave.png" id="7"]
+[ext_resource type="Shader" path="res://light.gdshader" id="8"]
+[sub_resource type="RectangleShape2D" id="floor"]
+size = Vector2(1280, 35)
+[sub_resource type="RectangleShape2D" id="body"]
+size = Vector2(46, 145)
+[sub_resource type="ShaderMaterial" id="light"]
+shader = ExtResource("8")
+shader_parameter/enabled = false
+shader_parameter/darkness = 0
 
-[node name="Caverna" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = SubResource("GDScript_room")
+[node name="DemoSofia" type="Node2D"]
+script = ExtResource("1")
+scene_id = "surface"
 
-[node name="Fondo" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 960.0
-offset_bottom = 600.0
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(640,360)
+texture = ExtResource("2")
+scale = Vector2(0.5818181818181818,0.6545454545454545)
+
+[node name="Planet" type="Sprite2D" parent="."]
+visible = true
+position = Vector2(640,360)
+texture = ExtResource("5")
+scale = Vector2(0.3508771929824561,0.3508771929824561)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(640,577.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("floor")
+disabled = true
+
+[node name="Sofia" type="CharacterBody2D" parent="."]
+z_index = 10
+position = Vector2(492.8,196.5)
+rotation = -0.733
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sofia"]
+position = Vector2(0,-72.5)
+shape = SubResource("body")
+[node name="Artwork" type="Sprite2D" parent="Sofia"]
+texture = ExtResource("3")
+centered = false
+offset = Vector2(-140,-304)
+scale = Vector2(0.45643153526970953,0.45643153526970953)
+
+[node name="NPC" type="Sprite2D" parent="."]
+visible = true
+position = Vector2(620.8,140.8)
+rotation = -0.08727
+texture = ExtResource("4")
+centered = false
+offset = Vector2(-140,-304)
+scale = Vector2(0.45643153526970953,0.45643153526970953)
+
+[node name="Cave" type="Sprite2D" parent="."]
+visible = true
+position = Vector2(795.56,204.44)
+rotation = 0.7854
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-190.5,-338)
+scale = Vector2(0.2958579881656805,0.2958579881656805)
+
+[node name="Lamp" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(743,535)
+texture = ExtResource("6")
+scale = Vector2(0.05636978579481398,0.05636978579481398)
+z_index = 12
+
+[node name="Darkness" type="ColorRect" parent="."]
+visible = false
+z_index = 30
+offset_right = 1280.0
+offset_bottom = 720.0
 mouse_filter = 2
-color = Color(0.13, 0.12, 0.18, 1)
-
-[node name="Suelo" type="ColorRect" parent="."]
-layout_mode = 0
-offset_top = 205.0
-offset_right = 960.0
-offset_bottom = 225.0
-mouse_filter = 2
-color = Color(0.52, 0.36, 0.23, 1)
-
-[node name="Title" type="Label" parent="."]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 16.0
-offset_right = 850.0
-offset_bottom = 60.0
-theme_override_font_sizes/font_size = 28
-text = "Sofía · La caverna | laboratorio Godot"
-
-[node name="Sofia" type="Label" parent="."]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 125.0
-offset_right = 225.0
-offset_bottom = 205.0
-theme_override_font_sizes/font_size = 36
-text = "● Sofía"
-
-[node name="Plato" type="Label" parent="."]
-layout_mode = 0
-offset_left = 560.0
-offset_top = 125.0
-offset_right = 835.0
-offset_bottom = 205.0
-theme_override_font_sizes/font_size = 36
-text = "● Platón"
-
-[node name="Message" type="Label" parent="."]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 245.0
-offset_right = 925.0
-offset_bottom = 360.0
-theme_override_font_sizes/font_size = 24
-text = "Explora y conversa con Platón."
-autowrap_mode = 2
-
-[node name="Left" type="Button" parent="."]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 370.0
-offset_right = 140.0
-offset_bottom = 420.0
-theme_override_font_sizes/font_size = 22
-text = "←"
-
-[node name="Right" type="Button" parent="."]
-layout_mode = 0
-offset_left = 150.0
-offset_top = 370.0
-offset_right = 255.0
-offset_bottom = 420.0
-theme_override_font_sizes/font_size = 22
-text = "→"
-
-[node name="Talk" type="Button" parent="."]
-layout_mode = 0
-offset_left = 270.0
-offset_top = 370.0
-offset_right = 480.0
-offset_bottom = 420.0
-theme_override_font_sizes/font_size = 22
-text = "Hablar"
-
-[node name="Correct" type="Button" parent="."]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 435.0
-offset_right = 390.0
-offset_bottom = 485.0
-theme_override_font_sizes/font_size = 22
-text = "Luz y objetos"
-
-[node name="Wrong" type="Button" parent="."]
-layout_mode = 0
-offset_left = 410.0
-offset_top = 435.0
-offset_right = 800.0
-offset_bottom = 485.0
-theme_override_font_sizes/font_size = 22
-text = "Las sombras existen solas"
-
-[node name="Door" type="Button" parent="."]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 495.0
-offset_right = 350.0
-offset_bottom = 550.0
-theme_override_font_sizes/font_size = 22
-text = "Salir (cerrada)"
-
-[node name="Restart" type="Button" parent="."]
-layout_mode = 0
-offset_left = 700.0
-offset_top = 495.0
-offset_right = 920.0
-offset_bottom = 550.0
-theme_override_font_sizes/font_size = 22
-text = "Reiniciar"
+material = SubResource("light")

@@ -1,5 +1,5 @@
 {
-  "firstLayout": "Caverna",
+  "firstLayout": "surface",
   "gdVersion": {
     "build": 274,
     "major": 5,
@@ -19,11 +19,11 @@
     "sizeOnStartupMode": "",
     "templateSlug": "starting-platformer",
     "version": "1.0.0",
-    "name": "Sofia - Laboratorio GDevelop",
+    "name": "Sofía · Demo visual GDevelop",
     "description": "Prueba aislada de autoría visual",
     "author": "",
-    "windowWidth": 960,
-    "windowHeight": 600,
+    "windowWidth": 1280,
+    "windowHeight": 720,
     "latestCompilationDirectory": "",
     "maxFPS": 60,
     "minFPS": 20,
@@ -36,18 +36,18 @@
       "gdevelopLogoStyle": "light",
       "logoAndProgressFadeInDuration": 0.2,
       "logoAndProgressLogoFadeInDelay": 0,
-      "minDuration": 1.5,
+      "minDuration": 0,
       "progressBarColor": 16777215,
       "progressBarHeight": 20,
       "progressBarMaxWidth": 200,
       "progressBarMinWidth": 40,
       "progressBarWidthPercent": 30,
-      "showGDevelopSplash": true,
+      "showGDevelopSplash": false,
       "showProgressBar": true
     },
     "watermark": {
       "placement": "bottom-left",
-      "showWatermark": true
+      "showWatermark": false
     },
     "authorIds": [],
     "authorUsernames": [],
@@ -62,7 +62,168 @@
     "currentPlatform": "GDevelop JS platform"
   },
   "resources": {
-    "resources": [],
+    "resources": [
+      {
+        "kind": "image",
+        "name": "assets/bubble.png",
+        "file": "assets/bubble.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/cave.png",
+        "file": "assets/cave.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/entrada.png",
+        "file": "assets/entrada.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/flashlight.png",
+        "file": "assets/flashlight.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/galaxy.jpg",
+        "file": "assets/galaxy.jpg",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/hud.png",
+        "file": "assets/hud.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/planet.png",
+        "file": "assets/planet.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/plato.png",
+        "file": "assets/plato.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/prisioneros.png",
+        "file": "assets/prisioneros.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/prisoner-0.png",
+        "file": "assets/prisoner-0.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/prisoner-1.png",
+        "file": "assets/prisoner-1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/prisoner-2.png",
+        "file": "assets/prisoner-2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/prisoner-3.png",
+        "file": "assets/prisoner-3.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/prisoner-4.png",
+        "file": "assets/prisoner-4.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/prisoner-5.png",
+        "file": "assets/prisoner-5.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/prisoner.png",
+        "file": "assets/prisoner.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/sofia-0.png",
+        "file": "assets/sofia-0.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/sofia-1.png",
+        "file": "assets/sofia-1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/sofia-2.png",
+        "file": "assets/sofia-2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/sofia-3.png",
+        "file": "assets/sofia-3.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/sofia-4.png",
+        "file": "assets/sofia-4.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/sofia-5.png",
+        "file": "assets/sofia-5.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "json",
+        "name": "dialogues/plato.yarn.json",
+        "file": "dialogues/plato.yarn.json",
+        "userAdded": true
+      }
+    ],
     "resourceFolders": []
   },
   "objects": [],
@@ -75,12 +236,12 @@
     {
       "b": 46,
       "disableInputWhenNotFocused": true,
-      "mangledName": "Caverna",
-      "name": "Caverna",
+      "mangledName": "surface",
+      "name": "surface",
       "r": 33,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
-      "title": "Caverna",
+      "title": "surface",
       "v": 31,
       "uiSettings": {
         "grid": false,
@@ -102,28 +263,39 @@
       "objectsGroups": [],
       "variables": [
         {
-          "name": "Hablado",
-          "type": "boolean",
-          "value": false
-        },
-        {
-          "name": "Comprendido",
-          "type": "boolean",
-          "value": false
+          "name": "SceneID",
+          "type": "string",
+          "value": "surface"
         }
       ],
       "instances": [
         {
           "angle": 0,
           "customSize": true,
-          "width": 890,
+          "width": 1280,
+          "height": 84,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "HudTop",
+          "x": 0,
+          "y": 0,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 1280,
           "height": 50,
           "depth": 1,
-          "layer": "",
+          "layer": "UI",
           "locked": false,
-          "name": "Title",
-          "x": 30,
-          "y": 16,
+          "name": "HudBottom",
+          "x": 0,
+          "y": 670,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -132,14 +304,14 @@
         {
           "angle": 0,
           "customSize": true,
-          "width": 145,
-          "height": 80,
+          "width": 1280,
+          "height": 720,
           "depth": 1,
           "layer": "",
-          "locked": false,
-          "name": "Sofia",
-          "x": 80,
-          "y": 125,
+          "locked": true,
+          "name": "Background",
+          "x": 0,
+          "y": 0,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -148,62 +320,62 @@
         {
           "angle": 0,
           "customSize": true,
-          "width": 275,
-          "height": 80,
+          "width": 440,
+          "height": 440,
           "depth": 1,
           "layer": "",
           "locked": false,
-          "name": "Plato",
-          "x": 560,
-          "y": 125,
+          "name": "Planet",
+          "x": 640,
+          "y": 360,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
         },
         {
-          "angle": 0,
+          "angle": -42,
           "customSize": true,
-          "width": 890,
-          "height": 115,
+          "width": 128,
+          "height": 143,
           "depth": 1,
           "layer": "",
           "locked": false,
-          "name": "Message",
-          "x": 35,
-          "y": 245,
-          "zOrder": 4,
+          "name": "Sofia",
+          "x": 493,
+          "y": 196,
+          "zOrder": 100,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
         },
         {
-          "angle": 0,
+          "angle": -5,
           "customSize": true,
-          "width": 105,
-          "height": 50,
+          "width": 128,
+          "height": 143,
           "depth": 1,
           "layer": "",
           "locked": false,
-          "name": "Left",
-          "x": 35,
-          "y": 370,
+          "name": "NPC",
+          "x": 621,
+          "y": 141,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
         },
         {
-          "angle": 0,
+          "angle": 45,
           "customSize": true,
-          "width": 105,
-          "height": 50,
+          "width": 100,
+          "height": 100,
           "depth": 1,
           "layer": "",
           "locked": false,
-          "name": "Right",
-          "x": 150,
-          "y": 370,
+          "name": "Cave",
+          "x": 796,
+          "y": 204,
           "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
@@ -212,14 +384,14 @@
         {
           "angle": 0,
           "customSize": true,
-          "width": 210,
+          "width": 100.0,
           "height": 50,
           "depth": 1,
           "layer": "",
           "locked": false,
-          "name": "Talk",
-          "x": 270,
-          "y": 370,
+          "name": "Lamp",
+          "x": 743,
+          "y": 535,
           "zOrder": 7,
           "numberProperties": [],
           "stringProperties": [],
@@ -228,14 +400,14 @@
         {
           "angle": 0,
           "customSize": true,
-          "width": 355,
-          "height": 50,
+          "width": 460,
+          "height": 175,
           "depth": 1,
-          "layer": "",
+          "layer": "UI",
           "locked": false,
-          "name": "Correct",
-          "x": 35,
-          "y": 435,
+          "name": "Bubble",
+          "x": 220,
+          "y": 100,
           "zOrder": 8,
           "numberProperties": [],
           "stringProperties": [],
@@ -244,14 +416,14 @@
         {
           "angle": 0,
           "customSize": true,
-          "width": 460,
-          "height": 50,
+          "width": 980,
+          "height": 36,
           "depth": 1,
-          "layer": "",
+          "layer": "UI",
           "locked": false,
-          "name": "Wrong",
-          "x": 410,
-          "y": 435,
+          "name": "Title",
+          "x": 20,
+          "y": 12,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -260,14 +432,14 @@
         {
           "angle": 0,
           "customSize": true,
-          "width": 350,
-          "height": 55,
+          "width": 980,
+          "height": 30,
           "depth": 1,
-          "layer": "",
+          "layer": "UI",
           "locked": false,
-          "name": "Door",
-          "x": 35,
-          "y": 495,
+          "name": "Objective",
+          "x": 20,
+          "y": 48,
           "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
@@ -276,21 +448,723 @@
         {
           "angle": 0,
           "customSize": true,
-          "width": 220,
-          "height": 55,
+          "width": 1050,
+          "height": 26,
           "depth": 1,
-          "layer": "",
+          "layer": "UI",
+          "locked": false,
+          "name": "Help",
+          "x": 20,
+          "y": 688,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 420,
+          "height": 32,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Speaker",
+          "x": 238,
+          "y": 112,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 420,
+          "height": 95,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Message",
+          "x": 238,
+          "y": 147,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 425,
+          "height": 44,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Choice1",
+          "x": 238,
+          "y": 220,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 425,
+          "height": 44,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Choice2",
+          "x": 238,
+          "y": 268,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 240,
+          "height": 44,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "LightButton",
+          "x": 1020,
+          "y": 15,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 180,
+          "height": 38,
+          "depth": 1,
+          "layer": "UI",
           "locked": false,
           "name": "Restart",
-          "x": 700,
-          "y": 495,
-          "zOrder": 11,
+          "x": 1080,
+          "y": 670,
+          "zOrder": 17,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
         }
       ],
       "objects": [
+        {
+          "name": "HudTop",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "bar",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/hud.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "HudBottom",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "bar",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/hud.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Background",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "surface",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/galaxy.jpg",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "entrada",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/entrada.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "prisioneros",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/prisioneros.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Planet",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "planet",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/planet.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 627.0,
+                        "y": 627.0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 627.0,
+                        "y": 627.0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sofia",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/sofia-0.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Walk",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/sofia-2.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/sofia-3.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/sofia-4.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/sofia-5.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "NPC",
+          "type": "Sprite",
+          "variables": [
+            {
+              "name": "DialogueNode",
+              "type": "string",
+              "value": "Platon_Encuentro"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "plato",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/plato.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "prisoner",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.3333333333333333,
+                  "sprites": [
+                    {
+                      "image": "assets/prisoner-0.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-1.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-2.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-3.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-4.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-5.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cave",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "cave",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/cave.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 190.5,
+                        "y": 338
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 190.5,
+                        "y": 338
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lamp",
+          "type": "Sprite",
+          "variables": [
+            {
+              "name": "DialogueNode",
+              "type": "string",
+              "value": "Linterna_Recogida"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "lamp",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/flashlight.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 887.0,
+                        "y": 443.5
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 887.0,
+                        "y": 443.5
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Bubble",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "bubble",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/bubble.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "name": "Title",
           "type": "TextObject::Text",
@@ -302,136 +1176,7 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Sofía · La caverna | laboratorio GDevelop",
-          "font": "",
-          "textAlignment": "left",
-          "characterSize": 28,
-          "color": {
-            "r": 244,
-            "g": 231,
-            "b": 205
-          },
-          "content": {
-            "bold": false,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
-            "italic": false,
-            "outlineColor": "0;0;0",
-            "outlineThickness": 0,
-            "shadowAngle": 90,
-            "shadowBlurRadius": 0,
-            "shadowColor": "0;0;0",
-            "shadowDistance": 0,
-            "shadowOpacity": 0,
-            "smoothed": true,
-            "underlined": false,
-            "text": "Sofía · La caverna | laboratorio GDevelop",
-            "font": "",
-            "textAlignment": "left",
-            "verticalTextAlignment": "top",
-            "characterSize": 28,
-            "lineHeight": 0,
-            "color": "244;231;205"
-          }
-        },
-        {
-          "name": "Sofia",
-          "type": "TextObject::Text",
-          "assetStoreId": "",
-          "bold": false,
-          "italic": false,
-          "smoothed": true,
-          "underlined": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "string": "● Sofía",
-          "font": "",
-          "textAlignment": "left",
-          "characterSize": 36,
-          "color": {
-            "r": 244,
-            "g": 231,
-            "b": 205
-          },
-          "content": {
-            "bold": false,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
-            "italic": false,
-            "outlineColor": "0;0;0",
-            "outlineThickness": 0,
-            "shadowAngle": 90,
-            "shadowBlurRadius": 0,
-            "shadowColor": "0;0;0",
-            "shadowDistance": 0,
-            "shadowOpacity": 0,
-            "smoothed": true,
-            "underlined": false,
-            "text": "● Sofía",
-            "font": "",
-            "textAlignment": "left",
-            "verticalTextAlignment": "top",
-            "characterSize": 36,
-            "lineHeight": 0,
-            "color": "244;231;205"
-          }
-        },
-        {
-          "name": "Plato",
-          "type": "TextObject::Text",
-          "assetStoreId": "",
-          "bold": false,
-          "italic": false,
-          "smoothed": true,
-          "underlined": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "string": "● Platón",
-          "font": "",
-          "textAlignment": "left",
-          "characterSize": 36,
-          "color": {
-            "r": 244,
-            "g": 231,
-            "b": 205
-          },
-          "content": {
-            "bold": false,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
-            "italic": false,
-            "outlineColor": "0;0;0",
-            "outlineThickness": 0,
-            "shadowAngle": 90,
-            "shadowBlurRadius": 0,
-            "shadowColor": "0;0;0",
-            "shadowDistance": 0,
-            "shadowOpacity": 0,
-            "smoothed": true,
-            "underlined": false,
-            "text": "● Platón",
-            "font": "",
-            "textAlignment": "left",
-            "verticalTextAlignment": "top",
-            "characterSize": 36,
-            "lineHeight": 0,
-            "color": "244;231;205"
-          }
-        },
-        {
-          "name": "Message",
-          "type": "TextObject::Text",
-          "assetStoreId": "",
-          "bold": false,
-          "italic": false,
-          "smoothed": true,
-          "underlined": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "string": "Explora y conversa con Platón.",
+          "string": "GDEVELOP · Planeta de Platón · vista general",
           "font": "",
           "textAlignment": "left",
           "characterSize": 24,
@@ -454,7 +1199,7 @@
             "shadowOpacity": 0,
             "smoothed": true,
             "underlined": false,
-            "text": "Explora y conversa con Platón.",
+            "text": "GDEVELOP · Planeta de Platón · vista general",
             "font": "",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
@@ -464,7 +1209,7 @@
           }
         },
         {
-          "name": "Left",
+          "name": "Objective",
           "type": "TextObject::Text",
           "assetStoreId": "",
           "bold": false,
@@ -474,10 +1219,10 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "←",
+          "string": "Toca a PlatÃ³n para conversar.",
           "font": "",
           "textAlignment": "left",
-          "characterSize": 30,
+          "characterSize": 19,
           "color": {
             "r": 244,
             "g": 231,
@@ -497,17 +1242,17 @@
             "shadowOpacity": 0,
             "smoothed": true,
             "underlined": false,
-            "text": "←",
+            "text": "Toca a PlatÃ³n para conversar.",
             "font": "",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
-            "characterSize": 30,
+            "characterSize": 19,
             "lineHeight": 0,
             "color": "244;231;205"
           }
         },
         {
-          "name": "Right",
+          "name": "Help",
           "type": "TextObject::Text",
           "assetStoreId": "",
           "bold": false,
@@ -517,10 +1262,10 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "→",
+          "string": "Toca para caminar o investigar · A/D o ←/→ · Enter: diálogo · L: luz · Demo independiente",
           "font": "",
           "textAlignment": "left",
-          "characterSize": 30,
+          "characterSize": 16,
           "color": {
             "r": 244,
             "g": 231,
@@ -540,17 +1285,17 @@
             "shadowOpacity": 0,
             "smoothed": true,
             "underlined": false,
-            "text": "→",
+            "text": "Toca para caminar o investigar · A/D o ←/→ · Enter: diálogo · L: luz · Demo independiente",
             "font": "",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
-            "characterSize": 30,
+            "characterSize": 16,
             "lineHeight": 0,
             "color": "244;231;205"
           }
         },
         {
-          "name": "Talk",
+          "name": "Speaker",
           "type": "TextObject::Text",
           "assetStoreId": "",
           "bold": false,
@@ -560,14 +1305,14 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "[ Hablar ]",
+          "string": "Platón",
           "font": "",
           "textAlignment": "left",
-          "characterSize": 25,
+          "characterSize": 23,
           "color": {
-            "r": 244,
-            "g": 231,
-            "b": 205
+            "r": 78,
+            "g": 57,
+            "b": 68
           },
           "content": {
             "bold": false,
@@ -583,17 +1328,17 @@
             "shadowOpacity": 0,
             "smoothed": true,
             "underlined": false,
-            "text": "[ Hablar ]",
+            "text": "Platón",
             "font": "",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
-            "characterSize": 25,
+            "characterSize": 23,
             "lineHeight": 0,
-            "color": "244;231;205"
+            "color": "78;57;68"
           }
         },
         {
-          "name": "Correct",
+          "name": "Message",
           "type": "TextObject::Text",
           "assetStoreId": "",
           "bold": false,
@@ -603,14 +1348,14 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "[ Luz y objetos ]",
+          "string": "",
           "font": "",
           "textAlignment": "left",
-          "characterSize": 25,
+          "characterSize": 21,
           "color": {
-            "r": 244,
-            "g": 231,
-            "b": 205
+            "r": 53,
+            "g": 44,
+            "b": 53
           },
           "content": {
             "bold": false,
@@ -626,17 +1371,17 @@
             "shadowOpacity": 0,
             "smoothed": true,
             "underlined": false,
-            "text": "[ Luz y objetos ]",
+            "text": "",
             "font": "",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
-            "characterSize": 25,
+            "characterSize": 21,
             "lineHeight": 0,
-            "color": "244;231;205"
+            "color": "53;44;53"
           }
         },
         {
-          "name": "Wrong",
+          "name": "Choice1",
           "type": "TextObject::Text",
           "assetStoreId": "",
           "bold": false,
@@ -646,14 +1391,14 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "[ Las sombras existen solas ]",
+          "string": "",
           "font": "",
           "textAlignment": "left",
-          "characterSize": 25,
+          "characterSize": 20,
           "color": {
-            "r": 244,
-            "g": 231,
-            "b": 205
+            "r": 53,
+            "g": 44,
+            "b": 53
           },
           "content": {
             "bold": false,
@@ -669,17 +1414,17 @@
             "shadowOpacity": 0,
             "smoothed": true,
             "underlined": false,
-            "text": "[ Las sombras existen solas ]",
+            "text": "",
             "font": "",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
-            "characterSize": 25,
+            "characterSize": 20,
             "lineHeight": 0,
-            "color": "244;231;205"
+            "color": "53;44;53"
           }
         },
         {
-          "name": "Door",
+          "name": "Choice2",
           "type": "TextObject::Text",
           "assetStoreId": "",
           "bold": false,
@@ -689,10 +1434,53 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "[ Salir (cerrada) ]",
+          "string": "",
           "font": "",
           "textAlignment": "left",
-          "characterSize": 25,
+          "characterSize": 20,
+          "color": {
+            "r": 53,
+            "g": 44,
+            "b": 53
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "lineHeight": 0,
+            "color": "53;44;53"
+          }
+        },
+        {
+          "name": "LightButton",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Encender linterna · L",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
           "color": {
             "r": 244,
             "g": 231,
@@ -712,11 +1500,11 @@
             "shadowOpacity": 0,
             "smoothed": true,
             "underlined": false,
-            "text": "[ Salir (cerrada) ]",
+            "text": "Encender linterna · L",
             "font": "",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
-            "characterSize": 25,
+            "characterSize": 18,
             "lineHeight": 0,
             "color": "244;231;205"
           }
@@ -732,10 +1520,10 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "[ Reiniciar ]",
+          "string": "Reiniciar demo",
           "font": "",
           "textAlignment": "left",
-          "characterSize": 25,
+          "characterSize": 18,
           "color": {
             "r": 244,
             "g": 231,
@@ -755,11 +1543,11 @@
             "shadowOpacity": 0,
             "smoothed": true,
             "underlined": false,
-            "text": "[ Reiniciar ]",
+            "text": "Reiniciar demo",
             "font": "",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
-            "characterSize": 25,
+            "characterSize": 18,
             "lineHeight": 0,
             "color": "244;231;205"
           }
@@ -769,34 +1557,55 @@
         "folderName": "__ROOT",
         "children": [
           {
-            "objectName": "Title"
+            "objectName": "HudTop"
+          },
+          {
+            "objectName": "HudBottom"
+          },
+          {
+            "objectName": "Background"
+          },
+          {
+            "objectName": "Planet"
           },
           {
             "objectName": "Sofia"
           },
           {
-            "objectName": "Plato"
+            "objectName": "NPC"
+          },
+          {
+            "objectName": "Cave"
+          },
+          {
+            "objectName": "Lamp"
+          },
+          {
+            "objectName": "Bubble"
+          },
+          {
+            "objectName": "Title"
+          },
+          {
+            "objectName": "Objective"
+          },
+          {
+            "objectName": "Help"
+          },
+          {
+            "objectName": "Speaker"
           },
           {
             "objectName": "Message"
           },
           {
-            "objectName": "Left"
+            "objectName": "Choice1"
           },
           {
-            "objectName": "Right"
+            "objectName": "Choice2"
           },
           {
-            "objectName": "Talk"
-          },
-          {
-            "objectName": "Correct"
-          },
-          {
-            "objectName": "Wrong"
-          },
-          {
-            "objectName": "Door"
+            "objectName": "LightButton"
           },
           {
             "objectName": "Restart"
@@ -809,484 +1618,39 @@
           "conditions": [
             {
               "type": {
-                "value": "IsCursorOnObject"
+                "value": "DepartScene",
+                "inverted": false
               },
-              "parameters": [
-                "Left",
-                "",
-                "yes",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "MouseButtonFromTextReleased"
-              },
-              "parameters": [
-                "",
-                "\"Left\""
-              ]
+              "parameters": []
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "MettreX"
-              },
-              "parameters": [
-                "Sofia",
-                "=",
-                "max(35, Sofia.X()-48)"
-              ]
-            }
-          ],
-          "events": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "IsCursorOnObject"
-              },
-              "parameters": [
-                "Right",
-                "",
-                "yes",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "MouseButtonFromTextReleased"
+                "value": "DialogueTree::LoadDialogueFromJsonFile"
               },
               "parameters": [
                 "",
-                "\"Left\""
+                "dialogues/plato.yarn.json"
               ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "MettreX"
-              },
-              "parameters": [
-                "Sofia",
-                "=",
-                "min(800, Sofia.X()+48)"
-              ]
-            }
-          ],
-          "events": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "IsCursorOnObject"
-              },
-              "parameters": [
-                "Talk",
-                "",
-                "yes",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "MouseButtonFromTextReleased"
-              },
-              "parameters": [
-                "",
-                "\"Left\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "Hablado",
-                "True",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "Message",
-                "Text",
-                "=",
-                "\"Platón: Observa las sombras. ¿Son toda la realidad?\\n¿Qué produce las sombras de la caverna?\""
-              ]
-            }
-          ],
-          "events": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "IsCursorOnObject"
-              },
-              "parameters": [
-                "Correct",
-                "",
-                "yes",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "MouseButtonFromTextReleased"
-              },
-              "parameters": [
-                "",
-                "\"Left\""
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "Hablado",
-                    "True",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "Comprendido",
-                    "True",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "Message",
-                    "Text",
-                    "=",
-                    "\"¡Correcto! La luz y los objetos producen las sombras.\\nSalida desbloqueada.\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "Door",
-                    "Text",
-                    "=",
-                    "\"[ Salir (abierta) ]\""
-                  ]
-                }
-              ],
-              "events": []
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "Hablado",
-                    "False",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "Message",
-                    "Text",
-                    "=",
-                    "\"Primero conversa con Platón.\""
-                  ]
-                }
-              ],
-              "events": []
             }
           ]
         },
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "IsCursorOnObject"
-              },
-              "parameters": [
-                "Wrong",
-                "",
-                "yes",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "MouseButtonFromTextReleased"
-              },
-              "parameters": [
-                "",
-                "\"Left\""
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "Hablado",
-                    "True",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "Message",
-                    "Text",
-                    "=",
-                    "\"Piensa en lo que hay detrás de la pared.\\nInténtalo nuevamente.\""
-                  ]
-                }
-              ],
-              "events": []
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "Hablado",
-                    "False",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "Message",
-                    "Text",
-                    "=",
-                    "\"Primero conversa con Platón.\""
-                  ]
-                }
-              ],
-              "events": []
-            }
-          ]
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "r": 255,
+            "g": 210,
+            "b": 100
+          },
+          "comment": "CONVERSACIONES: abre el evento anterior, edita la acción Cargar diálogo desde JSON y pulsa el lápiz junto a plato.yarn.json para abrir Yarn. Los textos y decisiones viven allí. El controlador siguiente conserva movimiento y presentación."
         },
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "IsCursorOnObject"
-              },
-              "parameters": [
-                "Door",
-                "",
-                "yes",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "MouseButtonFromTextReleased"
-              },
-              "parameters": [
-                "",
-                "\"Left\""
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "Comprendido",
-                    "True",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "Message",
-                    "Text",
-                    "=",
-                    "\"Capítulo de prueba completado.\""
-                  ]
-                }
-              ],
-              "events": []
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "Comprendido",
-                    "False",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "Message",
-                    "Text",
-                    "=",
-                    "\"La salida está cerrada. Completa el desafío.\""
-                  ]
-                }
-              ],
-              "events": []
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "IsCursorOnObject"
-              },
-              "parameters": [
-                "Restart",
-                "",
-                "yes",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "MouseButtonFromTextReleased"
-              },
-              "parameters": [
-                "",
-                "\"Left\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "Hablado",
-                "False",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "Comprendido",
-                "False",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "Message",
-                "Text",
-                "=",
-                "\"Explora y conversa con Platón.\""
-              ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "Door",
-                "Text",
-                "=",
-                "\"[ Salir (cerrada) ]\""
-              ]
-            },
-            {
-              "type": {
-                "value": "MettreX"
-              },
-              "parameters": [
-                "Sofia",
-                "=",
-                "80"
-              ]
-            }
-          ],
-          "events": []
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": "// Embedded as a native GDevelop JavaScript event by make_gdevelop.py.\n// All pictures, text and instances remain regular GDevelop editor sprites.\nif (!runtimeScene.__sofiaDemo) {\n const data = {\"width\": 1280, \"height\": 720, \"floor\": 560, \"speed\": 240, \"title\": \"PlatÃ³n Â· Demo comparativa\", \"surface\": {\"center\": [640, 360], \"radius\": 220, \"actorHeight\": 110, \"spawn\": -42, \"plato\": -5, \"cave\": 45}, \"rooms\": {\"entrada\": {\"background\": \"entrada.png\", \"spawn\": 160, \"floor\": 560}, \"prisioneros\": {\"background\": \"prisioneros.png\", \"spawn\": 160, \"floor\": 560}}, \"goals\": {\"meet\": \"Toca a PlatÃ³n para conversar.\", \"find\": \"Entra en la caverna y busca la linterna.\", \"light\": \"Enciende la linterna y explora la siguiente sala.\", \"talk\": \"Escucha al prisionero.\", \"done\": \"Demo completada. Puedes regresar a la superficie.\"}};const game=runtimeScene.getGame(),saved=game.__sofiaDemoState;\n const sprites = Object.fromEntries(runtimeScene.getObjects('').map(o=>[o.getName(),o]));\n for (const name of ['Background','Planet','Sofia','NPC','Cave','Lamp','Bubble','Speaker','Message','Choice1','Choice2','Title','Objective','Help','LightButton','Restart']) sprites[name]=runtimeScene.getObjects(name)[0];\n sprites.Sofia.setZOrder(100); // In front of NPCs/cave; darkness and UI remain above.\n if(!game.__sofiaKeys){\n  game.__sofiaKeys=[];\n  const onKey=e=>{if(e.repeat||e.isComposing||e.ctrlKey||e.altKey||e.metaKey||e.target?.closest?.('input,textarea,select,[contenteditable=\"true\"]'))return;\n   if(e.code==='Enter'||e.code==='NumpadEnter'||(e.code==='Tab'&&globalThis.__sofiaGD?.question)){e.preventDefault();game.__sofiaKeys.push(e.code==='Tab'?'tab':'enter')}\n  };\n  window.addEventListener('keydown',onKey);game.__sofiaKeyHandler=onKey;\n }\n const d = runtimeScene.__sofiaDemo = {room:runtimeScene.getVariables().get('SceneID').getAsString()||'surface',angle:-42*Math.PI/180,x:160,y:560,destination:null,pending:'',met:false,owned:false,on:false,complete:false,dialogue:null,turn:0,question:false,follow:'',time:0,lastEnter:false,lastL:false,data,sprites,heroScale:sprites.Sofia.getScaleY(),floorY:sprites.Sofia.getY(),nativeSceneName:runtimeScene.getName()};\n if(saved)for(const key of ['angle','met','owned','on','complete'])d[key]=saved[key];\n const show=(name,yes)=>sprites[name].hide(!yes);\n const text=(name,value)=>sprites[name].setString(value);\n const rad=a=>({x:640+Math.sin(a)*220,y:360-Math.cos(a)*220});\n const wrap=a=>Math.atan2(Math.sin(a),Math.cos(a));\n const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);\n const sprite=(name,x,y,scale,angle=0)=>{const o=sprites[name];o.setPosition(x,y);o.setScale(scale);o.setAngle(angle)};\n const colors={darkness:0,lastX:NaN,lastY:NaN,lastOn:null,lastRoom:''};\n const shade=new PIXI.Graphics();shade.zOrder=9000;shade.zIndex=9000;\n runtimeScene.getLayer('').getRenderer().addRendererObject(shade,9000);\n d.lightGraphics=shade;\n d.ui=()=>{\n  text('Title','GDEVELOP Â· '+(d.room==='surface'?'Planeta de PlatÃ³n Â· vista general':d.room==='entrada'?'A Â· Entrada de la caverna':'B Â· Sala de las sombras'));\n  text('Objective',d.complete?'âœ“ '+data.goals.done:!d.met?data.goals.meet:!d.owned?data.goals.find:d.room!=='prisioneros'?data.goals.light:data.goals.talk);\n  show('LightButton',d.owned&&d.room!=='surface');text('LightButton',d.on?'Linterna encendida Â· L':'Encender linterna Â· L');\n  show('Lamp',d.room==='entrada'&&!d.owned);\n };\n d.load=room=>{\n  if(room!==d.room){game.__sofiaDemoState={angle:d.angle,met:d.met,owned:d.owned,on:d.on,complete:d.complete,from:d.room};gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,room,false);return;}\n  d.destination=null;d.pending='';const surface=room==='surface';\n  sprites.Background.setAnimation(0);\n  show('Planet',surface);show('Cave',surface);show('NPC',surface||room==='prisioneros');\n  sprites.NPC.setAnimation(0);\n  if(surface){if(!saved)d.angle=Math.atan2(sprites.Sofia.getX()-640,360-sprites.Sofia.getY());const h=rad(d.angle);d.x=h.x;d.y=h.y;}\n  else{d.x=saved?.from==='prisioneros'&&room==='entrada'?950:sprites.Sofia.getX();d.y=sprites.Sofia.getY();d.floorY=d.y;}\n  d.ui();\n };\n const yarn=gdjs.dialogueTree;\n d.choiceSprites=[sprites.Choice1,sprites.Choice2];d.selectedChoice=-1;d.lastTab=false;\n d.syncFlags=()=>{for(const key of ['met','owned','complete'])d[key]=yarn.getVariable(key)===true;d.ui()};\n d.renderDialogue=()=>{\n  const open=!!d.dialogue;for(const n of ['Bubble','Speaker','Message'])show(n,open);\n  for(const o of d.choiceSprites)o.hide(true);if(!open)return;\n  const line=d.dialogue[d.turn];text('Speaker',line[0]);text('Message',line[1]);\n  const who=line[0]==='SofÃ­a'?{x:d.x,y:d.y}:{x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  const x=d.question?220:Math.max(16,Math.min(804,who.x-230)),y=d.question?100:Math.max(80,Math.min(470,who.y-(d.room==='surface'?110:157)-185));\n  sprites.Bubble.setPosition(x,y);sprites.Bubble.setWidth(460);sprites.Bubble.setHeight(d.question?Math.max(245,145+d.options.length*48):175);\n  sprites.Speaker.setPosition(x+18,y+12);sprites.Message.setPosition(x+18,y+47);sprites.Message.setWidth(420);\n  if(d.question)for(let i=0;i<d.options.length;i++){\n   if(!d.choiceSprites[i]){const o=runtimeScene.createObject('Choice1');o.setLayer('UI');o.setZOrder(sprites.Choice1.getZOrder());d.choiceSprites.push(o)}\n   const o=d.choiceSprites[i];o.hide(false);o.setPosition(x+18,y+120+i*48);o.setString((d.selectedChoice===i?'â–¶ ':'â€º ')+d.options[i]);\n  }\n };\n d.readYarn=()=>{\n  d.syncFlags();d.selectedChoice=-1;\n  if(!yarn.isRunning()){d.dialogue=null;d.question=false;d.renderDialogue();return}\n  d.question=yarn.isDialogueLineType('options');\n  if(d.question){d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  else{const raw=yarn.getLineText(),colon=raw.indexOf(':');d.dialogue=[[colon<0?'':raw.slice(0,colon),colon<0?raw:raw.slice(colon+1).trim()]];d.turn=0;\n   if(yarn.branchContainsTag('decision')){yarn.goToNextDialogueLine();d.question=yarn.isDialogueLineType('options');if(d.question)d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  }\n  d.renderDialogue();\n };\n d.say=node=>{\n  if(!yarn.hasDialogueBranch(node))throw Error('Nodo Yarn no encontrado: '+node);\n  if(d.room==='surface')sprites.NPC.flipX(wrap(d.angle-sprites.NPC.getAngle()*Math.PI/180)<0);\n  sprites.Sofia.flipX(d.room==='surface'?wrap(sprites.NPC.getAngle()*Math.PI/180-d.angle)<0:sprites.NPC.getX()<d.x);\n  d.destination=null;d.pending='';for(const key of ['met','owned','complete'])yarn.setVariable(key,d[key]);\n  yarn.startFrom(node);d.readYarn();\n };\n d.advance=()=>{if(!d.dialogue||d.question)return;yarn.goToNextDialogueLine();d.readYarn();if(!d.dialogue){game.__sofiaKeys.length=0;d.enterAfter=d.time+.18}};\n d.answer=i=>{if(!d.question||i<0||i>=d.options.length)return;yarn.selectOption(i);yarn.hasSelectedOptionChanged();yarn.confirmSelectOption();d.readYarn()};\n d.toggle=()=>{if(d.owned&&d.room!=='surface'){d.on=!d.on;d.ui()}};\n d.contextEnter=()=>{\n  if(d.time<(d.enterAfter??0))return;\n  const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  if((d.room==='surface'||d.room==='prisioneros')&&distance({x:d.x,y:d.y},npc)<145){d.interact(d.room==='surface'?'plato':'prisoner');return}\n  if(d.room==='entrada'&&!d.owned&&Math.abs(d.x-sprites.Lamp.getX())<100){d.interact('lamp');return}\n  if(d.room!=='surface'&&d.x<150)d.interact('back');else if(d.room==='entrada'&&d.x>940)d.interact('next');\n };\n d.interact=action=>{\n  if(action==='plato')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  if(action==='cave'){if(d.met)d.load('entrada');else d.say('Antes_De_Entrar');}\n  if(action==='back'){const prior=d.room;d.load(prior==='entrada'?'surface':'entrada');if(prior==='prisioneros')d.x=950;}\n  if(action==='next'){if(d.owned&&d.on)d.load('prisioneros');else d.say('Puerta_Sin_Luz');}\n  if(action==='lamp')d.say(sprites.Lamp.getVariables().get('DialogueNode').getAsString());\n  if(action==='prisoner')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  d.ui();\n };\n d.click=p=>{\n  if(d.dialogue){if(d.question){for(let i=0;i<d.options.length;i++){const o=d.choiceSprites[i];if(p.x>=o.getX()&&p.x<o.getX()+425&&p.y>=o.getY()&&p.y<o.getY()+44){d.answer(i);break}}}else d.advance();return;}\n  if(p.x>1020&&p.y<65&&d.owned&&d.room!=='surface'){d.toggle();return;}\n  if(p.x>1080&&p.y>670){if(confirm('Â¿Reiniciar Ãºnicamente esta demo?')){d.met=d.owned=d.on=d.complete=false;d.angle=-42*Math.PI/180;d.load('surface')}return;}\n  if(d.room==='surface'){\n   const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()},cave={x:sprites.Cave.getX(),y:sprites.Cave.getY()};\n   d.pending=distance(p,{x:npc.x,y:npc.y-45})<85?'plato':distance(p,cave)<90?'cave':'';\n   d.destination=d.pending==='plato'?Math.atan2(npc.x-640,360-npc.y):d.pending==='cave'?Math.atan2(cave.x-640,360-cave.y):Math.atan2(p.x-640,360-p.y);\n  }else{\n   d.pending=p.x<145?'back':d.room==='entrada'&&p.x>940?'next':d.room==='entrada'&&!d.owned&&distance(p,{x:sprites.Lamp.getX(),y:sprites.Lamp.getY()})<85?'lamp':d.room==='prisioneros'&&distance(p,{x:sprites.NPC.getX(),y:sprites.NPC.getY()-70})<100?'prisoner':'';\n   d.destination=d.pending==='back'?75:d.pending==='next'?1070:d.pending==='lamp'?sprites.Lamp.getX():d.pending==='prisoner'?sprites.NPC.getX():Math.max(40,Math.min(1240,p.x));\n  }\n };\n d.step=()=>{\n  const dt=Math.min(.1,runtimeScene.getElapsedTime()/1000);d.time+=dt;\n  // Native loading is asynchronous; exploration starts once the JSON is ready.\n  if(!yarn.hasDialogueBranch('Platon_Encuentro'))return;\n  const input=runtimeScene.getGame().getInputManager(),l=input.isKeyPressed(76),key=game.__sofiaKeys.shift();\n  if(key==='tab'&&d.question){d.selectedChoice=(d.selectedChoice+1)%d.options.length;d.renderDialogue()}\n  if(key==='enter'){if(d.question){if(d.selectedChoice>=0)d.answer(d.selectedChoice)}else if(d.dialogue)d.advance();else d.contextEnter()}\n  if(l&&!d.lastL&&!d.dialogue)d.toggle();d.lastL=l;\n  if(input.isMouseButtonReleased(0))d.click({x:gdjs.evtTools.input.getCursorX(runtimeScene,'',0),y:gdjs.evtTools.input.getCursorY(runtimeScene,'',0)});\n  let axis=0;\n  if(!d.dialogue){\n   axis=Number(input.isKeyPressed(39)||input.isKeyPressed(68))-Number(input.isKeyPressed(37)||input.isKeyPressed(65));\n   if(axis){d.destination=null;d.pending='';}\n   if(d.room==='surface'){\n    const diff=d.destination===null?0:wrap(d.destination-d.angle);if(!axis&&d.destination!==null&&Math.abs(diff)>(d.pending?.22:.025))axis=Math.sign(diff);\n    d.angle+=axis*.9*dt;const p=rad(d.angle);d.x=p.x;d.y=p.y;\n   }else{\n    if(!axis&&d.destination!==null&&Math.abs(d.destination-d.x)>(d.pending?80:6))axis=Math.sign(d.destination-d.x);\n    d.x=Math.max(40,Math.min(1240,d.x+axis*data.speed*dt));d.y=d.floorY;\n   }\n   if(!axis&&d.destination!==null){const action=d.pending;d.destination=null;d.pending='';if(action)d.interact(action);}\n  }\n  sprites.Sofia.setAnimationName(axis?'Walk':'Idle');if(axis)sprites.Sofia.flipX(axis<0);\n  sprite('Sofia',d.x,d.y,d.heroScale,d.room==='surface'?d.angle*180/Math.PI:0);\n  if(colors.lastRoom!==d.room||colors.lastOn!==d.on||Math.abs(colors.lastX-d.x)>.5||Math.abs(colors.lastY-d.y)>.5){\n   shade.clear();if(d.room!=='surface'){\n    const dark=d.room==='entrada'?.28:.88,cx=d.x,cy=d.y-65;\n    shade.beginFill(0x030511,dark).drawRect(-500,-500,2280,1720);\n    if(d.on)shade.beginHole().drawCircle(cx,cy,240).endHole();shade.endFill();\n    if(d.on)for(let i=0;i<12;i++){const t=(i+.5)/12,r1=90+i*12.5,r2=r1+12.5;shade.beginFill(0x030511,dark*t*t*(3-2*t)).drawCircle(cx,cy,r2).beginHole().drawCircle(cx,cy,r1).endHole().endFill();}\n   }\n   colors.lastX=d.x;colors.lastY=d.y;colors.lastOn=d.on;colors.lastRoom=d.room;\n  }\n };\n d.load(d.room);d.renderDialogue();globalThis.__sofiaGD=d;\n}\nruntimeScene.__sofiaDemo.step();\n",
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
         }
       ],
       "layers": [
@@ -1303,6 +1667,3169 @@
           "isLightingLayer": false,
           "isLocked": false,
           "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        }
+      ],
+      "behaviorsSharedData": []
+    },
+    {
+      "b": 46,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "entrada",
+      "name": "entrada",
+      "r": 33,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "entrada",
+      "v": 31,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridOffsetZ": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.5843784410740974,
+        "windowMask": false,
+        "selectedLayer": "",
+        "gameEditorMode": "instances-editor"
+      },
+      "objectsGroups": [],
+      "variables": [
+        {
+          "name": "SceneID",
+          "type": "string",
+          "value": "entrada"
+        }
+      ],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 1280,
+          "height": 84,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "HudTop",
+          "x": 0,
+          "y": 0,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 1280,
+          "height": 50,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "HudBottom",
+          "x": 0,
+          "y": 670,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 1280,
+          "height": 720,
+          "depth": 1,
+          "layer": "",
+          "locked": true,
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 440,
+          "height": 440,
+          "depth": 1,
+          "layer": "",
+          "locked": false,
+          "name": "Planet",
+          "x": 640,
+          "y": 360,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 182.4,
+          "height": 204.6,
+          "depth": 1,
+          "layer": "",
+          "locked": false,
+          "name": "Sofia",
+          "x": 160,
+          "y": 560,
+          "zOrder": 100,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 182.4,
+          "height": 204.6,
+          "depth": 1,
+          "layer": "",
+          "locked": false,
+          "name": "NPC",
+          "x": 440,
+          "y": 560,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 45,
+          "customSize": true,
+          "width": 100,
+          "height": 100,
+          "depth": 1,
+          "layer": "",
+          "locked": false,
+          "name": "Cave",
+          "x": 796,
+          "y": 204,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 100.0,
+          "height": 50,
+          "depth": 1,
+          "layer": "",
+          "locked": false,
+          "name": "Lamp",
+          "x": 743,
+          "y": 535,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 460,
+          "height": 175,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Bubble",
+          "x": 220,
+          "y": 100,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 980,
+          "height": 36,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Title",
+          "x": 20,
+          "y": 12,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 980,
+          "height": 30,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Objective",
+          "x": 20,
+          "y": 48,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 1050,
+          "height": 26,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Help",
+          "x": 20,
+          "y": 688,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 420,
+          "height": 32,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Speaker",
+          "x": 238,
+          "y": 112,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 420,
+          "height": 95,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Message",
+          "x": 238,
+          "y": 147,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 425,
+          "height": 44,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Choice1",
+          "x": 238,
+          "y": 220,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 425,
+          "height": 44,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Choice2",
+          "x": 238,
+          "y": 268,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 240,
+          "height": 44,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "LightButton",
+          "x": 1020,
+          "y": 15,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 180,
+          "height": 38,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Restart",
+          "x": 1080,
+          "y": 670,
+          "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "name": "HudTop",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "bar",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/hud.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "HudBottom",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "bar",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/hud.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Background",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "surface",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/entrada.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "entrada",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/entrada.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "prisioneros",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/prisioneros.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Planet",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "planet",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/planet.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 627.0,
+                        "y": 627.0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 627.0,
+                        "y": 627.0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sofia",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/sofia-0.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Walk",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/sofia-2.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/sofia-3.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/sofia-4.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/sofia-5.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "NPC",
+          "type": "Sprite",
+          "variables": [
+            {
+              "name": "DialogueNode",
+              "type": "string",
+              "value": "Prisionero_Encuentro"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "plato",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.3333333333333333,
+                  "sprites": [
+                    {
+                      "image": "assets/prisoner-0.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-1.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-2.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-3.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-4.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-5.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "prisoner",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.3333333333333333,
+                  "sprites": [
+                    {
+                      "image": "assets/prisoner-0.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-1.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-2.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-3.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-4.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-5.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cave",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "cave",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/cave.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 190.5,
+                        "y": 338
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 190.5,
+                        "y": 338
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lamp",
+          "type": "Sprite",
+          "variables": [
+            {
+              "name": "DialogueNode",
+              "type": "string",
+              "value": "Linterna_Recogida"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "lamp",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/flashlight.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 887.0,
+                        "y": 443.5
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 887.0,
+                        "y": 443.5
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Bubble",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "bubble",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/bubble.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Title",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "GDEVELOP · Planeta de Platón · vista general",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 24,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "GDEVELOP · Planeta de Platón · vista general",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 24,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "name": "Objective",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Toca a PlatÃ³n para conversar.",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 19,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Toca a PlatÃ³n para conversar.",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 19,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "name": "Help",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Toca para caminar o investigar · A/D o ←/→ · Enter: diálogo · L: luz · Demo independiente",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 16,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Toca para caminar o investigar · A/D o ←/→ · Enter: diálogo · L: luz · Demo independiente",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 16,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "name": "Speaker",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Platón",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 23,
+          "color": {
+            "r": 78,
+            "g": 57,
+            "b": 68
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Platón",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 23,
+            "lineHeight": 0,
+            "color": "78;57;68"
+          }
+        },
+        {
+          "name": "Message",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 21,
+          "color": {
+            "r": 53,
+            "g": 44,
+            "b": 53
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 21,
+            "lineHeight": 0,
+            "color": "53;44;53"
+          }
+        },
+        {
+          "name": "Choice1",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "r": 53,
+            "g": 44,
+            "b": 53
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "lineHeight": 0,
+            "color": "53;44;53"
+          }
+        },
+        {
+          "name": "Choice2",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "r": 53,
+            "g": 44,
+            "b": 53
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "lineHeight": 0,
+            "color": "53;44;53"
+          }
+        },
+        {
+          "name": "LightButton",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Encender linterna · L",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Encender linterna · L",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "name": "Restart",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Reiniciar demo",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Reiniciar demo",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "HudTop"
+          },
+          {
+            "objectName": "HudBottom"
+          },
+          {
+            "objectName": "Background"
+          },
+          {
+            "objectName": "Planet"
+          },
+          {
+            "objectName": "Sofia"
+          },
+          {
+            "objectName": "NPC"
+          },
+          {
+            "objectName": "Cave"
+          },
+          {
+            "objectName": "Lamp"
+          },
+          {
+            "objectName": "Bubble"
+          },
+          {
+            "objectName": "Title"
+          },
+          {
+            "objectName": "Objective"
+          },
+          {
+            "objectName": "Help"
+          },
+          {
+            "objectName": "Speaker"
+          },
+          {
+            "objectName": "Message"
+          },
+          {
+            "objectName": "Choice1"
+          },
+          {
+            "objectName": "Choice2"
+          },
+          {
+            "objectName": "LightButton"
+          },
+          {
+            "objectName": "Restart"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene",
+                "inverted": false
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "DialogueTree::LoadDialogueFromJsonFile"
+              },
+              "parameters": [
+                "",
+                "dialogues/plato.yarn.json"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "r": 255,
+            "g": 210,
+            "b": 100
+          },
+          "comment": "CONVERSACIONES: abre el evento anterior, edita la acción Cargar diálogo desde JSON y pulsa el lápiz junto a plato.yarn.json para abrir Yarn. Los textos y decisiones viven allí. El controlador siguiente conserva movimiento y presentación."
+        },
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": "// Embedded as a native GDevelop JavaScript event by make_gdevelop.py.\n// All pictures, text and instances remain regular GDevelop editor sprites.\nif (!runtimeScene.__sofiaDemo) {\n const data = {\"width\": 1280, \"height\": 720, \"floor\": 560, \"speed\": 240, \"title\": \"PlatÃ³n Â· Demo comparativa\", \"surface\": {\"center\": [640, 360], \"radius\": 220, \"actorHeight\": 110, \"spawn\": -42, \"plato\": -5, \"cave\": 45}, \"rooms\": {\"entrada\": {\"background\": \"entrada.png\", \"spawn\": 160, \"floor\": 560}, \"prisioneros\": {\"background\": \"prisioneros.png\", \"spawn\": 160, \"floor\": 560}}, \"goals\": {\"meet\": \"Toca a PlatÃ³n para conversar.\", \"find\": \"Entra en la caverna y busca la linterna.\", \"light\": \"Enciende la linterna y explora la siguiente sala.\", \"talk\": \"Escucha al prisionero.\", \"done\": \"Demo completada. Puedes regresar a la superficie.\"}};const game=runtimeScene.getGame(),saved=game.__sofiaDemoState;\n const sprites = Object.fromEntries(runtimeScene.getObjects('').map(o=>[o.getName(),o]));\n for (const name of ['Background','Planet','Sofia','NPC','Cave','Lamp','Bubble','Speaker','Message','Choice1','Choice2','Title','Objective','Help','LightButton','Restart']) sprites[name]=runtimeScene.getObjects(name)[0];\n sprites.Sofia.setZOrder(100); // In front of NPCs/cave; darkness and UI remain above.\n if(!game.__sofiaKeys){\n  game.__sofiaKeys=[];\n  const onKey=e=>{if(e.repeat||e.isComposing||e.ctrlKey||e.altKey||e.metaKey||e.target?.closest?.('input,textarea,select,[contenteditable=\"true\"]'))return;\n   if(e.code==='Enter'||e.code==='NumpadEnter'||(e.code==='Tab'&&globalThis.__sofiaGD?.question)){e.preventDefault();game.__sofiaKeys.push(e.code==='Tab'?'tab':'enter')}\n  };\n  window.addEventListener('keydown',onKey);game.__sofiaKeyHandler=onKey;\n }\n const d = runtimeScene.__sofiaDemo = {room:runtimeScene.getVariables().get('SceneID').getAsString()||'surface',angle:-42*Math.PI/180,x:160,y:560,destination:null,pending:'',met:false,owned:false,on:false,complete:false,dialogue:null,turn:0,question:false,follow:'',time:0,lastEnter:false,lastL:false,data,sprites,heroScale:sprites.Sofia.getScaleY(),floorY:sprites.Sofia.getY(),nativeSceneName:runtimeScene.getName()};\n if(saved)for(const key of ['angle','met','owned','on','complete'])d[key]=saved[key];\n const show=(name,yes)=>sprites[name].hide(!yes);\n const text=(name,value)=>sprites[name].setString(value);\n const rad=a=>({x:640+Math.sin(a)*220,y:360-Math.cos(a)*220});\n const wrap=a=>Math.atan2(Math.sin(a),Math.cos(a));\n const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);\n const sprite=(name,x,y,scale,angle=0)=>{const o=sprites[name];o.setPosition(x,y);o.setScale(scale);o.setAngle(angle)};\n const colors={darkness:0,lastX:NaN,lastY:NaN,lastOn:null,lastRoom:''};\n const shade=new PIXI.Graphics();shade.zOrder=9000;shade.zIndex=9000;\n runtimeScene.getLayer('').getRenderer().addRendererObject(shade,9000);\n d.lightGraphics=shade;\n d.ui=()=>{\n  text('Title','GDEVELOP Â· '+(d.room==='surface'?'Planeta de PlatÃ³n Â· vista general':d.room==='entrada'?'A Â· Entrada de la caverna':'B Â· Sala de las sombras'));\n  text('Objective',d.complete?'âœ“ '+data.goals.done:!d.met?data.goals.meet:!d.owned?data.goals.find:d.room!=='prisioneros'?data.goals.light:data.goals.talk);\n  show('LightButton',d.owned&&d.room!=='surface');text('LightButton',d.on?'Linterna encendida Â· L':'Encender linterna Â· L');\n  show('Lamp',d.room==='entrada'&&!d.owned);\n };\n d.load=room=>{\n  if(room!==d.room){game.__sofiaDemoState={angle:d.angle,met:d.met,owned:d.owned,on:d.on,complete:d.complete,from:d.room};gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,room,false);return;}\n  d.destination=null;d.pending='';const surface=room==='surface';\n  sprites.Background.setAnimation(0);\n  show('Planet',surface);show('Cave',surface);show('NPC',surface||room==='prisioneros');\n  sprites.NPC.setAnimation(0);\n  if(surface){if(!saved)d.angle=Math.atan2(sprites.Sofia.getX()-640,360-sprites.Sofia.getY());const h=rad(d.angle);d.x=h.x;d.y=h.y;}\n  else{d.x=saved?.from==='prisioneros'&&room==='entrada'?950:sprites.Sofia.getX();d.y=sprites.Sofia.getY();d.floorY=d.y;}\n  d.ui();\n };\n const yarn=gdjs.dialogueTree;\n d.choiceSprites=[sprites.Choice1,sprites.Choice2];d.selectedChoice=-1;d.lastTab=false;\n d.syncFlags=()=>{for(const key of ['met','owned','complete'])d[key]=yarn.getVariable(key)===true;d.ui()};\n d.renderDialogue=()=>{\n  const open=!!d.dialogue;for(const n of ['Bubble','Speaker','Message'])show(n,open);\n  for(const o of d.choiceSprites)o.hide(true);if(!open)return;\n  const line=d.dialogue[d.turn];text('Speaker',line[0]);text('Message',line[1]);\n  const who=line[0]==='SofÃ­a'?{x:d.x,y:d.y}:{x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  const x=d.question?220:Math.max(16,Math.min(804,who.x-230)),y=d.question?100:Math.max(80,Math.min(470,who.y-(d.room==='surface'?110:157)-185));\n  sprites.Bubble.setPosition(x,y);sprites.Bubble.setWidth(460);sprites.Bubble.setHeight(d.question?Math.max(245,145+d.options.length*48):175);\n  sprites.Speaker.setPosition(x+18,y+12);sprites.Message.setPosition(x+18,y+47);sprites.Message.setWidth(420);\n  if(d.question)for(let i=0;i<d.options.length;i++){\n   if(!d.choiceSprites[i]){const o=runtimeScene.createObject('Choice1');o.setLayer('UI');o.setZOrder(sprites.Choice1.getZOrder());d.choiceSprites.push(o)}\n   const o=d.choiceSprites[i];o.hide(false);o.setPosition(x+18,y+120+i*48);o.setString((d.selectedChoice===i?'â–¶ ':'â€º ')+d.options[i]);\n  }\n };\n d.readYarn=()=>{\n  d.syncFlags();d.selectedChoice=-1;\n  if(!yarn.isRunning()){d.dialogue=null;d.question=false;d.renderDialogue();return}\n  d.question=yarn.isDialogueLineType('options');\n  if(d.question){d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  else{const raw=yarn.getLineText(),colon=raw.indexOf(':');d.dialogue=[[colon<0?'':raw.slice(0,colon),colon<0?raw:raw.slice(colon+1).trim()]];d.turn=0;\n   if(yarn.branchContainsTag('decision')){yarn.goToNextDialogueLine();d.question=yarn.isDialogueLineType('options');if(d.question)d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  }\n  d.renderDialogue();\n };\n d.say=node=>{\n  if(!yarn.hasDialogueBranch(node))throw Error('Nodo Yarn no encontrado: '+node);\n  if(d.room==='surface')sprites.NPC.flipX(wrap(d.angle-sprites.NPC.getAngle()*Math.PI/180)<0);\n  sprites.Sofia.flipX(d.room==='surface'?wrap(sprites.NPC.getAngle()*Math.PI/180-d.angle)<0:sprites.NPC.getX()<d.x);\n  d.destination=null;d.pending='';for(const key of ['met','owned','complete'])yarn.setVariable(key,d[key]);\n  yarn.startFrom(node);d.readYarn();\n };\n d.advance=()=>{if(!d.dialogue||d.question)return;yarn.goToNextDialogueLine();d.readYarn();if(!d.dialogue){game.__sofiaKeys.length=0;d.enterAfter=d.time+.18}};\n d.answer=i=>{if(!d.question||i<0||i>=d.options.length)return;yarn.selectOption(i);yarn.hasSelectedOptionChanged();yarn.confirmSelectOption();d.readYarn()};\n d.toggle=()=>{if(d.owned&&d.room!=='surface'){d.on=!d.on;d.ui()}};\n d.contextEnter=()=>{\n  if(d.time<(d.enterAfter??0))return;\n  const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  if((d.room==='surface'||d.room==='prisioneros')&&distance({x:d.x,y:d.y},npc)<145){d.interact(d.room==='surface'?'plato':'prisoner');return}\n  if(d.room==='entrada'&&!d.owned&&Math.abs(d.x-sprites.Lamp.getX())<100){d.interact('lamp');return}\n  if(d.room!=='surface'&&d.x<150)d.interact('back');else if(d.room==='entrada'&&d.x>940)d.interact('next');\n };\n d.interact=action=>{\n  if(action==='plato')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  if(action==='cave'){if(d.met)d.load('entrada');else d.say('Antes_De_Entrar');}\n  if(action==='back'){const prior=d.room;d.load(prior==='entrada'?'surface':'entrada');if(prior==='prisioneros')d.x=950;}\n  if(action==='next'){if(d.owned&&d.on)d.load('prisioneros');else d.say('Puerta_Sin_Luz');}\n  if(action==='lamp')d.say(sprites.Lamp.getVariables().get('DialogueNode').getAsString());\n  if(action==='prisoner')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  d.ui();\n };\n d.click=p=>{\n  if(d.dialogue){if(d.question){for(let i=0;i<d.options.length;i++){const o=d.choiceSprites[i];if(p.x>=o.getX()&&p.x<o.getX()+425&&p.y>=o.getY()&&p.y<o.getY()+44){d.answer(i);break}}}else d.advance();return;}\n  if(p.x>1020&&p.y<65&&d.owned&&d.room!=='surface'){d.toggle();return;}\n  if(p.x>1080&&p.y>670){if(confirm('Â¿Reiniciar Ãºnicamente esta demo?')){d.met=d.owned=d.on=d.complete=false;d.angle=-42*Math.PI/180;d.load('surface')}return;}\n  if(d.room==='surface'){\n   const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()},cave={x:sprites.Cave.getX(),y:sprites.Cave.getY()};\n   d.pending=distance(p,{x:npc.x,y:npc.y-45})<85?'plato':distance(p,cave)<90?'cave':'';\n   d.destination=d.pending==='plato'?Math.atan2(npc.x-640,360-npc.y):d.pending==='cave'?Math.atan2(cave.x-640,360-cave.y):Math.atan2(p.x-640,360-p.y);\n  }else{\n   d.pending=p.x<145?'back':d.room==='entrada'&&p.x>940?'next':d.room==='entrada'&&!d.owned&&distance(p,{x:sprites.Lamp.getX(),y:sprites.Lamp.getY()})<85?'lamp':d.room==='prisioneros'&&distance(p,{x:sprites.NPC.getX(),y:sprites.NPC.getY()-70})<100?'prisoner':'';\n   d.destination=d.pending==='back'?75:d.pending==='next'?1070:d.pending==='lamp'?sprites.Lamp.getX():d.pending==='prisoner'?sprites.NPC.getX():Math.max(40,Math.min(1240,p.x));\n  }\n };\n d.step=()=>{\n  const dt=Math.min(.1,runtimeScene.getElapsedTime()/1000);d.time+=dt;\n  // Native loading is asynchronous; exploration starts once the JSON is ready.\n  if(!yarn.hasDialogueBranch('Platon_Encuentro'))return;\n  const input=runtimeScene.getGame().getInputManager(),l=input.isKeyPressed(76),key=game.__sofiaKeys.shift();\n  if(key==='tab'&&d.question){d.selectedChoice=(d.selectedChoice+1)%d.options.length;d.renderDialogue()}\n  if(key==='enter'){if(d.question){if(d.selectedChoice>=0)d.answer(d.selectedChoice)}else if(d.dialogue)d.advance();else d.contextEnter()}\n  if(l&&!d.lastL&&!d.dialogue)d.toggle();d.lastL=l;\n  if(input.isMouseButtonReleased(0))d.click({x:gdjs.evtTools.input.getCursorX(runtimeScene,'',0),y:gdjs.evtTools.input.getCursorY(runtimeScene,'',0)});\n  let axis=0;\n  if(!d.dialogue){\n   axis=Number(input.isKeyPressed(39)||input.isKeyPressed(68))-Number(input.isKeyPressed(37)||input.isKeyPressed(65));\n   if(axis){d.destination=null;d.pending='';}\n   if(d.room==='surface'){\n    const diff=d.destination===null?0:wrap(d.destination-d.angle);if(!axis&&d.destination!==null&&Math.abs(diff)>(d.pending?.22:.025))axis=Math.sign(diff);\n    d.angle+=axis*.9*dt;const p=rad(d.angle);d.x=p.x;d.y=p.y;\n   }else{\n    if(!axis&&d.destination!==null&&Math.abs(d.destination-d.x)>(d.pending?80:6))axis=Math.sign(d.destination-d.x);\n    d.x=Math.max(40,Math.min(1240,d.x+axis*data.speed*dt));d.y=d.floorY;\n   }\n   if(!axis&&d.destination!==null){const action=d.pending;d.destination=null;d.pending='';if(action)d.interact(action);}\n  }\n  sprites.Sofia.setAnimationName(axis?'Walk':'Idle');if(axis)sprites.Sofia.flipX(axis<0);\n  sprite('Sofia',d.x,d.y,d.heroScale,d.room==='surface'?d.angle*180/Math.PI:0);\n  if(colors.lastRoom!==d.room||colors.lastOn!==d.on||Math.abs(colors.lastX-d.x)>.5||Math.abs(colors.lastY-d.y)>.5){\n   shade.clear();if(d.room!=='surface'){\n    const dark=d.room==='entrada'?.28:.88,cx=d.x,cy=d.y-65;\n    shade.beginFill(0x030511,dark).drawRect(-500,-500,2280,1720);\n    if(d.on)shade.beginHole().drawCircle(cx,cy,240).endHole();shade.endFill();\n    if(d.on)for(let i=0;i<12;i++){const t=(i+.5)/12,r1=90+i*12.5,r2=r1+12.5;shade.beginFill(0x030511,dark*t*t*(3-2*t)).drawCircle(cx,cy,r2).beginHole().drawCircle(cx,cy,r1).endHole().endFill();}\n   }\n   colors.lastX=d.x;colors.lastY=d.y;colors.lastOn=d.on;colors.lastRoom=d.room;\n  }\n };\n d.load(d.room);d.renderDialogue();globalThis.__sofiaGD=d;\n}\nruntimeScene.__sofiaDemo.step();\n",
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        }
+      ],
+      "behaviorsSharedData": []
+    },
+    {
+      "b": 46,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "prisioneros",
+      "name": "prisioneros",
+      "r": 33,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "prisioneros",
+      "v": 31,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridOffsetZ": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.5843784410740974,
+        "windowMask": false,
+        "selectedLayer": "",
+        "gameEditorMode": "instances-editor"
+      },
+      "objectsGroups": [],
+      "variables": [
+        {
+          "name": "SceneID",
+          "type": "string",
+          "value": "prisioneros"
+        }
+      ],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 1280,
+          "height": 84,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "HudTop",
+          "x": 0,
+          "y": 0,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 1280,
+          "height": 50,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "HudBottom",
+          "x": 0,
+          "y": 670,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 1280,
+          "height": 720,
+          "depth": 1,
+          "layer": "",
+          "locked": true,
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 440,
+          "height": 440,
+          "depth": 1,
+          "layer": "",
+          "locked": false,
+          "name": "Planet",
+          "x": 640,
+          "y": 360,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 182.4,
+          "height": 204.6,
+          "depth": 1,
+          "layer": "",
+          "locked": false,
+          "name": "Sofia",
+          "x": 160,
+          "y": 560,
+          "zOrder": 100,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 182.4,
+          "height": 204.6,
+          "depth": 1,
+          "layer": "",
+          "locked": false,
+          "name": "NPC",
+          "x": 440,
+          "y": 560,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 45,
+          "customSize": true,
+          "width": 100,
+          "height": 100,
+          "depth": 1,
+          "layer": "",
+          "locked": false,
+          "name": "Cave",
+          "x": 796,
+          "y": 204,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 100.0,
+          "height": 50,
+          "depth": 1,
+          "layer": "",
+          "locked": false,
+          "name": "Lamp",
+          "x": 743,
+          "y": 535,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 460,
+          "height": 175,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Bubble",
+          "x": 220,
+          "y": 100,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 980,
+          "height": 36,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Title",
+          "x": 20,
+          "y": 12,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 980,
+          "height": 30,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Objective",
+          "x": 20,
+          "y": 48,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 1050,
+          "height": 26,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Help",
+          "x": 20,
+          "y": 688,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 420,
+          "height": 32,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Speaker",
+          "x": 238,
+          "y": 112,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 420,
+          "height": 95,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Message",
+          "x": 238,
+          "y": 147,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 425,
+          "height": 44,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Choice1",
+          "x": 238,
+          "y": 220,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 425,
+          "height": 44,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Choice2",
+          "x": 238,
+          "y": 268,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 240,
+          "height": 44,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "LightButton",
+          "x": 1020,
+          "y": 15,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "width": 180,
+          "height": 38,
+          "depth": 1,
+          "layer": "UI",
+          "locked": false,
+          "name": "Restart",
+          "x": 1080,
+          "y": 670,
+          "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "name": "HudTop",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "bar",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/hud.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "HudBottom",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "bar",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/hud.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Background",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "surface",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/prisioneros.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "entrada",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/entrada.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "prisioneros",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/prisioneros.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Planet",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "planet",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/planet.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 627.0,
+                        "y": 627.0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 627.0,
+                        "y": 627.0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sofia",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/sofia-0.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Walk",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/sofia-2.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/sofia-3.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/sofia-4.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/sofia-5.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "NPC",
+          "type": "Sprite",
+          "variables": [
+            {
+              "name": "DialogueNode",
+              "type": "string",
+              "value": "Prisionero_Encuentro"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "plato",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.3333333333333333,
+                  "sprites": [
+                    {
+                      "image": "assets/prisoner-0.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-1.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-2.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-3.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-4.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-5.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "prisoner",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.3333333333333333,
+                  "sprites": [
+                    {
+                      "image": "assets/prisoner-0.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-1.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-2.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-3.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-4.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    },
+                    {
+                      "image": "assets/prisoner-5.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 140,
+                        "y": 304
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cave",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "cave",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/cave.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 190.5,
+                        "y": 338
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 190.5,
+                        "y": 338
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lamp",
+          "type": "Sprite",
+          "variables": [
+            {
+              "name": "DialogueNode",
+              "type": "string",
+              "value": "Linterna_Recogida"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "lamp",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/flashlight.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 887.0,
+                        "y": 443.5
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 887.0,
+                        "y": 443.5
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Bubble",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "bubble",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/bubble.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Title",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "GDEVELOP · Planeta de Platón · vista general",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 24,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "GDEVELOP · Planeta de Platón · vista general",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 24,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "name": "Objective",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Toca a PlatÃ³n para conversar.",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 19,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Toca a PlatÃ³n para conversar.",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 19,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "name": "Help",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Toca para caminar o investigar · A/D o ←/→ · Enter: diálogo · L: luz · Demo independiente",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 16,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Toca para caminar o investigar · A/D o ←/→ · Enter: diálogo · L: luz · Demo independiente",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 16,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "name": "Speaker",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Platón",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 23,
+          "color": {
+            "r": 78,
+            "g": 57,
+            "b": 68
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Platón",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 23,
+            "lineHeight": 0,
+            "color": "78;57;68"
+          }
+        },
+        {
+          "name": "Message",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 21,
+          "color": {
+            "r": 53,
+            "g": 44,
+            "b": 53
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 21,
+            "lineHeight": 0,
+            "color": "53;44;53"
+          }
+        },
+        {
+          "name": "Choice1",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "r": 53,
+            "g": 44,
+            "b": 53
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "lineHeight": 0,
+            "color": "53;44;53"
+          }
+        },
+        {
+          "name": "Choice2",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "r": 53,
+            "g": 44,
+            "b": 53
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "lineHeight": 0,
+            "color": "53;44;53"
+          }
+        },
+        {
+          "name": "LightButton",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Encender linterna · L",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Encender linterna · L",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "name": "Restart",
+          "type": "TextObject::Text",
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Reiniciar demo",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Reiniciar demo",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "HudTop"
+          },
+          {
+            "objectName": "HudBottom"
+          },
+          {
+            "objectName": "Background"
+          },
+          {
+            "objectName": "Planet"
+          },
+          {
+            "objectName": "Sofia"
+          },
+          {
+            "objectName": "NPC"
+          },
+          {
+            "objectName": "Cave"
+          },
+          {
+            "objectName": "Lamp"
+          },
+          {
+            "objectName": "Bubble"
+          },
+          {
+            "objectName": "Title"
+          },
+          {
+            "objectName": "Objective"
+          },
+          {
+            "objectName": "Help"
+          },
+          {
+            "objectName": "Speaker"
+          },
+          {
+            "objectName": "Message"
+          },
+          {
+            "objectName": "Choice1"
+          },
+          {
+            "objectName": "Choice2"
+          },
+          {
+            "objectName": "LightButton"
+          },
+          {
+            "objectName": "Restart"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene",
+                "inverted": false
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "DialogueTree::LoadDialogueFromJsonFile"
+              },
+              "parameters": [
+                "",
+                "dialogues/plato.yarn.json"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "r": 255,
+            "g": 210,
+            "b": 100
+          },
+          "comment": "CONVERSACIONES: abre el evento anterior, edita la acción Cargar diálogo desde JSON y pulsa el lápiz junto a plato.yarn.json para abrir Yarn. Los textos y decisiones viven allí. El controlador siguiente conserva movimiento y presentación."
+        },
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": "// Embedded as a native GDevelop JavaScript event by make_gdevelop.py.\n// All pictures, text and instances remain regular GDevelop editor sprites.\nif (!runtimeScene.__sofiaDemo) {\n const data = {\"width\": 1280, \"height\": 720, \"floor\": 560, \"speed\": 240, \"title\": \"PlatÃ³n Â· Demo comparativa\", \"surface\": {\"center\": [640, 360], \"radius\": 220, \"actorHeight\": 110, \"spawn\": -42, \"plato\": -5, \"cave\": 45}, \"rooms\": {\"entrada\": {\"background\": \"entrada.png\", \"spawn\": 160, \"floor\": 560}, \"prisioneros\": {\"background\": \"prisioneros.png\", \"spawn\": 160, \"floor\": 560}}, \"goals\": {\"meet\": \"Toca a PlatÃ³n para conversar.\", \"find\": \"Entra en la caverna y busca la linterna.\", \"light\": \"Enciende la linterna y explora la siguiente sala.\", \"talk\": \"Escucha al prisionero.\", \"done\": \"Demo completada. Puedes regresar a la superficie.\"}};const game=runtimeScene.getGame(),saved=game.__sofiaDemoState;\n const sprites = Object.fromEntries(runtimeScene.getObjects('').map(o=>[o.getName(),o]));\n for (const name of ['Background','Planet','Sofia','NPC','Cave','Lamp','Bubble','Speaker','Message','Choice1','Choice2','Title','Objective','Help','LightButton','Restart']) sprites[name]=runtimeScene.getObjects(name)[0];\n sprites.Sofia.setZOrder(100); // In front of NPCs/cave; darkness and UI remain above.\n if(!game.__sofiaKeys){\n  game.__sofiaKeys=[];\n  const onKey=e=>{if(e.repeat||e.isComposing||e.ctrlKey||e.altKey||e.metaKey||e.target?.closest?.('input,textarea,select,[contenteditable=\"true\"]'))return;\n   if(e.code==='Enter'||e.code==='NumpadEnter'||(e.code==='Tab'&&globalThis.__sofiaGD?.question)){e.preventDefault();game.__sofiaKeys.push(e.code==='Tab'?'tab':'enter')}\n  };\n  window.addEventListener('keydown',onKey);game.__sofiaKeyHandler=onKey;\n }\n const d = runtimeScene.__sofiaDemo = {room:runtimeScene.getVariables().get('SceneID').getAsString()||'surface',angle:-42*Math.PI/180,x:160,y:560,destination:null,pending:'',met:false,owned:false,on:false,complete:false,dialogue:null,turn:0,question:false,follow:'',time:0,lastEnter:false,lastL:false,data,sprites,heroScale:sprites.Sofia.getScaleY(),floorY:sprites.Sofia.getY(),nativeSceneName:runtimeScene.getName()};\n if(saved)for(const key of ['angle','met','owned','on','complete'])d[key]=saved[key];\n const show=(name,yes)=>sprites[name].hide(!yes);\n const text=(name,value)=>sprites[name].setString(value);\n const rad=a=>({x:640+Math.sin(a)*220,y:360-Math.cos(a)*220});\n const wrap=a=>Math.atan2(Math.sin(a),Math.cos(a));\n const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);\n const sprite=(name,x,y,scale,angle=0)=>{const o=sprites[name];o.setPosition(x,y);o.setScale(scale);o.setAngle(angle)};\n const colors={darkness:0,lastX:NaN,lastY:NaN,lastOn:null,lastRoom:''};\n const shade=new PIXI.Graphics();shade.zOrder=9000;shade.zIndex=9000;\n runtimeScene.getLayer('').getRenderer().addRendererObject(shade,9000);\n d.lightGraphics=shade;\n d.ui=()=>{\n  text('Title','GDEVELOP Â· '+(d.room==='surface'?'Planeta de PlatÃ³n Â· vista general':d.room==='entrada'?'A Â· Entrada de la caverna':'B Â· Sala de las sombras'));\n  text('Objective',d.complete?'âœ“ '+data.goals.done:!d.met?data.goals.meet:!d.owned?data.goals.find:d.room!=='prisioneros'?data.goals.light:data.goals.talk);\n  show('LightButton',d.owned&&d.room!=='surface');text('LightButton',d.on?'Linterna encendida Â· L':'Encender linterna Â· L');\n  show('Lamp',d.room==='entrada'&&!d.owned);\n };\n d.load=room=>{\n  if(room!==d.room){game.__sofiaDemoState={angle:d.angle,met:d.met,owned:d.owned,on:d.on,complete:d.complete,from:d.room};gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,room,false);return;}\n  d.destination=null;d.pending='';const surface=room==='surface';\n  sprites.Background.setAnimation(0);\n  show('Planet',surface);show('Cave',surface);show('NPC',surface||room==='prisioneros');\n  sprites.NPC.setAnimation(0);\n  if(surface){if(!saved)d.angle=Math.atan2(sprites.Sofia.getX()-640,360-sprites.Sofia.getY());const h=rad(d.angle);d.x=h.x;d.y=h.y;}\n  else{d.x=saved?.from==='prisioneros'&&room==='entrada'?950:sprites.Sofia.getX();d.y=sprites.Sofia.getY();d.floorY=d.y;}\n  d.ui();\n };\n const yarn=gdjs.dialogueTree;\n d.choiceSprites=[sprites.Choice1,sprites.Choice2];d.selectedChoice=-1;d.lastTab=false;\n d.syncFlags=()=>{for(const key of ['met','owned','complete'])d[key]=yarn.getVariable(key)===true;d.ui()};\n d.renderDialogue=()=>{\n  const open=!!d.dialogue;for(const n of ['Bubble','Speaker','Message'])show(n,open);\n  for(const o of d.choiceSprites)o.hide(true);if(!open)return;\n  const line=d.dialogue[d.turn];text('Speaker',line[0]);text('Message',line[1]);\n  const who=line[0]==='SofÃ­a'?{x:d.x,y:d.y}:{x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  const x=d.question?220:Math.max(16,Math.min(804,who.x-230)),y=d.question?100:Math.max(80,Math.min(470,who.y-(d.room==='surface'?110:157)-185));\n  sprites.Bubble.setPosition(x,y);sprites.Bubble.setWidth(460);sprites.Bubble.setHeight(d.question?Math.max(245,145+d.options.length*48):175);\n  sprites.Speaker.setPosition(x+18,y+12);sprites.Message.setPosition(x+18,y+47);sprites.Message.setWidth(420);\n  if(d.question)for(let i=0;i<d.options.length;i++){\n   if(!d.choiceSprites[i]){const o=runtimeScene.createObject('Choice1');o.setLayer('UI');o.setZOrder(sprites.Choice1.getZOrder());d.choiceSprites.push(o)}\n   const o=d.choiceSprites[i];o.hide(false);o.setPosition(x+18,y+120+i*48);o.setString((d.selectedChoice===i?'â–¶ ':'â€º ')+d.options[i]);\n  }\n };\n d.readYarn=()=>{\n  d.syncFlags();d.selectedChoice=-1;\n  if(!yarn.isRunning()){d.dialogue=null;d.question=false;d.renderDialogue();return}\n  d.question=yarn.isDialogueLineType('options');\n  if(d.question){d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  else{const raw=yarn.getLineText(),colon=raw.indexOf(':');d.dialogue=[[colon<0?'':raw.slice(0,colon),colon<0?raw:raw.slice(colon+1).trim()]];d.turn=0;\n   if(yarn.branchContainsTag('decision')){yarn.goToNextDialogueLine();d.question=yarn.isDialogueLineType('options');if(d.question)d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  }\n  d.renderDialogue();\n };\n d.say=node=>{\n  if(!yarn.hasDialogueBranch(node))throw Error('Nodo Yarn no encontrado: '+node);\n  if(d.room==='surface')sprites.NPC.flipX(wrap(d.angle-sprites.NPC.getAngle()*Math.PI/180)<0);\n  sprites.Sofia.flipX(d.room==='surface'?wrap(sprites.NPC.getAngle()*Math.PI/180-d.angle)<0:sprites.NPC.getX()<d.x);\n  d.destination=null;d.pending='';for(const key of ['met','owned','complete'])yarn.setVariable(key,d[key]);\n  yarn.startFrom(node);d.readYarn();\n };\n d.advance=()=>{if(!d.dialogue||d.question)return;yarn.goToNextDialogueLine();d.readYarn();if(!d.dialogue){game.__sofiaKeys.length=0;d.enterAfter=d.time+.18}};\n d.answer=i=>{if(!d.question||i<0||i>=d.options.length)return;yarn.selectOption(i);yarn.hasSelectedOptionChanged();yarn.confirmSelectOption();d.readYarn()};\n d.toggle=()=>{if(d.owned&&d.room!=='surface'){d.on=!d.on;d.ui()}};\n d.contextEnter=()=>{\n  if(d.time<(d.enterAfter??0))return;\n  const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  if((d.room==='surface'||d.room==='prisioneros')&&distance({x:d.x,y:d.y},npc)<145){d.interact(d.room==='surface'?'plato':'prisoner');return}\n  if(d.room==='entrada'&&!d.owned&&Math.abs(d.x-sprites.Lamp.getX())<100){d.interact('lamp');return}\n  if(d.room!=='surface'&&d.x<150)d.interact('back');else if(d.room==='entrada'&&d.x>940)d.interact('next');\n };\n d.interact=action=>{\n  if(action==='plato')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  if(action==='cave'){if(d.met)d.load('entrada');else d.say('Antes_De_Entrar');}\n  if(action==='back'){const prior=d.room;d.load(prior==='entrada'?'surface':'entrada');if(prior==='prisioneros')d.x=950;}\n  if(action==='next'){if(d.owned&&d.on)d.load('prisioneros');else d.say('Puerta_Sin_Luz');}\n  if(action==='lamp')d.say(sprites.Lamp.getVariables().get('DialogueNode').getAsString());\n  if(action==='prisoner')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  d.ui();\n };\n d.click=p=>{\n  if(d.dialogue){if(d.question){for(let i=0;i<d.options.length;i++){const o=d.choiceSprites[i];if(p.x>=o.getX()&&p.x<o.getX()+425&&p.y>=o.getY()&&p.y<o.getY()+44){d.answer(i);break}}}else d.advance();return;}\n  if(p.x>1020&&p.y<65&&d.owned&&d.room!=='surface'){d.toggle();return;}\n  if(p.x>1080&&p.y>670){if(confirm('Â¿Reiniciar Ãºnicamente esta demo?')){d.met=d.owned=d.on=d.complete=false;d.angle=-42*Math.PI/180;d.load('surface')}return;}\n  if(d.room==='surface'){\n   const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()},cave={x:sprites.Cave.getX(),y:sprites.Cave.getY()};\n   d.pending=distance(p,{x:npc.x,y:npc.y-45})<85?'plato':distance(p,cave)<90?'cave':'';\n   d.destination=d.pending==='plato'?Math.atan2(npc.x-640,360-npc.y):d.pending==='cave'?Math.atan2(cave.x-640,360-cave.y):Math.atan2(p.x-640,360-p.y);\n  }else{\n   d.pending=p.x<145?'back':d.room==='entrada'&&p.x>940?'next':d.room==='entrada'&&!d.owned&&distance(p,{x:sprites.Lamp.getX(),y:sprites.Lamp.getY()})<85?'lamp':d.room==='prisioneros'&&distance(p,{x:sprites.NPC.getX(),y:sprites.NPC.getY()-70})<100?'prisoner':'';\n   d.destination=d.pending==='back'?75:d.pending==='next'?1070:d.pending==='lamp'?sprites.Lamp.getX():d.pending==='prisoner'?sprites.NPC.getX():Math.max(40,Math.min(1240,p.x));\n  }\n };\n d.step=()=>{\n  const dt=Math.min(.1,runtimeScene.getElapsedTime()/1000);d.time+=dt;\n  // Native loading is asynchronous; exploration starts once the JSON is ready.\n  if(!yarn.hasDialogueBranch('Platon_Encuentro'))return;\n  const input=runtimeScene.getGame().getInputManager(),l=input.isKeyPressed(76),key=game.__sofiaKeys.shift();\n  if(key==='tab'&&d.question){d.selectedChoice=(d.selectedChoice+1)%d.options.length;d.renderDialogue()}\n  if(key==='enter'){if(d.question){if(d.selectedChoice>=0)d.answer(d.selectedChoice)}else if(d.dialogue)d.advance();else d.contextEnter()}\n  if(l&&!d.lastL&&!d.dialogue)d.toggle();d.lastL=l;\n  if(input.isMouseButtonReleased(0))d.click({x:gdjs.evtTools.input.getCursorX(runtimeScene,'',0),y:gdjs.evtTools.input.getCursorY(runtimeScene,'',0)});\n  let axis=0;\n  if(!d.dialogue){\n   axis=Number(input.isKeyPressed(39)||input.isKeyPressed(68))-Number(input.isKeyPressed(37)||input.isKeyPressed(65));\n   if(axis){d.destination=null;d.pending='';}\n   if(d.room==='surface'){\n    const diff=d.destination===null?0:wrap(d.destination-d.angle);if(!axis&&d.destination!==null&&Math.abs(diff)>(d.pending?.22:.025))axis=Math.sign(diff);\n    d.angle+=axis*.9*dt;const p=rad(d.angle);d.x=p.x;d.y=p.y;\n   }else{\n    if(!axis&&d.destination!==null&&Math.abs(d.destination-d.x)>(d.pending?80:6))axis=Math.sign(d.destination-d.x);\n    d.x=Math.max(40,Math.min(1240,d.x+axis*data.speed*dt));d.y=d.floorY;\n   }\n   if(!axis&&d.destination!==null){const action=d.pending;d.destination=null;d.pending='';if(action)d.interact(action);}\n  }\n  sprites.Sofia.setAnimationName(axis?'Walk':'Idle');if(axis)sprites.Sofia.flipX(axis<0);\n  sprite('Sofia',d.x,d.y,d.heroScale,d.room==='surface'?d.angle*180/Math.PI:0);\n  if(colors.lastRoom!==d.room||colors.lastOn!==d.on||Math.abs(colors.lastX-d.x)>.5||Math.abs(colors.lastY-d.y)>.5){\n   shade.clear();if(d.room!=='surface'){\n    const dark=d.room==='entrada'?.28:.88,cx=d.x,cy=d.y-65;\n    shade.beginFill(0x030511,dark).drawRect(-500,-500,2280,1720);\n    if(d.on)shade.beginHole().drawCircle(cx,cy,240).endHole();shade.endFill();\n    if(d.on)for(let i=0;i<12;i++){const t=(i+.5)/12,r1=90+i*12.5,r2=r1+12.5;shade.beginFill(0x030511,dark*t*t*(3-2*t)).drawCircle(cx,cy,r2).beginHole().drawCircle(cx,cy,r1).endHole().endFill();}\n   }\n   colors.lastX=d.x;colors.lastY=d.y;colors.lastOn=d.on;colors.lastRoom=d.room;\n  }\n };\n d.load(d.room);d.renderDialogue();globalThis.__sofiaGD=d;\n}\nruntimeScene.__sofiaDemo.step();\n",
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
           "renderingType": "",
           "visibility": true,
           "cameras": [

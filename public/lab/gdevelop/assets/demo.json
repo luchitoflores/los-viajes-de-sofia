@@ -1,0 +1,87 @@
+{
+  "width": 1280,
+  "height": 720,
+  "floor": 560,
+  "speed": 240,
+  "title": "Platón · Demo comparativa",
+  "surface": {
+    "center": [
+      640,
+      360
+    ],
+    "radius": 220,
+    "actorHeight": 110,
+    "spawn": -42,
+    "plato": -5,
+    "cave": 45
+  },
+  "rooms": {
+    "entrada": {
+      "background": "entrada.png",
+      "spawn": 160,
+      "floor": 560
+    },
+    "prisioneros": {
+      "background": "prisioneros.png",
+      "spawn": 160,
+      "floor": 560
+    }
+  },
+  "dialogues": {
+    "plato": [
+      [
+        "Platón",
+        "Bienvenida, Sofía. En esta caverna hay personas que solo conocen las sombras."
+      ],
+      [
+        "Sofía",
+        "¿Cómo puedo descubrir qué hay detrás de lo que ven?"
+      ],
+      [
+        "Platón",
+        "Busca la linterna en la entrada. Después explora y escucha al prisionero."
+      ]
+    ],
+    "lamp": [
+      [
+        "Sofía",
+        "He encontrado una linterna. Puedo encenderla o apagarla con L o tocando su icono."
+      ]
+    ],
+    "prisoner": [
+      [
+        "Prisionero",
+        "Siempre he mirado esa pared. Creía que las sombras eran todo lo que existía."
+      ],
+      [
+        "Sofía",
+        "Las sombras dependen de una luz y de algo que la interrumpe. Podemos investigar su origen."
+      ]
+    ],
+    "complete": [
+      [
+        "Prisionero",
+        "Entonces hay algo más que las apariencias. Quiero seguir preguntando."
+      ],
+      [
+        "Sofía",
+        "Hemos completado esta pequeña prueba. Podemos regresar a la superficie por la entrada."
+      ]
+    ]
+  },
+  "question": {
+    "text": "¿Qué hace posible que aparezcan las sombras?",
+    "options": [
+      "Una fuente de luz y los objetos",
+      "Las sombras existen por sí solas"
+    ],
+    "correct": 0
+  },
+  "goals": {
+    "meet": "Toca a Platón para conversar.",
+    "find": "Entra en la caverna y busca la linterna.",
+    "light": "Enciende la linterna y explora la siguiente sala.",
+    "talk": "Escucha al prisionero.",
+    "done": "Demo completada. Puedes regresar a la superficie."
+  }
+}
