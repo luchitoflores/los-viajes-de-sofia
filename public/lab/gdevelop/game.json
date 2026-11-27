@@ -121,6 +121,13 @@
       },
       {
         "kind": "image",
+        "name": "assets/portal.png",
+        "file": "assets/portal.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
         "name": "assets/prisioneros.png",
         "file": "assets/prisioneros.png",
         "smoothed": true,
@@ -266,6 +273,31 @@
           "name": "SceneID",
           "type": "string",
           "value": "surface"
+        },
+        {
+          "name": "ExitTarget",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "ExitX",
+          "type": "number",
+          "value": 1160
+        },
+        {
+          "name": "ExitDirection",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "ArrivalX",
+          "type": "number",
+          "value": 120
+        },
+        {
+          "name": "NeedsLight",
+          "type": "boolean",
+          "value": false
         }
       ],
       "instances": [
@@ -416,6 +448,22 @@
         {
           "angle": 0,
           "customSize": true,
+          "width": 88,
+          "height": 120,
+          "depth": 1,
+          "layer": "",
+          "locked": false,
+          "name": "Portal",
+          "x": 90,
+          "y": 560,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
           "width": 980,
           "height": 36,
           "depth": 1,
@@ -424,7 +472,7 @@
           "name": "Title",
           "x": 20,
           "y": 12,
-          "zOrder": 9,
+          "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -440,7 +488,7 @@
           "name": "Objective",
           "x": 20,
           "y": 48,
-          "zOrder": 10,
+          "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -456,7 +504,7 @@
           "name": "Help",
           "x": 20,
           "y": 688,
-          "zOrder": 11,
+          "zOrder": 12,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -472,7 +520,7 @@
           "name": "Speaker",
           "x": 238,
           "y": 112,
-          "zOrder": 12,
+          "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -488,7 +536,7 @@
           "name": "Message",
           "x": 238,
           "y": 147,
-          "zOrder": 13,
+          "zOrder": 14,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -504,7 +552,7 @@
           "name": "Choice1",
           "x": 238,
           "y": 220,
-          "zOrder": 14,
+          "zOrder": 15,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -520,7 +568,7 @@
           "name": "Choice2",
           "x": 238,
           "y": 268,
-          "zOrder": 15,
+          "zOrder": 16,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -536,7 +584,7 @@
           "name": "LightButton",
           "x": 1020,
           "y": 15,
-          "zOrder": 16,
+          "zOrder": 17,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -552,7 +600,7 @@
           "name": "Restart",
           "x": 1080,
           "y": 670,
-          "zOrder": 17,
+          "zOrder": 18,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1166,6 +1214,44 @@
           ]
         },
         {
+          "name": "Portal",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "portal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/portal.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 313.5,
+                        "y": 627
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 313.5,
+                        "y": 627
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Title",
           "type": "TextObject::Text",
           "assetStoreId": "",
@@ -1219,7 +1305,7 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Toca a PlatÃ³n para conversar.",
+          "string": "Toca a Platón para conversar.",
           "font": "",
           "textAlignment": "left",
           "characterSize": 19,
@@ -1242,7 +1328,7 @@
             "shadowOpacity": 0,
             "smoothed": true,
             "underlined": false,
-            "text": "Toca a PlatÃ³n para conversar.",
+            "text": "Toca a Platón para conversar.",
             "font": "",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
@@ -1584,6 +1670,9 @@
             "objectName": "Bubble"
           },
           {
+            "objectName": "Portal"
+          },
+          {
             "objectName": "Title"
           },
           {
@@ -1647,7 +1736,7 @@
         },
         {
           "type": "BuiltinCommonInstructions::JsCode",
-          "inlineCode": "// Embedded as a native GDevelop JavaScript event by make_gdevelop.py.\n// All pictures, text and instances remain regular GDevelop editor sprites.\nif (!runtimeScene.__sofiaDemo) {\n const data = {\"width\": 1280, \"height\": 720, \"floor\": 560, \"speed\": 240, \"title\": \"PlatÃ³n Â· Demo comparativa\", \"surface\": {\"center\": [640, 360], \"radius\": 220, \"actorHeight\": 110, \"spawn\": -42, \"plato\": -5, \"cave\": 45}, \"rooms\": {\"entrada\": {\"background\": \"entrada.png\", \"spawn\": 160, \"floor\": 560}, \"prisioneros\": {\"background\": \"prisioneros.png\", \"spawn\": 160, \"floor\": 560}}, \"goals\": {\"meet\": \"Toca a PlatÃ³n para conversar.\", \"find\": \"Entra en la caverna y busca la linterna.\", \"light\": \"Enciende la linterna y explora la siguiente sala.\", \"talk\": \"Escucha al prisionero.\", \"done\": \"Demo completada. Puedes regresar a la superficie.\"}};const game=runtimeScene.getGame(),saved=game.__sofiaDemoState;\n const sprites = Object.fromEntries(runtimeScene.getObjects('').map(o=>[o.getName(),o]));\n for (const name of ['Background','Planet','Sofia','NPC','Cave','Lamp','Bubble','Speaker','Message','Choice1','Choice2','Title','Objective','Help','LightButton','Restart']) sprites[name]=runtimeScene.getObjects(name)[0];\n sprites.Sofia.setZOrder(100); // In front of NPCs/cave; darkness and UI remain above.\n if(!game.__sofiaKeys){\n  game.__sofiaKeys=[];\n  const onKey=e=>{if(e.repeat||e.isComposing||e.ctrlKey||e.altKey||e.metaKey||e.target?.closest?.('input,textarea,select,[contenteditable=\"true\"]'))return;\n   if(e.code==='Enter'||e.code==='NumpadEnter'||(e.code==='Tab'&&globalThis.__sofiaGD?.question)){e.preventDefault();game.__sofiaKeys.push(e.code==='Tab'?'tab':'enter')}\n  };\n  window.addEventListener('keydown',onKey);game.__sofiaKeyHandler=onKey;\n }\n const d = runtimeScene.__sofiaDemo = {room:runtimeScene.getVariables().get('SceneID').getAsString()||'surface',angle:-42*Math.PI/180,x:160,y:560,destination:null,pending:'',met:false,owned:false,on:false,complete:false,dialogue:null,turn:0,question:false,follow:'',time:0,lastEnter:false,lastL:false,data,sprites,heroScale:sprites.Sofia.getScaleY(),floorY:sprites.Sofia.getY(),nativeSceneName:runtimeScene.getName()};\n if(saved)for(const key of ['angle','met','owned','on','complete'])d[key]=saved[key];\n const show=(name,yes)=>sprites[name].hide(!yes);\n const text=(name,value)=>sprites[name].setString(value);\n const rad=a=>({x:640+Math.sin(a)*220,y:360-Math.cos(a)*220});\n const wrap=a=>Math.atan2(Math.sin(a),Math.cos(a));\n const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);\n const sprite=(name,x,y,scale,angle=0)=>{const o=sprites[name];o.setPosition(x,y);o.setScale(scale);o.setAngle(angle)};\n const colors={darkness:0,lastX:NaN,lastY:NaN,lastOn:null,lastRoom:''};\n const shade=new PIXI.Graphics();shade.zOrder=9000;shade.zIndex=9000;\n runtimeScene.getLayer('').getRenderer().addRendererObject(shade,9000);\n d.lightGraphics=shade;\n d.ui=()=>{\n  text('Title','GDEVELOP Â· '+(d.room==='surface'?'Planeta de PlatÃ³n Â· vista general':d.room==='entrada'?'A Â· Entrada de la caverna':'B Â· Sala de las sombras'));\n  text('Objective',d.complete?'âœ“ '+data.goals.done:!d.met?data.goals.meet:!d.owned?data.goals.find:d.room!=='prisioneros'?data.goals.light:data.goals.talk);\n  show('LightButton',d.owned&&d.room!=='surface');text('LightButton',d.on?'Linterna encendida Â· L':'Encender linterna Â· L');\n  show('Lamp',d.room==='entrada'&&!d.owned);\n };\n d.load=room=>{\n  if(room!==d.room){game.__sofiaDemoState={angle:d.angle,met:d.met,owned:d.owned,on:d.on,complete:d.complete,from:d.room};gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,room,false);return;}\n  d.destination=null;d.pending='';const surface=room==='surface';\n  sprites.Background.setAnimation(0);\n  show('Planet',surface);show('Cave',surface);show('NPC',surface||room==='prisioneros');\n  sprites.NPC.setAnimation(0);\n  if(surface){if(!saved)d.angle=Math.atan2(sprites.Sofia.getX()-640,360-sprites.Sofia.getY());const h=rad(d.angle);d.x=h.x;d.y=h.y;}\n  else{d.x=saved?.from==='prisioneros'&&room==='entrada'?950:sprites.Sofia.getX();d.y=sprites.Sofia.getY();d.floorY=d.y;}\n  d.ui();\n };\n const yarn=gdjs.dialogueTree;\n d.choiceSprites=[sprites.Choice1,sprites.Choice2];d.selectedChoice=-1;d.lastTab=false;\n d.syncFlags=()=>{for(const key of ['met','owned','complete'])d[key]=yarn.getVariable(key)===true;d.ui()};\n d.renderDialogue=()=>{\n  const open=!!d.dialogue;for(const n of ['Bubble','Speaker','Message'])show(n,open);\n  for(const o of d.choiceSprites)o.hide(true);if(!open)return;\n  const line=d.dialogue[d.turn];text('Speaker',line[0]);text('Message',line[1]);\n  const who=line[0]==='SofÃ­a'?{x:d.x,y:d.y}:{x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  const x=d.question?220:Math.max(16,Math.min(804,who.x-230)),y=d.question?100:Math.max(80,Math.min(470,who.y-(d.room==='surface'?110:157)-185));\n  sprites.Bubble.setPosition(x,y);sprites.Bubble.setWidth(460);sprites.Bubble.setHeight(d.question?Math.max(245,145+d.options.length*48):175);\n  sprites.Speaker.setPosition(x+18,y+12);sprites.Message.setPosition(x+18,y+47);sprites.Message.setWidth(420);\n  if(d.question)for(let i=0;i<d.options.length;i++){\n   if(!d.choiceSprites[i]){const o=runtimeScene.createObject('Choice1');o.setLayer('UI');o.setZOrder(sprites.Choice1.getZOrder());d.choiceSprites.push(o)}\n   const o=d.choiceSprites[i];o.hide(false);o.setPosition(x+18,y+120+i*48);o.setString((d.selectedChoice===i?'â–¶ ':'â€º ')+d.options[i]);\n  }\n };\n d.readYarn=()=>{\n  d.syncFlags();d.selectedChoice=-1;\n  if(!yarn.isRunning()){d.dialogue=null;d.question=false;d.renderDialogue();return}\n  d.question=yarn.isDialogueLineType('options');\n  if(d.question){d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  else{const raw=yarn.getLineText(),colon=raw.indexOf(':');d.dialogue=[[colon<0?'':raw.slice(0,colon),colon<0?raw:raw.slice(colon+1).trim()]];d.turn=0;\n   if(yarn.branchContainsTag('decision')){yarn.goToNextDialogueLine();d.question=yarn.isDialogueLineType('options');if(d.question)d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  }\n  d.renderDialogue();\n };\n d.say=node=>{\n  if(!yarn.hasDialogueBranch(node))throw Error('Nodo Yarn no encontrado: '+node);\n  if(d.room==='surface')sprites.NPC.flipX(wrap(d.angle-sprites.NPC.getAngle()*Math.PI/180)<0);\n  sprites.Sofia.flipX(d.room==='surface'?wrap(sprites.NPC.getAngle()*Math.PI/180-d.angle)<0:sprites.NPC.getX()<d.x);\n  d.destination=null;d.pending='';for(const key of ['met','owned','complete'])yarn.setVariable(key,d[key]);\n  yarn.startFrom(node);d.readYarn();\n };\n d.advance=()=>{if(!d.dialogue||d.question)return;yarn.goToNextDialogueLine();d.readYarn();if(!d.dialogue){game.__sofiaKeys.length=0;d.enterAfter=d.time+.18}};\n d.answer=i=>{if(!d.question||i<0||i>=d.options.length)return;yarn.selectOption(i);yarn.hasSelectedOptionChanged();yarn.confirmSelectOption();d.readYarn()};\n d.toggle=()=>{if(d.owned&&d.room!=='surface'){d.on=!d.on;d.ui()}};\n d.contextEnter=()=>{\n  if(d.time<(d.enterAfter??0))return;\n  const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  if((d.room==='surface'||d.room==='prisioneros')&&distance({x:d.x,y:d.y},npc)<145){d.interact(d.room==='surface'?'plato':'prisoner');return}\n  if(d.room==='entrada'&&!d.owned&&Math.abs(d.x-sprites.Lamp.getX())<100){d.interact('lamp');return}\n  if(d.room!=='surface'&&d.x<150)d.interact('back');else if(d.room==='entrada'&&d.x>940)d.interact('next');\n };\n d.interact=action=>{\n  if(action==='plato')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  if(action==='cave'){if(d.met)d.load('entrada');else d.say('Antes_De_Entrar');}\n  if(action==='back'){const prior=d.room;d.load(prior==='entrada'?'surface':'entrada');if(prior==='prisioneros')d.x=950;}\n  if(action==='next'){if(d.owned&&d.on)d.load('prisioneros');else d.say('Puerta_Sin_Luz');}\n  if(action==='lamp')d.say(sprites.Lamp.getVariables().get('DialogueNode').getAsString());\n  if(action==='prisoner')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  d.ui();\n };\n d.click=p=>{\n  if(d.dialogue){if(d.question){for(let i=0;i<d.options.length;i++){const o=d.choiceSprites[i];if(p.x>=o.getX()&&p.x<o.getX()+425&&p.y>=o.getY()&&p.y<o.getY()+44){d.answer(i);break}}}else d.advance();return;}\n  if(p.x>1020&&p.y<65&&d.owned&&d.room!=='surface'){d.toggle();return;}\n  if(p.x>1080&&p.y>670){if(confirm('Â¿Reiniciar Ãºnicamente esta demo?')){d.met=d.owned=d.on=d.complete=false;d.angle=-42*Math.PI/180;d.load('surface')}return;}\n  if(d.room==='surface'){\n   const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()},cave={x:sprites.Cave.getX(),y:sprites.Cave.getY()};\n   d.pending=distance(p,{x:npc.x,y:npc.y-45})<85?'plato':distance(p,cave)<90?'cave':'';\n   d.destination=d.pending==='plato'?Math.atan2(npc.x-640,360-npc.y):d.pending==='cave'?Math.atan2(cave.x-640,360-cave.y):Math.atan2(p.x-640,360-p.y);\n  }else{\n   d.pending=p.x<145?'back':d.room==='entrada'&&p.x>940?'next':d.room==='entrada'&&!d.owned&&distance(p,{x:sprites.Lamp.getX(),y:sprites.Lamp.getY()})<85?'lamp':d.room==='prisioneros'&&distance(p,{x:sprites.NPC.getX(),y:sprites.NPC.getY()-70})<100?'prisoner':'';\n   d.destination=d.pending==='back'?75:d.pending==='next'?1070:d.pending==='lamp'?sprites.Lamp.getX():d.pending==='prisoner'?sprites.NPC.getX():Math.max(40,Math.min(1240,p.x));\n  }\n };\n d.step=()=>{\n  const dt=Math.min(.1,runtimeScene.getElapsedTime()/1000);d.time+=dt;\n  // Native loading is asynchronous; exploration starts once the JSON is ready.\n  if(!yarn.hasDialogueBranch('Platon_Encuentro'))return;\n  const input=runtimeScene.getGame().getInputManager(),l=input.isKeyPressed(76),key=game.__sofiaKeys.shift();\n  if(key==='tab'&&d.question){d.selectedChoice=(d.selectedChoice+1)%d.options.length;d.renderDialogue()}\n  if(key==='enter'){if(d.question){if(d.selectedChoice>=0)d.answer(d.selectedChoice)}else if(d.dialogue)d.advance();else d.contextEnter()}\n  if(l&&!d.lastL&&!d.dialogue)d.toggle();d.lastL=l;\n  if(input.isMouseButtonReleased(0))d.click({x:gdjs.evtTools.input.getCursorX(runtimeScene,'',0),y:gdjs.evtTools.input.getCursorY(runtimeScene,'',0)});\n  let axis=0;\n  if(!d.dialogue){\n   axis=Number(input.isKeyPressed(39)||input.isKeyPressed(68))-Number(input.isKeyPressed(37)||input.isKeyPressed(65));\n   if(axis){d.destination=null;d.pending='';}\n   if(d.room==='surface'){\n    const diff=d.destination===null?0:wrap(d.destination-d.angle);if(!axis&&d.destination!==null&&Math.abs(diff)>(d.pending?.22:.025))axis=Math.sign(diff);\n    d.angle+=axis*.9*dt;const p=rad(d.angle);d.x=p.x;d.y=p.y;\n   }else{\n    if(!axis&&d.destination!==null&&Math.abs(d.destination-d.x)>(d.pending?80:6))axis=Math.sign(d.destination-d.x);\n    d.x=Math.max(40,Math.min(1240,d.x+axis*data.speed*dt));d.y=d.floorY;\n   }\n   if(!axis&&d.destination!==null){const action=d.pending;d.destination=null;d.pending='';if(action)d.interact(action);}\n  }\n  sprites.Sofia.setAnimationName(axis?'Walk':'Idle');if(axis)sprites.Sofia.flipX(axis<0);\n  sprite('Sofia',d.x,d.y,d.heroScale,d.room==='surface'?d.angle*180/Math.PI:0);\n  if(colors.lastRoom!==d.room||colors.lastOn!==d.on||Math.abs(colors.lastX-d.x)>.5||Math.abs(colors.lastY-d.y)>.5){\n   shade.clear();if(d.room!=='surface'){\n    const dark=d.room==='entrada'?.28:.88,cx=d.x,cy=d.y-65;\n    shade.beginFill(0x030511,dark).drawRect(-500,-500,2280,1720);\n    if(d.on)shade.beginHole().drawCircle(cx,cy,240).endHole();shade.endFill();\n    if(d.on)for(let i=0;i<12;i++){const t=(i+.5)/12,r1=90+i*12.5,r2=r1+12.5;shade.beginFill(0x030511,dark*t*t*(3-2*t)).drawCircle(cx,cy,r2).beginHole().drawCircle(cx,cy,r1).endHole().endFill();}\n   }\n   colors.lastX=d.x;colors.lastY=d.y;colors.lastOn=d.on;colors.lastRoom=d.room;\n  }\n };\n d.load(d.room);d.renderDialogue();globalThis.__sofiaGD=d;\n}\nruntimeScene.__sofiaDemo.step();\n",
+          "inlineCode": "// Embedded as a native GDevelop JavaScript event by make_gdevelop.py.\n// All pictures, text and instances remain regular GDevelop editor sprites.\nif (!runtimeScene.__sofiaDemo) {\n const data = {\"width\": 1280, \"height\": 720, \"floor\": 560, \"speed\": 240, \"title\": \"Platón · Demo comparativa\", \"surface\": {\"center\": [640, 360], \"radius\": 220, \"actorHeight\": 110, \"spawn\": -42, \"plato\": -5, \"cave\": 45}, \"rooms\": {\"entrada\": {\"background\": \"entrada.png\", \"spawn\": 160, \"floor\": 560}, \"prisioneros\": {\"background\": \"prisioneros.png\", \"spawn\": 160, \"floor\": 560}}, \"goals\": {\"meet\": \"Toca a Platón para conversar.\", \"find\": \"Entra en la caverna y busca la linterna.\", \"light\": \"Enciende la linterna y explora la siguiente sala.\", \"talk\": \"Escucha al prisionero.\", \"done\": \"Demo completada. Puedes regresar a la superficie.\"}, \"passages\": [{\"id\": \"entrada-prisioneros\", \"scene\": \"entrada\", \"direction\": 1, \"at\": 1160, \"target\": \"prisioneros\", \"spawn\": 120, \"requires\": [\"owned\", \"on\"], \"blockedText\": \"Recoge y enciende la linterna para continuar.\"}, {\"id\": \"prisioneros-entrada\", \"scene\": \"prisioneros\", \"direction\": -1, \"at\": 80, \"target\": \"entrada\", \"spawn\": 1080, \"requires\": []}], \"portal\": {\"scene\": \"entrada\", \"x\": 90, \"y\": 560, \"target\": \"surface\"}};const game=runtimeScene.getGame(),saved=game.__sofiaDemoState;\n const config=runtimeScene.getVariables(),target=config.get('ExitTarget').getAsString();\n data.passages=target?[{id:runtimeScene.getName()+'-exit',scene:runtimeScene.getName(),direction:config.get('ExitDirection').getAsNumber(),at:config.get('ExitX').getAsNumber(),target,spawn:config.get('ArrivalX').getAsNumber(),requires:config.get('NeedsLight').getAsBoolean()?['owned','on']:[],blockedText:'Recoge y enciende la linterna para continuar.'}]:[];\n const sprites = Object.fromEntries(runtimeScene.getObjects('').map(o=>[o.getName(),o]));\n for (const name of ['Background','Planet','Sofia','NPC','Cave','Lamp','Portal','Bubble','Speaker','Message','Choice1','Choice2','Title','Objective','Help','LightButton','Restart']) sprites[name]=runtimeScene.getObjects(name)[0];\n sprites.Sofia.setZOrder(100); // In front of NPCs/cave; darkness and UI remain above.\n if(!game.__sofiaKeys){\n  game.__sofiaKeys=[];\n  const onKey=e=>{if(e.repeat||e.isComposing||e.ctrlKey||e.altKey||e.metaKey||e.target?.closest?.('input,textarea,select,[contenteditable=\"true\"]'))return;\n   if(e.code==='Enter'||e.code==='NumpadEnter'||(e.code==='Tab'&&globalThis.__sofiaGD?.question)){e.preventDefault();game.__sofiaKeys.push(e.code==='Tab'?'tab':'enter')}\n  };\n  window.addEventListener('keydown',onKey);game.__sofiaKeyHandler=onKey;\n }\n const d = runtimeScene.__sofiaDemo = {room:runtimeScene.getVariables().get('SceneID').getAsString()||'surface',angle:-42*Math.PI/180,x:160,y:560,destination:null,pending:'',met:false,owned:false,on:false,complete:false,dialogue:null,turn:0,question:false,follow:'',time:0,lastEnter:false,lastL:false,data,sprites,heroScale:sprites.Sofia.getScaleY(),floorY:sprites.Sofia.getY(),nativeSceneName:runtimeScene.getName()};\n if(saved)for(const key of ['angle','met','owned','on','complete'])d[key]=saved[key];\n const show=(name,yes)=>sprites[name].hide(!yes);\n const text=(name,value)=>sprites[name].setString(value);\n const rad=a=>({x:640+Math.sin(a)*220,y:360-Math.cos(a)*220});\n const wrap=a=>Math.atan2(Math.sin(a),Math.cos(a));\n const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);\n const sprite=(name,x,y,scale,angle=0)=>{const o=sprites[name];o.setPosition(x,y);o.setScale(scale);o.setAngle(angle)};\n const colors={darkness:0,lastX:NaN,lastY:NaN,lastOn:null,lastRoom:''};\n const shade=new PIXI.Graphics();shade.zOrder=9000;shade.zIndex=9000;\n runtimeScene.getLayer('').getRenderer().addRendererObject(shade,9000);\n d.lightGraphics=shade;\n d.ui=()=>{\n  text('Title','GDEVELOP · '+(d.room==='surface'?'Planeta de Platón · vista general':d.room==='entrada'?'A · Entrada de la caverna':'B · Sala de las sombras'));\n  text('Objective',d.complete?'✓ '+data.goals.done:!d.met?data.goals.meet:!d.owned?data.goals.find:d.room!=='prisioneros'?data.goals.light:data.goals.talk);\n  show('LightButton',d.owned&&d.room!=='surface');text('LightButton',d.on?'Linterna encendida · L':'Encender linterna · L');\n  show('Lamp',d.room==='entrada'&&!d.owned);\n  show('Portal',d.room===data.portal.scene);\n };\n d.load=(room,arrivalX)=>{\n  if(room!==d.room){game.__sofiaDemoState={angle:d.angle,met:d.met,owned:d.owned,on:d.on,complete:d.complete,from:d.room,arrivalX};gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,room,false);return;}\n  d.destination=null;d.pending='';const surface=room==='surface';\n  sprites.Background.setAnimation(0);\n  show('Planet',surface);show('Cave',surface);show('NPC',surface||room==='prisioneros');\n  sprites.NPC.setAnimation(0);\n  if(surface){if(!saved)d.angle=Math.atan2(sprites.Sofia.getX()-640,360-sprites.Sofia.getY());const h=rad(d.angle);d.x=h.x;d.y=h.y;}\n  else{d.x=saved?.arrivalX??sprites.Sofia.getX();d.y=sprites.Sofia.getY();d.floorY=d.y;sprites.Sofia.flipX(saved?.from==='prisioneros');}\n  d.ui();\n };\n const yarn=gdjs.dialogueTree;\n d.choiceSprites=[sprites.Choice1,sprites.Choice2];d.selectedChoice=-1;d.lastTab=false;\n d.syncFlags=()=>{for(const key of ['met','owned','complete'])d[key]=yarn.getVariable(key)===true;d.ui()};\n d.renderDialogue=()=>{\n  const open=!!d.dialogue;for(const n of ['Bubble','Speaker','Message'])show(n,open);\n  for(const o of d.choiceSprites)o.hide(true);if(!open)return;\n  const line=d.dialogue[d.turn];text('Speaker',line[0]);text('Message',line[1]);\n  const who=line[0]==='Sofía'?{x:d.x,y:d.y}:{x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  const x=d.question?220:Math.max(16,Math.min(804,who.x-230)),y=d.question?100:Math.max(80,Math.min(470,who.y-(d.room==='surface'?110:157)-185));\n  sprites.Bubble.setPosition(x,y);sprites.Bubble.setWidth(460);sprites.Bubble.setHeight(d.question?Math.max(245,145+d.options.length*48):175);\n  sprites.Speaker.setPosition(x+18,y+12);sprites.Message.setPosition(x+18,y+47);sprites.Message.setWidth(420);\n  if(d.question)for(let i=0;i<d.options.length;i++){\n   if(!d.choiceSprites[i]){const o=runtimeScene.createObject('Choice1');o.setLayer('UI');o.setZOrder(sprites.Choice1.getZOrder());d.choiceSprites.push(o)}\n   const o=d.choiceSprites[i];o.hide(false);o.setPosition(x+18,y+120+i*48);o.setString((d.selectedChoice===i?'▶ ':'› ')+d.options[i]);\n  }\n };\n d.readYarn=()=>{\n  d.syncFlags();d.selectedChoice=-1;\n  if(!yarn.isRunning()){d.dialogue=null;d.question=false;d.renderDialogue();return}\n  d.question=yarn.isDialogueLineType('options');\n  if(d.question){d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  else{const raw=yarn.getLineText(),colon=raw.indexOf(':');d.dialogue=[[colon<0?'':raw.slice(0,colon),colon<0?raw:raw.slice(colon+1).trim()]];d.turn=0;\n   if(yarn.branchContainsTag('decision')){yarn.goToNextDialogueLine();d.question=yarn.isDialogueLineType('options');if(d.question)d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  }\n  d.renderDialogue();\n };\n d.say=node=>{\n  if(!yarn.hasDialogueBranch(node))throw Error('Nodo Yarn no encontrado: '+node);\n  if(d.room==='surface')sprites.NPC.flipX(wrap(d.angle-sprites.NPC.getAngle()*Math.PI/180)<0);\n  sprites.Sofia.flipX(d.room==='surface'?wrap(sprites.NPC.getAngle()*Math.PI/180-d.angle)<0:sprites.NPC.getX()<d.x);\n  d.destination=null;d.pending='';for(const key of ['met','owned','complete'])yarn.setVariable(key,d[key]);\n  yarn.startFrom(node);d.readYarn();\n };\n d.advance=()=>{if(!d.dialogue||d.question)return;yarn.goToNextDialogueLine();d.readYarn();if(!d.dialogue){game.__sofiaKeys.length=0;d.enterAfter=d.time+.18}};\n d.answer=i=>{if(!d.question||i<0||i>=d.options.length)return;yarn.selectOption(i);yarn.hasSelectedOptionChanged();yarn.confirmSelectOption();d.readYarn()};\n d.toggle=()=>{if(d.owned&&d.room!=='surface'){d.on=!d.on;d.ui()}};\n d.contextEnter=()=>{\n  if(d.time<(d.enterAfter??0))return;\n  const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  if((d.room==='surface'||d.room==='prisioneros')&&distance({x:d.x,y:d.y},npc)<145){d.interact(d.room==='surface'?'plato':'prisoner');return}\n  if(d.room==='entrada'&&!d.owned&&Math.abs(d.x-sprites.Lamp.getX())<100){d.interact('lamp');return}\n  if(d.room===data.portal.scene&&Math.abs(d.x-data.portal.x)<100)d.interact('portal');\n };\n d.interact=action=>{\n  if(action==='plato')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  if(action==='cave'){if(d.met)d.load('entrada');else d.say('Antes_De_Entrar');}\n  if(action==='portal'&&d.room===data.portal.scene)d.load(data.portal.target);\n  if(action==='lamp')d.say(sprites.Lamp.getVariables().get('DialogueNode').getAsString());\n  if(action==='prisoner')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  d.ui();\n };\n d.click=p=>{\n  if(d.dialogue){if(d.question){for(let i=0;i<d.options.length;i++){const o=d.choiceSprites[i];if(p.x>=o.getX()&&p.x<o.getX()+425&&p.y>=o.getY()&&p.y<o.getY()+44){d.answer(i);break}}}else d.advance();return;}\n  if(p.x>1020&&p.y<65&&d.owned&&d.room!=='surface'){d.toggle();return;}\n  if(p.x>1080&&p.y>670){if(confirm('¿Reiniciar únicamente esta demo?')){d.met=d.owned=d.on=d.complete=false;d.angle=-42*Math.PI/180;d.load('surface')}return;}\n  if(d.room==='surface'){\n   const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()},cave={x:sprites.Cave.getX(),y:sprites.Cave.getY()};\n   d.pending=distance(p,{x:npc.x,y:npc.y-45})<85?'plato':distance(p,cave)<90?'cave':'';\n   d.destination=d.pending==='plato'?Math.atan2(npc.x-640,360-npc.y):d.pending==='cave'?Math.atan2(cave.x-640,360-cave.y):Math.atan2(p.x-640,360-p.y);\n  }else{\n   d.pending=d.room===data.portal.scene&&distance(p,{x:data.portal.x,y:data.portal.y-65})<85?'portal':d.room==='entrada'&&!d.owned&&distance(p,{x:sprites.Lamp.getX(),y:sprites.Lamp.getY()})<85?'lamp':d.room==='prisioneros'&&distance(p,{x:sprites.NPC.getX(),y:sprites.NPC.getY()-70})<100?'prisoner':'';\n   d.destination=d.pending==='portal'?data.portal.x:d.pending==='lamp'?sprites.Lamp.getX():d.pending==='prisoner'?sprites.NPC.getX():Math.max(40,Math.min(1240,p.x));\n  }\n };\n d.step=()=>{\n  const dt=Math.min(.1,runtimeScene.getElapsedTime()/1000);d.time+=dt;\n  // Native loading is asynchronous; exploration starts once the JSON is ready.\n  if(!yarn.hasDialogueBranch('Platon_Encuentro'))return;\n  const input=runtimeScene.getGame().getInputManager(),l=input.isKeyPressed(76),key=game.__sofiaKeys.shift();\n  if(key==='tab'&&d.question){d.selectedChoice=(d.selectedChoice+1)%d.options.length;d.renderDialogue()}\n  if(key==='enter'){if(d.question){if(d.selectedChoice>=0)d.answer(d.selectedChoice)}else if(d.dialogue)d.advance();else d.contextEnter()}\n  if(l&&!d.lastL&&!d.dialogue)d.toggle();d.lastL=l;\n  if(input.isMouseButtonReleased(0))d.click({x:gdjs.evtTools.input.getCursorX(runtimeScene,'',0),y:gdjs.evtTools.input.getCursorY(runtimeScene,'',0)});\n  let axis=0;\n  if(!d.dialogue){\n   axis=Number(input.isKeyPressed(39)||input.isKeyPressed(68))-Number(input.isKeyPressed(37)||input.isKeyPressed(65));\n   if(axis){d.destination=null;d.pending='';}\n   if(d.room==='surface'){\n    const diff=d.destination===null?0:wrap(d.destination-d.angle);if(!axis&&d.destination!==null&&Math.abs(diff)>(d.pending?.22:.025))axis=Math.sign(diff);\n    d.angle+=axis*.9*dt;const p=rad(d.angle);d.x=p.x;d.y=p.y;\n   }else{\n    if(!axis&&d.destination!==null&&Math.abs(d.destination-d.x)>(d.pending?80:6))axis=Math.sign(d.destination-d.x);\n    d.x=Math.max(40,Math.min(1240,d.x+axis*data.speed*dt));d.y=d.floorY;\n    const passage=data.passages.find(p=>p.scene===d.room&&axis*p.direction>0&&(d.x-p.at)*p.direction>=0);\n    if(passage){if(passage.requires.every(flag=>d[flag]===true)){d.load(passage.target,passage.spawn);return}\n     d.x=passage.at-passage.direction;d.destination=null;d.pending='';axis=0;\n     if(d.blockedPassage!==passage.id){d.blockedPassage=passage.id;d.noticeUntil=d.time+2.8;text('Help',passage.blockedText)}\n    }else if(d.blockedPassage&&data.passages.every(p=>p.id!==d.blockedPassage||Math.abs(d.x-p.at)>100))d.blockedPassage=null;\n   }\n   if(!axis&&d.destination!==null){const action=d.pending;d.destination=null;d.pending='';if(action)d.interact(action);}\n  }\n  sprites.Sofia.setAnimationName(axis?'Walk':'Idle');if(axis)sprites.Sofia.flipX(axis<0);\n  if(d.noticeUntil&&d.time>d.noticeUntil){d.noticeUntil=0;text('Help','Toca para caminar · Cruza los extremos para cambiar de sala · Enter: conversar · L: luz')}\n  sprite('Sofia',d.x,d.y,d.heroScale,d.room==='surface'?d.angle*180/Math.PI:0);\n  if(colors.lastRoom!==d.room||colors.lastOn!==d.on||Math.abs(colors.lastX-d.x)>.5||Math.abs(colors.lastY-d.y)>.5){\n   shade.clear();if(d.room!=='surface'){\n    const dark=d.room==='entrada'?.28:.88,cx=d.x,cy=d.y-65;\n    shade.beginFill(0x030511,dark).drawRect(-500,-500,2280,1720);\n    if(d.on)shade.beginHole().drawCircle(cx,cy,240).endHole();shade.endFill();\n    if(d.on)for(let i=0;i<12;i++){const t=(i+.5)/12,r1=90+i*12.5,r2=r1+12.5;shade.beginFill(0x030511,dark*t*t*(3-2*t)).drawCircle(cx,cy,r2).beginHole().drawCircle(cx,cy,r1).endHole().endFill();}\n   }\n   colors.lastX=d.x;colors.lastY=d.y;colors.lastOn=d.on;colors.lastRoom=d.room;\n  }\n };\n d.load(d.room);d.renderDialogue();globalThis.__sofiaGD=d;\n}\nruntimeScene.__sofiaDemo.step();\n",
           "parameterObjects": "",
           "useStrict": true,
           "eventsSheetExpanded": false
@@ -1748,6 +1837,31 @@
           "name": "SceneID",
           "type": "string",
           "value": "entrada"
+        },
+        {
+          "name": "ExitTarget",
+          "type": "string",
+          "value": "prisioneros"
+        },
+        {
+          "name": "ExitX",
+          "type": "number",
+          "value": 1160
+        },
+        {
+          "name": "ExitDirection",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "ArrivalX",
+          "type": "number",
+          "value": 120
+        },
+        {
+          "name": "NeedsLight",
+          "type": "boolean",
+          "value": true
         }
       ],
       "instances": [
@@ -1898,6 +2012,22 @@
         {
           "angle": 0,
           "customSize": true,
+          "width": 88,
+          "height": 120,
+          "depth": 1,
+          "layer": "",
+          "locked": false,
+          "name": "Portal",
+          "x": 90,
+          "y": 560,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
           "width": 980,
           "height": 36,
           "depth": 1,
@@ -1906,7 +2036,7 @@
           "name": "Title",
           "x": 20,
           "y": 12,
-          "zOrder": 9,
+          "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1922,7 +2052,7 @@
           "name": "Objective",
           "x": 20,
           "y": 48,
-          "zOrder": 10,
+          "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1938,7 +2068,7 @@
           "name": "Help",
           "x": 20,
           "y": 688,
-          "zOrder": 11,
+          "zOrder": 12,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1954,7 +2084,7 @@
           "name": "Speaker",
           "x": 238,
           "y": 112,
-          "zOrder": 12,
+          "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1970,7 +2100,7 @@
           "name": "Message",
           "x": 238,
           "y": 147,
-          "zOrder": 13,
+          "zOrder": 14,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1986,7 +2116,7 @@
           "name": "Choice1",
           "x": 238,
           "y": 220,
-          "zOrder": 14,
+          "zOrder": 15,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -2002,7 +2132,7 @@
           "name": "Choice2",
           "x": 238,
           "y": 268,
-          "zOrder": 15,
+          "zOrder": 16,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -2018,7 +2148,7 @@
           "name": "LightButton",
           "x": 1020,
           "y": 15,
-          "zOrder": 16,
+          "zOrder": 17,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -2034,7 +2164,7 @@
           "name": "Restart",
           "x": 1080,
           "y": 670,
-          "zOrder": 17,
+          "zOrder": 18,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -2733,6 +2863,44 @@
           ]
         },
         {
+          "name": "Portal",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "portal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/portal.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 313.5,
+                        "y": 627
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 313.5,
+                        "y": 627
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Title",
           "type": "TextObject::Text",
           "assetStoreId": "",
@@ -2786,7 +2954,7 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Toca a PlatÃ³n para conversar.",
+          "string": "Toca a Platón para conversar.",
           "font": "",
           "textAlignment": "left",
           "characterSize": 19,
@@ -2809,7 +2977,7 @@
             "shadowOpacity": 0,
             "smoothed": true,
             "underlined": false,
-            "text": "Toca a PlatÃ³n para conversar.",
+            "text": "Toca a Platón para conversar.",
             "font": "",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
@@ -3151,6 +3319,9 @@
             "objectName": "Bubble"
           },
           {
+            "objectName": "Portal"
+          },
+          {
             "objectName": "Title"
           },
           {
@@ -3214,7 +3385,7 @@
         },
         {
           "type": "BuiltinCommonInstructions::JsCode",
-          "inlineCode": "// Embedded as a native GDevelop JavaScript event by make_gdevelop.py.\n// All pictures, text and instances remain regular GDevelop editor sprites.\nif (!runtimeScene.__sofiaDemo) {\n const data = {\"width\": 1280, \"height\": 720, \"floor\": 560, \"speed\": 240, \"title\": \"PlatÃ³n Â· Demo comparativa\", \"surface\": {\"center\": [640, 360], \"radius\": 220, \"actorHeight\": 110, \"spawn\": -42, \"plato\": -5, \"cave\": 45}, \"rooms\": {\"entrada\": {\"background\": \"entrada.png\", \"spawn\": 160, \"floor\": 560}, \"prisioneros\": {\"background\": \"prisioneros.png\", \"spawn\": 160, \"floor\": 560}}, \"goals\": {\"meet\": \"Toca a PlatÃ³n para conversar.\", \"find\": \"Entra en la caverna y busca la linterna.\", \"light\": \"Enciende la linterna y explora la siguiente sala.\", \"talk\": \"Escucha al prisionero.\", \"done\": \"Demo completada. Puedes regresar a la superficie.\"}};const game=runtimeScene.getGame(),saved=game.__sofiaDemoState;\n const sprites = Object.fromEntries(runtimeScene.getObjects('').map(o=>[o.getName(),o]));\n for (const name of ['Background','Planet','Sofia','NPC','Cave','Lamp','Bubble','Speaker','Message','Choice1','Choice2','Title','Objective','Help','LightButton','Restart']) sprites[name]=runtimeScene.getObjects(name)[0];\n sprites.Sofia.setZOrder(100); // In front of NPCs/cave; darkness and UI remain above.\n if(!game.__sofiaKeys){\n  game.__sofiaKeys=[];\n  const onKey=e=>{if(e.repeat||e.isComposing||e.ctrlKey||e.altKey||e.metaKey||e.target?.closest?.('input,textarea,select,[contenteditable=\"true\"]'))return;\n   if(e.code==='Enter'||e.code==='NumpadEnter'||(e.code==='Tab'&&globalThis.__sofiaGD?.question)){e.preventDefault();game.__sofiaKeys.push(e.code==='Tab'?'tab':'enter')}\n  };\n  window.addEventListener('keydown',onKey);game.__sofiaKeyHandler=onKey;\n }\n const d = runtimeScene.__sofiaDemo = {room:runtimeScene.getVariables().get('SceneID').getAsString()||'surface',angle:-42*Math.PI/180,x:160,y:560,destination:null,pending:'',met:false,owned:false,on:false,complete:false,dialogue:null,turn:0,question:false,follow:'',time:0,lastEnter:false,lastL:false,data,sprites,heroScale:sprites.Sofia.getScaleY(),floorY:sprites.Sofia.getY(),nativeSceneName:runtimeScene.getName()};\n if(saved)for(const key of ['angle','met','owned','on','complete'])d[key]=saved[key];\n const show=(name,yes)=>sprites[name].hide(!yes);\n const text=(name,value)=>sprites[name].setString(value);\n const rad=a=>({x:640+Math.sin(a)*220,y:360-Math.cos(a)*220});\n const wrap=a=>Math.atan2(Math.sin(a),Math.cos(a));\n const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);\n const sprite=(name,x,y,scale,angle=0)=>{const o=sprites[name];o.setPosition(x,y);o.setScale(scale);o.setAngle(angle)};\n const colors={darkness:0,lastX:NaN,lastY:NaN,lastOn:null,lastRoom:''};\n const shade=new PIXI.Graphics();shade.zOrder=9000;shade.zIndex=9000;\n runtimeScene.getLayer('').getRenderer().addRendererObject(shade,9000);\n d.lightGraphics=shade;\n d.ui=()=>{\n  text('Title','GDEVELOP Â· '+(d.room==='surface'?'Planeta de PlatÃ³n Â· vista general':d.room==='entrada'?'A Â· Entrada de la caverna':'B Â· Sala de las sombras'));\n  text('Objective',d.complete?'âœ“ '+data.goals.done:!d.met?data.goals.meet:!d.owned?data.goals.find:d.room!=='prisioneros'?data.goals.light:data.goals.talk);\n  show('LightButton',d.owned&&d.room!=='surface');text('LightButton',d.on?'Linterna encendida Â· L':'Encender linterna Â· L');\n  show('Lamp',d.room==='entrada'&&!d.owned);\n };\n d.load=room=>{\n  if(room!==d.room){game.__sofiaDemoState={angle:d.angle,met:d.met,owned:d.owned,on:d.on,complete:d.complete,from:d.room};gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,room,false);return;}\n  d.destination=null;d.pending='';const surface=room==='surface';\n  sprites.Background.setAnimation(0);\n  show('Planet',surface);show('Cave',surface);show('NPC',surface||room==='prisioneros');\n  sprites.NPC.setAnimation(0);\n  if(surface){if(!saved)d.angle=Math.atan2(sprites.Sofia.getX()-640,360-sprites.Sofia.getY());const h=rad(d.angle);d.x=h.x;d.y=h.y;}\n  else{d.x=saved?.from==='prisioneros'&&room==='entrada'?950:sprites.Sofia.getX();d.y=sprites.Sofia.getY();d.floorY=d.y;}\n  d.ui();\n };\n const yarn=gdjs.dialogueTree;\n d.choiceSprites=[sprites.Choice1,sprites.Choice2];d.selectedChoice=-1;d.lastTab=false;\n d.syncFlags=()=>{for(const key of ['met','owned','complete'])d[key]=yarn.getVariable(key)===true;d.ui()};\n d.renderDialogue=()=>{\n  const open=!!d.dialogue;for(const n of ['Bubble','Speaker','Message'])show(n,open);\n  for(const o of d.choiceSprites)o.hide(true);if(!open)return;\n  const line=d.dialogue[d.turn];text('Speaker',line[0]);text('Message',line[1]);\n  const who=line[0]==='SofÃ­a'?{x:d.x,y:d.y}:{x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  const x=d.question?220:Math.max(16,Math.min(804,who.x-230)),y=d.question?100:Math.max(80,Math.min(470,who.y-(d.room==='surface'?110:157)-185));\n  sprites.Bubble.setPosition(x,y);sprites.Bubble.setWidth(460);sprites.Bubble.setHeight(d.question?Math.max(245,145+d.options.length*48):175);\n  sprites.Speaker.setPosition(x+18,y+12);sprites.Message.setPosition(x+18,y+47);sprites.Message.setWidth(420);\n  if(d.question)for(let i=0;i<d.options.length;i++){\n   if(!d.choiceSprites[i]){const o=runtimeScene.createObject('Choice1');o.setLayer('UI');o.setZOrder(sprites.Choice1.getZOrder());d.choiceSprites.push(o)}\n   const o=d.choiceSprites[i];o.hide(false);o.setPosition(x+18,y+120+i*48);o.setString((d.selectedChoice===i?'â–¶ ':'â€º ')+d.options[i]);\n  }\n };\n d.readYarn=()=>{\n  d.syncFlags();d.selectedChoice=-1;\n  if(!yarn.isRunning()){d.dialogue=null;d.question=false;d.renderDialogue();return}\n  d.question=yarn.isDialogueLineType('options');\n  if(d.question){d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  else{const raw=yarn.getLineText(),colon=raw.indexOf(':');d.dialogue=[[colon<0?'':raw.slice(0,colon),colon<0?raw:raw.slice(colon+1).trim()]];d.turn=0;\n   if(yarn.branchContainsTag('decision')){yarn.goToNextDialogueLine();d.question=yarn.isDialogueLineType('options');if(d.question)d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  }\n  d.renderDialogue();\n };\n d.say=node=>{\n  if(!yarn.hasDialogueBranch(node))throw Error('Nodo Yarn no encontrado: '+node);\n  if(d.room==='surface')sprites.NPC.flipX(wrap(d.angle-sprites.NPC.getAngle()*Math.PI/180)<0);\n  sprites.Sofia.flipX(d.room==='surface'?wrap(sprites.NPC.getAngle()*Math.PI/180-d.angle)<0:sprites.NPC.getX()<d.x);\n  d.destination=null;d.pending='';for(const key of ['met','owned','complete'])yarn.setVariable(key,d[key]);\n  yarn.startFrom(node);d.readYarn();\n };\n d.advance=()=>{if(!d.dialogue||d.question)return;yarn.goToNextDialogueLine();d.readYarn();if(!d.dialogue){game.__sofiaKeys.length=0;d.enterAfter=d.time+.18}};\n d.answer=i=>{if(!d.question||i<0||i>=d.options.length)return;yarn.selectOption(i);yarn.hasSelectedOptionChanged();yarn.confirmSelectOption();d.readYarn()};\n d.toggle=()=>{if(d.owned&&d.room!=='surface'){d.on=!d.on;d.ui()}};\n d.contextEnter=()=>{\n  if(d.time<(d.enterAfter??0))return;\n  const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  if((d.room==='surface'||d.room==='prisioneros')&&distance({x:d.x,y:d.y},npc)<145){d.interact(d.room==='surface'?'plato':'prisoner');return}\n  if(d.room==='entrada'&&!d.owned&&Math.abs(d.x-sprites.Lamp.getX())<100){d.interact('lamp');return}\n  if(d.room!=='surface'&&d.x<150)d.interact('back');else if(d.room==='entrada'&&d.x>940)d.interact('next');\n };\n d.interact=action=>{\n  if(action==='plato')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  if(action==='cave'){if(d.met)d.load('entrada');else d.say('Antes_De_Entrar');}\n  if(action==='back'){const prior=d.room;d.load(prior==='entrada'?'surface':'entrada');if(prior==='prisioneros')d.x=950;}\n  if(action==='next'){if(d.owned&&d.on)d.load('prisioneros');else d.say('Puerta_Sin_Luz');}\n  if(action==='lamp')d.say(sprites.Lamp.getVariables().get('DialogueNode').getAsString());\n  if(action==='prisoner')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  d.ui();\n };\n d.click=p=>{\n  if(d.dialogue){if(d.question){for(let i=0;i<d.options.length;i++){const o=d.choiceSprites[i];if(p.x>=o.getX()&&p.x<o.getX()+425&&p.y>=o.getY()&&p.y<o.getY()+44){d.answer(i);break}}}else d.advance();return;}\n  if(p.x>1020&&p.y<65&&d.owned&&d.room!=='surface'){d.toggle();return;}\n  if(p.x>1080&&p.y>670){if(confirm('Â¿Reiniciar Ãºnicamente esta demo?')){d.met=d.owned=d.on=d.complete=false;d.angle=-42*Math.PI/180;d.load('surface')}return;}\n  if(d.room==='surface'){\n   const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()},cave={x:sprites.Cave.getX(),y:sprites.Cave.getY()};\n   d.pending=distance(p,{x:npc.x,y:npc.y-45})<85?'plato':distance(p,cave)<90?'cave':'';\n   d.destination=d.pending==='plato'?Math.atan2(npc.x-640,360-npc.y):d.pending==='cave'?Math.atan2(cave.x-640,360-cave.y):Math.atan2(p.x-640,360-p.y);\n  }else{\n   d.pending=p.x<145?'back':d.room==='entrada'&&p.x>940?'next':d.room==='entrada'&&!d.owned&&distance(p,{x:sprites.Lamp.getX(),y:sprites.Lamp.getY()})<85?'lamp':d.room==='prisioneros'&&distance(p,{x:sprites.NPC.getX(),y:sprites.NPC.getY()-70})<100?'prisoner':'';\n   d.destination=d.pending==='back'?75:d.pending==='next'?1070:d.pending==='lamp'?sprites.Lamp.getX():d.pending==='prisoner'?sprites.NPC.getX():Math.max(40,Math.min(1240,p.x));\n  }\n };\n d.step=()=>{\n  const dt=Math.min(.1,runtimeScene.getElapsedTime()/1000);d.time+=dt;\n  // Native loading is asynchronous; exploration starts once the JSON is ready.\n  if(!yarn.hasDialogueBranch('Platon_Encuentro'))return;\n  const input=runtimeScene.getGame().getInputManager(),l=input.isKeyPressed(76),key=game.__sofiaKeys.shift();\n  if(key==='tab'&&d.question){d.selectedChoice=(d.selectedChoice+1)%d.options.length;d.renderDialogue()}\n  if(key==='enter'){if(d.question){if(d.selectedChoice>=0)d.answer(d.selectedChoice)}else if(d.dialogue)d.advance();else d.contextEnter()}\n  if(l&&!d.lastL&&!d.dialogue)d.toggle();d.lastL=l;\n  if(input.isMouseButtonReleased(0))d.click({x:gdjs.evtTools.input.getCursorX(runtimeScene,'',0),y:gdjs.evtTools.input.getCursorY(runtimeScene,'',0)});\n  let axis=0;\n  if(!d.dialogue){\n   axis=Number(input.isKeyPressed(39)||input.isKeyPressed(68))-Number(input.isKeyPressed(37)||input.isKeyPressed(65));\n   if(axis){d.destination=null;d.pending='';}\n   if(d.room==='surface'){\n    const diff=d.destination===null?0:wrap(d.destination-d.angle);if(!axis&&d.destination!==null&&Math.abs(diff)>(d.pending?.22:.025))axis=Math.sign(diff);\n    d.angle+=axis*.9*dt;const p=rad(d.angle);d.x=p.x;d.y=p.y;\n   }else{\n    if(!axis&&d.destination!==null&&Math.abs(d.destination-d.x)>(d.pending?80:6))axis=Math.sign(d.destination-d.x);\n    d.x=Math.max(40,Math.min(1240,d.x+axis*data.speed*dt));d.y=d.floorY;\n   }\n   if(!axis&&d.destination!==null){const action=d.pending;d.destination=null;d.pending='';if(action)d.interact(action);}\n  }\n  sprites.Sofia.setAnimationName(axis?'Walk':'Idle');if(axis)sprites.Sofia.flipX(axis<0);\n  sprite('Sofia',d.x,d.y,d.heroScale,d.room==='surface'?d.angle*180/Math.PI:0);\n  if(colors.lastRoom!==d.room||colors.lastOn!==d.on||Math.abs(colors.lastX-d.x)>.5||Math.abs(colors.lastY-d.y)>.5){\n   shade.clear();if(d.room!=='surface'){\n    const dark=d.room==='entrada'?.28:.88,cx=d.x,cy=d.y-65;\n    shade.beginFill(0x030511,dark).drawRect(-500,-500,2280,1720);\n    if(d.on)shade.beginHole().drawCircle(cx,cy,240).endHole();shade.endFill();\n    if(d.on)for(let i=0;i<12;i++){const t=(i+.5)/12,r1=90+i*12.5,r2=r1+12.5;shade.beginFill(0x030511,dark*t*t*(3-2*t)).drawCircle(cx,cy,r2).beginHole().drawCircle(cx,cy,r1).endHole().endFill();}\n   }\n   colors.lastX=d.x;colors.lastY=d.y;colors.lastOn=d.on;colors.lastRoom=d.room;\n  }\n };\n d.load(d.room);d.renderDialogue();globalThis.__sofiaGD=d;\n}\nruntimeScene.__sofiaDemo.step();\n",
+          "inlineCode": "// Embedded as a native GDevelop JavaScript event by make_gdevelop.py.\n// All pictures, text and instances remain regular GDevelop editor sprites.\nif (!runtimeScene.__sofiaDemo) {\n const data = {\"width\": 1280, \"height\": 720, \"floor\": 560, \"speed\": 240, \"title\": \"Platón · Demo comparativa\", \"surface\": {\"center\": [640, 360], \"radius\": 220, \"actorHeight\": 110, \"spawn\": -42, \"plato\": -5, \"cave\": 45}, \"rooms\": {\"entrada\": {\"background\": \"entrada.png\", \"spawn\": 160, \"floor\": 560}, \"prisioneros\": {\"background\": \"prisioneros.png\", \"spawn\": 160, \"floor\": 560}}, \"goals\": {\"meet\": \"Toca a Platón para conversar.\", \"find\": \"Entra en la caverna y busca la linterna.\", \"light\": \"Enciende la linterna y explora la siguiente sala.\", \"talk\": \"Escucha al prisionero.\", \"done\": \"Demo completada. Puedes regresar a la superficie.\"}, \"passages\": [{\"id\": \"entrada-prisioneros\", \"scene\": \"entrada\", \"direction\": 1, \"at\": 1160, \"target\": \"prisioneros\", \"spawn\": 120, \"requires\": [\"owned\", \"on\"], \"blockedText\": \"Recoge y enciende la linterna para continuar.\"}, {\"id\": \"prisioneros-entrada\", \"scene\": \"prisioneros\", \"direction\": -1, \"at\": 80, \"target\": \"entrada\", \"spawn\": 1080, \"requires\": []}], \"portal\": {\"scene\": \"entrada\", \"x\": 90, \"y\": 560, \"target\": \"surface\"}};const game=runtimeScene.getGame(),saved=game.__sofiaDemoState;\n const config=runtimeScene.getVariables(),target=config.get('ExitTarget').getAsString();\n data.passages=target?[{id:runtimeScene.getName()+'-exit',scene:runtimeScene.getName(),direction:config.get('ExitDirection').getAsNumber(),at:config.get('ExitX').getAsNumber(),target,spawn:config.get('ArrivalX').getAsNumber(),requires:config.get('NeedsLight').getAsBoolean()?['owned','on']:[],blockedText:'Recoge y enciende la linterna para continuar.'}]:[];\n const sprites = Object.fromEntries(runtimeScene.getObjects('').map(o=>[o.getName(),o]));\n for (const name of ['Background','Planet','Sofia','NPC','Cave','Lamp','Portal','Bubble','Speaker','Message','Choice1','Choice2','Title','Objective','Help','LightButton','Restart']) sprites[name]=runtimeScene.getObjects(name)[0];\n sprites.Sofia.setZOrder(100); // In front of NPCs/cave; darkness and UI remain above.\n if(!game.__sofiaKeys){\n  game.__sofiaKeys=[];\n  const onKey=e=>{if(e.repeat||e.isComposing||e.ctrlKey||e.altKey||e.metaKey||e.target?.closest?.('input,textarea,select,[contenteditable=\"true\"]'))return;\n   if(e.code==='Enter'||e.code==='NumpadEnter'||(e.code==='Tab'&&globalThis.__sofiaGD?.question)){e.preventDefault();game.__sofiaKeys.push(e.code==='Tab'?'tab':'enter')}\n  };\n  window.addEventListener('keydown',onKey);game.__sofiaKeyHandler=onKey;\n }\n const d = runtimeScene.__sofiaDemo = {room:runtimeScene.getVariables().get('SceneID').getAsString()||'surface',angle:-42*Math.PI/180,x:160,y:560,destination:null,pending:'',met:false,owned:false,on:false,complete:false,dialogue:null,turn:0,question:false,follow:'',time:0,lastEnter:false,lastL:false,data,sprites,heroScale:sprites.Sofia.getScaleY(),floorY:sprites.Sofia.getY(),nativeSceneName:runtimeScene.getName()};\n if(saved)for(const key of ['angle','met','owned','on','complete'])d[key]=saved[key];\n const show=(name,yes)=>sprites[name].hide(!yes);\n const text=(name,value)=>sprites[name].setString(value);\n const rad=a=>({x:640+Math.sin(a)*220,y:360-Math.cos(a)*220});\n const wrap=a=>Math.atan2(Math.sin(a),Math.cos(a));\n const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);\n const sprite=(name,x,y,scale,angle=0)=>{const o=sprites[name];o.setPosition(x,y);o.setScale(scale);o.setAngle(angle)};\n const colors={darkness:0,lastX:NaN,lastY:NaN,lastOn:null,lastRoom:''};\n const shade=new PIXI.Graphics();shade.zOrder=9000;shade.zIndex=9000;\n runtimeScene.getLayer('').getRenderer().addRendererObject(shade,9000);\n d.lightGraphics=shade;\n d.ui=()=>{\n  text('Title','GDEVELOP · '+(d.room==='surface'?'Planeta de Platón · vista general':d.room==='entrada'?'A · Entrada de la caverna':'B · Sala de las sombras'));\n  text('Objective',d.complete?'✓ '+data.goals.done:!d.met?data.goals.meet:!d.owned?data.goals.find:d.room!=='prisioneros'?data.goals.light:data.goals.talk);\n  show('LightButton',d.owned&&d.room!=='surface');text('LightButton',d.on?'Linterna encendida · L':'Encender linterna · L');\n  show('Lamp',d.room==='entrada'&&!d.owned);\n  show('Portal',d.room===data.portal.scene);\n };\n d.load=(room,arrivalX)=>{\n  if(room!==d.room){game.__sofiaDemoState={angle:d.angle,met:d.met,owned:d.owned,on:d.on,complete:d.complete,from:d.room,arrivalX};gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,room,false);return;}\n  d.destination=null;d.pending='';const surface=room==='surface';\n  sprites.Background.setAnimation(0);\n  show('Planet',surface);show('Cave',surface);show('NPC',surface||room==='prisioneros');\n  sprites.NPC.setAnimation(0);\n  if(surface){if(!saved)d.angle=Math.atan2(sprites.Sofia.getX()-640,360-sprites.Sofia.getY());const h=rad(d.angle);d.x=h.x;d.y=h.y;}\n  else{d.x=saved?.arrivalX??sprites.Sofia.getX();d.y=sprites.Sofia.getY();d.floorY=d.y;sprites.Sofia.flipX(saved?.from==='prisioneros');}\n  d.ui();\n };\n const yarn=gdjs.dialogueTree;\n d.choiceSprites=[sprites.Choice1,sprites.Choice2];d.selectedChoice=-1;d.lastTab=false;\n d.syncFlags=()=>{for(const key of ['met','owned','complete'])d[key]=yarn.getVariable(key)===true;d.ui()};\n d.renderDialogue=()=>{\n  const open=!!d.dialogue;for(const n of ['Bubble','Speaker','Message'])show(n,open);\n  for(const o of d.choiceSprites)o.hide(true);if(!open)return;\n  const line=d.dialogue[d.turn];text('Speaker',line[0]);text('Message',line[1]);\n  const who=line[0]==='Sofía'?{x:d.x,y:d.y}:{x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  const x=d.question?220:Math.max(16,Math.min(804,who.x-230)),y=d.question?100:Math.max(80,Math.min(470,who.y-(d.room==='surface'?110:157)-185));\n  sprites.Bubble.setPosition(x,y);sprites.Bubble.setWidth(460);sprites.Bubble.setHeight(d.question?Math.max(245,145+d.options.length*48):175);\n  sprites.Speaker.setPosition(x+18,y+12);sprites.Message.setPosition(x+18,y+47);sprites.Message.setWidth(420);\n  if(d.question)for(let i=0;i<d.options.length;i++){\n   if(!d.choiceSprites[i]){const o=runtimeScene.createObject('Choice1');o.setLayer('UI');o.setZOrder(sprites.Choice1.getZOrder());d.choiceSprites.push(o)}\n   const o=d.choiceSprites[i];o.hide(false);o.setPosition(x+18,y+120+i*48);o.setString((d.selectedChoice===i?'▶ ':'› ')+d.options[i]);\n  }\n };\n d.readYarn=()=>{\n  d.syncFlags();d.selectedChoice=-1;\n  if(!yarn.isRunning()){d.dialogue=null;d.question=false;d.renderDialogue();return}\n  d.question=yarn.isDialogueLineType('options');\n  if(d.question){d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  else{const raw=yarn.getLineText(),colon=raw.indexOf(':');d.dialogue=[[colon<0?'':raw.slice(0,colon),colon<0?raw:raw.slice(colon+1).trim()]];d.turn=0;\n   if(yarn.branchContainsTag('decision')){yarn.goToNextDialogueLine();d.question=yarn.isDialogueLineType('options');if(d.question)d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  }\n  d.renderDialogue();\n };\n d.say=node=>{\n  if(!yarn.hasDialogueBranch(node))throw Error('Nodo Yarn no encontrado: '+node);\n  if(d.room==='surface')sprites.NPC.flipX(wrap(d.angle-sprites.NPC.getAngle()*Math.PI/180)<0);\n  sprites.Sofia.flipX(d.room==='surface'?wrap(sprites.NPC.getAngle()*Math.PI/180-d.angle)<0:sprites.NPC.getX()<d.x);\n  d.destination=null;d.pending='';for(const key of ['met','owned','complete'])yarn.setVariable(key,d[key]);\n  yarn.startFrom(node);d.readYarn();\n };\n d.advance=()=>{if(!d.dialogue||d.question)return;yarn.goToNextDialogueLine();d.readYarn();if(!d.dialogue){game.__sofiaKeys.length=0;d.enterAfter=d.time+.18}};\n d.answer=i=>{if(!d.question||i<0||i>=d.options.length)return;yarn.selectOption(i);yarn.hasSelectedOptionChanged();yarn.confirmSelectOption();d.readYarn()};\n d.toggle=()=>{if(d.owned&&d.room!=='surface'){d.on=!d.on;d.ui()}};\n d.contextEnter=()=>{\n  if(d.time<(d.enterAfter??0))return;\n  const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  if((d.room==='surface'||d.room==='prisioneros')&&distance({x:d.x,y:d.y},npc)<145){d.interact(d.room==='surface'?'plato':'prisoner');return}\n  if(d.room==='entrada'&&!d.owned&&Math.abs(d.x-sprites.Lamp.getX())<100){d.interact('lamp');return}\n  if(d.room===data.portal.scene&&Math.abs(d.x-data.portal.x)<100)d.interact('portal');\n };\n d.interact=action=>{\n  if(action==='plato')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  if(action==='cave'){if(d.met)d.load('entrada');else d.say('Antes_De_Entrar');}\n  if(action==='portal'&&d.room===data.portal.scene)d.load(data.portal.target);\n  if(action==='lamp')d.say(sprites.Lamp.getVariables().get('DialogueNode').getAsString());\n  if(action==='prisoner')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  d.ui();\n };\n d.click=p=>{\n  if(d.dialogue){if(d.question){for(let i=0;i<d.options.length;i++){const o=d.choiceSprites[i];if(p.x>=o.getX()&&p.x<o.getX()+425&&p.y>=o.getY()&&p.y<o.getY()+44){d.answer(i);break}}}else d.advance();return;}\n  if(p.x>1020&&p.y<65&&d.owned&&d.room!=='surface'){d.toggle();return;}\n  if(p.x>1080&&p.y>670){if(confirm('¿Reiniciar únicamente esta demo?')){d.met=d.owned=d.on=d.complete=false;d.angle=-42*Math.PI/180;d.load('surface')}return;}\n  if(d.room==='surface'){\n   const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()},cave={x:sprites.Cave.getX(),y:sprites.Cave.getY()};\n   d.pending=distance(p,{x:npc.x,y:npc.y-45})<85?'plato':distance(p,cave)<90?'cave':'';\n   d.destination=d.pending==='plato'?Math.atan2(npc.x-640,360-npc.y):d.pending==='cave'?Math.atan2(cave.x-640,360-cave.y):Math.atan2(p.x-640,360-p.y);\n  }else{\n   d.pending=d.room===data.portal.scene&&distance(p,{x:data.portal.x,y:data.portal.y-65})<85?'portal':d.room==='entrada'&&!d.owned&&distance(p,{x:sprites.Lamp.getX(),y:sprites.Lamp.getY()})<85?'lamp':d.room==='prisioneros'&&distance(p,{x:sprites.NPC.getX(),y:sprites.NPC.getY()-70})<100?'prisoner':'';\n   d.destination=d.pending==='portal'?data.portal.x:d.pending==='lamp'?sprites.Lamp.getX():d.pending==='prisoner'?sprites.NPC.getX():Math.max(40,Math.min(1240,p.x));\n  }\n };\n d.step=()=>{\n  const dt=Math.min(.1,runtimeScene.getElapsedTime()/1000);d.time+=dt;\n  // Native loading is asynchronous; exploration starts once the JSON is ready.\n  if(!yarn.hasDialogueBranch('Platon_Encuentro'))return;\n  const input=runtimeScene.getGame().getInputManager(),l=input.isKeyPressed(76),key=game.__sofiaKeys.shift();\n  if(key==='tab'&&d.question){d.selectedChoice=(d.selectedChoice+1)%d.options.length;d.renderDialogue()}\n  if(key==='enter'){if(d.question){if(d.selectedChoice>=0)d.answer(d.selectedChoice)}else if(d.dialogue)d.advance();else d.contextEnter()}\n  if(l&&!d.lastL&&!d.dialogue)d.toggle();d.lastL=l;\n  if(input.isMouseButtonReleased(0))d.click({x:gdjs.evtTools.input.getCursorX(runtimeScene,'',0),y:gdjs.evtTools.input.getCursorY(runtimeScene,'',0)});\n  let axis=0;\n  if(!d.dialogue){\n   axis=Number(input.isKeyPressed(39)||input.isKeyPressed(68))-Number(input.isKeyPressed(37)||input.isKeyPressed(65));\n   if(axis){d.destination=null;d.pending='';}\n   if(d.room==='surface'){\n    const diff=d.destination===null?0:wrap(d.destination-d.angle);if(!axis&&d.destination!==null&&Math.abs(diff)>(d.pending?.22:.025))axis=Math.sign(diff);\n    d.angle+=axis*.9*dt;const p=rad(d.angle);d.x=p.x;d.y=p.y;\n   }else{\n    if(!axis&&d.destination!==null&&Math.abs(d.destination-d.x)>(d.pending?80:6))axis=Math.sign(d.destination-d.x);\n    d.x=Math.max(40,Math.min(1240,d.x+axis*data.speed*dt));d.y=d.floorY;\n    const passage=data.passages.find(p=>p.scene===d.room&&axis*p.direction>0&&(d.x-p.at)*p.direction>=0);\n    if(passage){if(passage.requires.every(flag=>d[flag]===true)){d.load(passage.target,passage.spawn);return}\n     d.x=passage.at-passage.direction;d.destination=null;d.pending='';axis=0;\n     if(d.blockedPassage!==passage.id){d.blockedPassage=passage.id;d.noticeUntil=d.time+2.8;text('Help',passage.blockedText)}\n    }else if(d.blockedPassage&&data.passages.every(p=>p.id!==d.blockedPassage||Math.abs(d.x-p.at)>100))d.blockedPassage=null;\n   }\n   if(!axis&&d.destination!==null){const action=d.pending;d.destination=null;d.pending='';if(action)d.interact(action);}\n  }\n  sprites.Sofia.setAnimationName(axis?'Walk':'Idle');if(axis)sprites.Sofia.flipX(axis<0);\n  if(d.noticeUntil&&d.time>d.noticeUntil){d.noticeUntil=0;text('Help','Toca para caminar · Cruza los extremos para cambiar de sala · Enter: conversar · L: luz')}\n  sprite('Sofia',d.x,d.y,d.heroScale,d.room==='surface'?d.angle*180/Math.PI:0);\n  if(colors.lastRoom!==d.room||colors.lastOn!==d.on||Math.abs(colors.lastX-d.x)>.5||Math.abs(colors.lastY-d.y)>.5){\n   shade.clear();if(d.room!=='surface'){\n    const dark=d.room==='entrada'?.28:.88,cx=d.x,cy=d.y-65;\n    shade.beginFill(0x030511,dark).drawRect(-500,-500,2280,1720);\n    if(d.on)shade.beginHole().drawCircle(cx,cy,240).endHole();shade.endFill();\n    if(d.on)for(let i=0;i<12;i++){const t=(i+.5)/12,r1=90+i*12.5,r2=r1+12.5;shade.beginFill(0x030511,dark*t*t*(3-2*t)).drawCircle(cx,cy,r2).beginHole().drawCircle(cx,cy,r1).endHole().endFill();}\n   }\n   colors.lastX=d.x;colors.lastY=d.y;colors.lastOn=d.on;colors.lastRoom=d.room;\n  }\n };\n d.load(d.room);d.renderDialogue();globalThis.__sofiaGD=d;\n}\nruntimeScene.__sofiaDemo.step();\n",
           "parameterObjects": "",
           "useStrict": true,
           "eventsSheetExpanded": false
@@ -3315,6 +3486,31 @@
           "name": "SceneID",
           "type": "string",
           "value": "prisioneros"
+        },
+        {
+          "name": "ExitTarget",
+          "type": "string",
+          "value": "entrada"
+        },
+        {
+          "name": "ExitX",
+          "type": "number",
+          "value": 80
+        },
+        {
+          "name": "ExitDirection",
+          "type": "number",
+          "value": -1
+        },
+        {
+          "name": "ArrivalX",
+          "type": "number",
+          "value": 1080
+        },
+        {
+          "name": "NeedsLight",
+          "type": "boolean",
+          "value": false
         }
       ],
       "instances": [
@@ -3465,6 +3661,22 @@
         {
           "angle": 0,
           "customSize": true,
+          "width": 88,
+          "height": 120,
+          "depth": 1,
+          "layer": "",
+          "locked": false,
+          "name": "Portal",
+          "x": 90,
+          "y": 560,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
           "width": 980,
           "height": 36,
           "depth": 1,
@@ -3473,7 +3685,7 @@
           "name": "Title",
           "x": 20,
           "y": 12,
-          "zOrder": 9,
+          "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3489,7 +3701,7 @@
           "name": "Objective",
           "x": 20,
           "y": 48,
-          "zOrder": 10,
+          "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3505,7 +3717,7 @@
           "name": "Help",
           "x": 20,
           "y": 688,
-          "zOrder": 11,
+          "zOrder": 12,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3521,7 +3733,7 @@
           "name": "Speaker",
           "x": 238,
           "y": 112,
-          "zOrder": 12,
+          "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3537,7 +3749,7 @@
           "name": "Message",
           "x": 238,
           "y": 147,
-          "zOrder": 13,
+          "zOrder": 14,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3553,7 +3765,7 @@
           "name": "Choice1",
           "x": 238,
           "y": 220,
-          "zOrder": 14,
+          "zOrder": 15,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3569,7 +3781,7 @@
           "name": "Choice2",
           "x": 238,
           "y": 268,
-          "zOrder": 15,
+          "zOrder": 16,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3585,7 +3797,7 @@
           "name": "LightButton",
           "x": 1020,
           "y": 15,
-          "zOrder": 16,
+          "zOrder": 17,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3601,7 +3813,7 @@
           "name": "Restart",
           "x": 1080,
           "y": 670,
-          "zOrder": 17,
+          "zOrder": 18,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -4300,6 +4512,44 @@
           ]
         },
         {
+          "name": "Portal",
+          "type": "Sprite",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "portal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "image": "assets/portal.png",
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 313.5,
+                        "y": 627
+                      },
+                      "centerPoint": {
+                        "name": "center",
+                        "automatic": false,
+                        "x": 313.5,
+                        "y": 627
+                      },
+                      "points": [],
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Title",
           "type": "TextObject::Text",
           "assetStoreId": "",
@@ -4353,7 +4603,7 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Toca a PlatÃ³n para conversar.",
+          "string": "Toca a Platón para conversar.",
           "font": "",
           "textAlignment": "left",
           "characterSize": 19,
@@ -4376,7 +4626,7 @@
             "shadowOpacity": 0,
             "smoothed": true,
             "underlined": false,
-            "text": "Toca a PlatÃ³n para conversar.",
+            "text": "Toca a Platón para conversar.",
             "font": "",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
@@ -4718,6 +4968,9 @@
             "objectName": "Bubble"
           },
           {
+            "objectName": "Portal"
+          },
+          {
             "objectName": "Title"
           },
           {
@@ -4781,7 +5034,7 @@
         },
         {
           "type": "BuiltinCommonInstructions::JsCode",
-          "inlineCode": "// Embedded as a native GDevelop JavaScript event by make_gdevelop.py.\n// All pictures, text and instances remain regular GDevelop editor sprites.\nif (!runtimeScene.__sofiaDemo) {\n const data = {\"width\": 1280, \"height\": 720, \"floor\": 560, \"speed\": 240, \"title\": \"PlatÃ³n Â· Demo comparativa\", \"surface\": {\"center\": [640, 360], \"radius\": 220, \"actorHeight\": 110, \"spawn\": -42, \"plato\": -5, \"cave\": 45}, \"rooms\": {\"entrada\": {\"background\": \"entrada.png\", \"spawn\": 160, \"floor\": 560}, \"prisioneros\": {\"background\": \"prisioneros.png\", \"spawn\": 160, \"floor\": 560}}, \"goals\": {\"meet\": \"Toca a PlatÃ³n para conversar.\", \"find\": \"Entra en la caverna y busca la linterna.\", \"light\": \"Enciende la linterna y explora la siguiente sala.\", \"talk\": \"Escucha al prisionero.\", \"done\": \"Demo completada. Puedes regresar a la superficie.\"}};const game=runtimeScene.getGame(),saved=game.__sofiaDemoState;\n const sprites = Object.fromEntries(runtimeScene.getObjects('').map(o=>[o.getName(),o]));\n for (const name of ['Background','Planet','Sofia','NPC','Cave','Lamp','Bubble','Speaker','Message','Choice1','Choice2','Title','Objective','Help','LightButton','Restart']) sprites[name]=runtimeScene.getObjects(name)[0];\n sprites.Sofia.setZOrder(100); // In front of NPCs/cave; darkness and UI remain above.\n if(!game.__sofiaKeys){\n  game.__sofiaKeys=[];\n  const onKey=e=>{if(e.repeat||e.isComposing||e.ctrlKey||e.altKey||e.metaKey||e.target?.closest?.('input,textarea,select,[contenteditable=\"true\"]'))return;\n   if(e.code==='Enter'||e.code==='NumpadEnter'||(e.code==='Tab'&&globalThis.__sofiaGD?.question)){e.preventDefault();game.__sofiaKeys.push(e.code==='Tab'?'tab':'enter')}\n  };\n  window.addEventListener('keydown',onKey);game.__sofiaKeyHandler=onKey;\n }\n const d = runtimeScene.__sofiaDemo = {room:runtimeScene.getVariables().get('SceneID').getAsString()||'surface',angle:-42*Math.PI/180,x:160,y:560,destination:null,pending:'',met:false,owned:false,on:false,complete:false,dialogue:null,turn:0,question:false,follow:'',time:0,lastEnter:false,lastL:false,data,sprites,heroScale:sprites.Sofia.getScaleY(),floorY:sprites.Sofia.getY(),nativeSceneName:runtimeScene.getName()};\n if(saved)for(const key of ['angle','met','owned','on','complete'])d[key]=saved[key];\n const show=(name,yes)=>sprites[name].hide(!yes);\n const text=(name,value)=>sprites[name].setString(value);\n const rad=a=>({x:640+Math.sin(a)*220,y:360-Math.cos(a)*220});\n const wrap=a=>Math.atan2(Math.sin(a),Math.cos(a));\n const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);\n const sprite=(name,x,y,scale,angle=0)=>{const o=sprites[name];o.setPosition(x,y);o.setScale(scale);o.setAngle(angle)};\n const colors={darkness:0,lastX:NaN,lastY:NaN,lastOn:null,lastRoom:''};\n const shade=new PIXI.Graphics();shade.zOrder=9000;shade.zIndex=9000;\n runtimeScene.getLayer('').getRenderer().addRendererObject(shade,9000);\n d.lightGraphics=shade;\n d.ui=()=>{\n  text('Title','GDEVELOP Â· '+(d.room==='surface'?'Planeta de PlatÃ³n Â· vista general':d.room==='entrada'?'A Â· Entrada de la caverna':'B Â· Sala de las sombras'));\n  text('Objective',d.complete?'âœ“ '+data.goals.done:!d.met?data.goals.meet:!d.owned?data.goals.find:d.room!=='prisioneros'?data.goals.light:data.goals.talk);\n  show('LightButton',d.owned&&d.room!=='surface');text('LightButton',d.on?'Linterna encendida Â· L':'Encender linterna Â· L');\n  show('Lamp',d.room==='entrada'&&!d.owned);\n };\n d.load=room=>{\n  if(room!==d.room){game.__sofiaDemoState={angle:d.angle,met:d.met,owned:d.owned,on:d.on,complete:d.complete,from:d.room};gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,room,false);return;}\n  d.destination=null;d.pending='';const surface=room==='surface';\n  sprites.Background.setAnimation(0);\n  show('Planet',surface);show('Cave',surface);show('NPC',surface||room==='prisioneros');\n  sprites.NPC.setAnimation(0);\n  if(surface){if(!saved)d.angle=Math.atan2(sprites.Sofia.getX()-640,360-sprites.Sofia.getY());const h=rad(d.angle);d.x=h.x;d.y=h.y;}\n  else{d.x=saved?.from==='prisioneros'&&room==='entrada'?950:sprites.Sofia.getX();d.y=sprites.Sofia.getY();d.floorY=d.y;}\n  d.ui();\n };\n const yarn=gdjs.dialogueTree;\n d.choiceSprites=[sprites.Choice1,sprites.Choice2];d.selectedChoice=-1;d.lastTab=false;\n d.syncFlags=()=>{for(const key of ['met','owned','complete'])d[key]=yarn.getVariable(key)===true;d.ui()};\n d.renderDialogue=()=>{\n  const open=!!d.dialogue;for(const n of ['Bubble','Speaker','Message'])show(n,open);\n  for(const o of d.choiceSprites)o.hide(true);if(!open)return;\n  const line=d.dialogue[d.turn];text('Speaker',line[0]);text('Message',line[1]);\n  const who=line[0]==='SofÃ­a'?{x:d.x,y:d.y}:{x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  const x=d.question?220:Math.max(16,Math.min(804,who.x-230)),y=d.question?100:Math.max(80,Math.min(470,who.y-(d.room==='surface'?110:157)-185));\n  sprites.Bubble.setPosition(x,y);sprites.Bubble.setWidth(460);sprites.Bubble.setHeight(d.question?Math.max(245,145+d.options.length*48):175);\n  sprites.Speaker.setPosition(x+18,y+12);sprites.Message.setPosition(x+18,y+47);sprites.Message.setWidth(420);\n  if(d.question)for(let i=0;i<d.options.length;i++){\n   if(!d.choiceSprites[i]){const o=runtimeScene.createObject('Choice1');o.setLayer('UI');o.setZOrder(sprites.Choice1.getZOrder());d.choiceSprites.push(o)}\n   const o=d.choiceSprites[i];o.hide(false);o.setPosition(x+18,y+120+i*48);o.setString((d.selectedChoice===i?'â–¶ ':'â€º ')+d.options[i]);\n  }\n };\n d.readYarn=()=>{\n  d.syncFlags();d.selectedChoice=-1;\n  if(!yarn.isRunning()){d.dialogue=null;d.question=false;d.renderDialogue();return}\n  d.question=yarn.isDialogueLineType('options');\n  if(d.question){d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  else{const raw=yarn.getLineText(),colon=raw.indexOf(':');d.dialogue=[[colon<0?'':raw.slice(0,colon),colon<0?raw:raw.slice(colon+1).trim()]];d.turn=0;\n   if(yarn.branchContainsTag('decision')){yarn.goToNextDialogueLine();d.question=yarn.isDialogueLineType('options');if(d.question)d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  }\n  d.renderDialogue();\n };\n d.say=node=>{\n  if(!yarn.hasDialogueBranch(node))throw Error('Nodo Yarn no encontrado: '+node);\n  if(d.room==='surface')sprites.NPC.flipX(wrap(d.angle-sprites.NPC.getAngle()*Math.PI/180)<0);\n  sprites.Sofia.flipX(d.room==='surface'?wrap(sprites.NPC.getAngle()*Math.PI/180-d.angle)<0:sprites.NPC.getX()<d.x);\n  d.destination=null;d.pending='';for(const key of ['met','owned','complete'])yarn.setVariable(key,d[key]);\n  yarn.startFrom(node);d.readYarn();\n };\n d.advance=()=>{if(!d.dialogue||d.question)return;yarn.goToNextDialogueLine();d.readYarn();if(!d.dialogue){game.__sofiaKeys.length=0;d.enterAfter=d.time+.18}};\n d.answer=i=>{if(!d.question||i<0||i>=d.options.length)return;yarn.selectOption(i);yarn.hasSelectedOptionChanged();yarn.confirmSelectOption();d.readYarn()};\n d.toggle=()=>{if(d.owned&&d.room!=='surface'){d.on=!d.on;d.ui()}};\n d.contextEnter=()=>{\n  if(d.time<(d.enterAfter??0))return;\n  const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  if((d.room==='surface'||d.room==='prisioneros')&&distance({x:d.x,y:d.y},npc)<145){d.interact(d.room==='surface'?'plato':'prisoner');return}\n  if(d.room==='entrada'&&!d.owned&&Math.abs(d.x-sprites.Lamp.getX())<100){d.interact('lamp');return}\n  if(d.room!=='surface'&&d.x<150)d.interact('back');else if(d.room==='entrada'&&d.x>940)d.interact('next');\n };\n d.interact=action=>{\n  if(action==='plato')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  if(action==='cave'){if(d.met)d.load('entrada');else d.say('Antes_De_Entrar');}\n  if(action==='back'){const prior=d.room;d.load(prior==='entrada'?'surface':'entrada');if(prior==='prisioneros')d.x=950;}\n  if(action==='next'){if(d.owned&&d.on)d.load('prisioneros');else d.say('Puerta_Sin_Luz');}\n  if(action==='lamp')d.say(sprites.Lamp.getVariables().get('DialogueNode').getAsString());\n  if(action==='prisoner')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  d.ui();\n };\n d.click=p=>{\n  if(d.dialogue){if(d.question){for(let i=0;i<d.options.length;i++){const o=d.choiceSprites[i];if(p.x>=o.getX()&&p.x<o.getX()+425&&p.y>=o.getY()&&p.y<o.getY()+44){d.answer(i);break}}}else d.advance();return;}\n  if(p.x>1020&&p.y<65&&d.owned&&d.room!=='surface'){d.toggle();return;}\n  if(p.x>1080&&p.y>670){if(confirm('Â¿Reiniciar Ãºnicamente esta demo?')){d.met=d.owned=d.on=d.complete=false;d.angle=-42*Math.PI/180;d.load('surface')}return;}\n  if(d.room==='surface'){\n   const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()},cave={x:sprites.Cave.getX(),y:sprites.Cave.getY()};\n   d.pending=distance(p,{x:npc.x,y:npc.y-45})<85?'plato':distance(p,cave)<90?'cave':'';\n   d.destination=d.pending==='plato'?Math.atan2(npc.x-640,360-npc.y):d.pending==='cave'?Math.atan2(cave.x-640,360-cave.y):Math.atan2(p.x-640,360-p.y);\n  }else{\n   d.pending=p.x<145?'back':d.room==='entrada'&&p.x>940?'next':d.room==='entrada'&&!d.owned&&distance(p,{x:sprites.Lamp.getX(),y:sprites.Lamp.getY()})<85?'lamp':d.room==='prisioneros'&&distance(p,{x:sprites.NPC.getX(),y:sprites.NPC.getY()-70})<100?'prisoner':'';\n   d.destination=d.pending==='back'?75:d.pending==='next'?1070:d.pending==='lamp'?sprites.Lamp.getX():d.pending==='prisoner'?sprites.NPC.getX():Math.max(40,Math.min(1240,p.x));\n  }\n };\n d.step=()=>{\n  const dt=Math.min(.1,runtimeScene.getElapsedTime()/1000);d.time+=dt;\n  // Native loading is asynchronous; exploration starts once the JSON is ready.\n  if(!yarn.hasDialogueBranch('Platon_Encuentro'))return;\n  const input=runtimeScene.getGame().getInputManager(),l=input.isKeyPressed(76),key=game.__sofiaKeys.shift();\n  if(key==='tab'&&d.question){d.selectedChoice=(d.selectedChoice+1)%d.options.length;d.renderDialogue()}\n  if(key==='enter'){if(d.question){if(d.selectedChoice>=0)d.answer(d.selectedChoice)}else if(d.dialogue)d.advance();else d.contextEnter()}\n  if(l&&!d.lastL&&!d.dialogue)d.toggle();d.lastL=l;\n  if(input.isMouseButtonReleased(0))d.click({x:gdjs.evtTools.input.getCursorX(runtimeScene,'',0),y:gdjs.evtTools.input.getCursorY(runtimeScene,'',0)});\n  let axis=0;\n  if(!d.dialogue){\n   axis=Number(input.isKeyPressed(39)||input.isKeyPressed(68))-Number(input.isKeyPressed(37)||input.isKeyPressed(65));\n   if(axis){d.destination=null;d.pending='';}\n   if(d.room==='surface'){\n    const diff=d.destination===null?0:wrap(d.destination-d.angle);if(!axis&&d.destination!==null&&Math.abs(diff)>(d.pending?.22:.025))axis=Math.sign(diff);\n    d.angle+=axis*.9*dt;const p=rad(d.angle);d.x=p.x;d.y=p.y;\n   }else{\n    if(!axis&&d.destination!==null&&Math.abs(d.destination-d.x)>(d.pending?80:6))axis=Math.sign(d.destination-d.x);\n    d.x=Math.max(40,Math.min(1240,d.x+axis*data.speed*dt));d.y=d.floorY;\n   }\n   if(!axis&&d.destination!==null){const action=d.pending;d.destination=null;d.pending='';if(action)d.interact(action);}\n  }\n  sprites.Sofia.setAnimationName(axis?'Walk':'Idle');if(axis)sprites.Sofia.flipX(axis<0);\n  sprite('Sofia',d.x,d.y,d.heroScale,d.room==='surface'?d.angle*180/Math.PI:0);\n  if(colors.lastRoom!==d.room||colors.lastOn!==d.on||Math.abs(colors.lastX-d.x)>.5||Math.abs(colors.lastY-d.y)>.5){\n   shade.clear();if(d.room!=='surface'){\n    const dark=d.room==='entrada'?.28:.88,cx=d.x,cy=d.y-65;\n    shade.beginFill(0x030511,dark).drawRect(-500,-500,2280,1720);\n    if(d.on)shade.beginHole().drawCircle(cx,cy,240).endHole();shade.endFill();\n    if(d.on)for(let i=0;i<12;i++){const t=(i+.5)/12,r1=90+i*12.5,r2=r1+12.5;shade.beginFill(0x030511,dark*t*t*(3-2*t)).drawCircle(cx,cy,r2).beginHole().drawCircle(cx,cy,r1).endHole().endFill();}\n   }\n   colors.lastX=d.x;colors.lastY=d.y;colors.lastOn=d.on;colors.lastRoom=d.room;\n  }\n };\n d.load(d.room);d.renderDialogue();globalThis.__sofiaGD=d;\n}\nruntimeScene.__sofiaDemo.step();\n",
+          "inlineCode": "// Embedded as a native GDevelop JavaScript event by make_gdevelop.py.\n// All pictures, text and instances remain regular GDevelop editor sprites.\nif (!runtimeScene.__sofiaDemo) {\n const data = {\"width\": 1280, \"height\": 720, \"floor\": 560, \"speed\": 240, \"title\": \"Platón · Demo comparativa\", \"surface\": {\"center\": [640, 360], \"radius\": 220, \"actorHeight\": 110, \"spawn\": -42, \"plato\": -5, \"cave\": 45}, \"rooms\": {\"entrada\": {\"background\": \"entrada.png\", \"spawn\": 160, \"floor\": 560}, \"prisioneros\": {\"background\": \"prisioneros.png\", \"spawn\": 160, \"floor\": 560}}, \"goals\": {\"meet\": \"Toca a Platón para conversar.\", \"find\": \"Entra en la caverna y busca la linterna.\", \"light\": \"Enciende la linterna y explora la siguiente sala.\", \"talk\": \"Escucha al prisionero.\", \"done\": \"Demo completada. Puedes regresar a la superficie.\"}, \"passages\": [{\"id\": \"entrada-prisioneros\", \"scene\": \"entrada\", \"direction\": 1, \"at\": 1160, \"target\": \"prisioneros\", \"spawn\": 120, \"requires\": [\"owned\", \"on\"], \"blockedText\": \"Recoge y enciende la linterna para continuar.\"}, {\"id\": \"prisioneros-entrada\", \"scene\": \"prisioneros\", \"direction\": -1, \"at\": 80, \"target\": \"entrada\", \"spawn\": 1080, \"requires\": []}], \"portal\": {\"scene\": \"entrada\", \"x\": 90, \"y\": 560, \"target\": \"surface\"}};const game=runtimeScene.getGame(),saved=game.__sofiaDemoState;\n const config=runtimeScene.getVariables(),target=config.get('ExitTarget').getAsString();\n data.passages=target?[{id:runtimeScene.getName()+'-exit',scene:runtimeScene.getName(),direction:config.get('ExitDirection').getAsNumber(),at:config.get('ExitX').getAsNumber(),target,spawn:config.get('ArrivalX').getAsNumber(),requires:config.get('NeedsLight').getAsBoolean()?['owned','on']:[],blockedText:'Recoge y enciende la linterna para continuar.'}]:[];\n const sprites = Object.fromEntries(runtimeScene.getObjects('').map(o=>[o.getName(),o]));\n for (const name of ['Background','Planet','Sofia','NPC','Cave','Lamp','Portal','Bubble','Speaker','Message','Choice1','Choice2','Title','Objective','Help','LightButton','Restart']) sprites[name]=runtimeScene.getObjects(name)[0];\n sprites.Sofia.setZOrder(100); // In front of NPCs/cave; darkness and UI remain above.\n if(!game.__sofiaKeys){\n  game.__sofiaKeys=[];\n  const onKey=e=>{if(e.repeat||e.isComposing||e.ctrlKey||e.altKey||e.metaKey||e.target?.closest?.('input,textarea,select,[contenteditable=\"true\"]'))return;\n   if(e.code==='Enter'||e.code==='NumpadEnter'||(e.code==='Tab'&&globalThis.__sofiaGD?.question)){e.preventDefault();game.__sofiaKeys.push(e.code==='Tab'?'tab':'enter')}\n  };\n  window.addEventListener('keydown',onKey);game.__sofiaKeyHandler=onKey;\n }\n const d = runtimeScene.__sofiaDemo = {room:runtimeScene.getVariables().get('SceneID').getAsString()||'surface',angle:-42*Math.PI/180,x:160,y:560,destination:null,pending:'',met:false,owned:false,on:false,complete:false,dialogue:null,turn:0,question:false,follow:'',time:0,lastEnter:false,lastL:false,data,sprites,heroScale:sprites.Sofia.getScaleY(),floorY:sprites.Sofia.getY(),nativeSceneName:runtimeScene.getName()};\n if(saved)for(const key of ['angle','met','owned','on','complete'])d[key]=saved[key];\n const show=(name,yes)=>sprites[name].hide(!yes);\n const text=(name,value)=>sprites[name].setString(value);\n const rad=a=>({x:640+Math.sin(a)*220,y:360-Math.cos(a)*220});\n const wrap=a=>Math.atan2(Math.sin(a),Math.cos(a));\n const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);\n const sprite=(name,x,y,scale,angle=0)=>{const o=sprites[name];o.setPosition(x,y);o.setScale(scale);o.setAngle(angle)};\n const colors={darkness:0,lastX:NaN,lastY:NaN,lastOn:null,lastRoom:''};\n const shade=new PIXI.Graphics();shade.zOrder=9000;shade.zIndex=9000;\n runtimeScene.getLayer('').getRenderer().addRendererObject(shade,9000);\n d.lightGraphics=shade;\n d.ui=()=>{\n  text('Title','GDEVELOP · '+(d.room==='surface'?'Planeta de Platón · vista general':d.room==='entrada'?'A · Entrada de la caverna':'B · Sala de las sombras'));\n  text('Objective',d.complete?'✓ '+data.goals.done:!d.met?data.goals.meet:!d.owned?data.goals.find:d.room!=='prisioneros'?data.goals.light:data.goals.talk);\n  show('LightButton',d.owned&&d.room!=='surface');text('LightButton',d.on?'Linterna encendida · L':'Encender linterna · L');\n  show('Lamp',d.room==='entrada'&&!d.owned);\n  show('Portal',d.room===data.portal.scene);\n };\n d.load=(room,arrivalX)=>{\n  if(room!==d.room){game.__sofiaDemoState={angle:d.angle,met:d.met,owned:d.owned,on:d.on,complete:d.complete,from:d.room,arrivalX};gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,room,false);return;}\n  d.destination=null;d.pending='';const surface=room==='surface';\n  sprites.Background.setAnimation(0);\n  show('Planet',surface);show('Cave',surface);show('NPC',surface||room==='prisioneros');\n  sprites.NPC.setAnimation(0);\n  if(surface){if(!saved)d.angle=Math.atan2(sprites.Sofia.getX()-640,360-sprites.Sofia.getY());const h=rad(d.angle);d.x=h.x;d.y=h.y;}\n  else{d.x=saved?.arrivalX??sprites.Sofia.getX();d.y=sprites.Sofia.getY();d.floorY=d.y;sprites.Sofia.flipX(saved?.from==='prisioneros');}\n  d.ui();\n };\n const yarn=gdjs.dialogueTree;\n d.choiceSprites=[sprites.Choice1,sprites.Choice2];d.selectedChoice=-1;d.lastTab=false;\n d.syncFlags=()=>{for(const key of ['met','owned','complete'])d[key]=yarn.getVariable(key)===true;d.ui()};\n d.renderDialogue=()=>{\n  const open=!!d.dialogue;for(const n of ['Bubble','Speaker','Message'])show(n,open);\n  for(const o of d.choiceSprites)o.hide(true);if(!open)return;\n  const line=d.dialogue[d.turn];text('Speaker',line[0]);text('Message',line[1]);\n  const who=line[0]==='Sofía'?{x:d.x,y:d.y}:{x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  const x=d.question?220:Math.max(16,Math.min(804,who.x-230)),y=d.question?100:Math.max(80,Math.min(470,who.y-(d.room==='surface'?110:157)-185));\n  sprites.Bubble.setPosition(x,y);sprites.Bubble.setWidth(460);sprites.Bubble.setHeight(d.question?Math.max(245,145+d.options.length*48):175);\n  sprites.Speaker.setPosition(x+18,y+12);sprites.Message.setPosition(x+18,y+47);sprites.Message.setWidth(420);\n  if(d.question)for(let i=0;i<d.options.length;i++){\n   if(!d.choiceSprites[i]){const o=runtimeScene.createObject('Choice1');o.setLayer('UI');o.setZOrder(sprites.Choice1.getZOrder());d.choiceSprites.push(o)}\n   const o=d.choiceSprites[i];o.hide(false);o.setPosition(x+18,y+120+i*48);o.setString((d.selectedChoice===i?'▶ ':'› ')+d.options[i]);\n  }\n };\n d.readYarn=()=>{\n  d.syncFlags();d.selectedChoice=-1;\n  if(!yarn.isRunning()){d.dialogue=null;d.question=false;d.renderDialogue();return}\n  d.question=yarn.isDialogueLineType('options');\n  if(d.question){d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  else{const raw=yarn.getLineText(),colon=raw.indexOf(':');d.dialogue=[[colon<0?'':raw.slice(0,colon),colon<0?raw:raw.slice(colon+1).trim()]];d.turn=0;\n   if(yarn.branchContainsTag('decision')){yarn.goToNextDialogueLine();d.question=yarn.isDialogueLineType('options');if(d.question)d.options=Array.from({length:yarn.getLineOptionsCount()},(_,i)=>String(yarn.getLineOption(i)));}\n  }\n  d.renderDialogue();\n };\n d.say=node=>{\n  if(!yarn.hasDialogueBranch(node))throw Error('Nodo Yarn no encontrado: '+node);\n  if(d.room==='surface')sprites.NPC.flipX(wrap(d.angle-sprites.NPC.getAngle()*Math.PI/180)<0);\n  sprites.Sofia.flipX(d.room==='surface'?wrap(sprites.NPC.getAngle()*Math.PI/180-d.angle)<0:sprites.NPC.getX()<d.x);\n  d.destination=null;d.pending='';for(const key of ['met','owned','complete'])yarn.setVariable(key,d[key]);\n  yarn.startFrom(node);d.readYarn();\n };\n d.advance=()=>{if(!d.dialogue||d.question)return;yarn.goToNextDialogueLine();d.readYarn();if(!d.dialogue){game.__sofiaKeys.length=0;d.enterAfter=d.time+.18}};\n d.answer=i=>{if(!d.question||i<0||i>=d.options.length)return;yarn.selectOption(i);yarn.hasSelectedOptionChanged();yarn.confirmSelectOption();d.readYarn()};\n d.toggle=()=>{if(d.owned&&d.room!=='surface'){d.on=!d.on;d.ui()}};\n d.contextEnter=()=>{\n  if(d.time<(d.enterAfter??0))return;\n  const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()};\n  if((d.room==='surface'||d.room==='prisioneros')&&distance({x:d.x,y:d.y},npc)<145){d.interact(d.room==='surface'?'plato':'prisoner');return}\n  if(d.room==='entrada'&&!d.owned&&Math.abs(d.x-sprites.Lamp.getX())<100){d.interact('lamp');return}\n  if(d.room===data.portal.scene&&Math.abs(d.x-data.portal.x)<100)d.interact('portal');\n };\n d.interact=action=>{\n  if(action==='plato')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  if(action==='cave'){if(d.met)d.load('entrada');else d.say('Antes_De_Entrar');}\n  if(action==='portal'&&d.room===data.portal.scene)d.load(data.portal.target);\n  if(action==='lamp')d.say(sprites.Lamp.getVariables().get('DialogueNode').getAsString());\n  if(action==='prisoner')d.say(sprites.NPC.getVariables().get('DialogueNode').getAsString());\n  d.ui();\n };\n d.click=p=>{\n  if(d.dialogue){if(d.question){for(let i=0;i<d.options.length;i++){const o=d.choiceSprites[i];if(p.x>=o.getX()&&p.x<o.getX()+425&&p.y>=o.getY()&&p.y<o.getY()+44){d.answer(i);break}}}else d.advance();return;}\n  if(p.x>1020&&p.y<65&&d.owned&&d.room!=='surface'){d.toggle();return;}\n  if(p.x>1080&&p.y>670){if(confirm('¿Reiniciar únicamente esta demo?')){d.met=d.owned=d.on=d.complete=false;d.angle=-42*Math.PI/180;d.load('surface')}return;}\n  if(d.room==='surface'){\n   const npc={x:sprites.NPC.getX(),y:sprites.NPC.getY()},cave={x:sprites.Cave.getX(),y:sprites.Cave.getY()};\n   d.pending=distance(p,{x:npc.x,y:npc.y-45})<85?'plato':distance(p,cave)<90?'cave':'';\n   d.destination=d.pending==='plato'?Math.atan2(npc.x-640,360-npc.y):d.pending==='cave'?Math.atan2(cave.x-640,360-cave.y):Math.atan2(p.x-640,360-p.y);\n  }else{\n   d.pending=d.room===data.portal.scene&&distance(p,{x:data.portal.x,y:data.portal.y-65})<85?'portal':d.room==='entrada'&&!d.owned&&distance(p,{x:sprites.Lamp.getX(),y:sprites.Lamp.getY()})<85?'lamp':d.room==='prisioneros'&&distance(p,{x:sprites.NPC.getX(),y:sprites.NPC.getY()-70})<100?'prisoner':'';\n   d.destination=d.pending==='portal'?data.portal.x:d.pending==='lamp'?sprites.Lamp.getX():d.pending==='prisoner'?sprites.NPC.getX():Math.max(40,Math.min(1240,p.x));\n  }\n };\n d.step=()=>{\n  const dt=Math.min(.1,runtimeScene.getElapsedTime()/1000);d.time+=dt;\n  // Native loading is asynchronous; exploration starts once the JSON is ready.\n  if(!yarn.hasDialogueBranch('Platon_Encuentro'))return;\n  const input=runtimeScene.getGame().getInputManager(),l=input.isKeyPressed(76),key=game.__sofiaKeys.shift();\n  if(key==='tab'&&d.question){d.selectedChoice=(d.selectedChoice+1)%d.options.length;d.renderDialogue()}\n  if(key==='enter'){if(d.question){if(d.selectedChoice>=0)d.answer(d.selectedChoice)}else if(d.dialogue)d.advance();else d.contextEnter()}\n  if(l&&!d.lastL&&!d.dialogue)d.toggle();d.lastL=l;\n  if(input.isMouseButtonReleased(0))d.click({x:gdjs.evtTools.input.getCursorX(runtimeScene,'',0),y:gdjs.evtTools.input.getCursorY(runtimeScene,'',0)});\n  let axis=0;\n  if(!d.dialogue){\n   axis=Number(input.isKeyPressed(39)||input.isKeyPressed(68))-Number(input.isKeyPressed(37)||input.isKeyPressed(65));\n   if(axis){d.destination=null;d.pending='';}\n   if(d.room==='surface'){\n    const diff=d.destination===null?0:wrap(d.destination-d.angle);if(!axis&&d.destination!==null&&Math.abs(diff)>(d.pending?.22:.025))axis=Math.sign(diff);\n    d.angle+=axis*.9*dt;const p=rad(d.angle);d.x=p.x;d.y=p.y;\n   }else{\n    if(!axis&&d.destination!==null&&Math.abs(d.destination-d.x)>(d.pending?80:6))axis=Math.sign(d.destination-d.x);\n    d.x=Math.max(40,Math.min(1240,d.x+axis*data.speed*dt));d.y=d.floorY;\n    const passage=data.passages.find(p=>p.scene===d.room&&axis*p.direction>0&&(d.x-p.at)*p.direction>=0);\n    if(passage){if(passage.requires.every(flag=>d[flag]===true)){d.load(passage.target,passage.spawn);return}\n     d.x=passage.at-passage.direction;d.destination=null;d.pending='';axis=0;\n     if(d.blockedPassage!==passage.id){d.blockedPassage=passage.id;d.noticeUntil=d.time+2.8;text('Help',passage.blockedText)}\n    }else if(d.blockedPassage&&data.passages.every(p=>p.id!==d.blockedPassage||Math.abs(d.x-p.at)>100))d.blockedPassage=null;\n   }\n   if(!axis&&d.destination!==null){const action=d.pending;d.destination=null;d.pending='';if(action)d.interact(action);}\n  }\n  sprites.Sofia.setAnimationName(axis?'Walk':'Idle');if(axis)sprites.Sofia.flipX(axis<0);\n  if(d.noticeUntil&&d.time>d.noticeUntil){d.noticeUntil=0;text('Help','Toca para caminar · Cruza los extremos para cambiar de sala · Enter: conversar · L: luz')}\n  sprite('Sofia',d.x,d.y,d.heroScale,d.room==='surface'?d.angle*180/Math.PI:0);\n  if(colors.lastRoom!==d.room||colors.lastOn!==d.on||Math.abs(colors.lastX-d.x)>.5||Math.abs(colors.lastY-d.y)>.5){\n   shade.clear();if(d.room!=='surface'){\n    const dark=d.room==='entrada'?.28:.88,cx=d.x,cy=d.y-65;\n    shade.beginFill(0x030511,dark).drawRect(-500,-500,2280,1720);\n    if(d.on)shade.beginHole().drawCircle(cx,cy,240).endHole();shade.endFill();\n    if(d.on)for(let i=0;i<12;i++){const t=(i+.5)/12,r1=90+i*12.5,r2=r1+12.5;shade.beginFill(0x030511,dark*t*t*(3-2*t)).drawCircle(cx,cy,r2).beginHole().drawCircle(cx,cy,r1).endHole().endFill();}\n   }\n   colors.lastX=d.x;colors.lastY=d.y;colors.lastOn=d.on;colors.lastRoom=d.room;\n  }\n };\n d.load(d.room);d.renderDialogue();globalThis.__sofiaGD=d;\n}\nruntimeScene.__sofiaDemo.step();\n",
           "parameterObjects": "",
           "useStrict": true,
           "eventsSheetExpanded": false

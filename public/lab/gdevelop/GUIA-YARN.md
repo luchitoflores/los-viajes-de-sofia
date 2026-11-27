@@ -19,7 +19,7 @@ No ejecutes `make_gdevelop.py` después de editar objetos o escenas: ese script 
 | Platon_Encuentro | Platón, superficie; registra que lo conociste |
 | Antes_De_Entrar | Cueva cuando falta conocer a Platón |
 | Linterna_Recogida | Objeto de la sala A; registra la recogida |
-| Puerta_Sin_Luz | Puerta de A cuando falta recoger o encender la linterna |
+| Puerta_Sin_Luz | Nodo conservado; el paso caminando actual muestra un aviso breve sin abrir diálogo |
 | Prisionero_Encuentro | NPC de B; cambia según la prueba esté completada |
 | Pregunta_Sombras | Pregunta y dos alternativas; etiqueta `decision` |
 | Respuesta_Investigar | Retroalimentación y regreso a la pregunta |
@@ -79,3 +79,7 @@ Enter o toque avanza un turno. Las decisiones se eligen con clic/toque o Tab y E
 Movimiento radial, interacción y bocadillos conservan el controlador JavaScript común. Falta empaquetarlos como comportamientos/eventos visuales reutilizables, paginar textos muy largos y definir el puente de actividades HTML. Las decisiones de esta demo son breves; no se promete una presentación apta para cualquier cantidad de opciones largas.
 
 Fuente: [Dialogue Tree y editor Yarn de GDevelop](https://wiki.gdevelop.io/gdevelop5/all-features/dialogue-tree/).
+
+## Pasos y portal
+
+A↔B se cruza caminando. En las variables de escena puedes configurar ExitTarget, ExitX, ExitDirection, ArrivalX y NeedsLight. El portal azul de A se toca o se activa con Enter estando cerca para volver a la superficie. Caminar junto a él no lo activa. La demo todavía no incluye combate.

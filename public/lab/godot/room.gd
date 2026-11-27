@@ -1,6 +1,12 @@
 extends Node2D
 ## Same three-room comparison as GDevelop. Artwork/data are local copies, not Phaser code.
 @export_enum("surface", "entrada", "prisioneros") var scene_id: String = "surface"
+@export_group("Paso caminando")
+@export var exit_target: String = ""
+@export var exit_x: float = 1160.0
+@export_enum("Izquierda:-1", "Derecha:1") var exit_direction: int = 1
+@export var arrival_x: float = 120.0
+@export var exit_needs_light: bool = false
 var data: Dictionary
 var angle := deg_to_rad(-42.0)
 var destination := NAN
@@ -14,6 +20,8 @@ var turn := 0
 var after_dialogue := ""
 var selected_choice := -1
 var enter_after_ms := 0
+var blocked_passage := ""
+var notice_until := 0.0
 var elapsed := 0.0
 var bubble: PanelContainer
 var speaker_label: Label
@@ -30,6 +38,7 @@ var confirm_restart: ConfirmationDialog
 @onready var background: Sprite2D = $Background
 @onready var planet: Sprite2D = $Planet
 @onready var cave: Sprite2D = $Cave
+@onready var portal: Sprite2D = $Portal
 @onready var darkness: ColorRect = $Darkness
 var frames: Array[Texture2D] = []
 var prisoner_frames: Array[Texture2D] = []
@@ -109,12 +118,13 @@ func _clear_scene_owners(node: Node) -> void:
 	node.owner = null
 	for child in node.get_children(): _clear_scene_owners(child)
 
-func load_room(id: String) -> void:
+func load_room(id: String, spawn_x := NAN) -> void:
 	# Load the actual authored scene nodes, preserving this session/controller and UI.
 	# This makes edits to scenes/entrada.tscn and scenes/prisioneros.tscn visible in play.
 	if id != scene_id:
 		var path := "res://room.tscn" if id == "surface" else "res://scenes/" + id + ".tscn"
 		var template: Node2D = load(path).instantiate()
+		for property in ["exit_target","exit_x","exit_direction","arrival_x","exit_needs_light"]: set(property,template.get(property))
 		for child in get_children():
 			if not child is CanvasLayer: remove_child(child); child.queue_free()
 		for child in template.get_children():
@@ -122,7 +132,10 @@ func load_room(id: String) -> void:
 		template.free()
 		hero = $Sofia; art = $Sofia/Artwork; npc = $NPC; lamp = $Lamp
 		background = $Background; planet = $Planet; cave = $Cave; darkness = $Darkness
+		portal = $Portal
 	scene_id = id; destination = NAN; pending = ""; hero.velocity = Vector2.ZERO
+	blocked_passage = ""
+	if id != "surface" and not is_nan(spawn_x): hero.position.x = spawn_x; art.flip_h = spawn_x > 640
 	$Floor/CollisionShape2D.set_deferred("disabled", id == "surface")
 	if id == "surface": place_radial()
 	update_ui()
@@ -142,6 +155,7 @@ func update_ui() -> void:
 	pass # Ambient darkness is authored in the native scene material.
 	darkness.material.set_shader_parameter("enabled", light_on)
 	lamp.visible = scene_id == "entrada" and not owned
+	portal.visible = scene_id == str(data.portal.scene)
 
 func _input(event: InputEvent) -> void:
 	if not event is InputEventKey or confirm_restart.visible: return
@@ -160,8 +174,7 @@ func _input(event: InputEvent) -> void:
 		if scene_id in ["surface", "prisioneros"] and hero.position.distance_to(npc.position) < 145:
 			interact("plato" if scene_id == "surface" else "prisoner")
 		elif scene_id == "entrada" and not owned and absf(hero.position.x-lamp.position.x) < 100: interact("lamp")
-		elif scene_id != "surface" and hero.position.x < 150: interact("back")
-		elif scene_id == "entrada" and hero.position.x > 940: interact("next")
+		elif scene_id == str(data.portal.scene) and absf(hero.position.x-float(data.portal.x)) < 100: interact("portal")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -178,8 +191,8 @@ func click_world(point: Vector2) -> void:
 		pending = "plato" if point.distance_to(npc.position + Vector2(0, -45)) < 85 else "cave" if point.distance_to(cave.position) < 90 else ""
 		destination = atan2((npc.position.x if pending == "plato" else cave.position.x)-640,360-(npc.position.y if pending == "plato" else cave.position.y)) if pending != "" else a
 	else:
-		pending = "back" if point.x < 145 else "next" if scene_id == "entrada" and point.x > 940 else "lamp" if scene_id == "entrada" and lamp.visible and point.distance_to(lamp.position) < 85 else "prisoner" if scene_id == "prisioneros" and point.distance_to(npc.position + Vector2(0,-70)) < 100 else ""
-		destination = 75 if pending == "back" else 1070 if pending == "next" else lamp.position.x if pending == "lamp" else npc.position.x if pending == "prisoner" else clampf(point.x, 40, 1240)
+		pending = "portal" if portal.visible and point.distance_to(portal.position + Vector2(0,-65)) < 85 else "lamp" if scene_id == "entrada" and lamp.visible and point.distance_to(lamp.position) < 85 else "prisoner" if scene_id == "prisioneros" and point.distance_to(npc.position + Vector2(0,-70)) < 100 else ""
+		destination = portal.position.x if pending == "portal" else lamp.position.x if pending == "lamp" else npc.position.x if pending == "prisoner" else clampf(point.x, 40, 1240)
 
 func _physics_process(delta: float) -> void:
 	elapsed += delta
@@ -196,6 +209,17 @@ func _physics_process(delta: float) -> void:
 			if axis == 0 and not is_nan(destination): axis = signf(destination - hero.position.x) if absf(destination - hero.position.x) > (80 if pending != "" else 6) else 0
 			hero.velocity = Vector2(axis * float(data.speed), 320)
 			hero.move_and_slide(); hero.position.x = clampf(hero.position.x, 40, 1240)
+			var exits := [] if exit_target.is_empty() else [{"id":scene_id+"-exit","scene":scene_id,"direction":exit_direction,"at":exit_x,"target":exit_target,"spawn":arrival_x,"requires":["owned","on"] if exit_needs_light else [],"blockedText":"Recoge y enciende la linterna para continuar."}]
+			for passage in exits:
+				if str(passage.scene) != scene_id: continue
+				if blocked_passage == str(passage.id) and absf(hero.position.x-float(passage.at)) > 100: blocked_passage = ""
+				if axis*float(passage.direction) <= 0 or (hero.position.x-float(passage.at))*float(passage.direction) < 0: continue
+				var allowed := true
+				for flag in passage.requires:
+					if not (light_on if str(flag) == "on" else bool(get(str(flag)))): allowed = false
+				if allowed: load_room(str(passage.target),float(passage.spawn)); return
+				hero.position.x = float(passage.at)-float(passage.direction); hero.velocity = Vector2.ZERO; destination = NAN; pending = ""; axis = 0
+				if blocked_passage != str(passage.id): blocked_passage = str(passage.id); notice_until = elapsed+2.8; objective.text = str(passage.blockedText)
 			moving = axis != 0
 		if not moving and not is_nan(destination):
 			destination = NAN
@@ -205,6 +229,7 @@ func _physics_process(delta: float) -> void:
 	art.texture = frames[[2,3,4,5][int(elapsed * 7) % 4] if moving else 0] if not frames.is_empty() else null
 	if scene_id == "prisioneros" and not prisoner_frames.is_empty(): npc.texture = prisoner_frames[int(elapsed * 3) % 6]
 	if darkness and darkness.material: darkness.material.set_shader_parameter("light_pos", hero.position + Vector2(0, -65))
+	if notice_until > 0 and elapsed > notice_until: notice_until = 0; update_ui()
 
 func interact(action: String) -> void:
 	match action:
@@ -212,12 +237,8 @@ func interact(action: String) -> void:
 		"cave":
 			if met: load_room("entrada")
 			else: show_dialogue([["Sofía", "Primero quiero conocer a Platón."]])
-		"back":
-			load_room("surface" if scene_id == "entrada" else "entrada")
-			if scene_id == "entrada": hero.position.x = 950
-		"next":
-			if owned and light_on: load_room("prisioneros")
-			else: show_dialogue([["Sofía", "Necesito recoger la linterna y encenderla antes de seguir."]])
+		"portal":
+			if scene_id == str(data.portal.scene): load_room(str(data.portal.target))
 		"lamp": owned = true; update_ui(); show_dialogue(data.dialogues.lamp)
 		"prisoner": show_dialogue(data.dialogues.complete if complete else data.dialogues.prisoner, "" if complete else "question")
 	update_ui()
@@ -306,13 +327,12 @@ func _self_test() -> void:
 	await _test_click(Vector2(743,530))
 	if not await _wait_test(func(): return owned and bubble.visible,"Lamp pickup"): return
 	await _test_enter()
-	await _test_click(Vector2(1070,500))
-	if not await _wait_test(func(): return bubble.visible,"Door blocked without light"): return
-	assert(scene_id == "entrada"); light_button.grab_focus(); await _test_enter()
-	assert(not light_on and not bubble.visible) # focused buttons must not consume Enter
+	await _test_click(Vector2(1240,620))
+	if not await _wait_test(func(): return blocked_passage != "","Passage blocked without light"): return
+	assert(scene_id == "entrada" and not bubble.visible and hero.position.x <= 1160)
 	toggle_light(); assert(light_on)
 	await _capture("entrance-light")
-	await _test_click(Vector2(1070,500))
+	await _test_click(Vector2(1240,620))
 	if not await _wait_test(func(): return scene_id == "prisioneros","Prisoners"): return
 	assert(background.texture.resource_path.ends_with("prisioneros.png"))
 	await _capture("prisoners")
@@ -331,10 +351,13 @@ func _self_test() -> void:
 	await get_tree().create_timer(0.2).timeout
 	await _test_enter(); assert(bubble.visible) # contextual Enter near the prisoner
 	await _test_enter(); await _test_enter()
-	await _test_click(Vector2(60,520))
+	await _test_click(Vector2(40,650))
 	if not await _wait_test(func(): return scene_id == "entrada","Return to A"): return
-	assert(light_on and owned)
-	await _test_click(Vector2(60,520))
+	assert(light_on and owned and hero.position.x > 1000)
+	await _test_click(Vector2(40,650))
+	if not await _wait_test(func(): return hero.position.x < 60,"Walk beside portal"): return
+	assert(scene_id == "entrada")
+	await _test_click(Vector2(90,495))
 	if not await _wait_test(func(): return scene_id == "surface","Return to planet"): return
 	await _capture("complete")
 	print("SOFIA_GODOT_TEST_PASS: click movement, conversation, lamp, door gate, question, room continuity, return")

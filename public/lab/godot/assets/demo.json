@@ -83,5 +83,35 @@
     "light": "Enciende la linterna y explora la siguiente sala.",
     "talk": "Escucha al prisionero.",
     "done": "Demo completada. Puedes regresar a la superficie."
+  },
+  "passages": [
+    {
+      "id": "entrada-prisioneros",
+      "scene": "entrada",
+      "direction": 1,
+      "at": 1160,
+      "target": "prisioneros",
+      "spawn": 120,
+      "requires": [
+        "owned",
+        "on"
+      ],
+      "blockedText": "Recoge y enciende la linterna para continuar."
+    },
+    {
+      "id": "prisioneros-entrada",
+      "scene": "prisioneros",
+      "direction": -1,
+      "at": 80,
+      "target": "entrada",
+      "spawn": 1080,
+      "requires": []
+    }
+  ],
+  "portal": {
+    "scene": "entrada",
+    "x": 90,
+    "y": 560,
+    "target": "surface"
   }
 }

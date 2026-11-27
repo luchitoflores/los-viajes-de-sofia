@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="Script" path="res://room.gd" id="1"]
 [ext_resource type="Texture2D" path="res://assets/entrada.png" id="2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" path="res://assets/flashlight.png" id="6"]
 [ext_resource type="Texture2D" path="res://assets/cave.png" id="7"]
 [ext_resource type="Shader" path="res://light.gdshader" id="8"]
+[ext_resource type="Texture2D" path="res://assets/portal.png" id="portal"]
 [sub_resource type="RectangleShape2D" id="floor"]
 size = Vector2(1280, 35)
 [sub_resource type="RectangleShape2D" id="body"]
@@ -20,6 +21,11 @@ shader_parameter/darkness = 0.28
 [node name="DemoSofia" type="Node2D"]
 script = ExtResource("1")
 scene_id = "entrada"
+exit_target = "prisioneros"
+exit_x = 1160.0
+exit_direction = 1
+arrival_x = 120.0
+exit_needs_light = true
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -10
@@ -84,3 +90,12 @@ offset_right = 1280.0
 offset_bottom = 720.0
 mouse_filter = 2
 material = SubResource("light")
+
+[node name="Portal" type="Sprite2D" parent="."]
+visible = true
+z_index = 5
+position = Vector2(90,560)
+texture = ExtResource("portal")
+centered = false
+offset = Vector2(-313.5,-627)
+scale = Vector2(0.14035,0.19139)
