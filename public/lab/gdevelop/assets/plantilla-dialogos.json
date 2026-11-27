@@ -2,10 +2,30 @@
   {
     "title": "Inicio",
     "tags": "",
-    "body": "Platón: Bienvenida, Sofía. Para aprender debes explorar.\nPlatón: Recoge una antorcha y alcanza el pergamino de la plataforma elevada.\nPlatón: Después supera al guardián y busca el portal. Pulsa E o Acción para continuar.",
+    "body": "Platón: Bienvenida, Sofía. La verdad se descubre explorando.\nPlatón: ¿Cómo prefieres comenzar?\n[[Observar por mi cuenta|Observar]]\n[[Escuchar tu consejo|Consejo]]",
     "position": {
       "x": 0,
       "y": 0
+    },
+    "colorID": 0
+  },
+  {
+    "title": "Observar",
+    "tags": "",
+    "body": "Platón: Excelente. Observa con atención.\nPlatón: Busca la antorcha y el fragmento. Luego supera a los guardianes.",
+    "position": {
+      "x": -200,
+      "y": 200
+    },
+    "colorID": 0
+  },
+  {
+    "title": "Consejo",
+    "tags": "",
+    "body": "Platón: La antorcha te ayudará. El fragmento está en una plataforma elevada.\nPlatón: Activa el punto de control antes de combatir.",
+    "position": {
+      "x": 200,
+      "y": 200
     },
     "colorID": 0
   }
