@@ -44,3 +44,10 @@ Esto adapta recursos, escenas y conversaciones: **no es todavía una equivalenci
 El vuelo está adaptado al runtime de GDevelop: usa el arte de la nave y los planetas existentes, con despegue, sobrevuelo ordenado y descenso. No ejecuta el código Phaser ni reproduce todavía todos sus detalles de cámara/cabina. El emisor y los proyectiles reutilizan arte existente como representación provisional; no hay una nueva animación dibujada de Sofía disparando. Agacharse sí utiliza fotogramas del autor.
 
 El guardado es independiente (`sofia-gdevelop-autonomia-v1`). Reiniciar esta plantilla no borra las partidas de Phaser. Antes de esta importación se guardó una copia de `game.json` en `backups/`. No ejecutes los generadores sobre tus cambios de autor: trabaja desde GDevelop y guarda el proyecto.
+
+
+## Vista previa y nube
+
+En una vista previa del editor aparece «↑ Planeta · prueba» para volver al planeta desde un interior, sin completar misiones artificialmente. No aparece en el juego publicado. Los ejercicios también tienen un portal azul a Platón. El regreso de la entrada de la caverna funciona aunque no hayas llegado desde otra escena.
+
+Consulta [PC, nube y regreso desde pruebas](NUBE-Y-REGRESO.md). Tras una actualización externa, conserva tus ediciones abiertas con Guardar como y reabre el archivo corregido.

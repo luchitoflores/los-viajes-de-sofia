@@ -1,0 +1,38 @@
+[
+  {
+    "start": "plato__entrada",
+    "native_preview": true,
+    "empty_entry_history": true,
+    "surface_return": true,
+    "flight_both_directions": true,
+    "emulated_touch": false,
+    "errors": []
+  },
+  {
+    "start": "salida",
+    "native_preview": true,
+    "empty_entry_history": true,
+    "surface_return": true,
+    "flight_both_directions": false,
+    "emulated_touch": false,
+    "errors": []
+  },
+  {
+    "start": "arena",
+    "native_preview": true,
+    "empty_entry_history": true,
+    "surface_return": true,
+    "flight_both_directions": true,
+    "emulated_touch": true,
+    "errors": []
+  },
+  {
+    "start": "plato__salida",
+    "native_preview": true,
+    "empty_entry_history": true,
+    "surface_return": true,
+    "flight_both_directions": false,
+    "emulated_touch": false,
+    "errors": []
+  }
+]

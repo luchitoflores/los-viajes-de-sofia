@@ -675,6 +675,16 @@
           "persistentUuid": "c9e89cf0-693c-488b-aeb3-6a917cbb6ff7",
           "type": "string",
           "value": "Toca para caminar · A/D · Espacio: salto · Enter: hablar · F: pulso · L: luz · I: inventario"
+        },
+        {
+          "name": "Superficie",
+          "type": "string",
+          "value": "plato"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "plato"
         }
       ],
       "instances": [
@@ -1217,6 +1227,43 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 110,
+          "layer": "",
+          "name": "Portal",
+          "persistentUuid": "return-surface-inicio",
+          "width": 75,
+          "x": 65,
+          "y": 560,
+          "zOrder": 25,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-inicio",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -2033,18 +2080,6 @@
               "value": "portal"
             },
             {
-              "name": "Nombre",
-              "persistentUuid": "7e4271d2-1acd-412f-9902-b62c7c164287",
-              "type": "string",
-              "value": "Volver al inicio"
-            },
-            {
-              "name": "Destino",
-              "persistentUuid": "78d9ffec-5c7f-47b9-b557-bad96235cec3",
-              "type": "string",
-              "value": "inicio"
-            },
-            {
               "name": "LlegadaX",
               "persistentUuid": "f2ea1f13-2073-471c-883b-13ba7d75ea15",
               "type": "number",
@@ -2073,6 +2108,21 @@
               "persistentUuid": "e8d4a09e-b7ca-4d0d-8eba-3b5ed3a8bf46",
               "type": "string",
               "value": ""
+            },
+            {
+              "name": "Nombre",
+              "type": "string",
+              "value": "Volver a la superficie"
+            },
+            {
+              "name": "Destino",
+              "type": "string",
+              "value": "plato"
+            },
+            {
+              "name": "DestinoSuperficie",
+              "type": "boolean",
+              "value": true
             }
           ],
           "effects": [],
@@ -3179,6 +3229,61 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "b30aafda-01fe-479d-a1a6-1a7a8f5928fc",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -3270,6 +3375,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -3467,6 +3575,16 @@
           "name": "Ayuda",
           "type": "string",
           "value": "Toca para caminar · A/D · Espacio: salto · Enter: hablar · F: pulso · L: luz · I: inventario"
+        },
+        {
+          "name": "Superficie",
+          "type": "string",
+          "value": "plato"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "plato"
         }
       ],
       "instances": [
@@ -4035,6 +4153,43 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 110,
+          "layer": "",
+          "name": "Portal",
+          "persistentUuid": "return-surface-galeria",
+          "width": 75,
+          "x": 65,
+          "y": 560,
+          "zOrder": 25,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-galeria",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -4887,16 +5042,6 @@
               "value": "portal"
             },
             {
-              "name": "Nombre",
-              "type": "string",
-              "value": "Volver al inicio"
-            },
-            {
-              "name": "Destino",
-              "type": "string",
-              "value": "inicio"
-            },
-            {
               "name": "LlegadaX",
               "type": "number",
               "value": 120
@@ -4920,6 +5065,21 @@
               "name": "Id",
               "type": "string",
               "value": ""
+            },
+            {
+              "name": "Nombre",
+              "type": "string",
+              "value": "Volver a la superficie"
+            },
+            {
+              "name": "Destino",
+              "type": "string",
+              "value": "plato"
+            },
+            {
+              "name": "DestinoSuperficie",
+              "type": "boolean",
+              "value": true
             }
           ],
           "effects": [],
@@ -6006,6 +6166,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -6097,6 +6311,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -6294,6 +6511,16 @@
           "name": "Ayuda",
           "type": "string",
           "value": "Toca para caminar · A/D · Espacio: salto · Enter: hablar · F: pulso · L: luz · I: inventario"
+        },
+        {
+          "name": "Superficie",
+          "type": "string",
+          "value": "plato"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "plato"
         }
       ],
       "instances": [
@@ -6840,6 +7067,43 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 110,
+          "layer": "",
+          "name": "Portal",
+          "persistentUuid": "return-surface-arena",
+          "width": 75,
+          "x": 65,
+          "y": 560,
+          "zOrder": 25,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-arena",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -7607,16 +7871,6 @@
               "value": "portal"
             },
             {
-              "name": "Nombre",
-              "type": "string",
-              "value": "Volver al inicio"
-            },
-            {
-              "name": "Destino",
-              "type": "string",
-              "value": "inicio"
-            },
-            {
               "name": "LlegadaX",
               "type": "number",
               "value": 120
@@ -7640,6 +7894,21 @@
               "name": "Id",
               "type": "string",
               "value": ""
+            },
+            {
+              "name": "Nombre",
+              "type": "string",
+              "value": "Volver a la superficie"
+            },
+            {
+              "name": "Destino",
+              "type": "string",
+              "value": "plato"
+            },
+            {
+              "name": "DestinoSuperficie",
+              "type": "boolean",
+              "value": true
             }
           ],
           "effects": [],
@@ -8726,6 +8995,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -8817,6 +9140,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -9014,6 +9340,16 @@
           "name": "Ayuda",
           "type": "string",
           "value": "Toca para caminar · A/D · Espacio: salto · Enter: hablar · F: pulso · L: luz · I: inventario"
+        },
+        {
+          "name": "Superficie",
+          "type": "string",
+          "value": "plato"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "plato"
         }
       ],
       "instances": [
@@ -9545,6 +9881,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-salida",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -10312,16 +10669,6 @@
               "value": "portal"
             },
             {
-              "name": "Nombre",
-              "type": "string",
-              "value": "Volver al inicio"
-            },
-            {
-              "name": "Destino",
-              "type": "string",
-              "value": "inicio"
-            },
-            {
               "name": "LlegadaX",
               "type": "number",
               "value": 120
@@ -10345,6 +10692,21 @@
               "name": "Id",
               "type": "string",
               "value": ""
+            },
+            {
+              "name": "Nombre",
+              "type": "string",
+              "value": "Volver a la superficie"
+            },
+            {
+              "name": "Destino",
+              "type": "string",
+              "value": "plato"
+            },
+            {
+              "name": "DestinoSuperficie",
+              "type": "boolean",
+              "value": true
             }
           ],
           "effects": [],
@@ -11431,6 +11793,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -11522,6 +11938,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -11719,6 +12138,16 @@
           "name": "Ayuda",
           "type": "string",
           "value": "Toca para caminar · A/D · Espacio: salto · Enter: hablar · F: pulso · L: luz · I: inventario"
+        },
+        {
+          "name": "Superficie",
+          "type": "string",
+          "value": "plato"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "plato"
         }
       ],
       "instances": [
@@ -12208,6 +12637,43 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 110,
+          "layer": "",
+          "name": "Portal",
+          "persistentUuid": "return-surface-Plantilla",
+          "width": 75,
+          "x": 65,
+          "y": 560,
+          "zOrder": 25,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-Plantilla",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -12975,16 +13441,6 @@
               "value": "portal"
             },
             {
-              "name": "Nombre",
-              "type": "string",
-              "value": "Volver al inicio"
-            },
-            {
-              "name": "Destino",
-              "type": "string",
-              "value": "inicio"
-            },
-            {
               "name": "LlegadaX",
               "type": "number",
               "value": 120
@@ -13008,6 +13464,21 @@
               "name": "Id",
               "type": "string",
               "value": ""
+            },
+            {
+              "name": "Nombre",
+              "type": "string",
+              "value": "Volver a la superficie"
+            },
+            {
+              "name": "Destino",
+              "type": "string",
+              "value": "plato"
+            },
+            {
+              "name": "DestinoSuperficie",
+              "type": "boolean",
+              "value": true
             }
           ],
           "effects": [],
@@ -14094,6 +14565,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -14185,6 +14710,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -14971,6 +15499,27 @@
           "locked": false,
           "persistentUuid": "23996a09-cc8c-4b2f-a7ae-fa5718120a61",
           "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-earth",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
           "stringProperties": [],
           "initialVariables": []
         }
@@ -17306,6 +17855,60 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -17424,6 +18027,9 @@
           },
           {
             "objectName": "Sobrevuelo_heidegger"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -18455,6 +19061,27 @@
           "locked": false,
           "persistentUuid": "13800eb0-e6cf-4470-b911-2a06fda47334",
           "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-plato",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
           "stringProperties": [],
           "initialVariables": []
         }
@@ -21856,6 +22483,60 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -22016,6 +22697,9 @@
           },
           {
             "objectName": "Sobrevuelo_heidegger"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -22240,6 +22924,11 @@
           "name": "LamparaFlag",
           "type": "string",
           "value": "lampara_encendida"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "plato"
         }
       ],
       "instances": [
@@ -22731,6 +23420,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-plato__entrada",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -25036,6 +25746,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -25145,6 +25909,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -25369,6 +26136,11 @@
           "name": "LamparaFlag",
           "type": "string",
           "value": "lampara_encendida"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "plato"
         }
       ],
       "instances": [
@@ -25962,6 +26734,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-plato__prisioneros",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -28716,6 +29509,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -28843,6 +29690,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -29067,6 +29917,11 @@
           "name": "Combate",
           "type": "boolean",
           "value": true
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "plato"
         }
       ],
       "instances": [
@@ -29643,6 +30498,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-plato__fuego",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -32229,6 +33105,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -32350,6 +33280,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -32574,6 +33507,11 @@
           "name": "LamparaFlag",
           "type": "string",
           "value": "lampara_encendida"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "plato"
         }
       ],
       "instances": [
@@ -33184,6 +34122,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-plato__ascenso",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -35837,6 +36796,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -35967,6 +36980,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -36191,6 +37207,11 @@
           "name": "LamparaFlag",
           "type": "string",
           "value": "lampara_encendida"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "plato"
         }
       ],
       "instances": [
@@ -36716,6 +37737,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-plato__salida",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -39164,6 +40206,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -39279,6 +40375,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -39503,6 +40602,11 @@
           "name": "LamparaFlag",
           "type": "string",
           "value": "lampara_encendida"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "plato"
         }
       ],
       "instances": [
@@ -39960,6 +41064,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-plato__agora",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -42102,6 +43227,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -42205,6 +43384,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -43049,6 +44231,27 @@
           "locked": false,
           "persistentUuid": "728a3fdd-42ff-4388-af3c-64e51fa07974",
           "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-sartre",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
           "stringProperties": [],
           "initialVariables": []
         }
@@ -45636,6 +46839,60 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -45763,6 +47020,9 @@
           },
           {
             "objectName": "Sobrevuelo_heidegger"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -45987,6 +47247,11 @@
           "name": "LamparaFlag",
           "type": "string",
           "value": "lampara_encendida"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "sartre"
         }
       ],
       "instances": [
@@ -46478,6 +47743,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-sartre__cafe",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -48758,6 +50044,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -48867,6 +50207,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -49091,6 +50434,11 @@
           "name": "LamparaFlag",
           "type": "string",
           "value": "lampara_encendida"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "sartre"
         }
       ],
       "instances": [
@@ -49548,6 +50896,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-sartre__choice-room",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -51690,6 +53059,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -51793,6 +53216,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -52620,6 +54046,27 @@
           "locked": false,
           "persistentUuid": "85487a7f-6f69-491d-91f7-66fbb125e616",
           "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-camus",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
           "stringProperties": [],
           "initialVariables": []
         }
@@ -55123,6 +56570,60 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -55247,6 +56748,9 @@
           },
           {
             "objectName": "Sobrevuelo_heidegger"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -55471,6 +56975,11 @@
           "name": "LamparaFlag",
           "type": "string",
           "value": "lampara_encendida"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "camus"
         }
       ],
       "instances": [
@@ -55928,6 +57437,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-camus__mountain",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -58070,6 +59600,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -58173,6 +59757,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -59000,6 +60587,27 @@
           "locked": false,
           "persistentUuid": "3adcf7a1-1e9b-4339-84a3-710e1131a684",
           "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-hegel",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
           "stringProperties": [],
           "initialVariables": []
         }
@@ -61503,6 +63111,60 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -61627,6 +63289,9 @@
           },
           {
             "objectName": "Sobrevuelo_heidegger"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -61851,6 +63516,11 @@
           "name": "LamparaFlag",
           "type": "string",
           "value": "lampara_encendida"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "hegel"
         }
       ],
       "instances": [
@@ -62342,6 +64012,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-hegel__transformation",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -64582,6 +66273,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -64691,6 +66436,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -65518,6 +67266,27 @@
           "locked": false,
           "persistentUuid": "ca35c679-33bf-40d6-ba91-6e3dd7037a73",
           "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-kant",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
           "stringProperties": [],
           "initialVariables": []
         }
@@ -68021,6 +69790,60 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -68145,6 +69968,9 @@
           },
           {
             "objectName": "Sobrevuelo_heidegger"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -68369,6 +70195,11 @@
           "name": "LamparaFlag",
           "type": "string",
           "value": "lampara_encendida"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "kant"
         }
       ],
       "instances": [
@@ -68860,6 +70691,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-kant__study",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -71155,6 +73007,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -71264,6 +73170,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -71488,6 +73397,11 @@
           "name": "LamparaFlag",
           "type": "string",
           "value": "lampara_encendida"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "kant"
         }
       ],
       "instances": [
@@ -71928,6 +73842,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-kant__morality-room",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -74001,6 +75936,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -74101,6 +76090,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -74928,6 +76920,27 @@
           "locked": false,
           "persistentUuid": "f8166aa5-caa5-4783-926c-9d45c8544f54",
           "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-heidegger",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
           "stringProperties": [],
           "initialVariables": []
         }
@@ -77431,6 +79444,60 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -77555,6 +79622,9 @@
           },
           {
             "objectName": "Sobrevuelo_heidegger"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -77779,6 +79849,11 @@
           "name": "LamparaFlag",
           "type": "string",
           "value": "lampara_encendida"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "heidegger"
         }
       ],
       "instances": [
@@ -78253,6 +80328,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-heidegger__path",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -80479,6 +82575,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -80585,6 +82735,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -80809,6 +82962,11 @@
           "name": "LamparaFlag",
           "type": "string",
           "value": "lampara_encendida"
+        },
+        {
+          "name": "RegresoSinHistorial",
+          "type": "string",
+          "value": "heidegger"
         }
       ],
       "instances": [
@@ -81249,6 +83407,27 @@
           "width": 185,
           "x": 905,
           "y": 600,
+          "zOrder": 20,
+          "numberProperties": [
+            {
+              "name": "animation",
+              "value": 0
+            }
+          ],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 38,
+          "layer": "UI",
+          "name": "VolverSuperficiePrueba",
+          "persistentUuid": "preview-return-heidegger__time-room",
+          "width": 205,
+          "x": 1060,
+          "y": 82,
           "zOrder": 20,
           "numberProperties": [
             {
@@ -83322,6 +85501,60 @@
             "lineHeight": 0,
             "color": "244;231;205"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "VolverSuperficiePrueba",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "name": "Tipo",
+              "type": "string",
+              "value": "boton"
+            },
+            {
+              "name": "Accion",
+              "type": "string",
+              "value": "superficiePrueba"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑ Planeta · prueba",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "b": 205,
+            "g": 231,
+            "r": 244
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 0,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑ Planeta · prueba",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -83422,6 +85655,9 @@
           },
           {
             "objectName": "Agacharse"
+          },
+          {
+            "objectName": "VolverSuperficiePrueba"
           }
         ]
       },
@@ -83680,7 +85916,7 @@
         },
         {
           "type": "BuiltinCommonInstructions::JsCode",
-          "inlineCode": "// Shared engine event. Content is authored in native scenes, variables and Yarn.\nif (!runtimeScene.__sofiaKit) {\n const game=runtimeScene.getGame(),sv=runtimeScene.getVariables(),scene=runtimeScene.getName();\n const value=(o,k,f='')=>{const v=o.getVariables();return v.has(k)?v.get(k).toJSObject():f};\n const cfg=(k,f)=>sv.has(k)?sv.get(k).toJSObject():f;\n const all=()=>runtimeScene.getAdhocListOfAllInstances();\n const role=o=>String(value(o,'Tipo',''));\n const actors=all().filter(o=>role(o));\n const hero=actors.find(o=>role(o)==='jugador');if(!hero)throw Error('Esta habitación necesita una instancia con Tipo=jugador.');\n const ui=Object.fromEntries(['Title','Help','Message','Speaker','Bubble','Choice1','Choice2','Status'].map(n=>[n,runtimeScene.getObjects(n)[0]]));\n const KEY='sofia-gdevelop-autonomia-v1';\n if(!game.__sofiaKitState){\n  let raw;try{raw=JSON.parse(localStorage.getItem(KEY)||'null')}catch{}\n  game.__sofiaKitState=raw?.version===1&&raw.flags&&raw.items?raw:{version:1,flags:{},items:{},removed:[],enemies:{},hp:null,checkpoint:null,last:null};\n }\n const state=game.__sofiaKitState;\n const history=game.getVariables().get('Historia');\n if(!game.__sofiaKitHistory){state.flags={...(history.toJSObject()||{}),...state.flags};history.fromJSObject(state.flags);game.__sofiaKitHistory=true}\n const id=o=>scene+':'+String(value(o,'Id','')||o.persistentUuid||o.getName()+':'+actors.indexOf(o));\n const flags=StringList=>String(StringList||'').split(',').map(s=>s.trim()).filter(Boolean);\n const flag=f=>f==='equipment:lamp:on'?!!state.flags.luz:!!state.flags[f];\n const meets=rule=>flags(rule).every(f=>f.startsWith('!')?!flag(f.slice(1)):flag(f));\n const health=o=>o.hasBehavior('Salud')?o.getBehavior('Salud'):null;\n const hp=o=>health(o)?.Health()??0;\n const give=rule=>{for(const f of flags(rule)){state.flags[f]=true;history.getChild(f).setBoolean(true)}};\n const d=runtimeScene.__sofiaKit={scene,state,hero,actors,ui,x:hero.getX(),y:hero.getY(),vy:0,destination:null,pending:null,dialogue:false,question:false,options:[],selected:-1,time:0,dead:false,changing:false,ready:false,bullets:[],lastShot:-100,shoots:new Map(),noticeUntil:0,blocked:'',speaker:null,menu:false};\n globalThis.__sofiaKit=d;\n const maxHp=health(hero)?.MaxHealth()||5;\n if(state.hp!==null)health(hero)?.SetCurrentHealth(Math.max(1,Math.min(maxHp,state.hp)));\n if(game.__sofiaKitArrival?.scene===scene){d.x=game.__sofiaKitArrival.x;hero.setPosition(d.x,d.y);hero.flipX(game.__sofiaKitArrival.facing<0);game.__sofiaKitArrival=null}\n if(!state.checkpoint)state.checkpoint={scene,x:d.x};\n d.checkpoint={scene,x:d.x};\n for(const o of actors){\n  const r=role(o);if(['suelo','obstaculo','paso'].includes(r))o.hide(true);\n  if(['escalera','zona','evento'].includes(r))o.setOpacity(0);\n  if(r==='enemigo'&&state.enemies[id(o)]!==undefined)health(o)?.SetCurrentHealth(state.enemies[id(o)]);\n  if(r==='enemigo'&&hp(o)<=0)o.hide(true);\n  if(state.removed.includes(id(o)))o.hide(true);\n }\n hero.setZOrder(100);\n const show=(name,on)=>ui[name]?.hide(!on);\n const text=(name,s)=>ui[name]?.setString(String(s));\n const choices=[ui.Choice1,ui.Choice2];\n const save=()=>{state.hp=Math.max(1,hp(hero));state.last={scene,x:d.universe?.savedX()??d.x};try{localStorage.setItem(KEY,JSON.stringify(state));return true}catch{notice('No se pudo guardar en este navegador.');return false}};\n const notice=s=>{text('Status',s);show('Status',true);d.noticeUntil=d.time+2.8};\n d.save=save;d.notice=notice;\n const targets=()=>actors.filter(o=>['npc','companero','objeto','portal','checkpoint','enemigo','zona','entrada','nave'].includes(role(o))&&!o.isHidden()&&!state.removed.includes(id(o)));\n const rect=o=>({x:o.getDrawableX(),y:o.getDrawableY(),w:o.getWidth(),h:o.getHeight()});\n const inside=(p,o)=>{const b=rect(o);return p.x>=b.x&&p.x<=b.x+b.w&&p.y>=b.y&&p.y<=b.y+b.h};\n const available=o=>(!value(o,'OcultarSi')||!meets(value(o,'OcultarSi')))&&(!value(o,'VisibleSi')||meets(value(o,'VisibleSi')));\n const validScene=target=>game.getGameData().layouts.some(l=>l.name===target);\n const travel=(target,x,facing=1)=>{\n  if(d.changing)return;if(!validScene(target)){notice('No existe la escena: '+target);return}\n  if(!Number.isFinite(x))x=120;save();d.changing=true;game.__sofiaKitArrival={scene:target,x,facing};\n  gdjs.dialogueTree.stopRunningDialogue();gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,target,false);\n };\n d.travel=travel;\n const uiRefresh=()=>{\n  text('Title',cfg('Titulo',scene)+' · Vida '+Math.max(0,hp(hero))+'/'+maxHp);\n  for(const o of actors){const r=role(o);if(['npc','companero','objeto','portal','checkpoint','enemigo'].includes(r))o.hide(!available(o)||state.removed.includes(id(o))||(r==='enemigo'&&hp(o)<=0)||(r==='companero'&&!meets(value(o,'Requiere'))))}\n };\n const dialogUI=()=>{\n  for(const n of ['Bubble','Speaker','Message'])show(n,d.dialogue||d.menu);\n  for(const c of choices)c.hide(true);\n  if(!d.dialogue)return;\n  const anchor=d.speaker??hero;\n  const offset=runtimeScene.getLayer('').getCameraX()-640;\n  const x=d.question?270:Math.max(15,Math.min(805,anchor.getX()-offset-220)),y=d.question?110:Math.max(85,Math.min(350,anchor.getY()-330));\n  ui.Bubble.setPosition(x,y);ui.Bubble.setWidth(460);ui.Bubble.setHeight(d.question?Math.max(245,145+d.options.length*44):180);\n  ui.Speaker.setPosition(x+18,y+10);ui.Message.setPosition(x+18,y+46);ui.Message.setWidth(420);\n  if(d.question)for(let i=0;i<d.options.length;i++){\n   if(!choices[i]){const o=runtimeScene.createObject('Choice1');o.setLayer('UI');choices.push(o)}\n   choices[i].hide(false);choices[i].setPosition(x+18,y+115+i*44);choices[i].setString((d.selected===i?'▶ ':'› ')+d.options[i]);\n  }\n };\n const syncYarn=()=>{\n  const variable=new gdjs.Variable();gdjs.dialogueTree.saveState(variable);\n  for(const [key,v] of Object.entries(variable.toJSObject()?.variables??{}))if(!['__proto__','constructor','prototype'].includes(key)){state.flags[key]=v;history.getChild(key).fromJSObject(v)}\n  save();uiRefresh();\n };\n const read=()=>{\n  syncYarn();d.selected=-1;\n  if(!gdjs.dialogueTree.isRunning()){give(value(d.talking,'Otorga'));save();d.dialogue=false;d.question=false;d.enterAfter=d.time+.2;dialogUI();const done=d.afterTalk;d.afterTalk=null;done?.();return}\n  d.question=gdjs.dialogueTree.isDialogueLineType('options');\n  if(d.question&&gdjs.dialogueTree.getLineOptionsCount()===1){gdjs.dialogueTree.selectOption(0);gdjs.dialogueTree.hasSelectedOptionChanged();gdjs.dialogueTree.confirmSelectOption();read();return}\n  if(!d.question){const raw=gdjs.dialogueTree.getLineText(),i=raw.indexOf(':');text('Speaker',i<0?'':raw.slice(0,i));text('Message',i<0?raw:raw.slice(i+1).trim());\n   d.speaker=i>=0&&raw.slice(0,i)==='Sofía'?hero:d.talking;\n   if(gdjs.dialogueTree.branchContainsTag('decision')){gdjs.dialogueTree.goToNextDialogueLine();d.question=gdjs.dialogueTree.isDialogueLineType('options')}\n  }\n  if(d.question)d.options=Array.from({length:gdjs.dialogueTree.getLineOptionsCount()},(_,i)=>String(gdjs.dialogueTree.getLineOption(i)));\n  dialogUI();\n };\n const talk=(node,o)=>{\n  if(!d.ready){notice('Las conversaciones se están cargando.');return}\n  if(!gdjs.dialogueTree.hasDialogueBranch(node)){notice('No existe el nodo Yarn: '+node);return}\n  d.destination=null;d.pending=null;d.talking=o;d.speaker=o;d.dialogue=true;if(d.universe)d.universe.face(o);else{hero.flipX(o.getX()<d.x);o.flipX(d.x<o.getX());}\n  for(const [key,v] of Object.entries(state.flags))gdjs.dialogueTree.setVariable(key,v);\n  gdjs.dialogueTree.startFrom(node);read();\n };\n const advance=()=>{if(d.menu){d.menu=false;dialogUI();return}if(d.dialogue&&!d.question){gdjs.dialogueTree.goToNextDialogueLine();read()}};\n const answer=i=>{if(!d.question||i<0||i>=d.options.length)return;gdjs.dialogueTree.selectOption(i);gdjs.dialogueTree.hasSelectedOptionChanged();gdjs.dialogueTree.confirmSelectOption();read()};\n const shoot=(owner,isHero)=>{\n  const now=d.time,interval=isHero?Number(cfg('IntervaloAtaque',.35)):Number(value(owner,'Intervalo',1.8));\n  if(now-(isHero?d.lastShot:d.shoots.get(owner)??-100)<interval)return;\n  if(isHero)d.lastShot=now;else d.shoots.set(owner,now);\n  const o=runtimeScene.createObject('Pulso');o.setPosition(owner.getX()+(isHero?(hero.isFlippedX()?-25:25):0),owner.getY()-(isHero?(d.crouching?35:65):100));o.setWidth(30);o.setHeight(18);o.setZOrder(105);\n  if(!isHero)o.setColor('255;135;110');\n  const direction=isHero?(hero.isFlippedX()?-1:1):Math.sign(d.x-owner.getX())||1;\n  d.bullets.push({o,hero:isHero,vx:direction*(isHero?Number(cfg('VelocidadDisparo',620)):Number(value(owner,'VelocidadDisparo',180))),damage:Number(isHero?cfg('Danio',1):value(owner,'Danio',1)),life:3});\n };\n const attack=()=>{if(!cfg('Combate',false)||d.dialogue||d.menu||d.dead)return;d.attackUntil=d.time+.18;shoot(hero,true)};\n const execute=(actions,o)=>{\n  if(!actions?.length)return;\n  const [a,...rest]=actions;if(!meets([...(a.requires||[]),...(a.excludes||[]).map(f=>'!'+f)].join(','))){execute(rest,o);return}\n  if(a.reward?.flags)give(a.reward.flags.join(','));\n  if(a.type==='talk'){d.afterTalk=()=>execute(rest,o);const variant=a.variants?.find(v=>meets([...(v.requires||[]),...(v.excludes||[]).map(f=>'!'+f)].join(',')));talk(variant?.target||a.target,o);return}\n  if(a.type==='enter'){(state.doors??=[]).push({scene,x:d.x});travel(a.target,120);return}\n  if(a.type==='return'){const previous=state.doors?.pop();if(previous){travel(previous.scene,previous.x);return}}\n  if(a.type==='surface'){travel(String(cfg('Superficie','plato')),Number(state.surfaceAngles?.[cfg('Superficie','plato')]??-8));return}\n  if(a.type==='portal'){travel(a.target,-8);return}\n  if(a.type==='equipment'){const on=a.command==='turnOn';history.getChild('luz').setBoolean(on);state.flags.luz=on;}\n  if(a.type==='collect'){state.items[id(o)]={name:value(o,'Nombre',o.getName()),description:a.text||''};if(!state.removed.includes(id(o)))state.removed.push(id(o));o.hide(true);}\n  if(a.type==='activity'){notice('Actividad pendiente de integrar: '+a.target);return}\n  if(a.text)notice(a.text);save();execute(rest,o);\n };\n const interact=o=>{\n  if(!available(o)||!meets(value(o,'Requiere'))){notice(value(o,'Bloqueo','Este acceso todavía está bloqueado.'));return}\n  const r=role(o),node=String(value(o,'Dialogo'));\n  if(r==='nave'){d.universe?.board(o);return}\n  if(value(o,'Destino')&&r!=='paso'){\n   const target=String(value(o,'Destino'));(state.doors??=[]).push({scene,x:d.universe?.savedX()??d.x});travel(target,value(o,'DestinoSuperficie',false)?Number(state.surfaceAngles?.[target]??-8):Number(value(o,'LlegadaX',120)));return;\n  }\n  if(value(o,'Acciones')){try{execute(JSON.parse(value(o,'Acciones')),o)}catch(e){notice('Revisa Acciones: '+e.message)}return}\n  if(r==='npc'||r==='companero'){let branch=node;try{const variant=JSON.parse(value(o,'VariantesDialogo','[]')).find(v=>meets([...(v.requires||[]),...(v.excludes||[]).map(f=>'!'+f)].join(',')));branch=variant?.target||branch}catch{}if(branch)talk(branch,o);else notice('Asigna un nodo en la variable Dialogo.');return}\n  if(r==='portal'){travel(String(value(o,'Destino')),Number(value(o,'LlegadaX',120)));return}\n  if(r==='checkpoint'){state.checkpoint={scene,x:o.getX()};save();notice('Punto de retorno guardado.');return}\n  if(r==='enemigo'){attack();return}\n  if(r==='objeto'){\n   give(value(o,'Otorga'));state.items[id(o)]={name:String(value(o,'Nombre',o.getName())),description:String(value(o,'Descripcion','Objeto recogido.'))};\n   if(value(o,'UnaVez',true))state.removed.push(id(o));o.hide(true);save();uiRefresh();notice('Recogido: '+value(o,'Nombre',o.getName()));if(node)talk(node,o);\n  }\n };\n const inventory=()=>{\n  if(d.dialogue||d.dead)return;d.destination=null;d.pending=null;d.menu=true;\n  ui.Bubble.setPosition(270,110);ui.Bubble.setWidth(600);ui.Bubble.setHeight(360);ui.Speaker.setPosition(290,125);ui.Message.setPosition(290,165);ui.Message.setWidth(550);\n  text('Speaker','Inventario · Enter o toque para cerrar');text('Message',Object.values(state.items).map(i=>i.name+' — '+i.description).join('\\n\\n')||'Todavía no has recogido objetos.');dialogUI();\n };\n const retry=()=>{health(hero)?.SetCurrentHealth(maxHp);state.hp=maxHp;for(const o of actors.filter(o=>role(o)==='enemigo'&&hp(o)>0))delete state.enemies[id(o)];const c=state.checkpoint??d.checkpoint;travel(c.scene,c.x)};\n const action=a=>{\n  if(a==='vista'){d.universe?.view();return}if(a==='agacharse'){d.crouchToggle=!d.crouchToggle;d.destination=null;return}\n  if(a==='atacar')attack();if(a==='inventario')inventory();if(a==='guardar'&&save())notice('Partida de la plantilla guardada.');\n  if(a==='cargar'){const last=state.last;if(last)travel(last.scene,last.x);else notice('Todavía no hay un guardado.');}\n  if(a==='reintentar'&&d.dead)retry();\n  if(a==='reiniciar'&&confirm('¿Borrar únicamente el progreso de esta plantilla de GDevelop?')){localStorage.removeItem(KEY);game.__sofiaKitState=null;game.__sofiaKitHistory=false;history.fromJSObject({});d.changing=true;gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,String(cfg('Inicio','inicio')),false)}\n };\n const pointClick=(p,up=p)=>{\n  if(d.dead){retry();return}\n  if(d.dialogue||d.menu){if(d.question){for(let i=0;i<choices.length;i++)if(!choices[i].isHidden()&&inside(up,choices[i])){answer(i);break}}else advance();return}\n  const button=actors.find(o=>role(o)==='boton'&&!o.isHidden()&&inside(up,o));if(button){action(String(value(button,'Accion')));return}\n  if(d.universe?.click(p))return;\n  const o=targets().reverse().find(o=>inside(p,o));d.pending=o??null;d.destination=o?o.getX():Math.max(30,Math.min(Number(cfg('Ancho',1280))-30,p.x));\n };\n const keyHandler=e=>{\n  if(e.repeat||e.ctrlKey||e.altKey||e.metaKey||e.isComposing||e.target?.closest?.('input,textarea,select,[contenteditable=\"true\"]'))return;\n  if(['Enter','NumpadEnter','Space','KeyF','KeyR','KeyI','KeyL'].includes(e.code)||(e.code==='Tab'&&globalThis.__sofiaKit?.question)){e.preventDefault();game.__sofiaKitKeys.push(e.code)}\n };\n if(!game.__sofiaKitKeys){game.__sofiaKitKeys=[];window.addEventListener('keydown',keyHandler)}\n const lamp=new PIXI.Graphics();runtimeScene.getLayer('').getRenderer().addRendererObject(lamp,9000);\n const json=String(cfg('ArchivoDialogos','dialogues/historias.yarn.json'));\n game.getJsonManager().loadJson(json,(error,content)=>{if(error){notice('No se pudo cargar '+json);return}try{const variable=new gdjs.Variable();variable.setString(JSON.stringify(content));gdjs.dialogueTree.loadFromSceneVariable(variable,'');d.ready=true}catch(e){notice('Revisa el archivo Yarn: '+String(e))}});\n d.universe=game.__sofiaUniverse?.({runtimeScene,game,sv,scene,d,hero,actors,role,value,cfg,state,targets,inside,meets,interact,travel,notice,save});\n for(const o of actors.filter(o=>role(o)==='arma'||role(o)==='boton'&&['atacar','agacharse'].includes(value(o,'Accion'))))o.hide(!cfg('Combate',false));\n text('Help',cfg('Ayuda','Toca para caminar · A/D · Espacio: salto · F: pulso · Enter: hablar · I: inventario'));uiRefresh();dialogUI();show('Status',false);\n d.step=()=>{\n  if(d.changing)return;const dt=Math.min(.05,runtimeScene.getElapsedTime()/1000);d.time+=dt;state.flags=history.toJSObject()||{};\n  const signature=JSON.stringify(state.flags);if(signature!==d.flagSignature){d.flagSignature=signature;try{for(const rule of JSON.parse(cfg('ReglasProgreso','[]')))if(meets(rule.requires.join(',')))give(rule.flags.join(','))}catch{}uiRefresh()}\n  const input=game.getInputManager(),key=game.__sofiaKitKeys.shift();\n  if(d.universe?.busy()){d.universe.step(dt,input);return}\n  if(key==='Enter'||key==='NumpadEnter'){\n   if(d.dead)retry();else if(d.menu)advance();else if(d.question){if(d.selected>=0)answer(d.selected)}else if(d.dialogue)advance();\n   else if(d.time>(d.enterAfter??0)){const distance=o=>d.universe?d.universe.distance(o):Math.abs(o.getX()-d.x);const near=targets().filter(o=>distance(o)<130).sort((a,b)=>distance(a)-distance(b))[0];if(near)interact(near)}\n  }\n  if(key==='Tab'&&d.question){d.selected=(d.selected+1)%d.options.length;dialogUI()}\n  if(key==='KeyF')attack();if(key==='KeyI')inventory();if(key==='KeyR'&&d.dead)retry();\n  if(key==='KeyL'&&state.flags.linterna){state.flags.luz=!state.flags.luz;history.getChild('luz').setBoolean(state.flags.luz);save();notice(state.flags.luz?'Linterna encendida':'Linterna apagada')}\n  if(input.isMouseButtonReleased(0))pointClick({x:gdjs.evtTools.input.getCursorX(runtimeScene,'',0),y:gdjs.evtTools.input.getCursorY(runtimeScene,'',0)},{x:gdjs.evtTools.input.getCursorX(runtimeScene,'UI',0),y:gdjs.evtTools.input.getCursorY(runtimeScene,'UI',0)});\n  if(d.universe){d.universe.step(dt,input);return}\n  if(Number(cfg('Ancho',1280))>1280)runtimeScene.getLayer('').setCameraX(Math.max(640,Math.min(Number(cfg('Ancho',1280))-640,d.x)));\n  if(!d.dialogue&&!d.menu&&!d.dead)for(const event of actors.filter(o=>role(o)==='evento')){const b=rect(event);if(d.x>=b.x&&d.x<=b.x+b.w&&meets(value(event,'Requiere'))&&!(state.events||[]).includes(id(event))){(state.events??=[]).push(id(event));try{execute(JSON.parse(value(event,'Acciones','[]')),event)}catch(e){notice(e.message)}save();break}}\n  d.crouching=!d.dialogue&&!d.menu&&(d.crouchToggle||input.isKeyPressed(40)||input.isKeyPressed(83));\n  let axis=0;\n  if(!d.dialogue&&!d.menu&&!d.dead){\n   axis=Number(input.isKeyPressed(39)||input.isKeyPressed(68))-Number(input.isKeyPressed(37)||input.isKeyPressed(65));if(axis){d.destination=null;d.pending=null}\n   if(d.pending&&Math.abs(d.x-d.pending.getX())<(role(d.pending)==='enemigo'?260:100)){const o=d.pending;d.pending=null;d.destination=null;interact(o)}\n   if(!axis&&d.destination!==null){const diff=d.destination-d.x;if(Math.abs(diff)<4)d.destination=null;else axis=Math.sign(diff)}\n   if(key==='Space'&&cfg('PermitirSalto',true)&&d.grounded)d.vy=-420;\n   if(d.crouching)axis=0;\n   let next=Math.max(25,Math.min(Number(cfg('Ancho',1280))-25,d.x+axis*Number(cfg('Velocidad',240))*dt));\n   for(const o of actors.filter(o=>(role(o)==='obstaculo'||role(o)==='npc'&&value(o,'Solido',false))&&!o.isHidden())){const b=rect(o),margin=role(o)==='npc'?24:18;if(next+margin>b.x&&next-margin<b.x+b.w&&d.y>b.y+8&&d.y-130<b.y+b.h&&Math.abs(next-o.getX())<Math.abs(d.x-o.getX())){next=d.x;d.destination=null;axis=0}}\n   const oldX=d.x;d.x=next;const previousY=d.y;d.vy+=950*dt;d.y+=d.vy*dt;d.grounded=false;\n   for(const o of actors.filter(o=>role(o)==='escalera')){const b=rect(o),surface=x=>b.y+b.h-(x-b.x)/b.w*b.h,oldSurface=surface(oldX);if(d.x>=b.x-3&&d.x<=b.x+b.w+3&&Math.abs(previousY-oldSurface)<45&&d.vy>=0){d.y=surface(d.x);d.vy=0;d.grounded=true}}\n   for(const o of actors.filter(o=>role(o)==='suelo')){const b=rect(o);if(d.x>=b.x&&d.x<=b.x+b.w&&d.vy>=0&&previousY<=b.y+5&&d.y>=b.y){d.y=b.y;d.vy=0;d.grounded=true}}\n   if(d.y>800){health(hero)?.Hit(maxHp,false,false);}\n   if(axis)hero.flipX(axis<0);hero.setPosition(d.x,d.y);\n   for(const o of actors.filter(o=>role(o)==='paso')){const b=rect(o),direction=Number(value(o,'Direccion',1));if(axis*direction<=0||d.x<b.x||d.x>b.x+b.w||d.y<b.y||d.y>b.y+b.h)continue;\n    if(!meets(value(o,'Requiere'))){d.x-=axis*5;hero.setX(d.x);d.destination=null;axis=0;if(d.blocked!==id(o)){notice(value(o,'Bloqueo','Completa el requisito para continuar.'));d.blocked=id(o)}break}\n    travel(String(value(o,'Destino')),Number(value(o,'LlegadaX',120)),direction);return;\n   }\n   if(!actors.some(o=>role(o)==='paso'&&Math.abs(o.getX()-d.x)<120))d.blocked='';\n  }\n  hero.setAnimationName(d.crouching?'Crouch':axis?'Walk':'Idle');\n  for(const o of actors.filter(o=>role(o)==='companero'&&!o.isHidden())){const goal=d.x+(hero.isFlippedX()?90:-90),diff=goal-o.getX();if(!d.dialogue&&Math.abs(diff)>5)o.setX(o.getX()+Math.sign(diff)*Math.min(Math.abs(diff),Number(cfg('Velocidad',240))*dt));o.flipX(hero.isFlippedX());let ground=d.y;for(const f of actors.filter(f=>['suelo','escalera'].includes(role(f)))){const b=rect(f);if(o.getX()>=b.x&&o.getX()<=b.x+b.w){ground=role(f)==='escalera'?b.y+b.h-(o.getX()-b.x)/b.w*b.h:b.y;break}}o.setY(ground)}\n  const weapon=actors.find(o=>role(o)==='arma');if(weapon){weapon.hide(!cfg('Combate',false));weapon.setPosition(d.x+(hero.isFlippedX()?-25:25),d.y-(d.crouching?35:65));weapon.flipX(hero.isFlippedX());weapon.setOpacity(d.attackUntil>d.time?255:190)}\n  if(!d.dialogue&&!d.menu&&!d.dead&&cfg('Combate',false)){\n   for(const o of actors.filter(o=>role(o)==='enemigo'&&!o.isHidden()&&meets(value(o,'Requiere')))){\n    const speed=Number(value(o,'Velocidad',30)),lo=Number(value(o,'MinX',o.getX()-80)),hi=Number(value(o,'MaxX',o.getX()+80));\n    o.__direction??=-1;if(o.getX()<=lo)o.__direction=1;if(o.getX()>=hi)o.__direction=-1;o.setX(Math.max(lo,Math.min(hi,o.getX()+o.__direction*speed*dt)));o.flipX(d.x<o.getX());\n    if(Math.abs(o.getX()-d.x)<Number(value(o,'Alcance',650)))shoot(o,false);\n    if(Math.abs(o.getX()-d.x)<40&&Math.abs(o.getY()-d.y)<100)health(hero)?.Hit(Number(value(o,'Danio',1)),false,false);\n   }\n   for(const bullet of d.bullets){bullet.life-=dt;bullet.o.setX(bullet.o.getX()+bullet.vx*dt);const victims=bullet.hero?actors.filter(o=>role(o)==='enemigo'&&!o.isHidden()):[hero];\n    for(const obstacle of actors.filter(o=>role(o)==='obstaculo'))if(inside({x:bullet.o.getX(),y:bullet.o.getY()},obstacle))bullet.life=0;\n    if(bullet.life<=0)continue;\n    for(const o of victims)if(Math.abs(bullet.o.getX()-o.getX())<38&&bullet.o.getY()>o.getY()-(o===hero&&d.crouching?64:145)&&bullet.o.getY()<o.getY()){\n     const before=hp(o);health(o)?.Hit(bullet.damage,false,false);bullet.life=0;\n     if(hp(o)<before){o.__hitUntil=d.time+.24;notice((o===hero?'Sofía':value(o,'Nombre','Enemigo'))+' −'+(before-hp(o))+' · Vida '+Math.max(0,hp(o)));}\n     if(o!==hero){state.enemies[id(o)]=hp(o);if(hp(o)<=0){give(value(o,'Otorga'));o.hide(true);notice('Encuentro superado.');save();uiRefresh()}}break;\n    }\n   }\n   for(const b of d.bullets.filter(b=>b.life<=0))b.o.deleteFromScene(runtimeScene);d.bullets=d.bullets.filter(b=>b.life>0);\n  }\n  for(const o of actors.filter(o=>['enemigo','jugador'].includes(role(o)))){o.setColor(o.__hitUntil>d.time?'255;95;95':'255;255;255');o.setOpacity(o.__hitUntil>d.time?160:255)}\n  if(hp(hero)<=0&&!d.dead){d.dead=true;d.destination=null;d.pending=null;d.bullets.forEach(b=>b.o.hide());notice('Sin energía · Enter, R o toca para reintentar desde el punto de retorno.');d.noticeUntil=Infinity;}\n  if(!d.dead)state.hp=hp(hero);text('Title',cfg('Titulo',scene)+' · Vida '+Math.max(0,hp(hero))+'/'+maxHp);\n  if(d.noticeUntil&&d.time>d.noticeUntil){show('Status',false);d.noticeUntil=0}\n  lamp.clear();const dark=Number(cfg('Oscuridad',0));if(dark>0){lamp.beginFill(0x030511,dark).drawRect(-300,-300,1880,1320);if(state.flags.luz)lamp.beginHole().drawCircle(d.x,d.y-65,235).endHole();lamp.endFill()}\n  if(cfg('Combate',false))for(const o of actors.filter(o=>role(o)==='enemigo'&&!o.isHidden())){const width=72,x=o.getX()-width/2,y=o.getY()-170;lamp.beginFill(0x171729,.9).drawRoundedRect(x,y,width,9,3).endFill();lamp.beginFill(0xe3ad65,1).drawRoundedRect(x,y,width*Math.max(0,hp(o))/(health(o)?.MaxHealth()||1),9,3).endFill()}\n  for(const o of actors.filter(o=>role(o)==='boton'&&['atacar','agacharse'].includes(value(o,'Accion'))))o.hide(!cfg('Combate',false));\n };\n}\nruntimeScene.__sofiaKit.step();\n",
+          "inlineCode": "// Shared engine event. Content is authored in native scenes, variables and Yarn.\nif (!runtimeScene.__sofiaKit) {\n const game=runtimeScene.getGame(),sv=runtimeScene.getVariables(),scene=runtimeScene.getName();\n const value=(o,k,f='')=>{const v=o.getVariables();return v.has(k)?v.get(k).toJSObject():f};\n const cfg=(k,f)=>sv.has(k)?sv.get(k).toJSObject():f;\n const all=()=>runtimeScene.getAdhocListOfAllInstances();\n const role=o=>String(value(o,'Tipo',''));\n const actors=all().filter(o=>role(o));\n const hero=actors.find(o=>role(o)==='jugador');if(!hero)throw Error('Esta habitación necesita una instancia con Tipo=jugador.');\n const ui=Object.fromEntries(['Title','Help','Message','Speaker','Bubble','Choice1','Choice2','Status'].map(n=>[n,runtimeScene.getObjects(n)[0]]));\n const KEY='sofia-gdevelop-autonomia-v1';\n if(!game.__sofiaKitState){\n  let raw;try{raw=JSON.parse(localStorage.getItem(KEY)||'null')}catch{}\n  game.__sofiaKitState=raw?.version===1&&raw.flags&&raw.items?raw:{version:1,flags:{},items:{},removed:[],enemies:{},hp:null,checkpoint:null,last:null};\n }\n const state=game.__sofiaKitState;\n const history=game.getVariables().get('Historia');\n if(!game.__sofiaKitHistory){state.flags={...(history.toJSObject()||{}),...state.flags};history.fromJSObject(state.flags);game.__sofiaKitHistory=true}\n const id=o=>scene+':'+String(value(o,'Id','')||o.persistentUuid||o.getName()+':'+actors.indexOf(o));\n const flags=StringList=>String(StringList||'').split(',').map(s=>s.trim()).filter(Boolean);\n const flag=f=>f==='equipment:lamp:on'?!!state.flags.luz:!!state.flags[f];\n const meets=rule=>flags(rule).every(f=>f.startsWith('!')?!flag(f.slice(1)):flag(f));\n const health=o=>o.hasBehavior('Salud')?o.getBehavior('Salud'):null;\n const hp=o=>health(o)?.Health()??0;\n const give=rule=>{for(const f of flags(rule)){state.flags[f]=true;history.getChild(f).setBoolean(true)}};\n const d=runtimeScene.__sofiaKit={scene,state,hero,actors,ui,x:hero.getX(),y:hero.getY(),vy:0,destination:null,pending:null,dialogue:false,question:false,options:[],selected:-1,time:0,dead:false,changing:false,ready:false,bullets:[],lastShot:-100,shoots:new Map(),noticeUntil:0,blocked:'',speaker:null,menu:false};\n globalThis.__sofiaKit=d;\n const maxHp=health(hero)?.MaxHealth()||5;\n if(state.hp!==null)health(hero)?.SetCurrentHealth(Math.max(1,Math.min(maxHp,state.hp)));\n if(game.__sofiaKitArrival?.scene===scene){d.x=game.__sofiaKitArrival.x;hero.setPosition(d.x,d.y);hero.flipX(game.__sofiaKitArrival.facing<0);game.__sofiaKitArrival=null}\n if(!state.checkpoint)state.checkpoint={scene,x:d.x};\n d.checkpoint={scene,x:d.x};\n for(const o of actors){\n  const r=role(o);if(['suelo','obstaculo','paso'].includes(r))o.hide(true);\n  if(['escalera','zona','evento'].includes(r))o.setOpacity(0);\n  if(r==='enemigo'&&state.enemies[id(o)]!==undefined)health(o)?.SetCurrentHealth(state.enemies[id(o)]);\n  if(r==='enemigo'&&hp(o)<=0)o.hide(true);\n  if(state.removed.includes(id(o)))o.hide(true);\n }\n hero.setZOrder(100);\n const show=(name,on)=>ui[name]?.hide(!on);\n const text=(name,s)=>ui[name]?.setString(String(s));\n const choices=[ui.Choice1,ui.Choice2];\n const save=()=>{state.hp=Math.max(1,hp(hero));state.last={scene,x:d.universe?.savedX()??d.x};try{localStorage.setItem(KEY,JSON.stringify(state));return true}catch{notice('No se pudo guardar en este navegador.');return false}};\n const notice=s=>{text('Status',s);show('Status',true);d.noticeUntil=d.time+2.8};\n d.save=save;d.notice=notice;\n const targets=()=>actors.filter(o=>['npc','companero','objeto','portal','checkpoint','enemigo','zona','entrada','nave'].includes(role(o))&&!o.isHidden()&&!state.removed.includes(id(o)));\n const rect=o=>({x:o.getDrawableX(),y:o.getDrawableY(),w:o.getWidth(),h:o.getHeight()});\n const inside=(p,o)=>{const b=rect(o);return p.x>=b.x&&p.x<=b.x+b.w&&p.y>=b.y&&p.y<=b.y+b.h};\n const available=o=>(!value(o,'OcultarSi')||!meets(value(o,'OcultarSi')))&&(!value(o,'VisibleSi')||meets(value(o,'VisibleSi')));\n const validScene=target=>game.getGameData().layouts.some(l=>l.name===target);\n const travel=(target,x,facing=1)=>{\n  if(d.changing)return;if(!validScene(target)){notice('No existe la escena: '+target);return}\n  if(!Number.isFinite(x))x=120;save();d.changing=true;game.__sofiaKitArrival={scene:target,x,facing};\n  gdjs.dialogueTree.stopRunningDialogue();gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,target,false);\n };\n d.travel=travel;\n const uiRefresh=()=>{\n  text('Title',cfg('Titulo',scene)+' · Vida '+Math.max(0,hp(hero))+'/'+maxHp);\n  for(const o of actors){const r=role(o);if(['npc','companero','objeto','portal','checkpoint','enemigo'].includes(r))o.hide(!available(o)||state.removed.includes(id(o))||(r==='enemigo'&&hp(o)<=0)||(r==='companero'&&!meets(value(o,'Requiere'))))}\n };\n const dialogUI=()=>{\n  for(const n of ['Bubble','Speaker','Message'])show(n,d.dialogue||d.menu);\n  for(const c of choices)c.hide(true);\n  if(!d.dialogue)return;\n  const anchor=d.speaker??hero;\n  const offset=runtimeScene.getLayer('').getCameraX()-640;\n  const x=d.question?270:Math.max(15,Math.min(805,anchor.getX()-offset-220)),y=d.question?110:Math.max(85,Math.min(350,anchor.getY()-330));\n  ui.Bubble.setPosition(x,y);ui.Bubble.setWidth(460);ui.Bubble.setHeight(d.question?Math.max(245,145+d.options.length*44):180);\n  ui.Speaker.setPosition(x+18,y+10);ui.Message.setPosition(x+18,y+46);ui.Message.setWidth(420);\n  if(d.question)for(let i=0;i<d.options.length;i++){\n   if(!choices[i]){const o=runtimeScene.createObject('Choice1');o.setLayer('UI');choices.push(o)}\n   choices[i].hide(false);choices[i].setPosition(x+18,y+115+i*44);choices[i].setString((d.selected===i?'▶ ':'› ')+d.options[i]);\n  }\n };\n const syncYarn=()=>{\n  const variable=new gdjs.Variable();gdjs.dialogueTree.saveState(variable);\n  for(const [key,v] of Object.entries(variable.toJSObject()?.variables??{}))if(!['__proto__','constructor','prototype'].includes(key)){state.flags[key]=v;history.getChild(key).fromJSObject(v)}\n  save();uiRefresh();\n };\n const read=()=>{\n  syncYarn();d.selected=-1;\n  if(!gdjs.dialogueTree.isRunning()){give(value(d.talking,'Otorga'));save();d.dialogue=false;d.question=false;d.enterAfter=d.time+.2;dialogUI();const done=d.afterTalk;d.afterTalk=null;done?.();return}\n  d.question=gdjs.dialogueTree.isDialogueLineType('options');\n  if(d.question&&gdjs.dialogueTree.getLineOptionsCount()===1){gdjs.dialogueTree.selectOption(0);gdjs.dialogueTree.hasSelectedOptionChanged();gdjs.dialogueTree.confirmSelectOption();read();return}\n  if(!d.question){const raw=gdjs.dialogueTree.getLineText(),i=raw.indexOf(':');text('Speaker',i<0?'':raw.slice(0,i));text('Message',i<0?raw:raw.slice(i+1).trim());\n   d.speaker=i>=0&&raw.slice(0,i)==='Sofía'?hero:d.talking;\n   if(gdjs.dialogueTree.branchContainsTag('decision')){gdjs.dialogueTree.goToNextDialogueLine();d.question=gdjs.dialogueTree.isDialogueLineType('options')}\n  }\n  if(d.question)d.options=Array.from({length:gdjs.dialogueTree.getLineOptionsCount()},(_,i)=>String(gdjs.dialogueTree.getLineOption(i)));\n  dialogUI();\n };\n const talk=(node,o)=>{\n  if(!d.ready){notice('Las conversaciones se están cargando.');return}\n  if(!gdjs.dialogueTree.hasDialogueBranch(node)){notice('No existe el nodo Yarn: '+node);return}\n  d.destination=null;d.pending=null;d.talking=o;d.speaker=o;d.dialogue=true;if(d.universe)d.universe.face(o);else{hero.flipX(o.getX()<d.x);o.flipX(d.x<o.getX());}\n  for(const [key,v] of Object.entries(state.flags))gdjs.dialogueTree.setVariable(key,v);\n  gdjs.dialogueTree.startFrom(node);read();\n };\n const advance=()=>{if(d.menu){d.menu=false;dialogUI();return}if(d.dialogue&&!d.question){gdjs.dialogueTree.goToNextDialogueLine();read()}};\n const answer=i=>{if(!d.question||i<0||i>=d.options.length)return;gdjs.dialogueTree.selectOption(i);gdjs.dialogueTree.hasSelectedOptionChanged();gdjs.dialogueTree.confirmSelectOption();read()};\n const shoot=(owner,isHero)=>{\n  const now=d.time,interval=isHero?Number(cfg('IntervaloAtaque',.35)):Number(value(owner,'Intervalo',1.8));\n  if(now-(isHero?d.lastShot:d.shoots.get(owner)??-100)<interval)return;\n  if(isHero)d.lastShot=now;else d.shoots.set(owner,now);\n  const o=runtimeScene.createObject('Pulso');o.setPosition(owner.getX()+(isHero?(hero.isFlippedX()?-25:25):0),owner.getY()-(isHero?(d.crouching?35:65):100));o.setWidth(30);o.setHeight(18);o.setZOrder(105);\n  if(!isHero)o.setColor('255;135;110');\n  const direction=isHero?(hero.isFlippedX()?-1:1):Math.sign(d.x-owner.getX())||1;\n  d.bullets.push({o,hero:isHero,vx:direction*(isHero?Number(cfg('VelocidadDisparo',620)):Number(value(owner,'VelocidadDisparo',180))),damage:Number(isHero?cfg('Danio',1):value(owner,'Danio',1)),life:3});\n };\n const attack=()=>{if(!cfg('Combate',false)||d.dialogue||d.menu||d.dead)return;d.attackUntil=d.time+.18;shoot(hero,true)};\n const execute=(actions,o)=>{\n  if(!actions?.length)return;\n  const [a,...rest]=actions;if(!meets([...(a.requires||[]),...(a.excludes||[]).map(f=>'!'+f)].join(','))){execute(rest,o);return}\n  if(a.reward?.flags)give(a.reward.flags.join(','));\n  if(a.type==='talk'){d.afterTalk=()=>execute(rest,o);const variant=a.variants?.find(v=>meets([...(v.requires||[]),...(v.excludes||[]).map(f=>'!'+f)].join(',')));talk(variant?.target||a.target,o);return}\n  if(a.type==='enter'){(state.doors??=[]).push({scene,x:d.universe?.savedX()??d.x});travel(a.target,120);return}\n  if(a.type==='return'){\n   let previous=state.doors?.pop();while(previous&&!validScene(previous.scene))previous=state.doors?.pop();\n   if(previous){travel(previous.scene,previous.x);return}\n   // Direct scene previews have never crossed a door. Their authored surface is a real fallback.\n   const target=String(cfg('RegresoSinHistorial',cfg('Superficie','')));\n   if(validScene(target)){travel(target,Number(state.surfaceAngles?.[target]??-8));return}\n   notice('Configura Superficie o RegresoSinHistorial para volver desde la prueba de esta escena.');return;\n  }\n  if(a.type==='surface'){travel(String(cfg('Superficie','plato')),Number(state.surfaceAngles?.[cfg('Superficie','plato')]??-8));return}\n  if(a.type==='portal'){travel(a.target,-8);return}\n  if(a.type==='equipment'){const on=a.command==='turnOn';history.getChild('luz').setBoolean(on);state.flags.luz=on;}\n  if(a.type==='collect'){state.items[id(o)]={name:value(o,'Nombre',o.getName()),description:a.text||''};if(!state.removed.includes(id(o)))state.removed.push(id(o));o.hide(true);}\n  if(a.type==='activity'){notice('Actividad pendiente de integrar: '+a.target);return}\n  if(a.text)notice(a.text);save();execute(rest,o);\n };\n const interact=o=>{\n  if(!available(o)||!meets(value(o,'Requiere'))){notice(value(o,'Bloqueo','Este acceso todavía está bloqueado.'));return}\n  const r=role(o),node=String(value(o,'Dialogo'));\n  if(r==='nave'){d.universe?.board(o);return}\n  if(value(o,'Destino')&&r!=='paso'){\n   const target=String(value(o,'Destino'));(state.doors??=[]).push({scene,x:d.universe?.savedX()??d.x});travel(target,value(o,'DestinoSuperficie',false)?Number(state.surfaceAngles?.[target]??-8):Number(value(o,'LlegadaX',120)));return;\n  }\n  if(value(o,'Acciones')){try{execute(JSON.parse(value(o,'Acciones')),o)}catch(e){notice('Revisa Acciones: '+e.message)}return}\n  if(r==='npc'||r==='companero'){let branch=node;try{const variant=JSON.parse(value(o,'VariantesDialogo','[]')).find(v=>meets([...(v.requires||[]),...(v.excludes||[]).map(f=>'!'+f)].join(',')));branch=variant?.target||branch}catch{}if(branch)talk(branch,o);else notice('Asigna un nodo en la variable Dialogo.');return}\n  if(r==='portal'){travel(String(value(o,'Destino')),Number(value(o,'LlegadaX',120)));return}\n  if(r==='checkpoint'){state.checkpoint={scene,x:o.getX()};save();notice('Punto de retorno guardado.');return}\n  if(r==='enemigo'){attack();return}\n  if(r==='objeto'){\n   give(value(o,'Otorga'));state.items[id(o)]={name:String(value(o,'Nombre',o.getName())),description:String(value(o,'Descripcion','Objeto recogido.'))};\n   if(value(o,'UnaVez',true))state.removed.push(id(o));o.hide(true);save();uiRefresh();notice('Recogido: '+value(o,'Nombre',o.getName()));if(node)talk(node,o);\n  }\n };\n const inventory=()=>{\n  if(d.dialogue||d.dead)return;d.destination=null;d.pending=null;d.menu=true;\n  ui.Bubble.setPosition(270,110);ui.Bubble.setWidth(600);ui.Bubble.setHeight(360);ui.Speaker.setPosition(290,125);ui.Message.setPosition(290,165);ui.Message.setWidth(550);\n  text('Speaker','Inventario · Enter o toque para cerrar');text('Message',Object.values(state.items).map(i=>i.name+' — '+i.description).join('\\n\\n')||'Todavía no has recogido objetos.');dialogUI();\n };\n const retry=()=>{health(hero)?.SetCurrentHealth(maxHp);state.hp=maxHp;for(const o of actors.filter(o=>role(o)==='enemigo'&&hp(o)>0))delete state.enemies[id(o)];const c=state.checkpoint??d.checkpoint;travel(c.scene,c.x)};\n const action=a=>{\n  if(a==='superficiePrueba'){\n   if(!game.isPreview()||d.universe)return;\n   const surface=String(cfg('Superficie',cfg('RegresoSinHistorial','')));\n   if(validScene(surface)){d.dialogue=false;d.menu=false;travel(surface,Number(state.surfaceAngles?.[surface]??-8))}else notice('Configura la variable Superficie de esta escena.');return;\n  }\n  if(a==='vista'){d.universe?.view();return}if(a==='agacharse'){d.crouchToggle=!d.crouchToggle;d.destination=null;return}\n  if(a==='atacar')attack();if(a==='inventario')inventory();if(a==='guardar'&&save())notice('Partida de la plantilla guardada.');\n  if(a==='cargar'){const last=state.last;if(last)travel(last.scene,last.x);else notice('Todavía no hay un guardado.');}\n  if(a==='reintentar'&&d.dead)retry();\n  if(a==='reiniciar'&&confirm('¿Borrar únicamente el progreso de esta plantilla de GDevelop?')){localStorage.removeItem(KEY);game.__sofiaKitState=null;game.__sofiaKitHistory=false;history.fromJSObject({});d.changing=true;gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,String(cfg('Inicio','inicio')),false)}\n };\n const pointClick=(p,up=p)=>{\n  if(d.dead){retry();return}\n  if(d.dialogue||d.menu){if(d.question){for(let i=0;i<choices.length;i++)if(!choices[i].isHidden()&&inside(up,choices[i])){answer(i);break}}else advance();return}\n  const button=actors.find(o=>role(o)==='boton'&&!o.isHidden()&&inside(up,o));if(button){action(String(value(button,'Accion')));return}\n  if(d.universe?.click(p))return;\n  const o=targets().reverse().find(o=>inside(p,o));d.pending=o??null;d.destination=o?o.getX():Math.max(30,Math.min(Number(cfg('Ancho',1280))-30,p.x));\n };\n const keyHandler=e=>{\n  if(e.repeat||e.ctrlKey||e.altKey||e.metaKey||e.isComposing||e.target?.closest?.('input,textarea,select,[contenteditable=\"true\"]'))return;\n  if(['Enter','NumpadEnter','Space','KeyF','KeyR','KeyI','KeyL'].includes(e.code)||(e.code==='Tab'&&globalThis.__sofiaKit?.question)){e.preventDefault();game.__sofiaKitKeys.push(e.code)}\n };\n if(!game.__sofiaKitKeys){game.__sofiaKitKeys=[];window.addEventListener('keydown',keyHandler)}\n const lamp=new PIXI.Graphics();runtimeScene.getLayer('').getRenderer().addRendererObject(lamp,9000);\n const json=String(cfg('ArchivoDialogos','dialogues/historias.yarn.json'));\n game.getJsonManager().loadJson(json,(error,content)=>{if(error){notice('No se pudo cargar '+json);return}try{const variable=new gdjs.Variable();variable.setString(JSON.stringify(content));gdjs.dialogueTree.loadFromSceneVariable(variable,'');d.ready=true}catch(e){notice('Revisa el archivo Yarn: '+String(e))}});\n d.universe=game.__sofiaUniverse?.({runtimeScene,game,sv,scene,d,hero,actors,role,value,cfg,state,targets,inside,meets,interact,travel,notice,save});\n const previewReturn=actors.find(o=>role(o)==='boton'&&value(o,'Accion')==='superficiePrueba');\n if(previewReturn)previewReturn.hide(!game.isPreview()||!!d.universe);\n for(const o of actors.filter(o=>role(o)==='arma'||role(o)==='boton'&&['atacar','agacharse'].includes(value(o,'Accion'))))o.hide(!cfg('Combate',false));\n text('Help',cfg('Ayuda','Toca para caminar · A/D · Espacio: salto · F: pulso · Enter: hablar · I: inventario'));uiRefresh();dialogUI();show('Status',false);\n d.step=()=>{\n  if(d.changing)return;const dt=Math.min(.05,runtimeScene.getElapsedTime()/1000);d.time+=dt;state.flags=history.toJSObject()||{};\n  const signature=JSON.stringify(state.flags);if(signature!==d.flagSignature){d.flagSignature=signature;try{for(const rule of JSON.parse(cfg('ReglasProgreso','[]')))if(meets(rule.requires.join(',')))give(rule.flags.join(','))}catch{}uiRefresh()}\n  if(previewReturn)previewReturn.hide(!game.isPreview()||!!d.universe||d.dialogue||d.menu);\n  const input=game.getInputManager(),key=game.__sofiaKitKeys.shift();\n  if(d.universe?.busy()){d.universe.step(dt,input);return}\n  if(key==='Enter'||key==='NumpadEnter'){\n   if(d.dead)retry();else if(d.menu)advance();else if(d.question){if(d.selected>=0)answer(d.selected)}else if(d.dialogue)advance();\n   else if(d.time>(d.enterAfter??0)){const distance=o=>d.universe?d.universe.distance(o):Math.abs(o.getX()-d.x);const near=targets().filter(o=>distance(o)<130).sort((a,b)=>distance(a)-distance(b))[0];if(near)interact(near)}\n  }\n  if(key==='Tab'&&d.question){d.selected=(d.selected+1)%d.options.length;dialogUI()}\n  if(key==='KeyF')attack();if(key==='KeyI')inventory();if(key==='KeyR'&&d.dead)retry();\n  if(key==='KeyL'&&state.flags.linterna){state.flags.luz=!state.flags.luz;history.getChild('luz').setBoolean(state.flags.luz);save();notice(state.flags.luz?'Linterna encendida':'Linterna apagada')}\n  if(input.isMouseButtonReleased(0))pointClick({x:gdjs.evtTools.input.getCursorX(runtimeScene,'',0),y:gdjs.evtTools.input.getCursorY(runtimeScene,'',0)},{x:gdjs.evtTools.input.getCursorX(runtimeScene,'UI',0),y:gdjs.evtTools.input.getCursorY(runtimeScene,'UI',0)});\n  if(d.universe){d.universe.step(dt,input);return}\n  if(Number(cfg('Ancho',1280))>1280)runtimeScene.getLayer('').setCameraX(Math.max(640,Math.min(Number(cfg('Ancho',1280))-640,d.x)));\n  if(!d.dialogue&&!d.menu&&!d.dead)for(const event of actors.filter(o=>role(o)==='evento')){const b=rect(event);if(d.x>=b.x&&d.x<=b.x+b.w&&meets(value(event,'Requiere'))&&!(state.events||[]).includes(id(event))){(state.events??=[]).push(id(event));try{execute(JSON.parse(value(event,'Acciones','[]')),event)}catch(e){notice(e.message)}save();break}}\n  d.crouching=!d.dialogue&&!d.menu&&(d.crouchToggle||input.isKeyPressed(40)||input.isKeyPressed(83));\n  let axis=0;\n  if(!d.dialogue&&!d.menu&&!d.dead){\n   axis=Number(input.isKeyPressed(39)||input.isKeyPressed(68))-Number(input.isKeyPressed(37)||input.isKeyPressed(65));if(axis){d.destination=null;d.pending=null}\n   if(d.pending&&Math.abs(d.x-d.pending.getX())<(role(d.pending)==='enemigo'?260:100)){const o=d.pending;d.pending=null;d.destination=null;interact(o)}\n   if(!axis&&d.destination!==null){const diff=d.destination-d.x;if(Math.abs(diff)<4)d.destination=null;else axis=Math.sign(diff)}\n   if(key==='Space'&&cfg('PermitirSalto',true)&&d.grounded)d.vy=-420;\n   if(d.crouching)axis=0;\n   let next=Math.max(25,Math.min(Number(cfg('Ancho',1280))-25,d.x+axis*Number(cfg('Velocidad',240))*dt));\n   for(const o of actors.filter(o=>(role(o)==='obstaculo'||role(o)==='npc'&&value(o,'Solido',false))&&!o.isHidden())){const b=rect(o),margin=role(o)==='npc'?24:18;if(next+margin>b.x&&next-margin<b.x+b.w&&d.y>b.y+8&&d.y-130<b.y+b.h&&Math.abs(next-o.getX())<Math.abs(d.x-o.getX())){next=d.x;d.destination=null;axis=0}}\n   const oldX=d.x;d.x=next;const previousY=d.y;d.vy+=950*dt;d.y+=d.vy*dt;d.grounded=false;\n   for(const o of actors.filter(o=>role(o)==='escalera')){const b=rect(o),surface=x=>b.y+b.h-(x-b.x)/b.w*b.h,oldSurface=surface(oldX);if(d.x>=b.x-3&&d.x<=b.x+b.w+3&&Math.abs(previousY-oldSurface)<45&&d.vy>=0){d.y=surface(d.x);d.vy=0;d.grounded=true}}\n   for(const o of actors.filter(o=>role(o)==='suelo')){const b=rect(o);if(d.x>=b.x&&d.x<=b.x+b.w&&d.vy>=0&&previousY<=b.y+5&&d.y>=b.y){d.y=b.y;d.vy=0;d.grounded=true}}\n   if(d.y>800){health(hero)?.Hit(maxHp,false,false);}\n   if(axis)hero.flipX(axis<0);hero.setPosition(d.x,d.y);\n   for(const o of actors.filter(o=>role(o)==='paso')){const b=rect(o),direction=Number(value(o,'Direccion',1));if(axis*direction<=0||d.x<b.x||d.x>b.x+b.w||d.y<b.y||d.y>b.y+b.h)continue;\n    if(!meets(value(o,'Requiere'))){d.x-=axis*5;hero.setX(d.x);d.destination=null;axis=0;if(d.blocked!==id(o)){notice(value(o,'Bloqueo','Completa el requisito para continuar.'));d.blocked=id(o)}break}\n    travel(String(value(o,'Destino')),Number(value(o,'LlegadaX',120)),direction);return;\n   }\n   if(!actors.some(o=>role(o)==='paso'&&Math.abs(o.getX()-d.x)<120))d.blocked='';\n  }\n  hero.setAnimationName(d.crouching?'Crouch':axis?'Walk':'Idle');\n  for(const o of actors.filter(o=>role(o)==='companero'&&!o.isHidden())){const goal=d.x+(hero.isFlippedX()?90:-90),diff=goal-o.getX();if(!d.dialogue&&Math.abs(diff)>5)o.setX(o.getX()+Math.sign(diff)*Math.min(Math.abs(diff),Number(cfg('Velocidad',240))*dt));o.flipX(hero.isFlippedX());let ground=d.y;for(const f of actors.filter(f=>['suelo','escalera'].includes(role(f)))){const b=rect(f);if(o.getX()>=b.x&&o.getX()<=b.x+b.w){ground=role(f)==='escalera'?b.y+b.h-(o.getX()-b.x)/b.w*b.h:b.y;break}}o.setY(ground)}\n  const weapon=actors.find(o=>role(o)==='arma');if(weapon){weapon.hide(!cfg('Combate',false));weapon.setPosition(d.x+(hero.isFlippedX()?-25:25),d.y-(d.crouching?35:65));weapon.flipX(hero.isFlippedX());weapon.setOpacity(d.attackUntil>d.time?255:190)}\n  if(!d.dialogue&&!d.menu&&!d.dead&&cfg('Combate',false)){\n   for(const o of actors.filter(o=>role(o)==='enemigo'&&!o.isHidden()&&meets(value(o,'Requiere')))){\n    const speed=Number(value(o,'Velocidad',30)),lo=Number(value(o,'MinX',o.getX()-80)),hi=Number(value(o,'MaxX',o.getX()+80));\n    o.__direction??=-1;if(o.getX()<=lo)o.__direction=1;if(o.getX()>=hi)o.__direction=-1;o.setX(Math.max(lo,Math.min(hi,o.getX()+o.__direction*speed*dt)));o.flipX(d.x<o.getX());\n    if(Math.abs(o.getX()-d.x)<Number(value(o,'Alcance',650)))shoot(o,false);\n    if(Math.abs(o.getX()-d.x)<40&&Math.abs(o.getY()-d.y)<100)health(hero)?.Hit(Number(value(o,'Danio',1)),false,false);\n   }\n   for(const bullet of d.bullets){bullet.life-=dt;bullet.o.setX(bullet.o.getX()+bullet.vx*dt);const victims=bullet.hero?actors.filter(o=>role(o)==='enemigo'&&!o.isHidden()):[hero];\n    for(const obstacle of actors.filter(o=>role(o)==='obstaculo'))if(inside({x:bullet.o.getX(),y:bullet.o.getY()},obstacle))bullet.life=0;\n    if(bullet.life<=0)continue;\n    for(const o of victims)if(Math.abs(bullet.o.getX()-o.getX())<38&&bullet.o.getY()>o.getY()-(o===hero&&d.crouching?64:145)&&bullet.o.getY()<o.getY()){\n     const before=hp(o);health(o)?.Hit(bullet.damage,false,false);bullet.life=0;\n     if(hp(o)<before){o.__hitUntil=d.time+.24;notice((o===hero?'Sofía':value(o,'Nombre','Enemigo'))+' −'+(before-hp(o))+' · Vida '+Math.max(0,hp(o)));}\n     if(o!==hero){state.enemies[id(o)]=hp(o);if(hp(o)<=0){give(value(o,'Otorga'));o.hide(true);notice('Encuentro superado.');save();uiRefresh()}}break;\n    }\n   }\n   for(const b of d.bullets.filter(b=>b.life<=0))b.o.deleteFromScene(runtimeScene);d.bullets=d.bullets.filter(b=>b.life>0);\n  }\n  for(const o of actors.filter(o=>['enemigo','jugador'].includes(role(o)))){o.setColor(o.__hitUntil>d.time?'255;95;95':'255;255;255');o.setOpacity(o.__hitUntil>d.time?160:255)}\n  if(hp(hero)<=0&&!d.dead){d.dead=true;d.destination=null;d.pending=null;d.bullets.forEach(b=>b.o.hide());notice('Sin energía · Enter, R o toca para reintentar desde el punto de retorno.');d.noticeUntil=Infinity;}\n  if(!d.dead)state.hp=hp(hero);text('Title',cfg('Titulo',scene)+' · Vida '+Math.max(0,hp(hero))+'/'+maxHp);\n  if(d.noticeUntil&&d.time>d.noticeUntil){show('Status',false);d.noticeUntil=0}\n  lamp.clear();const dark=Number(cfg('Oscuridad',0));if(dark>0){lamp.beginFill(0x030511,dark).drawRect(-300,-300,1880,1320);if(state.flags.luz)lamp.beginHole().drawCircle(d.x,d.y-65,235).endHole();lamp.endFill()}\n  if(cfg('Combate',false))for(const o of actors.filter(o=>role(o)==='enemigo'&&!o.isHidden())){const width=72,x=o.getX()-width/2,y=o.getY()-170;lamp.beginFill(0x171729,.9).drawRoundedRect(x,y,width,9,3).endFill();lamp.beginFill(0xe3ad65,1).drawRoundedRect(x,y,width*Math.max(0,hp(o))/(health(o)?.MaxHealth()||1),9,3).endFill()}\n  for(const o of actors.filter(o=>role(o)==='boton'&&['atacar','agacharse'].includes(value(o,'Accion'))))o.hide(!cfg('Combate',false));\n };\n}\nruntimeScene.__sofiaKit.step();\n",
           "parameterObjects": "",
           "useStrict": true,
           "eventsSheetExpanded": false

@@ -114,8 +114,15 @@ if (!runtimeScene.__sofiaKit) {
   const [a,...rest]=actions;if(!meets([...(a.requires||[]),...(a.excludes||[]).map(f=>'!'+f)].join(','))){execute(rest,o);return}
   if(a.reward?.flags)give(a.reward.flags.join(','));
   if(a.type==='talk'){d.afterTalk=()=>execute(rest,o);const variant=a.variants?.find(v=>meets([...(v.requires||[]),...(v.excludes||[]).map(f=>'!'+f)].join(',')));talk(variant?.target||a.target,o);return}
-  if(a.type==='enter'){(state.doors??=[]).push({scene,x:d.x});travel(a.target,120);return}
-  if(a.type==='return'){const previous=state.doors?.pop();if(previous){travel(previous.scene,previous.x);return}}
+  if(a.type==='enter'){(state.doors??=[]).push({scene,x:d.universe?.savedX()??d.x});travel(a.target,120);return}
+  if(a.type==='return'){
+   let previous=state.doors?.pop();while(previous&&!validScene(previous.scene))previous=state.doors?.pop();
+   if(previous){travel(previous.scene,previous.x);return}
+   // Direct scene previews have never crossed a door. Their authored surface is a real fallback.
+   const target=String(cfg('RegresoSinHistorial',cfg('Superficie','')));
+   if(validScene(target)){travel(target,Number(state.surfaceAngles?.[target]??-8));return}
+   notice('Configura Superficie o RegresoSinHistorial para volver desde la prueba de esta escena.');return;
+  }
   if(a.type==='surface'){travel(String(cfg('Superficie','plato')),Number(state.surfaceAngles?.[cfg('Superficie','plato')]??-8));return}
   if(a.type==='portal'){travel(a.target,-8);return}
   if(a.type==='equipment'){const on=a.command==='turnOn';history.getChild('luz').setBoolean(on);state.flags.luz=on;}
@@ -147,6 +154,11 @@ if (!runtimeScene.__sofiaKit) {
  };
  const retry=()=>{health(hero)?.SetCurrentHealth(maxHp);state.hp=maxHp;for(const o of actors.filter(o=>role(o)==='enemigo'&&hp(o)>0))delete state.enemies[id(o)];const c=state.checkpoint??d.checkpoint;travel(c.scene,c.x)};
  const action=a=>{
+  if(a==='superficiePrueba'){
+   if(!game.isPreview()||d.universe)return;
+   const surface=String(cfg('Superficie',cfg('RegresoSinHistorial','')));
+   if(validScene(surface)){d.dialogue=false;d.menu=false;travel(surface,Number(state.surfaceAngles?.[surface]??-8))}else notice('Configura la variable Superficie de esta escena.');return;
+  }
   if(a==='vista'){d.universe?.view();return}if(a==='agacharse'){d.crouchToggle=!d.crouchToggle;d.destination=null;return}
   if(a==='atacar')attack();if(a==='inventario')inventory();if(a==='guardar'&&save())notice('Partida de la plantilla guardada.');
   if(a==='cargar'){const last=state.last;if(last)travel(last.scene,last.x);else notice('Todavía no hay un guardado.');}
@@ -169,11 +181,14 @@ if (!runtimeScene.__sofiaKit) {
  const json=String(cfg('ArchivoDialogos','dialogues/historias.yarn.json'));
  game.getJsonManager().loadJson(json,(error,content)=>{if(error){notice('No se pudo cargar '+json);return}try{const variable=new gdjs.Variable();variable.setString(JSON.stringify(content));gdjs.dialogueTree.loadFromSceneVariable(variable,'');d.ready=true}catch(e){notice('Revisa el archivo Yarn: '+String(e))}});
  d.universe=game.__sofiaUniverse?.({runtimeScene,game,sv,scene,d,hero,actors,role,value,cfg,state,targets,inside,meets,interact,travel,notice,save});
+ const previewReturn=actors.find(o=>role(o)==='boton'&&value(o,'Accion')==='superficiePrueba');
+ if(previewReturn)previewReturn.hide(!game.isPreview()||!!d.universe);
  for(const o of actors.filter(o=>role(o)==='arma'||role(o)==='boton'&&['atacar','agacharse'].includes(value(o,'Accion'))))o.hide(!cfg('Combate',false));
  text('Help',cfg('Ayuda','Toca para caminar · A/D · Espacio: salto · F: pulso · Enter: hablar · I: inventario'));uiRefresh();dialogUI();show('Status',false);
  d.step=()=>{
   if(d.changing)return;const dt=Math.min(.05,runtimeScene.getElapsedTime()/1000);d.time+=dt;state.flags=history.toJSObject()||{};
   const signature=JSON.stringify(state.flags);if(signature!==d.flagSignature){d.flagSignature=signature;try{for(const rule of JSON.parse(cfg('ReglasProgreso','[]')))if(meets(rule.requires.join(',')))give(rule.flags.join(','))}catch{}uiRefresh()}
+  if(previewReturn)previewReturn.hide(!game.isPreview()||!!d.universe||d.dialogue||d.menu);
   const input=game.getInputManager(),key=game.__sofiaKitKeys.shift();
   if(d.universe?.busy()){d.universe.step(dt,input);return}
   if(key==='Enter'||key==='NumpadEnter'){
