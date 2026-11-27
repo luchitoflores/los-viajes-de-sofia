@@ -1,0 +1,3233 @@
+{
+  "firstLayout": "Plantilla_Plataformas_Nativas",
+  "gdVersion": {
+    "build": 287,
+    "major": 5,
+    "minor": 6,
+    "revision": 0
+  },
+  "properties": {
+    "adaptGameResolutionAtRuntime": false,
+    "antialiasingMode": "MSAA",
+    "antialisingEnabledOnMobile": false,
+    "folderProject": false,
+    "orientation": "landscape",
+    "packageName": "com.sofia.plantillaplataformas",
+    "pixelsRounding": false,
+    "projectUuid": "e7d25b7c-119b-49f0-9d52-8ae5b2aeaa12",
+    "scaleMode": "linear",
+    "sizeOnStartupMode": "",
+    "templateSlug": "starting-platformer",
+    "version": "1.0.0",
+    "name": "Sofía · Plantilla maestra de plataformas nativas",
+    "description": "Escena independiente, editor visual y eventos nativos, sin bloques JavaScript",
+    "author": "",
+    "windowWidth": 1280,
+    "windowHeight": 720,
+    "latestCompilationDirectory": "",
+    "maxFPS": 60,
+    "minFPS": 20,
+    "verticalSync": false,
+    "platformSpecificAssets": {},
+    "loadingScreen": {
+      "backgroundColor": 0,
+      "backgroundFadeInDuration": 0.2,
+      "backgroundImageResourceName": "",
+      "gdevelopLogoStyle": "light",
+      "logoAndProgressFadeInDuration": 0.2,
+      "logoAndProgressLogoFadeInDelay": 0,
+      "minDuration": 0,
+      "progressBarColor": 16777215,
+      "progressBarHeight": 20,
+      "progressBarMaxWidth": 200,
+      "progressBarMinWidth": 40,
+      "progressBarWidthPercent": 30,
+      "showGDevelopSplash": false,
+      "showProgressBar": true
+    },
+    "watermark": {
+      "placement": "bottom-left",
+      "showWatermark": false
+    },
+    "authorIds": [],
+    "authorUsernames": [],
+    "categories": [],
+    "playableDevices": [],
+    "extensionProperties": [],
+    "platforms": [
+      {
+        "name": "GDevelop JS platform"
+      }
+    ],
+    "currentPlatform": "GDevelop JS platform"
+  },
+  "resources": {
+    "resources": [
+      {
+        "file": "assets/enemy.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/enemy.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/hud.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/hud.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/plato.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/plato.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/portal.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/portal.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/scroll.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/scroll.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/sofia-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sofia-0.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/sofia-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sofia-2.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/sofia-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sofia-3.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/sofia-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sofia-4.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/sofia-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sofia-5.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/imported/cave-lamp.png",
+        "file": "assets/imported/cave-lamp.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/imported/polis-rock.png",
+        "file": "assets/imported/polis-rock.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/imported/polis-temple.png",
+        "file": "assets/imported/polis-temple.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/imported/polis-tree.png",
+        "file": "assets/imported/polis-tree.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "kind": "image",
+        "name": "assets/imported/imported/98cdd8cc-1b4b-406f-98c3-46286eff0b16-Paisaje-Griego-Soleado-desde-la-Cueva.png",
+        "file": "assets/imported/imported/98cdd8cc-1b4b-406f-98c3-46286eff0b16-Paisaje-Griego-Soleado-desde-la-Cueva.png",
+        "smoothed": true,
+        "userAdded": true
+      }
+    ],
+    "resourceFolders": []
+  },
+  "objects": [],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "objectsGroups": [],
+  "variables": [],
+  "layouts": [
+    {
+      "b": 37,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "Plantilla_Plataformas_Nativas",
+      "name": "Plantilla_Plataformas_Nativas",
+      "r": 25,
+      "renderer3DWorldScale": 100,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "Plantilla maestra de plataformas nativas",
+      "v": 27,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridOffsetZ": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.5843784410740974,
+        "windowMask": false,
+        "selectedLayer": "",
+        "gameEditorMode": "instances-editor"
+      },
+      "objectsGroups": [],
+      "variables": [
+        {
+          "name": "PergaminoRecogido",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "instances": [
+        {
+          "name": "FondoLejano",
+          "x": -1280,
+          "y": 0,
+          "angle": 0,
+          "zOrder": -10,
+          "layer": "FondoLejano",
+          "customSize": true,
+          "width": 1280,
+          "height": 720,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "FondoLejano",
+          "x": 0,
+          "y": 0,
+          "angle": 0,
+          "zOrder": -10,
+          "layer": "FondoLejano",
+          "customSize": true,
+          "width": 1280,
+          "height": 720,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "FondoLejano",
+          "x": 1280,
+          "y": 0,
+          "angle": 0,
+          "zOrder": -10,
+          "layer": "FondoLejano",
+          "customSize": true,
+          "width": 1280,
+          "height": 720,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "FondoLejano",
+          "x": 2560,
+          "y": 0,
+          "angle": 0,
+          "zOrder": -10,
+          "layer": "FondoLejano",
+          "customSize": true,
+          "width": 1280,
+          "height": 720,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "ArbolDecorativo",
+          "x": 260,
+          "y": 320,
+          "angle": 0,
+          "zOrder": 1,
+          "layer": "FondoMedio",
+          "customSize": true,
+          "width": 220,
+          "height": 270,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "RocaDecorativa",
+          "x": 460,
+          "y": 520,
+          "angle": 0,
+          "zOrder": 2,
+          "layer": "FondoMedio",
+          "customSize": true,
+          "width": 145,
+          "height": 105,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "ArbolDecorativo",
+          "x": 750,
+          "y": 320,
+          "angle": 0,
+          "zOrder": 1,
+          "layer": "FondoMedio",
+          "customSize": true,
+          "width": 220,
+          "height": 270,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "RocaDecorativa",
+          "x": 950,
+          "y": 520,
+          "angle": 0,
+          "zOrder": 2,
+          "layer": "FondoMedio",
+          "customSize": true,
+          "width": 145,
+          "height": 105,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "ArbolDecorativo",
+          "x": 1300,
+          "y": 320,
+          "angle": 0,
+          "zOrder": 1,
+          "layer": "FondoMedio",
+          "customSize": true,
+          "width": 220,
+          "height": 270,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "RocaDecorativa",
+          "x": 1500,
+          "y": 520,
+          "angle": 0,
+          "zOrder": 2,
+          "layer": "FondoMedio",
+          "customSize": true,
+          "width": 145,
+          "height": 105,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "ArbolDecorativo",
+          "x": 1850,
+          "y": 320,
+          "angle": 0,
+          "zOrder": 1,
+          "layer": "FondoMedio",
+          "customSize": true,
+          "width": 220,
+          "height": 270,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "RocaDecorativa",
+          "x": 2050,
+          "y": 520,
+          "angle": 0,
+          "zOrder": 2,
+          "layer": "FondoMedio",
+          "customSize": true,
+          "width": 145,
+          "height": 105,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "ArbolDecorativo",
+          "x": 2430,
+          "y": 320,
+          "angle": 0,
+          "zOrder": 1,
+          "layer": "FondoMedio",
+          "customSize": true,
+          "width": 220,
+          "height": 270,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "RocaDecorativa",
+          "x": 2630,
+          "y": 520,
+          "angle": 0,
+          "zOrder": 2,
+          "layer": "FondoMedio",
+          "customSize": true,
+          "width": 145,
+          "height": 105,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "TemploDecorativo",
+          "x": 1350,
+          "y": 160,
+          "angle": 0,
+          "zOrder": 0,
+          "layer": "FondoMedio",
+          "customSize": true,
+          "width": 480,
+          "height": 400,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "RocaDecorativa",
+          "x": 50,
+          "y": 610,
+          "angle": 0,
+          "zOrder": 5,
+          "layer": "PrimerPlano",
+          "customSize": true,
+          "width": 180,
+          "height": 125,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "RocaDecorativa",
+          "x": 950,
+          "y": 610,
+          "angle": 0,
+          "zOrder": 5,
+          "layer": "PrimerPlano",
+          "customSize": true,
+          "width": 180,
+          "height": 125,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "RocaDecorativa",
+          "x": 2000,
+          "y": 610,
+          "angle": 0,
+          "zOrder": 5,
+          "layer": "PrimerPlano",
+          "customSize": true,
+          "width": 180,
+          "height": 125,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "RocaDecorativa",
+          "x": 3050,
+          "y": 610,
+          "angle": 0,
+          "zOrder": 5,
+          "layer": "PrimerPlano",
+          "customSize": true,
+          "width": 180,
+          "height": 125,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Sofia",
+          "x": 180,
+          "y": 580,
+          "angle": 0,
+          "zOrder": 10,
+          "layer": "",
+          "customSize": true,
+          "width": 150,
+          "height": 169,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Suelo",
+          "x": 0,
+          "y": 580,
+          "angle": 0,
+          "zOrder": 0,
+          "layer": "",
+          "customSize": true,
+          "width": 920,
+          "height": 140,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Suelo",
+          "x": 1060,
+          "y": 580,
+          "angle": 0,
+          "zOrder": 0,
+          "layer": "",
+          "customSize": true,
+          "width": 2260,
+          "height": 140,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Muro",
+          "x": 620,
+          "y": 500,
+          "angle": 0,
+          "zOrder": 2,
+          "layer": "",
+          "customSize": true,
+          "width": 95,
+          "height": 80,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Muro",
+          "x": 1780,
+          "y": 470,
+          "angle": 0,
+          "zOrder": 2,
+          "layer": "",
+          "customSize": true,
+          "width": 100,
+          "height": 110,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Plataforma",
+          "x": 840,
+          "y": 445,
+          "angle": 0,
+          "zOrder": 1,
+          "layer": "",
+          "customSize": true,
+          "width": 270,
+          "height": 26,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Plataforma",
+          "x": 1330,
+          "y": 405,
+          "angle": 0,
+          "zOrder": 1,
+          "layer": "",
+          "customSize": true,
+          "width": 330,
+          "height": 26,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Plataforma",
+          "x": 2010,
+          "y": 410,
+          "angle": 0,
+          "zOrder": 1,
+          "layer": "",
+          "customSize": true,
+          "width": 320,
+          "height": 26,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Escalera",
+          "x": 1460,
+          "y": 405,
+          "angle": 0,
+          "zOrder": 0,
+          "layer": "",
+          "customSize": true,
+          "width": 56,
+          "height": 175,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Platon",
+          "x": 320,
+          "y": 365,
+          "angle": 0,
+          "zOrder": 4,
+          "layer": "",
+          "customSize": true,
+          "width": 146,
+          "height": 215,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Pergamino",
+          "x": 1475,
+          "y": 335,
+          "angle": 0,
+          "zOrder": 6,
+          "layer": "",
+          "customSize": true,
+          "width": 60,
+          "height": 65,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Antorcha",
+          "x": 1125,
+          "y": 430,
+          "angle": 0,
+          "zOrder": 3,
+          "layer": "",
+          "customSize": true,
+          "width": 66,
+          "height": 120,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Antorcha",
+          "x": 2450,
+          "y": 430,
+          "angle": 0,
+          "zOrder": 3,
+          "layer": "",
+          "customSize": true,
+          "width": 66,
+          "height": 120,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Enemigo",
+          "x": 2600,
+          "y": 435,
+          "angle": 0,
+          "zOrder": 4,
+          "layer": "",
+          "customSize": true,
+          "width": 100,
+          "height": 145,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Portal",
+          "x": 3030,
+          "y": 390,
+          "angle": 0,
+          "zOrder": 4,
+          "layer": "",
+          "customSize": true,
+          "width": 165,
+          "height": 190,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "EtiquetaSuelo",
+          "x": 70,
+          "y": 615,
+          "angle": 0,
+          "zOrder": 3,
+          "layer": "",
+          "customSize": true,
+          "width": 110,
+          "height": 32,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "EtiquetaMuro",
+          "x": 590,
+          "y": 465,
+          "angle": 0,
+          "zOrder": 3,
+          "layer": "",
+          "customSize": true,
+          "width": 220,
+          "height": 30,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "EtiquetaPlataforma",
+          "x": 825,
+          "y": 400,
+          "angle": 0,
+          "zOrder": 3,
+          "layer": "",
+          "customSize": true,
+          "width": 350,
+          "height": 32,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "EtiquetaEscalera",
+          "x": 1518,
+          "y": 510,
+          "angle": 0,
+          "zOrder": 3,
+          "layer": "",
+          "customSize": true,
+          "width": 120,
+          "height": 32,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Titulo",
+          "x": 26,
+          "y": 12,
+          "angle": 0,
+          "zOrder": 3,
+          "layer": "UI",
+          "customSize": true,
+          "width": 1200,
+          "height": 45,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Mensaje",
+          "x": 26,
+          "y": 66,
+          "angle": 0,
+          "zOrder": 3,
+          "layer": "UI",
+          "customSize": true,
+          "width": 1220,
+          "height": 80,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Controles",
+          "x": 26,
+          "y": 125,
+          "angle": 0,
+          "zOrder": 3,
+          "layer": "UI",
+          "customSize": true,
+          "width": 1220,
+          "height": 40,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Izquierda",
+          "x": 35,
+          "y": 645,
+          "angle": 0,
+          "zOrder": 4,
+          "layer": "UI",
+          "customSize": true,
+          "width": 90,
+          "height": 60,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Derecha",
+          "x": 150,
+          "y": 645,
+          "angle": 0,
+          "zOrder": 4,
+          "layer": "UI",
+          "customSize": true,
+          "width": 90,
+          "height": 60,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Subir",
+          "x": 265,
+          "y": 640,
+          "angle": 0,
+          "zOrder": 4,
+          "layer": "UI",
+          "customSize": true,
+          "width": 70,
+          "height": 60,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Bajar",
+          "x": 345,
+          "y": 640,
+          "angle": 0,
+          "zOrder": 4,
+          "layer": "UI",
+          "customSize": true,
+          "width": 70,
+          "height": 60,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "name": "Saltar",
+          "x": 1060,
+          "y": 640,
+          "angle": 0,
+          "zOrder": 4,
+          "layer": "UI",
+          "customSize": true,
+          "width": 180,
+          "height": 60,
+          "depth": 1,
+          "locked": false,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "Sofia",
+          "type": "Sprite",
+          "updateIfNotVisible": true,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "PlatformerObject",
+              "type": "PlatformBehavior::PlatformerObjectBehavior",
+              "acceleration": 1500,
+              "canGoDownFromJumpthru": true,
+              "canGrabPlatforms": false,
+              "canGrabWithoutMoving": false,
+              "deceleration": 1800,
+              "gravity": 1100,
+              "ignoreDefaultControls": false,
+              "jumpSpeed": 620,
+              "jumpSustainTime": 0.3,
+              "ladderClimbingSpeed": 200,
+              "maxFallingSpeed": 800,
+              "maxSpeed": 300,
+              "slopeMaxAngle": 60,
+              "useLegacyTrajectory": false,
+              "xGrabTolerance": 10,
+              "yGrabOffset": 0
+            }
+          ],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/sofia-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "automatic": false,
+                        "name": "center",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 91,
+                            "y": 90
+                          },
+                          {
+                            "x": 191,
+                            "y": 90
+                          },
+                          {
+                            "x": 191,
+                            "y": 304
+                          },
+                          {
+                            "x": 91,
+                            "y": 304
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Walk",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14285714285714285,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/sofia-2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "automatic": false,
+                        "name": "center",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 91,
+                            "y": 90
+                          },
+                          {
+                            "x": 191,
+                            "y": 90
+                          },
+                          {
+                            "x": 191,
+                            "y": 304
+                          },
+                          {
+                            "x": 91,
+                            "y": 304
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/sofia-3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "automatic": false,
+                        "name": "center",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 91,
+                            "y": 90
+                          },
+                          {
+                            "x": 191,
+                            "y": 90
+                          },
+                          {
+                            "x": 191,
+                            "y": 304
+                          },
+                          {
+                            "x": 91,
+                            "y": 304
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/sofia-4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "automatic": false,
+                        "name": "center",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 91,
+                            "y": 90
+                          },
+                          {
+                            "x": 191,
+                            "y": 90
+                          },
+                          {
+                            "x": 191,
+                            "y": 304
+                          },
+                          {
+                            "x": 91,
+                            "y": 304
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/sofia-5.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "centerPoint": {
+                        "automatic": false,
+                        "name": "center",
+                        "x": 140,
+                        "y": 304
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 91,
+                            "y": 90
+                          },
+                          {
+                            "x": 191,
+                            "y": 90
+                          },
+                          {
+                            "x": 191,
+                            "y": 304
+                          },
+                          {
+                            "x": 91,
+                            "y": 304
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "FondoLejano",
+          "type": "Sprite",
+          "assetStoreId": "",
+          "adaptCollisionMaskAutomatically": false,
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "image": "assets/imported/imported/98cdd8cc-1b4b-406f-98c3-46286eff0b16-Paisaje-Griego-Soleado-desde-la-Cueva.png",
+                      "hasCustomCollisionMask": false,
+                      "points": [],
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "center",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ArbolDecorativo",
+          "type": "Sprite",
+          "assetStoreId": "",
+          "adaptCollisionMaskAutomatically": false,
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "image": "assets/imported/polis-tree.png",
+                      "hasCustomCollisionMask": false,
+                      "points": [],
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "center",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RocaDecorativa",
+          "type": "Sprite",
+          "assetStoreId": "",
+          "adaptCollisionMaskAutomatically": false,
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "image": "assets/imported/polis-rock.png",
+                      "hasCustomCollisionMask": false,
+                      "points": [],
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "center",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TemploDecorativo",
+          "type": "Sprite",
+          "assetStoreId": "",
+          "adaptCollisionMaskAutomatically": false,
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "image": "assets/imported/polis-temple.png",
+                      "hasCustomCollisionMask": false,
+                      "points": [],
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "center",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Suelo",
+          "type": "TiledSpriteObject::TiledSprite",
+          "assetStoreId": "",
+          "texture": "assets/hud.png",
+          "width": 128,
+          "height": 64,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Platform",
+              "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": false,
+              "platformType": "NormalPlatform",
+              "yGrabOffset": 0
+            }
+          ]
+        },
+        {
+          "name": "Muro",
+          "type": "TiledSpriteObject::TiledSprite",
+          "assetStoreId": "",
+          "texture": "assets/hud.png",
+          "width": 128,
+          "height": 64,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Platform",
+              "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": false,
+              "platformType": "NormalPlatform",
+              "yGrabOffset": 0
+            }
+          ]
+        },
+        {
+          "name": "Plataforma",
+          "type": "TiledSpriteObject::TiledSprite",
+          "assetStoreId": "",
+          "texture": "assets/hud.png",
+          "width": 128,
+          "height": 64,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Platform",
+              "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": false,
+              "platformType": "Jumpthru",
+              "yGrabOffset": 0
+            }
+          ]
+        },
+        {
+          "name": "Escalera",
+          "type": "TiledSpriteObject::TiledSprite",
+          "assetStoreId": "",
+          "texture": "assets/hud.png",
+          "width": 128,
+          "height": 64,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Platform",
+              "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": false,
+              "platformType": "Ladder",
+              "yGrabOffset": 0
+            }
+          ]
+        },
+        {
+          "name": "Platon",
+          "type": "Sprite",
+          "assetStoreId": "",
+          "adaptCollisionMaskAutomatically": false,
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "image": "assets/plato.png",
+                      "hasCustomCollisionMask": false,
+                      "points": [],
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "center",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Pergamino",
+          "type": "Sprite",
+          "assetStoreId": "",
+          "adaptCollisionMaskAutomatically": false,
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "image": "assets/scroll.png",
+                      "hasCustomCollisionMask": false,
+                      "points": [],
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "center",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Portal",
+          "type": "Sprite",
+          "assetStoreId": "",
+          "adaptCollisionMaskAutomatically": false,
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "image": "assets/portal.png",
+                      "hasCustomCollisionMask": false,
+                      "points": [],
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "center",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Antorcha",
+          "type": "Sprite",
+          "assetStoreId": "",
+          "adaptCollisionMaskAutomatically": false,
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "image": "assets/imported/cave-lamp.png",
+                      "hasCustomCollisionMask": false,
+                      "points": [],
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "center",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Enemigo",
+          "type": "Sprite",
+          "assetStoreId": "",
+          "adaptCollisionMaskAutomatically": false,
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "image": "assets/enemy.png",
+                      "hasCustomCollisionMask": false,
+                      "points": [],
+                      "originPoint": {
+                        "name": "origin",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "center",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Titulo",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Sofía · Plantilla maestra de plataformas",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 28,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Sofía · Plantilla maestra de plataformas",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 28,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Mensaje",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Explora, salta, recoge el pergamino y llega al portal.",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 21,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Explora, salta, recoge el pergamino y llega al portal.",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 21,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Controles",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "A/D o flechas · Espacio: saltar · ↑/↓: escalera · toca a Platón",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "A/D o flechas · Espacio: saltar · ↑/↓: escalera · toca a Platón",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Izquierda",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "◀",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 36,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "◀",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 36,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Derecha",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "▶",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 36,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "▶",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 36,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Saltar",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "SALTAR",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 26,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "SALTAR",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 26,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Subir",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "↑",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 34,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↑",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 34,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Bajar",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "↓",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 34,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "↓",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 34,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "EtiquetaSuelo",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "SUELO",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 18,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "SUELO",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 18,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "EtiquetaPlataforma",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "PLATAFORMA ATRAVESABLE",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 17,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "PLATAFORMA ATRAVESABLE",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 17,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "EtiquetaEscalera",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "ESCALERA",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 17,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "ESCALERA",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 17,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "EtiquetaMuro",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "MURO / OBSTÁCULO",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 17,
+          "color": {
+            "r": 244,
+            "g": 231,
+            "b": 205
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "0;0;0",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 0,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 0,
+            "shadowOpacity": 0,
+            "smoothed": true,
+            "underlined": false,
+            "text": "MURO / OBSTÁCULO",
+            "font": "",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 17,
+            "lineHeight": 0,
+            "color": "244;231;205"
+          }
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "Sofia"
+          },
+          {
+            "objectName": "FondoLejano"
+          },
+          {
+            "objectName": "ArbolDecorativo"
+          },
+          {
+            "objectName": "RocaDecorativa"
+          },
+          {
+            "objectName": "TemploDecorativo"
+          },
+          {
+            "objectName": "Suelo"
+          },
+          {
+            "objectName": "Muro"
+          },
+          {
+            "objectName": "Plataforma"
+          },
+          {
+            "objectName": "Escalera"
+          },
+          {
+            "objectName": "Platon"
+          },
+          {
+            "objectName": "Pergamino"
+          },
+          {
+            "objectName": "Portal"
+          },
+          {
+            "objectName": "Antorcha"
+          },
+          {
+            "objectName": "Enemigo"
+          },
+          {
+            "objectName": "Titulo"
+          },
+          {
+            "objectName": "Mensaje"
+          },
+          {
+            "objectName": "Controles"
+          },
+          {
+            "objectName": "Izquierda"
+          },
+          {
+            "objectName": "Derecha"
+          },
+          {
+            "objectName": "Saltar"
+          },
+          {
+            "objectName": "Subir"
+          },
+          {
+            "objectName": "Bajar"
+          },
+          {
+            "objectName": "EtiquetaSuelo"
+          },
+          {
+            "objectName": "EtiquetaPlataforma"
+          },
+          {
+            "objectName": "EtiquetaEscalera"
+          },
+          {
+            "objectName": "EtiquetaMuro"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Group",
+          "name": "01 · Movimiento nativo y controles",
+          "source": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "",
+                    "a"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateLeftKey",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "PlatformerObject"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlipX",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "yes"
+                  ]
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "",
+                    "d"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateRightKey",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "PlatformerObject"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlipX",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "no"
+                  ]
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlipX",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "yes"
+                  ]
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "",
+                    "Right"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlipX",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "no"
+                  ]
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Izquierda",
+                    "",
+                    "yes",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextPressed",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateLeftKey",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "PlatformerObject"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlipX",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "yes"
+                  ]
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Derecha",
+                    "",
+                    "yes",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextPressed",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateRightKey",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "PlatformerObject"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlipX",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "no"
+                  ]
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Saltar",
+                    "",
+                    "yes",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextPressed",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateJumpKey",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "PlatformerObject"
+                  ]
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Subir",
+                    "",
+                    "yes",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextPressed",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateUpKey",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "PlatformerObject"
+                  ]
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Bajar",
+                    "",
+                    "yes",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextPressed",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateDownKey",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "PlatformerObject"
+                  ]
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsMoving",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "PlatformerObject"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeAnimation",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsMoving",
+                    "inverted": true
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "PlatformerObject"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeAnimation",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "events": []
+            }
+          ],
+          "parameters": [],
+          "colorR": 74,
+          "colorG": 176,
+          "colorB": 228,
+          "creationTime": 0,
+          "folded": false
+        },
+        {
+          "type": "BuiltinCommonInstructions::Group",
+          "name": "02 · Cámara y parallax (cambiar factores aquí)",
+          "source": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetCameraCenterX",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "640+(min(2680,max(640,Sofia.X()))-640)*1",
+                    "\"\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCameraCenterX",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "640+(min(2680,max(640,Sofia.X()))-640)*0.18",
+                    "\"FondoLejano\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCameraCenterX",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "640+(min(2680,max(640,Sofia.X()))-640)*0.5",
+                    "\"FondoMedio\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCameraCenterX",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "640+(min(2680,max(640,Sofia.X()))-640)*1.12",
+                    "\"PrimerPlano\"",
+                    ""
+                  ]
+                }
+              ],
+              "events": []
+            }
+          ],
+          "parameters": [],
+          "colorR": 74,
+          "colorG": 176,
+          "colorB": 228,
+          "creationTime": 0,
+          "folded": false
+        },
+        {
+          "type": "BuiltinCommonInstructions::Group",
+          "name": "03 · Interacciones de ejemplo",
+          "source": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Platon",
+                    "",
+                    "yes",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextReleased",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Mensaje",
+                    "Text",
+                    "=",
+                    "\"Platón: La verdad se descubre explorando. Recoge el pergamino de la plataforma elevada.\""
+                  ]
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CollisionNP",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "Pergamino",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Pergamino",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "PergaminoRecogido",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Mensaje",
+                    "Text",
+                    "=",
+                    "\"Pergamino obtenido. ¡Ya puedes avanzar al portal!\""
+                  ]
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CollisionNP",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "Portal",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "PergaminoRecogido",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Mensaje",
+                    "Text",
+                    "=",
+                    "\"El portal está cerrado: recoge el pergamino primero.\""
+                  ]
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CollisionNP",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "Portal",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "PergaminoRecogido",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Mensaje",
+                    "Text",
+                    "=",
+                    "\"¡Nivel completado! Ya puedes duplicar esta escena y crear otra aventura.\""
+                  ]
+                }
+              ],
+              "events": []
+            }
+          ],
+          "parameters": [],
+          "colorR": 74,
+          "colorG": 176,
+          "colorB": 228,
+          "creationTime": 0,
+          "folded": false
+        },
+        {
+          "type": "BuiltinCommonInstructions::Group",
+          "name": "04 · Reintentos y peligro",
+          "source": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia.Y()",
+                    ">",
+                    "900"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreX",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "=",
+                    "180"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreY",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "=",
+                    "500"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Mensaje",
+                    "Text",
+                    "=",
+                    "\"Has caído. Inténtalo nuevamente.\""
+                  ]
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CollisionNP",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "Enemigo",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreX",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "=",
+                    "180"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreY",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Sofia",
+                    "=",
+                    "500"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue",
+                    "inverted": false
+                  },
+                  "parameters": [
+                    "Mensaje",
+                    "Text",
+                    "=",
+                    "\"Evita al enemigo o salta por encima.\""
+                  ]
+                }
+              ],
+              "events": []
+            }
+          ],
+          "parameters": [],
+          "colorR": 74,
+          "colorG": 176,
+          "colorB": 228,
+          "creationTime": 0,
+          "folded": false
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "FondoLejano",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "FondoMedio",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "PrimerPlano",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        }
+      ],
+      "behaviorsSharedData": []
+    }
+  ],
+  "layoutsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "itemName": "Plantilla_Plataformas_Nativas"
+      }
+    ]
+  },
+  "externalEvents": [],
+  "externalEventsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "testsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "eventsFunctionsExtensions": [],
+  "externalLayouts": [],
+  "externalLayoutsFolderStructure": {
+    "folderName": "__ROOT"
+  }
+}
