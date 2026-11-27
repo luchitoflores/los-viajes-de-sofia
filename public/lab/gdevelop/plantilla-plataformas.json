@@ -18,7 +18,7 @@
     "scaleMode": "linear",
     "sizeOnStartupMode": "",
     "templateSlug": "starting-platformer",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "name": "Sofía · Plantilla maestra de plataformas nativas",
     "description": "Plantilla independiente con plataformas, Yarn, inventario, combate, checkpoint y transiciones editables sin JavaScript.",
     "author": "",
@@ -183,6 +183,38 @@
         "kind": "json",
         "metadata": "",
         "name": "assets/plantilla-dialogos.json",
+        "userAdded": true
+      },
+      {
+        "file": "assets/plantilla-suelo.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/plantilla-suelo.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/plantilla-muro.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/plantilla-muro.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/plantilla-plataforma.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/plantilla-plataforma.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/plantilla-escalera.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/plantilla-escalera.png",
+        "smoothed": true,
         "userAdded": true
       }
     ],
@@ -1610,7 +1642,7 @@
           "name": "Suelo",
           "type": "TiledSpriteObject::TiledSprite",
           "assetStoreId": "",
-          "texture": "assets/hud.png",
+          "texture": "assets/plantilla-suelo.png",
           "width": 128,
           "height": 64,
           "variables": [],
@@ -1629,7 +1661,7 @@
           "name": "Muro",
           "type": "TiledSpriteObject::TiledSprite",
           "assetStoreId": "",
-          "texture": "assets/hud.png",
+          "texture": "assets/plantilla-muro.png",
           "width": 128,
           "height": 64,
           "variables": [],
@@ -1648,7 +1680,7 @@
           "name": "Plataforma",
           "type": "TiledSpriteObject::TiledSprite",
           "assetStoreId": "",
-          "texture": "assets/hud.png",
+          "texture": "assets/plantilla-plataforma.png",
           "width": 128,
           "height": 64,
           "variables": [],
@@ -1667,7 +1699,7 @@
           "name": "Escalera",
           "type": "TiledSpriteObject::TiledSprite",
           "assetStoreId": "",
-          "texture": "assets/hud.png",
+          "texture": "assets/plantilla-escalera.png",
           "width": 128,
           "height": 64,
           "variables": [],
