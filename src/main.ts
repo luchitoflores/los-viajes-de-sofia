@@ -1,3 +1,5 @@
+import {bindResponsiveStage} from './engine/responsive-stage';
+import {crossingPassage} from './gameplay/room-passage';
 import {PhaserCombat} from './gameplay/phaser/combat';
 import {collectionFeedback} from './gameplay/phaser/collection-feedback';
 import {missionHud} from './engine/mission-hud';
@@ -47,7 +49,7 @@ let libraryStartupError='';try{initializeLibrary(localStorage)}catch(e){libraryS
 type Place='universal'|'polis'|'library'|'entrance'|'shadows'|'ascent'|'exterior'|'medieval'|'modern'|'contemporary';
 type RegionType='floor'|'solid'|'door'|'stairs'|'water'|'dialogue'|'event'|'elevator';
 type ItemType='scroll'|'torch'|'warden'|'lamp'|'prisoner'|'shadows'|'chains'|'stair'|'door'|'plato'|'ship'|'vase'|'philosopher';
-type Item={spriteId?:string;lockFacing?:boolean;id:string;type:ItemType;x:number;y:number;label:string;characterId?:string;instanceId?:string;scale?:number;rotation?:number;flip?:boolean;to?:Place;who?:string;asset?:string;behavior?:string;integrated?:boolean;hotspot?:{x:number;y:number;w:number;h:number}};
+type Item={passage?:'manual'|'left'|'right';spriteId?:string;lockFacing?:boolean;id:string;type:ItemType;x:number;y:number;label:string;characterId?:string;instanceId?:string;scale?:number;rotation?:number;flip?:boolean;to?:Place;who?:string;asset?:string;behavior?:string;integrated?:boolean;hotspot?:{x:number;y:number;w:number;h:number}};
 type Region={objectId?:string;bottom?:number;id:string;type:RegionType;x:number;y:number;w:number;h:number;to?:Place};
 type PlaceData={encounters?:import('./gameplay/combat').CombatEncounter[],viewport?:{width:number;height:number},template?:string,backgroundGround?:number,name:string,subtitle:string,bg:string,width:number,spawn:{x:number;y:number;facing?:1|-1},floor:number,items:Item[],regions:Region[]};
 const bottom=(w:number,y=472):Region=>({id:'suelo',type:'floor',x:0,y,w,h:70});
@@ -229,7 +231,7 @@ async function startPhaser():Promise<void>{
  });
  class MainScene extends Phaser.Scene{
   combat:PhaserCombat|null=null;
-  jumpState=createInteriorJump();jumpQueued=false;lastGroundTap=0;backgroundView:any=null;terrainCollider:any=null;heldLamp:ReturnType<typeof attachHeldLamp>;authoringSource:unknown=null;hints:ObjectHints|null=null;roomLight:RoomLight|null=null;place:Place='entrance';dataDef:PlaceData=levels.entrance;player:any;objects:Item[]=[];regions:Region[]=[];ground:any;graphics:any;editorLabels:any[]=[];propViews:any[]=[];cursors:any;climbing=false;timer=0;companion:any=null;follower:Follower|null=null;editingStart:{x:number;y:number}|null=null;dragItem:Item|null=null;destination:number|null=null;pending:Item|null=null;liftYs:Record<string,number>={};activeLift:{id:string;target:number;x:number}|null=null;
+  blockedPassage:string|null=null;jumpState=createInteriorJump();jumpQueued=false;lastGroundTap=0;backgroundView:any=null;terrainCollider:any=null;heldLamp:ReturnType<typeof attachHeldLamp>;authoringSource:unknown=null;hints:ObjectHints|null=null;roomLight:RoomLight|null=null;place:Place='entrance';dataDef:PlaceData=levels.entrance;player:any;objects:Item[]=[];regions:Region[]=[];ground:any;graphics:any;editorLabels:any[]=[];propViews:any[]=[];cursors:any;climbing=false;timer=0;companion:any=null;follower:Follower|null=null;editingStart:{x:number;y:number}|null=null;dragItem:Item|null=null;destination:number|null=null;pending:Item|null=null;liftYs:Record<string,number>={};activeLift:{id:string;target:number;x:number}|null=null;
   constructor(){super('World')}
   init(data:{place?:Place}){this.authoringSource=universe?.world;el('properties').innerHTML='<small>Selecciona un elemento para modificar sus propiedades.</small>';editUndo=[];editRedo=[];selection=null;selectedRegionStart=null;this.editingStart=null;this.zoneGesture=null;const definition=universe?.getInterior();this.place=definition?'universal':universe?.active?'polis':Object.hasOwn(levels,data?.place||save.level)?data?.place||save.level:'polis';this.dataDef=definition??levels[this.place];this.jumpState=createInteriorJump();this.jumpQueued=false;this.lastGroundTap=0;this.climbing=false;this.liftYs=universe?.liftState()??{};this.activeLift=null;this.companion=null;this.follower=null;this.roomLight=null;this.cancelWalk()}
   preload(){
@@ -299,6 +301,11 @@ async function startPhaser():Promise<void>{
     const axis=manual||(this.destination===null?0:toward(this.player.x,this.destination,220,delta/1000));if(!axis&&this.destination!==null)this.cancelWalk();
 
     let vx=axis*220;if(!this.jumpState.airborne&&!pressed&&!canWalkPath(this.player.x,this.player.x+vx*Math.min(delta/1000,.05),this.regions,x=>this.groundAt(x))){vx=0;this.cancelWalk()}
+    if(universe?.active&&!this.jumpState.airborne){
+     const passage=crossingPassage(this.objects.filter(o=>universe!.isVisible(o.id)),this.player.x,this.player.x+vx*Math.min(delta/1000,.05),this.player.y,x=>this.groundAt(x));
+     if(passage){const status=universe.passageStatus(passage.id);if(status.allowed){this.cancelWalk();this.player.setVelocity(0,0);universe.interact(passage.id);return}vx=0;this.cancelWalk();if(this.blockedPassage!==passage.id)note(status.text??'Este camino aún está bloqueado. Consulta Objetivos.');this.blockedPassage=passage.id;}
+     else if(this.blockedPassage){const blocked=this.objects.find(o=>o.id===this.blockedPassage);if(!blocked||Math.abs(this.player.x-blocked.x)>90)this.blockedPassage=null;}
+    }
     const jump=stepInteriorJump(this.jumpState,pressed,this.groundAt(this.player.x),delta/1000,SOFIA_HEIGHT*this.scale.height/540);
     this.player.setVelocity(vx,0);this.player.setY(jump.y);if(vx)this.player.setFlipX(vx<0);
     this.player.play(jump.airborne?(jump.velocity< -55?'sofia-rise':jump.velocity>55?'sofia-fall':'sofia-apex'):vx?'sofia-walk':'sofia-idle',true);const nearby=this.closest(),hint=nearby&&universe?.collectionHint(nearby.id);el('near-hint').hidden=!hint;el('near-hint').textContent=hint??'';
@@ -379,7 +386,7 @@ el('edit-help').textContent='Para añadir: elige un recurso, pulsa Añadir objet
    ['x','y','w','h','label','scale','rotation','flip'].forEach(key=>{const e=document.getElementById('prop-'+key) as HTMLInputElement|null;e?.addEventListener('change',()=>{if(key==='label')o[key]=e.value;else if(key==='flip')o[key]=e.value==='true';else{const value=Number(e.value);if(!Number.isFinite(value)||((key==='w'||key==='h')&&value<12)||(key==='scale'&&(value<.15||value>3))||(key==='rotation'&&Math.abs(value)>360)){note('Valor fuera de rango.');return}o[key]=value}this.saveEdit();this.redrawProps();this.drawEditor()})});if(universe?.active&&selection?.kind==='item')universe.objectProperties(o);
   }
  }
- const game=new Phaser.Game({type:Phaser.AUTO,parent:'game-canvas',width:960,height:540,backgroundColor:'#24162a',antialias:true,pixelArt:false,scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH,width:960,height:540},physics:{default:'arcade',arcade:{gravity:{y:950},debug:false}},scene:[MainScene,PlanetScene,SpaceflightScene]});
+ const game=new Phaser.Game({type:Phaser.AUTO,parent:'game-canvas',width:960,height:540,backgroundColor:'#24162a',antialias:true,pixelArt:false,scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH,width:960,height:540},physics:{default:'arcade',arcade:{gravity:{y:950},debug:false}},scene:[MainScene,PlanetScene,SpaceflightScene]});bindResponsiveStage(game);
  (window as any).__sofiaGame=game;
  // UI control wiring after the scene bootstraps.
  bindJoystick(el('joystick'),axis=>{control.axis=axis;gameScene?.cancelWalk?.()},()=>!hasModal&&!editing&&!shipBusy,()=>universe?.equipmentSettings()?.controls.deadZone??.15);

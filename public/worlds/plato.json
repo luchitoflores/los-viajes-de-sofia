@@ -633,7 +633,8 @@
             "y": 482,
             "w": 63,
             "h": 138
-          }
+          },
+          "passage": "right"
         },
         {
           "id": "lampara-sofia",
@@ -718,7 +719,8 @@
           "y": 560,
           "label": "Volver a la entrada",
           "integrated": true,
-          "behavior": "prisioneros-entrada"
+          "behavior": "prisioneros-entrada",
+          "passage": "left"
         },
         {
           "id": "prisioneros-fuego",
@@ -727,7 +729,8 @@
           "y": 560,
           "label": "Investigar la sala del fuego",
           "integrated": true,
-          "behavior": "prisioneros-fuego"
+          "behavior": "prisioneros-fuego",
+          "passage": "right"
         },
         {
           "id": "prisioneros-ascenso",
@@ -886,7 +889,8 @@
           "y": 560,
           "label": "Regresar con los prisioneros",
           "integrated": true,
-          "behavior": "fuego-prisioneros"
+          "behavior": "fuego-prisioneros",
+          "passage": "left"
         },
         {
           "id": "objeto-fuego",
@@ -977,7 +981,8 @@
             "w": 160,
             "h": 250
           },
-          "tooltip": "Este arco conduce al camino del ascenso. Puedes cruzarlo cuando el prisionero esté liberado."
+          "tooltip": "Este arco conduce al camino del ascenso. Puedes cruzarlo cuando el prisionero esté liberado.",
+          "passage": "right"
         },
         {
           "id": "object-efdaf7f3-cf56-4375-b5a9-24d24f3032fb",
@@ -1091,7 +1096,8 @@
           "y": 490,
           "label": "Regresar a la sala de los prisioneros",
           "integrated": true,
-          "behavior": "ascenso-prisioneros"
+          "behavior": "ascenso-prisioneros",
+          "passage": "left"
         },
         {
           "id": "ascenso-salida",
@@ -1106,7 +1112,8 @@
             "y": 196,
             "w": 160,
             "h": 180
-          }
+          },
+          "passage": "right"
         },
         {
           "id": "paso-piedra-visible",
@@ -1226,7 +1233,8 @@
           "y": 560,
           "label": "Volver por el ascenso",
           "integrated": true,
-          "behavior": "salida-ascenso"
+          "behavior": "salida-ascenso",
+          "passage": "left"
         },
         {
           "id": "salida-planeta",

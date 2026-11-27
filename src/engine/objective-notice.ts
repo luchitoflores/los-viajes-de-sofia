@@ -13,6 +13,6 @@ export function notifyObjectiveChange(world:WorldDefinition,before:Partial<World
  box.replaceChildren();
  const heading=document.createElement('strong');heading.textContent=completed.length?'Objetivo cumplido':'Nuevo objetivo';box.append(heading);
  if(completed.length){const text=document.createElement('span');text.textContent=completed.map(m=>m.title).join(' · ');box.append(text)}
- if(next){const text=document.createElement('span');text.textContent=(completed.length?'Nuevo objetivo: ':'')+next.title+' · '+next.goal;box.append(text)}
- box.hidden=false;clearTimeout(timer);timer=setTimeout(()=>{box!.hidden=true},5000);
+ if(!completed.length&&next){const text=document.createElement('span');text.textContent=next.title;box.append(text)}
+ box.hidden=false;clearTimeout(timer);timer=setTimeout(()=>{box!.hidden=true},2800);
 }

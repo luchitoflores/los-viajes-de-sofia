@@ -37,5 +37,9 @@ export function restorePlatoContinuity(w:WorldDefinition):WorldDefinition{
   Object.assign(temple,{label:'Entrar al templo del ágora',interaction:'door',to:'library',behavior:'entrar-agora',tooltip:'Entra al ágora para leer y conversar con Platón. No necesitas terminar la caverna.',hitWidth:180,hitHeight:220});
  }
  for(const mission of w.missions)mission.goal=mission.goal.replace('La nave podrá partir.','Se completará la aventura y se abrirá la siguiente etapa de Historia.');
+ // Explicit corridor defaults for published content and older local drafts.
+ // Keep manual overrides, geometry, IDs, requirements and the surface portal.
+ const passages:Record<string,'left'|'right'>={'entrada-prisioneros':'right','prisioneros-entrada':'left','prisioneros-fuego':'right','fuego-prisioneros':'left','fuego-ascenso':'right','ascenso-prisioneros':'left','ascenso-salida':'right','salida-ascenso':'left'};
+ for(const interior of Object.values(w.interiors))for(const item of interior.items)if(passages[item.id]&&item.passage===undefined)item.passage=passages[item.id];
  return restoreCaveTravel(restorePrisonerPresentation(w));
 }

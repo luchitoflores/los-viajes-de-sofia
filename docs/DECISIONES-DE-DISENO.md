@@ -1,4 +1,5 @@
 # ACTUALIZACIÓN DE DECISIONES DE DISEÑO
+Actualización: los corredores interiores pueden cruzarse caminando mediante `passage` parametrizable; las puertas y portales que lo necesitan conservan interacción explícita. Los requisitos bloquean físicamente el cruce. Objetivos en su panel y avisos breves que no capturan entrada. Juego horizontal a pantalla completa proporcional y vertical permitido. Implementación y límites: [PASOS-ENTRE-SALAS-Y-PANTALLA.md](PASOS-ENTRE-SALAS-Y-PANTALLA.md).
 ## PROYECTO: SOFÍA Y LOS MUNDOS DE LAS IDEAS
 
 Actúa como director de desarrollo, arquitecto de software, diseñador de videojuegos 2D y especialista en didáctica de la filosofía.
