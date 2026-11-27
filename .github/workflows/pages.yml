@@ -25,6 +25,63 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      # Exportaciones experimentales: nunca bloquean la publicación de Phaser.
+      - name: Exportar laboratorio Godot
+        id: lab_godot
+        continue-on-error: true
+        timeout-minutes: 12
+        shell: bash
+        run: |
+          set -euo pipefail
+          version=4.4.1
+          release="https://github.com/godotengine/godot-builds/releases/download/${version}-stable"
+          work="$(mktemp -d)"
+          curl --fail --location --retry 3 "$release/Godot_v${version}-stable_linux.x86_64.zip" -o "$work/editor.zip"
+          curl --fail --location --retry 3 "$release/Godot_v${version}-stable_export_templates.tpz" -o "$work/templates.tpz"
+          unzip -q "$work/editor.zip" -d "$work/editor"
+          godot="$work/editor/Godot_v${version}-stable_linux.x86_64"
+          chmod +x "$godot"
+          dest="$HOME/.local/share/godot/export_templates/${version}.stable"
+          mkdir -p "$dest"
+          unzip -q -j "$work/templates.tpz" 'templates/web_nothreads_release.zip' 'templates/version.txt' -d "$dest"
+          cp -r public/lab/godot "$work/project"
+          mkdir -p "$work/output"
+          "$godot" --headless --path "$work/project" --editor --import
+          "$godot" --headless --path "$work/project" --export-release Web "$work/output/index.html"
+          test -s "$work/output/index.html"
+          test -s "$work/output/index.wasm"
+          test -s "$work/output/index.pck"
+          mkdir -p dist/lab/play-godot
+          cp -a "$work/output/." dist/lab/play-godot/
+      - name: Exportar laboratorio GDevelop
+        id: lab_gdevelop
+        continue-on-error: true
+        timeout-minutes: 12
+        shell: bash
+        run: |
+          set -euo pipefail
+          version=5.6.287
+          work="$(mktemp -d)"
+          curl --fail --location --retry 3 "https://github.com/4ian/GDevelop/releases/download/v${version}/GDevelop-5-${version}.AppImage" -o "$work/gdevelop.AppImage"
+          echo "a22cbaf1ee27b082724f16f40220ebda816c4e660442edc96c2836d5b66f8d22  $work/gdevelop.AppImage" | sha256sum -c -
+          chmod +x "$work/gdevelop.AppImage"
+          (cd "$work" && ./gdevelop.AppImage --appimage-extract >/dev/null)
+          cp -r public/lab/gdevelop "$work/project"
+          xvfb-run -a "$work/squashfs-root/AppRun" --no-sandbox --disable-update-check --run-command EXPORT_HTML5_EXTERNAL "$work/project/game.json"
+          test -s "$work/project/build/index.html"
+          mkdir -p dist/lab/play-gdevelop
+          cp -a "$work/project/build/." dist/lab/play-gdevelop/
+      - name: Registrar resultado de laboratorios
+        if: always()
+        shell: bash
+        env:
+          GODOT_OUTCOME: ${{ steps.lab_godot.outcome }}
+          GDEVELOP_OUTCOME: ${{ steps.lab_gdevelop.outcome }}
+        run: |
+          if [ -d dist/lab ]; then
+            printf '{"godot":"%s","gdevelop":"%s"}\n' "$GODOT_OUTCOME" "$GDEVELOP_OUTCOME" > dist/lab/build-status.json
+          fi
+          printf '### Laboratorios experimentales\n- Godot: %s\n- GDevelop: %s\n' "$GODOT_OUTCOME" "$GDEVELOP_OUTCOME" >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
