@@ -1,0 +1,42 @@
+[
+  {
+    "asset": "fondo-profundo",
+    "master": "art-source/gdevelop-caverna-v3/fondo-profundo.png",
+    "resource": "assets/caverna-v3/fondo-profundo.webp",
+    "width": 1672,
+    "height": 941,
+    "generated": true
+  },
+  {
+    "asset": "pared-sombras",
+    "master": "art-source/gdevelop-caverna-v3/pared-sombras.png",
+    "resource": "assets/caverna-v3/pared-sombras.webp",
+    "width": 1536,
+    "height": 1024,
+    "generated": true
+  },
+  {
+    "asset": "primer-plano",
+    "master": "art-source/gdevelop-caverna-v3/primer-plano.png",
+    "resource": "assets/caverna-v3/primer-plano.webp",
+    "width": 1672,
+    "height": 941,
+    "generated": true
+  },
+  {
+    "asset": "plataforma-piedra",
+    "master": "art-source/gdevelop-caverna-v3/plataforma-piedra.png",
+    "resource": "assets/caverna-v3/plataforma-piedra.webp",
+    "width": 960,
+    "height": 179,
+    "generated": true
+  },
+  {
+    "asset": "palanca-bronce",
+    "master": "art-source/gdevelop-caverna-v3/palanca-bronce.png",
+    "resource": "assets/caverna-v3/palanca-bronce.webp",
+    "width": 738,
+    "height": 540,
+    "generated": true
+  }
+]

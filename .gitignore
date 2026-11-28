@@ -1,6 +1,7 @@
 node_modules/
 dist/
 captures/
+artifacts/
 .pages-test/
 npm-debug.log*
 *.log

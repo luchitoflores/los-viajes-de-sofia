@@ -1,6 +1,12 @@
-# Plantilla maestra de Sofía v2.2.0
+# Plantilla maestra de Sofía v2.4.0
 
 Abre plantilla-plataformas.json en GDevelop 5.6.287 o superior y conserva assets/. Proyecto independiente de game.json.
+
+## Actualización visual v2.4
+
+Caverna ilustrada con tres capas nuevas de parallax, plataformas y palanca de alta resolución, sprites existentes del prisionero y un rescate reutilizable con eventos nativos. La escena es **Laboratorio_Mundo_Sombras**; el recorrido **Plantilla_Plataformas_Nativas** comparte el acabado visual. [Guía de edición y límites](GUIA-CAVERNA-ILUSTRADA.md).
+
+Las notas de versiones anteriores que siguen son históricas; la validación actual y sus capturas están en la guía y en docs/GDEVELOP-CAVERNA-ILUSTRADA.md.
 
 **Flujo:** planeta circular → aventura de plataformas → minijuegos visuales → ERCA → capítulo → planeta. La caverna de esta plantilla es una maqueta, no las cinco habitaciones del guion definitivo.
 

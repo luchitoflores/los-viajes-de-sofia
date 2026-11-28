@@ -67,7 +67,7 @@ jobs:
           chmod +x "$work/gdevelop.AppImage"
           (cd "$work" && ./gdevelop.AppImage --appimage-extract >/dev/null)
           cp -r public/lab/gdevelop "$work/project"
-          xvfb-run -a "$work/squashfs-root/AppRun" --no-sandbox --disable-update-check --run-command EXPORT_HTML5_EXTERNAL "$work/project/game.json"
+          xvfb-run -a "$work/squashfs-root/AppRun" --no-sandbox --disable-update-check --run-command EXPORT_HTML5_EXTERNAL "$work/project/plantilla-plataformas.json"
           test -s "$work/project/build/index.html"
           mkdir -p dist/lab/play-gdevelop
           cp -a "$work/project/build/." dist/lab/play-gdevelop/

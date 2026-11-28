@@ -1,0 +1,40 @@
+[
+  {
+    "touch_emulated": false,
+    "physical_phone": false,
+    "real_two_jumps": true,
+    "independent_parallax_cameras": [
+      644.43608368,
+      651.64471966,
+      667.7255229999998,
+      671.0525857599998
+    ],
+    "nearby_activation_only": true,
+    "prisoner_released": true,
+    "chains_hidden": true,
+    "notice_expires": true,
+    "duplicated_cell_keys_independent": true,
+    "enter_or_touch_action": true,
+    "release_survives_scene_change": true,
+    "errors": []
+  },
+  {
+    "touch_emulated": true,
+    "physical_phone": false,
+    "real_two_jumps": true,
+    "independent_parallax_cameras": [
+      643.92018232,
+      650.2904785899998,
+      664.5011394999996,
+      667.4412762399995
+    ],
+    "nearby_activation_only": true,
+    "prisoner_released": true,
+    "chains_hidden": true,
+    "notice_expires": true,
+    "duplicated_cell_keys_independent": true,
+    "enter_or_touch_action": true,
+    "release_survives_scene_change": true,
+    "errors": []
+  }
+]
