@@ -1,4 +1,4 @@
-# Plantilla maestra de Sofía v2.1.0
+# Plantilla maestra de Sofía v2.2.0
 
 Abre plantilla-plataformas.json en GDevelop 5.6.287 o superior y conserva assets/. Proyecto independiente de game.json.
 
@@ -17,3 +17,20 @@ Referencias: https://wiki.gdevelop.io/gdevelop5/all-features/storage/reference/ 
 
 ## Minijuegos visuales v2.1
 Escena Plantilla_Miniguegos, tres ejercicios: reconocer la vasija girada, relacionar sombra con copa de color, ordenar antorcha → fragmento → portal. Tres cartas Sprite editables con animaciones (índices 0–8), modelo y número por opción. Grupo 02 configura contenido, grupo 03 define respuestas y orden. Selecciona con 1/2/3 o pulsando carta. Error no avanza. Tras completar los tres, se guarda ViajeVisual=1, se abre ERCA y el capítulo exige ambas secciones. Salir permite retomar desde inicio de la sección. PNG de ejemplo, no ilustración definitiva. No es todavía un catálogo configurable sin editar eventos. No se ejecutó GDevelop; comprobar clics, rotación, imágenes, transición y guardado.
+
+## Laboratorios visuales v2.2 — sombras y río
+Desde el planeta aparecen dos botones de laboratorio independientes; no cambian capítulos, misiones ni la caverna aprobada. También puedes seleccionar sus escenas y usar Vista previa en GDevelop.
+
+| Capa | Función | Factor cámara |
+|---|---|---|
+| FondoLejano | Siluetas lejanas / cielo | 0.16 |
+| FondoMedio | Paredes de caverna / árboles y valle | 0.42 |
+| Ambiente | Sombras que oscilan o corriente animada | 0.67 |
+| Base | Sofía, plataformas, islas, muros, pasadizos, escaleras, peligros | 1 |
+| PrimerPlano | Elementos decorativos próximos | 1.12 |
+| UI | Controles y avisos | fija |
+
+SueloRoca y MuroRoca son Tiled Sprites sólidos; PlataformaRoca es Jumpthru; Escalera es Ladder; BordeDecorativo se coloca sobre cada bloque y no tiene colisión. Pinchos causan reintento. El río carece de suelo bajo las islas: al bajar de Y=635 hay reintento desde checkpoint. ZonaAgua es auxiliar invisible sin colisión física; AguaCorriente usa XOffset continuamente. Las sombras reutilizan los sprites de caballo, árbol y guerrero de Phaser, ahora en una capa sin física, con oscilación mediante OrigenX/OrigenY/Fase. Cada instancia se puede mover visualmente; ajustar también OrigenX/OrigenY para conservar su centro de animación. Los fondos nuevos son PNG de maqueta procedural, independientes del suelo, no arte final con calidad Hollow Knight. El primer plano no bloquea movimiento.
+
+### Cómo crear otro recorrido
+Duplica una escena de laboratorio. Arrastra SueloRoca, PlataformaRoca, MuroRoca, Escalera y BordeDecorativo; redimensiona por separado. Deja huecos reales entre bloques; no agregues un suelo invisible debajo de los peligros. Modifica velocidad/salto/gravedad en Sofia > PlatformerObject, límites de cámara, umbral de caída y coordenadas de checkpoint. Reemplaza texturas repetibles de cada objeto o las imágenes de fondo; conserva comportamientos. Para cambiar el río a lava usa otra textura y conserva el umbral de caída. Portal y botón Volver retornan al planeta, sin otorgar capítulos. Los fondos son composiciones modulares de muestra; no se ha ejecutado GDevelop ni verificado visualmente el salto, la corriente, los pasadizos, las colisiones o el parallax. Probar en editor antes de usar en una aventura. Las escenas conservan el sistema de pruebas previo.
